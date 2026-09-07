@@ -1,0 +1,110 @@
+num_frames: 49
+obs_size: 49
+action_size: 48
+global_sample_stride: 1
+
+shape_meta:
+  images:
+    - key: cam_high
+      raw_shape: [3, 480, 640]
+      shape: [3, 240, 320]
+    - key: cam_left_wrist
+      raw_shape: [3, 480, 640]
+      shape: [3, 240, 320]
+    - key: cam_right_wrist
+      raw_shape: [3, 480, 640]
+      shape: [3, 240, 320]
+  action:
+    - key: default
+      raw_shape: 14
+      shape: 14
+  state:
+    - key: default
+      raw_shape: 14
+      shape: 14
+
+processor:
+  _target_: fastwam.datasets.lerobot.processors.fastwam_processor.FastWAMProcessor
+  shape_meta: ${shape_meta}
+  num_obs_steps: ${num_frames}
+  num_output_cameras: 3
+  action_output_dim: 14
+  proprio_output_dim: 14
+  action_state_transforms: null
+  use_stepwise_action_norm: false
+  norm_default_mode: z-score
+  norm_exception_mode: null
+  action_state_merger:
+    _target_: fastwam.datasets.lerobot.transforms.action_state_merger.ConcatLeftAlign
+  train_transforms:
+    - _target_: fastwam.datasets.lerobot.transforms.image.ToTensor
+    - _target_: torchvision.transforms.Resize
+      size: [240, 320]
+  val_transforms:
+    - _target_: fastwam.datasets.lerobot.transforms.image.ToTensor
+    - _target_: torchvision.transforms.Resize
+      size: [240, 320]
+
+dataset_dirs: [
+          #   "/data/share/1919650160032350208/foundation_model/datasets/midea_lerobot_pick_and_place/pick_place_zby_20251225_compressed",
+          # "/data/share/1919650160032350208/foundation_model/datasets/midea_lerobot_pick_and_place/pick_place_zby_20251224_compressed",
+  # "/data/share/1919650160032350208/foundation_model/datasets/midea_real_benchmark/sort_cube_by_size/sort_cube_by_size_new_rjw_20260309_compressed",
+  # "/data/share/1919650160032350208/foundation_model/datasets/midea_real_benchmark/sort_cube_by_size/sort_cube_by_size_new_rjw_20260310_compressed",
+  # "/data/share/1919650160032350208/foundation_model/datasets/midea_real_benchmark/sort_cube_by_size/sort_cube_by_size_new_rjw_20260311_compressed",
+  # "/data/share/1919650160032350208/foundation_model/datasets/midea_real_benchmark/sort_cube_by_size/sort_cube_by_size_new_rjw_20260312_compressed",
+  # "/data/share/1919650160032350208/foundation_model/datasets/midea_real_benchmark/sort_cube_by_size/sort_cube_by_size_new_rjw_20260313_compressed"
+  # "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/tuoguan_random_folding_shirts_basket_2folded_xdyna_zjx_20260128_compressed",
+  # "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/random_folding_shirts_basket_2folded_xdyna_zp_20251203_compressed",
+  # "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/tuoguan_random_folding_shirts_basket_2folded_xdyna_zjx_20260127_compressed",
+  # "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/tuoguan_random_folding_shirts_basket_0folded_xdyna_zp_20260202_compressed",
+  # "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/tuoguan_random_folding_shirts_basket_0folded_xdyna_zjx_20260202_compressed",
+  # "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/random_folding_shirts_basket_2folded_xdyna_zjx_20251204_compressed",
+  # "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/random_folding_shirts_basket_2folded_xdyna_tuoguan_zjx_20251218_compressed",
+  # "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/tuoguan_random_folding_shirts_basket_2folded_xdyna_zp_20260128_compressed",
+  # "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/random_folding_shirts_basket_1folded_xdyna_zp_20251204_compressed",
+  # "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/tuoguan_random_folding_shirts_basket_0folded_xdyna_zjx_20260204_compressed",
+  # "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/random_folding_shirts_basket_2folded_xdyna_tuoguan_zjx_20251216_compressed",
+  # "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/tuoguan_random_folding_shirts_basket_2folded_xdyna_zp_20260127_1_compressed",
+  # "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/random_folding_shirts_basket_2folded_xdyna_zjx_20251203_compressed",
+  # "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/random_folding_shirts_basket_2folded_xdyna_tuoguan_zjx_20251217_compressed",
+  # "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/tuoguan_random_folding_shirts_basket_0folded_xdyna_zjx_20260203_compressed",
+  # "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/random_folding_shirts_basket_2folded_xdyna_zjx_20251205_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/tuoguan_random_folding_shirts_basket_2folded_xdyna_zjx_20260128_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/random_folding_shirts_basket_2folded_xdyna_zp_20251203_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/random_folding_skirt_basket_2folded_xdyna_zjx_20260211_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/tuoguan_random_folding_shirts_basket_2folded_xdyna_zjx_20260127_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/random_folding_skirt_basket_2folded_xdyna_zp_20260211_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/random_folding_pants_basket_1folded_xdyna_zp_20251209_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/tuoguan_random_folding_shirts_basket_0folded_xdyna_zp_20260202_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/tuoguan_random_folding_shirts_basket_0folded_xdyna_zjx_20260202_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/random_folding_shirts_basket_2folded_xdyna_zjx_20251204_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/random_folding_shirts_basket_2folded_xdyna_tuoguan_zjx_20251218_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/tuoguan_random_folding_shirts_basket_2folded_xdyna_zp_20260128_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/random_folding_shirts_basket_1folded_xdyna_zp_20251204_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/tuoguan_random_folding_shirts_basket_0folded_xdyna_zjx_20260204_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/random_folding_skirt_basket_2folded_xdyna_zp_20260212_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/random_folding_skirt_basket_2folded_xdyna_zjx_20260212_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/random_folding_shirts_basket_2folded_xdyna_tuoguan_zjx_20251216_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/tuoguan_random_folding_shirts_basket_2folded_xdyna_zp_20260127_1_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/random_folding_skirt_basket_2folded_xdyna_zp_20260226_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/random_folding_shirts_basket_2folded_xdyna_zjx_20251203_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/random_folding_shirts_basket_2folded_xdyna_tuoguan_zjx_20251217_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/tuoguan_random_folding_shirts_basket_0folded_xdyna_zjx_20260203_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/random_folding_skirt_basket_2folded_xdyna_zjx_20260226_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/random_folding_shirts_basket_2folded_xdyna_zjx_20251205_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0324/tuoguan_random_folding_skirt_basket_2folded_xdyna_zp_20260306_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0423/tuoguan_random_folding_towel_basket_2folded_xdyna_ltt_20260401_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0423/tuoguan_random_folding_skirt_basket_2folded_xdyna_zp_20260306_2_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0423/tuoguan_random_folding_pants_basket_2folded_xdyna_ltt_20260330_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0423/recover_random_folding_pants_basket_2folded_xdyna_ltt_20260402_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0423/random_folding_pants_basket_2folded_xdyna_ltt_20260324_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0423/tuoguan_random_folding_pants_basket_2folded_xdyna_ltt_20260319_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0423/tuoguan_random_folding_pants_basket_2folded_xdyna_ltt_20260331_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0423/tuoguan_random_folding_pants_basket_2folded_xdyna_ltt_20260320_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0423/tuoguan_random_folding_towel_basket_2folded_xdyna_ltt_20260408_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0423/tuoguan_random_folding_towel_basket_2folded_xdyna_ltt_20260410_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0423/tuoguan_random_folding_shirts_basket_2folded_xdyna_ltt_20260409_try_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0423/random_folding_towel_2folded_ltt_20260327_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0423/tuoguan_random_folding_towel_basket_2folded_xdyna_ltt_20260403_compressed",
+  "/data/share/1919650160032350208/foundation_model/datasets/midea_0423/tuoguan_random_folding_skirt_basket_2folded_xdyna_zp_20260305_compressed",
+]
