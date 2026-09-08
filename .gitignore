@@ -35,6 +35,7 @@ envs/
 /assets/
 /posttrain/
 /wandb/
+/task_train_scripts
 *.pt
 *.pth
 *.ckpt
