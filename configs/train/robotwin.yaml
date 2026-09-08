@@ -26,7 +26,7 @@ data:
   train:
     _target_: fastwam.datasets.lerobot.robot_video_dataset.RobotVideoDataset
     dataset_dirs: [
-        "/data/share/1919650160032350208/wzy/FastWAM/data/robotwin2.0/robotwin2.0"
+        "/efs/share/1919650160032350208/projects/foundation_model/wzy/FastWAM/data/robotwin2.0/robotwin2.0"
     ]
     shape_meta:
       images:
@@ -55,7 +55,7 @@ data:
     camera_key: null
     val_set_proportion: 0.01
     is_training_set: true
-    pretrained_norm_stats: /data/share/1919650160032350208/wzy/FastWAM/runs/robotw_stats.json
+    pretrained_norm_stats: /efs/share/1919650160032350208/projects/foundation_model/wzy/FastWAM/runs/robotw_stats.json
     skip_padding_as_possible: false
     concat_multi_camera: robotwin
     processor:
@@ -79,7 +79,7 @@ data:
         - _target_: fastwam.datasets.lerobot.transforms.image.ToTensor
         - _target_: torchvision.transforms.Resize
           size: [240, 320]
-    text_embedding_cache_dir: /data/share/1919650160032350208/wzy/FastWAM/data/text_embeds_cache/robotwin
+    text_embedding_cache_dir: /efs/share/1919650160032350208/projects/foundation_model/wzy/FastWAM/data/text_embeds_cache/robotwin
     context_len: 128
 
   val:
