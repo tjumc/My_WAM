@@ -2,7 +2,7 @@
 set -e
 
 # Wan2.2 base model and ActionDiT initialization.
-export DIFFSYNTH_MODEL_BASE_PATH="/path/to/checkpoints"
+export DIFFSYNTH_MODEL_BASE_PATH="/efs/share/1919650160032350208/projects/foundation_model/FastWAM/checkpoints"
 
 # Distributed training.
 export NNODES=1
@@ -24,4 +24,5 @@ accelerate launch \
   --num_workers 16 \
   --learning_rate 2e-4 \
   --weight_decay 1e-2 \
-  --num_epochs 5
+  --num_epochs 5 \
+  --output_dir runs/robotwin/test
