@@ -59,9 +59,9 @@ exec accelerate launch \
   --config "$CONFIG" \
   --batch_size 12 \
   --num_workers 16 \
-  --learning_rate -2e-4 \
-  --weight_decay -1e-2 \
-  --num_epochs -5 \
-  --gradient_accumulation_steps -1 \
+  --learning_rate 2e-4 \
+  --weight_decay 1e-2 \
+  --num_epochs 5 \
+  --gradient_accumulation_steps 1 \
   --output_dir "$OUTPUT_DIR" \
   "$@"
