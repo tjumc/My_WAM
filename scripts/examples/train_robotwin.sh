@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
+cd "${REPO_ROOT}"
+export PYTHONPATH="${REPO_ROOT}/src:${PYTHONPATH:-}"
 
 # Wan2.2 base model and ActionDiT initialization.
 export DIFFSYNTH_MODEL_BASE_PATH="/efs/share/1919650160032350208/projects/foundation_model/FastWAM/checkpoints"
@@ -20,7 +25,7 @@ accelerate launch \
   --main_process_port "$MASTER_PORT" \
   scripts/train.py \
   --config configs/train/robotwin.yaml \
-  --batch_size 12 \
+  --batch_size "${WAM_BATCH_SIZE:-1}" \
   --num_workers 16 \
   --learning_rate 2e-4 \
   --weight_decay 1e-2 \
