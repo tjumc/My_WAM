@@ -28,7 +28,7 @@ ASTRIBOT_DATASET_CATALOG[sort_blocks]=$'/data/share/1919650160032350208/users/zh
 
 astribot_select_dataset_task() {
   local task_name="${1:?task name is required}"
-  if [[ ! -v "ASTRIBOT_DATASET_CATALOG[${task_name}]" ]]; then
+  if [[ -z "${ASTRIBOT_DATASET_CATALOG[${task_name}]+x}" ]]; then
     echo "ERROR: unknown Astribot dataset task: ${task_name}" >&2
     echo "Available tasks:" >&2
     printf '  %s\n' "${ASTRIBOT_DATASET_TASKS[@]}" >&2
@@ -54,4 +54,3 @@ if [[ "${BASH_SOURCE[0]}" == "$0" ]]; then
   printf '%-24s %s\n' TASK DIRECTORIES
   astribot_list_dataset_tasks
 fi
-
