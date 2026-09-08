@@ -72,7 +72,7 @@
 ---
 
 ## 训练前准备步骤
-直接查看(MideaWamTrain.sh)
+旧版 Midea 启动脚本见 [docs/legacy/MideaWamTrain.sh](./legacy/MideaWamTrain.sh)。
 
 ### 第一步：预计算文本嵌入
 

@@ -1,8 +1,8 @@
 """
-plot_loss.py  –  Parse robotw64.log and draw loss curves.
+tools/plot_loss.py  –  Parse robotw64.log and draw loss curves.
 
 Usage:
-    python plot_loss.py [logfile] [--out output.png] [--smooth N]
+    python tools/plot_loss.py [logfile] [--out output.png] [--smooth N]
 
 Defaults:
     logfile : robotw64.log (same directory as this script)
