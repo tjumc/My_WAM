@@ -27,8 +27,8 @@ ACCELERATE_CONFIG=scripts/accelerate_configs/accelerate_zero1_ds.yaml
 RUN_NAME=astribot_multitask_posttrain32
 MULTITASK_CONFIG=runs/$RUN_NAME/astribot_multitask_posttrain32.yaml
 
-export DIFFSYNTH_MODEL_BASE_PATH=/efs/share/1919650160032350208/projects/foundation_model/FastWAM/checkpoints
-export ACTION_DIT_PRETRAINED_PATH=""
+export DIFFSYNTH_MODEL_BASE_PATH="/efs/share/1919650160032350208/projects/foundation_model/FastWAM/checkpoints"
+export ACTION_DIT_PRETRAINED_PATH="/efs/share/1919650160032350208/users/machong14/wam/checkpoints/ActionDiT_linear_interp_Wan22_alphascale_1024hdim.pt"
 export WAM_PRETRAIN_CKPT=""
 
 export WAM_STATS_PATH=runs/$RUN_NAME/stats.json
@@ -38,7 +38,7 @@ export WAM_OUTPUT_DIR=runs/$RUN_NAME/train
 # =========================
 # Training
 # =========================
-BATCH_SIZE=12
+BATCH_SIZE=1
 NUM_WORKERS=16
 LEARNING_RATE=2e-4
 WEIGHT_DECAY=1e-2
@@ -47,13 +47,13 @@ GRADIENT_ACCUMULATION_STEPS=1
 SAVE_EVERY=10000
 EVAL_EVERY=10000
 
-PREPARE_DATA=true
+PREPARE_DATA=true # 是否需要预处理
 
 # =========================
 # Distributed
 # =========================
 NNODES=1
-GPUS_PER_NODE=8
+GPUS_PER_NODE=1
 NODE_RANK=0
 MASTER_ADDR=127.0.0.1
 MASTER_PORT=29604
