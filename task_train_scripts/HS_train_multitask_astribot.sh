@@ -52,12 +52,25 @@ PREPARE_DATA=false # 是否需要预处理
 # =========================
 # Distributed
 # =========================
-NNODES=2
-GPUS_PER_NODE=8
-NODE_RANK=0
-MASTER_ADDR=127.0.0.1
-MASTER_PORT=29604
-TOTAL_GPUS=$((NNODES * GPUS_PER_NODE))
+export NNODES=2
+export GPUS_PER_NODE=8
+export TOTAL_GPUS=$((NNODES * GPUS_PER_NODE))
+
+export NODE_RANK="${NODE_RANK:-${VC_TASK_INDEX:-${MACHINE_RANK:-0}}}"
+
+if [[ -z "${MASTER_ADDR:-}" ]]; then
+    if [[ -f /etc/volcano/worker.host ]]; then
+        MASTER_ADDR="$(awk 'NF {print $1; exit}' /etc/volcano/worker.host)"
+    elif ((NNODES == 1)); then
+        MASTER_ADDR=127.0.0.1
+    else
+        echo "ERROR: MASTER_ADDR is required for multi-node training." >&2
+        exit 1
+    fi
+fi
+
+export MASTER_ADDR
+export MASTER_PORT="${MASTER_PORT:-${WAM_MASTER_PORT:-29604}}"
 
 export PYTHONPATH="${REPO_ROOT}/src:${PYTHONPATH:-}"
 export LD_LIBRARY_PATH="$CONDA_PREFIX/lib:$LD_LIBRARY_PATH"
