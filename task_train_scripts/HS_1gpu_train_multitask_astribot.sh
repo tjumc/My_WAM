@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT=$(cd "$(dirname "$0")/.." && pwd)
-cd "$ROOT"
+REPO_ROOT=$(cd "$(dirname "$0")/.." && pwd)
+cd "$REPO_ROOT"
 
 # =========================
 # Tasks
@@ -59,7 +59,7 @@ MASTER_ADDR=127.0.0.1
 MASTER_PORT=29604
 TOTAL_GPUS=$((NNODES * GPUS_PER_NODE))
 
-export PYTHONPATH=$ROOT/src:$PYTHONPATH
+export PYTHONPATH="${REPO_ROOT}/src:${PYTHONPATH:-}"
 export DIFFSYNTH_SKIP_DOWNLOAD=true
 
 export TORCH_NCCL_BLOCKING_WAIT=1
