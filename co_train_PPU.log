@@ -10326,9 +10326,9 @@ Casting the dataset: 100%|██████████| 30078/30078 [00:00<00:
 | >> [train] epoch=0 step=150/158700 loss=0.7599 loss_action=0.4361 loss_video=0.3238 lr=3.81e-06 speed=0.15 step/s, 113.58 samples/s eta=297:47:59
 | >> [train] epoch=0 step=160/158700 loss=0.6848 loss_action=0.3809 loss_video=0.3040 lr=4.06e-06 speed=0.15 step/s, 113.21 samples/s eta=298:45:37
 | >> [train] epoch=0 step=170/158700 loss=0.6731 loss_action=0.3556 loss_video=0.3175 lr=4.31e-06 speed=0.15 step/s, 113.89 samples/s eta=296:57:07
-d will be removed in version 0.24. We recommend that you migrate to TorchCodec, where we'll consolidate the future decoding/encoding capabilities of PyTorch: https://github.com/pytorch/torchcodec
-  warnings.warn(
-/usr/local/lib/python3.12/site-packages/torchvision/io/_video_deprecation_warning.py:5: UserWarning: The video decoding and encoding capabilities of torchvision are deprecated from version 0.22 and will be removed in version 0.24. We recommend that you migrate to TorchCodec, where we'll consolidate the future decoding/encoding capabilities of PyTorch: https://github.com/pytorch/torchcodec
+| >> [train] epoch=0 step=180/158700 loss=0.6102 loss_action=0.3175 loss_video=0.2927 lr=4.56e-06 speed=0.15 step/s, 114.11 samples/s eta=296:21:15
+| >> [train] epoch=0 step=190/158700 loss=0.5846 loss_action=0.2821 loss_video=0.3025 lr=4.81e-06 speed=0.15 step/s, 114.14 samples/s eta=296:16:10
+.py:5: UserWarning: The video decoding and encoding capabilities of torchvision are deprecated from version 0.22 and will be removed in version 0.24. We recommend that you migrate to TorchCodec, where we'll consolidate the future decoding/encoding capabilities of PyTorch: https://github.com/pytorch/torchcodec
   warnings.warn(
 /usr/local/lib/python3.12/site-packages/torchvision/io/_video_deprecation_warning.py:5: UserWarning: The video decoding and encoding capabilities of torchvision are deprecated from version 0.22 and will be removed in version 0.24. We recommend that you migrate to TorchCodec, where we'll consolidate the future decoding/encoding capabilities of PyTorch: https://github.com/pytorch/torchcodec
   warnings.warn(

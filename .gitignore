@@ -49,7 +49,7 @@ envs/
 *.zip
 
 # Logs and temporary files
-# *.log
+*.log
 *.err
 *.tmp
 *.lock
