@@ -12,9 +12,9 @@ TASKS=(
     fridge
     dishwasher
     oven_takeout
-    collect_clothes
-    dry_clothes
-    wash_clothes
+    # collect_clothes
+    # dry_clothes
+    # wash_clothes
 )
 
 # =========================
@@ -39,7 +39,7 @@ export WAM_OUTPUT_DIR=runs/$RUN_NAME/train
 # Training
 # =========================
 BATCH_SIZE=12
-NUM_WORKERS=16
+NUM_WORKERS=4
 LEARNING_RATE=2e-4
 WEIGHT_DECAY=1e-2
 NUM_EPOCHS=10
