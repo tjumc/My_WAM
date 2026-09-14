@@ -1,0 +1,246 @@
+[INFO] dataset_yaml : configs/data/astribot_posttrain32.yaml
+[INFO] dataset_dirs : ['/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/oven_new_2_fx_20260513_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/oven_new_2_fx_20260514_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/oven_new_2_fx_20260515_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/oven_new_2_fx_20260518_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/fridge_chicken_golden_zjm_20260324_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/fridge_chicken_golden_zjm_20260325_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/fridge_chicken_golden_zjm_20260327_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/fridge_fruits_fx_20260508_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/fridge_fruits_fx_20260509_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/fridge_fruits_fx_20260511_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/fridge_fruits_fx_20260602_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/fridge_fruits_fx_20260603_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/fridge_meat_fx_20260428_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/fridge_meat_fx_20260429_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/fridge_meat_fx_20260430_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/fridge_salmon_golden_zjm_20260310_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/fridge_salmon_golden_zjm_20260311_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/fridge_salmon_golden_zjm_20260312_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/fridge_salmon_golden_zjm_20260313_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/fridge_salmon_zjm_20260306_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/fridge_salmon_zjm_20260309_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/fridge_shrimp_fx_20260423_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/fridge_shrimp_fx_20260424_1_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/fridge_shrimp_fx_20260424_2_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/fridge_shrimp_fx_20260427_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/fridge_shrimp_fx_20260428_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/fridge_tray_middle_fx_20260610_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/fridge_tray_middle_fx_20260611_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/fridge_tray_middle_fx_20260615_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/fridge_chicken_fx_20260506_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/fridge_chicken_golden_zjm_20260323_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260409_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260410_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260529_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260605_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_hcc_20260410_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_hcc_20260416_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_hcc_20260417_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_hcc_20260421_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_hcc_20260422_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_hcc_20260423_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_hcc_20260424_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_hcc_20260507_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_hcc_20260508_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_hcc_20260509_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_hcc_20260511_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_hcc_20260512_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_hcc_20260513_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_hcc_20260518_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_hcc_20260521_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_hcc_20260522_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_hcc_20260525_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_hcc_20260526_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_hcc_20260528_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_hcc_20260601_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/oven_takeout_fx_20260525_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/oven_takeout_fx_20260526_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/oven_takeout_fx_20260527_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/oven_takeout_fx_20260528_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/oven_takeout_fx_20260601_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/oven_takeout_fx_20260608_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/oven_takeout_fx_20260609_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/collect_clothes_basket_bxx_20260622_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/collect_clothes_bxx_20260528_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/collect_clothes_bxx_20260529_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/collect_clothes_bxx_20260601_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/collect_clothes_bxx_20260610_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/collect_clothes_bxx_20260611_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/collect_clothes_bxx_20260615_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/collect_clothes_bxx_20260616_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/collect_clothes_fx_20260526_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/collect_clothes_fx_20260528_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/collect_clothes_fx_20260601_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/collect_clothes_fx_20260604_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/collect_clothes_fx_20260611_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/collect_clothes_fx_20260612_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/collect_clothes_fx_20260616_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/collect_clothes_nearsofa_whb_20260622_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/collect_clothes_recover_whb_20260622_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/collect_clothes_recover_whb_20260623_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/collect_clothes_twoclothes_bxx_20260622_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/collect_clothes_twoclothesonthesoft_bxx_20260618_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/collect_clothes_twoclothesonthesoft_whb_20260618_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/collect_clothes_whb_20260615_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/collect_clothes_whb_20260616_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/collect_clothes_whb_20260617_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/collect_twoclothes_onthefloor_bxx_20260610_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dry_clothes_bxx_20260508_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dry_clothes_bxx_20260509_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dry_clothes_bxx_20260513_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dry_clothes_bxx_20260514_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dry_clothes_bxx_20260520_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dry_clothes_bxx_20260521_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dry_clothes_bxx_20260522_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dry_clothes_bxx_20260527_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dry_clothes_bxx_20260528_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dry_clothes_bxx_20260601_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dry_clothes_bxx_20260602_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dry_clothes_bxx_20260603_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dry_clothes_bxx_20260604_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dry_clothes_bxx_20260605_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dry_clothes_bxx_20260609_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dry_clothes_grasp_whb_20260624_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dry_clothes_openandmove_bxx_20260623_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dry_clothes_openandmove_bxx_20260624_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dry_clothes_pickup_bxx_20260612_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dry_clothes_pickup_bxx_20260615_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dry_clothes_pickup_bxx_20260616_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dry_clothes_pickup_bxx_20260617_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/wash_clothes_bxx_20260420_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/wash_clothes_bxx_20260421_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/wash_clothes_bxx_20260424_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/wash_clothes_bxx_20260506_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/wash_clothes_bxx_20260507_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/wash_clothes_bxx_20260508_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/wash_clothes_bxx_20260515_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/wash_clothes_bxx_20260519_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/wash_clothes_closeandmove_bxx_20260623_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/wash_clothes_closeandmove_whb_20260623_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/wash_clothes_hcc_20260413_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/wash_clothes_hcc_20260414_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/wash_clothes_opendoor_bxx_20260617_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/wash_clothes_pickup1_bxx_20260609_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/wash_clothes_pickup_bxx_20260525_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/wash_clothes_pickup_bxx_20260617_compressed', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/wash_clothes_putclothes_bxx_20260617_compressed']
+[INFO] output       : runs/astribot_multitask_posttrain32/stats.json
+[INFO] obs/action   : 33/32
+[INFO] stride       : 1
+[INFO] num_workers  : 8
+[INFO] q01/q99      : False
+[INFO] parquet files : 199
+[INFO] Processor set to eval().
+[INFO] fast_stats   : True
+[INFO] fast_stats   : reading each parquet file once and grouping rows by episode_index
+[INFO] Computing stats over 10222 episodes...
+
+Iterating parquet files to get normalization:   0%|          | 0/199 [00:00<?, ?it/s]/efs/share/1919650160032350208/users/machong14/wam/scripts/preprocess/precompute_stats_optimize.py:412: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:203.)
+  return torch.from_numpy(arrow_array_to_numpy(array))
+
+Iterating parquet files to get normalization:   1%|          | 2/199 [00:03<05:24,  1.65s/it]
+Iterating parquet files to get normalization:   1%|          | 2/199 [00:03<06:09,  1.87s/it]
+Iterating parquet files to get normalization:   2%|▏         | 3/199 [00:03<04:14,  1.30s/it]
+I
+Iterating parquet files to get normalization:   3%|▎         | 5/199 [00:05<03:11,  1.01it/
+Iterating parquet files to get normalization:   3%|▎         | 5/199 [00:05<03:35,  1.11s/it]
+Iterating parquet files to get normalization:   3%|▎         | 6/199 [00:06<02:47,  1.15it/s]
+Iterating parquet files to get normalization:   4%|▎         | 7/199 [00:06<02:03,  1.55it/s]
+Iterating parquet files to get normalization:   4%|▍         | 8/199 [00:06<01:32,  2.06it/s]
+Iterating parquet files to get normalization:   5%|▍         | 9/199 [00:06<01:11,  2.65it/s]
+Iterating parquet files to get normalization:   6%|▌         | 11/199 [00:06<00:41,  4.48it/s]
+Iterating parquet files to get normalization:   6%|▌         | 12/199 [00:06<00:38,  4.82it/s]
+Ite
+Iterating parquet files to get normalization:   8%|▊         | 16/199 [00:07<01:06,  2.74i
+Iterating parquet files to get normalization:   8%|▊         | 16/199 [00:08<01:18,  2.34it/s]
+Iterating parquet files to get normalization:   9%|▊         | 17/199 [00:08<01:07,  2.70it/s]
+Ite
+Iterating parquet files to get normalization:  10%|▉         | 19/199 [00:10<01:56,  1.54i
+Iterating parquet files to get normalization:  10%|▉         | 19/199 [00:11<02:19,  1.29it/s]
+Iterating parquet files to get normalization:  10%|█         | 20/199 [00:11<01:58,  1.51it/s]
+Ite
+Iterating parquet files to get normalization:  11%|█         | 22/199 [00:12<02:05,  1.41it/s]
+Iterating parquet files to get normalization:  12%|█▏        | 23/199 [00:12<01:35,  1.85it/s]
+Iterating parquet files to get normalization:  12%|█▏        | 24/199 [00:12<01:17,  2.25it/s]
+Iterating parquet files to get normalization:  13%|█▎        | 25/199 [00:12<01:02,  2.78it/s]
+Iterating parquet files to get normalization:  13%|█▎        | 26/199 [00:12<00:56,  3.05it/s]
+Iterating parquet files to get normalization:  14%|█▍        | 28/199 [00:13<00:41,  4.09it/s]
+Iterating parquet files to get normalization:  15%|█▍        | 29/199 [00:13<00:37,  4.57it/s]
+Iterating parquet files to get normalization:  15%|█▌        | 30/199 [00:13<00:51,  3.29it/s]
+Iterating parquet files to get normalization:  16%|█▌        | 31/199 [00:14<00:47,  3.53it/s]
+Iterating parquet files to get normalization:  16%|█▌        | 32/199 [00:14<00:57,  2.93it/s]
+Iterating parquet files to get normalization:  17%|█▋        | 33/199 [00:14<00:51,  3.21it/s]
+Iterating parquet files to get normalization:  17%|█▋        | 34/199 [00:15<00:47,  3.45i
+Iterating parquet files to get normalization:  18%|█▊        | 36/199 [00:16<00:35,  4.57it/s]
+Iterating parquet files to get normalization:  19%|█▉        | 38/199 [00:16<00:29,  5.55it/s]
+Iterating parquet files to get normalization:  20%|█▉        | 39/199 [00:17<00:43,  3.69it/s]
+Iterating parquet files to get normalization:  20%|██        | 40/199 [00:17<00:36,  4.33it/s]
+Ite
+Iterating parquet files to get normalization:  21%|██        | 42/199 [00:18<01:29,  1.76it/s]
+Iterating parquet files to get normalization:  22%|██▏       | 43/199 [00:18<01:30,  1.72it/s]
+Iterating parquet files to get normalization:  22%|██▏       | 44/199 [00:19<01:20,  1.93it/s]
+Iterating parquet files to get normalization:  23%|██▎       | 45/199 [00:19<01:18,  1.95it/s]
+Iterating parquet files to get normalization:  23%|██▎       | 46/199 [00:20<01:19,  1.93it/s]
+Iterating parquet files to get normalization:  24%|██▎       | 47/199 [00:21<01:40,  1.5
+Iterating parquet files to get normalization:  24%|██▎       | 47/199 [00:23<02:05,  1.21it/s]
+Iterating parquet files to get normalization:  24%|██▍       | 48/199 [00:23<01:35,  1.58it/s]
+Iterating parquet files to get normalization:  25%|██▌       | 50/199 [00:23<01:00,  2.47it/s]
+Iterating parquet files to get normalization:  26%|██▌       | 51/199 [00:23<00:51,  2.88it/s]
+Iterating parquet files to get normalization:  26%|██▌       | 52/199 [00:24<00:51,  2.85it/s]
+Iterating parquet files to get normalization:  27%|██▋       | 53/199 [00:24<00:52,  2.80it/s]
+Iterating parquet files to get normalization:  28%|██▊       | 55/199 [00:26<01:16,  1.89it/s]
+Iterating parquet files to get normalization:  29%|██▊       | 57/199 [00:26<00:52,  2.73it/s]
+Iterating parquet files to get normalization:  29%|██▉       | 58/199 [00:26<00:56,  2.51it/s]
+Iterating parquet files to get normalization:  30%|██▉       | 59/199 [00:27<00:50,  2.78it/s]
+Iterating parquet files to get normalization:  30%|███       | 60/199 [00:27<00:49,  2.78it/s]
+Iterating parquet files to get normalization:  31%|███       | 61/199 [00:27<00:45,  3.04it/s]
+Iterating parquet files to get normalization:  31%|███       | 62/199 [00:28<00:45,  3.00it/s]
+Iterating parquet files to get normalization:  32%|███▏      | 63/199 [00:28<00:43,  3.13it/s]
+Iterating parquet files to get normalization:  32%|███▏      | 64/199 [00:28<00:49,  2.74it/s]
+Iterating parquet files to get normalization:  33%|███▎      | 65/199 [00:28<00:39,  3.42it/s]
+Iterating parquet files to get normalization:  33%|███▎      | 66/199 [00:29<01:01,  2.17it/s]
+Iterating parquet files to get normalization:  34%|███▎      | 67/199 [00:30<00:54,  2.42it/s]
+Iterating parquet files to get normalization:  34%|███▍      | 68/199 [00:30<00:49,  2.63it/s]
+Iterating parquet files to get normalization:  35%|███▍      | 69/199 [00:30<00:53,  2.41it/s]
+Itera
+Iterating parquet files to get normalization:  37%|███▋      | 73/199 [00:28<00:28,  4.3
+Iterating parquet files to get normalization:  36%|███▌      | 71/199 [00:31<00:37,  3.43it/s]
+Iterating parquet files to get normalization:  37%|███▋      | 73/199 [00:31<00:36,  3.45it/s]
+Iterating parquet files to get normalization:  37%|███▋      | 74/199 [00:31<00:32,  3.79it/s]
+Iterating parquet files to get normalization:  38%|███▊      | 75/199 [00:32<00:33,  3.68it/s]
+Iterating parquet files to get normalization:  38%|███▊      | 76/199 [00:32<00:41,  2.93it/s]
+Iterating parquet files to get normalization:  39%|███▊      | 77/199 [00:33<00:44,  2.76it/s]
+Iterating parquet files to get normalization:  39%|███▉      | 78/199 [00:33<00:47,  2.54it/s]
+Iterating parquet files to get normalization:  40%|███▉      | 79/199 [00:34<00:47,  2.54it/s]
+Iterating parquet files to get normalization:  40%|████      | 80/199 [00:34<00:41,  2.88it/s]
+Iterating parquet files to get normalization:  41%|████      | 81/199 [00:34<00:32,  3.60it/s]
+Iterating parquet files to get normalization:  41%|████      | 82/199 [00:34<00:30,  3.82it/s]
+Iterating parquet files to get normalization:  42%|████▏     | 83/199 [00:34<00:29,  3.94it/s]
+Iterating parquet files to get normalization:  42%|████▏     | 84/199 [00:36<01:01,  1.87it/s]
+Iterating parquet files to get normalization:  43%|████▎     | 85/199 [00:36<00:47,  2.41it/s]
+Iterating parquet files to get normalization:  43%|████▎     | 86/199 [00:36<00:45,  2.49it/s]
+Iterating parquet files to get normalization:  44%|████▎     | 87/199 [00:36<00:35,  3.11it/s]
+Iterating parquet files to get normalization:  45%|████▍     | 89/199 [00:37<00:32,  3.34it/s]
+Iterating parquet files to get normalization:  46%|████▌     | 91/199 [00:37<00:25,  4.21it/s]
+Iterating parquet files to get normalization:  46%|████▌     | 92/199 [00:38<00:34,  3.14it/s]
+Iterating parquet files to get normalization:  47%|████▋     | 93/199 [00:38<00:37,  2.81it/s]
+Iterating par
+Iterating parquet files to get normalization:  49%|████▊     | 97/199 [00:38<01:19,  1.29it/s]
+Iterating parquet files to get normalization:  49%|████▉     | 98/199 [00:38<01:
+Iterating parquet files to get normalization:  48%|████▊     | 96/199 [00:41<01:24,  1.21it/s]
+Iterating parquet files to get normalization:  49%|████▊     | 97/199 [00:41<01:03,  1.60it/s]
+Iterating parquet files to get normalization:  49%|████▉     | 98/199 [00:42<01:05,  1.55it/s]
+Iterating parquet files to get normalization:  50%|████▉     | 99/199 [00:42<00:53,  1.86it/s]
+Iterating parquet files to get normalization:  50%|█████     | 100/199 [00:43<00:54,  1.83it/s]
+Iterating parquet files to get normalization:  51%|█████     | 101/199 [00:43<00:44,  2.19it/s]
+Iterating parquet files to get normalization:  51%|█████▏    | 102/199 [00:43<00:36,  2.68it/s]
+Iterating parquet files to get normalization:  52%|█████▏    | 104/199 [00:44<00:23,  4.10it/s]
+Iterating parquet files to get normalization:  53%|█████▎    | 105/199 [00:44<00:29,  3.20it/s]
+Iterating parquet files to get normalization:  53%|█████▎    | 106/199 [00:44<00:29,  3.11it/s]
+Iterating parquet files to get normalization:  54%|█████▍    | 108/199 [00:45<00:19,  4.59it/s]
+Iterating parquet files to get normalization:  55%|█████▍    | 109/199 [00:45<00:18,  4.97it/s]
+Iterating parquet files to get normalization:  55%|█████▌    | 110/199 [00:45<00:18,  4.86it/s]
+Iterating parquet file
+Iterating parquet files to get normalization:  59%|█████▉    | 118/199 [00:43<00:18,  4.40it/s]
+Iterating parquet files to get normalization:  60%|█████▉    | 119/199 [00:44<00:20,  3.90it/s]
+Iterating parquet files to get normalization:  61%|██████    | 121/199 [00:44<00:14,  5.26it/s]
+Iterating parquet files to get normalization:  62%|██████▏   | 124/199 [00:44<00:09,  7.51it/s]
+Iterating parquet files to get normalization:  63%|██████▎   | 125/1
+Iterating parquet files to get normalization:  59%|█████▉    | 117/199 [00:47<00:26,  3.14it/s]
+Iterating parquet files to get normalization:  59%|█████▉    | 118/199 [00:47<00:21,  3.78it/s]
+Iterating parquet files to get normalization:  60%|█████▉    | 119/199 [00:47<00:20,  3.90it/s]
+Iterating parquet files to get normalization:  61%|██████    | 121/199 [00:47<00:13,  5.85it/s]
+Iterating parquet files to get normalization:  61%|██████▏   | 122/199 [00:47<00:13,  5.66it/s]
+Iterating parquet files to get normalization:  62%|██████▏   | 124/199 [00:48<00:09,  7.50it/s]
+Iterating parquet files to get normalization:  63%|██████▎   | 125/199 [00:48<00:13,  5.49it/s]
+Iterating parquet files to get normalization:  64%|██████▍   | 127/199 [00:48<00:10,  6.65it/s]
+Iterating parquet files to get normalization:  64%|██████▍   | 128/199 [00:48<00:10,  6.58it/s]
+Iterating parquet files to get normalization:  65%|██████▍   | 129/199 [00:48<00:10,  6.64it/s]
+Iterating parquet files to get normalization:  65%|██████▌   | 130/199 [00:49<00:11,  5.92it/s]
+Iterating parquet files to get normalization:  66%|██████▌   | 131/199 [00:49<00:11,  5.82it/s]
+Iterating parquet files to get normaliza
+Iterating parquet files to get normalization:  74%|███████▍  | 147/199 [00:48<00:08,  6.15it/s]
+Iterating parquet files to get normalization:  74%|███████▍  | 148/199 [00:49<00:11,  4.36it/s]
+Iterating parquet files to get normalization:  75%|███████▌  | 150/199 [00:49<00:09,  4.95it/s]
+Iterating parquet files to get normalization:  76%|███████▌  | 151/199 [00:49<00:09,  4.98it/s]
+Iterating parquet files to get normalization:  76%|███████▋  | 152/199 [00:49<00:08,  5.39it/s]
+Iterating parquet files to get normalization:  77%|███████▋  | 153/199 [00:50<00:08,  5.21it/s]
+Iterating parquet files to get normalization:  78%|███████▊  | 155/199 [00:50<00:06,  6.33it/s]
+Iterating parquet files to get normalization:  79%|███████▉  | 157/199 [00:50<00:06,  6.47it/s]
+Iterating parquet files to get normalization:  80%|███████▉  | 159/199 [00:50<00:05,  7.87it/s]
+Iterating parquet files to get normalization:  80%|████████  | 160/199 [00:51<00:09,  4.11it/s]
+Iterating parquet files to get normalization:  81%|�
+Iterating parquet files to get normalization:  73%|███████▎  | 146/199 [00:52<00:09,  5.71it/s]
+Iterating parquet files to get normalization:  74%|███████▍  | 147/199 [00:52<00:10,  4.84it/s]
+Iterating parquet files to get normalization:  74%|███████▍  | 148/199 [00:53<00:14,  3.61it/s]
+Iterating parquet files to get normalization:  75%|███████▌  | 150/199 [00:53<00:09,  5.32it/s]
+Iterating parquet files to get normalization:  76%|███████▌  | 151/199 [00:53<00:08,  5.49it/s]
+Iterating parquet files to get normalization:  76%|███████▋  | 152/199 [00:53<00:09,  4.88it/s]
+Iterating parquet files to get normalization:  77%|██████�
+Iterating parquet files to get normalization:  86%|████████▋ | 172/199 [00:53<00:04,  5.51it/s]
+Iterating parquet files to get normalization:  87%|████████▋ | 174/199 [00:54<00:04,  5.18it/s]
+Iterating parquet files to get normalization:  88%|████████▊ | 175/199 [00:54<00:04,  5.40it/s]
+Iterating parquet files to get normalization:  89%|████████▉ | 177/199 [00:54<00:03,  7.06it/s]
+Iterating parquet files to get normalization:  89%|████████▉ | 178/199 [00:54<00:03,  5.84it/s]
+Iterating parquet files to get normalization:  90%|████████▉ | 179/199 [00:55<00:05,  3.97it/s]
+Iterating parquet files to get normalization:  91%|█████████ | 181/199 [00:55<00:03,  5.01it/s]
+Iterating parquet files to get normalization:  91%|█████████▏| 182/199 [00:56<00:04,  3.45it/s]
+Iterating parquet files to get normalization:  92%|█████████▏| 183/199 [00:56<00:04,  3.85it/s]
+Iterating parquet files to get normalization:  92%|█████████▏| 184/199 [00:56<00:03,  3.95it/s]
+Iterating parquet files to get normalization:  94%|█████████▍| 187/199 [00:57<00:02,  5.42it/s]
+Iterating parquet files to get normalization:  94%|█████████▍| 188/199 [00:57<00:01,  5.70it/s]
+Iterating parquet files to get normalization:  95%|█████████▍| 189/199 [00:57<00:01,  6.11it/s]
+Iterating parque
+Iterating parquet files to get normalization:  86%|████████▋ | 172/199 [00:57<00:04,  6.57it/s]
+Iterating parquet files to get normalization:  87%|████████▋ | 174/199 [00:58<00:04,  5.48it/s]
+Iterating parquet files to get normalization:  88%|████████▊ | 175/199 [00:58<00:04,  5.13it/s]
+Iterating parquet files to get normalization:  88%|████████▊ | 176/199 [00:58<00:04,  5.26it/s]
+Iterating parquet files to get normalization:  89%|████████▉ | 178/199 [00:58<00:03,  6.56it/s]
+Iterating parquet files to get normalization:  90%|████████▉ | 179/199 [00:59<00:04,  4.23it/s]
+Iterating parquet files to get normalization:  91%|█████████ | 181/199 [00:59<00:03,  4.62it/s]
+Iterating parquet files to get normalization:  91%|█████████▏| 182/199 [01:00<00:04,  4.10it/s]
+Iterating parquet files to get normalization:  92%|█████████▏| 183/199 [01:00<00:04,  3.89it/s]
+Iterating parquet files to get normalization:  92%|█████████▏| 184/199 [01:00<00:04,  3.56it/s]
+Iterating parquet files to get normalization:  94%|█████2026-09-14 17:58:28,164 | INFO | precompute_text_embeds_direct | Expanded datasets: 127
+2026-09-14 17:58:28,164 | INFO | precompute_text_embeds_direct | Task rows read: 127
+2026-09-14 17:58:28,164 | INFO | precompute_text_embeds_direct | Unique prompts: 6
+2026-09-14 17:58:28,164 | INFO | precompute_text_embeds_direct | Cache dir: posttrain/text_embeds_cache_astribot_multitask_posttrain32
+2026-09-14 17:58:28,164 | INFO | precompute_text_embeds_direct | Cache id: t5_len128.wan22ti2v5b
+2026-09-14 17:58:28,164 | INFO | precompute_text_embeds_direct | Prompt sample 1: "A video recorded from a robot's point of view executing the following instruction: Put the plate into the oven"
+2026-09-14 17:58:28,164 | INFO | precompute_text_embeds_direct | Prompt sample 1 hash: 9a7030300b77c5fbd6e031df1764aef8c18df8b2ebf930f3e0c11770e1df1e5b
+2026-09-14 17:58:28,164 | INFO | precompute_text_embeds_direct | Prompt sample 2: "A video recorded from a robot's point of view executing the following instruction: Move to the fridge, take out the plate with food inside from the opened drawer, then move to the desk and put the plate on the desk"
+2026-09-14 17:58:28,164 | INFO | precompute_text_embeds_direct | Prompt sample 2 hash: 2d3f61b173b3c8964e61fb5c02e84828c2b6732ce9236ddeb10e7a380e2026-09-14 17:58:32,658 | INFO | precompute_text_embeds_direct | Expanded datasets: 127
+2026-09-14 17:58:32,658 | INFO | precompute_text_embeds_direct | Task rows read: 127
+2026-09-14 17:58:32,658 | INFO | precompute_text_embeds_direct | Unique prompts: 6
+2026-09-14 17:58:32,658 | INFO | precompute_text_embeds_direct | Cache dir: posttrain/text_embeds_cache_astribot_multitask_posttrain32
+2026-09-14 17:58:32,658 | INFO | precompute_text_embeds_direct | Cache id: t5_len128.wan22ti2v5b
+2026-09-14 17:58:32,658 | INFO | precompute_text_embeds_direct | Prompt sample 1: "A video recorded from a robot's point of view executing the following instruction: Put the plate into the oven"
+2026-09-14 17:58:32,658 | INFO | precompute_text_embeds_direct | Prompt sample 1 hash: 9a7030300b77c5fbd6e031df1764aef8c18df8b2ebf930f3e0c11770e1df1e5b
+2026-09-14 17:58:32,658 | INFO | precompute_text_embeds_direct | Prompt sample 2: "A video recorded from a robot's point of view executing the following instruction: Move to the fridge, take out the plate with food inside from the opened d2026-09-14 17:58:41,938 | INFO | precompute_text_embeds_direct | Rank 0/1: skipped=6 encode=0
+2026-09-14 17:58:41,939 | INFO | precompute_text_embeds_direct | Finished. wrote=0 skipped=6 over_length=0
+W0914 17:59:04.357000 1077 /data/share/1919650160032350208/users/sty/miniconda3/envs/fastwam/lib/python3.10/site-packages/torch/distributed/run.py:774] 
+W0914 17:59:04.357000 1077 /data/share/1919650160032350208/users/sty/miniconda3/envs/fastwam/lib/python3.10/site-packages/torch/distributed/run.py:774] *****************************************
+W0914 17:59:04.357000 1077 /data/share/1919650160032350208/users/sty/miniconda3/envs/fastwam/lib/python3.10/site-packages/torch/distributed/run.py:774] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0914 17:59:04.357000 1077 /data/share/1919650160032350208/users/sty/miniconda3/envs/fastwam/lib/python3.10/site-packages/torch/distributed/run.py:774] *****************************************
+Traceback (most recent call last):
+  File "/efs/share/1919650160032350208/users/suty11/miniconda3/envs/fastwam/bin/accelerate", line 6, in <module>
+    sys.exit(main())
+  File "/data/share/1919650160032350208/sty/miniconda3/envs/fastwam/lib/python3.10/site-packages/accelerate/commands/accelerate_cli.py", line 50, in main
+    args.func(args)
+  File "/data/share/1919650160032350208/sty/miniconda3/envs/fastwam/lib/python3.10/site-packages/accelerate/commands/launch.py", line 1266, in launch_command
+    deepspeed_launcher(args)
+  File "/data/share/1919650160032350208/sty/miniconda3/envs/fastwam/lib/python3.10/site-packages/accelerate/commands/launch.py", line 952, in deepspeed_launcher
+    distrib_run.run(args)
+  File "/data/share/1919650160032350208/sty/miniconda3/envs/fastwam/lib/python3.10/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/data/share/1919650160032350208/sty/miniconda3/envs/fastwam/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 143, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/data/share/1919650160032350208/sty/miniconda3/envs/fastwam/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 268, in launch_agent
+    result = agent.Traceback (most recent call last):
+  File "/efs/share/1919650160032350208/users/suty11/miniconda3/envs/fastwam/bin/accelerate", line 6, in <module>
+    sys.exit(main())
+  File "/data/share/1919650160032350208/sty/miniconda3/envs/fastwam/lib/python3.10/site-packages/accelerate/commands/accelerate_cli.py", line 50, in main
+    args.func(args)
+  File "/data/share/1919650160032350208/sty/miniconda3/envs/fastwam/lib/python3.10/site-packages/accelerate/commands/launch.py", line 1266, in launch_command
+    deepspeed_launcher(args)
+  File "/data/share/1919650160032350208/sty/miniconda3/envs/fastwam/lib/python3.10/site-packages/accelerate/commands/launch.py", line 952, in deepspeed_launcher
+    distrib_run.run(args)
+  File "/data/share/1919650160032350208/sty/miniconda3/envs/fastwam/lib/python3.10/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/data/share/1919650160032350208/sty/miniconda3/envs/fastwam/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 143, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/data/share/1919650160032350208/sty/miniconda3/envs/fastwam/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 268, in launch_agent
+    result = agent.run()
+  File "/data/share/1919650160032350208/sty/miniconda3/envs/fastwam/lib/python3.10/site-packages/torch/distributed/elastic/metrics/api.py", line 138, in wrapper
+    result = f(*args, **kwargs)
+  File "/data/share/1919650160032350208/sty/miniconda3/envs/fastwam/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 715, in run
+    result = self._invoke_run(role)
+  File "/data/share/1919650160032350208/sty/miniconda3/envs/fastwam/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 873, in _invoke_run
+    self._initialize_workers(self._worker_group)
+  File "/data/share/1919650160032350208/sty/miniconda3/envs/fastwam/lib/python3.10/site-packages/torch/distributed/elastic/metrics/api.py", line 138, in wrapper
+    result = f(*args, **kwargs)
+  File "/data/share/1919650160032350208/sty/miniconda3/envs/fastwam/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 683, in _initialize_workers
+    self._rendezvous(worker_group)
+  File "/data/share/1919650160032350208/sty/miniconda3/envs/fastwam/lib/python3.10/site-packages/torch/distributed/elastic/metrics/api.py", line 138, in wrapper
+    result = f(*args, **kwargs)
+  File "/data/share/1919650160032350208/sty/miniconda3/envs/fastwam/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 498, in _rendezvous
+    rdzv_info = spec.rdzv_handler.next_rendezvous()
+  File "/data/share/1919650160032350208/sty/miniconda3/envs/fastwam/lib/python3.10/site-packages/torch/distributed/elastic/rendezvous/static_tcp_rendezvous.py", line 67, in next_rendezvous
+    self._store = TCPStore(  # type: ignore[call-arg]
+torch.distributed.DistStoreError: Timed out after 901 seconds waiting for clients. 1/2 clients joined.
