@@ -1,23 +1,44 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
-cd "${REPO_ROOT}"
+ROOT=$(cd "$(dirname "$0")/.." && pwd)
+cd "$ROOT"
 
-# ---- Multi-node configuration ----------------------------------------------
-export WAM_NNODES=1
-export WAM_GPUS_PER_NODE=8
-export WAM_BATCH_SIZE="${WAM_BATCH_SIZE:-12}"
-export WAM_GRADIENT_ACCUMULATION_STEPS="${WAM_GRADIENT_ACCUMULATION_STEPS:-1}"
-export WAM_NUM_WORKERS="${WAM_NUM_WORKERS:-16}"
-export WAM_NUM_EPOCHS="${WAM_NUM_EPOCHS:-5}"
-export WAM_RUN_PREPARE="${WAM_RUN_PREPARE:-auto}"
-export WAM_SAVE_EVERY="${WAM_SAVE_EVERY:-10000}"
-export WAM_EVAL_EVERY="${WAM_EVAL_EVERY:-10000}"
+# Paths.
+export DIFFSYNTH_MODEL_BASE_PATH="/efs/share/1919650160032350208/projects/foundation_model/FastWAM/checkpoints"
+export ACTION_DIT_PRETRAINED_PATH=""
+export WAM_PRETRAIN_CKPT=""
+CONFIG="configs/train/astribot_posttrain32.yaml"
+DATASET_CONFIG="configs/data/astribot_posttrain32.yaml"
+ACCELERATE_CONFIG="scripts/accelerate_configs/accelerate_zero1_ds.yaml"
 
-# Keep task instructions explicit because all data from one high-level group
-# is trained with the same text condition.
+# Training.
+BATCH_SIZE=12
+NUM_WORKERS=16
+LEARNING_RATE=2e-4
+WEIGHT_DECAY=1e-2
+NUM_EPOCHS=5
+GRADIENT_ACCUMULATION_STEPS=1
+SAVE_EVERY=10000
+EVAL_EVERY=10000
+PREPARE_DATA=true #是否需要预处理
+
+# Distributed training.
+NNODES=1
+GPUS_PER_NODE=8
+NODE_RANK=0
+MASTER_ADDR=127.0.0.1
+MASTER_PORT=29604
+TOTAL_GPUS=$((NNODES * GPUS_PER_NODE))
+
+export PYTHONPATH="$ROOT/src"
+export LD_LIBRARY_PATH="$CONDA_PREFIX/lib"
+export NNODES GPUS_PER_NODE NODE_RANK MASTER_ADDR MASTER_PORT
+export DIFFSYNTH_SKIP_DOWNLOAD=true
+export TORCH_NCCL_BLOCKING_WAIT=1 TORCH_NCCL_ASYNC_ERROR_HANDLING=1
+export NCCL_IB_GID_INDEX=3 NCCL_NSOCKS_PERTHREAD=1 NCCL_P2P_LEVEL=NVL
+export NCCL_TIMEOUT=10000 NCCL_SOCKET_TIMEOUT_MS=360000 NCCL_NVLS_ENABLE=0
+
 declare -A TASK_INSTRUCTIONS=(
   [fridge]="Move to the fridge, take out the plate with food inside from the opened drawer, then move to the desk and put the plate on the desk"
   [dishwasher]="put the dish into the dishwasher"
@@ -29,115 +50,62 @@ declare -A TASK_INSTRUCTIONS=(
   [sort_blocks]="Put the blue block on the table into the right plate, and the red block into the left plate"
 )
 
-TASKS=(
-  oven_put
-  fridge
-  dishwasher
-  oven_takeout
-  collect_clothes
-  dry_clothes
-  wash_clothes
-)
+TASKS=(oven_put fridge dishwasher oven_takeout collect_clothes dry_clothes wash_clothes)
+if (( $# )); then TASKS=("$@"); fi
 
-# Optional positional arguments run only the requested tasks, for example:
-#   bash task_train_scripts/train_all_astribot_2x8.sh dishwasher dry_clothes
-if [[ "$#" -gt 0 ]]; then
-  TASKS=("$@")
-fi
+source configs/data/astribot_dataset_catalog.sh
 
-LOCAL_PATHS_FILE="${WAM_LOCAL_PATHS_FILE:-${REPO_ROOT}/wam_local_paths.sh}"
-if [[ ! -f "${LOCAL_PATHS_FILE}" ]]; then
-  echo "ERROR: local path config not found: ${LOCAL_PATHS_FILE}" >&2
-  exit 1
-fi
+for task in "${TASKS[@]}"; do
+  export WAM_TASK_NAME="$task"
+  export WAM_TASK_INSTRUCTION="${TASK_INSTRUCTIONS[$task]}"
+  astribot_select_dataset_task "$task"
+  printf -v WAM_DATASET_DIRS_ENV '%s\n' "${WAM_DATASET_DIRS[@]}"
+  export WAM_DATASET_DIRS_ENV
 
-# Read machine-specific model paths once. Dataset paths are selected from the
-# catalog separately for each task below.
-# shellcheck source=/dev/null
-source "${LOCAL_PATHS_FILE}"
-: "${DIFFSYNTH_MODEL_BASE_PATH:?Set DIFFSYNTH_MODEL_BASE_PATH in ${LOCAL_PATHS_FILE}}"
-: "${ACTION_DIT_PRETRAINED_PATH:?Set ACTION_DIT_PRETRAINED_PATH in ${LOCAL_PATHS_FILE}}"
-: "${WAM_PRETRAIN_CKPT:?Set WAM_PRETRAIN_CKPT in ${LOCAL_PATHS_FILE}}"
+  RUN_NAME=astribot_"$task"_posttrain32
+  export WAM_STATS_PATH=runs/"$RUN_NAME"/stats.json
+  export WAM_TEXT_CACHE_DIR=posttrain/text_embeds_cache_"$RUN_NAME"
+  export WAM_OUTPUT_DIR=runs/"$RUN_NAME"/train
+  mkdir -p "$(dirname "$WAM_STATS_PATH")" "$WAM_TEXT_CACHE_DIR" "$WAM_OUTPUT_DIR"
 
-CATALOG="${WAM_DATASET_CATALOG:-${REPO_ROOT}/configs/data/astribot_dataset_catalog.sh}"
-if [[ ! -f "${CATALOG}" ]]; then
-  echo "ERROR: dataset catalog not found: ${CATALOG}" >&2
-  exit 1
-fi
-# shellcheck source=/dev/null
-source "${CATALOG}"
+  if $PREPARE_DATA; then
+    python scripts/precompute_stats_optimize.py \
+      --dataset-yaml "$DATASET_CONFIG" \
+      --output "$WAM_STATS_PATH" \
+      --num-workers 8 \
+      --skip-quantile
 
-for task_name in "${TASKS[@]}"; do
-  if [[ ! -v "ASTRIBOT_DATASET_CATALOG[${task_name}]" ]]; then
-    echo "ERROR: task '${task_name}' is not present in ${CATALOG}" >&2
-    exit 1
+    env WORLD_SIZE=1 RANK=0 LOCAL_RANK=0 MASTER_ADDR=127.0.0.1 MASTER_PORT=29605 \
+      python scripts/precompute_text_embeds_direct.py \
+      --dataset-yaml "$DATASET_CONFIG" \
+      --cache-dir "$WAM_TEXT_CACHE_DIR" \
+      --override-instruction "$WAM_TASK_INSTRUCTION" \
+      --context-len 128 \
+      --batch-size 16 \
+      --model-id Wan-AI/Wan2.2-TI2V-5B \
+      --tokenizer-model-id Wan-AI/Wan2.2-TI2V-5B \
+      --no-redirect-common-files \
+      --skip-existing
   fi
-  if [[ -z "${TASK_INSTRUCTIONS[${task_name}]:-}" ]]; then
-    echo "ERROR: no instruction configured for task '${task_name}'" >&2
-    exit 1
-  fi
+
+  echo "Astribot: $task ($NNODES node x $GPUS_PER_NODE GPU)"
+  accelerate launch \
+    --config_file "$ACCELERATE_CONFIG" \
+    --num_processes "$TOTAL_GPUS" \
+    --num_machines "$NNODES" \
+    --machine_rank "$NODE_RANK" \
+    --main_process_ip "$MASTER_ADDR" \
+    --main_process_port "$MASTER_PORT" \
+    scripts/train.py \
+    --config "$CONFIG" \
+    --output_dir "$WAM_OUTPUT_DIR" \
+    --batch_size "$BATCH_SIZE" \
+    --num_workers "$NUM_WORKERS" \
+    --learning_rate "$LEARNING_RATE" \
+    --weight_decay "$WEIGHT_DECAY" \
+    --num_epochs "$NUM_EPOCHS" \
+    --gradient_accumulation_steps "$GRADIENT_ACCUMULATION_STEPS" \
+    --save_every "$SAVE_EVERY" \
+    --eval_every "$EVAL_EVERY" \
+    --resume "$WAM_PRETRAIN_CKPT"
 done
-
-TEMP_CONFIG_DIR="$(mktemp -d "${TMPDIR:-/tmp}/wam-all-tasks.XXXXXX")"
-trap 'rm -rf "${TEMP_CONFIG_DIR}"' EXIT
-
-write_task_config() {
-  local task_name="$1"
-  local run_name="astribot_${task_name}_posttrain32"
-  local config_path="${TEMP_CONFIG_DIR}/${task_name}.sh"
-
-  # The common launcher sources this temporary file, so each iteration can
-  # override the task without modifying the ignored machine-local config.
-  {
-    printf '%s\n' '#!/usr/bin/env bash'
-    printf 'export DIFFSYNTH_MODEL_BASE_PATH=%q\n' "${DIFFSYNTH_MODEL_BASE_PATH}"
-    printf 'export ACTION_DIT_PRETRAINED_PATH=%q\n' "${ACTION_DIT_PRETRAINED_PATH}"
-    printf 'export WAM_PRETRAIN_CKPT=%q\n' "${WAM_PRETRAIN_CKPT}"
-    printf 'export WAM_TASK_NAME=%q\n' "${task_name}"
-    printf 'export WAM_TASK_INSTRUCTION=%q\n' "${TASK_INSTRUCTIONS[${task_name}]}"
-    printf 'export WAM_NNODES=%q\n' "${WAM_NNODES}"
-    printf 'export WAM_GPUS_PER_NODE=%q\n' "${WAM_GPUS_PER_NODE}"
-    printf 'export WAM_BATCH_SIZE=%q\n' "${WAM_BATCH_SIZE}"
-    printf 'export WAM_GRADIENT_ACCUMULATION_STEPS=%q\n' "${WAM_GRADIENT_ACCUMULATION_STEPS}"
-    printf 'export WAM_NUM_WORKERS=%q\n' "${WAM_NUM_WORKERS}"
-    printf 'export WAM_NUM_EPOCHS=%q\n' "${WAM_NUM_EPOCHS}"
-    printf 'export WAM_RUN_PREPARE=%q\n' "${WAM_RUN_PREPARE}"
-    printf 'export WAM_SAVE_EVERY=%q\n' "${WAM_SAVE_EVERY}"
-    printf 'export WAM_EVAL_EVERY=%q\n' "${WAM_EVAL_EVERY}"
-    printf 'export WAM_RUN_NAME=%q\n' "${run_name}"
-    printf 'export WAM_STATS_PATH=%q\n' "runs/${run_name}/stats.json"
-    printf 'export WAM_TEXT_CACHE_DIR=%q\n' "posttrain/text_embeds_cache_${run_name}"
-    printf 'export WAM_OUTPUT_DIR=%q\n' "./runs/${run_name}/train"
-  } > "${config_path}"
-  printf '%s\n' "${config_path}"
-}
-
-echo "================================================"
-echo "Astribot sequential multi-task training"
-echo "Tasks          : ${TASKS[*]}"
-echo "Nodes x GPUs   : ${WAM_NNODES} x ${WAM_GPUS_PER_NODE}"
-echo "Batch size     : ${WAM_BATCH_SIZE}"
-echo "Grad accum     : ${WAM_GRADIENT_ACCUMULATION_STEPS}"
-echo "Run prepare    : ${WAM_RUN_PREPARE}"
-echo "================================================"
-
-for task_name in "${TASKS[@]}"; do
-  task_config="$(write_task_config "${task_name}")"
-  echo ""
-  echo "================================================"
-  echo "Starting task: ${task_name}"
-  echo "Instruction  : ${TASK_INSTRUCTIONS[${task_name}]}"
-  echo "Config       : ${task_config}"
-  echo "================================================"
-
-  NNODES="${WAM_NNODES}" \
-    GPUS_PER_NODE="${WAM_GPUS_PER_NODE}" \
-    WAM_LOCAL_PATHS_FILE="${task_config}" \
-    bash "${REPO_ROOT}/scripts/train_astribot_posttrain32.sh"
-
-  echo "[INFO] Task completed: ${task_name}"
-done
-
-echo "================================================"
-echo "All requested tasks completed successfully."
-echo "================================================"
