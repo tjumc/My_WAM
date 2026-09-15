@@ -11,9 +11,6 @@ TASKS=(
     oven_put
     fridge
     dishwasher
-    oven_takeout
-    collect_clothes
-    dry_clothes
     wash_clothes
 )
 
@@ -24,7 +21,7 @@ BASE_CONFIG=configs/train/astribot_posttrain32.yaml
 DATASET_CONFIG=configs/data/astribot_posttrain32.yaml
 ACCELERATE_CONFIG=scripts/accelerate_configs/accelerate_zero1_ds.yaml
 
-RUN_NAME=astribot_multitask_posttrain32
+RUN_NAME=small_astribot_multitask_posttrain32
 MULTITASK_CONFIG=runs/$RUN_NAME/astribot_multitask_posttrain32.yaml
 
 export DIFFSYNTH_MODEL_BASE_PATH="/efs/share/1919650160032350208/projects/foundation_model/FastWAM/checkpoints"
@@ -39,20 +36,20 @@ export WAM_OUTPUT_DIR=runs/$RUN_NAME/train
 # Training
 # =========================
 BATCH_SIZE=12
-NUM_WORKERS=4
+NUM_WORKERS=16
 LEARNING_RATE=2e-4
 WEIGHT_DECAY=1e-2
-NUM_EPOCHS=10
+NUM_EPOCHS=5
 GRADIENT_ACCUMULATION_STEPS=1
-SAVE_EVERY=100000
-EVAL_EVERY=100000
+SAVE_EVERY=5000
+EVAL_EVERY=5000
 
-PREPARE_DATA=false # 是否需要预处理
+PREPARE_DATA=true # 是否需要预处理
 
 # =========================
 # Distributed
 # =========================
-export NNODES=2
+export NNODES=1
 export GPUS_PER_NODE=8
 export TOTAL_GPUS=$((NNODES * GPUS_PER_NODE))
 
@@ -88,7 +85,7 @@ export NCCL_NVLS_ENABLE=0
 # =========================
 # Collect multi-task datasets
 # =========================
-source configs/data/astribot_dataset_catalog.sh
+source configs/data/astribot_small_dataset_catalog.sh
 
 ALL_DATASET_DIRS=()
 

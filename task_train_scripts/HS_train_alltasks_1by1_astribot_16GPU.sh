@@ -6,7 +6,7 @@ cd "$ROOT"
 
 # Paths.
 export DIFFSYNTH_MODEL_BASE_PATH="/efs/share/1919650160032350208/projects/foundation_model/FastWAM/checkpoints"
-export ACTION_DIT_PRETRAINED_PATH=""
+export ACTION_DIT_PRETRAINED_PATH="/efs/share/1919650160032350208/users/machong14/wam/checkpoints/ActionDiT_linear_interp_Wan22_alphascale_1024hdim.pt"
 export WAM_PRETRAIN_CKPT=""
 CONFIG="configs/train/astribot_posttrain32.yaml"
 DATASET_CONFIG="configs/data/astribot_posttrain32.yaml"
@@ -17,19 +17,29 @@ BATCH_SIZE=12
 NUM_WORKERS=16
 LEARNING_RATE=2e-4
 WEIGHT_DECAY=1e-2
-NUM_EPOCHS=5
+NUM_EPOCHS=10
 GRADIENT_ACCUMULATION_STEPS=1
 SAVE_EVERY=10000
 EVAL_EVERY=10000
 PREPARE_DATA=true #是否需要预处理
 
 # Distributed training.
-NNODES=1
-GPUS_PER_NODE=8
-NODE_RANK=0
-MASTER_ADDR=127.0.0.1
-MASTER_PORT=29604
-TOTAL_GPUS=$((NNODES * GPUS_PER_NODE))
+export NNODES=2
+export GPUS_PER_NODE=8
+export TOTAL_GPUS=$((NNODES * GPUS_PER_NODE))
+export NODE_RANK="${NODE_RANK:-${VC_TASK_INDEX:-${MACHINE_RANK:-0}}}"
+if [[ -z "${MASTER_ADDR:-}" ]]; then
+    if [[ -f /etc/volcano/worker.host ]]; then
+        MASTER_ADDR="$(awk 'NF {print $1; exit}' /etc/volcano/worker.host)"
+    elif ((NNODES == 1)); then
+        MASTER_ADDR=127.0.0.1
+    else
+        echo "ERROR: MASTER_ADDR is required for multi-node training." >&2
+        exit 1
+    fi
+fi
+export MASTER_ADDR
+export MASTER_PORT="${MASTER_PORT:-${WAM_MASTER_PORT:-29604}}"
 
 export PYTHONPATH="$ROOT/src"
 export LD_LIBRARY_PATH="$CONDA_PREFIX/lib"
@@ -50,7 +60,7 @@ declare -A TASK_INSTRUCTIONS=(
   [sort_blocks]="Put the blue block on the table into the right plate, and the red block into the left plate"
 )
 
-TASKS=(oven_put fridge dishwasher oven_takeout collect_clothes dry_clothes wash_clothes)
+TASKS=(fridge collect_clothes dry_clothes wash_clothes)
 if (( $# )); then TASKS=("$@"); fi
 
 source configs/data/astribot_dataset_catalog.sh
@@ -74,7 +84,7 @@ for task in "${TASKS[@]}"; do
       --output "$WAM_STATS_PATH" \
       --num-workers 8 \
       --skip-quantile
-
+  
     env WORLD_SIZE=1 RANK=0 LOCAL_RANK=0 MASTER_ADDR=127.0.0.1 MASTER_PORT=29605 \
       python scripts/precompute_text_embeds_direct.py \
       --dataset-yaml "$DATASET_CONFIG" \
