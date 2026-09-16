@@ -24,6 +24,7 @@ class RobotVideoDataset(torch.utils.data.Dataset):
         self,
         dataset_dirs,
         shape_meta,
+        episodes=None,
         num_frames=33,
         video_size=[384, 640],
         camera_key=None,
@@ -55,6 +56,7 @@ class RobotVideoDataset(torch.utils.data.Dataset):
 
         self.lerobot_dataset = BaseLerobotDataset(
             dataset_dirs=dataset_dirs,
+            episodes=episodes,
             shape_meta=OmegaConf.to_container(shape_meta, resolve=True),
             obs_size=num_frames,
             action_size=num_frames - 1,

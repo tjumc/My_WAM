@@ -1,0 +1,250 @@
+output_dir: ./runs/robotwin/default
+
+# dataloading
+batch_size: 12
+num_workers: 16
+
+# scheduler
+lr_scheduler_type: cosine
+learning_rate: 2.0e-4
+num_epochs: 5
+max_steps: null
+log_every: 10
+save_every: 5000
+eval_every: 2500
+eval_num_inference_steps: 10
+
+# training
+gradient_accumulation_steps: 1
+mixed_precision: bf16
+seed: 42
+max_grad_norm: 1.0
+weight_decay: 1.0e-2
+resume: null
+
+data:
+  train:
+    episodes:
+      # beat_block_hammer
+      - 550
+      - 551
+      - 552
+      - 553
+      - 554
+      - 555
+      - 556
+      - 557
+      - 558
+      - 559
+      - 560
+      - 561
+      - 562
+      - 563
+      - 564
+      - 565
+      - 566
+      - 567
+      - 568
+      - 569
+
+      # handover_mic
+      - 4950
+      - 4951
+      - 4952
+      - 4953
+      - 4954
+      - 4955
+      - 4956
+      - 4957
+      - 4958
+      - 4959
+      - 4960
+      - 4961
+      - 4962
+      - 4963
+      - 4964
+      - 4965
+      - 4966
+      - 4967
+      - 4968
+      - 4969
+
+      # open_microwave
+      - 9350
+      - 9351
+      - 9352
+      - 9353
+      - 9354
+      - 9355
+      - 9356
+      - 9357
+      - 9358
+      - 9359
+      - 9360
+      - 9361
+      - 9362
+      - 9363
+      - 9364
+      - 9365
+      - 9366
+      - 9367
+      - 9368
+      - 9369
+
+      # stack_blocks_three
+      - 24200
+      - 24201
+      - 24202
+      - 24203
+      - 24204
+      - 24205
+      - 24206
+      - 24207
+      - 24208
+      - 24209
+      - 24210
+      - 24211
+      - 24212
+      - 24213
+      - 24214
+      - 24215
+      - 24216
+      - 24217
+      - 24218
+      - 24219
+    _target_: fastwam.datasets.lerobot.robot_video_dataset.RobotVideoDataset
+    dataset_dirs: [
+        "/efs/share/1919650160032350208/projects/foundation_model/wzy/FastWAM/data/robotwin2.0/robotwin2.0"
+    ]
+    shape_meta:
+      images:
+        - key: cam_high
+          raw_shape: [3, 480, 640]
+          shape: [3, 240, 320]
+        - key: cam_left_wrist
+          raw_shape: [3, 480, 640]
+          shape: [3, 240, 320]
+        - key: cam_right_wrist
+          raw_shape: [3, 480, 640]
+          shape: [3, 240, 320]
+      action:
+        - key: default
+          raw_shape: 14
+          shape: 14
+      state:
+        - key: default
+          raw_shape: 14
+          shape: 14
+    num_frames: 33
+    global_sample_stride: 1
+    video_tolerance_s: 1.0e-3
+    action_video_freq_ratio: 4
+    video_size: [384, 320]
+    camera_key: null
+    val_set_proportion: 0.01
+    is_training_set: true
+    pretrained_norm_stats: /efs/share/1919650160032350208/projects/foundation_model/wzy/FastWAM/runs/robotw_stats.json
+    skip_padding_as_possible: false
+    concat_multi_camera: robotwin
+    processor:
+      _target_: fastwam.datasets.lerobot.processors.fastwam_processor.FastWAMProcessor
+      shape_meta: ${data.train.shape_meta}
+      num_obs_steps: ${data.train.num_frames}
+      num_output_cameras: 3
+      action_output_dim: 14
+      proprio_output_dim: 14
+      action_state_transforms: null
+      use_stepwise_action_norm: false
+      norm_default_mode: z-score
+      norm_exception_mode: null
+      action_state_merger:
+        _target_: fastwam.datasets.lerobot.transforms.action_state_merger.ConcatLeftAlign
+      train_transforms:
+        - _target_: fastwam.datasets.lerobot.transforms.image.ToTensor
+        - _target_: torchvision.transforms.Resize
+          size: [240, 320]
+      val_transforms:
+        - _target_: fastwam.datasets.lerobot.transforms.image.ToTensor
+        - _target_: torchvision.transforms.Resize
+          size: [240, 320]
+    text_embedding_cache_dir: /efs/share/1919650160032350208/projects/foundation_model/wzy/FastWAM/data/text_embeds_cache/robotwin
+    context_len: 128
+
+  val:
+    _target_: fastwam.datasets.lerobot.robot_video_dataset.RobotVideoDataset
+    dataset_dirs: ${data.train.dataset_dirs}
+    shape_meta: ${data.train.shape_meta}
+    num_frames: ${data.train.num_frames}
+    global_sample_stride: ${data.train.global_sample_stride}
+    video_tolerance_s: ${data.train.video_tolerance_s}
+    action_video_freq_ratio: ${data.train.action_video_freq_ratio}
+    video_size: ${data.train.video_size}
+    camera_key: ${data.train.camera_key}
+    val_set_proportion: ${data.train.val_set_proportion}
+    is_training_set: false
+    pretrained_norm_stats: ${data.train.pretrained_norm_stats}
+    skip_padding_as_possible: ${data.train.skip_padding_as_possible}
+    concat_multi_camera: ${data.train.concat_multi_camera}
+    processor: ${data.train.processor}
+    text_embedding_cache_dir: ${data.train.text_embedding_cache_dir}
+    context_len: ${data.train.context_len}
+
+model:
+  _target_: fastwam.runtime.create_fastwam
+  model_id: Wan-AI/Wan2.2-TI2V-5B
+  tokenizer_model_id: Wan-AI/Wan2.1-T2V-1.3B
+  tokenizer_max_len: 128
+  load_text_encoder: false
+  proprio_dim: ${data.train.processor.proprio_output_dim}
+  redirect_common_files: true
+  mot_checkpoint_mixed_attn: false
+  action_dit_pretrained_path: checkpoints/ActionDiT_linear_interp_Wan22_alphascale_1024hdim.pt
+  skip_dit_load_from_pretrain: false
+
+  video_dit_config:
+    has_image_input: false
+    patch_size: [1, 2, 2]
+    in_dim: 48
+    hidden_dim: 3072
+    ffn_dim: 14336
+    freq_dim: 256
+    text_dim: 4096
+    out_dim: 48
+    num_heads: 24
+    attn_head_dim: 128
+    num_layers: 30
+    eps: 1.0e-6
+    seperated_timestep: true
+    require_clip_embedding: false
+    require_vae_embedding: false
+    fuse_vae_embedding_in_latents: true
+    use_gradient_checkpointing: ${model.mot_checkpoint_mixed_attn}
+    video_attention_mask_mode: first_frame_causal
+    action_conditioned: false
+    action_dim: ${data.train.processor.action_output_dim}
+    action_group_causal_mask_mode: group_diagonal
+
+  action_dit_config:
+    action_dim: ${data.train.processor.action_output_dim}
+    hidden_dim: 1024
+    ffn_dim: 4096
+    num_heads: 24
+    attn_head_dim: 128
+    num_layers: 30
+    text_dim: 4096
+    freq_dim: 256
+    eps: 1.0e-6
+    use_gradient_checkpointing: ${model.mot_checkpoint_mixed_attn}
+
+  video_scheduler:
+    train_shift: 5.0
+    infer_shift: 5.0
+    num_train_timesteps: 1000
+
+  action_scheduler:
+    train_shift: 5.0
+    infer_shift: 5.0
+    num_train_timesteps: 1000
+
+  loss:
+    lambda_action: 1.0

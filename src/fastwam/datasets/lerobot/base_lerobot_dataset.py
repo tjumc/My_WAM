@@ -23,6 +23,7 @@ class BaseLerobotDataset(torch.utils.data.Dataset):
 
         # shapes
         shape_meta: Dict[str, Any],
+        episodes:Optional[List[int]]=None,
         action_size: int = 1, 
         past_action_size: int = 0, # Excludes the current frame
         obs_size: int = 1, # should be 
@@ -161,11 +162,16 @@ class BaseLerobotDataset(torch.utils.data.Dataset):
         # Match the VLA pretrain dataloader: always load full datasets and avoid
         # episode-subset filtering. Filtering rewrites the HF row coordinate system,
         # which breaks v3 metadata indices on some XDOF datasets.
-        episodes = None
-
+        episodes_filter = None
+        if episodes is not None:
+            assert len(self.dataset_dirs) == 1
+            episode_filter = {
+                self.dataset_dirs[0]:[int(x) for x in episodes]
+            }
+        
         self.multi_dataset = MultiLeRobotDataset(
             dataset_dirs=self.dataset_dirs,
-            episodes=episodes,
+            episodes=episode_filter,
             delta_timestamps=delta_timestamps,
             tolerances_s=dict.fromkeys(self.dataset_dirs, self.video_tolerance_s),
             video_backend=self.video_backend,
