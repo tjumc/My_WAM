@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import List, Literal, Dict, Optional, Any, DefaultDict
 from tqdm import tqdm
 from .lerobot.lerobot_dataset import LeRobotDatasetMetadata, MultiLeRobotDataset, STATE_ACTION_DIM_SLICE
-
+from omegaconf import ListConfig
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import traceback
 from fastwam.utils.logging_config import get_logger
@@ -162,11 +162,18 @@ class BaseLerobotDataset(torch.utils.data.Dataset):
         # Match the VLA pretrain dataloader: always load full datasets and avoid
         # episode-subset filtering. Filtering rewrites the HF row coordinate system,
         # which breaks v3 metadata indices on some XDOF datasets.
-        episodes_filter = None
+        episode_filter = None
         if episodes is not None:
             assert len(self.dataset_dirs) == 1
+            expanded_episodes = []
+            for item in episodes:
+                if isinstance(item, (list, tuple, ListConfig)):
+                    start, end = item
+                    expanded_episodes.extend(range(int(start), int(end) + 1))
+                else:
+                    expanded_episodes.append(int(item))
             episode_filter = {
-                self.dataset_dirs[0]:[int(x) for x in episodes]
+                self.dataset_dirs[0]: expanded_episodes
             }
         
         self.multi_dataset = MultiLeRobotDataset(

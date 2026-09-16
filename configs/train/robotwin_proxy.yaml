@@ -25,93 +25,10 @@ resume: null
 data:
   train:
     episodes:
-      # beat_block_hammer
-      - 550
-      - 551
-      - 552
-      - 553
-      - 554
-      - 555
-      - 556
-      - 557
-      - 558
-      - 559
-      - 560
-      - 561
-      - 562
-      - 563
-      - 564
-      - 565
-      - 566
-      - 567
-      - 568
-      - 569
-
-      # handover_mic
-      - 4950
-      - 4951
-      - 4952
-      - 4953
-      - 4954
-      - 4955
-      - 4956
-      - 4957
-      - 4958
-      - 4959
-      - 4960
-      - 4961
-      - 4962
-      - 4963
-      - 4964
-      - 4965
-      - 4966
-      - 4967
-      - 4968
-      - 4969
-
-      # open_microwave
-      - 9350
-      - 9351
-      - 9352
-      - 9353
-      - 9354
-      - 9355
-      - 9356
-      - 9357
-      - 9358
-      - 9359
-      - 9360
-      - 9361
-      - 9362
-      - 9363
-      - 9364
-      - 9365
-      - 9366
-      - 9367
-      - 9368
-      - 9369
-
-      # stack_blocks_three
-      - 24200
-      - 24201
-      - 24202
-      - 24203
-      - 24204
-      - 24205
-      - 24206
-      - 24207
-      - 24208
-      - 24209
-      - 24210
-      - 24211
-      - 24212
-      - 24213
-      - 24214
-      - 24215
-      - 24216
-      - 24217
-      - 24218
-      - 24219
+      - [550, 599]       # beat_block_hammer, clean
+      - [4950, 4999]     # handover_mic, clean
+      - [9350, 9399]     # open_microwave, clean
+      - [24200, 24249]   # stack_blocks_three, clean
     _target_: fastwam.datasets.lerobot.robot_video_dataset.RobotVideoDataset
     dataset_dirs: [
         "/efs/share/1919650160032350208/projects/foundation_model/wzy/FastWAM/data/robotwin2.0/robotwin2.0"
