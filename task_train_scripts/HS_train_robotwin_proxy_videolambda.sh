@@ -40,8 +40,8 @@ fi
 
 # Wan2.2 base model and ActionDiT initialization.
 export DIFFSYNTH_MODEL_BASE_PATH="/efs/share/1919650160032350208/projects/foundation_model/FastWAM/checkpoints"
-CONFIG="configs/train/robotwin_proxy.yaml"
-OUTPUT_DIR="runs/robotwin_proxy"
+CONFIG="configs/train/robotwin_proxy_videolambda05.yaml"
+OUTPUT_DIR="runs/robotwin_proxy_lambda_video05"
 mkdir -p "${OUTPUT_DIR}"
 
 echo "RoboTwin: node ${NODE_RANK}/${NNODES}, GPUs ${GPUS_PER_NODE}, master ${MASTER_ADDR}:${MASTER_PORT}"
@@ -58,7 +58,7 @@ exec accelerate launch \
   scripts/train.py \
   --config "$CONFIG" \
   --batch_size 12 \
-  --num_workers 16 \
+  --num_workers 4 \
   --learning_rate 2e-4 \
   --weight_decay 1e-2 \
   --num_epochs 5 \
