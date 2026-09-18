@@ -1,7 +1,7 @@
 import sys
 from pathlib import Path
 # Add the absolute path of RoboTwin
-robowin_root = Path("/home/ubuntu/RoboTwin")
+robowin_root = Path("/media/jz08/49630fca-f8b9-4c76-a173-2bcf51fee8a9/sim_robotwin_org/RoboTwin")
 # Ensure RoboTwin root is the first search in order to use envs
 if str(robowin_root) not in sys.path:
     sys.path.insert(0, str(robowin_root))
@@ -429,7 +429,7 @@ def _log_results(metrics, log_path):
 def main():
     parser = argparse.ArgumentParser(description="Evaluate a trained model on multistep sequences with language goals.")
     parser.add_argument("--host", default='0.0.0.0', help="Your client host ip")
-    parser.add_argument("--port", default='8001', help="Your client port")
+    parser.add_argument("--port", default='8765', help="Your client port")
     parser.add_argument("--eval_log_dir", default='/home/dodo/fyc/HeteroDiffusionPolicy/AbsEEFFlowV4/runnings/RoboTwin/', type=str, help="Where to log the evaluation results.")
     parser.add_argument("--device", default=0, type=int, help="CUDA device")
     parser.add_argument("--num_episodes", default=1000, type=int)

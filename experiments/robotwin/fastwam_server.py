@@ -18,7 +18,7 @@ from pathlib import Path
 
 # 必须放最前面
 os.environ["MODELSCOPE_NO_DOWNLOAD"] = "1"
-os.environ["DIFFSYNTH_MODEL_BASE_PATH"] = "/home/ubuntu/zhangjj/FastWAM/"
+os.environ["DIFFSYNTH_MODEL_BASE_PATH"] = "/media/jz08/49630fca-f8b9-4c76-a173-2bcf51fee8a9/wam_ckpt/model_components"
 os.environ["TRANSFORMERS_OFFLINE"] = "1"
 os.environ["HF_HUB_OFFLINE"] = "1"
 
