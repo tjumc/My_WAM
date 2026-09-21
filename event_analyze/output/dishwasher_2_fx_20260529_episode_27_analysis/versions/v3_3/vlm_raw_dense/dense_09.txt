@@ -1,0 +1,17 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "out",
+  "relative_motion": "moving_out",
+  "right_hand_relation": "pulling_cutlery_basket",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 1, 2, 3],
+  "evidence": [
+    "在 t0 (1014) 和 t1 (1026) 期间，head camera 和 right camera 均清晰显示 cutlery_basket 位于洗碗机内部深处。",
+    "从 t2 (1039) 到 t3 (1051)，右手机械臂抓住 cutlery_basket 并将其向机器人方向（向外）拉动，basket 明显从内部移动到了靠近边缘的位置。",
+    "在 t4 (1064) 及之后的帧中，cutlery_basket 已经完全移出洗碗机视野，表明位移动作已完成。",
+    "整个过程中，cutlery_basket 相对于洗碗机主体发生了连续的向外位移。"
+  ],
+  "visibility": "good"
+}
+```

@@ -1,0 +1,17 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "in",
+  "relative_motion": "stationary",
+  "right_hand_relation": "none",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 9],
+  "evidence": [
+    "在 t0 (frame 300) 到 t9 (frame 434) 的整个过程中，dish_rack（下层碗篮）始终停留在洗碗机内部，位置未发生明显变化。",
+    "cutlery_basket（餐具篮）位于 dish_rack 内部，随着 dish_rack 保持静止，未观察到其相对于洗碗机或碗篮发生移动。",
+    "机器人右臂在序列中（如 t5-t9）虽然在洗碗机上方进行动作，但并未接触或拉动 cutlery_basket。",
+    "参照物 dish_rack 没有移动，因此不存在 cutlery_basket 随其移动的情况。"
+  ],
+  "visibility": "good"
+}
+```

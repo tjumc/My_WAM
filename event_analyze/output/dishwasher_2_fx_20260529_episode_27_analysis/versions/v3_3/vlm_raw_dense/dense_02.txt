@@ -1,0 +1,16 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "out",
+  "relative_motion": "moving_out",
+  "right_hand_relation": "pulling_cutlery_basket",
+  "confidence": 0.95,
+  "evidence_time_indices": [5, 6, 7, 8],
+  "evidence": [
+    "在 t5 (494) 到 t6 (509) 期间，右侧视角显示 cutlery_basket 开始从 dish_rack 内部向外滑出，位置明显变化。",
+    "在 t7 (524) 到 t8 (539) 期间，cutlery_basket 继续向洗碗机外部移动，大部分已经移出内部轨道。",
+    "在 t9 (554) 时，cutlery_basket 已经完全移出，位于洗碗机外部右侧区域，完成了 'moving_out' 动作。"
+  ],
+  "visibility": "good"
+}
+```

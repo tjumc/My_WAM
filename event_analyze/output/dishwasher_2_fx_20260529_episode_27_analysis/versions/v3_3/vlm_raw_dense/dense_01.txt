@@ -1,0 +1,17 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "in",
+  "relative_motion": "stationary",
+  "right_hand_relation": "none",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 9],
+  "evidence": [
+    "从 t0 到 t9，cutlery_basket（餐具篮）始终位于洗碗机内部的固定位置，相对于洗碗机主体和 dish_rack 没有发生位移。",
+    "机器人右手（right arm）在序列中执行了抓取盘子的动作，但并未接触或移动 cutlery_basket。",
+    "在 t3 到 t5 期间，虽然相机视角发生了剧烈移动（可能是机器人移动头部或身体靠近），但 cutlery_basket 在画面中的相对位置保持稳定，未随镜头移动而改变其在洗碗机内的位置。",
+    "整个序列中，cutlery_basket 一直处于静止状态，等待被装载或未被触碰。"
+  ],
+  "visibility": "good"
+}
+```

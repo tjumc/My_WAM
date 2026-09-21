@@ -1,0 +1,17 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "in",
+  "relative_motion": "stationary",
+  "right_hand_relation": "holding_utensil",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 9],
+  "evidence": [
+    "在 t0 (frame 834) 时，cutlery_basket（餐具篮）位于洗碗机内部（dish_rack）中，处于静止状态。",
+    "在 t0 至 t5 (frame 834-908) 期间，机器人右手正在操作盘子上的叉子，并未接触餐具篮，篮子的位置相对于洗碗机框架没有变化。",
+    "在 t6 (frame 923) 之后，视角切换，但餐具篮依然停留在洗碗机内部的同一位置，未发生位移。",
+    "整个序列中，cutlery_basket 始终固定在 dish_rack 内，没有表现出 moving_in 或 moving_out 的连续位移特征。"
+  ],
+  "visibility": "good"
+}
+```

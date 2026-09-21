@@ -1,0 +1,17 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "in",
+  "relative_motion": "stationary",
+  "right_hand_relation": "pulling_cutlery_basket",
+  "confidence": 0.9,
+  "evidence_time_indices": [7, 8, 9],
+  "evidence": [
+    "在t7(f682)至t9(f705)期间，右侧机械臂伸入洗碗机内部，其末端执行器与餐具篮（cutlery_basket）发生接触并施加向外的拉力。",
+    "尽管机械臂在拉动餐具篮，但餐具篮相对于其所在的下层碗篮（dish_rack）框架并未发生明显的位移，餐具篮仍处于原位。",
+    "在t0至t6期间，机械臂正在处理台面上的餐具，未与洗碗机内的餐具篮发生交互，餐具篮保持静止。",
+    "整体序列中，餐具篮相对于dish_rack的位置没有发生连续的空间移动，符合stationary的定义。"
+  ],
+  "visibility": "good"
+}
+```

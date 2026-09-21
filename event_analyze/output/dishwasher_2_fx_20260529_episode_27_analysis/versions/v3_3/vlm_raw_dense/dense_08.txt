@@ -1,0 +1,17 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "out",
+  "relative_motion": "moving_out",
+  "right_hand_relation": "pulling_cutlery_basket",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 2, 4, 9],
+  "evidence": [
+    "t0 (Frame 954): cutlery_basket 位于洗碗机内部深处，右侧机械臂正在接触篮子。",
+    "t2 (Frame 984): 篮子被拉出一半，大部分结构已移出洗碗机内部，相对于洗碗机主体有明显位移。",
+    "t4 (Frame 1014): 篮子几乎完全被拉出，悬空在洗碗机外部。",
+    "t9 (Frame 1088): 篮子已完全移出画面或被放置在外部台面上，洗碗机内部变空。"
+  ],
+  "visibility": "good"
+}
+```

@@ -1,0 +1,17 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "out",
+  "relative_motion": "moving_out",
+  "right_hand_relation": "pulling_cutlery_basket",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 4, 8, 9],
+  "evidence": [
+    "t0 (frame 894): 餐具篮 (cutlery_basket) 位于洗碗机内部深处，与下层碗篮 (dish_rack) 位置相对固定。",
+    "t4 (frame 954): 随着下层碗篮被拉出，餐具篮随之下层碗篮一起向外部移动，位置明显比初始状态更靠近边缘。",
+    "t8 (frame 1013): 下层碗篮和餐具篮已大部分移出洗碗机主体，处于完全拉出的状态。",
+    "t9 (frame 1028): 餐具篮持续保持在外部位置，相对于洗碗机内壁完成了显著的向外位移。"
+  ],
+  "visibility": "good"
+}
+```
