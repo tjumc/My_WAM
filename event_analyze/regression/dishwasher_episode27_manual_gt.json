@@ -1,0 +1,17 @@
+{
+  "episode": "dishwasher_2_fx_20260529_episode_27",
+  "provenance": "manual_video_review",
+  "used_by_pipeline": false,
+  "steps": [
+    {"skill_type": "navigate_to_station", "instruction_zh": "机器人移动到桌面前"},
+    {"skill_type": "open_dishwasher_door", "instruction_zh": "机器人用右手打开洗碗机门"},
+    {"skill_type": "pull_out_dish_rack", "instruction_zh": "机器人用右手拉出碗篮"},
+    {"skill_type": "pull_out_cutlery_basket", "instruction_zh": "机器人用右手拉出餐具篮"},
+    {"skill_type": "place_knife_in_cutlery_basket", "instruction_zh": "机器人用右手夹取刀放到餐具篮中"},
+    {"skill_type": "place_fork_in_cutlery_basket", "instruction_zh": "机器人用右手夹取叉子放到餐具篮中"},
+    {"skill_type": "push_in_cutlery_basket", "instruction_zh": "机器人用右手推入餐具篮"},
+    {"skill_type": "place_plate_in_dish_rack", "instruction_zh": "机器人用右手夹取盘子放到碗篮中"},
+    {"skill_type": "push_in_dish_rack", "instruction_zh": "机器人用右手推入碗篮"},
+    {"skill_type": "close_dishwasher_door", "instruction_zh": "机器人用右手合上洗碗机门"}
+  ]
+}
