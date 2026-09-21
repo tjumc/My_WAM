@@ -11,7 +11,8 @@ event_analyze/
 ├── versions/
 │   ├── v1/          # archived baseline
 │   ├── v2/          # archived conservative-event version
-│   └── v2_1/        # current active version
+│   ├── v2_1/        # archived semantic-window version
+│   └── v2_2/        # current active version
 └── output/
     └── <episode>_analysis/
         ├── candidate_events.json
@@ -21,15 +22,16 @@ event_analyze/
         └── versions/
             ├── v1/
             ├── v2/
-            └── v2_1/
+            ├── v2_1/
+            └── v2_2/
 ```
 
 共享 proposal 只生成一次。不同版本只把自己的结果写入 `output/<episode>_analysis/versions/<version>/`。
 
-当前推荐运行 V2.1：
+当前推荐运行 V2.2：
 
 ```bash
-bash versions/v2_1/run.sh \
+bash versions/v2_2/run.sh \
   /path/to/episode.hdf5 \
   output/dishwasher_2_fx_20260529_episode_27_analysis \
   "put the dish into the dishwasher" \
