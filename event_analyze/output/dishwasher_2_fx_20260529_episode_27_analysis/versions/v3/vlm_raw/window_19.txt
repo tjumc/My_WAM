@@ -1,0 +1,61 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "in",
+    "right_hand": "approaching",
+    "left_hand": "approaching",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "closing",
+    "dish_rack": "in",
+    "cutlery_basket": "in",
+    "right_hand": "contact_door",
+    "left_hand": "approaching",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.90,
+    "right_hand": 0.90,
+    "left_hand": 0.90,
+    "knife_location": 0.50,
+    "fork_location": 0.50,
+    "plate_location": 0.50
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.90,
+    "right_hand": 0.95,
+    "left_hand": 0.90,
+    "knife_location": 0.50,
+    "fork_location": 0.50,
+    "plate_location": 0.50
+  },
+  "visible_entities": [
+    "dish_rack",
+    "cutlery_basket",
+    "right_hand",
+    "left_hand"
+  ],
+  "evidence": [
+    "Head camera shows dishwasher door moving from fully open to a downward closing angle.",
+    "Right hand is visible contacting the dishwasher door handle in the final frame.",
+    "Dish rack and cutlery basket are visible inside the open dishwasher.",
+    "Left hand is visible hovering near the machine but not making contact."
+  ],
+  "window_quality": "good"
+}
+```

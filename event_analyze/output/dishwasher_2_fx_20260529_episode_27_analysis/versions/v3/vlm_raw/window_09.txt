@@ -1,0 +1,63 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "uncertain",
+    "right_hand": "holding_knife",
+    "left_hand": "free",
+    "knife_location": "right_hand",
+    "fork_location": "tabletop",
+    "plate_location": "tabletop"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "uncertain",
+    "right_hand": "holding_knife",
+    "left_hand": "free",
+    "knife_location": "right_hand",
+    "fork_location": "tabletop",
+    "plate_location": "tabletop"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.5,
+    "right_hand": 0.9,
+    "left_hand": 0.95,
+    "knife_location": 0.9,
+    "fork_location": 0.95,
+    "plate_location": 0.95
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.5,
+    "right_hand": 0.9,
+    "left_hand": 0.95,
+    "knife_location": 0.9,
+    "fork_location": 0.95,
+    "plate_location": 0.95
+  },
+  "visible_entities": [
+    "dish_rack",
+    "right_hand",
+    "left_hand",
+    "knife",
+    "plate",
+    "fork"
+  ],
+  "evidence": [
+    "Right hand (bottom row) clearly holds a knife with a black handle throughout the window.",
+    "A pink plate and a fork are visible on the table surface in head and right camera views.",
+    "The dishwasher dish rack is pulled out and visible in the head camera view.",
+    "The left hand remains open and free, hovering near the rack in head view."
+  ],
+  "window_quality": "good"
+}
+```

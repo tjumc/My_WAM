@@ -1,0 +1,60 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "holding_fork",
+    "left_hand": "contact_plate",
+    "knife_location": "uncertain",
+    "fork_location": "right_hand",
+    "plate_location": "left_hand"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "contact_plate",
+    "left_hand": "contact_plate",
+    "knife_location": "uncertain",
+    "fork_location": "plate",
+    "plate_location": "left_hand"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.3,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.2,
+    "fork_location": 0.95,
+    "plate_location": 0.95
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.3,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.2,
+    "fork_location": 0.95,
+    "plate_location": 0.95
+  },
+  "visible_entities": [
+    "dish_rack",
+    "plate",
+    "fork"
+  ],
+  "evidence": [
+    "Head view shows the dishwasher rack is fully extended (in) and the door is open throughout the sequence.",
+    "Right hand view clearly shows the fork gripper holding a fork, which is placed onto a pink plate held by the left hand.",
+    "In the final frame (f=871), the fork is resting on the pink plate, and the right gripper is in contact with the plate.",
+    "Left hand view shows the left arm is positioned near the dishwasher but the specific object held is only visible in the right/head views as a pink plate."
+  ],
+  "window_quality": "good"
+}
+```

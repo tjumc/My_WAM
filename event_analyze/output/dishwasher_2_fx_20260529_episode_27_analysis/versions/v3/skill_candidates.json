@@ -1,0 +1,150 @@
+{
+  "annotation_version": "v3",
+  "task_goal": "put the dish into the dishwasher",
+  "num_entity_windows": 24,
+  "num_inferred_skills": 7,
+  "skill_sequence": [
+    {
+      "skill_id": 0,
+      "skill_type": "navigate_to_station",
+      "instruction_zh": "移动到桌面/洗碗机前",
+      "instruction_en": "Move to the table/dishwasher station",
+      "entity": "robot_base",
+      "active_arm": "none",
+      "provisional_start_frame": 28,
+      "provisional_end_frame": 141,
+      "evidence_event_ids": [],
+      "confidence": 0.95,
+      "state_transition": {
+        "base_motion": true
+      },
+      "source": "deterministic_entity_state_machine"
+    },
+    {
+      "skill_id": 1,
+      "skill_type": "open_dishwasher_door",
+      "instruction_zh": "右手打开洗碗机门",
+      "instruction_en": "Open the dishwasher door with the right hand",
+      "entity": "door",
+      "active_arm": "right",
+      "provisional_start_frame": 157,
+      "provisional_end_frame": 247,
+      "evidence_event_ids": [
+        1
+      ],
+      "confidence": 0.95,
+      "state_transition": {
+        "before": "closed",
+        "after": "open"
+      },
+      "source": "deterministic_entity_state_machine"
+    },
+    {
+      "skill_id": 2,
+      "skill_type": "push_in_dish_rack",
+      "instruction_zh": "右手推入碗篮",
+      "instruction_en": "Push in the dish rack with the right hand",
+      "entity": "dish_rack",
+      "active_arm": "right",
+      "provisional_start_frame": 275,
+      "provisional_end_frame": 365,
+      "evidence_event_ids": [
+        5
+      ],
+      "confidence": 0.85,
+      "state_transition": {
+        "before": "out",
+        "after": "moving_in"
+      },
+      "source": "deterministic_entity_state_machine"
+    },
+    {
+      "skill_id": 3,
+      "skill_type": "push_in_dish_rack",
+      "instruction_zh": "右手推入碗篮",
+      "instruction_en": "Push in the dish rack with the right hand",
+      "entity": "dish_rack",
+      "active_arm": "right",
+      "provisional_start_frame": 427,
+      "provisional_end_frame": 517,
+      "evidence_event_ids": [
+        7
+      ],
+      "confidence": 0.9,
+      "state_transition": {
+        "before": "out",
+        "after": "moving_in"
+      },
+      "source": "deterministic_entity_state_machine"
+    },
+    {
+      "skill_id": 4,
+      "skill_type": "close_dishwasher_door",
+      "instruction_zh": "右手合上洗碗机门",
+      "instruction_en": "Close the dishwasher door with the right hand",
+      "entity": "door",
+      "active_arm": "right",
+      "provisional_start_frame": 1409,
+      "provisional_end_frame": 1570,
+      "evidence_event_ids": [
+        19,
+        21
+      ],
+      "confidence": 0.95,
+      "state_transition": {
+        "before": "open",
+        "after": "closing"
+      },
+      "source": "deterministic_entity_state_machine",
+      "merged_transitions": [
+        {
+          "before": "open",
+          "after": "closing"
+        }
+      ]
+    },
+    {
+      "skill_id": 5,
+      "skill_type": "push_in_dish_rack",
+      "instruction_zh": "右手推入碗篮",
+      "instruction_en": "Push in the dish rack with the right hand",
+      "entity": "dish_rack",
+      "active_arm": "right",
+      "provisional_start_frame": 1480,
+      "provisional_end_frame": 1570,
+      "evidence_event_ids": [
+        21
+      ],
+      "confidence": 0.9,
+      "state_transition": {
+        "before": "out",
+        "after": "moving_in"
+      },
+      "source": "deterministic_entity_state_machine"
+    },
+    {
+      "skill_id": 6,
+      "skill_type": "close_dishwasher_door",
+      "instruction_zh": "右手合上洗碗机门",
+      "instruction_en": "Close the dishwasher door with the right hand",
+      "entity": "door",
+      "active_arm": "right",
+      "provisional_start_frame": 1520,
+      "provisional_end_frame": 1610,
+      "evidence_event_ids": [
+        22
+      ],
+      "confidence": 0.9,
+      "state_transition": {
+        "before": "open",
+        "after": "closing"
+      },
+      "source": "deterministic_entity_state_machine"
+    }
+  ],
+  "notes": [
+    "No LLM action/phase generation is used in skill inference.",
+    "Skills are generated only from constrained entity-state transitions plus base-motion evidence for navigation.",
+    "Unknown/occluded entities do not create skills."
+  ]
+}

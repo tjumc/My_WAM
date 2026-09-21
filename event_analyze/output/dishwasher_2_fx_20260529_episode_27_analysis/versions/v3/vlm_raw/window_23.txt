@@ -1,0 +1,56 @@
+```json
+{
+  "state_before": {
+    "robot_location": "uncertain",
+    "door": "uncertain",
+    "dish_rack": "uncertain",
+    "cutlery_basket": "uncertain",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "state_after": {
+    "robot_location": "uncertain",
+    "door": "uncertain",
+    "dish_rack": "uncertain",
+    "cutlery_basket": "uncertain",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "confidence_before": {
+    "robot_location": 0.0,
+    "door": 0.0,
+    "dish_rack": 0.0,
+    "cutlery_basket": 0.0,
+    "right_hand": 0.0,
+    "left_hand": 0.0,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "confidence_after": {
+    "robot_location": 0.0,
+    "door": 0.0,
+    "dish_rack": 0.0,
+    "cutlery_basket": 0.0,
+    "right_hand": 0.0,
+    "left_hand": 0.0,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "visible_entities": [],
+  "evidence": [
+    "Head camera view is entirely blocked by the robot's upper body/arms in all frames.",
+    "Left camera view shows a static kitchen counter and wall, no robot parts or objects in interaction range.",
+    "Right camera view shows a static kitchen counter and wall, no robot parts or objects in interaction range.",
+    "No robot hands, grippers, or target objects (dish rack, cutlery basket) are visible in any of the provided views."
+  ],
+  "window_quality": "poor"
+}
+```

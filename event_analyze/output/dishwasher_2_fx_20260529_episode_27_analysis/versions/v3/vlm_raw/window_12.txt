@@ -1,0 +1,61 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "not_visible",
+    "right_hand": "holding_plate",
+    "left_hand": "free",
+    "knife_location": "not_visible",
+    "fork_location": "right_hand",
+    "plate_location": "right_hand"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "not_visible",
+    "right_hand": "holding_plate",
+    "left_hand": "free",
+    "knife_location": "not_visible",
+    "fork_location": "right_hand",
+    "plate_location": "right_hand"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.95,
+    "fork_location": 0.95,
+    "plate_location": 0.95
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.95,
+    "fork_location": 0.95,
+    "plate_location": 0.95
+  },
+  "visible_entities": [
+    "dish_rack",
+    "right_hand",
+    "plate",
+    "fork"
+  ],
+  "evidence": [
+    "Head view shows dishwasher door is open and the dish rack is fully extended (out) throughout the window.",
+    "Right hand is clearly holding a pink plate with a fork placed on it from frame 804 to 894.",
+    "Left hand is visible in the left camera view and appears empty (free) throughout the sequence.",
+    "Robot remains stationary at the station; no significant movement of the rack or door is observed in this window."
+  ],
+  "window_quality": "good"
+}
+```
