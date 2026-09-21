@@ -1,0 +1,8 @@
+{
+  "trajectory_instruction": "无可用原子事件，无法生成轨迹描述。",
+  "phase_groups": [],
+  "task_end_atomic_id": null,
+  "uncertainties": [
+    "输入原子事件列表为空，无法执行语义分组或任务阶段划分。"
+  ]
+}

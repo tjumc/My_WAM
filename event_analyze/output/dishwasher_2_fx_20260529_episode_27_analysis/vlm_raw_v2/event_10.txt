@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": false,
+  "event_type": "uncertain",
+  "atomic_action": "持续持物移动/姿态微调",
+  "active_arm": "both",
+  "visible_object_category": "dish",
+  "object_identity_confident": false,
+  "physical_transition": "none",
+  "task_relevance": "relevant",
+  "boundary_frame_relation": "near",
+  "confidence": 0.4,
+  "evidence": [
+    "三视角图像显示夹爪持续握持粉色盘子，在候选点前后无明显的抓取/释放动作边界",
+    "right_gripper_command_trend为increase且delta较大，但视觉未显示明显的开合动作，可能为姿态调整或力控波动",
+    "盘子在序列中处于悬空移动状态，未发生物体状态的离散转换（如接触、放置）"
+  ],
+  "reason_if_false": "这是一个持续的动作过程（持物移动），而非离散的语义事件。虽然夹爪命令有变化，但视觉上未表现出明确的物理交互边界（如抓握完成或释放），符合规则中'同一动作内部的中间时刻'或'姿态微调'的False特征。"
+}
+```

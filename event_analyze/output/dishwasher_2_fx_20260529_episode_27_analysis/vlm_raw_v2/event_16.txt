@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": false,
+  "event_type": "reposition",
+  "atomic_action": "continuous manipulation of held dish",
+  "active_arm": "right",
+  "visible_object_category": "dish",
+  "object_identity_confident": true,
+  "physical_transition": "none",
+  "task_relevance": "relevant",
+  "boundary_frame_relation": "near",
+  "confidence": 0.15,
+  "evidence": [
+    "Right gripper maintains continuous grasp on the pink dish throughout the sequence",
+    "No release or new contact event is visible; motion is smooth repositioning",
+    "Left arm is not interacting with the object or environment"
+  ],
+  "reason_if_false": "This is a continuous manipulation phase where the robot is adjusting the dish's orientation inside the dishwasher. There is no discrete state transition (like a release or a new grasp) at this specific timestamp; the force/torque variations correspond to active control during movement, not a boundary event."
+}
+```

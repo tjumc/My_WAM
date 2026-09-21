@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": false,
+  "event_type": "uncertain",
+  "atomic_action": "持续动作/无明确边界",
+  "active_arm": "right",
+  "visible_object_category": "dishwasher",
+  "object_identity_confident": false,
+  "physical_transition": "none",
+  "task_relevance": "uncertain",
+  "boundary_frame_relation": "near",
+  "confidence": 0.2,
+  "evidence": [
+    "右臂夹爪命令持续减小（decrease），但在序列前后（f=675, f=765）均显示夹爪处于闭合/抓持状态，未发生开合状态转换。",
+    "三视角图像显示机械臂处于持续运动过程中，未呈现静止接触或物体状态突变。",
+    "传感器数据显示力值波动（左增右减）但幅度较小，符合运动过程中的姿态调整而非接触事件。"
+  ],
+  "reason_if_false": "该候选点位于连续运动序列的中间时刻。尽管夹爪命令数值在变化（decrease），但视觉证据表明夹爪始终保持闭合抓持状态，没有发生‘张开’或‘闭合’的离散动作，也没有明显的接触或释放事件。这属于同一动作（移动/调整）内部的中间时刻，不符合语义事件定义。"
+}
+```

@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": false,
+  "event_type": "other",
+  "atomic_action": "持续动作内部：手臂向洗碗机内部移动/插入",
+  "active_arm": "right",
+  "visible_object_category": "dishwasher",
+  "object_identity_confident": false,
+  "physical_transition": "none",
+  "task_relevance": "relevant",
+  "boundary_frame_relation": "near",
+  "confidence": 0.1,
+  "evidence": [
+    "三视角显示右臂正在持续向洗碗机内部深处运动，未发生停顿或方向突变",
+    "右侧力传感器显示增加（increase），符合机械臂插入过程中的接触力增加，但夹爪命令稳定（stable），无抓取/释放动作",
+    "中间帧（f=320）视野被洗碗机内部结构遮挡，未观察到物体状态转换或离散的接触/释放瞬间"
+  ],
+  "reason_if_false": "该候选点位于右臂将物体推入/插入洗碗机的连续运动过程中（Insert/Push phase）。尽管力传感器显示增加（表明接触或推进），但夹爪命令稳定，且视觉上未出现物体状态改变（如从手持变为放置）或动作方向的离散切换。这属于同一动作（Place/Insert）内部的中间时刻，而非边界事件。"
+}
+```

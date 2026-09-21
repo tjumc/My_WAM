@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": false,
+  "event_type": "uncertain",
+  "atomic_action": "持续移动/调整姿态",
+  "active_arm": "right",
+  "visible_object_category": "dish",
+  "object_identity_confident": false,
+  "physical_transition": "none",
+  "task_relevance": "relevant",
+  "boundary_frame_relation": "near",
+  "confidence": 0.4,
+  "evidence": [
+    "右臂夹爪持续抓握粉色盘子，未发生释放或抓取动作",
+    "图像显示为连续的运动调整过程，无明确的接触或状态突变",
+    "传感器数据显示力与误差在变化，但属于运动过程中的波动而非事件触发"
+  ],
+  "reason_if_false": "候选点位于连续的放置/插入动作过程中。图像显示机器人正在移动盘子，但盘子既未脱离夹爪（release），也未在架子上发生状态锁定（place）。这仅仅是同一动作（put dish into dishwasher）中的中间时刻，属于过分割产生的伪阳性。"
+}
+```

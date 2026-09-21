@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": false,
+  "event_type": "uncertain",
+  "atomic_action": "持续动作/无明确边界",
+  "active_arm": "right",
+  "visible_object_category": "dish",
+  "object_identity_confident": false,
+  "physical_transition": "none",
+  "task_relevance": "relevant",
+  "boundary_frame_relation": "near",
+  "confidence": 0.3,
+  "evidence": [
+    "head view shows continuous arm motion into the dishwasher rack",
+    "gripper command trend is 'decrease' but force is 'stable', indicating no distinct contact event",
+    "no discrete state change visible in the sequence"
+  ],
+  "reason_if_false": "该候选点位于机器人将物体移入洗碗机内部的连续运动过程中。虽然gripper_command显示decrease，但力传感器显示stable，且视觉上没有明显的物体释放或接触发生的瞬间（如物体掉落或位置锁定），这更像是连续放置动作中的一个中间时刻，而非离散的事件边界。"
+}
+```

@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": false,
+  "event_type": "other",
+  "atomic_action": "持续朝向洗碗机方向的移动/姿态调整",
+  "active_arm": "none",
+  "visible_object_category": "dishwasher",
+  "object_identity_confident": false,
+  "physical_transition": "none",
+  "task_relevance": "relevant",
+  "boundary_frame_relation": "near",
+  "confidence": 0.35,
+  "evidence": [
+    "右臂夹爪指令大幅下降(-100.0)但力觉无显著变化，且夹爪在视觉上未呈现明显的开合动作，疑似空转或传感器噪声。",
+    "三视角图像显示机器人整体处于连续移动或微调过程中，中间帧(f=1593)未表现出物体状态突变或接触/分离的清晰边界。",
+    "检测器信号(gripper_transition)与视觉证据(无明确动作)存在冲突，无法确认是离散的语义事件。"
+  ],
+  "reason_if_false": "该候选点位于连续运动过程中，没有观察到物体被放置、抓取或门被打开的明确状态转换。夹爪指令的剧烈变化未伴随物理接触或视觉上的动作确认，属于过分割产生的假阳性。"
+}
+```

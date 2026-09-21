@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": false,
+  "event_type": "other",
+  "atomic_action": "持续动作/无明确边界",
+  "active_arm": "right",
+  "visible_object_category": "dishwasher",
+  "object_identity_confident": false,
+  "physical_transition": "none",
+  "task_relevance": "relevant",
+  "boundary_frame_relation": "near",
+  "confidence": 0.3,
+  "evidence": [
+    "Right arm is in motion pushing the dishwasher rack, but the rack is still significantly outside the machine at frame 524.",
+    "Gripper command trend is 'decrease', but visual evidence does not show a discrete release or grasp event.",
+    "The action appears to be part of a continuous sequence (pushing the rack in) rather than a discrete state transition."
+  ],
+  "reason_if_false": "The candidate point captures a moment during a continuous action (pushing the rack). There is no visual evidence of the rack reaching a stop, nor is there a clear object release or grasp event. The sensor signals likely reflect the continuous motion dynamics rather than a discrete semantic transition."
+}
+```

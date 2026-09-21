@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": false,
+  "event_type": "other",
+  "atomic_action": "continuous door opening motion",
+  "active_arm": "right",
+  "visible_object_category": "dishwasher",
+  "object_identity_confident": false,
+  "physical_transition": "door_moving",
+  "task_relevance": "relevant",
+  "boundary_frame_relation": "near",
+  "confidence": 0.3,
+  "evidence": [
+    "Right arm is actively pushing the dishwasher door open, visible from head and right views.",
+    "Right gripper command is 'stable' (0.0 delta), indicating no grasp/release action occurred at this frame.",
+    "Door is in continuous motion between frames 180 and 224, lacking a discrete boundary at 202."
+  ],
+  "reason_if_false": "The candidate frame 202 falls in the middle of a continuous door-opening action. The gripper is stable (no grasp/release), and there is no discrete contact or state change occurring exactly at this timestamp; it is merely an intermediate moment of the 'open' action."
+}
+```

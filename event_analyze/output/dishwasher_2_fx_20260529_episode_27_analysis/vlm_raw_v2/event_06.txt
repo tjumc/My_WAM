@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": false,
+  "event_type": "reach",
+  "atomic_action": "持续移动/姿态调整",
+  "active_arm": "right",
+  "visible_object_category": "dishwasher",
+  "object_identity_confident": false,
+  "physical_transition": "none",
+  "task_relevance": "relevant",
+  "boundary_frame_relation": "near",
+  "confidence": 0.3,
+  "evidence": [
+    "右臂在候选点前后持续向洗碗机内部移动，未见停顿或接触突变",
+    "夹爪命令呈 decrease 趋势但无明确的闭合接触信号（force stable）",
+    "视觉显示物体处于悬空移动状态，未发生状态转换"
+  ],
+  "reason_if_false": "候选点位于右臂将盘子移入洗碗机的连续路径中间，属于单纯的持续运动（continuous motion）和姿态调整，没有发生离散的接触（contact）或放置（place）事件。"
+}
+```

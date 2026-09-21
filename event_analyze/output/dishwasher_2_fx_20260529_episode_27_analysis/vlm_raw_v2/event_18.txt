@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": false,
+  "event_type": "uncertain",
+  "atomic_action": "持续动作/无明确边界",
+  "active_arm": "right",
+  "visible_object_category": "dishwasher",
+  "object_identity_confident": false,
+  "physical_transition": "none",
+  "task_relevance": "relevant",
+  "boundary_frame_relation": "near",
+  "confidence": 0.4,
+  "evidence": [
+    "Head视角显示右臂正在进行持续的插入/放置动作，未见物体状态突变（如释放或接触锁定）。",
+    "传感器数据显示右夹爪力与位置指令均处于 decrease 趋势，符合持续施力或移动的特征，而非离散的释放事件。",
+    "Right视角在候选时刻（f=1370）图像严重模糊，无法确认是否发生了具体的物体交互或状态转换。"
+  ],
+  "reason_if_false": "这是一个典型的过分割候选点。从图像序列看，机器人正在执行将物体放入洗碗机的连续动作（Place/Insert），候选点位于该动作的中间过程（持续运动阶段），并未捕捉到动作的起点（reach）或终点（release/contact）。没有证据表明在此刻发生了离散的物理状态转换。"
+}
+```

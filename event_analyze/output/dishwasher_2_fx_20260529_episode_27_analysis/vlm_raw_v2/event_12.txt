@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": false,
+  "event_type": "uncertain",
+  "atomic_action": "持续调整/抓取过程中的中间状态",
+  "active_arm": "right",
+  "visible_object_category": "plate",
+  "object_identity_confident": false,
+  "physical_transition": "none",
+  "task_relevance": "relevant",
+  "boundary_frame_relation": "near",
+  "confidence": 0.35,
+  "evidence": [
+    "三视角图像显示在候选帧前后（f=826 到 f=894），机械臂与粉色盘子的相对位置关系保持连续，无明显接触/分离突变。",
+    "夹爪 command 显示 increase (delta 68.6)，表明可能处于张开或调整状态，但视觉上未见物体掉落或抓取完成的明确状态切换。",
+    "候选点位于动作序列的中间阶段，属于同一连续操作（如抓取或调整）的内部时刻，而非离散的事件边界。"
+  ],
+  "reason_if_false": "根据规则，该候选点处于持续动作（可能是抓取调整或放置准备）的中间时刻，缺乏明确的离散动作/状态转换证据。夹爪数值变化不足以判定为特定的 open/close 事件，且视觉上没有物体状态的根本性改变。"
+}
+```

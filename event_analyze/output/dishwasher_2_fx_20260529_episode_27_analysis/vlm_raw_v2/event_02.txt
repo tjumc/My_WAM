@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": false,
+  "event_type": "uncertain",
+  "atomic_action": "持续的动作过程/无明确边界",
+  "active_arm": "both",
+  "visible_object_category": "dishwasher",
+  "object_identity_confident": false,
+  "physical_transition": "none",
+  "task_relevance": "relevant",
+  "boundary_frame_relation": "near",
+  "confidence": 0.3,
+  "evidence": [
+    "左右夹爪命令均为stable，无开合动作",
+    "力传感器信号相反（右减左增），表明处于连续受力调整中，而非接触突变",
+    "图像显示机器人处于洗碗机内部操作或调整姿态的中间过程"
+  ],
+  "reason_if_false": "该时刻处于机器人操作洗碗机内部（如放置或调整）的连续过程中。夹爪命令稳定，未发生抓取或释放；力传感器虽有波动但属于连续调整而非状态跳变。根据规则，同一动作内部的中间时刻应判定为false。"
+}
+```

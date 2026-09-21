@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": false,
+  "event_type": "other",
+  "atomic_action": "continuous insertion movement into dishwasher rack",
+  "active_arm": "right",
+  "visible_object_category": "dishwasher",
+  "object_identity_confident": false,
+  "physical_transition": "none",
+  "task_relevance": "relevant",
+  "boundary_frame_relation": "near",
+  "confidence": 0.35,
+  "evidence": [
+    "Right arm is continuously moving deeper into the dishwasher rack across frames 274 to 318.",
+    "Gripper command shows 'increase' (opening) and force increases, but no distinct contact or release event is visible.",
+    "Visuals show continuous insertion motion rather than a discrete state transition like grasping or releasing."
+  ],
+  "reason_if_false": "The candidate point falls within a continuous insertion motion. The sensor signals (force increase, gripper opening) likely correspond to the arm navigating into the rack or adjusting position, not a discrete semantic event like a successful grasp or release. The lack of a clear 'before/after' state change in the visual frames confirms this is an intermediate moment."
+}
+```

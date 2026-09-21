@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": false,
+  "event_type": "uncertain",
+  "atomic_action": "持续抓取/微调姿态",
+  "active_arm": "right",
+  "visible_object_category": "plate",
+  "object_identity_confident": false,
+  "physical_transition": "none",
+  "task_relevance": "relevant",
+  "boundary_frame_relation": "near",
+  "confidence": 0.35,
+  "evidence": [
+    "三视角图像显示夹爪始终紧紧夹持粉色盘子，无明显的接触状态变化（如抓取或释放）",
+    "夹爪命令（gripper command）显示 decrease（-82.983），但缺乏明确的张开/闭合视觉证据，且力矩增加可能仅是维持抓取的微调",
+    "盘子相对于背景的位置在序列中基本保持静止，没有发生位移或物体状态转换"
+  ],
+  "reason_if_false": "该候选点位于持续抓取（grasp maintenance）或姿态微调阶段。视觉证据显示物体状态未发生离散转换（如从未接触变为接触，或从接触变为分离）。传感器信号（力矩增加、命令减小）可能仅是夹爪在稳定抓取过程中的内部调整，而非语义上的新事件（如开始抓取或释放）。根据规则，单纯的动作内部时刻应判定为 false。"
+}
+```

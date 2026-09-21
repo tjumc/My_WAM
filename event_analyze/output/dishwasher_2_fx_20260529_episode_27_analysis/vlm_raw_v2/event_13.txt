@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": false,
+  "event_type": "uncertain",
+  "atomic_action": "持续移动/无明确边界",
+  "active_arm": "right",
+  "visible_object_category": "dishwasher",
+  "object_identity_confident": false,
+  "physical_transition": "none",
+  "task_relevance": "relevant",
+  "boundary_frame_relation": "near",
+  "confidence": 0.45,
+  "evidence": [
+    "右臂夹爪命令 (gripper_command) 全程稳定 (stable)，无开合动作",
+    "三视角图像显示机械臂处于连续移动状态，未发生物体状态突变",
+    "力觉信号显示右臂力值下降，但这在自由空间移动或姿态调整中常见，非接触/释放的确切证据"
+  ],
+  "reason_if_false": "该候选点位于连续动作流中。虽然力值有变化（decrease），但夹爪命令稳定且无视觉上的接触/分离瞬间，极可能是移动过程中的中间时刻或姿态微调，不具备离散事件特征。"
+}
+```

@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": false,
+  "event_type": "other",
+  "atomic_action": "持续移动/无明确边界",
+  "active_arm": "right",
+  "visible_object_category": "dishwasher",
+  "object_identity_confident": false,
+  "physical_transition": "none",
+  "task_relevance": "relevant",
+  "boundary_frame_relation": "near",
+  "confidence": 0.4,
+  "evidence": [
+    "右臂在 frame 1525 到 1548 之间持续向洗碗机内部推进，无明显停顿或状态突变",
+    "夹爪命令值在候选点附近保持稳定（stable），无明显的抓取/释放/开合动作",
+    "力传感器显示右臂受力增加，但这可能仅是推进过程中的连续变化，未表现出明确的接触突变"
+  ],
+  "reason_if_false": "该候选点位于机器人将物体推入洗碗机的连续运动过程中。从视觉上看，右臂在候选时刻前后没有发生离散的动作切换（如抓取、释放或关门），仅仅是位置推进。力传感器的 increase 趋势符合持续推入的物理特征，但不足以标记为一个独立的语义事件（如 'place' 或 'contact'），因为这是一个连续动作的中间时刻。"
+}
+```

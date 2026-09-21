@@ -1,0 +1,17 @@
+{
+  "annotation_version": "v2",
+  "task_goal": "put the dish into the dishwasher",
+  "trajectory_instruction": "无可用原子事件，无法生成轨迹描述。",
+  "task_end_raw_frame": 1646,
+  "lerobot_episode_index": null,
+  "semantic_phases": [],
+  "atomic_events": [],
+  "uncertainties": [
+    "输入原子事件列表为空，无法执行语义分组或任务阶段划分。"
+  ],
+  "notes": [
+    "Semantic grouping is produced by Qwen.",
+    "All numerical phase boundaries are refined deterministically from HDF5 activity signals.",
+    "Frames after task_end_raw_frame should not be supervised with this task unless separately relabeled."
+  ]
+}

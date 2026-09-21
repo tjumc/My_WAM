@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": false,
+  "event_type": "uncertain",
+  "atomic_action": "持续的动作中间过程/无明确边界",
+  "active_arm": "right",
+  "visible_object_category": "dishwasher",
+  "object_identity_confident": false,
+  "physical_transition": "none",
+  "task_relevance": "relevant",
+  "boundary_frame_relation": "near",
+  "confidence": 0.3,
+  "evidence": [
+    "右臂在frame 153前后处于连续的运动过程中，未显示明显的停止或状态切换",
+    "夹爪command显示increase，但缺乏明确的物理接触或状态变化证据",
+    "三视角图中未见物体状态转换或离散的接触/分离瞬间"
+  ],
+  "reason_if_false": "该候选点位于一个连续动作的中间时刻，没有显示离散的动作边界。右臂正在移动，但没有明确的接触、抓取或释放事件发生。传感器数据显示的是持续的趋势变化而非突变。"
+}
+```
