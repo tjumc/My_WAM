@@ -1,0 +1,483 @@
+{
+  "metadata": {
+    "annotation_version": "v3.3.1",
+    "episode": "dishwasher_2_fx_20260529_episode_27",
+    "fps": 30.0,
+    "total_raw_frames": 1647,
+    "gt_status": "provisional_manual_gt",
+    "matching_policy": "monotonic same-skill alignment: maximize matches, then semantic IoU"
+  },
+  "sequence": {
+    "predicted": [
+      "navigate_to_station",
+      "open_dishwasher_door",
+      "pull_out_dish_rack",
+      "pull_out_cutlery_basket",
+      "place_knife_in_cutlery_basket",
+      "place_fork_in_cutlery_basket",
+      "place_plate_in_dish_rack",
+      "push_in_dish_rack",
+      "close_dishwasher_door"
+    ],
+    "ground_truth": [
+      "navigate_to_station",
+      "open_dishwasher_door",
+      "pull_out_dish_rack",
+      "pull_out_cutlery_basket",
+      "place_knife_in_cutlery_basket",
+      "place_fork_in_cutlery_basket",
+      "push_in_cutlery_basket",
+      "place_plate_in_dish_rack",
+      "push_in_dish_rack",
+      "close_dishwasher_door"
+    ],
+    "matched_phases": 9,
+    "precision": 1.0,
+    "recall": 0.9,
+    "f1": 0.9473684210526316,
+    "lcs": 9,
+    "edit_distance": 1,
+    "exact_sequence_match": false,
+    "unmatched_predictions": [],
+    "missed_gt_phases": [
+      {
+        "gt_phase_id": 6,
+        "skill_type": "push_in_cutlery_basket",
+        "semantic_gt": [
+          971,
+          1074
+        ]
+      }
+    ]
+  },
+  "semantic_temporal": {
+    "matched_mean_iou": 0.3901828558281866,
+    "penalized_mean_iou": 0.35116457024536796,
+    "start_mae_frames": 64.55555555555556,
+    "end_mae_frames": 56.333333333333336,
+    "boundary_mae_frames": 60.44444444444444,
+    "start_mae_sec": 2.151851851851852,
+    "end_mae_sec": 1.8777777777777778,
+    "boundary_mae_sec": 2.0148148148148146,
+    "boundary_f1": [
+      {
+        "tolerance_sec": 0.5,
+        "tolerance_frames": 15,
+        "tp": 3,
+        "fp": 15,
+        "fn": 17,
+        "precision": 0.16666666666666666,
+        "recall": 0.15,
+        "f1": 0.15789473684210525
+      },
+      {
+        "tolerance_sec": 1.0,
+        "tolerance_frames": 30,
+        "tp": 8,
+        "fp": 10,
+        "fn": 12,
+        "precision": 0.4444444444444444,
+        "recall": 0.4,
+        "f1": 0.4210526315789474
+      },
+      {
+        "tolerance_sec": 2.0,
+        "tolerance_frames": 60,
+        "tp": 12,
+        "fp": 6,
+        "fn": 8,
+        "precision": 0.6666666666666666,
+        "recall": 0.6,
+        "f1": 0.631578947368421
+      }
+    ],
+    "manual_tolerance_boundary_accuracy": 0.1
+  },
+  "core_temporal": {
+    "matched_mean_iou": 0.33573645264197866,
+    "penalized_mean_iou": 0.3021628073777808,
+    "start_mae_frames": 51.666666666666664,
+    "end_mae_frames": 61.111111111111114,
+    "boundary_mae_frames": 56.388888888888886,
+    "start_mae_sec": 1.722222222222222,
+    "end_mae_sec": 2.037037037037037,
+    "boundary_mae_sec": 1.8796296296296295,
+    "boundary_f1": [
+      {
+        "tolerance_sec": 0.5,
+        "tolerance_frames": 15,
+        "tp": 4,
+        "fp": 14,
+        "fn": 16,
+        "precision": 0.2222222222222222,
+        "recall": 0.2,
+        "f1": 0.2105263157894737
+      },
+      {
+        "tolerance_sec": 1.0,
+        "tolerance_frames": 30,
+        "tp": 8,
+        "fp": 10,
+        "fn": 12,
+        "precision": 0.4444444444444444,
+        "recall": 0.4,
+        "f1": 0.4210526315789474
+      },
+      {
+        "tolerance_sec": 2.0,
+        "tolerance_frames": 60,
+        "tp": 13,
+        "fp": 5,
+        "fn": 7,
+        "precision": 0.7222222222222222,
+        "recall": 0.65,
+        "f1": 0.6842105263157895
+      }
+    ],
+    "manual_tolerance_boundary_accuracy": 0.1
+  },
+  "coverage": {
+    "gt_fine_union_frames": 1572,
+    "pred_fine_union_frames": 1090,
+    "gt_fine_coverage_ratio": 0.9544626593806922,
+    "pred_fine_coverage_ratio": 0.6618093503339405,
+    "pred_coarse_only_ratio": 0.3381906496660595,
+    "semantic_correct_intersection_frames": 735,
+    "semantic_correct_gt_coverage": 0.4675572519083969,
+    "semantic_false_positive_duration_frames": 355,
+    "semantic_false_positive_duration_ratio": 0.3256880733944954,
+    "semantic_missed_gt_duration_frames": 837,
+    "semantic_missed_gt_duration_ratio": 0.5324427480916031,
+    "core_correct_intersection_frames": 524,
+    "core_false_positive_duration_frames": 390,
+    "core_false_positive_duration_ratio": 0.42669584245076586,
+    "core_missed_gt_duration_frames": 635,
+    "core_missed_gt_duration_ratio": 0.547886108714409
+  },
+  "per_phase": [
+    {
+      "pred_index": 0,
+      "gt_phase_id": 0,
+      "skill_type": "navigate_to_station",
+      "semantic_gt": [
+        34,
+        135
+      ],
+      "semantic_pred": [
+        13,
+        144
+      ],
+      "semantic_iou": 0.7727272727272727,
+      "semantic_start_error_frames": -21,
+      "semantic_end_error_frames": 9,
+      "semantic_start_error_sec": -0.7,
+      "semantic_end_error_sec": 0.3,
+      "core_gt": [
+        34,
+        135
+      ],
+      "core_pred": [
+        28,
+        131
+      ],
+      "core_iou": 0.9074074074074074,
+      "core_start_error_frames": -6,
+      "core_end_error_frames": -4,
+      "core_start_error_sec": -0.2,
+      "core_end_error_sec": -0.13333333333333333,
+      "manual_boundary_tolerance_frames": 3,
+      "semantic_start_within_manual_tolerance": false,
+      "semantic_end_within_manual_tolerance": false,
+      "core_start_within_manual_tolerance": false,
+      "core_end_within_manual_tolerance": false
+    },
+    {
+      "pred_index": 1,
+      "gt_phase_id": 1,
+      "skill_type": "open_dishwasher_door",
+      "semantic_gt": [
+        136,
+        220
+      ],
+      "semantic_pred": [
+        183,
+        222
+      ],
+      "semantic_iou": 0.4367816091954023,
+      "semantic_start_error_frames": 47,
+      "semantic_end_error_frames": 2,
+      "semantic_start_error_sec": 1.5666666666666667,
+      "semantic_end_error_sec": 0.06666666666666667,
+      "core_gt": [
+        150,
+        220
+      ],
+      "core_pred": [
+        202,
+        203
+      ],
+      "core_iou": 0.028169014084507043,
+      "core_start_error_frames": 52,
+      "core_end_error_frames": -17,
+      "core_start_error_sec": 1.7333333333333334,
+      "core_end_error_sec": -0.5666666666666667,
+      "manual_boundary_tolerance_frames": 5,
+      "semantic_start_within_manual_tolerance": false,
+      "semantic_end_within_manual_tolerance": true,
+      "core_start_within_manual_tolerance": false,
+      "core_end_within_manual_tolerance": false
+    },
+    {
+      "pred_index": 2,
+      "gt_phase_id": 2,
+      "skill_type": "pull_out_dish_rack",
+      "semantic_gt": [
+        221,
+        410
+      ],
+      "semantic_pred": [
+        230,
+        268
+      ],
+      "semantic_iou": 0.20526315789473684,
+      "semantic_start_error_frames": 9,
+      "semantic_end_error_frames": -142,
+      "semantic_start_error_sec": 0.3,
+      "semantic_end_error_sec": -4.733333333333333,
+      "core_gt": [
+        296,
+        410
+      ],
+      "core_pred": [
+        249,
+        249
+      ],
+      "core_iou": 0.0,
+      "core_start_error_frames": -47,
+      "core_end_error_frames": -161,
+      "core_start_error_sec": -1.5666666666666667,
+      "core_end_error_sec": -5.366666666666666,
+      "manual_boundary_tolerance_frames": 10,
+      "semantic_start_within_manual_tolerance": true,
+      "semantic_end_within_manual_tolerance": false,
+      "core_start_within_manual_tolerance": false,
+      "core_end_within_manual_tolerance": false
+    },
+    {
+      "pred_index": 3,
+      "gt_phase_id": 3,
+      "skill_type": "pull_out_cutlery_basket",
+      "semantic_gt": [
+        411,
+        558
+      ],
+      "semantic_pred": [
+        498,
+        539
+      ],
+      "semantic_iou": 0.28378378378378377,
+      "semantic_start_error_frames": 87,
+      "semantic_end_error_frames": -19,
+      "semantic_start_error_sec": 2.9,
+      "semantic_end_error_sec": -0.6333333333333333,
+      "core_gt": [
+        474,
+        555
+      ],
+      "core_pred": [
+        498,
+        536
+      ],
+      "core_iou": 0.47560975609756095,
+      "core_start_error_frames": 24,
+      "core_end_error_frames": -19,
+      "core_start_error_sec": 0.8,
+      "core_end_error_sec": -0.6333333333333333,
+      "manual_boundary_tolerance_frames": 8,
+      "semantic_start_within_manual_tolerance": false,
+      "semantic_end_within_manual_tolerance": false,
+      "core_start_within_manual_tolerance": false,
+      "core_end_within_manual_tolerance": false
+    },
+    {
+      "pred_index": 4,
+      "gt_phase_id": 4,
+      "skill_type": "place_knife_in_cutlery_basket",
+      "semantic_gt": [
+        559,
+        749
+      ],
+      "semantic_pred": [
+        603,
+        777
+      ],
+      "semantic_iou": 0.6712328767123288,
+      "semantic_start_error_frames": 44,
+      "semantic_end_error_frames": 28,
+      "semantic_start_error_sec": 1.4666666666666666,
+      "semantic_end_error_sec": 0.9333333333333333,
+      "core_gt": [
+        619,
+        719
+      ],
+      "core_pred": [
+        622,
+        773
+      ],
+      "core_iou": 0.632258064516129,
+      "core_start_error_frames": 3,
+      "core_end_error_frames": 54,
+      "core_start_error_sec": 0.1,
+      "core_end_error_sec": 1.8,
+      "manual_boundary_tolerance_frames": 8,
+      "semantic_start_within_manual_tolerance": false,
+      "semantic_end_within_manual_tolerance": false,
+      "core_start_within_manual_tolerance": true,
+      "core_end_within_manual_tolerance": false
+    },
+    {
+      "pred_index": 5,
+      "gt_phase_id": 5,
+      "skill_type": "place_fork_in_cutlery_basket",
+      "semantic_gt": [
+        750,
+        970
+      ],
+      "semantic_pred": [
+        778,
+        836
+      ],
+      "semantic_iou": 0.2669683257918552,
+      "semantic_start_error_frames": 28,
+      "semantic_end_error_frames": -134,
+      "semantic_start_error_sec": 0.9333333333333333,
+      "semantic_end_error_sec": -4.466666666666667,
+      "core_gt": [
+        790,
+        947
+      ],
+      "core_pred": [
+        773,
+        846
+      ],
+      "core_iou": 0.32571428571428573,
+      "core_start_error_frames": -17,
+      "core_end_error_frames": -101,
+      "core_start_error_sec": -0.5666666666666667,
+      "core_end_error_sec": -3.3666666666666667,
+      "manual_boundary_tolerance_frames": 8,
+      "semantic_start_within_manual_tolerance": false,
+      "semantic_end_within_manual_tolerance": false,
+      "core_start_within_manual_tolerance": false,
+      "core_end_within_manual_tolerance": false
+    },
+    {
+      "pred_index": 6,
+      "gt_phase_id": 7,
+      "skill_type": "place_plate_in_dish_rack",
+      "semantic_gt": [
+        1075,
+        1370
+      ],
+      "semantic_pred": [
+        837,
+        1311
+      ],
+      "semantic_iou": 0.4438202247191011,
+      "semantic_start_error_frames": -238,
+      "semantic_end_error_frames": -59,
+      "semantic_start_error_sec": -7.933333333333334,
+      "semantic_end_error_sec": -1.9666666666666666,
+      "core_gt": [
+        1112,
+        1370
+      ],
+      "core_pred": [
+        846,
+        1305
+      ],
+      "core_iou": 0.36952380952380953,
+      "core_start_error_frames": -266,
+      "core_end_error_frames": -65,
+      "core_start_error_sec": -8.866666666666667,
+      "core_end_error_sec": -2.1666666666666665,
+      "manual_boundary_tolerance_frames": 10,
+      "semantic_start_within_manual_tolerance": false,
+      "semantic_end_within_manual_tolerance": false,
+      "core_start_within_manual_tolerance": false,
+      "core_end_within_manual_tolerance": false
+    },
+    {
+      "pred_index": 7,
+      "gt_phase_id": 8,
+      "skill_type": "push_in_dish_rack",
+      "semantic_gt": [
+        1371,
+        1458
+      ],
+      "semantic_pred": [
+        1352,
+        1382
+      ],
+      "semantic_iou": 0.11214953271028037,
+      "semantic_start_error_frames": -19,
+      "semantic_end_error_frames": -76,
+      "semantic_start_error_sec": -0.6333333333333333,
+      "semantic_end_error_sec": -2.533333333333333,
+      "core_gt": [
+        1371,
+        1455
+      ],
+      "core_pred": [
+        1370,
+        1371
+      ],
+      "core_iou": 0.011627906976744186,
+      "core_start_error_frames": -1,
+      "core_end_error_frames": -84,
+      "core_start_error_sec": -0.03333333333333333,
+      "core_end_error_sec": -2.8,
+      "manual_boundary_tolerance_frames": 8,
+      "semantic_start_within_manual_tolerance": false,
+      "semantic_end_within_manual_tolerance": false,
+      "core_start_within_manual_tolerance": true,
+      "core_end_within_manual_tolerance": false
+    },
+    {
+      "pred_index": 8,
+      "gt_phase_id": 9,
+      "skill_type": "close_dishwasher_door",
+      "semantic_gt": [
+        1459,
+        1605
+      ],
+      "semantic_pred": [
+        1547,
+        1643
+      ],
+      "semantic_iou": 0.31891891891891894,
+      "semantic_start_error_frames": 88,
+      "semantic_end_error_frames": 38,
+      "semantic_start_error_sec": 2.933333333333333,
+      "semantic_end_error_sec": 1.2666666666666666,
+      "core_gt": [
+        1510,
+        1593
+      ],
+      "core_pred": [
+        1559,
+        1638
+      ],
+      "core_iou": 0.2713178294573643,
+      "core_start_error_frames": 49,
+      "core_end_error_frames": 45,
+      "core_start_error_sec": 1.6333333333333333,
+      "core_end_error_sec": 1.5,
+      "manual_boundary_tolerance_frames": 8,
+      "semantic_start_within_manual_tolerance": false,
+      "semantic_end_within_manual_tolerance": false,
+      "core_start_within_manual_tolerance": false,
+      "core_end_within_manual_tolerance": false
+    }
+  ]
+}
