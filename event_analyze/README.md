@@ -32,7 +32,7 @@ bash versions/v3_3_1/run.sh \
   1645
 ```
 
-V3.3.1 保留 V3.2 的高 precision，并把 V3.3 的 dense temporal evidence 改为 entity-specific fusion：targeted cutlery evidence 不再改变 dish-rack / knife / fork / plate 的 tracking 时间轴，同时加入 receptacle-accessibility 因果一致性约束。
+V3.3.1 保留 V3.2 的高 precision，并把 V3.3 的 dense temporal evidence 改为 entity-specific fusion：targeted cutlery evidence 不再改变 dish-rack / knife / fork / plate 的 tracking 时间轴，同时加入 receptacle-accessibility 因果一致性约束。对全新的 HDF5，入口脚本会自动先生成 candidate_events.json 和 contact_sheets/。
 
 泛化边界与未来 task-agnostic 设计见 `GENERALIZATION.md`。
 

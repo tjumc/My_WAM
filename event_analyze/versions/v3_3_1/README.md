@@ -70,3 +70,16 @@ bash versions/v3_3_1/run.sh \
 
 The GT is used only after annotation generation for evaluation and never feeds
 the annotation pipeline.
+
+
+## Fresh HDF5 behavior
+
+For a new trajectory, `run.sh` now checks whether
+`candidate_events.json` and `contact_sheets/` exist. If not, it first runs:
+
+```bash
+python common/analyze_episode.py <HDF5> --output <EPISODE_DIR>
+```
+
+so a completely new HDF5 can be processed from scratch with the single V3.3.1
+entry command. Existing proposal artifacts are reused.

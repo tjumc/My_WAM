@@ -14,6 +14,22 @@ EVENT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 OUT="$EPISODE_DIR/versions/v3_3_1"
 mkdir -p "$OUT"
 
+# A brand-new HDF5 has no proposal artifacts yet. Generate the shared
+# state/action candidate events + multi-view contact sheets automatically.
+if [[ ! -f "$EPISODE_DIR/candidate_events.json" || ! -d "$EPISODE_DIR/contact_sheets" ]]; then
+  echo "No candidate_events.json/contact_sheets found; generating proposals from HDF5..."
+  PROPOSAL_ARGS=("$HDF5" --output "$EPISODE_DIR")
+  if [[ -n "$LEROBOT_EPISODE" ]]; then
+    PROPOSAL_ARGS+=(--lerobot-episode "$LEROBOT_EPISODE")
+  fi
+  if [[ -n "$LEROBOT_MAX_RAW_FRAME" ]]; then
+    PROPOSAL_ARGS+=(--lerobot-max-raw-frame "$LEROBOT_MAX_RAW_FRAME")
+  fi
+  python "$EVENT_ROOT/common/analyze_episode.py" "${PROPOSAL_ARGS[@]}"
+else
+  echo "Reused existing candidate events/contact sheets."
+fi
+
 # Keep generic observations fixed by default.
 if [[ -f "$EPISODE_DIR/versions/v3/entity_observations.jsonl" && "${V331_REOBSERVE_ALL:-0}" != "1" ]]; then
   cp "$EPISODE_DIR/versions/v3/entity_observations.jsonl" "$OUT/entity_observations_base.jsonl"
