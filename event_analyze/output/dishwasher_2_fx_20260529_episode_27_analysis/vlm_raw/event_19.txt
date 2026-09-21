@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": true,
+  "event_type": "retract",
+  "atomic_action": "机器人右臂将空载的机械臂从洗碗机内部拉回并移出，同时左臂向上抬起",
+  "active_arm": "right",
+  "interacted_objects": ["dishwasher", "dishwasher rack"],
+  "state_before": "右机械臂伸入洗碗机内部，手爪张开悬空，未接触任何物体",
+  "state_after": "右机械臂完全移出洗碗机，手爪保持张开状态；左机械臂向上抬起",
+  "object_state_change": "none",
+  "boundary_frame_relation": "near",
+  "confidence": 0.9,
+  "evidence": [
+    "在帧 f=1454 及前后，右机械臂末端位于洗碗机内部（head视角可见），且手爪张开（right视角可见），未抓取任何物体",
+    "在帧 f=1476 及之后，右机械臂已明显移出洗碗机区域，处于收回状态",
+    "传感器数据显示 gripper_transition 和 arm speed 变化，对应机械臂从静止/微调状态转变为运动收回的状态"
+  ],
+  "notes": "高层任务为放置盘子，但视觉证据显示此时机械臂未持有任何盘子，因此该动作仅为完成放置后的“空手收回”动作，而非放置动作本身。"
+}
+```

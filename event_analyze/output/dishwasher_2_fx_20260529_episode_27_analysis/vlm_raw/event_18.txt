@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": true,
+  "event_type": "retract",
+  "atomic_action": "机器人右臂从洗碗机内部退出，并带动下层碗篮向外拉出",
+  "active_arm": "right",
+  "interacted_objects": ["dishwasher", "dish_rack"],
+  "state_before": "右臂位于洗碗机内部，正在接触或整理碗篮中的物品",
+  "state_after": "右臂已完全退出洗碗机，洗碗机下层碗篮被拉出至外部",
+  "object_state_change": "dish_rack: inside -> pulled out",
+  "boundary_frame_relation": "near",
+  "confidence": 0.95,
+  "evidence": [
+    "head视角显示右臂从洗碗机深处（f=1370）移动至完全脱离（f=1415）",
+    "right视角在f=1370时处于运动模糊状态，显示快速后退动作",
+    "head视角在f=1415时清晰显示下层碗篮已被拉出，位于洗碗机外部"
+  ],
+  "notes": "左夹爪command为0.0且画面中未见左臂活动，主要动作由右臂完成。"
+}
+```

@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": true,
+  "event_type": "retract",
+  "atomic_action": "右臂机械手从洗碗机内部向外退出，离开洗碗机开口区域",
+  "active_arm": "right",
+  "interacted_objects": ["dishwasher"],
+  "state_before": "右臂伸入洗碗机内部，正在进行操作",
+  "state_after": "右臂从洗碗机内部退出，回到洗碗机外部空间",
+  "object_state_change": "none",
+  "boundary_frame_relation": "near",
+  "confidence": 0.95,
+  "evidence": [
+    "head视角显示右臂从洗碗机内部（f=1457/1480）移动至洗碗机开口边缘及外部（f=1502/1524）",
+    "right视角显示机械手从洗碗机内部结构（f=1457）后退至洗碗机门框上方（f=1502）",
+    "右夹爪command保持100.0（张开状态），配合右臂位置变化，表明是空手退出而非抓取物体退出"
+  ],
+  "notes": "图片清晰显示右臂在事件窗口内发生了显著的位移变化，从洗碗机内部退至外部，属于完成内部操作后的撤出动作。"
+}
+```

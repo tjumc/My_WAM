@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": true,
+  "event_type": "grasp",
+  "atomic_action": "右臂移动至粉色盘子上方，夹爪闭合以抓取盘子。",
+  "active_arm": "right",
+  "interacted_objects": ["pink plate"],
+  "state_before": "粉色盘子静止放置在台面上，右夹爪位于盘子上方未接触。",
+  "state_after": "右夹爪已闭合夹住粉色盘子边缘，盘子位置基本未变（处于抓取动作完成瞬间）。",
+  "object_state_change": "none",
+  "boundary_frame_relation": "near",
+  "confidence": 0.95,
+  "evidence": [
+    "head视角显示在f=1072时刻，右机械臂末端已移动至粉色盘子上方，且夹爪明显闭合。",
+    "right视角（第一人称）显示在f=1072时刻，夹爪紧紧夹住粉色盘子的边缘。",
+    "时序对比显示，从f=1050到f=1072，右臂完成了从悬停到接触并夹持盘子的过程。"
+  ],
+  "notes": "该候选点准确捕捉了右臂对粉色盘子进行抓取（Grasp）的动作瞬间。虽然高层任务是放入洗碗机，但此边界对应的是操作序列中的第一步——抓取。"
+}
+```

@@ -1,0 +1,240 @@
+{
+  "task_goal": "put the dish into the dishwasher",
+  "trajectory_instruction": "机器人接近洗碗机并打开门，随后多次执行抓取盘子/叉子、将其放入洗碗机内部架子上、调整碗篮位置以及释放物体的循环操作，最后关闭洗碗机门并移向旁边的橱柜。",
+  "semantic_phases": [
+    {
+      "phase_id": 0,
+      "start_frame": 153,
+      "end_frame": 225,
+      "instruction": "机器人打开洗碗机门并尝试放入第一个盘子（部分动作可能为试探或调整）",
+      "supporting_event_ids": [
+        0,
+        1,
+        2
+      ],
+      "confidence": 0.95
+    },
+    {
+      "phase_id": 1,
+      "start_frame": 226,
+      "end_frame": 296,
+      "instruction": "机器人正式将盘子放置在洗碗机内部架子上并松开",
+      "supporting_event_ids": [
+        3,
+        4
+      ],
+      "confidence": 0.95
+    },
+    {
+      "phase_id": 2,
+      "start_frame": 297,
+      "end_frame": 410,
+      "instruction": "机器人从洗碗机中退出，随后重新进入并抓取位于架子上的盘子（可能是调整位置或取出）",
+      "supporting_event_ids": [
+        5,
+        6
+      ],
+      "confidence": 0.9
+    },
+    {
+      "phase_id": 3,
+      "start_frame": 411,
+      "end_frame": 524,
+      "instruction": "机器人将盘子放回洗碗机内部，随后拉出下层碗篮进行整理",
+      "supporting_event_ids": [
+        7,
+        8
+      ],
+      "confidence": 0.95
+    },
+    {
+      "phase_id": 4,
+      "start_frame": 525,
+      "end_frame": 720,
+      "instruction": "机器人将叉子放入洗碗机下层碗篮",
+      "supporting_event_ids": [
+        9
+      ],
+      "confidence": 0.95
+    },
+    {
+      "phase_id": 5,
+      "start_frame": 721,
+      "end_frame": 849,
+      "instruction": "机器人在粉色盘子上抓取叉子，随后将其取出并放置在桌面上",
+      "supporting_event_ids": [
+        10,
+        11,
+        12
+      ],
+      "confidence": 0.95
+    },
+    {
+      "phase_id": 6,
+      "start_frame": 850,
+      "end_frame": 1072,
+      "instruction": "机器人抓取台面上的粉色盘子，将其放入洗碗机内部并松开",
+      "supporting_event_ids": [
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "confidence": 0.95
+    },
+    {
+      "phase_id": 7,
+      "start_frame": 1073,
+      "end_frame": 1502,
+      "instruction": "机器人从洗碗机内部退出，拉出下层碗篮，随后多次完全退出洗碗机区域",
+      "supporting_event_ids": [
+        18,
+        19,
+        20
+      ],
+      "confidence": 0.95
+    },
+    {
+      "phase_id": 8,
+      "start_frame": 1503,
+      "end_frame": 1593,
+      "instruction": "机器人关闭洗碗机门，停止移动，随后双臂抬起准备与上方橱柜交互",
+      "supporting_event_ids": [
+        21,
+        22,
+        23
+      ],
+      "confidence": 0.95
+    }
+  ],
+  "atomic_events": [
+    {
+      "event_id": 0,
+      "frame": 153,
+      "instruction": "右臂伸向洗碗机内部准备放置"
+    },
+    {
+      "event_id": 1,
+      "frame": 202,
+      "instruction": "右臂拉开洗碗机门"
+    },
+    {
+      "event_id": 2,
+      "frame": 225,
+      "instruction": "右臂在洗碗机内松开盘子"
+    },
+    {
+      "event_id": 3,
+      "frame": 261,
+      "instruction": "右臂将盘子放置在洗碗机架子上"
+    },
+    {
+      "event_id": 4,
+      "frame": 296,
+      "instruction": "右臂在洗碗机内释放盘子"
+    },
+    {
+      "event_id": 5,
+      "frame": 320,
+      "instruction": "右臂从洗碗机内部退出"
+    },
+    {
+      "event_id": 6,
+      "frame": 410,
+      "instruction": "右臂抓取洗碗机内的盘子"
+    },
+    {
+      "event_id": 7,
+      "frame": 472,
+      "instruction": "右臂在洗碗机内松开盘子"
+    },
+    {
+      "event_id": 8,
+      "frame": 524,
+      "instruction": "右臂拉出洗碗机下层碗篮"
+    },
+    {
+      "event_id": 9,
+      "frame": 720,
+      "instruction": "右臂将叉子放入洗碗机下层碗篮"
+    },
+    {
+      "event_id": 10,
+      "frame": 776,
+      "instruction": "右臂抓取粉色盘子上的叉子"
+    },
+    {
+      "event_id": 11,
+      "frame": 826,
+      "instruction": "右臂夹持粉色盘子上的叉子"
+    },
+    {
+      "event_id": 12,
+      "frame": 849,
+      "instruction": "右臂将叉子从盘子移至桌面"
+    },
+    {
+      "event_id": 13,
+      "frame": 1044,
+      "instruction": "右臂在洗碗机内松开粉色盘子"
+    },
+    {
+      "event_id": 14,
+      "frame": 1072,
+      "instruction": "右臂抓取台面上的粉色盘子"
+    },
+    {
+      "event_id": 15,
+      "frame": 1110,
+      "instruction": "右臂夹持粉色盘子"
+    },
+    {
+      "event_id": 16,
+      "frame": 1220,
+      "instruction": "右臂将粉色盘子放入洗碗机"
+    },
+    {
+      "event_id": 17,
+      "frame": 1240,
+      "instruction": "右臂将粉色盘子放置在洗碗机架中"
+    },
+    {
+      "event_id": 18,
+      "frame": 1370,
+      "instruction": "右臂退出并拉出下层碗篮"
+    },
+    {
+      "event_id": 19,
+      "frame": 1454,
+      "instruction": "右臂空载退出洗碗机"
+    },
+    {
+      "event_id": 20,
+      "frame": 1502,
+      "instruction": "右臂完全退出洗碗机开口区域"
+    },
+    {
+      "event_id": 21,
+      "frame": 1525,
+      "instruction": "右臂关闭洗碗机门"
+    },
+    {
+      "event_id": 22,
+      "frame": 1565,
+      "instruction": "机器人停止在洗碗机前"
+    },
+    {
+      "event_id": 23,
+      "frame": 1593,
+      "instruction": "双臂抬起准备与上方橱柜交互"
+    }
+  ],
+  "uncertainties": [
+    "事件0和事件3/4之间存在动作重叠，事件0可能是一个试探性的reach动作，随后被更明确的place动作覆盖。",
+    "事件6（抓取洗碗机内的盘子）与后续事件7（再次放入）表明机器人可能在进行位置调整或误操作后的修正。",
+    "事件10和11描述非常相似，均涉及抓取叉子，可能是同一动作的不同时间切片标注。",
+    "事件16和17描述几乎一致，均为放置粉色盘子，属于同一连续动作的重复标注。",
+    "事件19和20均为retract动作，可能代表同一退出过程的不同阶段或冗余标注。"
+  ]
+}

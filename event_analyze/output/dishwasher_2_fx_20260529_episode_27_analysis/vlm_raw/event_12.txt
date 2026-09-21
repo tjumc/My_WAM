@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": true,
+  "event_type": "reposition",
+  "atomic_action": "右夹爪松开叉子，将叉子从粉色盘子中取出并放置到桌面上。",
+  "active_arm": "right",
+  "interacted_objects": ["fork", "pink_plate"],
+  "state_before": "右夹爪夹持着叉子，叉子插在粉色盘子中。",
+  "state_after": "叉子被放置在粉色盘子旁边的桌面上，右夹爪松开叉子。",
+  "object_state_change": "fork: plate -> table",
+  "boundary_frame_relation": "near",
+  "confidence": 0.95,
+  "evidence": [
+    "Head视图显示，在f=849时刻，右夹爪位于叉子附近，随后叉子从盘子中消失并出现在桌面上。",
+    "Right视图清晰显示，夹爪从夹持叉子的状态（f=849）变为张开状态（f=872），且叉子位置发生改变。",
+    "Left视图显示右侧机械臂正在进行大幅度动作，符合抓取或放置物体的特征。"
+  ],
+  "notes": "图片显示叉子被从盘中移出，属于整理餐具过程中的重定位动作。"
+}
+```

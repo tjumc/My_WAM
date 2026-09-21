@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": true,
+  "event_type": "release",
+  "atomic_action": "机器人右臂在洗碗机内部释放盘子",
+  "active_arm": "right",
+  "interacted_objects": ["dish", "dishwasher"],
+  "state_before": "右臂伸入洗碗机内部，夹爪处于闭合状态，正握持盘子",
+  "state_after": "右臂夹爪张开，盘子被放置在洗碗机内部，夹爪处于松开状态",
+  "object_state_change": "dish: held by gripper -> placed in rack",
+  "boundary_frame_relation": "near",
+  "confidence": 0.95,
+  "evidence": [
+    "右夹爪 command 在事件点为 74.966，处于张开状态（对比左夹爪 0.0 的闭合状态）",
+    "head 视角显示右臂机械手在洗碗机内部，且夹爪明显张开",
+    "时序上，右臂在 f=296 之前处于伸入/握持姿态，f=296 之后开始回缩（retract）"
+  ],
+  "notes": "图片清晰显示了从握持到释放的过程，right_force_change 信号对应夹爪松开动作"
+}
+```

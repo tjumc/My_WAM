@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": true,
+  "event_type": "open",
+  "atomic_action": "右臂正在用力拉开洗碗机的门",
+  "active_arm": "right",
+  "interacted_objects": ["dishwasher"],
+  "state_before": "洗碗机门处于关闭状态，右臂已伸入门缝处",
+  "state_after": "洗碗机门被拉开至半开状态，露出内部碗篮",
+  "object_state_change": "dishwasher door: closed -> open",
+  "boundary_frame_relation": "near",
+  "confidence": 0.95,
+  "evidence": [
+    "Head视角显示：右臂从洗碗机门缝处向后下方移动，带动门体打开",
+    "Right视角显示：画面从黑暗的门缝内部变为洗碗机内部明亮的碗篮结构",
+    "时序对比显示：f=202时门刚被撬开，f=224时门已明显打开"
+  ],
+  "notes": "无"
+}
+```

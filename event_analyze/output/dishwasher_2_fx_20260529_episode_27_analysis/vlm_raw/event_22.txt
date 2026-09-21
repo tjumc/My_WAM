@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": true,
+  "event_type": "navigation_stop",
+  "atomic_action": "机器人结束移动并停止在洗碗机前，右臂正在接触洗碗机门",
+  "active_arm": "right",
+  "interacted_objects": ["dishwasher"],
+  "state_before": "机器人正在移动接近洗碗机，洗碗机门处于打开状态",
+  "state_after": "机器人停止移动，位置固定在洗碗机前，右臂接触门边缘",
+  "object_state_change": "none",
+  "boundary_frame_relation": "near",
+  "confidence": 0.95,
+  "evidence": [
+    "head相机显示机器人从左侧移动至洗碗机正前方，在f=1565处停止",
+    "right相机显示右夹爪在f=1565时接触洗碗机门边缘，随后保持静止",
+    "base_speed信号变化与机器人停止移动的时间点吻合"
+  ],
+  "notes": "该事件是移动任务结束的标志，为后续操作洗碗机门做准备"
+}
+```

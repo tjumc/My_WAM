@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": true,
+  "event_type": "retract",
+  "atomic_action": "机器人右臂从洗碗机内部向外撤回，准备将餐具拉出或移动。",
+  "active_arm": "right",
+  "interacted_objects": ["dishwasher", "dish_rack"],
+  "state_before": "右臂处于洗碗机内部较深处，夹爪似乎正接触或抓取下层碗篮。",
+  "state_after": "右臂明显向外移动，带出部分碗篮结构，位置更靠近洗碗机外部。",
+  "object_state_change": "dish_rack: 从洗碗机内部深处移动至外部边缘",
+  "boundary_frame_relation": "near",
+  "confidence": 0.95,
+  "evidence": [
+    "对比f=502与f=546的head视图，右臂机械臂关节角度发生显著变化，整体位置向外上方移动。",
+    "对比f=502与f=546的right视图，视野中可见碗篮（dish rack）随右臂动作从深部被拉出。",
+    "右夹爪command值（44.9）较高，表明处于抓持状态，配合手臂回撤动作，符合拉出物体的特征。"
+  ],
+  "notes": "None"
+}
+```

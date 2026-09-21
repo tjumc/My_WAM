@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": true,
+  "event_type": "release",
+  "atomic_action": "右臂将粉色盘子放入洗碗机内部并松开",
+  "active_arm": "right",
+  "interacted_objects": ["pink_dish", "dishwasher"],
+  "state_before": "右夹爪紧紧握住粉色盘子，盘子悬停在洗碗机内部上方",
+  "state_after": "右夹爪张开，粉色盘子已放置在洗碗机内部的支架上，夹爪处于松开状态",
+  "object_state_change": "pink_dish: held -> released; dishwasher: containing_dish",
+  "boundary_frame_relation": "near",
+  "confidence": 0.95,
+  "evidence": [
+    "右夹爪在 f=1175 至 f=1220 期间保持闭合抓握粉色盘子",
+    "在 f=1242 至 f=1265 期间，右夹爪明显张开，盘子已脱离夹爪并位于洗碗机内",
+    "传感器信号中的 left_force_change 与右臂释放动作可能相关的接触力变化或负载移除有关"
+  ],
+  "notes": "图片清晰显示了从抓握到释放的完整过程，候选时间点位于释放动作发生的关键帧附近。"
+}
+```

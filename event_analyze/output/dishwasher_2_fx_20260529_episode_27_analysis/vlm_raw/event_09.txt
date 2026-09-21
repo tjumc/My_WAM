@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": true,
+  "event_type": "place",
+  "atomic_action": "机器人将叉子放入洗碗机下层碗篮中",
+  "active_arm": "right",
+  "interacted_objects": ["fork", "dishwasher_rack"],
+  "state_before": "机器人右手持叉子位于洗碗机开口上方，准备放入",
+  "state_after": "机器人右手已将叉子放置在洗碗机内部的碗篮上，叉子脱离夹爪",
+  "object_state_change": "fork: held -> placed",
+  "boundary_frame_relation": "near",
+  "confidence": 0.95,
+  "evidence": [
+    "右夹爪command在f=720时刻为42.95（高值），对应夹爪闭合持物状态，而前一时刻f=698为0.0（张开状态），显示抓取动作已完成",
+    "Head视角显示f=720时右臂深入洗碗机内部，f=742时叉子已放置在碗篮上且右臂开始回退",
+    "Right视角f=698显示夹爪张开无叉子，f=720显示夹爪闭合握住叉子尖端，f=742显示叉子已放置在金属架上"
+  ],
+  "notes": "无"
+}
+```

@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": true,
+  "event_type": "grasp",
+  "atomic_action": "右机械臂夹爪在粉色盘子上方闭合，抓取叉子",
+  "active_arm": "right",
+  "interacted_objects": ["pink_plate", "fork"],
+  "state_before": "叉子放置在粉色盘子上，右夹爪位于叉子附近但未接触",
+  "state_after": "右夹爪已闭合，夹住叉子柄部",
+  "object_state_change": "fork: resting on plate -> held by gripper",
+  "boundary_frame_relation": "near",
+  "confidence": 0.95,
+  "evidence": [
+    "图片显示在 f=776 时刻（中间列），右夹爪已经闭合在叉子柄部，而在前序帧（f=754）夹爪是张开的",
+    "右夹爪 command 为 50.2，左夹爪为 0.0，表明右臂正在进行抓取动作",
+    "head 视角显示右机械臂末端在 f=776 时位置稳定在盘子上方，与抓取动作吻合"
+  ],
+  "notes": "高层任务是放入洗碗机，但当前候选点主要对应的是从盘子中抓取餐具的中间步骤（grasp fork）。"
+}
+```

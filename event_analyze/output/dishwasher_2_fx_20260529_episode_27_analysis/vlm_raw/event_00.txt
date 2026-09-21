@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": true,
+  "event_type": "reach",
+  "atomic_action": "机器人右臂伸向洗碗机内部，准备将盘子放入",
+  "active_arm": "right",
+  "interacted_objects": ["dishwasher", "plate"],
+  "state_before": "右臂在洗碗机开口处上方悬停，未进入内部",
+  "state_after": "右臂已深入洗碗机内部，正在执行放置动作",
+  "object_state_change": "none",
+  "boundary_frame_relation": "near",
+  "confidence": 0.95,
+  "evidence": [
+    "head视角显示：在f=153帧（中间列），右臂刚刚越过洗碗机边缘，处于进入内部的关键位置；前后帧显示明显的进出运动。",
+    "right视角显示：f=153帧时，机械臂位于洗碗机开口处，紧接着f=176帧时已深入洗碗机内部，表明该时刻处于手臂伸入的动作过程中。",
+    "left视角显示：台面区域无显著变化，排除了左侧手臂或台面物体的干扰，确认动作主体为右侧手臂。"
+  ],
+  "notes": "图片清晰显示了右臂伸入洗碗机的过程，候选帧f=153正好捕捉到了手臂越过边界进入内部的动作瞬间。"
+}
+```

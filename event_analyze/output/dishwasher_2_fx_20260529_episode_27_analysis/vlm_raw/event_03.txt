@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": true,
+  "event_type": "place",
+  "atomic_action": "右臂将盘子放置在洗碗机内部的架子上",
+  "active_arm": "right",
+  "interacted_objects": ["dish", "dishwasher"],
+  "state_before": "右臂夹持盘子位于洗碗机开口前方，处于悬停或准备位置",
+  "state_after": "盘子被放置在洗碗机内部架子上，右臂松开并开始向后撤退",
+  "object_state_change": "dish: held by gripper -> placed on rack",
+  "boundary_frame_relation": "near",
+  "confidence": 0.95,
+  "evidence": [
+    "右夹爪 command 在 f=261 时显著大于0 (19.2)，表明夹爪处于闭合或施力状态以支撑物体",
+    "head 视角显示右臂在 f=261 时位于洗碗机内部，而在 f=284 时已明显向后移动，显示物体已释放",
+    "right 视角显示 f=261 时视野被物体遮挡（夹持状态），随后视野变为洗碗机内部空荡的架子"
+  ],
+  "notes": "基于夹爪命令和视觉序列，该时刻捕捉了物体从被夹持到被放置的关键转换点。"
+}
+```

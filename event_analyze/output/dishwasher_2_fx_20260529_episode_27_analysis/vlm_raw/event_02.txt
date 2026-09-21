@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": true,
+  "event_type": "release",
+  "atomic_action": "机器人将手中的盘子放入洗碗机内部并松开夹爪",
+  "active_arm": "right",
+  "interacted_objects": ["dish", "dishwasher"],
+  "state_before": "机器人右臂伸入洗碗机内部，夹爪夹持着盘子悬停在洗碗机底部上方",
+  "state_after": "盘子已放置在洗碗机底部，右臂夹爪张开松开物体",
+  "object_state_change": "dish: held -> placed; dishwasher interior: occupied",
+  "boundary_frame_relation": "near",
+  "confidence": 0.95,
+  "evidence": [
+    "右夹爪command在候选点处为100.0（全开），表明正在执行松开动作",
+    "图片序列显示盘子从被夹持状态变为放置在洗碗机底部",
+    "头部相机视角显示右臂从伸入状态开始回缩"
+  ],
+  "notes": "none"
+}
+```

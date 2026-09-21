@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": true,
+  "event_type": "grasp",
+  "atomic_action": "右机械臂夹爪接触并抓取粉色盘子",
+  "active_arm": "right",
+  "interacted_objects": ["pink plate"],
+  "state_before": "粉色盘子静置于台面，右机械臂夹爪正在接近盘子边缘",
+  "state_after": "右机械臂夹爪已闭合夹住盘子，盘子被提起",
+  "object_state_change": "pink plate: resting on table -> held by robot",
+  "boundary_frame_relation": "near",
+  "confidence": 0.95,
+  "evidence": [
+    "右夹爪命令值从0突增至59，表明执行抓取动作",
+    "head视角显示右臂从盘子旁移动至盘子正上方并接触",
+    "right视角显示夹爪从张开状态变为闭合夹住盘子"
+  ],
+  "notes": "无"
+}
+```

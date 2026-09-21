@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": true,
+  "event_type": "grasp",
+  "atomic_action": "右夹爪夹持粉色盘子上的叉子",
+  "active_arm": "right",
+  "interacted_objects": ["fork", "plate"],
+  "state_before": "叉子静置在粉色盘子上，右夹爪位于叉子附近但未接触",
+  "state_after": "叉子被右夹爪夹住，处于抓取完成状态",
+  "object_state_change": "fork: resting on plate -> grasped by right gripper",
+  "boundary_frame_relation": "near",
+  "confidence": 0.95,
+  "evidence": [
+    "右视角图显示右夹爪在f=826时刻紧紧夹住叉子柄部，而f=804时刻叉子仍静置在盘子上",
+    "头部视角图显示机械臂末端在f=826时刻位置稳定，处于抓取后的保持姿态",
+    "时序检测器信号gripper_transition和right_torque变化与视觉上的抓取动作高度一致"
+  ],
+  "notes": "无"
+}
+```

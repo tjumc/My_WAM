@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": true,
+  "event_type": "close",
+  "atomic_action": "右臂推动洗碗机门向上闭合",
+  "active_arm": "right",
+  "interacted_objects": ["dishwasher door"],
+  "state_before": "洗碗机门处于打开状态",
+  "state_after": "洗碗机门处于关闭状态",
+  "object_state_change": "dishwasher door: open -> closed",
+  "boundary_frame_relation": "near",
+  "confidence": 0.95,
+  "evidence": [
+    "head视角显示在f=1525时刻洗碗机门处于开启状态，而在f=1548时刻门已关闭",
+    "right视角显示右夹爪在f=1525时接触门板边缘，随后门板位置上升直至闭合",
+    "左夹爪command为0.0且位置未变，表明仅右臂参与操作"
+  ],
+  "notes": "无"
+}
+```

@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": true,
+  "event_type": "release",
+  "atomic_action": "右臂在洗碗机内部松开并释放盘子",
+  "active_arm": "right",
+  "interacted_objects": ["dish", "dishwasher rack"],
+  "state_before": "右臂伸入洗碗机内部，夹爪夹持着盘子，准备放置",
+  "state_after": "右臂夹爪张开，盘子已放置在洗碗机层架上，右臂开始回缩",
+  "object_state_change": "dish: held by gripper -> placed on rack",
+  "boundary_frame_relation": "near",
+  "confidence": 0.95,
+  "evidence": [
+    "图片显示右臂夹爪在f=472附近从闭合状态变为张开状态（f=494, f=517），且不再夹持盘子。",
+    "盘子在f=472时位于夹爪中，在f=517时清晰可见已独立放置在洗碗机层架上。",
+    "右夹爪command数值约为50.8，对应夹爪张开的状态，与释放动作一致。"
+  ],
+  "notes": "none"
+}
+```

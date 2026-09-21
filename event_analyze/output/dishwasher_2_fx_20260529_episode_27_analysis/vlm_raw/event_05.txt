@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": true,
+  "event_type": "retract",
+  "atomic_action": "右臂从洗碗机内部退出并抬起，同时相机视角随之发生剧烈变化",
+  "active_arm": "right",
+  "interacted_objects": ["dishwasher"],
+  "state_before": "右臂深入洗碗机内部，视角被遮挡或位于洗碗机内",
+  "state_after": "右臂从洗碗机中退出，回到洗碗机外部上方",
+  "object_state_change": "none",
+  "boundary_frame_relation": "near",
+  "confidence": 0.95,
+  "evidence": [
+    "右臂（right camera）在f=320（中间列）时处于洗碗机内部深处，而在f=365时已完全退出洗碗机外部",
+    "head camera视角从f=320的洗碗机内部/边缘视角，转变为f=365的洗碗机上方俯视视角",
+    "视觉流显示明显的机械臂回撤运动轨迹，而非抓取或放置物体的动作"
+  ],
+  "notes": "图片显示的是右臂从洗碗机内部退出的过程，虽然高层任务是放盘子，但此特定时刻捕捉的是手臂完成内部操作后的撤离动作。"
+}
+```

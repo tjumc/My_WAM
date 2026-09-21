@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": true,
+  "event_type": "grasp",
+  "atomic_action": "右机械臂抓取盘子",
+  "active_arm": "right",
+  "interacted_objects": ["dish"],
+  "state_before": "盘子位于洗碗机内部架子上，右夹爪张开并接近盘子",
+  "state_after": "右夹爪已闭合夹住盘子，盘子随机械臂被提起并移出洗碗机",
+  "object_state_change": "dish: inside dishwasher -> held by robot",
+  "boundary_frame_relation": "near",
+  "confidence": 0.95,
+  "evidence": [
+    "右夹爪 command 从 0 突变为 25.6，表明夹爪闭合动作",
+    "head 视角显示右臂在 f=410 到 f=432 期间明显向上移动并抓取物体",
+    "right 视角显示夹爪在 f=410 时刻已闭合夹住盘子边缘"
+  ],
+  "notes": "none"
+}
+```

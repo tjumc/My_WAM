@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": true,
+  "event_type": "reach",
+  "atomic_action": "机器人双臂抬起并移动至上方橱柜前，准备进行交互。",
+  "active_arm": "both",
+  "interacted_objects": ["cabinet"],
+  "state_before": "双臂位于身体前方较低位置，未接触上方物体。",
+  "state_after": "双臂抬起并伸展，末端执行器位于上方橱柜门前方。",
+  "object_state_change": "none",
+  "boundary_frame_relation": "near",
+  "confidence": 0.95,
+  "evidence": [
+    "head视角显示：从f=1548到f=1593，双臂明显从下方抬起并向上伸展。",
+    "head视角显示：在f=1593（候选时刻），双臂已到达橱柜门前，且手指张开，姿态显示正在接近目标。",
+    "left视角显示：f=1548时台面空旷，f=1593时左侧机械臂的大臂已明显进入视野并向上抬起。"
+  ],
+  "notes": "图片展示了双臂抬起接近橱柜的过程，高层任务提及洗碗机，但视觉证据主要显示的是上方橱柜的交互准备（Reach）。"
+}
+```

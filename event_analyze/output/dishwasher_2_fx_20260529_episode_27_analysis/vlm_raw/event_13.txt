@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": true,
+  "event_type": "release",
+  "atomic_action": "右夹爪在洗碗机内部松开粉色盘子",
+  "active_arm": "right",
+  "interacted_objects": ["pink_plate", "dishwasher"],
+  "state_before": "右夹爪夹持粉色盘子，位于洗碗机内部上方",
+  "state_after": "右夹爪松开盘子，盘子留在洗碗机内部，右臂开始撤离",
+  "object_state_change": "pink_plate: held_by_robot -> placed_in_dishwasher",
+  "boundary_frame_relation": "near",
+  "confidence": 0.95,
+  "evidence": [
+    "f=999至f=1044期间，右夹爪持续夹持粉色盘子并位于洗碗机内部",
+    "f=1044时右夹爪command为100.0（全开），且盘子已放置到位",
+    "f=1066至f=1089期间，右臂已离开洗碗机，盘子留在洗碗机内"
+  ],
+  "notes": "无"
+}
+```

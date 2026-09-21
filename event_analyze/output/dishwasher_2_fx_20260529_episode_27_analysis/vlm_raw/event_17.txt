@@ -1,0 +1,20 @@
+```json
+{
+  "is_semantic_event": true,
+  "event_type": "release",
+  "atomic_action": "右机械臂将粉色盘子放置并松开在洗碗机架中",
+  "active_arm": "right",
+  "interacted_objects": ["粉色盘子", "洗碗机"],
+  "state_before": "右机械臂夹持着粉色盘子，将其定位在洗碗机内部",
+  "state_after": "粉色盘子独立放置在洗碗机架上，右机械臂松开并移开",
+  "object_state_change": "粉色盘子: held -> released",
+  "boundary_frame_relation": "near",
+  "confidence": 0.95,
+  "evidence": [
+    "head视角显示：在f=1240帧时盘子位于架子上，到f=1262帧时机械臂已松开并离开盘子",
+    "right视角显示：f=1240帧画面剧烈模糊，表明机械臂正在进行快速释放动作并迅速撤出视野",
+    "f=1285帧显示盘子已稳固立在架子上，机械臂不再接触"
+  ],
+  "notes": "图片清晰展示了从夹持到松开的过程，f=1240对应释放动作发生的关键时刻"
+}
+```
