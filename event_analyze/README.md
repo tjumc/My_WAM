@@ -15,8 +15,9 @@ event_analyze/
 │   ├── v2/
 │   ├── v2_1/
 │   ├── v2_2/
-│   ├── v3/          # archived independent-window entity state machine
-│   └── v3_1/        # current active trajectory-level entity tracker
+│   ├── v3/
+│   ├── v3_1/        # trajectory-level entity tracking
+│   └── v3_2/        # current active: targeted observation + interaction validation
 └── output/
     └── <episode>_analysis/
         ├── candidate_events.json
@@ -24,21 +25,13 @@ event_analyze/
         ├── events_overview.jpg
         ├── signals.png
         └── versions/
-            ├── v1/
-            ├── v2/
-            ├── v2_1/
-            ├── v2_2/
-            ├── v3/
-            └── v3_1/
+            └── ...
 ```
 
-共享 proposal 只生成一次。不同版本只把自己的结果写入
-`output/<episode>_analysis/versions/<version>/`。
-
-当前推荐运行 V3.1：
+当前推荐运行 V3.2：
 
 ```bash
-bash versions/v3_1/run.sh \
+bash versions/v3_2/run.sh \
   /path/to/episode.hdf5 \
   output/dishwasher_2_fx_20260529_episode_27_analysis \
   "put the dish into the dishwasher" \
@@ -46,13 +39,11 @@ bash versions/v3_1/run.sh \
   1645
 ```
 
-V3.1 的核心原则：
-- VLM 仍只输出受限实体状态，不生成 action/phase；
-- 对 door / dish rack / cutlery basket / knife / fork / plate 做全轨迹状态跟踪；
-- 使用状态持久性、物理转移图、遮挡插值和 hand-object 互斥恢复连续实体轨迹；
-- skill 由确定性状态机从完整状态轨迹推导；
+V3.2：
+- 复用 V3 generic entity observations；
+- 对低可观测的 cutlery basket 做 targeted re-observation；
+- V3.1 trajectory-level tracking 恢复连续实体轨迹；
+- container transition 必须通过 interaction-grounded validation；
+- object placement 必须有真实 observed held state；
 - 不确定区间保持 coarse-task-only；
-- `regression/` 的人工标注只用于评估，流水线不会读取。
-
-默认会复用 V3 已生成的 `entity_observations.jsonl`，从而把 V3→V3.1
-提升归因到 trajectory-level tracking，而不是新的 VLM 调用。
+- regression 人工 GT 只用于离线评估，流水线不会读取。
