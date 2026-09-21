@@ -16,14 +16,15 @@ event_analyze/
 │   ├── v3/
 │   ├── v3_1/
 │   ├── v3_2/
-│   └── v3_3/        # current active: dense targeted temporal observation
+│   ├── v3_3/
+│   └── v3_3_1/      # current active: entity-specific dense fusion
 └── output/
 ```
 
-当前推荐运行 V3.3：
+当前推荐运行 V3.3.1：
 
 ```bash
-bash versions/v3_3/run.sh \
+bash versions/v3_3_1/run.sh \
   /path/to/episode.hdf5 \
   output/dishwasher_2_fx_20260529_episode_27_analysis \
   "put the dish into the dishwasher" \
@@ -31,8 +32,7 @@ bash versions/v3_3/run.sh \
   1645
 ```
 
-V3.3 保留 V3.2 的 interaction-grounded validation，并对低可观测的小型
-articulated entity 使用从 HDF5 直接解码的 dense temporal observation。
+V3.3.1 保留 V3.2 的高 precision，并把 V3.3 的 dense temporal evidence 改为 entity-specific fusion：targeted cutlery evidence 不再改变 dish-rack / knife / fork / plate 的 tracking 时间轴，同时加入 receptacle-accessibility 因果一致性约束。
 
 泛化边界与未来 task-agnostic 设计见 `GENERALIZATION.md`。
 
