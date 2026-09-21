@@ -1,0 +1,19 @@
+```json
+{
+  "contains_semantic_action": true,
+  "dominant_action": "place",
+  "action_tags": ["placing", "grasping"],
+  "action_progress": "ongoing",
+  "atomic_action": "机器人右臂正在将一个粉色盘子放入洗碗机内部的碗篮中。",
+  "active_arm": "right",
+  "visible_object_category": "dish",
+  "object_identity_confident": true,
+  "task_relevance": "relevant",
+  "confidence": 0.9,
+  "evidence": [
+    "右臂（Head视角）在窗口期间明显向洗碗机内部移动，将粉色物体从外部送入内部碗篮。",
+    "右夹爪（Right视角）在窗口前段紧紧夹持粉色盘子，在窗口后段（f=1285）已松开并离开盘子。",
+    "传感器显示右夹爪命令值显著下降（decrease），与视觉上的释放动作一致。"
+  ]
+}
+```

@@ -1,0 +1,19 @@
+```json
+{
+  "contains_semantic_action": true,
+  "dominant_action": "reach",
+  "action_tags": ["navigation", "reach"],
+  "action_progress": "ongoing",
+  "atomic_action": "机器人正在向洗碗机区域移动并伸展手臂，准备进行放置操作。",
+  "active_arm": "both",
+  "visible_object_category": "dishwasher",
+  "object_identity_confident": true,
+  "task_relevance": "relevant",
+  "confidence": 0.85,
+  "evidence": [
+    "head视角显示机器人身体明显向洗碗机方向移动（base_speed）。",
+    "left视角显示机械臂从左侧边缘向画面中心（洗碗机上方）伸展（left_ee_speed）。",
+    "right视角显示夹爪处于张开状态并向上抬起，正在接近洗碗机位置。"
+  ]
+}
+```

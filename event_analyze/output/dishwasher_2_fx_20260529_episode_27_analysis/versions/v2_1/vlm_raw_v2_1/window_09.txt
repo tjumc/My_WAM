@@ -1,0 +1,19 @@
+```json
+{
+  "contains_semantic_action": true,
+  "dominant_action": "release",
+  "action_tags": ["release", "retract"],
+  "action_progress": "ongoing",
+  "atomic_action": "机器人右臂将叉子放入洗碗机下层碗篮中，松开夹爪，并开始向后缩回。",
+  "active_arm": "right",
+  "visible_object_category": "dishwasher",
+  "object_identity_confident": false,
+  "task_relevance": "relevant",
+  "confidence": 0.9,
+  "evidence": [
+    "右视角（bottom row）显示，从 f=675 到 f=720，夹爪将叉子插入洗碗机（dishwasher）的篮架中；随后夹爪张开，叉子留在篮架上。",
+    "右臂在 f=720 后明显向后上方移动（retract），脱离与物体的接触。",
+    "传感器数据显示 gripper_command 减小（对应张开动作），且右臂力传感器数值下降，表明接触力消失。"
+  ]
+}
+```

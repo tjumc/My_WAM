@@ -245,12 +245,12 @@ def main():
     ap.add_argument("--min-confidence", type=float, default=0.55)
     ap.add_argument("--max-gap-sec", type=float, default=1.0)
     ap.add_argument("--fps", type=float, default=30.0)
-    ap.add_argument("--api-key", default=None)
-    ap.add_argument("--base-url", default=None)
-    ap.add_argument("--aigc-user", default=None)
+    ap.add_argument("--api-key", default="msk-57d214329a4b63bebb0617ce7dadbddb4d00c382f61be32a015d73c4e6c8d121")
+    ap.add_argument("--base-url", default="https://aimpapi.midea.com/t-aigc/aimp-qwen3-5-122b/v1")
+    ap.add_argument("--aigc-user", default="suty11")
     ap.add_argument("--model", default=DEFAULT_MODEL)
     args = ap.parse_args()
-
+    
     root = Path(args.analysis_dir)
     events = load_jsonl(root / "window_semantics_v2_1.jsonl")
     eligible, actions = cluster_actions(

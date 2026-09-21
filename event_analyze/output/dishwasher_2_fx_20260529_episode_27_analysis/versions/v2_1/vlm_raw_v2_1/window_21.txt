@@ -1,0 +1,19 @@
+```json
+{
+  "contains_semantic_action": true,
+  "dominant_action": "push",
+  "action_tags": ["push", "close"],
+  "action_progress": "ongoing",
+  "atomic_action": "机器人右臂正在执行将洗碗机下层拉篮向内推入的动作，直至其归位。",
+  "active_arm": "right",
+  "visible_object_category": "dishwasher",
+  "object_identity_confident": true,
+  "task_relevance": "relevant",
+  "confidence": 0.95,
+  "evidence": [
+    "头部视角（head）清晰显示右臂在窗口期间持续向右/向前伸展，伴随洗碗机下层的移动。",
+    "传感器数据显示右臂力值（right_force）显著增加（delta 11.863），符合推入物体时的接触阻力特征。",
+    "右侧视角（right）显示右臂末端持续接触并推动下层拉篮结构。"
+  ]
+}
+```

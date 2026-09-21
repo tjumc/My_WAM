@@ -1,0 +1,19 @@
+```json
+{
+  "contains_semantic_action": true,
+  "dominant_action": "place",
+  "action_tags": ["transport", "place"],
+  "action_progress": "ongoing",
+  "atomic_action": "机器人右手臂持有一个白色盘子，正在将其移入洗碗机内部并准备放置在碗架上。",
+  "active_arm": "right",
+  "visible_object_category": "dish",
+  "object_identity_confident": true,
+  "task_relevance": "relevant",
+  "confidence": 0.95,
+  "evidence": [
+    "Head view 显示右手臂末端夹持一个白色盘状物体，并在时间窗口内向洗碗机内部移动。",
+    "Right view 显示相机视角跟随手臂深入洗碗机内部，背景从柜体变为洗碗机内壁和碗架。",
+    "传感器数据显示右夹爪命令值下降 (decrease)，结合视觉上的物体存在，符合保持抓取或调整抓取的姿态。"
+  ]
+}
+```

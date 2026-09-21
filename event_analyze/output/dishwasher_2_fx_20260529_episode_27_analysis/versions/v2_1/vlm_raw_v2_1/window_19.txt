@@ -1,0 +1,19 @@
+```json
+{
+  "contains_semantic_action": true,
+  "dominant_action": "retract",
+  "action_tags": ["retract", "transport"],
+  "action_progress": "ongoing",
+  "atomic_action": "右臂从洗碗机内部向外撤退并抬升，将抓取的物体带离洗碗机区域。",
+  "active_arm": "right",
+  "visible_object_category": "dish",
+  "object_identity_confident": false,
+  "task_relevance": "post_task",
+  "confidence": 0.9,
+  "evidence": [
+    "右臂视角（right row）清晰显示机械臂从洗碗机内部位置（f=1409）移动至洗碗机外部上方（f=1499）。",
+    "头部视角（head row）显示右臂末端从洗碗机内部抬起并移开。",
+    "传感器数据显示右夹爪力（right_force）和命令值（command）增加，表明夹持状态保持或增强，符合物体被带离的运输特征。"
+  ]
+}
+```

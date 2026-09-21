@@ -1,0 +1,19 @@
+```json
+{
+  "contains_semantic_action": true,
+  "dominant_action": "transport",
+  "action_tags": ["transport", "reposition"],
+  "action_progress": "ongoing",
+  "atomic_action": "机器人左手持有一个浅色矩形物体（疑似餐盘），将其从洗碗机外部平稳移动并送入洗碗机内部。",
+  "active_arm": "left",
+  "visible_object_category": "dish",
+  "object_identity_confident": false,
+  "task_relevance": "relevant",
+  "confidence": 0.92,
+  "evidence": [
+    "Head view显示左手从画面右侧向洗碗机内部移动，且全程保持物体位置稳定。",
+    "Right view显示物体从洗碗机外部（f=225）进入内部（f=248, f=270）。",
+    "Left force趋势显示增加，表明机械臂正在施加力矩以支撑物体重量并控制其移动。"
+  ]
+}
+```

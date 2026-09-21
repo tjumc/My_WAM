@@ -1,0 +1,19 @@
+```json
+{
+  "contains_semantic_action": true,
+  "dominant_action": "grasp",
+  "action_tags": ["grasp", "adjust"],
+  "action_progress": "end",
+  "atomic_action": "机器人右手在粉色盘子上的叉子附近进行夹取操作，夹爪从张开到闭合，并伴有细微的接触调整。",
+  "active_arm": "right",
+  "visible_object_category": "fork",
+  "object_identity_confident": true,
+  "task_relevance": "relevant",
+  "confidence": 0.9,
+  "evidence": [
+    "right_gripper_command_trend 为 decrease 且 delta 为 -82.224，表明夹爪有明显的闭合动作。",
+    "head 视角显示机械臂末端在盘子区域，夹爪位置在叉子柄部附近。",
+    "right_force 和 left_force 均有增加，说明夹爪闭合过程中产生了接触力。"
+  ]
+}
+```

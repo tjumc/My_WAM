@@ -1,0 +1,19 @@
+```json
+{
+  "contains_semantic_action": true,
+  "dominant_action": "grasp",
+  "action_tags": ["grasp", "reach"],
+  "action_progress": "end",
+  "atomic_action": "右臂移动至台面上的粉色盘子处，并在窗口后半段完成夹爪闭合以抓取盘子。",
+  "active_arm": "right",
+  "visible_object_category": "plate",
+  "object_identity_confident": true,
+  "task_relevance": "relevant",
+  "confidence": 0.95,
+  "evidence": [
+    "head视角显示右臂从画面外进入并接触粉色盘子，随后夹爪闭合。",
+    "right视角显示夹爪从张开状态逐渐闭合，最终夹住粉色盘子边缘。",
+    "传感器数据显示右夹爪命令值显著下降（-100.0）且力矩增加，符合抓取动作特征。"
+  ]
+}
+```

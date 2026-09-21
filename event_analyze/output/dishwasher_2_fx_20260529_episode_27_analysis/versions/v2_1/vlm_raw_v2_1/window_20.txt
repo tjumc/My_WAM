@@ -1,0 +1,19 @@
+```json
+{
+  "contains_semantic_action": true,
+  "dominant_action": "transport",
+  "action_tags": ["transport", "navigation"],
+  "action_progress": "ongoing",
+  "atomic_action": "机器人正携带物体（疑似盘子）在洗碗机前进行位置调整或平移，为放入洗碗机做准备。",
+  "active_arm": "right",
+  "visible_object_category": "dish",
+  "object_identity_confident": false,
+  "task_relevance": "relevant",
+  "confidence": 0.85,
+  "evidence": [
+    "Head视角显示机器人手臂与洗碗机门保持相对固定的空间位置关系，表明正在进行近距离操作。",
+    "传感器数据显示右臂力矩显著下降（-7.582），这符合物体被放置或力控调整的特征，而非空手状态。",
+    "Right视角显示机器人处于洗碗机内部/边缘的近距离视角，且夹爪处于闭合状态。"
+  ]
+}
+```

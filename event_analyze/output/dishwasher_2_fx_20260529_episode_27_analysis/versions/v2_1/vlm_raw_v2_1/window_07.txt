@@ -1,0 +1,22 @@
+```json
+{
+  "contains_semantic_action": true,
+  "dominant_action": "place",
+  "action_tags": [
+    "placing_dish",
+    "arm_extension"
+  ],
+  "action_progress": "end",
+  "atomic_action": "右臂将盘子伸入洗碗机内部并放置到位，随后手臂向后缩回。",
+  "active_arm": "right",
+  "visible_object_category": "dish",
+  "object_identity_confident": true,
+  "task_relevance": "relevant",
+  "confidence": 0.95,
+  "evidence": [
+    "Head view显示右臂从洗碗机外部向内部移动，并在中间帧（f=472）将白色盘子放置在碗篮中，随后在f=517时手臂已缩回。",
+    "Right view显示机械臂在洗碗机内部空间进行伸展和定位操作，背景可见洗碗机内部结构。",
+    "传感器数据显示右臂力矩/力增加（right_force_trend: increase），符合将物体插入或放置在狭窄空间（洗碗机）时的物理特征。"
+  ]
+}
+```

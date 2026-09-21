@@ -1,0 +1,59 @@
+{
+  "trajectory_instruction": "机器人首先通过双臂协作将盘子送入洗碗机，随后右臂在洗碗机内部进行位置调整或放置操作；接着右臂短暂回撤并重新抓取台面上的叉子进行微调，之后再次抓取粉色盘子将其送入洗碗机下层碗篮并推入拉篮，最后右臂从洗碗机区域回撤并准备进行后续动作。",
+  "phase_groups": [
+    {
+      "phase_id": 0,
+      "instruction": "双臂协作将盘子送入洗碗机",
+      "action_ids": [
+        0,
+        1,
+        2
+      ],
+      "confidence": 0.92
+    },
+    {
+      "phase_id": 1,
+      "instruction": "右臂在洗碗机内部进行放置或调整",
+      "action_ids": [
+        3,
+        4
+      ],
+      "confidence": 0.9
+    },
+    {
+      "phase_id": 2,
+      "instruction": "重新抓取并调整叉子",
+      "action_ids": [
+        5,
+        6
+      ],
+      "confidence": 0.875
+    },
+    {
+      "phase_id": 3,
+      "instruction": "抓取粉色盘子并送入洗碗机下层",
+      "action_ids": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "confidence": 0.91
+    },
+    {
+      "phase_id": 4,
+      "instruction": "推入洗碗机拉篮并回撤手臂",
+      "action_ids": [
+        12,
+        13,
+        14
+      ],
+      "confidence": 0.9
+    }
+  ],
+  "task_end_action_id": 14,
+  "uncertainties": [
+    "Action 7 (post_task) 描述将盘子从洗碗机移出至台面，与当前任务方向相反，已排除在 phase 分组之外，但需确认是否为任务执行过程中的异常回退或误操作。",
+    "Action 4 和 Action 13 均描述将物体放入洗碗机后的回撤动作，且 Action 4 的可见物体类别为 'dishwasher' 而非具体餐具，可能存在语义标签与物体识别的轻微冲突。"
+  ]
+}

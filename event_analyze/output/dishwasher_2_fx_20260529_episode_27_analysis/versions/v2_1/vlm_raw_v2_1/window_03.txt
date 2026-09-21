@@ -1,0 +1,19 @@
+```json
+{
+  "contains_semantic_action": true,
+  "dominant_action": "transport",
+  "action_tags": ["transport", "reach"],
+  "action_progress": "ongoing",
+  "atomic_action": "机器人右臂正持握一个盘子，将其从洗碗机外部平稳移动并送入洗碗机内部。",
+  "active_arm": "right",
+  "visible_object_category": "dish",
+  "object_identity_confident": true,
+  "task_relevance": "relevant",
+  "confidence": 0.95,
+  "evidence": [
+    "右臂（right arm）在窗口内呈现明显的空间位移，从洗碗机外部区域移动至内部区域。",
+    "头部视角（head view）清晰显示右臂末端夹持着一个白色的盘子（dish），且该物体在移动过程中保持受控状态。",
+    "右侧夹爪命令趋势（right_gripper_command_trend）为 decrease（减小），通常对应夹持动作，与视觉中夹持盘子的状态一致。"
+  ]
+}
+```

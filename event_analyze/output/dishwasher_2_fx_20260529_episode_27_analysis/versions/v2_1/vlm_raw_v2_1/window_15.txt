@@ -1,0 +1,19 @@
+```json
+{
+  "contains_semantic_action": true,
+  "dominant_action": "transport",
+  "action_tags": ["transport", "grasp"],
+  "action_progress": "ongoing",
+  "atomic_action": "右机械臂夹持粉色盘子，从台面区域平稳移动至洗碗机入口上方。",
+  "active_arm": "right",
+  "visible_object_category": "dish",
+  "object_identity_confident": true,
+  "task_relevance": "relevant",
+  "confidence": 0.95,
+  "evidence": [
+    "head视角显示右臂在窗口内从左侧台面向右侧洗碗机方向发生显著位移。",
+    "right视角显示夹爪紧紧夹持粉色盘子，且盘子相对于相机位置保持相对稳定，表明处于抓取运输状态。",
+    "传感器数据显示右夹爪力增加（force_trend: increase），说明夹持动作已完成并维持。"
+  ]
+}
+```

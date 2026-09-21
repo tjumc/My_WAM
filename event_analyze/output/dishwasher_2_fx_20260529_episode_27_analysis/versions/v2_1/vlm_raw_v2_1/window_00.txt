@@ -1,0 +1,19 @@
+```json
+{
+  "contains_semantic_action": true,
+  "dominant_action": "transport",
+  "action_tags": ["transport", "reach"],
+  "action_progress": "ongoing",
+  "atomic_action": "机器人右臂抬起粉色盘子并向洗碗机方向移动，准备进行放置操作。",
+  "active_arm": "right",
+  "visible_object_category": "dish",
+  "object_identity_confident": false,
+  "task_relevance": "relevant",
+  "confidence": 0.9,
+  "evidence": [
+    "head视角显示右臂从左侧台面位置向右上方（洗碗机方向）发生显著位移。",
+    "right视角确认右臂末端夹持着粉色盘子（dish）并向上抬起。",
+    "检测器信号显示base_yaw_rate和torso_joint_speed变化，配合手臂运动，表明是全身协调的运输动作。"
+  ]
+}
+```

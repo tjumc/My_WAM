@@ -1,0 +1,22 @@
+```json
+{
+  "contains_semantic_action": true,
+  "dominant_action": "transport",
+  "action_tags": [
+    "transport",
+    "place"
+  ],
+  "action_progress": "end",
+  "atomic_action": "机器人右臂执行了将物体移入洗碗机内部的动作，并在窗口末期将其放置在碗架上。",
+  "active_arm": "right",
+  "visible_object_category": "dish",
+  "object_identity_confident": false,
+  "task_relevance": "relevant",
+  "confidence": 0.9,
+  "evidence": [
+    "Head view显示右臂从洗碗机外部向内部深处移动，并在窗口后半段（f318-f341）将末端执行器停留在洗碗机内部。",
+    "Right view (f318) 清晰显示夹爪位于洗碗机下层碗架的齿状结构上方，呈现放置姿态。",
+    "传感器数据显示右臂力矩/受力增加（right_force_trend: increase），符合接触物体或放置时的物理交互特征。"
+  ]
+}
+```

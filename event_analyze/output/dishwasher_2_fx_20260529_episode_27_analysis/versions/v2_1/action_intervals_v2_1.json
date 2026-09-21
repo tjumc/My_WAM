@@ -1,0 +1,427 @@
+{
+  "num_candidate_windows": 24,
+  "num_semantic_windows": 24,
+  "num_action_intervals": 15,
+  "action_intervals": [
+    {
+      "action_id": 0,
+      "action_type": "transport",
+      "action_tags": [
+        "transport",
+        "place",
+        "reach"
+      ],
+      "instruction": "右臂执行将物体（盘子）从台面抓取并移动至洗碗机内部进行放置的动作。",
+      "active_arm": "right",
+      "visible_object_category": "dish",
+      "task_relevance": "relevant",
+      "confidence": 0.925,
+      "member_event_ids": [
+        0,
+        1
+      ],
+      "member_center_frames": [
+        153,
+        202
+      ],
+      "progress_sequence": [
+        "ongoing",
+        "end"
+      ],
+      "rough_start_frame": 108,
+      "rough_end_frame": 247,
+      "first_evidence_frame": 153,
+      "last_evidence_frame": 202
+    },
+    {
+      "action_id": 1,
+      "action_type": "transport",
+      "action_tags": [
+        "transport"
+      ],
+      "instruction": "机器人左手持有一个浅色矩形物体（疑似餐盘），将其从洗碗机外部平稳移动并送入洗碗机内部。",
+      "active_arm": "left",
+      "visible_object_category": "dish",
+      "task_relevance": "relevant",
+      "confidence": 0.92,
+      "member_event_ids": [
+        2
+      ],
+      "member_center_frames": [
+        225
+      ],
+      "progress_sequence": [
+        "ongoing"
+      ],
+      "rough_start_frame": 180,
+      "rough_end_frame": 270,
+      "first_evidence_frame": 225,
+      "last_evidence_frame": 225
+    },
+    {
+      "action_id": 2,
+      "action_type": "transport",
+      "action_tags": [
+        "transport",
+        "place",
+        "reach"
+      ],
+      "instruction": "机器人右臂正持握一个盘子，将其从洗碗机外部平稳移动并送入洗碗机内部。",
+      "active_arm": "right",
+      "visible_object_category": "dish",
+      "task_relevance": "relevant",
+      "confidence": 0.93,
+      "member_event_ids": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "member_center_frames": [
+        261,
+        296,
+        320,
+        410,
+        472
+      ],
+      "progress_sequence": [
+        "ongoing",
+        "end",
+        "ongoing",
+        "ongoing",
+        "end"
+      ],
+      "rough_start_frame": 216,
+      "rough_end_frame": 517,
+      "first_evidence_frame": 261,
+      "last_evidence_frame": 472
+    },
+    {
+      "action_id": 3,
+      "action_type": "retract",
+      "action_tags": [
+        "retract",
+        "navigation"
+      ],
+      "instruction": "右臂从洗碗机内部向外移动并退出，完成从洗碗机区域的撤离动作。",
+      "active_arm": "right",
+      "visible_object_category": "dishwasher",
+      "task_relevance": "relevant",
+      "confidence": 0.9,
+      "member_event_ids": [
+        8
+      ],
+      "member_center_frames": [
+        524
+      ],
+      "progress_sequence": [
+        "end"
+      ],
+      "rough_start_frame": 479,
+      "rough_end_frame": 569,
+      "first_evidence_frame": 524,
+      "last_evidence_frame": 524
+    },
+    {
+      "action_id": 4,
+      "action_type": "place",
+      "action_tags": [
+        "retract",
+        "place"
+      ],
+      "instruction": "机器人右臂将叉子放入洗碗机下层碗篮中，松开夹爪，并开始向后缩回。",
+      "active_arm": "right",
+      "visible_object_category": "dishwasher",
+      "task_relevance": "relevant",
+      "confidence": 0.9,
+      "member_event_ids": [
+        9
+      ],
+      "member_center_frames": [
+        720
+      ],
+      "progress_sequence": [
+        "ongoing"
+      ],
+      "rough_start_frame": 675,
+      "rough_end_frame": 765,
+      "first_evidence_frame": 720,
+      "last_evidence_frame": 720
+    },
+    {
+      "action_id": 5,
+      "action_type": "grasp",
+      "action_tags": [
+        "grasp",
+        "transport"
+      ],
+      "instruction": "机械臂末端夹持粉色盘子上的叉子，并在桌面上方进行微小的位置调整或重新抓握。",
+      "active_arm": "right",
+      "visible_object_category": "dish",
+      "task_relevance": "relevant",
+      "confidence": 0.85,
+      "member_event_ids": [
+        10
+      ],
+      "member_center_frames": [
+        776
+      ],
+      "progress_sequence": [
+        "ongoing"
+      ],
+      "rough_start_frame": 731,
+      "rough_end_frame": 821,
+      "first_evidence_frame": 776,
+      "last_evidence_frame": 776
+    },
+    {
+      "action_id": 6,
+      "action_type": "grasp",
+      "action_tags": [
+        "grasp",
+        "adjust",
+        "transport"
+      ],
+      "instruction": "机器人右手在粉色盘子上的叉子附近进行夹取操作，夹爪从张开到闭合，并伴有细微的接触调整。",
+      "active_arm": "right",
+      "visible_object_category": "fork",
+      "task_relevance": "relevant",
+      "confidence": 0.9,
+      "member_event_ids": [
+        11,
+        12
+      ],
+      "member_center_frames": [
+        826,
+        849
+      ],
+      "progress_sequence": [
+        "end",
+        "end"
+      ],
+      "rough_start_frame": 781,
+      "rough_end_frame": 894,
+      "first_evidence_frame": 826,
+      "last_evidence_frame": 849
+    },
+    {
+      "action_id": 7,
+      "action_type": "transport",
+      "action_tags": [
+        "transport"
+      ],
+      "instruction": "机器人右臂将一个粉色盘子从洗碗机区域水平移动至台面上。",
+      "active_arm": "right",
+      "visible_object_category": "dish",
+      "task_relevance": "post_task",
+      "confidence": 0.95,
+      "member_event_ids": [
+        13
+      ],
+      "member_center_frames": [
+        1044
+      ],
+      "progress_sequence": [
+        "transition"
+      ],
+      "rough_start_frame": 999,
+      "rough_end_frame": 1089,
+      "first_evidence_frame": 1044,
+      "last_evidence_frame": 1044
+    },
+    {
+      "action_id": 8,
+      "action_type": "grasp",
+      "action_tags": [
+        "grasp",
+        "reach"
+      ],
+      "instruction": "右臂移动至台面上的粉色盘子处，并在窗口后半段完成夹爪闭合以抓取盘子。",
+      "active_arm": "right",
+      "visible_object_category": "plate",
+      "task_relevance": "relevant",
+      "confidence": 0.95,
+      "member_event_ids": [
+        14
+      ],
+      "member_center_frames": [
+        1072
+      ],
+      "progress_sequence": [
+        "end"
+      ],
+      "rough_start_frame": 1027,
+      "rough_end_frame": 1117,
+      "first_evidence_frame": 1072,
+      "last_evidence_frame": 1072
+    },
+    {
+      "action_id": 9,
+      "action_type": "transport",
+      "action_tags": [
+        "grasp",
+        "transport"
+      ],
+      "instruction": "右机械臂夹持粉色盘子，从台面区域平稳移动至洗碗机入口上方。",
+      "active_arm": "right",
+      "visible_object_category": "dish",
+      "task_relevance": "relevant",
+      "confidence": 0.925,
+      "member_event_ids": [
+        15,
+        16
+      ],
+      "member_center_frames": [
+        1110,
+        1220
+      ],
+      "progress_sequence": [
+        "ongoing",
+        "ongoing"
+      ],
+      "rough_start_frame": 1065,
+      "rough_end_frame": 1265,
+      "first_evidence_frame": 1110,
+      "last_evidence_frame": 1220
+    },
+    {
+      "action_id": 10,
+      "action_type": "place",
+      "action_tags": [
+        "grasping",
+        "place",
+        "placing"
+      ],
+      "instruction": "机器人右臂正在将一个粉色盘子放入洗碗机内部的碗篮中。",
+      "active_arm": "right",
+      "visible_object_category": "dish",
+      "task_relevance": "relevant",
+      "confidence": 0.9,
+      "member_event_ids": [
+        17
+      ],
+      "member_center_frames": [
+        1240
+      ],
+      "progress_sequence": [
+        "ongoing"
+      ],
+      "rough_start_frame": 1195,
+      "rough_end_frame": 1285,
+      "first_evidence_frame": 1240,
+      "last_evidence_frame": 1240
+    },
+    {
+      "action_id": 11,
+      "action_type": "transport",
+      "action_tags": [
+        "transport",
+        "place",
+        "retract"
+      ],
+      "instruction": "右臂正持握一个粉色盘子，在洗碗机内部进行位置调整或放置操作。",
+      "active_arm": "right",
+      "visible_object_category": "dish",
+      "task_relevance": "relevant",
+      "confidence": 0.9,
+      "member_event_ids": [
+        18,
+        19,
+        20
+      ],
+      "member_center_frames": [
+        1370,
+        1454,
+        1502
+      ],
+      "progress_sequence": [
+        "ongoing",
+        "ongoing",
+        "ongoing"
+      ],
+      "rough_start_frame": 1325,
+      "rough_end_frame": 1547,
+      "first_evidence_frame": 1370,
+      "last_evidence_frame": 1502
+    },
+    {
+      "action_id": 12,
+      "action_type": "push",
+      "action_tags": [
+        "close",
+        "push"
+      ],
+      "instruction": "机器人右臂正在执行将洗碗机下层拉篮向内推入的动作，直至其归位。",
+      "active_arm": "right",
+      "visible_object_category": "dishwasher",
+      "task_relevance": "relevant",
+      "confidence": 0.95,
+      "member_event_ids": [
+        21
+      ],
+      "member_center_frames": [
+        1525
+      ],
+      "progress_sequence": [
+        "ongoing"
+      ],
+      "rough_start_frame": 1480,
+      "rough_end_frame": 1570,
+      "first_evidence_frame": 1525,
+      "last_evidence_frame": 1525
+    },
+    {
+      "action_id": 13,
+      "action_type": "place",
+      "action_tags": [
+        "retract",
+        "place"
+      ],
+      "instruction": "机器人将盘子放入洗碗机后，右臂向后回撤并离开洗碗机内部空间。",
+      "active_arm": "right",
+      "visible_object_category": "dish",
+      "task_relevance": "relevant",
+      "confidence": 0.85,
+      "member_event_ids": [
+        22
+      ],
+      "member_center_frames": [
+        1565
+      ],
+      "progress_sequence": [
+        "end"
+      ],
+      "rough_start_frame": 1520,
+      "rough_end_frame": 1610,
+      "first_evidence_frame": 1565,
+      "last_evidence_frame": 1565
+    },
+    {
+      "action_id": 14,
+      "action_type": "reach",
+      "action_tags": [
+        "navigation",
+        "reach"
+      ],
+      "instruction": "机器人正在向洗碗机区域移动并伸展手臂，准备进行放置操作。",
+      "active_arm": "both",
+      "visible_object_category": "dishwasher",
+      "task_relevance": "relevant",
+      "confidence": 0.85,
+      "member_event_ids": [
+        23
+      ],
+      "member_center_frames": [
+        1593
+      ],
+      "progress_sequence": [
+        "ongoing"
+      ],
+      "rough_start_frame": 1548,
+      "rough_end_frame": 1638,
+      "first_evidence_frame": 1593,
+      "last_evidence_frame": 1593
+    }
+  ]
+}

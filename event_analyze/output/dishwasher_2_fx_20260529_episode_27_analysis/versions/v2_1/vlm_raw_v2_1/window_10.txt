@@ -1,0 +1,19 @@
+```json
+{
+  "contains_semantic_action": true,
+  "dominant_action": "grasp",
+  "action_tags": ["grasp", "reposition"],
+  "action_progress": "ongoing",
+  "atomic_action": "机械臂末端夹持粉色盘子上的叉子，并在桌面上方进行微小的位置调整或重新抓握。",
+  "active_arm": "right",
+  "visible_object_category": "dish",
+  "object_identity_confident": true,
+  "task_relevance": "relevant",
+  "confidence": 0.85,
+  "evidence": [
+    "Head view显示右侧机械臂末端夹持着粉色盘子上的叉子，且位置在窗口内发生微小移动。",
+    "Right view显示夹爪紧密包围叉子柄部，且夹爪命令值（gripper_command）有显著增加（delta 14.9），表明正在执行夹持动作。",
+    "Force传感器数据显示左右夹爪受力均有变化（右减左增），说明夹爪正在与物体发生交互并调整姿态。"
+  ]
+}
+```

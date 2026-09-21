@@ -1,0 +1,19 @@
+```json
+{
+  "contains_semantic_action": true,
+  "dominant_action": "retract",
+  "action_tags": ["retract", "navigation"],
+  "action_progress": "end",
+  "atomic_action": "右臂从洗碗机内部向外移动并退出，完成从洗碗机区域的撤离动作。",
+  "active_arm": "right",
+  "visible_object_category": "dishwasher",
+  "object_identity_confident": true,
+  "task_relevance": "relevant",
+  "confidence": 0.9,
+  "evidence": [
+    "右臂视角（bottom row）显示从洗碗机内部金属架区域（f=479）逐渐移出，最终在f=569时看到台面和粉色盘子，表明完成了从内部到外部的空间转移。",
+    "头部视角（top row）显示右臂从洗碗机开口处（f=479）逐渐向右上方抬起并远离洗碗机，直至完全离开操作区域（f=569）。",
+    "传感器数据显示右臂力（right_force）和夹爪命令（right_gripper_command）均呈下降趋势，符合手臂从负载状态或接触状态撤出的特征。"
+  ]
+}
+```
