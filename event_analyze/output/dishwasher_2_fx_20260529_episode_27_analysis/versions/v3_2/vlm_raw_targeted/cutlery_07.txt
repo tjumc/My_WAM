@@ -1,0 +1,16 @@
+```json
+{
+  "cutlery_before": "uncertain",
+  "cutlery_after": "uncertain",
+  "confidence_before": 0.0,
+  "confidence_after": 0.0,
+  "right_hand_relation_before": "uncertain",
+  "right_hand_relation_after": "uncertain",
+  "evidence": [
+    "Right view shows the interior of the dishwasher with the lower dish rack pulled out, but the cutlery basket is not clearly visible or is obscured by the rack structure and angle.",
+    "The head view shows the upper rack and the robot arm, but does not provide a clear view of the cutlery basket location in the lower section.",
+    "Due to the lack of a clear view of the cutlery basket in the provided frames, its state and the hand's relation to it cannot be determined."
+  ],
+  "window_quality": "poor"
+}
+```

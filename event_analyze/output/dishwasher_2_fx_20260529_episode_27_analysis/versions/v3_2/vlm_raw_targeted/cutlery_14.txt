@@ -1,0 +1,17 @@
+```json
+{
+  "cutlery_before": "uncertain",
+  "cutlery_after": "uncertain",
+  "confidence_before": 0.0,
+  "confidence_after": 0.0,
+  "right_hand_relation_before": "uncertain",
+  "right_hand_relation_after": "uncertain",
+  "evidence": [
+    "Right camera view is obstructed by the pink plate held by the gripper throughout the sequence.",
+    "Head camera view shows the dishwasher interior is too dark and distant to resolve the cutlery basket.",
+    "Left camera view only shows the upper cabinet and wall, not the dishwasher interior.",
+    "The cutlery basket is not visible in any of the provided frames."
+  ],
+  "window_quality": "poor"
+}
+```

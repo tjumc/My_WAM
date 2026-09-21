@@ -1,0 +1,17 @@
+```json
+{
+  "cutlery_before": "uncertain",
+  "cutlery_after": "uncertain",
+  "confidence_before": 0.0,
+  "confidence_after": 0.0,
+  "right_hand_relation_before": "uncertain",
+  "right_hand_relation_after": "uncertain",
+  "evidence": [
+    "Head view shows the upper dish rack being pulled out, but the lower cutlery basket is obscured by the rack structure.",
+    "Right view (bottom row) is a close-up of the hand holding a fork over a plate, not observing the dishwasher interior.",
+    "Left view (middle row) shows the counter and wall but provides no view of the dishwasher interior.",
+    "No clear visual evidence of the cutlery basket itself in the window, preventing state determination."
+  ],
+  "window_quality": "poor"
+}
+```

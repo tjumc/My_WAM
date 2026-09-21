@@ -1,0 +1,17 @@
+```json
+{
+  "cutlery_before": "uncertain",
+  "cutlery_after": "uncertain",
+  "confidence_before": 0.0,
+  "confidence_after": 0.0,
+  "right_hand_relation_before": "uncertain",
+  "right_hand_relation_after": "uncertain",
+  "evidence": [
+    "Head view shows the dishwasher rack is pulled out, but the cutlery basket is obscured by the rack structure and the robot arm.",
+    "The robot arm is interacting with the upper rack area, making it impossible to distinguish the cutlery basket from the dish rack or arm.",
+    "No clear view of the cutlery basket moving in or out is available in the provided frames.",
+    "Right hand is holding a utensil in the right view, but its relation to the cutlery basket cannot be determined due to occlusion."
+  ],
+  "window_quality": "partial"
+}
+```

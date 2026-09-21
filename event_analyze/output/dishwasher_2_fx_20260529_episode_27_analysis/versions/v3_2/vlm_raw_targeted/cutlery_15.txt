@@ -1,0 +1,17 @@
+```json
+{
+  "cutlery_before": "uncertain",
+  "cutlery_after": "uncertain",
+  "confidence_before": 0.0,
+  "confidence_after": 0.0,
+  "right_hand_relation_before": "not_visible",
+  "right_hand_relation_after": "not_visible",
+  "evidence": [
+    "Head view shows a white arm placing a pink plate into the upper rack, but the lower rack containing the cutlery basket is obscured by the arm and the angle.",
+    "Left view (side profile) is blocked by the white countertop, showing only the wall and backsplash, providing no view of the dishwasher interior.",
+    "Right view (first-person) shows the robot holding a pink plate, but the view is blocked by the plate and the robot's own gripper, preventing observation of the dishwasher's cutlery basket.",
+    "At no point in the sequence is the cutlery basket clearly visible or identifiable in any of the camera frames."
+  ],
+  "window_quality": "poor"
+}
+```

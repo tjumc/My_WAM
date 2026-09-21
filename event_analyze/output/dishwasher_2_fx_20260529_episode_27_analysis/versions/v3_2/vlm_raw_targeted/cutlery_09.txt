@@ -1,0 +1,17 @@
+```json
+{
+  "cutlery_before": "uncertain",
+  "cutlery_after": "uncertain",
+  "confidence_before": 0.0,
+  "confidence_after": 0.0,
+  "right_hand_relation_before": "uncertain",
+  "right_hand_relation_after": "uncertain",
+  "evidence": [
+    "Head view shows a white robotic arm interacting with the upper dish rack (碗篮), not the cutlery basket (餐具篮).",
+    "Right view shows the gripper holding a utensil (fork) near the bottom dish rack, but the specific cutlery basket is not clearly visible or distinct from the rack structure.",
+    "Left view shows the kitchen counter and side of the dishwasher, but does not show the interior cutlery basket.",
+    "No clear visual evidence of the cutlery basket itself moving in or out, nor is it clearly visible in isolation."
+  ],
+  "window_quality": "partial"
+}
+```

@@ -1,0 +1,17 @@
+```json
+{
+  "cutlery_before": "in",
+  "cutlery_after": "in",
+  "confidence_before": 0.95,
+  "confidence_after": 0.95,
+  "right_hand_relation_before": "not_visible",
+  "right_hand_relation_after": "not_visible",
+  "evidence": [
+    "在head视角（第一行）中，洗碗机下层碗篮（dish_rack）已拉出，但其内部的cutlery_basket（餐具篮）始终位于碗篮深处，未被单独拉出或取出。",
+    "在right视角（第三行）中，可以看到碗篮拉出后的内部结构，cutlery_basket固定在碗篮内，没有发生相对于洗碗机的独立移动。",
+    "右手（right hand）在提供的窗口序列中大部分时间不可见，或者仅出现在画面边缘，未与餐具篮发生接触或交互。",
+    "整个过程中，cutlery_basket保持在原位（in），没有moving_out或moving_in的动作。"
+  ],
+  "window_quality": "good"
+}
+```

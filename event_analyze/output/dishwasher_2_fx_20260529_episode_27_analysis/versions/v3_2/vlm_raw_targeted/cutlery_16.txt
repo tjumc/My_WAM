@@ -1,0 +1,16 @@
+```json
+{
+  "cutlery_before": "in",
+  "cutlery_after": "in",
+  "confidence_before": 0.95,
+  "confidence_after": 0.95,
+  "right_hand_relation_before": "contact_cutlery_basket",
+  "right_hand_relation_after": "contact_cutlery_basket",
+  "evidence": [
+    "在head视角的早期（f=1175）和晚期（f=1265）画面中，洗碗机下层碗篮内的餐具篮（cutlery_basket）清晰可见，且始终处于静止状态，未被拉出或推入。",
+    "右手（或机械臂末端）在早期和晚期均位于餐具篮附近，呈现出接触或操作餐具篮的姿态，但并未改变餐具篮的位置。",
+    "整个窗口序列中，餐具篮相对于洗碗机内部没有发生位移，因此状态判定为 in。"
+  ],
+  "window_quality": "good"
+}
+```

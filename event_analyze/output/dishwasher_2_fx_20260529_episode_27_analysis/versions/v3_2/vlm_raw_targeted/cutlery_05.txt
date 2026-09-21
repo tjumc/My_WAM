@@ -1,0 +1,17 @@
+```json
+{
+  "cutlery_before": "not_visible",
+  "cutlery_after": "not_visible",
+  "confidence_before": 0.9,
+  "confidence_after": 0.9,
+  "right_hand_relation_before": "uncertain",
+  "right_hand_relation_after": "uncertain",
+  "evidence": [
+    "Right camera view is heavily obstructed by the dishwasher door and frame, providing no clear view of the interior.",
+    "The cutlery basket (cutlery_basket) is not visible in either the early or late frames of the sequence.",
+    "The view is dominated by the lower rack (dish_rack) and the door structure, making identification of the cutlery basket impossible.",
+    "Hand position relative to the specific cutlery basket cannot be determined due to the lack of visual access to the basket."
+  ],
+  "window_quality": "poor"
+}
+```
