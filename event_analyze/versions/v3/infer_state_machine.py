@@ -111,9 +111,27 @@ def infer_object_placement(obs, obj, target, skill_type, threshold):
     return candidates
 
 
+def _get_hdf5_dataset(f, candidates):
+    """Return the first existing dataset path from candidates."""
+    for path in candidates:
+        if path in f:
+            return f[path], path
+    raise KeyError(
+        "None of the expected HDF5 datasets exist: "
+        + ", ".join(candidates)
+    )
+
+
 def infer_navigation(hdf5_path, first_manip_frame, fps=30.0):
     with h5py.File(hdf5_path, "r") as f:
-        v = f["joints_velocity_state"][:, :3].astype(float)
+        ds, ds_path = _get_hdf5_dataset(
+            f,
+            [
+                "joints_dict/joints_velocity_state",
+                "joints_velocity_state",
+            ],
+        )
+        v = ds[:, :3].astype(float)
     speed = np.linalg.norm(v[:, :2], axis=1)
     limit = max(1, min(len(speed), int(first_manip_frame)))
     s = speed[:limit]
