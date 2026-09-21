@@ -18,7 +18,7 @@ python "$SCRIPT_DIR/observe_entities.py" \
   "$EPISODE_DIR" --output-dir "$OUT" --hdf5 "$HDF5" --task "$TASK"
 
 python "$SCRIPT_DIR/infer_state_machine.py" \
-  "$EPISODE_DIR" --output-dir "$OUT" --hdf5 "$HDF5"
+  "$EPISODE_DIR" --output-dir "$OUT" --hdf5 "$HDF5" --task "$TASK"
 
 REFINE_ARGS=("$EPISODE_DIR" --output-dir "$OUT" --hdf5 "$HDF5")
 if [[ -n "$LEROBOT_EPISODE" ]]; then REFINE_ARGS+=(--lerobot-episode "$LEROBOT_EPISODE"); fi

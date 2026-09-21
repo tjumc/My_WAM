@@ -130,7 +130,7 @@ def main():
     trajectory_instruction = "；".join(x["instruction_zh"] for x in refined)
     result = {
         "annotation_version": "v3",
-        "task_goal": None,
+        "task_goal": candidates.get("task_goal"),
         "trajectory_instruction": trajectory_instruction,
         "task_end_raw_frame": int(task_end),
         "lerobot_episode_index": args.lerobot_episode,

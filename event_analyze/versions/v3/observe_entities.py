@@ -157,7 +157,7 @@ def observe(client, model, task, event, ctx, sheet, fps, radius_sec, max_tokens=
 
 高层任务只作为场景背景：{task}
 窗口约 raw frame {w0}~{w1}，中心 frame={event['raw_frame']}，time={event['time_sec']:.3f}s。
-三行图片依次是 left/head/right 相机对应的同步时序（contact sheet 原文件的行顺序若为 head/left/right，以图像内容判断，不要依赖文字标签），每行从左到右为早→晚。
+三行图片严格依次是 head / left / right 相机的同步时序，每行从左到右为早→晚。
 
 必须区分两个不同容器：
 - dish_rack（碗篮）：较大的洗碗机拉篮，用于盘子/碗；

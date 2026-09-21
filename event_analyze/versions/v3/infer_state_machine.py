@@ -153,6 +153,7 @@ def main():
     ap.add_argument("episode_dir")
     ap.add_argument("--output-dir", required=True)
     ap.add_argument("--hdf5", required=True)
+    ap.add_argument("--task", required=True)
     ap.add_argument("--fps", type=float, default=30.0)
     ap.add_argument("--min-entity-confidence", type=float, default=0.72)
     args = ap.parse_args()
@@ -179,6 +180,7 @@ def main():
     skills = deduplicate(skills, args.fps)
     result = {
         "annotation_version": "v3",
+        "task_goal": args.task,
         "num_entity_windows": len(obs),
         "num_inferred_skills": len(skills),
         "skill_sequence": skills,
