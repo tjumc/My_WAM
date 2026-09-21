@@ -1,0 +1,922 @@
+{
+  "trajectory_instruction": "机器人打开洗碗机门，尝试推门但随后拉出下层碗篮并将盘子放入；接着再次拉出碗篮放入另一个盘子；随后将粉色盘子运入并放入碗篮，期间出现多次拉出、推入和放置的重复循环与状态矛盾，最终在多次尝试后完成放置。",
+  "phase_groups": [
+    {
+      "phase_id": 0,
+      "instruction": "打开洗碗机门并准备拉出碗篮",
+      "action_ids": [
+        0,
+        1,
+        2
+      ],
+      "confidence": 0.92
+    },
+    {
+      "phase_id": 1,
+      "instruction": "将第一个盘子放入下层碗篮",
+      "action_ids": [
+        3
+      ],
+      "confidence": 0.95
+    },
+    {
+      "phase_id": 2,
+      "instruction": "再次拉出碗篮并放入第二个盘子",
+      "action_ids": [
+        4,
+        5
+      ],
+      "confidence": 0.93
+    },
+    {
+      "phase_id": 3,
+      "instruction": "将粉色盘子运入洗碗机内部",
+      "action_ids": [
+        6
+      ],
+      "confidence": 0.92
+    },
+    {
+      "phase_id": 4,
+      "instruction": "拉出碗篮并尝试放置粉色盘子",
+      "action_ids": [
+        7,
+        8,
+        9
+      ],
+      "confidence": 0.91
+    },
+    {
+      "phase_id": 5,
+      "instruction": "在碗篮内调整并释放粉色盘子",
+      "action_ids": [
+        10
+      ],
+      "confidence": 0.95
+    },
+    {
+      "phase_id": 6,
+      "instruction": "重复拉出碗篮、推入拉篮并尝试放置的混乱循环",
+      "action_ids": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "confidence": 0.85
+    }
+  ],
+  "task_end_action_id": 14,
+  "uncertainties": [
+    "Action 11 (pull) instruction claims 'release after placing' but state evidence shows 'rack moving out' and 'released' simultaneously with 'pull' action, contradicting the typical sequence of placing then pulling rack.",
+    "Action 8 (transport) shows object moving from 'dishwasher_entrance' to 'dishwasher_inside' while rack state transitions from 'in' to 'uncertain', conflicting with the instruction of pulling the dish out.",
+    "Action 5 includes multiple release events (6, 7, 8) where rack state transitions inconsistently (out -> in -> moving_in) during a single 'place' action, suggesting repeated or erroneous state logging.",
+    "Action 12 and 13 show a complex interaction where the robot holds the dish while pushing the rack, but the rack state transitions (moving_in) while the object is still held, creating ambiguity on whether the dish was successfully placed before the rack movement.",
+    "No clear 'end' state transition for the entire task is observed; the trajectory ends with ongoing rack manipulation and potential re-placement attempts (Action 14), making it unclear if the task 'put the dish into the dishwasher' is fully completed."
+  ],
+  "task_goal": "put the dish into the dishwasher",
+  "action_intervals": [
+    {
+      "action_id": 0,
+      "action_type": "open",
+      "instruction": "右臂接触并打开洗碗机门，左臂悬停于台面上方",
+      "active_arm": "right",
+      "visible_object_category": "dish",
+      "task_relevance": "relevant",
+      "confidence": 0.95,
+      "member_event_ids": [
+        0
+      ],
+      "member_center_frames": [
+        153
+      ],
+      "progress_sequence": [
+        "ongoing"
+      ],
+      "semantic_support": [
+        "state_transition"
+      ],
+      "state_transition_evidence": [
+        {
+          "event_id": 0,
+          "transition_action": "open",
+          "source": "door_state",
+          "state_before": {
+            "door_state": "closed",
+            "rack_state": "uncertain",
+            "right_hand_relation": "approaching",
+            "left_hand_relation": "not_visible",
+            "object_location": "tabletop",
+            "visible_object_category": "plate"
+          },
+          "state_after": {
+            "door_state": "open",
+            "rack_state": "uncertain",
+            "right_hand_relation": "contact",
+            "left_hand_relation": "not_visible",
+            "object_location": "dishwasher_entrance",
+            "visible_object_category": "plate"
+          }
+        }
+      ],
+      "consistency_flags": [],
+      "rough_start_frame": 108,
+      "rough_end_frame": 198,
+      "first_evidence_frame": 153,
+      "last_evidence_frame": 153
+    },
+    {
+      "action_id": 1,
+      "action_type": "push",
+      "instruction": "右臂接触并沿门边缘向洗碗机内部推进，执行关门或推入动作",
+      "active_arm": "right",
+      "visible_object_category": "dishwasher_door",
+      "task_relevance": "relevant",
+      "confidence": 0.9,
+      "member_event_ids": [
+        1
+      ],
+      "member_center_frames": [
+        202
+      ],
+      "progress_sequence": [
+        "ongoing"
+      ],
+      "semantic_support": [
+        "goal_directed_motion"
+      ],
+      "state_transition_evidence": [],
+      "consistency_flags": [],
+      "rough_start_frame": 157,
+      "rough_end_frame": 247,
+      "first_evidence_frame": 202,
+      "last_evidence_frame": 202
+    },
+    {
+      "action_id": 2,
+      "action_type": "pull",
+      "instruction": "右手持盘，左手接触并拉出洗碗机下碗篮",
+      "active_arm": "both",
+      "visible_object_category": "dish",
+      "task_relevance": "relevant",
+      "confidence": 0.9,
+      "member_event_ids": [
+        2
+      ],
+      "member_center_frames": [
+        225
+      ],
+      "progress_sequence": [
+        "start"
+      ],
+      "semantic_support": [
+        "goal_directed_motion"
+      ],
+      "state_transition_evidence": [
+        {
+          "event_id": 2,
+          "transition_action": "pull",
+          "source": "rack_state",
+          "state_before": {
+            "door_state": "open",
+            "rack_state": "in",
+            "right_hand_relation": "holding",
+            "left_hand_relation": "free",
+            "object_location": "hand",
+            "visible_object_category": "dish"
+          },
+          "state_after": {
+            "door_state": "open",
+            "rack_state": "moving_out",
+            "right_hand_relation": "holding",
+            "left_hand_relation": "free",
+            "object_location": "hand",
+            "visible_object_category": "dish"
+          }
+        }
+      ],
+      "consistency_flags": [],
+      "rough_start_frame": 180,
+      "rough_end_frame": 270,
+      "first_evidence_frame": 225,
+      "last_evidence_frame": 225
+    },
+    {
+      "action_id": 3,
+      "action_type": "place",
+      "instruction": "右手将盘子放入洗碗机下层拉篮并松开",
+      "active_arm": "right",
+      "visible_object_category": "dish",
+      "task_relevance": "relevant",
+      "confidence": 0.95,
+      "member_event_ids": [
+        3,
+        4
+      ],
+      "member_center_frames": [
+        261,
+        296
+      ],
+      "progress_sequence": [
+        "end",
+        "end"
+      ],
+      "semantic_support": [
+        "state_transition",
+        "both"
+      ],
+      "state_transition_evidence": [
+        {
+          "event_id": 3,
+          "transition_action": "release",
+          "source": "right_hand_relation",
+          "state_before": {
+            "door_state": "open",
+            "rack_state": "out",
+            "right_hand_relation": "holding",
+            "left_hand_relation": "free",
+            "object_location": "hand",
+            "visible_object_category": "dish"
+          },
+          "state_after": {
+            "door_state": "open",
+            "rack_state": "out",
+            "right_hand_relation": "released",
+            "left_hand_relation": "free",
+            "object_location": "rack",
+            "visible_object_category": "dish"
+          }
+        }
+      ],
+      "consistency_flags": [],
+      "rough_start_frame": 216,
+      "rough_end_frame": 341,
+      "first_evidence_frame": 261,
+      "last_evidence_frame": 296
+    },
+    {
+      "action_id": 4,
+      "action_type": "pull",
+      "instruction": "右手接触并拉出洗碗机下层碗篮",
+      "active_arm": "right",
+      "visible_object_category": "uncertain",
+      "task_relevance": "relevant",
+      "confidence": 0.95,
+      "member_event_ids": [
+        5
+      ],
+      "member_center_frames": [
+        320
+      ],
+      "progress_sequence": [
+        "ongoing"
+      ],
+      "semantic_support": [
+        "state_transition"
+      ],
+      "state_transition_evidence": [
+        {
+          "event_id": 5,
+          "transition_action": "pull",
+          "source": "rack_state",
+          "state_before": {
+            "door_state": "open",
+            "rack_state": "in",
+            "right_hand_relation": "contact",
+            "left_hand_relation": "free",
+            "object_location": "uncertain",
+            "visible_object_category": "uncertain"
+          },
+          "state_after": {
+            "door_state": "open",
+            "rack_state": "moving_out",
+            "right_hand_relation": "holding",
+            "left_hand_relation": "free",
+            "object_location": "rack",
+            "visible_object_category": "uncertain"
+          }
+        }
+      ],
+      "consistency_flags": [],
+      "rough_start_frame": 275,
+      "rough_end_frame": 365,
+      "first_evidence_frame": 320,
+      "last_evidence_frame": 320
+    },
+    {
+      "action_id": 5,
+      "action_type": "place",
+      "instruction": "右手将白色盘子放入洗碗机拉篮中并松开",
+      "active_arm": "right",
+      "visible_object_category": "dish",
+      "task_relevance": "relevant",
+      "confidence": 0.95,
+      "member_event_ids": [
+        6,
+        7,
+        8
+      ],
+      "member_center_frames": [
+        410,
+        472,
+        524
+      ],
+      "progress_sequence": [
+        "end",
+        "end",
+        "end"
+      ],
+      "semantic_support": [
+        "state_transition",
+        "state_transition",
+        "state_transition"
+      ],
+      "state_transition_evidence": [
+        {
+          "event_id": 6,
+          "transition_action": "release",
+          "source": "right_hand_relation",
+          "state_before": {
+            "door_state": "open",
+            "rack_state": "out",
+            "right_hand_relation": "holding",
+            "left_hand_relation": "free",
+            "object_location": "dishwasher_entrance",
+            "visible_object_category": "dish"
+          },
+          "state_after": {
+            "door_state": "open",
+            "rack_state": "out",
+            "right_hand_relation": "released",
+            "left_hand_relation": "free",
+            "object_location": "rack",
+            "visible_object_category": "dish"
+          }
+        },
+        {
+          "event_id": 7,
+          "transition_action": "release",
+          "source": "right_hand_relation",
+          "state_before": {
+            "door_state": "open",
+            "rack_state": "out",
+            "right_hand_relation": "holding",
+            "left_hand_relation": "free",
+            "object_location": "dishwasher_inside",
+            "visible_object_category": "dish"
+          },
+          "state_after": {
+            "door_state": "open",
+            "rack_state": "out",
+            "right_hand_relation": "released",
+            "left_hand_relation": "free",
+            "object_location": "rack",
+            "visible_object_category": "dish"
+          }
+        },
+        {
+          "event_id": 8,
+          "transition_action": "release",
+          "source": "right_hand_relation",
+          "state_before": {
+            "door_state": "open",
+            "rack_state": "in",
+            "right_hand_relation": "holding",
+            "left_hand_relation": "free",
+            "object_location": "dishwasher_entrance",
+            "visible_object_category": "dish"
+          },
+          "state_after": {
+            "door_state": "open",
+            "rack_state": "moving_in",
+            "right_hand_relation": "released",
+            "left_hand_relation": "free",
+            "object_location": "rack",
+            "visible_object_category": "dish"
+          }
+        }
+      ],
+      "consistency_flags": [
+        "transition_override:place->release"
+      ],
+      "rough_start_frame": 365,
+      "rough_end_frame": 569,
+      "first_evidence_frame": 410,
+      "last_evidence_frame": 524
+    },
+    {
+      "action_id": 6,
+      "action_type": "transport",
+      "instruction": "右臂持粉色盘子向洗碗机内部移动",
+      "active_arm": "right",
+      "visible_object_category": "dish",
+      "task_relevance": "relevant",
+      "confidence": 0.925,
+      "member_event_ids": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "member_center_frames": [
+        720,
+        776,
+        826,
+        849
+      ],
+      "progress_sequence": [
+        "ongoing",
+        "ongoing",
+        "ongoing",
+        "ongoing"
+      ],
+      "semantic_support": [
+        "both",
+        "goal_directed_motion",
+        "goal_directed_motion",
+        "goal_directed_motion"
+      ],
+      "state_transition_evidence": [
+        {
+          "event_id": 9,
+          "transition_action": "transport",
+          "source": "object_location",
+          "state_before": {
+            "door_state": "open",
+            "rack_state": "uncertain",
+            "right_hand_relation": "holding",
+            "left_hand_relation": "free",
+            "object_location": "dishwasher_entrance",
+            "visible_object_category": "plate"
+          },
+          "state_after": {
+            "door_state": "open",
+            "rack_state": "uncertain",
+            "right_hand_relation": "holding",
+            "left_hand_relation": "free",
+            "object_location": "dishwasher_inside",
+            "visible_object_category": "plate"
+          }
+        },
+        {
+          "event_id": 12,
+          "transition_action": "transport",
+          "source": "object_location",
+          "state_before": {
+            "door_state": "open",
+            "rack_state": "out",
+            "right_hand_relation": "holding",
+            "left_hand_relation": "free",
+            "object_location": "hand",
+            "visible_object_category": "plate"
+          },
+          "state_after": {
+            "door_state": "open",
+            "rack_state": "out",
+            "right_hand_relation": "holding",
+            "left_hand_relation": "free",
+            "object_location": "dishwasher_entrance",
+            "visible_object_category": "plate"
+          }
+        }
+      ],
+      "consistency_flags": [],
+      "rough_start_frame": 675,
+      "rough_end_frame": 894,
+      "first_evidence_frame": 720,
+      "last_evidence_frame": 849
+    },
+    {
+      "action_id": 7,
+      "action_type": "pull",
+      "instruction": "右臂将洗碗机拉篮向外拉出至完全伸出位置",
+      "active_arm": "right",
+      "visible_object_category": "rack",
+      "task_relevance": "relevant",
+      "confidence": 0.95,
+      "member_event_ids": [
+        13
+      ],
+      "member_center_frames": [
+        1044
+      ],
+      "progress_sequence": [
+        "end"
+      ],
+      "semantic_support": [
+        "state_transition"
+      ],
+      "state_transition_evidence": [],
+      "consistency_flags": [],
+      "rough_start_frame": 999,
+      "rough_end_frame": 1089,
+      "first_evidence_frame": 1044,
+      "last_evidence_frame": 1044
+    },
+    {
+      "action_id": 8,
+      "action_type": "transport",
+      "instruction": "机器人右手将粉色盘子从洗碗机拉出并持握在手中",
+      "active_arm": "right",
+      "visible_object_category": "dish",
+      "task_relevance": "relevant",
+      "confidence": 0.933,
+      "member_event_ids": [
+        14,
+        15,
+        16
+      ],
+      "member_center_frames": [
+        1072,
+        1110,
+        1220
+      ],
+      "progress_sequence": [
+        "ongoing",
+        "ongoing",
+        "ongoing"
+      ],
+      "semantic_support": [
+        "state_transition",
+        "goal_directed_motion",
+        "goal_directed_motion"
+      ],
+      "state_transition_evidence": [
+        {
+          "event_id": 14,
+          "transition_action": "transport",
+          "source": "object_location",
+          "state_before": {
+            "door_state": "open",
+            "rack_state": "uncertain",
+            "right_hand_relation": "holding",
+            "left_hand_relation": "free",
+            "object_location": "dishwasher_entrance",
+            "visible_object_category": "dish"
+          },
+          "state_after": {
+            "door_state": "open",
+            "rack_state": "uncertain",
+            "right_hand_relation": "holding",
+            "left_hand_relation": "free",
+            "object_location": "hand",
+            "visible_object_category": "dish"
+          }
+        },
+        {
+          "event_id": 15,
+          "transition_action": "transport",
+          "source": "object_location",
+          "state_before": {
+            "door_state": "open",
+            "rack_state": "in",
+            "right_hand_relation": "holding",
+            "left_hand_relation": "free",
+            "object_location": "hand",
+            "visible_object_category": "plate"
+          },
+          "state_after": {
+            "door_state": "open",
+            "rack_state": "in",
+            "right_hand_relation": "holding",
+            "left_hand_relation": "free",
+            "object_location": "dishwasher_entrance",
+            "visible_object_category": "plate"
+          }
+        },
+        {
+          "event_id": 16,
+          "transition_action": "transport",
+          "source": "object_location",
+          "state_before": {
+            "door_state": "open",
+            "rack_state": "uncertain",
+            "right_hand_relation": "holding",
+            "left_hand_relation": "not_visible",
+            "object_location": "dishwasher_entrance",
+            "visible_object_category": "dish"
+          },
+          "state_after": {
+            "door_state": "open",
+            "rack_state": "uncertain",
+            "right_hand_relation": "holding",
+            "left_hand_relation": "not_visible",
+            "object_location": "dishwasher_inside",
+            "visible_object_category": "dish"
+          }
+        }
+      ],
+      "consistency_flags": [
+        "transition_override:retract->transport"
+      ],
+      "rough_start_frame": 1027,
+      "rough_end_frame": 1265,
+      "first_evidence_frame": 1072,
+      "last_evidence_frame": 1220
+    },
+    {
+      "action_id": 9,
+      "action_type": "place",
+      "instruction": "右机械手将粉色盘子放入洗碗机拉篮中并松开",
+      "active_arm": "right",
+      "visible_object_category": "dish",
+      "task_relevance": "relevant",
+      "confidence": 0.95,
+      "member_event_ids": [
+        17
+      ],
+      "member_center_frames": [
+        1240
+      ],
+      "progress_sequence": [
+        "end"
+      ],
+      "semantic_support": [
+        "state_transition"
+      ],
+      "state_transition_evidence": [
+        {
+          "event_id": 17,
+          "transition_action": "release",
+          "source": "right_hand_relation",
+          "state_before": {
+            "door_state": "open",
+            "rack_state": "out",
+            "right_hand_relation": "holding",
+            "left_hand_relation": "free",
+            "object_location": "dishwasher_entrance",
+            "visible_object_category": "plate"
+          },
+          "state_after": {
+            "door_state": "open",
+            "rack_state": "out",
+            "right_hand_relation": "released",
+            "left_hand_relation": "free",
+            "object_location": "rack",
+            "visible_object_category": "plate"
+          }
+        }
+      ],
+      "consistency_flags": [],
+      "rough_start_frame": 1195,
+      "rough_end_frame": 1285,
+      "first_evidence_frame": 1240,
+      "last_evidence_frame": 1240
+    },
+    {
+      "action_id": 10,
+      "action_type": "place",
+      "instruction": "右手将粉色盘子放入洗碗机内部并释放",
+      "active_arm": "right",
+      "visible_object_category": "dish",
+      "task_relevance": "relevant",
+      "confidence": 0.95,
+      "member_event_ids": [
+        18
+      ],
+      "member_center_frames": [
+        1370
+      ],
+      "progress_sequence": [
+        "end"
+      ],
+      "semantic_support": [
+        "state_transition"
+      ],
+      "state_transition_evidence": [
+        {
+          "event_id": 18,
+          "transition_action": "release",
+          "source": "right_hand_relation",
+          "state_before": {
+            "door_state": "open",
+            "rack_state": "in",
+            "right_hand_relation": "holding",
+            "left_hand_relation": "free",
+            "object_location": "hand",
+            "visible_object_category": "dish"
+          },
+          "state_after": {
+            "door_state": "open",
+            "rack_state": "in",
+            "right_hand_relation": "released",
+            "left_hand_relation": "free",
+            "object_location": "rack",
+            "visible_object_category": "dish"
+          }
+        }
+      ],
+      "consistency_flags": [
+        "transition_override:place->release"
+      ],
+      "rough_start_frame": 1325,
+      "rough_end_frame": 1415,
+      "first_evidence_frame": 1370,
+      "last_evidence_frame": 1370
+    },
+    {
+      "action_id": 11,
+      "action_type": "pull",
+      "instruction": "右手将盘子放入洗碗机内部后松开",
+      "active_arm": "right",
+      "visible_object_category": "dish",
+      "task_relevance": "relevant",
+      "confidence": 0.95,
+      "member_event_ids": [
+        19
+      ],
+      "member_center_frames": [
+        1454
+      ],
+      "progress_sequence": [
+        "end"
+      ],
+      "semantic_support": [
+        "state_transition"
+      ],
+      "state_transition_evidence": [
+        {
+          "event_id": 19,
+          "transition_action": "pull",
+          "source": "rack_state",
+          "state_before": {
+            "door_state": "open",
+            "rack_state": "in",
+            "right_hand_relation": "holding",
+            "left_hand_relation": "free",
+            "object_location": "hand",
+            "visible_object_category": "dish"
+          },
+          "state_after": {
+            "door_state": "open",
+            "rack_state": "moving_out",
+            "right_hand_relation": "released",
+            "left_hand_relation": "free",
+            "object_location": "dishwasher_inside",
+            "visible_object_category": "dish"
+          }
+        }
+      ],
+      "consistency_flags": [
+        "transition_override:place->pull"
+      ],
+      "rough_start_frame": 1409,
+      "rough_end_frame": 1499,
+      "first_evidence_frame": 1454,
+      "last_evidence_frame": 1454
+    },
+    {
+      "action_id": 12,
+      "action_type": "transport",
+      "instruction": "机器人右手持盘向洗碗机内部移动，同时推入下层拉篮",
+      "active_arm": "right",
+      "visible_object_category": "dish",
+      "task_relevance": "relevant",
+      "confidence": 0.925,
+      "member_event_ids": [
+        20,
+        21
+      ],
+      "member_center_frames": [
+        1502,
+        1525
+      ],
+      "progress_sequence": [
+        "ongoing",
+        "ongoing"
+      ],
+      "semantic_support": [
+        "goal_directed_motion",
+        "goal_directed_motion"
+      ],
+      "state_transition_evidence": [
+        {
+          "event_id": 21,
+          "transition_action": "transport",
+          "source": "object_location",
+          "state_before": {
+            "door_state": "open",
+            "rack_state": "in",
+            "right_hand_relation": "holding",
+            "left_hand_relation": "free",
+            "object_location": "dishwasher_entrance",
+            "visible_object_category": "dish"
+          },
+          "state_after": {
+            "door_state": "open",
+            "rack_state": "moving_in",
+            "right_hand_relation": "holding",
+            "left_hand_relation": "free",
+            "object_location": "dishwasher_inside",
+            "visible_object_category": "dish"
+          }
+        }
+      ],
+      "consistency_flags": [],
+      "rough_start_frame": 1457,
+      "rough_end_frame": 1570,
+      "first_evidence_frame": 1502,
+      "last_evidence_frame": 1525
+    },
+    {
+      "action_id": 13,
+      "action_type": "push",
+      "instruction": "右手接触洗碗机拉篮边缘，将其推入洗碗机内部",
+      "active_arm": "right",
+      "visible_object_category": "uncertain",
+      "task_relevance": "relevant",
+      "confidence": 0.95,
+      "member_event_ids": [
+        22
+      ],
+      "member_center_frames": [
+        1565
+      ],
+      "progress_sequence": [
+        "ongoing"
+      ],
+      "semantic_support": [
+        "both"
+      ],
+      "state_transition_evidence": [
+        {
+          "event_id": 22,
+          "transition_action": "push",
+          "source": "rack_state",
+          "state_before": {
+            "door_state": "open",
+            "rack_state": "out",
+            "right_hand_relation": "contact",
+            "left_hand_relation": "free",
+            "object_location": "dishwasher_entrance",
+            "visible_object_category": "uncertain"
+          },
+          "state_after": {
+            "door_state": "open",
+            "rack_state": "moving_in",
+            "right_hand_relation": "contact",
+            "left_hand_relation": "free",
+            "object_location": "dishwasher_inside",
+            "visible_object_category": "uncertain"
+          }
+        }
+      ],
+      "consistency_flags": [],
+      "rough_start_frame": 1520,
+      "rough_end_frame": 1610,
+      "first_evidence_frame": 1565,
+      "last_evidence_frame": 1565
+    },
+    {
+      "action_id": 14,
+      "action_type": "place",
+      "instruction": "右手将盘子放入洗碗机拉篮中并松开",
+      "active_arm": "right",
+      "visible_object_category": "dish",
+      "task_relevance": "relevant",
+      "confidence": 0.95,
+      "member_event_ids": [
+        23
+      ],
+      "member_center_frames": [
+        1593
+      ],
+      "progress_sequence": [
+        "end"
+      ],
+      "semantic_support": [
+        "state_transition"
+      ],
+      "state_transition_evidence": [
+        {
+          "event_id": 23,
+          "transition_action": "release",
+          "source": "right_hand_relation",
+          "state_before": {
+            "door_state": "open",
+            "rack_state": "out",
+            "right_hand_relation": "holding",
+            "left_hand_relation": "free",
+            "object_location": "hand",
+            "visible_object_category": "dish"
+          },
+          "state_after": {
+            "door_state": "open",
+            "rack_state": "out",
+            "right_hand_relation": "released",
+            "left_hand_relation": "free",
+            "object_location": "rack",
+            "visible_object_category": "dish"
+          }
+        }
+      ],
+      "consistency_flags": [
+        "transition_override:place->release"
+      ],
+      "rough_start_frame": 1548,
+      "rough_end_frame": 1638,
+      "first_evidence_frame": 1593,
+      "last_evidence_frame": 1593
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+```json
+{
+ "state_before": {
+  "door_state": "closed",
+  "rack_state": "uncertain",
+  "right_hand_relation": "approaching",
+  "left_hand_relation": "not_visible",
+  "object_location": "tabletop",
+  "visible_object_category": "plate"
+ },
+ "state_after": {
+  "door_state": "open",
+  "rack_state": "uncertain",
+  "right_hand_relation": "contact",
+  "left_hand_relation": "not_visible",
+  "object_location": "dishwasher_entrance",
+  "visible_object_category": "plate"
+ },
+ "contains_semantic_action": true,
+ "proposed_action": "open",
+ "action_progress": "ongoing",
+ "semantic_support": "state_transition",
+ "atomic_action": "右臂接触并打开洗碗机门，左臂悬停于台面上方",
+ "active_arm": "right",
+ "task_relevance": "relevant",
+ "confidence": 0.95,
+ "evidence": [
+  "头视角显示洗碗机门从关闭状态（f=108）变为打开状态（f=198）",
+  "右视角显示右机械臂在f=176和f=198时伸入洗碗机内部，表明门已开启",
+  "右视角显示粉色盘子在f=153位于台面，随后被移向洗碗机方向"
+ ],
+ "reason_if_false": ""
+}
+```

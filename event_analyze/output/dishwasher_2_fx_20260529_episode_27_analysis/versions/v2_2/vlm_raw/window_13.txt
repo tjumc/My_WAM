@@ -1,0 +1,34 @@
+```json
+{
+ "state_before": {
+  "door_state": "uncertain",
+  "rack_state": "moving_out",
+  "right_hand_relation": "contact",
+  "left_hand_relation": "uncertain",
+  "object_location": "dishwasher_inside",
+  "visible_object_category": "rack"
+ },
+ "state_after": {
+  "door_state": "uncertain",
+  "rack_state": "out",
+  "right_hand_relation": "contact",
+  "left_hand_relation": "uncertain",
+  "object_location": "rack",
+  "visible_object_category": "rack"
+ },
+ "contains_semantic_action": true,
+ "proposed_action": "pull",
+ "action_progress": "end",
+ "semantic_support": "state_transition",
+ "atomic_action": "右臂将洗碗机拉篮向外拉出至完全伸出位置",
+ "active_arm": "right",
+ "task_relevance": "relevant",
+ "confidence": 0.95,
+ "evidence": [
+  "图像序列显示右臂持续向后运动，将洗碗机内部拉篮从机器内部拉出。",
+  "在f=1089时刻，拉篮已完全移出，且右臂末端仍接触拉篮边缘。",
+  "传感器数据显示右臂力值下降，符合拉出物体后阻力减小的特征。"
+ ],
+ "reason_if_false": ""
+}
+```

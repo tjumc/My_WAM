@@ -1,0 +1,79 @@
+```json
+{
+  "trajectory_instruction": "机器人打开洗碗机门，尝试推门但随后拉出下层碗篮并将盘子放入；接着再次拉出碗篮放入另一个盘子；随后将粉色盘子运入并放入碗篮，期间出现多次拉出、推入和放置的重复循环与状态矛盾，最终在多次尝试后完成放置。",
+  "phase_groups": [
+    {
+      "phase_id": 0,
+      "instruction": "打开洗碗机门并准备拉出碗篮",
+      "action_ids": [
+        0,
+        1,
+        2
+      ],
+      "confidence": 0.92
+    },
+    {
+      "phase_id": 1,
+      "instruction": "将第一个盘子放入下层碗篮",
+      "action_ids": [
+        3
+      ],
+      "confidence": 0.95
+    },
+    {
+      "phase_id": 2,
+      "instruction": "再次拉出碗篮并放入第二个盘子",
+      "action_ids": [
+        4,
+        5
+      ],
+      "confidence": 0.93
+    },
+    {
+      "phase_id": 3,
+      "instruction": "将粉色盘子运入洗碗机内部",
+      "action_ids": [
+        6
+      ],
+      "confidence": 0.92
+    },
+    {
+      "phase_id": 4,
+      "instruction": "拉出碗篮并尝试放置粉色盘子",
+      "action_ids": [
+        7,
+        8,
+        9
+      ],
+      "confidence": 0.91
+    },
+    {
+      "phase_id": 5,
+      "instruction": "在碗篮内调整并释放粉色盘子",
+      "action_ids": [
+        10
+      ],
+      "confidence": 0.95
+    },
+    {
+      "phase_id": 6,
+      "instruction": "重复拉出碗篮、推入拉篮并尝试放置的混乱循环",
+      "action_ids": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "confidence": 0.85
+    }
+  ],
+  "task_end_action_id": null,
+  "uncertainties": [
+    "Action 11 (pull) instruction claims 'release after placing' but state evidence shows 'rack moving out' and 'released' simultaneously with 'pull' action, contradicting the typical sequence of placing then pulling rack.",
+    "Action 8 (transport) shows object moving from 'dishwasher_entrance' to 'dishwasher_inside' while rack state transitions from 'in' to 'uncertain', conflicting with the instruction of pulling the dish out.",
+    "Action 5 includes multiple release events (6, 7, 8) where rack state transitions inconsistently (out -> in -> moving_in) during a single 'place' action, suggesting repeated or erroneous state logging.",
+    "Action 12 and 13 show a complex interaction where the robot holds the dish while pushing the rack, but the rack state transitions (moving_in) while the object is still held, creating ambiguity on whether the dish was successfully placed before the rack movement.",
+    "No clear 'end' state transition for the entire task is observed; the trajectory ends with ongoing rack manipulation and potential re-placement attempts (Action 14), making it unclear if the task 'put the dish into the dishwasher' is fully completed."
+  ]
+}
+```

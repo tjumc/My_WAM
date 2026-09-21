@@ -1,0 +1,34 @@
+```json
+{
+ "state_before": {
+  "door_state": "open",
+  "rack_state": "not_visible",
+  "right_hand_relation": "holding",
+  "left_hand_relation": "holding",
+  "object_location": "hand",
+  "visible_object_category": "plate"
+ },
+ "state_after": {
+  "door_state": "open",
+  "rack_state": "not_visible",
+  "right_hand_relation": "holding",
+  "left_hand_relation": "holding",
+  "object_location": "hand",
+  "visible_object_category": "plate"
+ },
+ "contains_semantic_action": true,
+ "proposed_action": "transport",
+ "action_progress": "ongoing",
+ "semantic_support": "goal_directed_motion",
+ "atomic_action": "双手持粉色盘子向洗碗机内部移动",
+ "active_arm": "both",
+ "task_relevance": "relevant",
+ "confidence": 0.9,
+ "evidence": [
+  "右臂和左手在序列中持续保持对粉色盘子的抓取状态（holding）",
+  "从Head视角观察，盘子相对于洗碗机入口位置由外向内发生显著位移",
+  "传感器数据显示右臂力矩和力增加，符合持重物进行受控运动的特征"
+ ],
+ "reason_if_false": ""
+}
+```

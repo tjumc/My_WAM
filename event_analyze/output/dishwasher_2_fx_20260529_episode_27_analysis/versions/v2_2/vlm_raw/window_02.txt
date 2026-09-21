@@ -1,0 +1,34 @@
+```json
+{
+ "state_before": {
+  "door_state": "open",
+  "rack_state": "in",
+  "right_hand_relation": "holding",
+  "left_hand_relation": "free",
+  "object_location": "hand",
+  "visible_object_category": "dish"
+ },
+ "state_after": {
+  "door_state": "open",
+  "rack_state": "moving_out",
+  "right_hand_relation": "holding",
+  "left_hand_relation": "free",
+  "object_location": "hand",
+  "visible_object_category": "dish"
+ },
+ "contains_semantic_action": true,
+ "proposed_action": "pull",
+ "action_progress": "start",
+ "semantic_support": "goal_directed_motion",
+ "atomic_action": "右手持盘，左手接触并拉出洗碗机下碗篮",
+ "active_arm": "both",
+ "task_relevance": "relevant",
+ "confidence": 0.9,
+ "evidence": [
+  "head视角显示左手从f=225的静止位置开始向左伸展并接触内部拉篮结构",
+  "left_force_delta为5.343（增加）且left_pos_track_err增加，表明左手正在施加向外的拉力并产生位移",
+  "rack_state从in变为moving_out，右手持续持物准备放入"
+ ],
+ "reason_if_false": ""
+}
+```
