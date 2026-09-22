@@ -44,3 +44,20 @@ at once. For the current sequential dishwasher demonstrations:
 
 This is task-family configuration, not a universal robotics assumption.
 Concurrent/bimanual tasks should use a different value and ownership policy.
+
+
+## Task completion and targeted perception
+
+V3.4.4 adds task-schema fields that describe task-family completion and usage
+semantics without labeling individual trajectories:
+
+- `usage_state`: the state in which a receptacle is usable for object placement;
+- `expected_final_state`: the expected state at task completion;
+- `targeted_perception`: generic ambiguity-query budget and confidence policy.
+
+For the dishwasher family, the two receptacles use `out` as their usage state
+and return to `in` at completion; the door returns to `closed`.
+
+These declarations are used only to detect reasoning inconsistencies and choose
+where to re-observe. The targeted VLM prompt is not told which transition it is
+supposed to find.

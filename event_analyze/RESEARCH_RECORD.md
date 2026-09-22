@@ -5,7 +5,7 @@
 > preserve the **scientific problem -> diagnosis -> general solution -> evidence**
 > chain, and to distinguish paper-level ideas from local engineering fixes.
 >
-> Last updated: V3.4.3.
+> Last updated: V3.4.4.
 
 ---
 
@@ -832,11 +832,26 @@ interval/entity/relation.
 
 ### Status
 
-**Not yet implemented in generic form.**
+**Implemented in V3.4.4; controlled evaluation pending.**
+
+V3.4.4 adds a two-pass closed loop:
+
+```text
+reasoning pass 1
+-> generic ambiguity detection
+-> schema-driven targeted VLM observation
+-> merge confident evidence
+-> reasoning pass 2
+```
+
+The default V3.4.4 path disables the old cutlery-specific dense pass. The new
+detector can trigger on unresolved ownership, visually rejected candidates,
+receptacle use without a ready lifecycle, unfinished expected final lifecycle,
+or accepted articulated transitions lacking directional visual evidence.
 
 ### Contribution potential
 
-**Very high if implemented and validated.**
+**Very high if controlled experiments confirm useful error recovery at lower VLM query cost than uniform dense re-observation.**
 
 Potential framing:
 
@@ -857,11 +872,18 @@ base VLM prompt still explicitly asks about dishwasher-specific entities.
 
 ### Status
 
-**Unresolved architectural limitation.**
+**Partially solved in V3.4.4.**
+
+Targeted re-observation prompts are now generated from the task schema, including
+entity names, observation keys, state spaces, contact tokens, holding tokens,
+usage states and completion expectations.
+
+The broad/base observation prompt is still V3.3.3-compatible and therefore
+dishwasher-specific.
 
 ### Next direction
 
-Generate structured VLM queries automatically from the task schema:
+Generate the broad structured VLM observation prompt automatically from the task schema:
 
 ```text
 schema
@@ -1234,6 +1256,51 @@ Main lesson:
 
 ---
 
+## V3.4.4
+
+Purpose:
+
+**replace fixed task-specific dense perception with reasoning-triggered,
+schema-driven targeted re-observation.**
+
+Major additions:
+
+1. first-pass ambiguity detection from reasoning outputs;
+2. generic ownership-conflict trigger;
+3. receptacle-use / lifecycle-consistency triggers;
+4. schema-declared `usage_state` and `expected_final_state`;
+5. schema-generated targeted observation prompts;
+6. confidence-gated targeted evidence merge;
+7. second reasoning pass after new evidence;
+8. compact logging of targeted-query count and merge count.
+
+Default behavior:
+
+- broad/base observations may be reused from V3.4.3;
+- legacy cutlery-specific dense evidence is disabled by default;
+- `V344_USE_LEGACY_DENSE=1` is reserved for ablation;
+- manual GT is not visible to ambiguity detection or targeted perception.
+
+Key pending checks:
+
+### Episode26
+
+- does the generic loop detect the unresolved cutlery-basket lifecycle?
+- can targeted observation recover `push_in_cutlery_basket` without the old
+  hard-coded dense cutlery search?
+- are existing utensil and plate phases preserved?
+
+### Episode27
+
+- does the method avoid unnecessary queries when reasoning is already coherent?
+- is the exact 10-step policy-normalized sequence preserved?
+- what is the targeted-query cost relative to the old uniform dense pass?
+
+These are implementation hypotheses until V3.4.4 regression results are
+committed.
+
+---
+
 # 5. Current problem status summary
 
 | Problem | Status | Current interpretation |
@@ -1248,13 +1315,13 @@ Main lesson:
 | knife/fork fine identity unreliable | solved at policy-label level | utensil backoff |
 | re-grasp creates duplicate plate skills | solved for current pattern | completion-aware episodes |
 | fine-vs-coarse evaluation mismatch | solved | policy-normalized metrics |
-| push-in cutlery basket missing | unresolved | container perception/validation issue |
+| push-in cutlery basket missing | V3.4.4 targeted recovery pending eval | generic lifecycle-triggered re-observation |
 | overlapping utensil temporal ownership | provisionally solved in V3.4.2 | joint hand-object ownership |
 | plate starts too early in episode27 | solved on regression episode27 | ownership/context-switch reasoning |
 | final boundary can collapse a valid phase | solved on current regression cases | duration-constrained semantic boundary arbitration |
 | relocated boundary may use stale robot signal | solved on current regression cases | post-anchor signal revalidation |
-| targeted dense perception is task-specific | unresolved | generic ambiguity trigger needed |
-| base VLM perception prompt is task-specific | unresolved | schema-generated perception needed |
+| targeted dense perception is task-specific | V3.4.4 implemented, pending eval | generic ambiguity-triggered schema-driven targeting |
+| base VLM perception prompt is task-specific | partially unresolved | targeted prompt is schema-driven; broad prompt still task-specific |
 | held-out / cross-task experimental evidence | unresolved | required for paper |
 
 ---
@@ -1404,11 +1471,15 @@ Potential triggers:
 
 ### Current maturity
 
-**Not yet implemented generically.**
+**Implemented in V3.4.4; controlled evaluation pending.**
+
+The implementation records both the ambiguity requests and the accepted targeted
+observations, allowing direct analysis of query count, merge rate and downstream
+annotation change.
 
 ### Paper potential
 
-**Very high future candidate.**
+**Very high contribution candidate pending controlled evidence.**
 
 Would provide a principled bridge between perception uncertainty and reasoning,
 and may reduce VLM cost compared with uniform dense querying.
@@ -1512,23 +1583,19 @@ A concise method statement is:
 
 Priority order should be:
 
-1. **Joint hand-object temporal ownership**
-   - solve overlapping utensil spans;
-   - solve early plate onset;
-   - avoid independent object tracks competing for the same hand.
+1. **Evaluate V3.4.4 closed-loop targeted perception**
+   - recover unresolved lifecycle errors without GT;
+   - measure query count / merge rate / annotation change;
+   - compare against the legacy fixed dense pass.
 
-2. **Generic ambiguity-triggered targeted re-observation**
-   - re-observe only intervals that remain inconsistent after temporal
-     reasoning.
+2. **Schema-driven broad perception**
+   - remove the remaining dishwasher-specific base VLM prompt;
+   - derive all entity/state questions from the task schema.
 
 3. **Container interaction robustness**
-   - recover episode26 `push_in_cutlery_basket` without adding an
-     episode-specific rule.
+   - verify that lifecycle recovery generalizes beyond the cutlery basket.
 
-4. **Schema-driven perception**
-   - generate broad and targeted VLM questions from the task schema.
-
-5. **Generalization experiments**
+4. **Generalization experiments**
    - multiple unseen trajectories of the same task;
    - at least one additional task family;
    - downstream policy-learning benefit.

@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.4",
+  "schema_version": "0.5",
   "task_family": "dishwasher_loading",
   "onboarding": {
     "human_schema_definition_allowed": true,
@@ -67,7 +67,8 @@
           "skill_type": "close_dishwasher_door",
           "semantic": "close"
         }
-      ]
+      ],
+      "expected_final_state": "closed"
     },
     "dish_rack": {
       "display_name": "dish rack",
@@ -134,7 +135,9 @@
       ],
       "accepts": [
         "plate"
-      ]
+      ],
+      "expected_final_state": "in",
+      "usage_state": "out"
     },
     "cutlery_basket": {
       "display_name": "cutlery basket",
@@ -203,7 +206,9 @@
       ],
       "accepts": [
         "utensil"
-      ]
+      ],
+      "expected_final_state": "in",
+      "usage_state": "out"
     },
     "knife": {
       "display_name": "knife",
@@ -373,5 +378,23 @@
     "allow_inferred_parent_ownership": true,
     "direct_ownership_min_confidence": 0.7,
     "description": "This task family is annotated as sequential single-object portable manipulation. Change this for genuinely concurrent/bimanual task families."
+  },
+  "targeted_perception": {
+    "enabled": true,
+    "max_requests": 8,
+    "window_sec": 4.5,
+    "stride_sec": 2.5,
+    "search_horizon_sec": 8,
+    "padding_sec": 1.25,
+    "num_samples": 8,
+    "min_confidence_to_merge": 0.65,
+    "triggers": [
+      "unresolved_hand_object_ownership",
+      "rejected_visual_interaction_evidence",
+      "receptacle_usage_without_ready_lifecycle",
+      "unfinished_expected_final_lifecycle",
+      "accepted_container_without_direction_evidence"
+    ],
+    "note": "Targeted queries are triggered by generic reasoning inconsistencies. Fine identity uncertainty that is already safely handled by semantic backoff is not itself a trigger."
   }
 }

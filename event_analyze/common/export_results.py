@@ -134,6 +134,12 @@ def main():
         "tracked_entity_states.json",
         "tracked_entity_states_owned.json",
         "hand_object_ownership.json",
+        "ambiguity_requests.json",
+        "targeted_observations.jsonl",
+        "tracked_entity_states_pass1.json",
+        "hand_object_ownership_pass1.json",
+        "skill_candidates_validated_pass1.json",
+        "interaction_validation_report_pass1.json",
         "skill_candidates_validated.json",
     ]:
         p = out / name
@@ -142,6 +148,31 @@ def main():
                 "sha256": sha256_file(p),
                 "bytes": p.stat().st_size,
             }
+
+    closed_loop = None
+    ambiguity_path = out / "ambiguity_requests.json"
+    targeted_path = out / "targeted_observations.jsonl"
+    if ambiguity_path.exists() or targeted_path.exists():
+        ambiguity_doc = load_json(ambiguity_path) if ambiguity_path.exists() else {}
+        targeted_rows = []
+        if targeted_path.exists():
+            targeted_rows = [
+                json.loads(x)
+                for x in targeted_path.read_text(encoding="utf-8").splitlines()
+                if x.strip()
+            ]
+        closed_loop = {
+            "num_ambiguity_requests": len(ambiguity_doc.get("requests", [])),
+            "num_targeted_queries": len(targeted_rows),
+            "num_merged_targeted_observations": sum(
+                bool(x.get("_merge_accepted")) for x in targeted_rows
+            ),
+            "ambiguity_kinds": sorted({
+                x.get("kind") for x in ambiguity_doc.get("requests", [])
+                if x.get("kind")
+            }),
+        }
+
 
     manifest = {
         "format_version": 1,
@@ -159,6 +190,7 @@ def main():
         },
         "runtime_output": safe_rel(out, event_root),
         "evidence_fingerprints": evidence,
+        "closed_loop_perception": closed_loop,
         "exported_files": copied,
         "storage_policy": {
             "git_keeps": [
