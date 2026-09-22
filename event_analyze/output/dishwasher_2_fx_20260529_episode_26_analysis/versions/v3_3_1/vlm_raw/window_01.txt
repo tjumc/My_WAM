@@ -1,0 +1,64 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "opening",
+    "dish_rack": "moving_out",
+    "cutlery_basket": "in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "uncertain",
+    "knife_location": "tabletop",
+    "fork_location": "tabletop",
+    "plate_location": "tabletop"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "uncertain",
+    "knife_location": "tabletop",
+    "fork_location": "tabletop",
+    "plate_location": "tabletop"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.90,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.85,
+    "right_hand": 0.90,
+    "left_hand": 0.50,
+    "knife_location": 0.95,
+    "fork_location": 0.95,
+    "plate_location": 0.95
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.85,
+    "right_hand": 0.90,
+    "left_hand": 0.50,
+    "knife_location": 0.95,
+    "fork_location": 0.95,
+    "plate_location": 0.95
+  },
+  "visible_entities": [
+    "robot_arm_right",
+    "dishwasher_door",
+    "dish_rack",
+    "cutlery_basket",
+    "plate",
+    "knife",
+    "fork"
+  ],
+  "evidence": [
+    "Head camera shows the dishwasher rack extending from the cabinet towards the robot between frame 153 and 243.",
+    "Right camera view at frame 243 shows the interior of the dishwasher with the rack fully pulled out.",
+    "Head camera view at frame 153 shows a pink plate with a knife and fork resting on the countertop.",
+    "Right hand is visible maintaining contact with the rack structure throughout the window."
+  ],
+  "window_quality": "good"
+}
+```

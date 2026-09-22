@@ -1,0 +1,17 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "out",
+  "relative_motion": "moving_out",
+  "right_hand_relation": "pulling_cutlery_basket",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 1, 2, 3, 4, 5, 6, 7],
+  "evidence": [
+    "在帧序列开始时（t0-t1），cutlery_basket 位于洗碗机内部深处，被上层 dish_rack 遮挡。",
+    "从 t1 到 t5（440-499），随着上层 dish_rack 被拉出，cutlery_basket 随之从内部连续向外部移动。",
+    "在 t6 到 t8（514-544），cutlery_basket 已经完全移出洗碗机主体，并停留在机器人前方，位置明显远离内部。",
+    "右手在移动过程中始终与 cutlery_basket 保持接触并施加拉力，确认了 'pulling' 的关系。"
+  ],
+  "visibility": "good"
+}
+```

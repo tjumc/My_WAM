@@ -1,0 +1,3413 @@
+{
+  "annotation_version": "v3.3.1",
+  "num_windows": 31,
+  "anchor_frames": [
+    93,
+    153,
+    183,
+    243,
+    262,
+    282,
+    304,
+    343,
+    352,
+    372,
+    394,
+    416,
+    425,
+    433,
+    462,
+    464,
+    485,
+    506,
+    545,
+    554,
+    559,
+    605,
+    619,
+    665,
+    674,
+    679,
+    739,
+    740,
+    764,
+    767,
+    770,
+    830,
+    857,
+    880,
+    1000,
+    1014,
+    1060,
+    1078,
+    1134,
+    1136,
+    1150,
+    1157,
+    1168,
+    1226,
+    1247,
+    1298,
+    1332,
+    1388,
+    1410,
+    1422,
+    1430,
+    1500,
+    1520,
+    1578,
+    1610,
+    1621,
+    1661,
+    1668,
+    1711,
+    1751
+  ],
+  "entity_anchor_frames": {
+    "door": [
+      93,
+      153,
+      183,
+      243,
+      262,
+      282,
+      304,
+      343,
+      352,
+      372,
+      394,
+      416,
+      433,
+      462,
+      464,
+      506,
+      554,
+      674,
+      740,
+      764,
+      767,
+      830,
+      857,
+      1060,
+      1078,
+      1136,
+      1150,
+      1157,
+      1168,
+      1226,
+      1247,
+      1298,
+      1332,
+      1388,
+      1410,
+      1422,
+      1430,
+      1500,
+      1520,
+      1578,
+      1610,
+      1621,
+      1661,
+      1668,
+      1711,
+      1751
+    ],
+    "dish_rack": [
+      93,
+      153,
+      183,
+      243,
+      262,
+      282,
+      304,
+      343,
+      352,
+      372,
+      394,
+      416,
+      433,
+      462,
+      464,
+      506,
+      554,
+      674,
+      740,
+      764,
+      767,
+      830,
+      857,
+      1060,
+      1078,
+      1136,
+      1150,
+      1157,
+      1168,
+      1226,
+      1247,
+      1298,
+      1332,
+      1388,
+      1410,
+      1422,
+      1430,
+      1500,
+      1520,
+      1578,
+      1610,
+      1621,
+      1661,
+      1668,
+      1711,
+      1751
+    ],
+    "cutlery_basket": [
+      93,
+      153,
+      183,
+      243,
+      262,
+      282,
+      304,
+      343,
+      352,
+      372,
+      394,
+      416,
+      425,
+      433,
+      462,
+      464,
+      485,
+      506,
+      545,
+      554,
+      559,
+      605,
+      619,
+      665,
+      674,
+      679,
+      739,
+      740,
+      764,
+      767,
+      770,
+      830,
+      857,
+      880,
+      1000,
+      1014,
+      1060,
+      1078,
+      1134,
+      1136,
+      1150,
+      1157,
+      1168,
+      1226,
+      1247,
+      1298,
+      1332,
+      1388,
+      1410,
+      1422,
+      1430,
+      1500,
+      1520,
+      1578,
+      1610,
+      1621,
+      1661,
+      1668,
+      1711,
+      1751
+    ],
+    "knife_location": [
+      93,
+      153,
+      183,
+      243,
+      262,
+      282,
+      304,
+      343,
+      352,
+      372,
+      394,
+      416,
+      433,
+      462,
+      464,
+      506,
+      554,
+      674,
+      740,
+      764,
+      767,
+      830,
+      857,
+      1060,
+      1078,
+      1136,
+      1150,
+      1157,
+      1168,
+      1226,
+      1247,
+      1298,
+      1332,
+      1388,
+      1410,
+      1422,
+      1430,
+      1500,
+      1520,
+      1578,
+      1610,
+      1621,
+      1661,
+      1668,
+      1711,
+      1751
+    ],
+    "fork_location": [
+      93,
+      153,
+      183,
+      243,
+      262,
+      282,
+      304,
+      343,
+      352,
+      372,
+      394,
+      416,
+      433,
+      462,
+      464,
+      506,
+      554,
+      674,
+      740,
+      764,
+      767,
+      830,
+      857,
+      1060,
+      1078,
+      1136,
+      1150,
+      1157,
+      1168,
+      1226,
+      1247,
+      1298,
+      1332,
+      1388,
+      1410,
+      1422,
+      1430,
+      1500,
+      1520,
+      1578,
+      1610,
+      1621,
+      1661,
+      1668,
+      1711,
+      1751
+    ],
+    "plate_location": [
+      93,
+      153,
+      183,
+      243,
+      262,
+      282,
+      304,
+      343,
+      352,
+      372,
+      394,
+      416,
+      433,
+      462,
+      464,
+      506,
+      554,
+      674,
+      740,
+      764,
+      767,
+      830,
+      857,
+      1060,
+      1078,
+      1136,
+      1150,
+      1157,
+      1168,
+      1226,
+      1247,
+      1298,
+      1332,
+      1388,
+      1410,
+      1422,
+      1430,
+      1500,
+      1520,
+      1578,
+      1610,
+      1621,
+      1661,
+      1668,
+      1711,
+      1751
+    ]
+  },
+  "tracks": {
+    "door": {
+      "anchors": [
+        {
+          "frame": 93,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            0
+          ]
+        },
+        {
+          "frame": 153,
+          "state": "opening",
+          "confidence": 0.9,
+          "support": "observed",
+          "event_ids": [
+            1
+          ]
+        },
+        {
+          "frame": 183,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            0
+          ]
+        },
+        {
+          "frame": 243,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            1
+          ]
+        },
+        {
+          "frame": 262,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            2
+          ]
+        },
+        {
+          "frame": 282,
+          "state": "open",
+          "confidence": 0.72,
+          "support": "observed",
+          "event_ids": [
+            3
+          ]
+        },
+        {
+          "frame": 304,
+          "state": "open",
+          "confidence": 0.76,
+          "support": "observed",
+          "event_ids": [
+            4
+          ]
+        },
+        {
+          "frame": 343,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            5
+          ]
+        },
+        {
+          "frame": 352,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            2
+          ]
+        },
+        {
+          "frame": 372,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            3,
+            6
+          ]
+        },
+        {
+          "frame": 394,
+          "state": "open",
+          "confidence": 0.76,
+          "support": "observed",
+          "event_ids": [
+            4
+          ]
+        },
+        {
+          "frame": 416,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            7
+          ]
+        },
+        {
+          "frame": 433,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            5
+          ]
+        },
+        {
+          "frame": 462,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            6
+          ]
+        },
+        {
+          "frame": 464,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            8
+          ]
+        },
+        {
+          "frame": 506,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            7
+          ]
+        },
+        {
+          "frame": 554,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            8
+          ]
+        },
+        {
+          "frame": 674,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            9
+          ]
+        },
+        {
+          "frame": 740,
+          "state": "open",
+          "confidence": 0.76,
+          "support": "observed",
+          "event_ids": [
+            10
+          ]
+        },
+        {
+          "frame": 764,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            9
+          ]
+        },
+        {
+          "frame": 767,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            11
+          ]
+        },
+        {
+          "frame": 830,
+          "state": "open",
+          "confidence": 0.76,
+          "support": "observed",
+          "event_ids": [
+            10
+          ]
+        },
+        {
+          "frame": 857,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            11
+          ]
+        },
+        {
+          "frame": 1060,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            12
+          ]
+        },
+        {
+          "frame": 1078,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            13
+          ]
+        },
+        {
+          "frame": 1136,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            14
+          ]
+        },
+        {
+          "frame": 1150,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            12
+          ]
+        },
+        {
+          "frame": 1157,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            15
+          ]
+        },
+        {
+          "frame": 1168,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            13
+          ]
+        },
+        {
+          "frame": 1226,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            14
+          ]
+        },
+        {
+          "frame": 1247,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            15
+          ]
+        },
+        {
+          "frame": 1298,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            16
+          ]
+        },
+        {
+          "frame": 1332,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            17
+          ]
+        },
+        {
+          "frame": 1388,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            16
+          ]
+        },
+        {
+          "frame": 1410,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            18
+          ]
+        },
+        {
+          "frame": 1422,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            17
+          ]
+        },
+        {
+          "frame": 1430,
+          "state": "open",
+          "confidence": 0.76,
+          "support": "observed",
+          "event_ids": [
+            19
+          ]
+        },
+        {
+          "frame": 1500,
+          "state": "open",
+          "confidence": 0.9,
+          "support": "observed",
+          "event_ids": [
+            18
+          ]
+        },
+        {
+          "frame": 1520,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            19,
+            20
+          ]
+        },
+        {
+          "frame": 1578,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            21
+          ]
+        },
+        {
+          "frame": 1610,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            20
+          ]
+        },
+        {
+          "frame": 1621,
+          "state": "open",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            22
+          ]
+        },
+        {
+          "frame": 1661,
+          "state": "open",
+          "confidence": 0.72,
+          "support": "observed",
+          "event_ids": [
+            23
+          ]
+        },
+        {
+          "frame": 1668,
+          "state": "closing",
+          "confidence": 0.9,
+          "support": "observed",
+          "event_ids": [
+            21
+          ]
+        },
+        {
+          "frame": 1711,
+          "state": "closing",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            22
+          ]
+        },
+        {
+          "frame": 1751,
+          "state": "closing",
+          "confidence": 0.72,
+          "support": "observed",
+          "event_ids": [
+            23
+          ]
+        }
+      ],
+      "segments": [
+        {
+          "state": "open",
+          "start_frame": 93,
+          "end_frame": 123,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            0
+          ]
+        },
+        {
+          "state": "opening",
+          "start_frame": 123,
+          "end_frame": 168,
+          "confidence": 0.9,
+          "support": "observed",
+          "event_ids": [
+            1
+          ]
+        },
+        {
+          "state": "open",
+          "start_frame": 168,
+          "end_frame": 1664,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23
+          ]
+        },
+        {
+          "state": "closing",
+          "start_frame": 1664,
+          "end_frame": 1751,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            21,
+            22,
+            23
+          ]
+        }
+      ]
+    },
+    "dish_rack": {
+      "anchors": [
+        {
+          "frame": 93,
+          "state": "out",
+          "confidence": 0.85,
+          "support": "observed",
+          "event_ids": [
+            0
+          ]
+        },
+        {
+          "frame": 153,
+          "state": "moving_out",
+          "confidence": 0.9,
+          "support": "observed",
+          "event_ids": [
+            1
+          ]
+        },
+        {
+          "frame": 183,
+          "state": "out",
+          "confidence": 0.85,
+          "support": "observed",
+          "event_ids": [
+            0
+          ]
+        },
+        {
+          "frame": 243,
+          "state": "out",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            1
+          ]
+        },
+        {
+          "frame": 262,
+          "state": "out",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            2
+          ]
+        },
+        {
+          "frame": 282,
+          "state": "moving_out",
+          "confidence": 0.72,
+          "support": "observed",
+          "event_ids": [
+            3
+          ]
+        },
+        {
+          "frame": 304,
+          "state": "moving_out",
+          "confidence": 0.72,
+          "support": "observed",
+          "event_ids": [
+            4
+          ]
+        },
+        {
+          "frame": 343,
+          "state": "out",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            5
+          ]
+        },
+        {
+          "frame": 352,
+          "state": "in",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            2
+          ]
+        },
+        {
+          "frame": 372,
+          "state": "out",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            3,
+            6
+          ]
+        },
+        {
+          "frame": 394,
+          "state": "out",
+          "confidence": 0.72,
+          "support": "observed",
+          "event_ids": [
+            4
+          ]
+        },
+        {
+          "frame": 416,
+          "state": "moving_out",
+          "confidence": 0.9,
+          "support": "observed",
+          "event_ids": [
+            7
+          ]
+        },
+        {
+          "frame": 433,
+          "state": "moving_in",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            5
+          ]
+        },
+        {
+          "frame": 462,
+          "state": "moving_in",
+          "confidence": 0.9,
+          "support": "observed",
+          "event_ids": [
+            6
+          ]
+        },
+        {
+          "frame": 464,
+          "state": "moving_out",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            8
+          ]
+        },
+        {
+          "frame": 506,
+          "state": "moving_in",
+          "confidence": 0.9,
+          "support": "observed",
+          "event_ids": [
+            7
+          ]
+        },
+        {
+          "frame": 554,
+          "state": "out",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            8
+          ]
+        },
+        {
+          "frame": 674,
+          "state": "out",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            9
+          ]
+        },
+        {
+          "frame": 740,
+          "state": "out",
+          "confidence": 0.72,
+          "support": "observed",
+          "event_ids": [
+            10
+          ]
+        },
+        {
+          "frame": 764,
+          "state": "out",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            9
+          ]
+        },
+        {
+          "frame": 767,
+          "state": "out",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            11
+          ]
+        },
+        {
+          "frame": 830,
+          "state": "out",
+          "confidence": 0.72,
+          "support": "observed",
+          "event_ids": [
+            10
+          ]
+        },
+        {
+          "frame": 857,
+          "state": "out",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            11
+          ]
+        },
+        {
+          "frame": 1060,
+          "state": "out",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            12
+          ]
+        },
+        {
+          "frame": 1078,
+          "state": "out",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            13
+          ]
+        },
+        {
+          "frame": 1136,
+          "state": "in",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            14
+          ]
+        },
+        {
+          "frame": 1150,
+          "state": "out",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            12
+          ]
+        },
+        {
+          "frame": 1157,
+          "state": "in",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            15
+          ]
+        },
+        {
+          "frame": 1168,
+          "state": "moving_in",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            13
+          ]
+        },
+        {
+          "frame": 1226,
+          "state": "in",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            14
+          ]
+        },
+        {
+          "frame": 1247,
+          "state": "in",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            15
+          ]
+        },
+        {
+          "frame": 1298,
+          "state": "out",
+          "confidence": 0.9,
+          "support": "observed",
+          "event_ids": [
+            16
+          ]
+        },
+        {
+          "frame": 1332,
+          "state": "out",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            17
+          ]
+        },
+        {
+          "frame": 1388,
+          "state": "moving_in",
+          "confidence": 0.9,
+          "support": "observed",
+          "event_ids": [
+            16
+          ]
+        },
+        {
+          "frame": 1410,
+          "state": "out",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            18
+          ]
+        },
+        {
+          "frame": 1422,
+          "state": "moving_in",
+          "confidence": 0.9,
+          "support": "observed",
+          "event_ids": [
+            17
+          ]
+        },
+        {
+          "frame": 1430,
+          "state": "moving_in",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1500,
+          "state": "moving_in",
+          "confidence": 0.9,
+          "support": "observed",
+          "event_ids": [
+            18
+          ]
+        },
+        {
+          "frame": 1520,
+          "state": "moving_in",
+          "confidence": 0.76,
+          "support": "observed",
+          "event_ids": [
+            19
+          ]
+        },
+        {
+          "frame": 1578,
+          "state": "in",
+          "confidence": 0.9,
+          "support": "observed",
+          "event_ids": [
+            21
+          ]
+        },
+        {
+          "frame": 1610,
+          "state": "out",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            20
+          ]
+        },
+        {
+          "frame": 1621,
+          "state": "in",
+          "confidence": 0.9,
+          "support": "observed",
+          "event_ids": [
+            22
+          ]
+        },
+        {
+          "frame": 1661,
+          "state": "in",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1668,
+          "state": "in",
+          "confidence": 0.9,
+          "support": "observed",
+          "event_ids": [
+            21
+          ]
+        },
+        {
+          "frame": 1711,
+          "state": "in",
+          "confidence": 0.9,
+          "support": "observed",
+          "event_ids": [
+            22
+          ]
+        },
+        {
+          "frame": 1751,
+          "state": "moving_in",
+          "confidence": 0.72,
+          "support": "observed",
+          "event_ids": [
+            23
+          ]
+        }
+      ],
+      "segments": [
+        {
+          "state": "out",
+          "start_frame": 93,
+          "end_frame": 123,
+          "confidence": 0.85,
+          "support": "observed",
+          "event_ids": [
+            0
+          ]
+        },
+        {
+          "state": "moving_out",
+          "start_frame": 123,
+          "end_frame": 168,
+          "confidence": 0.9,
+          "support": "observed",
+          "event_ids": [
+            1
+          ]
+        },
+        {
+          "state": "out",
+          "start_frame": 168,
+          "end_frame": 272,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "state": "moving_out",
+          "start_frame": 272,
+          "end_frame": 324,
+          "confidence": 0.72,
+          "support": "observed",
+          "event_ids": [
+            3,
+            4
+          ]
+        },
+        {
+          "state": "out",
+          "start_frame": 324,
+          "end_frame": 348,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            5
+          ]
+        },
+        {
+          "state": "in",
+          "start_frame": 348,
+          "end_frame": 362,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            2
+          ]
+        },
+        {
+          "state": "out",
+          "start_frame": 362,
+          "end_frame": 405,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            3,
+            4,
+            6
+          ]
+        },
+        {
+          "state": "moving_out",
+          "start_frame": 405,
+          "end_frame": 424,
+          "confidence": 0.9,
+          "support": "observed",
+          "event_ids": [
+            7
+          ]
+        },
+        {
+          "state": "moving_in",
+          "start_frame": 424,
+          "end_frame": 463,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            5,
+            6
+          ]
+        },
+        {
+          "state": "moving_out",
+          "start_frame": 463,
+          "end_frame": 485,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            8
+          ]
+        },
+        {
+          "state": "moving_in",
+          "start_frame": 485,
+          "end_frame": 530,
+          "confidence": 0.9,
+          "support": "observed",
+          "event_ids": [
+            7
+          ]
+        },
+        {
+          "state": "out",
+          "start_frame": 530,
+          "end_frame": 1107,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ]
+        },
+        {
+          "state": "in",
+          "start_frame": 1107,
+          "end_frame": 1143,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            14
+          ]
+        },
+        {
+          "state": "out",
+          "start_frame": 1143,
+          "end_frame": 1154,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            12
+          ]
+        },
+        {
+          "state": "in",
+          "start_frame": 1154,
+          "end_frame": 1162,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            15
+          ]
+        },
+        {
+          "state": "moving_in",
+          "start_frame": 1162,
+          "end_frame": 1197,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            13
+          ]
+        },
+        {
+          "state": "in",
+          "start_frame": 1197,
+          "end_frame": 1272,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            14,
+            15
+          ]
+        },
+        {
+          "state": "out",
+          "start_frame": 1272,
+          "end_frame": 1360,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            16,
+            17
+          ]
+        },
+        {
+          "state": "moving_in",
+          "start_frame": 1360,
+          "end_frame": 1399,
+          "confidence": 0.9,
+          "support": "observed",
+          "event_ids": [
+            16
+          ]
+        },
+        {
+          "state": "out",
+          "start_frame": 1399,
+          "end_frame": 1416,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            18
+          ]
+        },
+        {
+          "state": "moving_in",
+          "start_frame": 1416,
+          "end_frame": 1549,
+          "confidence": 0.9,
+          "support": "observed",
+          "event_ids": [
+            17,
+            18,
+            19
+          ]
+        },
+        {
+          "state": "in",
+          "start_frame": 1549,
+          "end_frame": 1594,
+          "confidence": 0.9,
+          "support": "observed",
+          "event_ids": [
+            21
+          ]
+        },
+        {
+          "state": "out",
+          "start_frame": 1594,
+          "end_frame": 1616,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            20
+          ]
+        },
+        {
+          "state": "in",
+          "start_frame": 1616,
+          "end_frame": 1731,
+          "confidence": 0.9,
+          "support": "observed",
+          "event_ids": [
+            21,
+            22
+          ]
+        },
+        {
+          "state": "moving_in",
+          "start_frame": 1731,
+          "end_frame": 1751,
+          "confidence": 0.72,
+          "support": "observed",
+          "event_ids": [
+            23
+          ]
+        }
+      ]
+    },
+    "cutlery_basket": {
+      "anchors": [
+        {
+          "frame": 93,
+          "state": "in",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 153,
+          "state": "in",
+          "confidence": 0.85,
+          "support": "observed",
+          "event_ids": [
+            1
+          ]
+        },
+        {
+          "frame": 183,
+          "state": "in",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 243,
+          "state": "in",
+          "confidence": 0.85,
+          "support": "observed",
+          "event_ids": [
+            1
+          ]
+        },
+        {
+          "frame": 262,
+          "state": "in",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 282,
+          "state": "in",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 304,
+          "state": "in",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 343,
+          "state": "in",
+          "confidence": 0.85,
+          "support": "observed",
+          "event_ids": [
+            5
+          ]
+        },
+        {
+          "frame": 352,
+          "state": "in",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 372,
+          "state": "in",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 394,
+          "state": "in",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 416,
+          "state": "in",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 425,
+          "state": "in",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            10001
+          ]
+        },
+        {
+          "frame": 433,
+          "state": "in",
+          "confidence": 0.85,
+          "support": "observed",
+          "event_ids": [
+            5
+          ]
+        },
+        {
+          "frame": 462,
+          "state": "in",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 464,
+          "state": "in",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 485,
+          "state": "in",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            10002
+          ]
+        },
+        {
+          "frame": 506,
+          "state": "in",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 545,
+          "state": "in",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            10003
+          ]
+        },
+        {
+          "frame": 554,
+          "state": "moving_out",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 559,
+          "state": "out",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            10001
+          ]
+        },
+        {
+          "frame": 605,
+          "state": "in",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            10004
+          ]
+        },
+        {
+          "frame": 619,
+          "state": "out",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            10002
+          ]
+        },
+        {
+          "frame": 665,
+          "state": "in",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            10005
+          ]
+        },
+        {
+          "frame": 674,
+          "state": "moving_out",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 679,
+          "state": "out",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            10003
+          ]
+        },
+        {
+          "frame": 739,
+          "state": "out",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            10004
+          ]
+        },
+        {
+          "frame": 740,
+          "state": "out",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 764,
+          "state": "out",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 767,
+          "state": "out",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 770,
+          "state": "out",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            10005
+          ]
+        },
+        {
+          "frame": 830,
+          "state": "in",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 857,
+          "state": "in",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 880,
+          "state": "in",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            10007
+          ]
+        },
+        {
+          "frame": 1000,
+          "state": "in",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            10009
+          ]
+        },
+        {
+          "frame": 1014,
+          "state": "out",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            10007
+          ]
+        },
+        {
+          "frame": 1060,
+          "state": "out",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1078,
+          "state": "out",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1134,
+          "state": "out",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            10009
+          ]
+        },
+        {
+          "frame": 1136,
+          "state": "out",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1150,
+          "state": "out",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1157,
+          "state": "out",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1168,
+          "state": "out",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1226,
+          "state": "in",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1247,
+          "state": "in",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1298,
+          "state": "in",
+          "confidence": 0.85,
+          "support": "observed",
+          "event_ids": [
+            16
+          ]
+        },
+        {
+          "frame": 1332,
+          "state": "in",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1388,
+          "state": "moving_in",
+          "confidence": 0.85,
+          "support": "observed",
+          "event_ids": [
+            16
+          ]
+        },
+        {
+          "frame": 1410,
+          "state": "in",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1422,
+          "state": "in",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1430,
+          "state": "in",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1500,
+          "state": "in",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1520,
+          "state": "in",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1578,
+          "state": "in",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1610,
+          "state": "in",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1621,
+          "state": "in",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1661,
+          "state": "in",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1668,
+          "state": "in",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1711,
+          "state": "in",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1751,
+          "state": "in",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        }
+      ],
+      "segments": [
+        {
+          "state": "in",
+          "start_frame": 93,
+          "end_frame": 550,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            1,
+            5,
+            10001,
+            10002,
+            10003
+          ]
+        },
+        {
+          "state": "moving_out",
+          "start_frame": 550,
+          "end_frame": 556,
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "state": "out",
+          "start_frame": 556,
+          "end_frame": 582,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            10001
+          ]
+        },
+        {
+          "state": "in",
+          "start_frame": 582,
+          "end_frame": 612,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            10004
+          ]
+        },
+        {
+          "state": "out",
+          "start_frame": 612,
+          "end_frame": 642,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            10002
+          ]
+        },
+        {
+          "state": "in",
+          "start_frame": 642,
+          "end_frame": 670,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            10005
+          ]
+        },
+        {
+          "state": "moving_out",
+          "start_frame": 670,
+          "end_frame": 676,
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "state": "out",
+          "start_frame": 676,
+          "end_frame": 800,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            10003,
+            10004,
+            10005
+          ]
+        },
+        {
+          "state": "in",
+          "start_frame": 800,
+          "end_frame": 1007,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            10007,
+            10009
+          ]
+        },
+        {
+          "state": "out",
+          "start_frame": 1007,
+          "end_frame": 1197,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            10007,
+            10009
+          ]
+        },
+        {
+          "state": "in",
+          "start_frame": 1197,
+          "end_frame": 1360,
+          "confidence": 0.85,
+          "support": "observed",
+          "event_ids": [
+            16
+          ]
+        },
+        {
+          "state": "moving_in",
+          "start_frame": 1360,
+          "end_frame": 1399,
+          "confidence": 0.85,
+          "support": "observed",
+          "event_ids": [
+            16
+          ]
+        },
+        {
+          "state": "in",
+          "start_frame": 1399,
+          "end_frame": 1751,
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        }
+      ]
+    },
+    "knife_location": {
+      "anchors": [
+        {
+          "frame": 93,
+          "state": "tabletop",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            0
+          ]
+        },
+        {
+          "frame": 153,
+          "state": "tabletop",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            1
+          ]
+        },
+        {
+          "frame": 183,
+          "state": "tabletop",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            0
+          ]
+        },
+        {
+          "frame": 243,
+          "state": "tabletop",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            1
+          ]
+        },
+        {
+          "frame": 262,
+          "state": "right_hand",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 282,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 304,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 343,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 352,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 372,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 394,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 416,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 433,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 462,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 464,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 506,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 554,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 674,
+          "state": "other",
+          "confidence": 0.8,
+          "support": "observed",
+          "event_ids": [
+            9
+          ]
+        },
+        {
+          "frame": 740,
+          "state": "other",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 764,
+          "state": "other",
+          "confidence": 0.8,
+          "support": "observed",
+          "event_ids": [
+            9
+          ]
+        },
+        {
+          "frame": 767,
+          "state": "other",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 830,
+          "state": "other",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 857,
+          "state": "other",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1060,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1078,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1136,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1150,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1157,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1168,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1226,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1247,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1298,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1332,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1388,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1410,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1422,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1430,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1500,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1520,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1578,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1610,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1621,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1661,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1668,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1711,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1751,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        }
+      ],
+      "segments": [
+        {
+          "state": "tabletop",
+          "start_frame": 93,
+          "end_frame": 252,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "state": "right_hand",
+          "start_frame": 252,
+          "end_frame": 272,
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "state": "cutlery_basket",
+          "start_frame": 272,
+          "end_frame": 614,
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "state": "other",
+          "start_frame": 614,
+          "end_frame": 958,
+          "confidence": 0.8,
+          "support": "observed",
+          "event_ids": [
+            9
+          ]
+        },
+        {
+          "state": "cutlery_basket",
+          "start_frame": 958,
+          "end_frame": 1751,
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        }
+      ]
+    },
+    "fork_location": {
+      "anchors": [
+        {
+          "frame": 93,
+          "state": "tabletop",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            0
+          ]
+        },
+        {
+          "frame": 153,
+          "state": "tabletop",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            1
+          ]
+        },
+        {
+          "frame": 183,
+          "state": "tabletop",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            0
+          ]
+        },
+        {
+          "frame": 243,
+          "state": "tabletop",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            1
+          ]
+        },
+        {
+          "frame": 262,
+          "state": "tabletop",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 282,
+          "state": "tabletop",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 304,
+          "state": "tabletop",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 343,
+          "state": "tabletop",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 352,
+          "state": "tabletop",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 372,
+          "state": "tabletop",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 394,
+          "state": "tabletop",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 416,
+          "state": "tabletop",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 433,
+          "state": "tabletop",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 462,
+          "state": "tabletop",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 464,
+          "state": "tabletop",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 506,
+          "state": "tabletop",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 554,
+          "state": "tabletop",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 674,
+          "state": "tabletop",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            9
+          ]
+        },
+        {
+          "frame": 740,
+          "state": "tabletop",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 764,
+          "state": "tabletop",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            9
+          ]
+        },
+        {
+          "frame": 767,
+          "state": "right_hand",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            11
+          ]
+        },
+        {
+          "frame": 830,
+          "state": "right_hand",
+          "confidence": 0.76,
+          "support": "observed",
+          "event_ids": [
+            10
+          ]
+        },
+        {
+          "frame": 857,
+          "state": "right_hand",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            11
+          ]
+        },
+        {
+          "frame": 1060,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1078,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1136,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1150,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1157,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1168,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1226,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1247,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1298,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1332,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1388,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1410,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1422,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1430,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1500,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1520,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1578,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1610,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1621,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1661,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1668,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1711,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1751,
+          "state": "cutlery_basket",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        }
+      ],
+      "segments": [
+        {
+          "state": "tabletop",
+          "start_frame": 93,
+          "end_frame": 766,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            0,
+            1,
+            9
+          ]
+        },
+        {
+          "state": "right_hand",
+          "start_frame": 766,
+          "end_frame": 958,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            10,
+            11
+          ]
+        },
+        {
+          "state": "cutlery_basket",
+          "start_frame": 958,
+          "end_frame": 1751,
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        }
+      ]
+    },
+    "plate_location": {
+      "anchors": [
+        {
+          "frame": 93,
+          "state": "tabletop",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            0
+          ]
+        },
+        {
+          "frame": 153,
+          "state": "tabletop",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            1
+          ]
+        },
+        {
+          "frame": 183,
+          "state": "tabletop",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            0
+          ]
+        },
+        {
+          "frame": 243,
+          "state": "tabletop",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            1
+          ]
+        },
+        {
+          "frame": 262,
+          "state": "right_hand",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 282,
+          "state": "dish_rack",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 304,
+          "state": "dish_rack",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 343,
+          "state": "dish_rack",
+          "confidence": 0.8,
+          "support": "observed",
+          "event_ids": [
+            5
+          ]
+        },
+        {
+          "frame": 352,
+          "state": "dish_rack",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 372,
+          "state": "dish_rack",
+          "confidence": 0.85,
+          "support": "observed",
+          "event_ids": [
+            6
+          ]
+        },
+        {
+          "frame": 394,
+          "state": "dish_rack",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 416,
+          "state": "dish_rack",
+          "confidence": 0.85,
+          "support": "observed",
+          "event_ids": [
+            7
+          ]
+        },
+        {
+          "frame": 433,
+          "state": "dish_rack",
+          "confidence": 0.8,
+          "support": "observed",
+          "event_ids": [
+            5
+          ]
+        },
+        {
+          "frame": 462,
+          "state": "dish_rack",
+          "confidence": 0.85,
+          "support": "observed",
+          "event_ids": [
+            6
+          ]
+        },
+        {
+          "frame": 464,
+          "state": "dish_rack",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 506,
+          "state": "dish_rack",
+          "confidence": 0.85,
+          "support": "observed",
+          "event_ids": [
+            7
+          ]
+        },
+        {
+          "frame": 554,
+          "state": "dish_rack",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 674,
+          "state": "tabletop",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            9
+          ]
+        },
+        {
+          "frame": 740,
+          "state": "tabletop",
+          "confidence": 0.76,
+          "support": "observed",
+          "event_ids": [
+            10
+          ]
+        },
+        {
+          "frame": 764,
+          "state": "right_hand",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            9
+          ]
+        },
+        {
+          "frame": 767,
+          "state": "tabletop",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            11
+          ]
+        },
+        {
+          "frame": 830,
+          "state": "tabletop",
+          "confidence": 0.76,
+          "support": "observed",
+          "event_ids": [
+            10
+          ]
+        },
+        {
+          "frame": 857,
+          "state": "tabletop",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            11
+          ]
+        },
+        {
+          "frame": 1060,
+          "state": "right_hand",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            12
+          ]
+        },
+        {
+          "frame": 1078,
+          "state": "right_hand",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1136,
+          "state": "right_hand",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            14
+          ]
+        },
+        {
+          "frame": 1150,
+          "state": "tabletop",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            12
+          ]
+        },
+        {
+          "frame": 1157,
+          "state": "right_hand",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            15
+          ]
+        },
+        {
+          "frame": 1168,
+          "state": "right_hand",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1226,
+          "state": "right_hand",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            14
+          ]
+        },
+        {
+          "frame": 1247,
+          "state": "right_hand",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            15
+          ]
+        },
+        {
+          "frame": 1298,
+          "state": "right_hand",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            16
+          ]
+        },
+        {
+          "frame": 1332,
+          "state": "right_hand",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            17
+          ]
+        },
+        {
+          "frame": 1388,
+          "state": "dish_rack",
+          "confidence": 0.9,
+          "support": "observed",
+          "event_ids": [
+            16
+          ]
+        },
+        {
+          "frame": 1410,
+          "state": "dish_rack",
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            18
+          ]
+        },
+        {
+          "frame": 1422,
+          "state": "dish_rack",
+          "confidence": 0.9,
+          "support": "observed",
+          "event_ids": [
+            17
+          ]
+        },
+        {
+          "frame": 1430,
+          "state": "dish_rack",
+          "confidence": 0.72,
+          "support": "observed",
+          "event_ids": [
+            19
+          ]
+        },
+        {
+          "frame": 1500,
+          "state": "dish_rack",
+          "confidence": 0.9,
+          "support": "observed",
+          "event_ids": [
+            18
+          ]
+        },
+        {
+          "frame": 1520,
+          "state": "dish_rack",
+          "confidence": 0.85,
+          "support": "observed",
+          "event_ids": [
+            19,
+            20
+          ]
+        },
+        {
+          "frame": 1578,
+          "state": "dish_rack",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1610,
+          "state": "dish_rack",
+          "confidence": 0.85,
+          "support": "observed",
+          "event_ids": [
+            20
+          ]
+        },
+        {
+          "frame": 1621,
+          "state": "dish_rack",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1661,
+          "state": "dish_rack",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1668,
+          "state": "dish_rack",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1711,
+          "state": "dish_rack",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "frame": 1751,
+          "state": "dish_rack",
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        }
+      ],
+      "segments": [
+        {
+          "state": "tabletop",
+          "start_frame": 93,
+          "end_frame": 252,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            0,
+            1
+          ]
+        },
+        {
+          "state": "right_hand",
+          "start_frame": 252,
+          "end_frame": 272,
+          "confidence": 0.52,
+          "support": "interpolated",
+          "event_ids": []
+        },
+        {
+          "state": "dish_rack",
+          "start_frame": 272,
+          "end_frame": 614,
+          "confidence": 0.85,
+          "support": "observed",
+          "event_ids": [
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "state": "tabletop",
+          "start_frame": 614,
+          "end_frame": 752,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            9,
+            10
+          ]
+        },
+        {
+          "state": "right_hand",
+          "start_frame": 752,
+          "end_frame": 766,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            9
+          ]
+        },
+        {
+          "state": "tabletop",
+          "start_frame": 766,
+          "end_frame": 958,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            10,
+            11
+          ]
+        },
+        {
+          "state": "right_hand",
+          "start_frame": 958,
+          "end_frame": 1143,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            12,
+            14
+          ]
+        },
+        {
+          "state": "tabletop",
+          "start_frame": 1143,
+          "end_frame": 1154,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            12
+          ]
+        },
+        {
+          "state": "right_hand",
+          "start_frame": 1154,
+          "end_frame": 1360,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            14,
+            15,
+            16,
+            17
+          ]
+        },
+        {
+          "state": "dish_rack",
+          "start_frame": 1360,
+          "end_frame": 1751,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            16,
+            17,
+            18,
+            19,
+            20
+          ]
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Tracking is confidence-weighted and graph-constrained across the full trajectory.",
+    "Unknown/not-visible observations do not erase a persistent state.",
+    "Observed hand identity adds cross-entity evidence for object locations.",
+    "Occluded releases may use a weak affordance-compatible destination prior; such states are marked interpolated.",
+    "Dense targeted frames are added only to the target entity timeline; other entity tracks keep the generic baseline timeline.",
+    "Dense relative-motion source weight is separate from confidence, which is always clamped to [0,1].",
+    "The manual regression fixture is not read by this tracker."
+  ]
+}

@@ -1,0 +1,17 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "out",
+  "relative_motion": "moving_out",
+  "right_hand_relation": "pulling_cutlery_basket",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 2, 8, 9],
+  "evidence": [
+    "t0 (frame 545): cutlery_basket 位于洗碗机内部深处，右侧机械臂正在伸入接触该篮子。",
+    "t2 (frame 575): 右侧机械臂已抓住 cutlery_basket，并开始将其向洗碗机外部拉动，篮子位置明显外移。",
+    "t8 (frame 664): 右侧机械臂持续拉动，cutlery_basket 已移动至洗碗机边缘，大部分位于外部。",
+    "t9 (frame 679): cutlery_basket 已被完全拉出，位于洗碗机外部，处于准备放置餐具或已放置的状态。"
+  ],
+  "visibility": "good"
+}
+```

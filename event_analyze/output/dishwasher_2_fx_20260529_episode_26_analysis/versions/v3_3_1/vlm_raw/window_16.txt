@@ -1,0 +1,61 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "in",
+    "right_hand": "holding_plate",
+    "left_hand": "free",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "right_hand"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "moving_in",
+    "cutlery_basket": "moving_in",
+    "right_hand": "free",
+    "left_hand": "free",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.85,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.95
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.85,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.90
+  },
+  "visible_entities": [
+    "dish_rack",
+    "right_hand",
+    "plate",
+    "door"
+  ],
+  "evidence": [
+    "Window start (f=1298): Right hand is clearly holding a pink plate, positioned in front of the open dishwasher.",
+    "Window start (f=1298): The main dish rack is extended (out), and a white plate is already visible inside it.",
+    "Window end (f=1388): The dish rack is partially retracted (moving_in), and the pink plate is no longer held by the hand.",
+    "Sensor data: Right gripper command delta is -96.264, indicating a significant opening motion consistent with releasing the plate."
+  ],
+  "window_quality": "good"
+}
+```

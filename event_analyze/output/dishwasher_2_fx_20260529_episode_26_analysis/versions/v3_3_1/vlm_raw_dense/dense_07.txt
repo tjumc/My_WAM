@@ -1,0 +1,16 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "out",
+  "relative_motion": "moving_out",
+  "right_hand_relation": "pulling_cutlery_basket",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 9],
+  "evidence": [
+    "t0 (frame 880) 至 t2 (frame 910)：dish_rack 被拉出，cutlery_basket 位于 dish_rack 内部深处，处于 'in' 状态。",
+    "t2 (frame 910) 至 t7 (frame 984)：cutlery_basket 相对于 dish_rack 发生明显位移，从后方逐渐向前移动，直至完全伸出至洗碗机外部。",
+    "t7 (frame 984) 至 t9 (frame 1014)：cutlery_basket 已完全位于 dish_rack 外部，处于 'out' 状态，且位置基本稳定。"
+  ],
+  "visibility": "good"
+}
+```

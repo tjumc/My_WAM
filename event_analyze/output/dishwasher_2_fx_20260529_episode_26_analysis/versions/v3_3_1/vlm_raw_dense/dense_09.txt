@@ -1,0 +1,17 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "out",
+  "relative_motion": "moving_out",
+  "right_hand_relation": "pulling_cutlery_basket",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 4, 6, 9],
+  "evidence": [
+    "Frame t0 (1000): The cutlery basket is fully seated inside the dishwasher rack, flush with the frame.",
+    "Frame t4 (1060): The basket has been pulled out approximately 50% of its length, clearly separating from the back of the rack.",
+    "Frame t6 (1089): The basket is almost completely extracted, with only the rear mechanism still visible inside the cavity.",
+    "Frame t9 (1134): The basket is fully removed from the dishwasher and placed on the counter surface."
+  ],
+  "visibility": "good"
+}
+```

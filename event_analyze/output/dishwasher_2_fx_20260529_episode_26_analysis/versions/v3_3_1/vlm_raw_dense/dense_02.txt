@@ -1,0 +1,17 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "out",
+  "relative_motion": "moving_out",
+  "right_hand_relation": "pulling_cutlery_basket",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 3, 4, 5],
+  "evidence": [
+    "t0 (485) 至 t3 (530)：cutlery_basket 位于洗碗机内部深处，相对 dish_rack 位置未发生明显变化，处于静止状态。",
+    "t3 (530) 至 t4 (545)：cutlery_basket 开始向洗碗机外部方向移动，其前缘逐渐露出。",
+    "t4 (545) 至 t5 (559)：cutlery_basket 继续向外移动，大部分篮体已滑出洗碗机轨道。",
+    "t5 (559) 后：cutlery_basket 已被完全拉出并放置在洗碗机外部台面上，右手保持接触拉动状态。"
+  ],
+  "visibility": "good"
+}
+```

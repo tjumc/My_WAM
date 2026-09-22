@@ -1,0 +1,17 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "out",
+  "relative_motion": "moving_out",
+  "right_hand_relation": "pulling_cutlery_basket",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 3, 6, 9],
+  "evidence": [
+    "在 t0 (f665) 和 t1 (f677) 时，右手位于洗碗机内部，正在接触 cutlery_basket，篮子处于完全收纳状态 (in)。",
+    "在 t2 (f688) 到 t5 (f723) 期间，右手持续向外部施力，cutlery_basket 相对于洗碗机内壁开始明显向外移动。",
+    "在 t6 (f735) 时，cutlery_basket 已被拉出大部分，处于半出状态。",
+    "在 t7 (f747) 到 t9 (f770) 期间，右手将 cutlery_basket 完全拉出并放置在台面上，篮子相对于洗碗机主体处于外部 (out) 位置。"
+  ],
+  "visibility": "good"
+}
+```

@@ -1,0 +1,16 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "in",
+  "relative_motion": "stationary",
+  "right_hand_relation": "holding_utensil",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 9],
+  "evidence": [
+    "在 t0 (11060) 到 t4 (1120) 期间，右侧机械臂正在洗碗机内部操作，cutlery_basket 位于下层碗篮（dish_rack）内，位置固定。",
+    "在 t5 (1134) 之后，机械臂退出洗碗机并抓取了一个粉色盘子，此时洗碗机内部视野中 cutlery_basket 依然停留在原位，未发生相对位移。",
+    "整个序列中，cutlery_basket 始终位于 dish_rack 内部，没有表现出向外部移动（moving_out）或向内部推入（moving_in）的连续动作。"
+  ],
+  "visibility": "good"
+}
+```

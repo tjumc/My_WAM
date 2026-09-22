@@ -1,0 +1,17 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "in",
+  "relative_motion": "stationary",
+  "right_hand_relation": "none",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+  "evidence": [
+    "从 t0 (940) 到 t9 (1074)，cutlery_basket（餐具篮）相对于洗碗机内壁和 dish_rack 的位置始终保持固定，没有发生位移。",
+    "在 t3 (985) 到 t5 (1014) 期间，右手进入画面并持有一个餐具（holding_utensil），将其放入篮中，但并未触碰或移动篮子本身。",
+    "右侧视角（第一行）显示，洗碗机主体框架与篮子的相对位置在整段序列中完全静止。",
+    "篮子的网格结构在画面中的透视关系没有变化，表明其未发生推拉运动。"
+  ],
+  "visibility": "good"
+}
+```

@@ -1,0 +1,16 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "in",
+  "relative_motion": "stationary",
+  "right_hand_relation": "approaching",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 9],
+  "evidence": [
+    "在序列开始（t0-t2），右手位于洗碗机外部左侧区域，未接触任何物体，cutlery_basket 位于洗碗机内部深处。",
+    "在序列中间（t3-t5），右手臂向洗碗机内部延伸并靠近 cutlery_basket，但 basket 相对于 dish_rack 的位置没有发生肉眼可见的位移。",
+    "在序列结束（t6-t9），右手停留在 cutlery_basket 附近（可能处于抓取或准备抓取姿态），basket 依然稳固地位于内部，未发生移动。"
+  ],
+  "visibility": "good"
+}
+```
