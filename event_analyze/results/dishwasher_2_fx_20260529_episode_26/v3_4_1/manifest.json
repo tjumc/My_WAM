@@ -1,44 +1,44 @@
 {
   "format_version": 1,
-  "generated_utc": "2026-09-22T10:19:27.628655+00:00",
-  "episode": "dishwasher_2_fx_20260529_episode_27",
-  "version": "v3_4_0",
+  "generated_utc": "2026-09-22T10:27:01.069788+00:00",
+  "episode": "dishwasher_2_fx_20260529_episode_26",
+  "version": "v3_4_1",
   "task": "put the dish into the dishwasher",
   "task_family": "dishwasher_loading",
   "git_commit_at_export": "65a969f4d985a8fd8ac13e6881d168bd2d1a4c32",
   "input": {
-    "hdf5_basename": "dishwasher_2_fx_20260529_episode_27.hdf5",
-    "hdf5_bytes": 288586747,
+    "hdf5_basename": "dishwasher_2_fx_20260529_episode_26.hdf5",
+    "hdf5_bytes": 316948756,
     "schema": "ontologies/dishwasher_loading.json",
     "schema_sha256": "cb64340d0714d345feae1d63dbe6d751ad4d206b16d3bd05ff6922dc170134bb"
   },
-  "runtime_output": "output/dishwasher_2_fx_20260529_episode_27_analysis/versions/v3_4_0",
+  "runtime_output": "output/dishwasher_2_fx_20260529_episode_26_analysis/versions/v3_4_1",
   "evidence_fingerprints": {
     "entity_observations_base.jsonl": {
-      "sha256": "67a3a4a4279bf966610e204fda7419384eaa29737efc4f58427a4f9e4ec8f88a",
-      "bytes": 50375
+      "sha256": "32ba9aed472937bd7221dbf8f867b03a8231473f436045217d204309fec2e1db",
+      "bytes": 50011
     },
     "dense_cutlery_transition_evidence.jsonl": {
-      "sha256": "fd58af24aab25cff27564b7739b786912162b8204fec3a60b9ac1cc584ae3d72",
-      "bytes": 4674
+      "sha256": "9f58645d3a9e4f600635454b711068e96b33b7aec35ea3cc0414ade82e5a9966",
+      "bytes": 5659
     },
     "tracked_entity_states.json": {
-      "sha256": "a5f17950d2604b1d45d064b4a873e8cf9c446b1ed54271c09a3ef78d4405febc",
-      "bytes": 76633
+      "sha256": "9797013f83d405b0159c9c1846e9482aeb47d545b431117e1b86e5390c94e81f",
+      "bytes": 77274
     },
     "skill_candidates_validated.json": {
-      "sha256": "34eef5b36fa41872d077d61111dd08a4c13a74d486d5562fc13016aadcb27eff",
-      "bytes": 15466
+      "sha256": "956c8bdb359bfd332e95e4dc71f71a3a7c4043f30a7418fd7599fb087b0dd33b",
+      "bytes": 14915
     }
   },
   "exported_files": {
     "hierarchical_annotations.json": {
-      "sha256": "e984176701bf18d17669aa8466c2703210433dc274853bde8722c6ed124cf276",
-      "bytes": 18693
+      "sha256": "045230cf49f8f30f78c9c246465d1a4cac695a44f567abbbc300ce794873ba13",
+      "bytes": 17661
     },
     "summary.json": {
-      "sha256": "1df84d93b1cd05cbbfcc43a368d69e9ad194128b86da1b8b864185d58959bb7d",
-      "bytes": 2751
+      "sha256": "728c180e46be65814ed74dc44cb1f9e835af43726a45c5f5807d7feaff83735d",
+      "bytes": 2508
     }
   },
   "storage_policy": {

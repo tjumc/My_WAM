@@ -1,8 +1,8 @@
 {
   "format_version": 1,
-  "generated_utc": "2026-09-22T10:19:27.628655+00:00",
+  "generated_utc": "2026-09-22T10:26:07.771591+00:00",
   "episode": "dishwasher_2_fx_20260529_episode_27",
-  "version": "v3_4_0",
+  "version": "v3_4_1",
   "task": "put the dish into the dishwasher",
   "task_family": "dishwasher_loading",
   "git_commit_at_export": "65a969f4d985a8fd8ac13e6881d168bd2d1a4c32",
@@ -12,7 +12,7 @@
     "schema": "ontologies/dishwasher_loading.json",
     "schema_sha256": "cb64340d0714d345feae1d63dbe6d751ad4d206b16d3bd05ff6922dc170134bb"
   },
-  "runtime_output": "output/dishwasher_2_fx_20260529_episode_27_analysis/versions/v3_4_0",
+  "runtime_output": "output/dishwasher_2_fx_20260529_episode_27_analysis/versions/v3_4_1",
   "evidence_fingerprints": {
     "entity_observations_base.jsonl": {
       "sha256": "67a3a4a4279bf966610e204fda7419384eaa29737efc4f58427a4f9e4ec8f88a",
@@ -23,22 +23,26 @@
       "bytes": 4674
     },
     "tracked_entity_states.json": {
-      "sha256": "a5f17950d2604b1d45d064b4a873e8cf9c446b1ed54271c09a3ef78d4405febc",
+      "sha256": "d8fc98c4a6e653e274ca51a6ad6ba76e184bef75bf69d02b442f4a958aa7cea0",
       "bytes": 76633
     },
     "skill_candidates_validated.json": {
-      "sha256": "34eef5b36fa41872d077d61111dd08a4c13a74d486d5562fc13016aadcb27eff",
-      "bytes": 15466
+      "sha256": "99637066ca97432ae1e88b826bc450ff3055b82eae10a424dfeed7290c5851e4",
+      "bytes": 16587
     }
   },
   "exported_files": {
     "hierarchical_annotations.json": {
-      "sha256": "e984176701bf18d17669aa8466c2703210433dc274853bde8722c6ed124cf276",
-      "bytes": 18693
+      "sha256": "b9924ba2255ee0ac0198ace42a2418ef3502060bf061bac34f2d3a4178259500",
+      "bytes": 19736
+    },
+    "evaluation_temporal.json": {
+      "sha256": "40d9c634a8ebc714b3ed73c14aa536834671c3b6e6e8bccb7d184969fa08f7e8",
+      "bytes": 26948
     },
     "summary.json": {
-      "sha256": "1df84d93b1cd05cbbfcc43a368d69e9ad194128b86da1b8b864185d58959bb7d",
-      "bytes": 2751
+      "sha256": "ba93721ec7519352416e1ed733c77847d7422da413f77e64931a949643c06a6c",
+      "bytes": 2761
     }
   },
   "storage_policy": {
