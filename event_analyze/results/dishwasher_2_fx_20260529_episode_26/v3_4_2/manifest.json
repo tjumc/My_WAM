@@ -1,0 +1,68 @@
+{
+  "format_version": 1,
+  "generated_utc": "2026-09-22T11:23:02.783452+00:00",
+  "episode": "dishwasher_2_fx_20260529_episode_26",
+  "version": "v3_4_2",
+  "task": "put the dish into the dishwasher",
+  "task_family": "dishwasher_loading",
+  "git_commit_at_export": "343bc79e5203ec307c44d28fc68ac1edab163300",
+  "input": {
+    "hdf5_basename": "dishwasher_2_fx_20260529_episode_26.hdf5",
+    "hdf5_bytes": 316948756,
+    "schema": "ontologies/dishwasher_loading.json",
+    "schema_sha256": "c369117d3d263c3db0160ca5d1a983d4556635182a35ce67b5612301f74cb8f4"
+  },
+  "runtime_output": "output/dishwasher_2_fx_20260529_episode_26_analysis/versions/v3_4_2",
+  "evidence_fingerprints": {
+    "entity_observations_base.jsonl": {
+      "sha256": "32ba9aed472937bd7221dbf8f867b03a8231473f436045217d204309fec2e1db",
+      "bytes": 50011
+    },
+    "dense_cutlery_transition_evidence.jsonl": {
+      "sha256": "9f58645d3a9e4f600635454b711068e96b33b7aec35ea3cc0414ade82e5a9966",
+      "bytes": 5659
+    },
+    "tracked_entity_states.json": {
+      "sha256": "af6f9b33ae522fe2e1acdfabebceff9ba0e6c18b5312ef8306acc93102a6c59a",
+      "bytes": 77274
+    },
+    "tracked_entity_states_owned.json": {
+      "sha256": "0f401fd4017965096fcf0d0bce1bce571388d2a6fae1584ecb7722c5ac23aaf7",
+      "bytes": 80258
+    },
+    "hand_object_ownership.json": {
+      "sha256": "7c374088409df065b6e655566e647c58c4162a2b40a4ce167d4b3a64c90e086d",
+      "bytes": 10757
+    },
+    "skill_candidates_validated.json": {
+      "sha256": "90c7d16d9e054370c436902576816db91e236a0dd61337dac5556d0320c638be",
+      "bytes": 15258
+    }
+  },
+  "exported_files": {
+    "hierarchical_annotations.json": {
+      "sha256": "ad1f8776c7dafe5d0b6d09389b5f60af8a04d6b2cfb68b8bc2a49b4b4da9a930",
+      "bytes": 17928
+    },
+    "summary.json": {
+      "sha256": "36d6f7d505b8fa44d9f59263ed1903a547ae39ab72537e706aaca77edfc6a055",
+      "bytes": 2508
+    }
+  },
+  "storage_policy": {
+    "git_keeps": [
+      "final annotations",
+      "evaluation report when available",
+      "summary",
+      "manifest"
+    ],
+    "local_only": [
+      "contact sheets",
+      "dense temporal strips",
+      "overview images",
+      "raw VLM responses",
+      "proposal visualizations",
+      "other reproducible runtime caches"
+    ]
+  }
+}

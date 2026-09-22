@@ -1,0 +1,72 @@
+{
+  "format_version": 1,
+  "generated_utc": "2026-09-22T11:22:46.825499+00:00",
+  "episode": "dishwasher_2_fx_20260529_episode_27",
+  "version": "v3_4_2",
+  "task": "put the dish into the dishwasher",
+  "task_family": "dishwasher_loading",
+  "git_commit_at_export": "343bc79e5203ec307c44d28fc68ac1edab163300",
+  "input": {
+    "hdf5_basename": "dishwasher_2_fx_20260529_episode_27.hdf5",
+    "hdf5_bytes": 288586747,
+    "schema": "ontologies/dishwasher_loading.json",
+    "schema_sha256": "c369117d3d263c3db0160ca5d1a983d4556635182a35ce67b5612301f74cb8f4"
+  },
+  "runtime_output": "output/dishwasher_2_fx_20260529_episode_27_analysis/versions/v3_4_2",
+  "evidence_fingerprints": {
+    "entity_observations_base.jsonl": {
+      "sha256": "67a3a4a4279bf966610e204fda7419384eaa29737efc4f58427a4f9e4ec8f88a",
+      "bytes": 50375
+    },
+    "dense_cutlery_transition_evidence.jsonl": {
+      "sha256": "fd58af24aab25cff27564b7739b786912162b8204fec3a60b9ac1cc584ae3d72",
+      "bytes": 4674
+    },
+    "tracked_entity_states.json": {
+      "sha256": "c2d8d3ad9355c8231827c05ba16b79985e47e8d0631d3f02b3f461033ea09a8b",
+      "bytes": 76633
+    },
+    "tracked_entity_states_owned.json": {
+      "sha256": "50401fbef3d457a44ba52eff94f2065dc5e6f1b0db3619e2434f0e85e498e698",
+      "bytes": 77958
+    },
+    "hand_object_ownership.json": {
+      "sha256": "11590331cc4886762c07ca6cf3394509ea4bc5e88e0946d7a311d5d4fa7f8421",
+      "bytes": 8262
+    },
+    "skill_candidates_validated.json": {
+      "sha256": "11d879888b5c481fa9fc48ebc95468e64fb517ab34b05b59933781149e141658",
+      "bytes": 16915
+    }
+  },
+  "exported_files": {
+    "hierarchical_annotations.json": {
+      "sha256": "47520bd11d201c3c61172ec45ce18db88a7f1a65c48a3f2f82ceebdda33d21f4",
+      "bytes": 20422
+    },
+    "evaluation_temporal.json": {
+      "sha256": "d036135cc2514eaf20066ebb0445ca280573ea081e10fd968a5621d9d8c3ef59",
+      "bytes": 28168
+    },
+    "summary.json": {
+      "sha256": "1b16165b57a548c8757d47f90502719f66889671361321edec23037b567b8101",
+      "bytes": 2762
+    }
+  },
+  "storage_policy": {
+    "git_keeps": [
+      "final annotations",
+      "evaluation report when available",
+      "summary",
+      "manifest"
+    ],
+    "local_only": [
+      "contact sheets",
+      "dense temporal strips",
+      "overview images",
+      "raw VLM responses",
+      "proposal visualizations",
+      "other reproducible runtime caches"
+    ]
+  }
+}
