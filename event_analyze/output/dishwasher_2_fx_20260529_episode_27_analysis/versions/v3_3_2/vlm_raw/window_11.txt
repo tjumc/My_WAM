@@ -1,0 +1,62 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "in",
+    "right_hand": "holding_fork",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "right_hand",
+    "plate_location": "tabletop"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "in",
+    "right_hand": "holding_fork",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "right_hand",
+    "plate_location": "tabletop"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.9,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.9,
+    "right_hand": 0.95,
+    "left_hand": 0.3,
+    "knife_location": 0.2,
+    "fork_location": 0.95,
+    "plate_location": 0.95
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.9,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.9,
+    "right_hand": 0.95,
+    "left_hand": 0.3,
+    "knife_location": 0.2,
+    "fork_location": 0.95,
+    "plate_location": 0.95
+  },
+  "visible_entities": [
+    "dish_rack",
+    "cutlery_basket",
+    "fork",
+    "plate",
+    "right_hand"
+  ],
+  "evidence": [
+    "Head view clearly shows the dishwasher door is open with the main dish rack and cutlery basket visible inside.",
+    "Right hand (bottom view) is clearly holding a fork vertically throughout the window.",
+    "A pink plate is visible on the tabletop in front of the robot in the bottom camera view.",
+    "Left hand is not clearly visible or distinguishable in the provided frames."
+  ],
+  "window_quality": "good"
+}
+```

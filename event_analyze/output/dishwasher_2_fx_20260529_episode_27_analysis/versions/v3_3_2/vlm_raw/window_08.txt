@@ -1,0 +1,60 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.1,
+    "right_hand": 0.1,
+    "left_hand": 0.1,
+    "knife_location": 0.1,
+    "fork_location": 0.1,
+    "plate_location": 0.1
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.1,
+    "right_hand": 0.1,
+    "left_hand": 0.1,
+    "knife_location": 0.1,
+    "fork_location": 0.1,
+    "plate_location": 0.1
+  },
+  "visible_entities": [
+    "dish_rack",
+    "robot_base",
+    "door"
+  ],
+  "evidence": [
+    "Head view shows the dishwasher door is open and the dish rack is in the retracted (in) position throughout the window.",
+    "Right hand view shows the robot arm is positioned inside the dishwasher cavity, but the gripper is not clearly visible.",
+    "Left hand view shows the robot base and arm, but the hand/gripper itself is obscured by the arm structure.",
+    "No knife, fork, or plate is clearly visible in the hands or being manipulated; they are not in the immediate field of view."
+  ],
+  "window_quality": "partial"
+}
+```

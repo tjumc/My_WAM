@@ -1,0 +1,16 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "in",
+  "relative_motion": "stationary",
+  "right_hand_relation": "holding_utensil",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 5, 9],
+  "evidence": [
+    "在 t0 (f604) 至 t4 (f664) 期间，机器人处于抓取餐具（刀叉）并放置到洗碗机内部 cutlery_basket 的动作中，cutlery_basket 位于洗碗机内部。",
+    "在 t5 (f678) 至 t8 (f723) 期间，机器人手臂在洗碗机内部进行操作，cutlery_basket 始终位于洗碗机内部相对于 dish_rack 的位置，未发生位移。",
+    "在 t9 (f738) 期间，机器人手臂移出洗碗机，cutlery_basket 依然静止在洗碗机内部原位。"
+  ],
+  "visibility": "good"
+}
+```

@@ -1,0 +1,62 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "opening",
+    "dish_rack": "moving_out",
+    "cutlery_basket": "uncertain",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "uncertain",
+    "knife_location": "tabletop",
+    "fork_location": "tabletop",
+    "plate_location": "tabletop"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "uncertain",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "uncertain",
+    "knife_location": "tabletop",
+    "fork_location": "tabletop",
+    "plate_location": "tabletop"
+  },
+  "confidence_before": {
+    "robot_location": 0.9,
+    "door": 0.9,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.3,
+    "right_hand": 0.85,
+    "left_hand": 0.3,
+    "knife_location": 0.9,
+    "fork_location": 0.9,
+    "plate_location": 0.9
+  },
+  "confidence_after": {
+    "robot_location": 0.9,
+    "door": 0.9,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.3,
+    "right_hand": 0.85,
+    "left_hand": 0.3,
+    "knife_location": 0.9,
+    "fork_location": 0.9,
+    "plate_location": 0.9
+  },
+  "visible_entities": [
+    "dish_rack",
+    "right_hand",
+    "knife",
+    "fork",
+    "plate"
+  ],
+  "evidence": [
+    "Head view shows the dishwasher door is open and the dish rack is fully extended out in the later frames (f=220, 243).",
+    "Head view shows the right arm is extended and making contact with the dish rack mechanism throughout the sequence.",
+    "Head view clearly shows a pink plate with a knife and fork resting on the countertop, remaining stationary.",
+    "Left view is blocked by the cabinet side, making the left hand and cutlery basket not visible."
+  ],
+  "window_quality": "partial"
+}
+```

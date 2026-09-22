@@ -1,0 +1,17 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "out",
+  "relative_motion": "moving_out",
+  "right_hand_relation": "pulling_cutlery_basket",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 2, 4, 6],
+  "evidence": [
+    "t0 (f978) 时，cutlery_basket 完全位于 dish_rack 内部，处于初始位置。",
+    "t2 (f1008) 到 t4 (f1038) 期间，右侧机械臂抓住 cutlery_basket 并将其向外拉出，篮子在 dish_rack 中的位置明显向外移动。",
+    "t6 (f1067) 到 t8 (f1097) 期间，cutlery_basket 被完全拉出 dish_rack，处于悬空或支撑在外部的位置。",
+    "整个序列展示了 cutlery_basket 从洗碗机内部被连续移动至外部的过程。"
+  ],
+  "visibility": "good"
+}
+```

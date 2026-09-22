@@ -1,0 +1,17 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "out",
+  "relative_motion": "moving_out",
+  "right_hand_relation": "pulling_cutlery_basket",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 2, 4, 8],
+  "evidence": [
+    "t0 (frame 931): cutlery_basket 完全位于洗碗机内部，位于下层 dish_rack 上方。",
+    "t2 (frame 961): 机器人右手抓住篮筐边缘，篮筐开始向外滑出，约露出 1/3。",
+    "t4 (frame 991): 篮筐已被拉出约 2/3，大部分网格结构暴露在洗碗机外部。",
+    "t8 (frame 1050): 篮筐几乎完全移出洗碗机，处于被拿取的位置。"
+  ],
+  "visibility": "good"
+}
+```

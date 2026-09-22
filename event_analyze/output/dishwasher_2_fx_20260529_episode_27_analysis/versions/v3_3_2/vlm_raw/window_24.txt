@@ -1,0 +1,60 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "contact_door",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "closing",
+    "dish_rack": "in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "contact_door",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.20,
+    "right_hand": 0.90,
+    "left_hand": 0.10,
+    "knife_location": 0.10,
+    "fork_location": 0.10,
+    "plate_location": 0.10
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.20,
+    "right_hand": 0.90,
+    "left_hand": 0.10,
+    "knife_location": 0.10,
+    "fork_location": 0.10,
+    "plate_location": 0.10
+  },
+  "visible_entities": [
+    "dish_rack",
+    "door",
+    "right_hand"
+  ],
+  "evidence": [
+    "Head camera shows dishwasher door is fully open at f=1520 and partially closing at f=1610.",
+    "Dish rack is visible inside the dishwasher cavity in early frames (f=1520-1565).",
+    "Right hand maintains contact with the dishwasher door handle throughout the sequence.",
+    "Left hand is not visible in any camera view during this window."
+  ],
+  "window_quality": "partial"
+}
+```

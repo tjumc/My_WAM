@@ -1,0 +1,17 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "in",
+  "relative_motion": "stationary",
+  "right_hand_relation": "holding_utensil",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 9],
+  "evidence": [
+    "在整个帧序列（t0-t9）中，洗碗机内部的 cutlery_basket（餐具篮）相对于 dish_rack（碗篮）的位置保持固定，未发生任何移动。",
+    "右侧机械臂（Right Arm）在操作过程中始终位于洗碗机内部或边缘，并未对餐具篮施加推拉动作。",
+    "摄像头视角的移动和机械臂的摆动并未改变餐具篮与洗碗机主体的相对位置关系。",
+    "任务背景为 'put the dish into the dishwasher'，当前阶段为 'before_utensil_manipulation'，主要动作集中在台面上的餐具抓取，而非移动篮筐。"
+  ],
+  "visibility": "good"
+}
+```

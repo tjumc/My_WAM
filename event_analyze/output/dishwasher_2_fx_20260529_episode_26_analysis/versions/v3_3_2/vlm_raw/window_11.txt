@@ -1,0 +1,62 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "in",
+    "right_hand": "holding_fork",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "right_hand",
+    "plate_location": "tabletop"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "moving_in",
+    "cutlery_basket": "moving_in",
+    "right_hand": "holding_fork",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "right_hand",
+    "plate_location": "tabletop"
+  },
+  "confidence_before": {
+    "robot_location": 0.9,
+    "door": 0.95,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.85,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.5,
+    "fork_location": 0.95,
+    "plate_location": 0.95
+  },
+  "confidence_after": {
+    "robot_location": 0.9,
+    "door": 0.95,
+    "dish_rack": 0.85,
+    "cutlery_basket": 0.8,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.5,
+    "fork_location": 0.95,
+    "plate_location": 0.95
+  },
+  "visible_entities": [
+    "dish_rack",
+    "cutlery_basket",
+    "right_hand",
+    "fork",
+    "plate"
+  ],
+  "evidence": [
+    "Head camera view shows the dishwasher rack is fully extended at frame 805 and begins retracting into the machine by frame 895.",
+    "Right camera view shows the right hand holding a fork throughout the entire window sequence.",
+    "A pink plate is clearly visible resting on the tabletop in the right camera view, remaining static.",
+    "Left camera view is obstructed by the robot's body structure, making the left hand and left side of the scene not visible."
+  ],
+  "window_quality": "good"
+}
+```

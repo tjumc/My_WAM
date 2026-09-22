@@ -1,0 +1,62 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible",
+    "knife_location": "dish_rack",
+    "fork_location": "dish_rack",
+    "plate_location": "dish_rack"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible",
+    "knife_location": "dish_rack",
+    "fork_location": "dish_rack",
+    "plate_location": "dish_rack"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.3,
+    "right_hand": 0.9,
+    "left_hand": 0.9,
+    "knife_location": 0.85,
+    "fork_location": 0.85,
+    "plate_location": 0.95
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.3,
+    "right_hand": 0.9,
+    "left_hand": 0.9,
+    "knife_location": 0.85,
+    "fork_location": 0.85,
+    "plate_location": 0.95
+  },
+  "visible_entities": [
+    "dish_rack",
+    "plate",
+    "knife",
+    "fork",
+    "dishwasher_door"
+  ],
+  "evidence": [
+    "Head camera shows dishwasher door fully open with the rack inside stationary.",
+    "Right camera shows a red plate and silverware (knife/fork) loaded in the rack.",
+    "Left camera view is obstructed by the cabinet underside, showing no hands or motion.",
+    "No robot hands are visible in the frame; gripper command is stable at 0.0."
+  ],
+  "window_quality": "partial"
+}
+```

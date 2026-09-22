@@ -1,0 +1,17 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "out",
+  "relative_motion": "moving_out",
+  "right_hand_relation": "pulling_cutlery_basket",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 1, 2, 3],
+  "evidence": [
+    "t0 (f991) 到 t2 (f1013)：下位视角显示 cutlery_basket 位于洗碗机内部，随着序列推进，篮子相对于相机（位于篮内或附着其上）逐渐远离，表明其被向外拉出。",
+    "t3 (f1024)：篮子已移动至洗碗机开口边缘，大部分位于外部。",
+    "t4 (f1035) 到 t5 (f1045)：篮子完全移出洗碗机主体，进入上方视野。",
+    "t9 (f1089)：虽然此时主要操作对象变为上方的 dish_rack，但 cutlery_basket 在之前的序列中已明确完成了从内部到外部的连续位移。"
+  ],
+  "visibility": "good"
+}
+```

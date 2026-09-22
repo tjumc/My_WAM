@@ -1,0 +1,16 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "in",
+  "relative_motion": "stationary",
+  "right_hand_relation": "none",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 9],
+  "evidence": [
+    "在整个序列中，cutlery_basket 始终位于洗碗机内部，相对于 dish_rack 的位置没有发生明显变化。",
+    "机器人机械臂在洗碗机前方进行挥舞和定位动作，但并未与 cutlery_basket 发生接触或拉动。",
+    "虽然 camera 视角有轻微移动（可能是机器人头部移动），但 cutlery_basket 相对于洗碗机框架是静止的。"
+  ],
+  "visibility": "good"
+}
+```

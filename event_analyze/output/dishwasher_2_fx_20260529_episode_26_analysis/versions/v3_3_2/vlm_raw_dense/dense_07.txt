@@ -1,0 +1,17 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "out",
+  "relative_motion": "moving_out",
+  "right_hand_relation": "pulling_cutlery_basket",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 4, 6, 8],
+  "evidence": [
+    "t0 (frame 918) 到 t4 (frame 978)：第一行画面显示，白色餐具篮（cutlery_basket）位于洗碗机内部较深处，右机械臂正在接触并准备拉动它。",
+    "t4 (frame 978) 到 t6 (frame 1007)：第一行画面显示，餐具篮随着右机械臂的动作明显向外滑出，位置从内部移动到了中间位置。",
+    "t6 (frame 1007) 到 t8 (frame 1037)：第一行画面显示，餐具篮继续向外移动，几乎完全拉出到洗碗机外部。",
+    "第二行画面（head camera）：清晰展示了餐具篮相对于洗碗机内壁的网格位置变化，从内部深处逐渐移动至视野最前方（外部）。"
+  ],
+  "visibility": "good"
+}
+```

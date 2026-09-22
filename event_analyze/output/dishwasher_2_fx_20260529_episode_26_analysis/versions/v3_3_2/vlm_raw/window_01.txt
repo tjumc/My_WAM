@@ -1,0 +1,64 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "closed",
+    "dish_rack": "in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "approaching",
+    "left_hand": "approaching",
+    "knife_location": "tabletop",
+    "fork_location": "tabletop",
+    "plate_location": "tabletop"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible",
+    "knife_location": "tabletop",
+    "fork_location": "tabletop",
+    "plate_location": "tabletop"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.0,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.95,
+    "fork_location": 0.95,
+    "plate_location": 0.95
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.0,
+    "right_hand": 0.90,
+    "left_hand": 0.95,
+    "knife_location": 0.95,
+    "fork_location": 0.95,
+    "plate_location": 0.95
+  },
+  "visible_entities": [
+    "dishwasher",
+    "dish_rack",
+    "plate",
+    "knife",
+    "fork",
+    "right_hand",
+    "left_hand"
+  ],
+  "evidence": [
+    "Head camera shows dishwasher door closed at frame 95, then fully open by frame 185.",
+    "Head camera shows the dish rack (dish_rack) remains stationary inside the dishwasher throughout the window.",
+    "Right camera shows a pink plate with a knife and fork resting on the countertop in early frames (f=95~140).",
+    "Right camera at frame 185 shows the right arm extending into the open dishwasher, obscuring the gripper, while the plate/knife/fork remain on the table."
+  ],
+  "window_quality": "good"
+}
+```

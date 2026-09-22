@@ -1,0 +1,61 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "in",
+    "right_hand": "contact_door",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "closing",
+    "dish_rack": "moving_in",
+    "cutlery_basket": "moving_in",
+    "right_hand": "contact_door",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.85,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.3,
+    "fork_location": 0.3,
+    "plate_location": 0.3
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.85,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.3,
+    "fork_location": 0.3,
+    "plate_location": 0.3
+  },
+  "visible_entities": [
+    "robot_base",
+    "dishwasher_door",
+    "dish_rack",
+    "right_hand"
+  ],
+  "evidence": [
+    "Right arm is holding the dishwasher door handle in head view.",
+    "Dish rack is partially extended in left view at start, retracting at end.",
+    "Door moves from open to closing position between f=1480 and f=1570.",
+    "Left hand is not visible in the frame."
+  ],
+  "window_quality": "good"
+}
+```

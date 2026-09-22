@@ -1,0 +1,17 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "out",
+  "relative_motion": "moving_out",
+  "right_hand_relation": "pulling_cutlery_basket",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 4, 8, 9],
+  "evidence": [
+    "t0 (414) 时，餐具篮完全位于洗碗机内部深处。",
+    "t4 (474) 至 t7 (518) 期间，餐具篮随下层碗篮被机械手持续向外拉出。",
+    "t8 (533) 时，餐具篮已完全移出洗碗机主体，进入外部操作区域。",
+    "t9 (548) 时，餐具篮位于洗碗机外部，位置明显远离初始位置。"
+  ],
+  "visibility": "good"
+}
+```

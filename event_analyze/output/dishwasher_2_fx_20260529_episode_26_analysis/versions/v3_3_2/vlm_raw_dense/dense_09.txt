@@ -1,0 +1,17 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "out",
+  "relative_motion": "moving_out",
+  "right_hand_relation": "pulling_cutlery_basket",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 3, 6, 9],
+  "evidence": [
+    "t0 (1038) 时，cutlery_basket 位于洗碗机内部深处，处于静止状态。",
+    "t3 (1075) 时，cutlery_basket 被拉出至洗碗机边缘，位置发生显著变化。",
+    "t6 (1113) 时，cutlery_basket 已完全移出洗碗机主体，位于外部区域。",
+    "t9 (1150) 时，cutlery_basket 保持在外侧位置，整个序列显示连续的向外位移。"
+  ],
+  "visibility": "good"
+}
+```

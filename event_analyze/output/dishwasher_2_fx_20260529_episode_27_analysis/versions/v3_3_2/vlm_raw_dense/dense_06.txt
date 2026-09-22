@@ -1,0 +1,16 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "out",
+  "relative_motion": "moving_out",
+  "right_hand_relation": "pulling_cutlery_basket",
+  "confidence": 0.95,
+  "evidence_time_indices": [3, 8],
+  "evidence": [
+    "在帧 t3 (916) 中，右侧机械臂已伸入洗碗机内部，抓住 cutlery_basket 的前端，此时篮子大部分位于机器内部。",
+    "在帧 t8 (990) 中，cutlery_basket 已被机械臂完全拉出洗碗机，位于外部上方，相对于 dish_rack 发生了显著的外向位移。",
+    "从 t3 到 t8 的序列中，机械臂持续向后上方移动，带动餐具篮从机器内部连续移动至外部。"
+  ],
+  "visibility": "good"
+}
+```

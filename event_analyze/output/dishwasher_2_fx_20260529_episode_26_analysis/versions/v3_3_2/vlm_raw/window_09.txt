@@ -1,0 +1,64 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "in",
+    "right_hand": "holding_plate",
+    "left_hand": "holding_plate",
+    "knife_location": "right_hand",
+    "fork_location": "left_hand",
+    "plate_location": "right_hand"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "in",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain",
+    "knife_location": "other",
+    "fork_location": "other",
+    "plate_location": "other"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.90,
+    "fork_location": 0.90,
+    "plate_location": 0.95
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.95,
+    "right_hand": 0.80,
+    "left_hand": 0.80,
+    "knife_location": 0.60,
+    "fork_location": 0.60,
+    "plate_location": 0.60
+  },
+  "visible_entities": [
+    "dish_rack",
+    "cutlery_basket",
+    "plate",
+    "knife",
+    "fork",
+    "right_hand",
+    "left_hand"
+  ],
+  "evidence": [
+    "Head view shows dishwasher door is open and dish rack is extended (out) throughout the window.",
+    "Right/Left view at frame 585-630 clearly shows both grippers holding a pink plate with a knife and fork resting on it.",
+    "Right/Left view at frame 652 shows the grippers moving away from the plate, which remains on the countertop.",
+    "Head view at frame 675 shows the plate and utensils are no longer held by the robot hands."
+  ],
+  "window_quality": "good"
+}
+```

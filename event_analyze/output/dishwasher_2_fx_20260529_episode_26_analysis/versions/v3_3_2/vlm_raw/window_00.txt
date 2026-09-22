@@ -1,0 +1,62 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "closed",
+    "dish_rack": "in",
+    "cutlery_basket": "in",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "tabletop"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "closed",
+    "dish_rack": "in",
+    "cutlery_basket": "in",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "tabletop"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.9,
+    "right_hand": 0.9,
+    "left_hand": 0.9,
+    "knife_location": 0.5,
+    "fork_location": 0.5,
+    "plate_location": 0.95
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.9,
+    "right_hand": 0.9,
+    "left_hand": 0.9,
+    "knife_location": 0.5,
+    "fork_location": 0.5,
+    "plate_location": 0.95
+  },
+  "visible_entities": [
+    "robot",
+    "dishwasher",
+    "plate",
+    "dish_rack",
+    "cutlery_basket"
+  ],
+  "evidence": [
+    "The dishwasher door remains visually closed and stationary throughout the entire window (f=17 to f=107).",
+    "The dish rack and cutlery basket are visible inside the dishwasher and remain in the 'in' position.",
+    "A pink plate is clearly visible on the countertop in the left and right camera views.",
+    "The robot's hands are visible in the head camera view, appearing stationary or making micro-adjustments, but no object interaction is clearly visible."
+  ],
+  "window_quality": "partial"
+}
+```

@@ -1,0 +1,17 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "out",
+  "relative_motion": "moving_out",
+  "right_hand_relation": "pulling_cutlery_basket",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 1, 2, 3],
+  "evidence": [
+    "在 t0 (f664) 和 t1 (f676) 期间，cutlery_basket 位于洗碗机内部的深处，处于初始位置。",
+    "从 t2 (f687) 开始，右侧机械臂抓住 cutlery_basket 并施加向外的拉力，使其开始向洗碗机外部移动。",
+    "在 t3 (f699) 到 t4 (f711) 期间，cutlery_basket 持续向外滑动，明显离开洗碗机主体。",
+    "到 t9 (f769) 时，cutlery_basket 已被完全拉出至洗碗机外部区域。"
+  ],
+  "visibility": "good"
+}
+```

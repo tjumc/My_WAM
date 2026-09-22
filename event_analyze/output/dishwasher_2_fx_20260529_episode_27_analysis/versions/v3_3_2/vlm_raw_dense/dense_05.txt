@@ -1,0 +1,17 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "in",
+  "relative_motion": "stationary",
+  "right_hand_relation": "holding_utensil",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 9],
+  "evidence": [
+    "在 t0 (frame 594) 至 t9 (frame 699) 的整个序列中，cutlery_basket（银色金属网格篮）始终固定在洗碗机内部。",
+    "虽然洗碗机的门被拉开（导致内部空间可见），但 cutlery_basket 相对于洗碗机内壁和 dish_rack 的位置没有发生任何改变。",
+    "右手在序列中主要处于 holding_utensil（持刀叉）状态，并未接触或移动 cutlery_basket。",
+    "没有观察到 cutlery_basket 被拉出或推入的动作，符合 stationary 判定。"
+  ],
+  "visibility": "good"
+}
+```

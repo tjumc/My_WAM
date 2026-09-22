@@ -1,0 +1,17 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "out",
+  "relative_motion": "moving_out",
+  "right_hand_relation": "pulling_cutlery_basket",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 2, 4, 9],
+  "evidence": [
+    "t0 (frame 424) 时，cutlery_basket 位于洗碗机内部深处，被下层碗篮遮挡大部分。",
+    "t2 (frame 454) 时，cutlery_basket 已明显向外滑出，露出更多内部结构。",
+    "t5-t8 期间，右手持续抓住 cutlery_basket 边缘并向外施力，将其拉出至接近全开状态。",
+    "t9 (frame 558) 时，cutlery_basket 已完全移出洗碗机主体，位于外部台面上方。"
+  ],
+  "visibility": "good"
+}
+```

@@ -1,0 +1,56 @@
+```json
+{
+  "state_before": {
+    "robot_location": "uncertain",
+    "door": "uncertain",
+    "dish_rack": "uncertain",
+    "cutlery_basket": "uncertain",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "state_after": {
+    "robot_location": "uncertain",
+    "door": "uncertain",
+    "dish_rack": "uncertain",
+    "cutlery_basket": "uncertain",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "confidence_before": {
+    "robot_location": 0.0,
+    "door": 0.0,
+    "dish_rack": 0.0,
+    "cutlery_basket": 0.0,
+    "right_hand": 0.0,
+    "left_hand": 0.0,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "confidence_after": {
+    "robot_location": 0.0,
+    "door": 0.0,
+    "dish_rack": 0.0,
+    "cutlery_basket": 0.0,
+    "right_hand": 0.0,
+    "left_hand": 0.0,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "visible_entities": [],
+  "evidence": [
+    "head 相机视角中，双机械臂在视野中保持静止，未发生明显位移。",
+    "left 和 right 相机视角中，前景底部仅能观察到黑色机械臂基座/外壳，无法看到手部或末端执行器。",
+    "洗碗机（dishwasher）门体及内部（dish_rack/cutlery_basket）在视野中均不可见或被遮挡。",
+    "台面上的粉色盘子静止不动，无任何交互发生。"
+  ],
+  "window_quality": "poor"
+}
+```

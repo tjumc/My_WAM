@@ -1,0 +1,16 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "in",
+  "relative_motion": "stationary",
+  "right_hand_relation": "holding_utensil",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 9],
+  "evidence": [
+    "在t0 (534) 至 t9 (668) 的整个序列中，洗碗机内的 cutlery_basket（刀叉篮）始终保持在 dish_rack（碗篮）的固定位置，未发生相对于碗篮或洗碗机框架的位移。",
+    "虽然 dish_rack 整体相对于洗碗机开口位置有微小变化（可能是推入过程），但 cutlery_basket 与 dish_rack 的相对位置保持不变。",
+    "右手在序列后半段（t4-t9）主要与粉色盘子上的刀叉（utensil）发生交互，并未接触或移动 cutlery_basket。"
+  ],
+  "visibility": "good"
+}
+```
