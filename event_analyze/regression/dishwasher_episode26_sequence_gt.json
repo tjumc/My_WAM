@@ -1,0 +1,18 @@
+{
+  "episode": "dishwasher_2_fx_20260529_episode_26",
+  "status": "manual_sequence_only_provisional",
+  "provenance": "manual_video_review_sequence_only",
+  "note": "User manually reviewed the trajectory video and confirmed that the semantic procedure is essentially the same 10-step dishwasher sequence as episode 27. Frame-level boundaries are intentionally not fabricated.",
+  "sequence": [
+    "navigate_to_station",
+    "open_dishwasher_door",
+    "pull_out_dish_rack",
+    "pull_out_cutlery_basket",
+    "place_knife_in_cutlery_basket",
+    "place_fork_in_cutlery_basket",
+    "push_in_cutlery_basket",
+    "place_plate_in_dish_rack",
+    "push_in_dish_rack",
+    "close_dishwasher_door"
+  ]
+}

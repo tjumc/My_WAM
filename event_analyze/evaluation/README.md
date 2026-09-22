@@ -52,3 +52,14 @@ python evaluation/evaluate_temporal_annotations.py \
 ```
 
 建议以后每个版本都保存一份 `evaluation_temporal.json`，作为 regression test。
+
+
+## 轻量 sequence regression
+
+在还没有 frame-level GT 的 held-out trajectory 上，不伪造边界。先保存 sequence-only GT，然后运行：
+
+```bash
+python evaluation/regression_matrix.py
+```
+
+当前 episode26 使用 `regression/dishwasher_episode26_sequence_gt.json`，状态为 `manual_sequence_only_provisional`；episode27 继续使用 frame-level manual GT。该矩阵主要用于防止新版本修复一条轨迹时让另一条语义序列明显退化。
