@@ -1,0 +1,152 @@
+#!/usr/bin/env python3
+"""Utilities for loading declarative task-family schemas.
+
+The schema is human-configurable once per task family. Per-trajectory inference
+must consume it automatically without manual decisions.
+"""
+import json
+from pathlib import Path
+
+
+def load_schema(path):
+    p = Path(path)
+    with open(p, encoding="utf-8") as f:
+        s = json.load(f)
+    if "entities" not in s:
+        raise ValueError(f"schema missing entities: {p}")
+    return s
+
+
+def entity_items(schema, entity_type=None):
+    for name, cfg in schema.get("entities", {}).items():
+        if entity_type is None or cfg.get("type") == entity_type:
+            yield name, cfg
+
+
+def observation_key(name, cfg):
+    return cfg.get("observation_key", name)
+
+
+def build_tracker_specs(schema):
+    specs = {}
+    for name, cfg in entity_items(schema):
+        key = observation_key(name, cfg)
+        typ = cfg.get("type")
+        states = list(cfg.get("states", []))
+        if not states:
+            continue
+        spec = {
+            "states": states,
+            "schema_entity": name,
+            "type": typ,
+        }
+        if "adjacency" in cfg:
+            spec["adj"] = {k: list(v) for k, v in cfg["adjacency"].items()}
+        elif typ == "portable_object":
+            src = list(cfg.get("source_states", ["tabletop"]))
+            hands = list(cfg.get("hand_states", ["right_hand", "left_hand"]))
+            target = cfg.get("target")
+            other = [x for x in states if x not in set(src + hands + [target])]
+            adj = {}
+            for s in src:
+                adj[s] = list(hands)
+            for h in hands:
+                adj[h] = list(dict.fromkeys(src + ([target] if target else []) + other))
+            if target:
+                adj[target] = list(hands)
+            for x in other:
+                adj[x] = list(hands)
+            spec["adj"] = adj
+            spec["target"] = target
+        else:
+            raise ValueError(f"schema entity {name} needs adjacency")
+
+        stable = cfg.get("stable_states")
+        if stable:
+            spec["stable"] = set(stable)
+        if cfg.get("target"):
+            spec["target"] = cfg["target"]
+        spec["motion_source"] = dict(cfg.get("motion_source", {}))
+        spec["motion_endpoint"] = dict(cfg.get("motion_endpoint", {}))
+        specs[key] = spec
+    return specs
+
+
+def container_rules(schema):
+    out = {}
+    for name, cfg in entity_items(schema):
+        transitions = cfg.get("transitions", [])
+        if not transitions:
+            continue
+        rules = {}
+        for t in transitions:
+            rules[(t["from"], t["to"])] = t["skill_type"]
+        out[name] = {
+            "observation_key": observation_key(name, cfg),
+            "type": cfg.get("type"),
+            "rules": rules,
+            "motion_source": dict(cfg.get("motion_source", {})),
+            "motion_endpoint": dict(cfg.get("motion_endpoint", {})),
+            "contact_tokens": list(cfg.get("contact_tokens", [])),
+            "requires": list(cfg.get("requires", [])),
+        }
+    return out
+
+
+def portable_rules(schema):
+    out = {}
+    for name, cfg in entity_items(schema, "portable_object"):
+        out[name] = {
+            "observation_key": observation_key(name, cfg),
+            "source_states": list(cfg.get("source_states", ["tabletop"])),
+            "hand_states": list(cfg.get("hand_states", ["right_hand", "left_hand"])),
+            "target": cfg["target"],
+            "parent_class": cfg.get("parent_class"),
+            "skill_type": cfg["skill_type"],
+        }
+    return out
+
+
+def skill_labels(schema):
+    return dict(schema.get("skill_labels", {}))
+
+
+def receptacle_placements(schema):
+    """Map receptacle entity -> object placement skill types."""
+    out = {}
+    portable = portable_rules(schema)
+    for obj, cfg in portable.items():
+        out.setdefault(cfg["target"], set()).add(cfg["skill_type"])
+    return out
+
+
+def accessibility_requirements(schema):
+    return {
+        name: list(cfg.get("requires", []))
+        for name, cfg in entity_items(schema)
+        if cfg.get("requires")
+    }
+
+
+def stable_motion_rules(schema):
+    """Rules for trajectory initialization from direct observations."""
+    out = {}
+    for name, cfg in entity_items(schema):
+        stable = set(cfg.get("stable_states", []))
+        motion_source = dict(cfg.get("motion_source", {}))
+        if stable:
+            out[name] = {
+                "observation_key": observation_key(name, cfg),
+                "stable": stable,
+                "motion_source": motion_source,
+            }
+    return out
+
+
+def semantic_parent(schema, object_name):
+    cfg = schema.get("entities", {}).get(object_name, {})
+    return cfg.get("parent_class")
+
+
+def parent_members(schema, parent):
+    return list((schema.get("semantic_classes", {}).get(parent) or {}).get("members", []))

@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1",
+  "schema_version": "0.2",
   "task_family": "dishwasher_loading",
   "onboarding": {
     "human_schema_definition_allowed": true,
@@ -11,38 +11,110 @@
     "task_relevant_granularity": true
   },
   "entities": {
-    "dishwasher_door": {
-      "type": "openable",
+    "door": {
+      "display_name": "dishwasher door",
+      "type": "articulated_container_gate",
+      "observation_key": "door",
       "states": [
         "closed",
         "opening",
         "open",
         "closing"
       ],
+      "stable_states": [
+        "closed",
+        "open"
+      ],
+      "adjacency": {
+        "closed": [
+          "opening",
+          "closing"
+        ],
+        "opening": [
+          "closed",
+          "open"
+        ],
+        "open": [
+          "opening",
+          "closing"
+        ],
+        "closing": [
+          "open",
+          "closed"
+        ]
+      },
+      "motion_source": {
+        "opening": "closed",
+        "closing": "open"
+      },
+      "motion_endpoint": {
+        "opening": "open",
+        "closing": "closed"
+      },
+      "contact_tokens": [
+        "contact_door"
+      ],
       "transitions": [
         {
           "from": "closed",
           "to": "open",
+          "skill_type": "open_dishwasher_door",
           "semantic": "open"
         },
         {
           "from": "open",
           "to": "closed",
+          "skill_type": "close_dishwasher_door",
           "semantic": "close"
         }
       ]
     },
     "dish_rack": {
+      "display_name": "dish rack",
       "type": "slider_receptacle",
+      "observation_key": "dish_rack",
       "states": [
         "in",
         "moving_out",
         "out",
         "moving_in"
       ],
+      "stable_states": [
+        "in",
+        "out"
+      ],
+      "adjacency": {
+        "in": [
+          "moving_out",
+          "moving_in"
+        ],
+        "moving_out": [
+          "in",
+          "out"
+        ],
+        "out": [
+          "moving_out",
+          "moving_in"
+        ],
+        "moving_in": [
+          "out",
+          "in"
+        ]
+      },
+      "motion_source": {
+        "moving_out": "in",
+        "moving_in": "out"
+      },
+      "motion_endpoint": {
+        "moving_out": "out",
+        "moving_in": "in"
+      },
+      "contact_tokens": [
+        "contact_dish_rack"
+      ],
       "requires": [
         {
-          "entity": "dishwasher_door",
+          "entity": "door",
           "state": "open"
         }
       ],
@@ -50,11 +122,13 @@
         {
           "from": "in",
           "to": "out",
+          "skill_type": "pull_out_dish_rack",
           "semantic": "pull_out"
         },
         {
           "from": "out",
           "to": "in",
+          "skill_type": "push_in_dish_rack",
           "semantic": "push_in"
         }
       ],
@@ -63,16 +137,53 @@
       ]
     },
     "cutlery_basket": {
+      "display_name": "cutlery basket",
       "type": "slider_receptacle",
+      "observation_key": "cutlery_basket",
       "states": [
         "in",
         "moving_out",
         "out",
         "moving_in"
       ],
+      "stable_states": [
+        "in",
+        "out"
+      ],
+      "adjacency": {
+        "in": [
+          "moving_out",
+          "moving_in"
+        ],
+        "moving_out": [
+          "in",
+          "out"
+        ],
+        "out": [
+          "moving_out",
+          "moving_in"
+        ],
+        "moving_in": [
+          "out",
+          "in"
+        ]
+      },
+      "motion_source": {
+        "moving_out": "in",
+        "moving_in": "out"
+      },
+      "motion_endpoint": {
+        "moving_out": "out",
+        "moving_in": "in"
+      },
+      "contact_tokens": [
+        "contact_cutlery_basket",
+        "pulling_cutlery_basket",
+        "pushing_cutlery_basket"
+      ],
       "requires": [
         {
-          "entity": "dishwasher_door",
+          "entity": "door",
           "state": "open"
         }
       ],
@@ -80,11 +191,13 @@
         {
           "from": "in",
           "to": "out",
+          "skill_type": "pull_out_cutlery_basket",
           "semantic": "pull_out"
         },
         {
           "from": "out",
           "to": "in",
+          "skill_type": "push_in_cutlery_basket",
           "semantic": "push_in"
         }
       ],
@@ -92,21 +205,71 @@
         "utensil"
       ]
     },
-    "plate": {
-      "type": "portable_object",
-      "parent_class": "portable_object",
-      "task_role": "dish",
-      "target": "dish_rack"
-    },
     "knife": {
+      "display_name": "knife",
       "type": "portable_object",
+      "observation_key": "knife_location",
+      "states": [
+        "tabletop",
+        "right_hand",
+        "left_hand",
+        "cutlery_basket",
+        "other"
+      ],
+      "source_states": [
+        "tabletop"
+      ],
+      "hand_states": [
+        "right_hand",
+        "left_hand"
+      ],
+      "target": "cutlery_basket",
       "parent_class": "utensil",
-      "target": "cutlery_basket"
+      "skill_type": "place_knife_in_cutlery_basket"
     },
     "fork": {
+      "display_name": "fork",
       "type": "portable_object",
+      "observation_key": "fork_location",
+      "states": [
+        "tabletop",
+        "right_hand",
+        "left_hand",
+        "cutlery_basket",
+        "other"
+      ],
+      "source_states": [
+        "tabletop"
+      ],
+      "hand_states": [
+        "right_hand",
+        "left_hand"
+      ],
+      "target": "cutlery_basket",
       "parent_class": "utensil",
-      "target": "cutlery_basket"
+      "skill_type": "place_fork_in_cutlery_basket"
+    },
+    "plate": {
+      "display_name": "plate",
+      "type": "portable_object",
+      "observation_key": "plate_location",
+      "states": [
+        "tabletop",
+        "right_hand",
+        "left_hand",
+        "dish_rack",
+        "other"
+      ],
+      "source_states": [
+        "tabletop"
+      ],
+      "hand_states": [
+        "right_hand",
+        "left_hand"
+      ],
+      "target": "dish_rack",
+      "parent_class": "portable_object",
+      "skill_type": "place_plate_in_dish_rack"
     }
   },
   "semantic_classes": {
@@ -127,6 +290,56 @@
       "fallback_label_template": "place_object_in_receptacle"
     }
   },
+  "skill_labels": {
+    "navigate_to_station": {
+      "zh": "移动到桌面/洗碗机前",
+      "en": "Move to the table/dishwasher station"
+    },
+    "open_dishwasher_door": {
+      "zh": "右手打开洗碗机门",
+      "en": "Open the dishwasher door with the right hand"
+    },
+    "close_dishwasher_door": {
+      "zh": "右手合上洗碗机门",
+      "en": "Close the dishwasher door with the right hand"
+    },
+    "pull_out_dish_rack": {
+      "zh": "右手拉出碗篮",
+      "en": "Pull out the dish rack with the right hand"
+    },
+    "push_in_dish_rack": {
+      "zh": "右手推入碗篮",
+      "en": "Push in the dish rack with the right hand"
+    },
+    "pull_out_cutlery_basket": {
+      "zh": "右手拉出餐具篮",
+      "en": "Pull out the cutlery basket with the right hand"
+    },
+    "push_in_cutlery_basket": {
+      "zh": "右手推入餐具篮",
+      "en": "Push in the cutlery basket with the right hand"
+    },
+    "place_knife_in_cutlery_basket": {
+      "zh": "右手夹取刀并放入餐具篮",
+      "en": "Pick up the knife and place it in the cutlery basket with the right hand"
+    },
+    "place_fork_in_cutlery_basket": {
+      "zh": "右手夹取叉子并放入餐具篮",
+      "en": "Pick up the fork and place it in the cutlery basket with the right hand"
+    },
+    "place_utensil_in_cutlery_basket": {
+      "zh": "右手夹取餐具并放入餐具篮",
+      "en": "Pick up the utensil and place it in the cutlery basket with the right hand"
+    },
+    "place_plate_in_dish_rack": {
+      "zh": "右手夹取盘子并放入碗篮",
+      "en": "Pick up the plate and place it in the dish rack with the right hand"
+    },
+    "place_object_in_receptacle": {
+      "zh": "夹取物体并放入目标容器",
+      "en": "Pick up the object and place it in the target receptacle"
+    }
+  },
   "label_backoff": [
     {
       "fine_classes": [
@@ -144,9 +357,5 @@
       "parent": "portable_object",
       "condition": "object_class_not_reliable_but_manipulation_relation_reliable"
     }
-  ],
-  "notes": [
-    "This is a declarative ontology draft and is not yet consumed by the V3.3.3 runtime.",
-    "Knife/fork distinction is optional supervision because both share the same manipulation policy in this task."
   ]
 }

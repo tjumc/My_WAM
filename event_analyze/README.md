@@ -19,14 +19,15 @@ event_analyze/
 │   ├── v3_3/
 │   ├── v3_3_1/
 │   ├── v3_3_2/
-│   └── v3_3_3/      # current active: object-centric episodes + transition completion
+│   ├── v3_3_3/
+│   └── v3_4_0/      # current active: schema-driven reasoning
 └── output/
 ```
 
-当前推荐运行 V3.3.3：
+当前推荐运行 V3.4.0：
 
 ```bash
-bash versions/v3_3_3/run.sh \
+bash versions/v3_4_0/run.sh \
   /path/to/episode.hdf5 \
   output/dishwasher_2_fx_20260529_episode_27_analysis \
   "put the dish into the dishwasher" \
@@ -34,7 +35,7 @@ bash versions/v3_3_3/run.sh \
   1645
 ```
 
-V3.3.3 默认复用 V3.3.2 的 proposal/Qwen observation，只更新 temporal reasoning：object-centric manipulation episode、dense motion 的弱 endpoint completion、early-direct lifecycle initialization，以及 door-open 物理前置约束。对全新的 HDF5，入口脚本会自动先生成 candidate_events.json 和 contact_sheets/。
+V3.4.0 将 tracking / skill inference / validation 的 task-family 知识迁移到 `ontologies/dishwasher_loading.json`；新任务允许一次性人工配置 schema，但单条轨迹推理必须自动化。当前 perception 暂时保持 V3.3.3-compatible，用于验证 schema-driven reasoning 的等价性。对全新的 HDF5，入口脚本会自动先生成 candidate_events.json 和 contact_sheets/。
 
 泛化边界与未来 task-agnostic 设计见 `GENERALIZATION.md`。
 
@@ -61,4 +62,4 @@ episode26 目前只有人工确认的 sequence-only provisional GT；episode27 �
 python evaluation/regression_matrix.py
 ```
 
-默认比较 `v3_3_1,v3_3_2,v3_3_3` 在 episode26/27 上的 sequence Precision/Recall/F1、LCS/Edit Distance。
+默认比较 `v3_3_1,v3_3_2,v3_3_3,v3_4_0` 在 episode26/27 上的 sequence Precision/Recall/F1、LCS/Edit Distance。

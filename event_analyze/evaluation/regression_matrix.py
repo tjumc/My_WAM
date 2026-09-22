@@ -43,7 +43,7 @@ def load_pred(path):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--event-root", default=str(Path(__file__).resolve().parents[1]))
-    ap.add_argument("--versions", default="v3_3_1,v3_3_2,v3_3_3")
+    ap.add_argument("--versions", default="v3_3_1,v3_3_2,v3_3_3,v3_4_0")
     ap.add_argument("--output", default=None)
     args = ap.parse_args()
 
