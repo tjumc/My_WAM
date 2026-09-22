@@ -754,13 +754,31 @@ strong joint assignment mechanism.
 
 ### Status
 
-**V3.4.2 implementation completed; empirical regression results pending.**
+**Implemented in V3.4.2 with initial controlled positive evidence.**
 
 V3.4.2 introduces a separate ownership-arbitration stage before manipulation
 episode inference. It enforces task-configured portable-object concurrency,
 prioritizes explicit hand identity over conflicting object-location fields,
 trims speculative held intervals at direct object-context switches, and
 prevents sibling objects from reusing the same held evidence.
+
+Using exactly the same generic and dense perception evidence as V3.4.1:
+
+- episode27 plate provisional start moved from 931 to 1044;
+- the predicted order changed from
+  `utensil -> plate -> push basket` to
+  `utensil -> push basket -> plate`;
+- episode27 policy-normalized sequence improved from
+  `F1=0.90, Edit=2` to `F1=1.00, Edit=0`;
+- policy semantic mIoU improved from approximately 0.392 to 0.423;
+- policy semantic boundary MAE improved from approximately 1.94 s to 1.51 s;
+- episode26 overlapping utensil provisional spans changed from
+  `[707,772]` and `[707,896]` to approximately
+  `[707,739]` and `[739,896]`.
+
+The core mIoU on episode27 decreased slightly (approximately 0.374 -> 0.354),
+so the result should be reported as a sequence / semantic-boundary improvement
+with a small core-IoU trade-off, not as universal improvement on every metric.
 
 ### Implemented solution direction
 
@@ -895,6 +913,85 @@ At minimum:
 
 Not a method contribution, but essential for validating all claimed
 contributions.
+
+---
+
+## P16. Boundary refinement can invalidate upstream semantic ownership
+
+### Observation
+
+After V3.4.2 successfully separated episode26's two utensil provisional spans,
+the first utensil was still reduced by final raw-boundary refinement to only a
+few frames.
+
+The failure was caused by pairwise overlap resolution being applied
+left-to-right. A middle phase could first have its start pushed forward by the
+left neighbor, then have its end pushed backward by the right neighbor.
+
+### Diagnosis
+
+Boundary refinement was acting as if it could independently redefine semantic
+ownership. It should instead be a numerical calibration stage downstream of
+semantic reasoning.
+
+### V3.4.3 solution
+
+- treat provisional semantic intervals as ownership priors;
+- resolve overlap right-to-left so the right boundary is known before the left
+  boundary is allowed to move;
+- enforce skill-specific minimum duration during overlap arbitration whenever
+  feasible;
+- explicitly expose infeasible duration conflicts.
+
+### Status
+
+**Implemented in V3.4.3; controlled evaluation pending.**
+
+### Contribution potential
+
+**Medium as a method principle.**
+
+The broader formulation is useful:
+
+> low-level continuous signals refine semantic boundaries but must not silently
+> invalidate higher-level temporal ownership constraints.
+
+---
+
+## P17. Boundary relocation can make validation evidence stale
+
+### Observation
+
+A container candidate could be validated using robot signal at one interval and
+then be relocated to a distant hand-contact anchor afterward.
+
+Episode27 exposed this clearly: the final push-basket interval was near frame
+999 while the stored signal window used for acceptance was centered much later.
+
+### Diagnosis
+
+Changing the candidate's temporal hypothesis after validation breaks
+evidence-boundary consistency.
+
+### V3.4.3 solution
+
+```text
+candidate
+-> contact evidence
+-> optional contact-anchor relocation
+-> recompute robot signal at relocated interval
+-> final validation
+```
+
+A relocated candidate must pass robot-signal validation at its final anchor.
+
+### Status
+
+**Implemented in V3.4.3; controlled evaluation pending.**
+
+### Contribution potential
+
+**Medium as part of interaction-grounded temporal validation.**
 
 ---
 
@@ -1057,15 +1154,29 @@ Major additions:
 5. ownership-aware context-switch boundaries;
 6. explicit ambiguous-conflict output for future targeted re-observation.
 
-Expected controlled effects from the existing V3.4.1 perception evidence:
+Controlled regression results with the same V3.4.1 perception evidence:
 
-- episode26: separate the overlapping utensil intervals around the next directly
-  observed object ownership;
-- episode27: delay plate ownership until after the cutlery-basket interaction,
-  rather than inheriting an independently smoothed early plate-hand state.
+### Episode26
 
-These are hypotheses until V3.4.2 is run and committed on the regression
-episodes. They must not be reported as achieved results before evaluation.
+- policy sequence remains `P=1.00, R=0.90, F1=0.947, Edit=1`;
+- the two utensil provisional intervals are separated at the next object's
+  direct ownership boundary;
+- `push_in_cutlery_basket` is still missing.
+
+### Episode27
+
+- plate provisional start moves from 931 to 1044;
+- `push_in_cutlery_basket` now precedes plate placement;
+- policy-normalized sequence reaches
+  `P=1.00, R=1.00, F1=1.00, Edit=0`;
+- semantic mIoU improves from about 0.392 to 0.423;
+- semantic boundary MAE improves from about 1.94 s to 1.51 s.
+
+Main lesson:
+
+> Joint ownership can correct action ordering using the same perception
+> evidence, but final boundary realization must preserve the ownership intervals
+> instead of independently collapsing them.
 
 ---
 
@@ -1084,8 +1195,10 @@ episodes. They must not be reported as achieved results before evaluation.
 | re-grasp creates duplicate plate skills | solved for current pattern | completion-aware episodes |
 | fine-vs-coarse evaluation mismatch | solved | policy-normalized metrics |
 | push-in cutlery basket missing | unresolved | container perception/validation issue |
-| overlapping utensil temporal ownership | V3.4.2 implemented, pending eval | joint hand-object ownership |
-| plate starts too early in episode27 | V3.4.2 implemented, pending eval | ownership/context-switch hypothesis |
+| overlapping utensil temporal ownership | provisionally solved in V3.4.2 | joint hand-object ownership |
+| plate starts too early in episode27 | solved on regression episode27 | ownership/context-switch reasoning |
+| final boundary can collapse a valid phase | V3.4.3 implemented, pending eval | duration-constrained semantic boundary arbitration |
+| relocated boundary may use stale robot signal | V3.4.3 implemented, pending eval | post-anchor signal revalidation |
 | targeted dense perception is task-specific | unresolved | generic ambiguity trigger needed |
 | base VLM perception prompt is task-specific | unresolved | schema-generated perception needed |
 | held-out / cross-task experimental evidence | unresolved | required for paper |
@@ -1272,16 +1385,19 @@ Use:
 
 ### Current maturity
 
-**Implemented in V3.4.2; controlled evaluation pending.**
+**Implemented in V3.4.2 with initial controlled validation.**
 
-The implementation also outputs unresolved ownership conflicts explicitly,
-which can serve as automatic triggers for later targeted re-observation.
+Without changing the perception evidence, V3.4.2 corrected episode27's early
+plate ownership and achieved an exact 10-step policy-normalized sequence.
+Episode26 provisional utensil ownership overlap was also separated.
+
+The implementation outputs unresolved ownership conflicts explicitly, which can
+serve as automatic triggers for later targeted re-observation.
 
 ### Paper potential
 
-**High candidate pending empirical validation**, especially if one mechanism
-improves both episode26 utensil overlap and episode27 early plate onset without
-new perception calls.
+**High contribution candidate with initial evidence.** Broader held-out
+validation is still required before making a paper-level generalization claim.
 
 ---
 
