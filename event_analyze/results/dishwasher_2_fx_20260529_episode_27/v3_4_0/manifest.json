@@ -1,0 +1,60 @@
+{
+  "format_version": 1,
+  "generated_utc": "2026-09-22T10:00:25.887966+00:00",
+  "episode": "dishwasher_2_fx_20260529_episode_27",
+  "version": "v3_4_0",
+  "task": "put the dish into the dishwasher",
+  "task_family": "dishwasher_loading",
+  "git_commit_at_export": "45ab49a6a6f000f46cba197e3161265e3c367c25",
+  "input": {
+    "hdf5_basename": "dishwasher_2_fx_20260529_episode_27.hdf5",
+    "hdf5_bytes": 288586747,
+    "schema": "ontologies/dishwasher_loading.json",
+    "schema_sha256": "e594abc6ee2a6bca034cb5be3a3c9eb84fc31333746f58e85209014f74affc5b"
+  },
+  "runtime_output": "output/dishwasher_2_fx_20260529_episode_27_analysis/versions/v3_4_0",
+  "evidence_fingerprints": {
+    "entity_observations_base.jsonl": {
+      "sha256": "67a3a4a4279bf966610e204fda7419384eaa29737efc4f58427a4f9e4ec8f88a",
+      "bytes": 50375
+    },
+    "dense_cutlery_transition_evidence.jsonl": {
+      "sha256": "fd58af24aab25cff27564b7739b786912162b8204fec3a60b9ac1cc584ae3d72",
+      "bytes": 4674
+    },
+    "tracked_entity_states.json": {
+      "sha256": "a5f17950d2604b1d45d064b4a873e8cf9c446b1ed54271c09a3ef78d4405febc",
+      "bytes": 76633
+    },
+    "skill_candidates_validated.json": {
+      "sha256": "34eef5b36fa41872d077d61111dd08a4c13a74d486d5562fc13016aadcb27eff",
+      "bytes": 15466
+    }
+  },
+  "exported_files": {
+    "hierarchical_annotations.json": {
+      "sha256": "e984176701bf18d17669aa8466c2703210433dc274853bde8722c6ed124cf276",
+      "bytes": 18693
+    },
+    "summary.json": {
+      "sha256": "1df84d93b1cd05cbbfcc43a368d69e9ad194128b86da1b8b864185d58959bb7d",
+      "bytes": 2751
+    }
+  },
+  "storage_policy": {
+    "git_keeps": [
+      "final annotations",
+      "evaluation report when available",
+      "summary",
+      "manifest"
+    ],
+    "local_only": [
+      "contact sheets",
+      "dense temporal strips",
+      "overview images",
+      "raw VLM responses",
+      "proposal visualizations",
+      "other reproducible runtime caches"
+    ]
+  }
+}
