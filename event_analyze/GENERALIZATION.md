@@ -1,5 +1,25 @@
 # Generalization Analysis
 
+## Human involvement boundary
+
+The intended deployment model is **human-assisted task onboarding, automatic per-trajectory inference**.
+
+For a new task family, a human may provide the task-relevant schema once, including:
+- important entities / semantic classes;
+- meaningful state variables;
+- legal or useful transitions;
+- accessibility / affordance relations;
+- which fine object distinctions matter for policy learning;
+- parent classes used for reliability-aware semantic backoff.
+
+After that schema is fixed, individual trajectories should not require manual decisions.
+Human inspection remains appropriate for development, debugging, ground-truth construction, and evaluation.
+
+This is different from requiring a fully open-world task ontology. The near-term goal is:
+1. configurable task-family transfer;
+2. automatic processing of many unseen trajectories within each configured task family;
+3. progressive reduction of task-specific code into declarative schemas.
+
 ## What the current V3.x pipeline can plausibly generalize to
 
 The current system is best described as **within-ontology generalization**.

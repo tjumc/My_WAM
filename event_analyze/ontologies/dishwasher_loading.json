@@ -1,0 +1,152 @@
+{
+  "schema_version": "0.1",
+  "task_family": "dishwasher_loading",
+  "onboarding": {
+    "human_schema_definition_allowed": true,
+    "per_trajectory_human_intervention": false
+  },
+  "design_principles": {
+    "reliability_first": true,
+    "automatic_semantic_backoff": true,
+    "task_relevant_granularity": true
+  },
+  "entities": {
+    "dishwasher_door": {
+      "type": "openable",
+      "states": [
+        "closed",
+        "opening",
+        "open",
+        "closing"
+      ],
+      "transitions": [
+        {
+          "from": "closed",
+          "to": "open",
+          "semantic": "open"
+        },
+        {
+          "from": "open",
+          "to": "closed",
+          "semantic": "close"
+        }
+      ]
+    },
+    "dish_rack": {
+      "type": "slider_receptacle",
+      "states": [
+        "in",
+        "moving_out",
+        "out",
+        "moving_in"
+      ],
+      "requires": [
+        {
+          "entity": "dishwasher_door",
+          "state": "open"
+        }
+      ],
+      "transitions": [
+        {
+          "from": "in",
+          "to": "out",
+          "semantic": "pull_out"
+        },
+        {
+          "from": "out",
+          "to": "in",
+          "semantic": "push_in"
+        }
+      ],
+      "accepts": [
+        "plate"
+      ]
+    },
+    "cutlery_basket": {
+      "type": "slider_receptacle",
+      "states": [
+        "in",
+        "moving_out",
+        "out",
+        "moving_in"
+      ],
+      "requires": [
+        {
+          "entity": "dishwasher_door",
+          "state": "open"
+        }
+      ],
+      "transitions": [
+        {
+          "from": "in",
+          "to": "out",
+          "semantic": "pull_out"
+        },
+        {
+          "from": "out",
+          "to": "in",
+          "semantic": "push_in"
+        }
+      ],
+      "accepts": [
+        "utensil"
+      ]
+    },
+    "plate": {
+      "type": "portable_object",
+      "parent_class": "portable_object",
+      "task_role": "dish",
+      "target": "dish_rack"
+    },
+    "knife": {
+      "type": "portable_object",
+      "parent_class": "utensil",
+      "target": "cutlery_basket"
+    },
+    "fork": {
+      "type": "portable_object",
+      "parent_class": "utensil",
+      "target": "cutlery_basket"
+    }
+  },
+  "semantic_classes": {
+    "utensil": {
+      "members": [
+        "knife",
+        "fork"
+      ],
+      "policy_equivalent": true,
+      "target": "cutlery_basket",
+      "preferred_training_label": "place_utensil_in_cutlery_basket"
+    },
+    "portable_object": {
+      "members": [
+        "utensil",
+        "plate"
+      ],
+      "fallback_label_template": "place_object_in_receptacle"
+    }
+  },
+  "label_backoff": [
+    {
+      "fine_classes": [
+        "knife",
+        "fork"
+      ],
+      "parent": "utensil",
+      "condition": "fine_identity_not_reliable_but_parent_relation_reliable"
+    },
+    {
+      "fine_classes": [
+        "utensil",
+        "plate"
+      ],
+      "parent": "portable_object",
+      "condition": "object_class_not_reliable_but_manipulation_relation_reliable"
+    }
+  ],
+  "notes": [
+    "This is a declarative ontology draft and is not yet consumed by the V3.3.3 runtime.",
+    "Knife/fork distinction is optional supervision because both share the same manipulation policy in this task."
+  ]
+}
