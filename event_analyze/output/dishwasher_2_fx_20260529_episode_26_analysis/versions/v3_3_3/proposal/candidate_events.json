@@ -1,0 +1,423 @@
+{
+  "source_hdf5": "dishwasher_2_fx_20260529_episode_26.hdf5",
+  "num_raw_frames": 1789,
+  "duration_sec": 59.427,
+  "fps_nominal": 30.0,
+  "feature_names": [
+    "base_speed",
+    "base_yaw_rate",
+    "torso_joint_speed",
+    "left_ee_speed",
+    "right_ee_speed",
+    "left_ee_ang_speed",
+    "right_ee_ang_speed",
+    "left_gripper_cmd",
+    "right_gripper_cmd",
+    "left_force",
+    "right_force",
+    "left_torque",
+    "right_torque",
+    "left_pos_track_err",
+    "right_pos_track_err",
+    "left_rot_track_err",
+    "right_rot_track_err",
+    "left_force_change",
+    "right_force_change"
+  ],
+  "change_windows_frames": [
+    9,
+    30,
+    60
+  ],
+  "candidate_events": [
+    {
+      "event_id": 0,
+      "raw_frame": 62,
+      "time_sec": 2.052,
+      "score": 0.4333,
+      "signals": [
+        "base_yaw_rate",
+        "left_force",
+        "left_force_change",
+        "base_speed"
+      ],
+      "right_gripper_command": 0.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 1,
+      "raw_frame": 140,
+      "time_sec": 4.646,
+      "score": 1.5085,
+      "signals": [
+        "base_yaw_rate",
+        "base_speed",
+        "left_force",
+        "left_torque"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 2,
+      "raw_frame": 198,
+      "time_sec": 6.576,
+      "score": 1.2084,
+      "signals": [
+        "right_rot_track_err",
+        "right_pos_track_err",
+        "base_yaw_rate",
+        "right_ee_ang_speed"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 3,
+      "raw_frame": 224,
+      "time_sec": 7.439,
+      "score": 0.7893,
+      "signals": [
+        "right_rot_track_err",
+        "base_yaw_rate",
+        "right_force_change",
+        "torso_joint_speed"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 4,
+      "raw_frame": 307,
+      "time_sec": 10.197,
+      "score": 0.9018,
+      "signals": [
+        "gripper_retry_cluster",
+        "right_force_change",
+        "right_torque",
+        "right_force",
+        "left_pos_track_err"
+      ],
+      "right_gripper_command": 37.49466574603078,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": {
+        "size": 2,
+        "start_frame": 307,
+        "end_frame": 310,
+        "context_score": 0.8142
+      }
+    },
+    {
+      "event_id": 5,
+      "raw_frame": 327,
+      "time_sec": 10.864,
+      "score": 1.8508,
+      "signals": [
+        "right_force_change",
+        "right_torque",
+        "right_force",
+        "right_rot_track_err"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 6,
+      "raw_frame": 349,
+      "time_sec": 11.593,
+      "score": 1.922,
+      "signals": [
+        "right_torque",
+        "right_force_change",
+        "right_force",
+        "right_rot_track_err"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 7,
+      "raw_frame": 417,
+      "time_sec": 13.855,
+      "score": 1.1481,
+      "signals": [
+        "right_torque",
+        "right_force",
+        "right_ee_ang_speed",
+        "right_ee_speed"
+      ],
+      "right_gripper_command": 0.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 8,
+      "raw_frame": 470,
+      "time_sec": 15.62,
+      "score": 2.0036,
+      "signals": [
+        "right_rot_track_err",
+        "right_force_change",
+        "right_force",
+        "right_pos_track_err"
+      ],
+      "right_gripper_command": 95.45979588983899,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 9,
+      "raw_frame": 630,
+      "time_sec": 20.94,
+      "score": 0.1808,
+      "signals": [
+        "left_torque",
+        "left_force",
+        "right_ee_speed",
+        "right_ee_ang_speed"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 10,
+      "raw_frame": 784,
+      "time_sec": 26.055,
+      "score": 0.1002,
+      "signals": [
+        "right_gripper_cmd",
+        "left_rot_track_err",
+        "right_ee_ang_speed",
+        "right_ee_speed"
+      ],
+      "right_gripper_command": 49.92215464284417,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 11,
+      "raw_frame": 850,
+      "time_sec": 28.246,
+      "score": 0.08,
+      "signals": [
+        "left_rot_track_err",
+        "right_force_change",
+        "left_force_change",
+        "left_force"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 12,
+      "raw_frame": 943,
+      "time_sec": 31.337,
+      "score": -0.0224,
+      "signals": [
+        "right_force_change",
+        "left_force",
+        "right_gripper_cmd",
+        "left_rot_track_err"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 13,
+      "raw_frame": 1074,
+      "time_sec": 35.691,
+      "score": 0.5019,
+      "signals": [
+        "right_force",
+        "right_force_change",
+        "right_torque",
+        "left_pos_track_err"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 14,
+      "raw_frame": 1105,
+      "time_sec": 36.722,
+      "score": 1.5322,
+      "signals": [
+        "right_force",
+        "right_torque",
+        "base_yaw_rate",
+        "torso_joint_speed"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 15,
+      "raw_frame": 1181,
+      "time_sec": 39.248,
+      "score": 1.3509,
+      "signals": [
+        "gripper_transition_supported",
+        "right_force_change",
+        "right_gripper_cmd",
+        "left_rot_track_err",
+        "left_force_change"
+      ],
+      "right_gripper_command": 50.382946972012796,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": {
+        "size": 1,
+        "start_frame": 1181,
+        "end_frame": 1181,
+        "context_score": 2.3559
+      }
+    },
+    {
+      "event_id": 16,
+      "raw_frame": 1202,
+      "time_sec": 39.962,
+      "score": 1.1094,
+      "signals": [
+        "right_force_change",
+        "right_force",
+        "right_torque",
+        "right_ee_speed"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 17,
+      "raw_frame": 1344,
+      "time_sec": 44.668,
+      "score": 0.8447,
+      "signals": [
+        "right_rot_track_err",
+        "right_torque",
+        "right_gripper_cmd",
+        "base_yaw_rate"
+      ],
+      "right_gripper_command": 21.785416729749475,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 18,
+      "raw_frame": 1455,
+      "time_sec": 48.357,
+      "score": 1.5779,
+      "signals": [
+        "right_torque",
+        "left_pos_track_err",
+        "torso_joint_speed",
+        "right_force"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 19,
+      "raw_frame": 1485,
+      "time_sec": 49.355,
+      "score": 1.5933,
+      "signals": [
+        "base_speed",
+        "base_yaw_rate",
+        "left_pos_track_err",
+        "torso_joint_speed"
+      ],
+      "right_gripper_command": 0.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 20,
+      "raw_frame": 1567,
+      "time_sec": 52.078,
+      "score": 1.8451,
+      "signals": [
+        "base_speed",
+        "base_yaw_rate",
+        "torso_joint_speed",
+        "left_pos_track_err"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 21,
+      "raw_frame": 1623,
+      "time_sec": 53.942,
+      "score": 1.442,
+      "signals": [
+        "right_torque",
+        "right_force",
+        "left_pos_track_err",
+        "right_rot_track_err"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 22,
+      "raw_frame": 1666,
+      "time_sec": 55.372,
+      "score": 1.9109,
+      "signals": [
+        "base_speed",
+        "base_yaw_rate",
+        "left_pos_track_err",
+        "torso_joint_speed"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 23,
+      "raw_frame": 1706,
+      "time_sec": 56.699,
+      "score": 1.4429,
+      "signals": [
+        "base_yaw_rate",
+        "base_speed",
+        "right_force_change",
+        "right_force"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 24,
+      "raw_frame": 1741,
+      "time_sec": 57.866,
+      "score": 0.4565,
+      "signals": [
+        "base_speed",
+        "base_yaw_rate",
+        "right_ee_speed",
+        "right_gripper_cmd"
+      ],
+      "right_gripper_command": 0.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    }
+  ],
+  "proposal_version": "v3.3.2",
+  "note": "Gripper edges are weak cues; rapid retry/re-grasp transitions are clustered and require non-gripper context. Semantic verification is still performed downstream."
+}
