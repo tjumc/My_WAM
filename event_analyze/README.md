@@ -8,6 +8,8 @@ event_analyze/
 ├── GENERALIZATION.md
 ├── common/
 ├── regression/
+├── results/          # compact Git-tracked experiment records
+├── output/           # local runtime/debug cache; new files ignored by Git
 ├── versions/
 │   ├── v1/
 │   ├── v2/
@@ -21,7 +23,6 @@ event_analyze/
 │   ├── v3_3_2/
 │   ├── v3_3_3/
 │   └── v3_4_0/      # current active: schema-driven reasoning
-└── output/
 ```
 
 当前推荐运行 V3.4.0：
@@ -63,3 +64,16 @@ python evaluation/regression_matrix.py
 ```
 
 默认比较 `v3_3_1,v3_3_2,v3_3_3,v3_4_0` 在 episode26/27 上的 sequence Precision/Recall/F1、LCS/Edit Distance。
+
+
+## 实验文件保存规范
+
+从 V3.4.0 开始，`output/` 作为本地运行与调试缓存；新的运行产物默认不再作为 Git 长期实验记录。运行结束会自动将精简结果导出到：
+
+```text
+results/<episode>/<version>/
+```
+
+其中长期保留 final annotation、evaluation、summary 和 manifest。contact sheets、dense strips、VLM raw response、overview image 等可重建中间文件留在本地即可。详见 `STORAGE_POLICY.md`。
+
+旧版本已经提交的 `output/` 文件暂时不做破坏性清理，也不重写 Git 历史。

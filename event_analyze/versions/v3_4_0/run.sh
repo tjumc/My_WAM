@@ -74,5 +74,15 @@ if [[ -n "${V340_GT:-}" ]]; then
   python "$EVENT_ROOT/evaluation/evaluate_temporal_annotations.py"     "$OUT/hierarchical_annotations.json" "$V340_GT"     --output "$OUT/evaluation_temporal.json"
 fi
 
+python "$EVENT_ROOT/common/export_results.py" \
+  --episode-dir "$EPISODE_DIR" \
+  --output-dir "$OUT" \
+  --version "v3_4_0" \
+  --task "$TASK" \
+  --schema "$SCHEMA" \
+  --hdf5 "$HDF5" \
+  --event-root "$EVENT_ROOT"
+
 echo "V3.4.0 complete: $OUT"
 echo "Reasoning is schema-driven; perception remains V3.3.3-compatible in this stage."
+echo "Compact Git-friendly result exported under: $EVENT_ROOT/results/"

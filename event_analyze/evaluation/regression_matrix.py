@@ -56,20 +56,24 @@ def main():
     episodes = {
         "episode26": (
             root / "output/dishwasher_2_fx_20260529_episode_26_analysis/versions",
+            root / "results/dishwasher_2_fx_20260529_episode_26",
             seq26,
             "manual_sequence_only_provisional",
         ),
         "episode27": (
             root / "output/dishwasher_2_fx_20260529_episode_27_analysis/versions",
+            root / "results/dishwasher_2_fx_20260529_episode_27",
             seq27,
             gt27.get("status", "manual_gt"),
         ),
     }
 
     rows = []
-    for ep, (base, gt, status) in episodes.items():
+    for ep, (runtime_base, results_base, gt, status) in episodes.items():
         for ver in versions:
-            path = base / ver / "hierarchical_annotations.json"
+            runtime_path = runtime_base / ver / "hierarchical_annotations.json"
+            compact_path = results_base / ver / "hierarchical_annotations.json"
+            path = runtime_path if runtime_path.exists() else compact_path
             if not path.exists():
                 continue
             pred = load_pred(path)

@@ -1,0 +1,189 @@
+#!/usr/bin/env python3
+"""Export a compact, Git-friendly experiment result package.
+
+Heavy/reproducible runtime artifacts stay under event_analyze/output/ and should
+not be committed. This exporter copies only final annotations/evaluation and a
+small reproducibility manifest to event_analyze/results/.
+"""
+import argparse
+import hashlib
+import json
+import shutil
+import subprocess
+from datetime import datetime, timezone
+from pathlib import Path
+
+
+KEEP_FILES = [
+    "hierarchical_annotations.json",
+    "evaluation_temporal.json",
+]
+
+
+def sha256_file(path, chunk=1024 * 1024):
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        while True:
+            b = f.read(chunk)
+            if not b:
+                break
+            h.update(b)
+    return h.hexdigest()
+
+
+def safe_rel(path, root):
+    try:
+        return str(Path(path).resolve().relative_to(Path(root).resolve()))
+    except Exception:
+        return str(Path(path).name)
+
+
+def git_head(root):
+    try:
+        return subprocess.check_output(
+            ["git", "-C", str(root), "rev-parse", "HEAD"],
+            text=True,
+            stderr=subprocess.DEVNULL,
+        ).strip()
+    except Exception:
+        return None
+
+
+def load_json(path):
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--episode-dir", required=True)
+    ap.add_argument("--output-dir", required=True)
+    ap.add_argument("--version", required=True)
+    ap.add_argument("--task", required=True)
+    ap.add_argument("--schema", required=True)
+    ap.add_argument("--hdf5", required=True)
+    ap.add_argument("--event-root", required=True)
+    ap.add_argument("--results-root", default=None)
+    args = ap.parse_args()
+
+    event_root = Path(args.event_root).resolve()
+    out = Path(args.output_dir).resolve()
+    schema = Path(args.schema).resolve()
+    hdf5 = Path(args.hdf5)
+    episode_name = Path(args.episode_dir).name
+    if episode_name.endswith("_analysis"):
+        episode_name = episode_name[:-len("_analysis")]
+
+    results_root = Path(args.results_root).resolve() if args.results_root else event_root / "results"
+    dst = results_root / episode_name / args.version
+    dst.mkdir(parents=True, exist_ok=True)
+
+    copied = {}
+    for name in KEEP_FILES:
+        src = out / name
+        if src.exists():
+            target = dst / name
+            shutil.copy2(src, target)
+            copied[name] = {
+                "sha256": sha256_file(target),
+                "bytes": target.stat().st_size,
+            }
+
+    ann_path = out / "hierarchical_annotations.json"
+    if not ann_path.exists():
+        raise FileNotFoundError(f"missing final annotation: {ann_path}")
+    ann = load_json(ann_path)
+    schema_doc = load_json(schema)
+    task_family = ann.get("task_family") or schema_doc.get("task_family")
+    phases = ann.get("semantic_phases", [])
+
+    summary = {
+        "annotation_version": ann.get("annotation_version", args.version),
+        "episode": episode_name,
+        "task_goal": ann.get("task_goal", args.task),
+        "task_family": task_family,
+        "phase_count": len(phases),
+        "skill_sequence": [x.get("skill_type") for x in phases],
+        "task_end_raw_frame": ann.get("task_end_raw_frame"),
+        "phases": [
+            {
+                "skill_type": x.get("skill_type"),
+                "raw_start_frame": x.get("raw_start_frame"),
+                "raw_end_frame": x.get("raw_end_frame"),
+                "provisional_start_frame": x.get("provisional_start_frame"),
+                "provisional_end_frame": x.get("provisional_end_frame"),
+                "confidence": x.get("confidence"),
+            }
+            for x in phases
+        ],
+    }
+    summary_path = dst / "summary.json"
+    summary_path.write_text(
+        json.dumps(summary, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    copied["summary.json"] = {
+        "sha256": sha256_file(summary_path),
+        "bytes": summary_path.stat().st_size,
+    }
+
+    evidence = {}
+    for name in [
+        "entity_observations_base.jsonl",
+        "dense_cutlery_transition_evidence.jsonl",
+        "tracked_entity_states.json",
+        "skill_candidates_validated.json",
+    ]:
+        p = out / name
+        if p.exists():
+            evidence[name] = {
+                "sha256": sha256_file(p),
+                "bytes": p.stat().st_size,
+            }
+
+    manifest = {
+        "format_version": 1,
+        "generated_utc": datetime.now(timezone.utc).isoformat(),
+        "episode": episode_name,
+        "version": args.version,
+        "task": args.task,
+        "task_family": task_family,
+        "git_commit_at_export": git_head(event_root.parent),
+        "input": {
+            "hdf5_basename": hdf5.name,
+            "hdf5_bytes": hdf5.stat().st_size if hdf5.exists() else None,
+            "schema": safe_rel(schema, event_root),
+            "schema_sha256": sha256_file(schema),
+        },
+        "runtime_output": safe_rel(out, event_root),
+        "evidence_fingerprints": evidence,
+        "exported_files": copied,
+        "storage_policy": {
+            "git_keeps": [
+                "final annotations",
+                "evaluation report when available",
+                "summary",
+                "manifest",
+            ],
+            "local_only": [
+                "contact sheets",
+                "dense temporal strips",
+                "overview images",
+                "raw VLM responses",
+                "proposal visualizations",
+                "other reproducible runtime caches",
+            ],
+        },
+    }
+    manifest_path = dst / "manifest.json"
+    manifest_path.write_text(
+        json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+
+    print(f"exported compact result: {dst}")
+    print("files:", ", ".join(sorted(p.name for p in dst.iterdir() if p.is_file())))
+
+
+if __name__ == "__main__":
+    main()

@@ -69,3 +69,9 @@ credentials/
 # Hugging Face / model cache directories
 models--*/
 *models--t5*/
+
+
+# Event-analysis runtime cache
+# Keep generated/intermediate trajectory artifacts local. Compact, versioned
+# experiment results are exported to event_analyze/results/ instead.
+event_analyze/output/
