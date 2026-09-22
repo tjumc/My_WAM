@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.2",
+  "schema_version": "0.3",
   "task_family": "dishwasher_loading",
   "onboarding": {
     "human_schema_definition_allowed": true,
@@ -225,7 +225,8 @@
       ],
       "target": "cutlery_basket",
       "parent_class": "utensil",
-      "skill_type": "place_knife_in_cutlery_basket"
+      "skill_type": "place_knife_in_cutlery_basket",
+      "episode_completion": "target_without_regrasp_before_object_context_switch"
     },
     "fork": {
       "display_name": "fork",
@@ -247,7 +248,8 @@
       ],
       "target": "cutlery_basket",
       "parent_class": "utensil",
-      "skill_type": "place_fork_in_cutlery_basket"
+      "skill_type": "place_fork_in_cutlery_basket",
+      "episode_completion": "target_without_regrasp_before_object_context_switch"
     },
     "plate": {
       "display_name": "plate",
@@ -269,7 +271,8 @@
       ],
       "target": "dish_rack",
       "parent_class": "portable_object",
-      "skill_type": "place_plate_in_dish_rack"
+      "skill_type": "place_plate_in_dish_rack",
+      "episode_completion": "target_without_regrasp_before_object_context_switch"
     }
   },
   "semantic_classes": {
@@ -280,7 +283,10 @@
       ],
       "policy_equivalent": true,
       "target": "cutlery_basket",
-      "preferred_training_label": "place_utensil_in_cutlery_basket"
+      "preferred_training_label": "place_utensil_in_cutlery_basket",
+      "training_label_policy": "parent",
+      "allow_parent_held_evidence": true,
+      "description": "Knife and fork are policy-equivalent for this task; training supervision prefers the reliable parent class."
     },
     "portable_object": {
       "members": [
@@ -357,5 +363,9 @@
       "parent": "portable_object",
       "condition": "object_class_not_reliable_but_manipulation_relation_reliable"
     }
+  ],
+  "notes": [
+    "Task-family schema may be defined once with human assistance; per-trajectory inference remains automatic.",
+    "Knife/fork distinction is retained as optional diagnostic evidence, while the preferred training label is the policy-equivalent parent class utensil."
   ]
 }

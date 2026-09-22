@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
 """Unified semantic + temporal evaluation for hierarchical robot annotations."""
-import argparse, json
+import argparse, json, copy, sys
 from pathlib import Path
+
+COMMON_DIR = Path(__file__).resolve().parents[1] / "common"
+if str(COMMON_DIR) not in sys.path:
+    sys.path.insert(0, str(COMMON_DIR))
+from schema_runtime import load_schema, policy_skill_aliases
 
 def slen(s,e): return max(0,int(e)-int(s)+1)
 def inter(a0,a1,b0,b1): return max(0,min(int(a1),int(b1))-max(int(a0),int(b0))+1)
@@ -162,15 +167,32 @@ def evaluate(pred_doc,gt_doc,tols):
       "per_phase":rows
     }
 
+def normalized_docs(pred, gt, aliases):
+    p = copy.deepcopy(pred)
+    g = copy.deepcopy(gt)
+    for x in p.get("semantic_phases", []):
+        x["skill_type"] = aliases.get(x["skill_type"], x["skill_type"])
+    for x in g.get("steps", []):
+        x["skill_type"] = aliases.get(x["skill_type"], x["skill_type"])
+    return p, g
+
+
 def main():
     ap=argparse.ArgumentParser()
     ap.add_argument("annotations")
     ap.add_argument("ground_truth")
     ap.add_argument("--output",default=None)
     ap.add_argument("--tolerances",default="0.5,1.0,2.0")
+    ap.add_argument("--schema",default=None)
     a=ap.parse_args()
     pred=json.load(open(a.annotations,encoding="utf-8")); gt=json.load(open(a.ground_truth,encoding="utf-8"))
-    r=evaluate(pred,gt,[float(x) for x in a.tolerances.split(",") if x.strip()])
+    tols=[float(x) for x in a.tolerances.split(",") if x.strip()]
+    r=evaluate(pred,gt,tols)
+    if a.schema:
+        aliases=policy_skill_aliases(load_schema(a.schema))
+        pp,gg=normalized_docs(pred,gt,aliases)
+        r["policy_normalized"]=evaluate(pp,gg,tols)
+        r["policy_aliases"]=aliases
     s=json.dumps(r,ensure_ascii=False,indent=2); print(s)
     if a.output:
         Path(a.output).parent.mkdir(parents=True,exist_ok=True)

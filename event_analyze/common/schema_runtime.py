@@ -103,6 +103,7 @@ def portable_rules(schema):
             "target": cfg["target"],
             "parent_class": cfg.get("parent_class"),
             "skill_type": cfg["skill_type"],
+            "episode_completion": cfg.get("episode_completion", "target_without_regrasp_before_object_context_switch"),
         }
     return out
 
@@ -150,3 +151,47 @@ def semantic_parent(schema, object_name):
 
 def parent_members(schema, parent):
     return list((schema.get("semantic_classes", {}).get(parent) or {}).get("members", []))
+
+
+def training_semantic(schema, object_name):
+    """Return the preferred training label/entity for a portable object.
+
+    Fine identity remains available for diagnostics. A task schema may declare
+    a policy-equivalent parent class as the preferred supervision granularity.
+    """
+    entities = schema.get("entities", {})
+    classes = schema.get("semantic_classes", {})
+    cfg = entities.get(object_name, {})
+    fine_skill = cfg.get("skill_type")
+    parent = cfg.get("parent_class")
+    if parent:
+        pcfg = classes.get(parent, {})
+        if pcfg.get("training_label_policy") == "parent":
+            label = pcfg.get("preferred_training_label")
+            if label:
+                return {
+                    "skill_type": label,
+                    "entity": parent,
+                    "backoff": True,
+                    "fine_skill_type": fine_skill,
+                    "fine_entity": object_name,
+                    "allow_parent_held_evidence": bool(pcfg.get("allow_parent_held_evidence", False)),
+                }
+    return {
+        "skill_type": fine_skill,
+        "entity": object_name,
+        "backoff": False,
+        "fine_skill_type": fine_skill,
+        "fine_entity": object_name,
+        "allow_parent_held_evidence": False,
+    }
+
+
+def policy_skill_aliases(schema):
+    """Map fine skill labels to task-preferred training labels."""
+    out = {}
+    for name, cfg in portable_rules(schema).items():
+        sem = training_semantic(schema, name)
+        if cfg.get("skill_type") and sem.get("skill_type"):
+            out[cfg["skill_type"]] = sem["skill_type"]
+    return out

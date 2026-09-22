@@ -22,13 +22,14 @@ event_analyze/
 │   ├── v3_3_1/
 │   ├── v3_3_2/
 │   ├── v3_3_3/
-│   └── v3_4_0/      # current active: schema-driven reasoning
+│   ├── v3_4_0/
+│   └── v3_4_1/      # current active: reliability-first object semantics
 ```
 
-当前推荐运行 V3.4.0：
+当前推荐运行 V3.4.1：
 
 ```bash
-bash versions/v3_4_0/run.sh \
+bash versions/v3_4_1/run.sh \
   /path/to/episode.hdf5 \
   output/dishwasher_2_fx_20260529_episode_27_analysis \
   "put the dish into the dishwasher" \
@@ -36,7 +37,7 @@ bash versions/v3_4_0/run.sh \
   1645
 ```
 
-V3.4.0 将 tracking / skill inference / validation 的 task-family 知识迁移到 `ontologies/dishwasher_loading.json`；新任务允许一次性人工配置 schema，但单条轨迹推理必须自动化。当前 perception 暂时保持 V3.3.3-compatible，用于验证 schema-driven reasoning 的等价性。对全新的 HDF5，入口脚本会自动先生成 candidate_events.json 和 contact_sheets/。
+V3.4.1 在 schema-driven reasoning 基础上加入 reliability-first semantic backoff 和 completion-aware object episode：policy-equivalent 的 knife/fork 默认训练标签退化为 utensil，同时保留 fine identity 作为诊断信息；object placement 的完成不再依赖固定 target dwell time。当前 perception 暂时保持 V3.3.3-compatible，用于验证 schema-driven reasoning 的等价性。对全新的 HDF5，入口脚本会自动先生成 candidate_events.json 和 contact_sheets/。
 
 泛化边界与未来 task-agnostic 设计见 `GENERALIZATION.md`。
 
@@ -63,7 +64,7 @@ episode26 目前只有人工确认的 sequence-only provisional GT；episode27 �
 python evaluation/regression_matrix.py
 ```
 
-默认比较 `v3_3_1,v3_3_2,v3_3_3,v3_4_0` 在 episode26/27 上的 sequence Precision/Recall/F1、LCS/Edit Distance。
+默认比较 `v3_3_1,v3_3_2,v3_3_3,v3_4_0,v3_4_1` 在 episode26/27 上的 sequence Precision/Recall/F1、LCS/Edit Distance。
 
 
 ## 实验文件保存规范

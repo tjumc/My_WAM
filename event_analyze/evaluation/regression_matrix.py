@@ -2,7 +2,13 @@
 """Sequence-level regression matrix for held-out dishwasher episodes."""
 import argparse
 import json
+import sys
 from pathlib import Path
+
+COMMON_DIR = Path(__file__).resolve().parents[1] / "common"
+if str(COMMON_DIR) not in sys.path:
+    sys.path.insert(0, str(COMMON_DIR))
+from schema_runtime import load_schema, policy_skill_aliases
 
 
 def edit(a, b):
@@ -43,11 +49,14 @@ def load_pred(path):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--event-root", default=str(Path(__file__).resolve().parents[1]))
-    ap.add_argument("--versions", default="v3_3_1,v3_3_2,v3_3_3,v3_4_0")
+    ap.add_argument("--versions", default="v3_3_1,v3_3_2,v3_3_3,v3_4_0,v3_4_1")
     ap.add_argument("--output", default=None)
+    ap.add_argument("--schema", default=None)
     args = ap.parse_args()
 
     root = Path(args.event_root)
+    schema_path = Path(args.schema) if args.schema else root / "ontologies/dishwasher_loading.json"
+    aliases = policy_skill_aliases(load_schema(schema_path))
     versions = [x.strip() for x in args.versions.split(",") if x.strip()]
     seq26 = json.load(open(root / "regression/dishwasher_episode26_sequence_gt.json", encoding="utf-8"))["sequence"]
     gt27 = json.load(open(root / "regression/dishwasher_episode27_manual_gt.json", encoding="utf-8"))
@@ -77,16 +86,25 @@ def main():
             if not path.exists():
                 continue
             pred = load_pred(path)
-            row = {"episode": ep, "version": ver, "gt_status": status,
-                   "predicted": pred, "ground_truth": gt}
-            row.update(metrics(pred, gt))
+            pred_policy = [aliases.get(x, x) for x in pred]
+            gt_policy = [aliases.get(x, x) for x in gt]
+            raw = metrics(pred, gt)
+            policy = metrics(pred_policy, gt_policy)
+            row = {
+                "episode": ep, "version": ver, "gt_status": status,
+                "predicted": pred, "ground_truth": gt,
+                "policy_predicted": pred_policy, "policy_ground_truth": gt_policy,
+                "raw": raw, "policy": policy,
+            }
             rows.append(row)
 
-    print("episode   version   pred  match   P      R      F1     edit exact")
+    print("episode   version   rawF1 rawEdit  policyF1 policyEdit  policyP policyR")
     for x in rows:
-        print(f"{x['episode']:<9} {x['version']:<9} {x['pred_n']:>4} {x['matched']:>6} "
-              f"{x['precision']:.3f}  {x['recall']:.3f}  {x['f1']:.3f}  "
-              f"{x['edit_distance']:>4}  {str(x['exact']):>5}")
+        r = x["raw"]; p = x["policy"]
+        print(f"{x['episode']:<9} {x['version']:<9} "
+              f"{r['f1']:.3f} {r['edit_distance']:>7}  "
+              f"{p['f1']:.3f} {p['edit_distance']:>10}  "
+              f"{p['precision']:.3f}   {p['recall']:.3f}")
 
     if args.output:
         Path(args.output).write_text(json.dumps({"rows": rows}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
