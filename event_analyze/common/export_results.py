@@ -132,6 +132,8 @@ def main():
         "entity_observations_base.jsonl",
         "dense_cutlery_transition_evidence.jsonl",
         "tracked_entity_states.json",
+        "tracked_entity_states_owned.json",
+        "hand_object_ownership.json",
         "skill_candidates_validated.json",
     ]:
         p = out / name

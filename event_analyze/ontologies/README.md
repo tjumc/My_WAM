@@ -29,3 +29,18 @@ A semantic class can declare `training_label_policy: "parent"` when its members
 are policy-equivalent and fine identity is not worth unreliable supervision.
 V3.4.1 consumes this policy. Fine identity remains available as diagnostic
 metadata, while the training label uses the configured parent class.
+
+
+## Manipulation concurrency policy
+
+A task schema may declare how many portable objects can be actively manipulated
+at once. For the current sequential dishwasher demonstrations:
+
+```json
+"manipulation_policy": {
+  "max_concurrent_portable_objects": 1
+}
+```
+
+This is task-family configuration, not a universal robotics assumption.
+Concurrent/bimanual tasks should use a different value and ownership policy.

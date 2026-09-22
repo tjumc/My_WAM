@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.3",
+  "schema_version": "0.4",
   "task_family": "dishwasher_loading",
   "onboarding": {
     "human_schema_definition_allowed": true,
@@ -367,5 +367,11 @@
   "notes": [
     "Task-family schema may be defined once with human assistance; per-trajectory inference remains automatic.",
     "Knife/fork distinction is retained as optional diagnostic evidence, while the preferred training label is the policy-equivalent parent class utensil."
-  ]
+  ],
+  "manipulation_policy": {
+    "max_concurrent_portable_objects": 1,
+    "allow_inferred_parent_ownership": true,
+    "direct_ownership_min_confidence": 0.7,
+    "description": "This task family is annotated as sequential single-object portable manipulation. Change this for genuinely concurrent/bimanual task families."
+  }
 }

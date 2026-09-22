@@ -754,9 +754,15 @@ strong joint assignment mechanism.
 
 ### Status
 
-**Unresolved and currently the most important object-level problem.**
+**V3.4.2 implementation completed; empirical regression results pending.**
 
-### Next solution direction
+V3.4.2 introduces a separate ownership-arbitration stage before manipulation
+episode inference. It enforces task-configured portable-object concurrency,
+prioritizes explicit hand identity over conflicting object-location fields,
+trims speculative held intervals at direct object-context switches, and
+prevents sibling objects from reusing the same held evidence.
+
+### Implemented solution direction
 
 Joint hand-object temporal ownership:
 
@@ -1036,6 +1042,33 @@ Main lesson:
 
 ---
 
+## V3.4.2
+
+Purpose:
+
+**joint temporal ownership before object-skill inference.**
+
+Major additions:
+
+1. direct hand-object ownership extraction from structured observations;
+2. task-configured portable-object concurrency;
+3. non-portable interaction blockers;
+4. unique evidence ownership across competing object candidates;
+5. ownership-aware context-switch boundaries;
+6. explicit ambiguous-conflict output for future targeted re-observation.
+
+Expected controlled effects from the existing V3.4.1 perception evidence:
+
+- episode26: separate the overlapping utensil intervals around the next directly
+  observed object ownership;
+- episode27: delay plate ownership until after the cutlery-basket interaction,
+  rather than inheriting an independently smoothed early plate-hand state.
+
+These are hypotheses until V3.4.2 is run and committed on the regression
+episodes. They must not be reported as achieved results before evaluation.
+
+---
+
 # 5. Current problem status summary
 
 | Problem | Status | Current interpretation |
@@ -1051,8 +1084,8 @@ Main lesson:
 | re-grasp creates duplicate plate skills | solved for current pattern | completion-aware episodes |
 | fine-vs-coarse evaluation mismatch | solved | policy-normalized metrics |
 | push-in cutlery basket missing | unresolved | container perception/validation issue |
-| overlapping utensil temporal ownership | unresolved | joint hand-object assignment needed |
-| plate starts too early in episode27 | unresolved | object identity/ownership problem |
+| overlapping utensil temporal ownership | V3.4.2 implemented, pending eval | joint hand-object ownership |
+| plate starts too early in episode27 | V3.4.2 implemented, pending eval | ownership/context-switch hypothesis |
 | targeted dense perception is task-specific | unresolved | generic ambiguity trigger needed |
 | base VLM perception prompt is task-specific | unresolved | schema-generated perception needed |
 | held-out / cross-task experimental evidence | unresolved | required for paper |
@@ -1239,12 +1272,16 @@ Use:
 
 ### Current maturity
 
-**Not implemented yet.**
+**Implemented in V3.4.2; controlled evaluation pending.**
+
+The implementation also outputs unresolved ownership conflicts explicitly,
+which can serve as automatic triggers for later targeted re-observation.
 
 ### Paper potential
 
-**High future candidate**, especially if it resolves both episode26 utensil
-overlap and episode27 early plate onset through one general mechanism.
+**High candidate pending empirical validation**, especially if one mechanism
+improves both episode26 utensil overlap and episode27 early plate onset without
+new perception calls.
 
 ---
 

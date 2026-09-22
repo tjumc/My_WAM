@@ -104,6 +104,7 @@ def portable_rules(schema):
             "parent_class": cfg.get("parent_class"),
             "skill_type": cfg["skill_type"],
             "episode_completion": cfg.get("episode_completion", "target_without_regrasp_before_object_context_switch"),
+            "holding_tokens": list(cfg.get("holding_tokens", [f"holding_{name}"])),
         }
     return out
 
