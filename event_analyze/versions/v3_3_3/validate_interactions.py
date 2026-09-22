@@ -276,11 +276,18 @@ def mark_short_reverse_pairs(skills, max_gap_frames=30, skip_indices=None):
 
 
 def initial_container_states(obs, max_observations=5, min_conf=0.70):
-    """Infer initial lifecycle from early *direct* generic observations only.
+    """Infer initial lifecycle from early direct generic observations only.
 
-    Later Viterbi smoothing must not back-fill the beginning of the trajectory.
-    Directional observations receive extra weight because "opening" implies the
-    source state was closed, "moving_out" implies in, etc.
+    Priority:
+    1) a high-confidence motion already present in state_before, because its
+       physical source state is causally required (opening=>closed,
+       moving_out=>in, moving_in=>out);
+    2) otherwise the earliest high-confidence stable state_before;
+    3) otherwise a high-confidence stable before->after transition source.
+
+    This avoids using a later Viterbi segment as the initial state and also
+    suppresses contradictory early snapshots such as 'open' followed shortly by
+    a directly observed 'opening' motion with no intervening closing evidence.
     """
     rules = {
         "door": {
@@ -296,35 +303,64 @@ def initial_container_states(obs, max_observations=5, min_conf=0.70):
             "motion_source": {"moving_out": "in", "moving_in": "out"},
         },
     }
+
     generic = [
-        o for o in sorted(obs, key=lambda x: (int(x.get("_window_start_frame", 0)), int(x.get("_event_id", 0))))
+        o for o in sorted(
+            obs,
+            key=lambda x: (
+                int(x.get("_window_start_frame", 0)),
+                int(x.get("_event_id", 0)),
+            ),
+        )
         if not o.get("_v331_dense_target_entity") and not o.get("_v33_dense_cutlery")
     ][:max_observations]
 
     out = {}
     for entity, spec in rules.items():
-        votes = {s: 0.0 for s in spec["stable"]}
-        for rank, o in enumerate(generic):
-            decay = 1.0 / (1.0 + 0.35 * rank)
-            for side in ("before", "after"):
-                st = (o.get(f"state_{side}") or {}).get(entity)
-                cf = float((o.get(f"confidence_{side}") or {}).get(entity, 0.0))
-                if cf < min_conf:
-                    continue
-                if side == "before" and st in spec["stable"]:
-                    votes[st] += 1.0 * cf * decay
-                if st in spec["motion_source"]:
-                    votes[spec["motion_source"][st]] += 1.8 * cf * decay
+        motion_source = None
+        earliest_stable = None
+        transition_source = None
 
+        for o in generic:
             sb = (o.get("state_before") or {}).get(entity)
             sa = (o.get("state_after") or {}).get(entity)
             cb = float((o.get("confidence_before") or {}).get(entity, 0.0))
             ca = float((o.get("confidence_after") or {}).get(entity, 0.0))
-            if sb in spec["stable"] and sa in spec["stable"] and sb != sa and min(cb, ca) >= min_conf:
-                votes[sb] += 1.4 * min(cb, ca) * decay
 
-        best = max(votes, key=votes.get) if votes else None
-        out[entity] = best if best is not None and votes[best] > 0 else "unknown"
+            # A motion already underway at the start of a window gives strong
+            # causal evidence about the state immediately before the action.
+            if (
+                motion_source is None
+                and sb in spec["motion_source"]
+                and cb >= min_conf
+            ):
+                motion_source = spec["motion_source"][sb]
+
+            if (
+                earliest_stable is None
+                and sb in spec["stable"]
+                and cb >= min_conf
+            ):
+                earliest_stable = sb
+
+            if (
+                transition_source is None
+                and sb in spec["stable"]
+                and sa in spec["stable"]
+                and sb != sa
+                and min(cb, ca) >= min_conf
+            ):
+                transition_source = sb
+
+        if motion_source is not None:
+            out[entity] = motion_source
+        elif earliest_stable is not None:
+            out[entity] = earliest_stable
+        elif transition_source is not None:
+            out[entity] = transition_source
+        else:
+            out[entity] = "unknown"
+
     return out
 
 
@@ -391,6 +427,7 @@ def validate(args):
             continue
 
         if s.get("entity") in CONTAINER_ACTIONS:
+            entity = s.get("entity")
             ev = container_evidence(s, obs, dense_rows)
             d["interaction_evidence"] = ev
             if ev["contact_count"] == 0:
