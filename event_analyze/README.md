@@ -39,7 +39,7 @@ bash versions/v3_4_1/run.sh \
 
 V3.4.1 在 schema-driven reasoning 基础上加入 reliability-first semantic backoff 和 completion-aware object episode：policy-equivalent 的 knife/fork 默认训练标签退化为 utensil，同时保留 fine identity 作为诊断信息；object placement 的完成不再依赖固定 target dwell time。当前 perception 暂时保持 V3.3.3-compatible，用于验证 schema-driven reasoning 的等价性。对全新的 HDF5，入口脚本会自动先生成 candidate_events.json 和 contact_sheets/。
 
-泛化边界与未来 task-agnostic 设计见 `GENERALIZATION.md`。
+泛化边界与未来 task-agnostic 设计见 `GENERALIZATION.md`。截至当前版本的问题演化、已解决问题、未解决问题与论文贡献候选统一记录在 `RESEARCH_RECORD.md`。
 
 
 ## 统一评估
