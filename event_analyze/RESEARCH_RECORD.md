@@ -5,7 +5,7 @@
 > preserve the **scientific problem -> diagnosis -> general solution -> evidence**
 > chain, and to distinguish paper-level ideas from local engineering fixes.
 >
-> Last updated: V3.4.1.
+> Last updated: V3.4.3.
 
 ---
 
@@ -945,7 +945,11 @@ semantic reasoning.
 
 ### Status
 
-**Implemented in V3.4.3; controlled evaluation pending.**
+**Implemented and validated on the current regression trajectories.**
+
+Episode26's first utensil raw span changed from the V3.4.2 two-frame collapse
+`[744,745]` to `[714,738]` (25 frames), while the two utensil phases remained
+separate and the policy sequence stayed unchanged.
 
 ### Contribution potential
 
@@ -987,7 +991,13 @@ A relocated candidate must pass robot-signal validation at its final anchor.
 
 ### Status
 
-**Implemented in V3.4.3; controlled evaluation pending.**
+**Implemented and validated on the current regression trajectories.**
+
+For episode27, contact-anchor-adjusted container skills now store robot signal
+evidence around their adjusted provisional intervals. In particular,
+`push_in_cutlery_basket` is revalidated with signal window approximately
+`[979,1020]` around final provisional interval `[999,1000]`, instead of
+reusing the earlier stale signal window around frame 1112.
 
 ### Contribution potential
 
@@ -1180,6 +1190,50 @@ Main lesson:
 
 ---
 
+## V3.4.3
+
+Purpose:
+
+**make final temporal boundaries consistent with upstream semantic ownership and
+with the evidence used to validate them.**
+
+Major additions:
+
+1. right-to-left duration-constrained overlap arbitration;
+2. provisional semantic intervals treated as ownership priors;
+3. explicit boundary duration-conflict metadata;
+4. contact-anchor relocation before final robot-signal decision;
+5. robot-signal recomputation after any container boundary relocation.
+
+Controlled regression results:
+
+### Episode26
+
+- first utensil raw span changes from `[744,745]` to `[714,738]`;
+- second utensil remains separate at `[739,895]`;
+- plate remains one completion-aware episode;
+- policy sequence remains `P=1.00, R=0.90, F1=0.947, Edit=1`;
+- `push_in_cutlery_basket` is still missing.
+
+### Episode27
+
+- policy-normalized sequence remains exact:
+  `P=1.00, R=1.00, F1=1.00, Edit=0`;
+- plate remains after `push_in_cutlery_basket`;
+- semantic mIoU improves slightly from about 0.423 to 0.430;
+- semantic boundary MAE improves slightly from about 1.51 s to 1.48 s;
+- core mIoU and core boundary MAE remain approximately unchanged from V3.4.2;
+- every contact-anchor-adjusted container action is revalidated using signal
+  evidence around its adjusted interval.
+
+Main lesson:
+
+> Continuous-signal refinement should calibrate an already inferred semantic
+> interval, while validation evidence must be recomputed whenever that interval
+> is relocated.
+
+---
+
 # 5. Current problem status summary
 
 | Problem | Status | Current interpretation |
@@ -1197,8 +1251,8 @@ Main lesson:
 | push-in cutlery basket missing | unresolved | container perception/validation issue |
 | overlapping utensil temporal ownership | provisionally solved in V3.4.2 | joint hand-object ownership |
 | plate starts too early in episode27 | solved on regression episode27 | ownership/context-switch reasoning |
-| final boundary can collapse a valid phase | V3.4.3 implemented, pending eval | duration-constrained semantic boundary arbitration |
-| relocated boundary may use stale robot signal | V3.4.3 implemented, pending eval | post-anchor signal revalidation |
+| final boundary can collapse a valid phase | solved on current regression cases | duration-constrained semantic boundary arbitration |
+| relocated boundary may use stale robot signal | solved on current regression cases | post-anchor signal revalidation |
 | targeted dense perception is task-specific | unresolved | generic ambiguity trigger needed |
 | base VLM perception prompt is task-specific | unresolved | schema-generated perception needed |
 | held-out / cross-task experimental evidence | unresolved | required for paper |

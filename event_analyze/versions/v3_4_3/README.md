@@ -54,3 +54,17 @@ Expected checks:
 - episode27: the correct policy-level action order should remain unchanged;
 - every `interaction_anchor_adjusted=true` phase should carry signal evidence
   recomputed at the adjusted provisional interval.
+
+
+## Stable GT environment variable
+
+From V3.4.3 onward, use the version-independent environment variable:
+
+```bash
+GT=regression/dishwasher_episode27_manual_gt.json \
+bash versions/v3_4_3/run.sh ...
+```
+
+Future versions should keep `GT` unchanged so experiment commands can be
+reused across versions. `V343_GT` is accepted only as a backward-compatible
+fallback in this version.

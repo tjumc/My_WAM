@@ -69,8 +69,12 @@ if [[ -n "$LEROBOT_EPISODE" ]]; then REFINE_ARGS+=(--lerobot-episode "$LEROBOT_E
 if [[ -n "$LEROBOT_MAX_RAW_FRAME" ]]; then REFINE_ARGS+=(--lerobot-max-raw-frame "$LEROBOT_MAX_RAW_FRAME"); fi
 PYTHONPATH="$EVENT_ROOT/common${PYTHONPATH:+:$PYTHONPATH}"   python "$SCRIPT_DIR/refine_boundaries.py" "${REFINE_ARGS[@]}"
 
-if [[ -n "${V343_GT:-}" ]]; then
-  python "$EVENT_ROOT/evaluation/evaluate_temporal_annotations.py"     "$OUT/hierarchical_annotations.json" "$V343_GT"     --schema "$SCHEMA"     --output "$OUT/evaluation_temporal.json"
+GT_PATH="${GT:-${V343_GT:-}}"
+if [[ -n "$GT_PATH" ]]; then
+  python "$EVENT_ROOT/evaluation/evaluate_temporal_annotations.py" \
+    "$OUT/hierarchical_annotations.json" "$GT_PATH" \
+    --schema "$SCHEMA" \
+    --output "$OUT/evaluation_temporal.json"
 fi
 
 python "$EVENT_ROOT/common/export_results.py"   --episode-dir "$EPISODE_DIR" --output-dir "$OUT"   --version "v3_4_3" --task "$TASK" --schema "$SCHEMA"   --hdf5 "$HDF5" --event-root "$EVENT_ROOT"

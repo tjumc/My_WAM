@@ -80,3 +80,15 @@ results/<episode>/<version>/
 其中长期保留 final annotation、evaluation、summary 和 manifest。contact sheets、dense strips、VLM raw response、overview image 等可重建中间文件留在本地即可。详见 `STORAGE_POLICY.md`。
 
 旧版本已经提交的 `output/` 文件暂时不做破坏性清理，也不重写 Git 历史。
+
+
+## 统一 GT 环境变量
+
+从 V3.4.3 开始，所有后续版本统一使用 `GT` 指定 ground truth，不再把版本号写进变量名：
+
+```bash
+GT=regression/dishwasher_episode27_manual_gt.json \
+bash versions/v3_4_3/run.sh ...
+```
+
+后续版本保持 `GT` 不变，这样同一条实验命令只需要替换版本目录即可。
