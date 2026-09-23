@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.6",
+  "schema_version": "0.7",
   "task_family": "dishwasher_loading",
   "onboarding": {
     "human_schema_definition_allowed": true,
@@ -77,7 +77,8 @@
         "allow_contact_bridge": true,
         "min_signal_score": 0.12,
         "note": "Task-family onboarding prior: articulated/contact manipulation is normally executed with the right gripper closed. This can bridge missing visual contact only together with direction-consistent visual state change and robot interaction signal."
-      }
+      },
+      "expected_initial_state": "closed"
     },
     "dish_rack": {
       "display_name": "dish rack",
@@ -155,7 +156,8 @@
         "allow_contact_bridge": true,
         "min_signal_score": 0.12,
         "note": "Task-family onboarding prior: articulated/contact manipulation is normally executed with the right gripper closed. This can bridge missing visual contact only together with direction-consistent visual state change and robot interaction signal."
-      }
+      },
+      "expected_initial_state": "in"
     },
     "cutlery_basket": {
       "display_name": "cutlery basket",
@@ -235,7 +237,8 @@
         "allow_contact_bridge": true,
         "min_signal_score": 0.12,
         "note": "Task-family onboarding prior: articulated/contact manipulation is normally executed with the right gripper closed. This can bridge missing visual contact only together with direction-consistent visual state change and robot interaction signal."
-      }
+      },
+      "expected_initial_state": "in"
     },
     "knife": {
       "display_name": "knife",
@@ -399,7 +402,8 @@
   "notes": [
     "Task-family schema may be defined once with human assistance; per-trajectory inference remains automatic.",
     "Knife/fork distinction is retained as optional diagnostic evidence, while the preferred training label is the policy-equivalent parent class utensil.",
-    "V3.4.5 adds a schema-configured gripper interaction signature for articulated/contact manipulation; it is supporting evidence only and cannot by itself create a semantic action."
+    "V3.4.5 adds a schema-configured gripper interaction signature for articulated/contact manipulation; it is supporting evidence only and cannot by itself create a semantic action.",
+    "V3.4.6 adds optional expected initial states and a schema-level task-completion frontier so final validity is not defined by the last predicted phase."
   ],
   "manipulation_policy": {
     "max_concurrent_portable_objects": 1,
@@ -425,5 +429,13 @@
     ],
     "note": "V3.4.5 focuses at most one query per semantic inconsistency and ranks requests by semantic impact plus existing robot/interaction support. Fine identity uncertainty handled by semantic backoff does not itself trigger re-observation.",
     "min_robot_support_to_query": 0.08
+  },
+  "task_completion": {
+    "frontier_entities": [
+      "door"
+    ],
+    "frontier_policy": "first_expected_final_state_after_last_dependent_use",
+    "prune_gratuitous_post_final_cycles": true,
+    "note": "Task-family onboarding policy: the outer dishwasher door is the completion frontier. Reaching its expected final state counts as terminal only after all dependent rack/basket uses have finished. Later articulated cycles with no downstream dependent use are non-task-essential."
   }
 }

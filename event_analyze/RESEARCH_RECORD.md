@@ -5,7 +5,7 @@
 > preserve the **scientific problem -> diagnosis -> general solution -> evidence**
 > chain, and to distinguish paper-level ideas from local engineering fixes.
 >
-> Last updated: V3.4.5 (implementation complete; controlled validation pending).
+> Last updated: V3.4.6 (implementation complete; controlled validation pending).
 
 ---
 
@@ -1077,7 +1077,7 @@ Use **conservative hypothesis-level assimilation**:
 
 ### Status
 
-**Unresolved; highest-priority next reasoning problem.**
+**V3.4.6 implementation complete; controlled validation pending.**
 
 ### Contribution potential
 
@@ -1144,7 +1144,7 @@ supported lifecycle that:
 
 ### Status
 
-**Unresolved; final consistency is only partially solved.**
+**V3.4.6 implementation complete; controlled validation pending.**
 
 ### Contribution potential
 
@@ -1573,6 +1573,94 @@ Main lesson:
 
 ---
 
+## V3.4.6
+
+Purpose:
+
+**make closed-loop targeted perception conservative and make task completion
+independent of the final predictions being validated.**
+
+V3.4.6 is intentionally a controlled reasoning update on top of V3.4.5. The
+base perception, tracker, ownership resolver, skill inference, interaction
+validator, ambiguity detector, targeted VLM prompt, and boundary refiner are
+inherited from V3.4.5.
+
+Major additions:
+
+1. **conservative pass1 semantic anchors**
+   - pass1 validated skills are preserved by default;
+   - pass2 may add new skills;
+   - a pass1 skill may be deleted only when strong targeted evidence directly
+     supports the reverse transition for the same entity and overlapping time;
+   - targeted evidence for one ambiguity cannot silently erase unrelated pass1
+     structure.
+
+2. **controlled targeted-observation reuse**
+   - V3.4.5 targeted observations are reused only when ambiguity kind, target
+     entities, start frame and end frame all match exactly;
+   - otherwise V3.4.6 performs fresh targeted VLM calls;
+   - this makes the V3.4.5 -> V3.4.6 comparison as close as possible to a pure
+     reasoning ablation.
+
+3. **schema expected initial state**
+   - articulated entities may declare a one-time task-family
+     `expected_initial_state`;
+   - the dishwasher schema declares door=closed, dish_rack=in,
+     cutlery_basket=in;
+   - these are lifecycle priors, not per-trajectory labels.
+
+4. **latent prerequisite-state inference**
+   - an already accepted dependent action may prove that its schema
+     prerequisite state held at that time;
+   - e.g. an accepted rack interaction implies door=open if the schema requires
+     that accessibility state;
+   - only hidden state is updated; no missing action label is invented.
+
+5. **dependency-aware task-completion frontier**
+   - final validity no longer uses the end of the last predicted phase;
+   - the schema can declare frontier entities;
+   - for the dishwasher family, the first door transition to its expected
+     final state after all dependent rack/basket uses defines task completion;
+   - if the frontier cannot be resolved, the decoder reports it as unresolved
+     rather than deriving a self-referential horizon.
+
+6. **gratuitous lifecycle-cycle pruning**
+   - after an articulated entity reaches its expected final state following its
+     last dependent use, later cycles with no downstream task-enabling role are
+     removed;
+   - this is intended to remove patterns such as the episode23
+     `close -> open -> close` tail without hard-coding dishwasher action names.
+
+Diagnostics now retain:
+
+```text
+diagnostics/reasoning_trace.json
+diagnostics/conservative_update.json
+diagnostics/final_consistency.json
+```
+
+while full temporary pass1/pass2 artifacts are removed unless
+`KEEP_DEBUG=1`.
+
+Status:
+
+**Implemented. Controlled validation is pending.**
+
+Primary controlled questions:
+
+- does episode9 preserve its correct pass1 open-door and pull-rack skills?
+- does episode23 choose the first task-relevant terminal door close and suppress
+  the later reopen cycle?
+- does mean F1 improve over V3.4.5 without sacrificing precision?
+- how many pass1 anchors are restored versus directly contradicted?
+- how often are V3.4.5 targeted observations reusable exactly?
+- does the dependency-aware completion frontier reduce unresolved final
+  consistency?
+
+The held-out split remains unopened until these questions are answered.
+
+---
+
 # 5. Current problem status summary
 
 | Problem | Status | Current interpretation |
@@ -1594,8 +1682,8 @@ Main lesson:
 | relocated boundary may use stale robot signal | solved on current regression cases | post-anchor signal revalidation |
 | targeted perception over-queries | improved but unresolved | 48 -> 41 queries; 3/6 trajectories still hit max budget |
 | base VLM perception prompt is task-specific | partially unresolved | targeted prompt is schema-driven; broad prompt still task-specific |
-| targeted evidence can delete correct pass1 skills | unresolved | conservative hypothesis-level assimilation needed |
-| task horizon can be extended by spurious late predictions | unresolved | task-completion frontier must be independent of final predictions |
+| targeted evidence can delete correct pass1 skills | V3.4.6 implemented, pending eval | conservative pass1-anchor assimilation |
+| task horizon can be extended by spurious late predictions | V3.4.6 implemented, pending eval | dependency-aware independent completion frontier |
 | held-out / cross-task experimental evidence | unresolved | required for paper |
 
 ---
@@ -1857,26 +1945,25 @@ A concise method statement is:
 
 Priority order should be:
 
-1. **Controlled V3.4.5 validation**
-   - rerun episode26/27 regression;
-   - rerun the frozen six-trajectory validation split;
-   - compare recall gain against any precision regression;
-   - verify that targeted queries no longer saturate the per-episode ceiling.
+1. **Controlled V3.4.6 validation**
+   - run the same frozen six-trajectory validation split;
+   - compare V3.4.5 vs V3.4.6 with the same GT;
+   - verify whether targeted evidence is reused exactly or freshly queried;
+   - inspect restored anchors, contradicted anchors and pass2 additions.
 
-2. **Inspect reasoning deltas**
-   - use `diagnostics/reasoning_trace.json` to identify which queries actually
-     add/remove skills;
-   - separate useful targeted observations from merged evidence that does not
-     change the final annotation.
+2. **Development regression**
+   - rerun episode26/27 after validation behavior is understood;
+   - make sure conservative assimilation does not regress the exact episode27
+     sequence or destabilize episode26.
 
 3. **Schema-driven broad perception**
-   - remove the remaining dishwasher-specific base VLM prompt;
+   - remove the remaining dishwasher-specific broad VLM prompt;
    - derive all broad entity/state questions from the task schema.
 
 4. **Cross-task generalization**
    - freeze the dishwasher method before opening the held-out split;
    - add at least one additional task family with a new schema but the same
-     generic Python reasoning engine.
+     generic reasoning engine.
 
 ---
 

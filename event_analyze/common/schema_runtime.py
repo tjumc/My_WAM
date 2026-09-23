@@ -90,6 +90,9 @@ def container_rules(schema):
             "contact_tokens": list(cfg.get("contact_tokens", [])),
             "requires": list(cfg.get("requires", [])),
             "robot_interaction": dict(cfg.get("robot_interaction", {})),
+            "expected_initial_state": cfg.get("expected_initial_state"),
+            "expected_final_state": cfg.get("expected_final_state"),
+            "usage_state": cfg.get("usage_state"),
         }
     return out
 
@@ -197,3 +200,8 @@ def policy_skill_aliases(schema):
         if cfg.get("skill_type") and sem.get("skill_type"):
             out[cfg["skill_type"]] = sem["skill_type"]
     return out
+
+
+def task_completion_policy(schema):
+    """Return schema-level task completion/frontier policy."""
+    return dict(schema.get("task_completion", {}))

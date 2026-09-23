@@ -87,7 +87,7 @@ explicitly so the frozen manifest itself does not need to change:
 ```bash
 python evaluation/run_batch.py \
   batches/dishwasher_v1_manifest.json \
-  --version v3_4_5 \
+  --version v3_4_6 \
   --split validation
 ```
 
@@ -205,3 +205,15 @@ adding per-episode rules after inspecting individual failures.
 
 Held-out trajectories should not be inspected or used to change the method
 until the method version and evaluation protocol are frozen.
+
+
+For V3.4.6+, the batch summary also records:
+
+- pass1 anchors restored by conservative assimilation;
+- pass1 anchors removed only by direct strong contradiction;
+- pass2 additions;
+- whether the schema task-completion frontier was resolved;
+- gratuitous post-final lifecycle cycles removed by the final decoder.
+
+These statistics make it possible to separate perception-query cost from the
+actual semantic effect of closed-loop reasoning.

@@ -21,6 +21,7 @@ KEEP_FILES = [
 
 KEEP_DIAGNOSTICS = [
     "reasoning_trace.json",
+    "conservative_update.json",
     "final_consistency.json",
 ]
 
@@ -197,6 +198,19 @@ def main():
         }
 
 
+    conservative_update = None
+    conservative_path = out / "diagnostics" / "conservative_update.json"
+    if conservative_path.exists():
+        conservative_doc = load_json(conservative_path)
+        conservative_update = {
+            "pass1_count": conservative_doc.get("pass1_count"),
+            "raw_pass2_count": conservative_doc.get("raw_pass2_count"),
+            "reconciled_count": conservative_doc.get("reconciled_count"),
+            "num_restored_pass1_anchors": len(conservative_doc.get("restored_pass1_anchors", [])),
+            "num_directly_contradicted_pass1_anchors": len(conservative_doc.get("directly_contradicted_pass1_anchors", [])),
+            "num_pass2_additions": len(conservative_doc.get("pass2_additions", [])),
+        }
+
     final_consistency = None
     consistency_path = out / "diagnostics" / "final_consistency.json"
     if consistency_path.exists():
@@ -205,7 +219,9 @@ def main():
             "num_dropped": len(consistency_doc.get("dropped_phases", [])),
             "num_clamped": len(consistency_doc.get("clamped_phases", [])),
             "num_lifecycle_violations": len(consistency_doc.get("lifecycle_violations", [])),
+            "num_gratuitous_lifecycle_cycles": len(consistency_doc.get("gratuitous_lifecycle_cycles", [])),
             "num_expected_final_state_violations": len(consistency_doc.get("expected_final_state_violations", [])),
+            "frontier_resolved": (consistency_doc.get("task_completion_frontier") or {}).get("resolved"),
         }
 
     manifest = {
@@ -225,6 +241,8 @@ def main():
         "runtime_output": safe_rel(out, event_root),
         "evidence_fingerprints": evidence,
         "closed_loop_perception": closed_loop,
+        "conservative_assimilation": conservative_update,
+        "task_completion_frontier": ann.get("task_completion_frontier"),
         "final_consistency": final_consistency,
         "exported_files": copied,
         "storage_policy": {
@@ -233,7 +251,7 @@ def main():
                 "evaluation report when available",
                 "summary",
                 "manifest",
-                "compact reasoning/final-consistency diagnostics",
+                "compact reasoning/conservative-update/final-consistency diagnostics",
             ],
             "local_only": [
                 "contact sheets",

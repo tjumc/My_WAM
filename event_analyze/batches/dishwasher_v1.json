@@ -2,7 +2,7 @@
   "batch_name": "dishwasher_v1",
   "task_family": "dishwasher_loading",
   "task": "put the dish into the dishwasher",
-  "version": "v3_4_5",
+  "version": "v3_4_6",
   "schema": "ontologies/dishwasher_loading.json",
   "hdf5_root": "/efs/share/1919650160032350208/efs_backup/nas-backup/compressed_data/astribot/dishwasher_2_fx_20260529_compressed",
   "glob": "*.hdf5",

@@ -203,6 +203,8 @@ def main():
         temporal = flatten_temporal(eval_doc)
         closed = (compact_manifest or {}).get("closed_loop_perception") or {}
         consistency = (compact_manifest or {}).get("final_consistency") or {}
+        conservative = (compact_manifest or {}).get("conservative_assimilation") or {}
+        frontier = (compact_manifest or {}).get("task_completion_frontier") or {}
 
         row = {
             "episode_id": ep["episode_id"],
@@ -219,9 +221,15 @@ def main():
             "num_targeted_queries": closed.get("num_targeted_queries"),
             "num_merged_targeted_observations": closed.get("num_merged_targeted_observations"),
             "ambiguity_kinds": closed.get("ambiguity_kinds"),
+            "conservative_restored_pass1_anchors": conservative.get("num_restored_pass1_anchors"),
+            "conservative_contradicted_pass1_anchors": conservative.get("num_directly_contradicted_pass1_anchors"),
+            "conservative_pass2_additions": conservative.get("num_pass2_additions"),
+            "task_frontier_resolved": frontier.get("resolved"),
+            "task_frontier_end_raw_frame": frontier.get("task_end_raw_frame"),
             "consistency_num_dropped": consistency.get("num_dropped"),
             "consistency_num_clamped": consistency.get("num_clamped"),
             "consistency_lifecycle_violations": consistency.get("num_lifecycle_violations"),
+            "consistency_gratuitous_lifecycle_cycles": consistency.get("num_gratuitous_lifecycle_cycles"),
             "consistency_expected_final_state_violations": consistency.get("num_expected_final_state_violations"),
             "consistency_status": consistency.get("status"),
             "result_git_commit": (compact_manifest or {}).get("git_commit_at_export"),
@@ -302,6 +310,17 @@ def main():
                 x.get("num_targeted_queries") for x in rows
             ]),
         },
+        "conservative_assimilation": {
+            "total_restored_pass1_anchors": sum(
+                int(x.get("conservative_restored_pass1_anchors") or 0) for x in rows
+            ),
+            "total_directly_contradicted_pass1_anchors": sum(
+                int(x.get("conservative_contradicted_pass1_anchors") or 0) for x in rows
+            ),
+            "total_pass2_additions": sum(
+                int(x.get("conservative_pass2_additions") or 0) for x in rows
+            ),
+        },
         "final_consistency": {
             "total_dropped_phases": sum(
                 int(x.get("consistency_num_dropped") or 0) for x in rows
@@ -312,8 +331,14 @@ def main():
             "total_lifecycle_violations": sum(
                 int(x.get("consistency_lifecycle_violations") or 0) for x in rows
             ),
+            "total_gratuitous_lifecycle_cycles": sum(
+                int(x.get("consistency_gratuitous_lifecycle_cycles") or 0) for x in rows
+            ),
             "total_expected_final_state_violations": sum(
                 int(x.get("consistency_expected_final_state_violations") or 0) for x in rows
+            ),
+            "num_frontier_resolved_episodes": sum(
+                bool(x.get("task_frontier_resolved")) for x in rows
             ),
             "num_unresolved_episodes": sum(
                 x.get("consistency_status") == "unresolved" for x in rows

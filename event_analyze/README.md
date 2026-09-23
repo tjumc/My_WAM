@@ -27,13 +27,14 @@ event_analyze/
 │   ├── v3_4_2/
 │   ├── v3_4_3/
 │   ├── v3_4_4/
-│   └── v3_4_5/      # current active: selective re-observation + global consistency
+│   ├── v3_4_5/
+│   └── v3_4_6/      # current active: conservative closed-loop reasoning
 ```
 
-当前推荐运行 V3.4.5：
+当前推荐运行 V3.4.6：
 
 ```bash
-bash versions/v3_4_5/run.sh \
+bash versions/v3_4_6/run.sh \
   /path/to/episode.hdf5 \
   output/dishwasher_2_fx_20260529_episode_27_analysis \
   "put the dish into the dishwasher" \
@@ -41,7 +42,7 @@ bash versions/v3_4_5/run.sh \
   1645
 ```
 
-V3.4.5 建立在 V3.4.4 的闭环主动复查之上，针对冻结 validation 暴露出的低 recall、每条轨迹打满 targeted-query budget、以及 final annotation 内部不一致问题做统一修复：ambiguity request 按语义影响和已有机器人证据排序，同一语义问题只保留一个聚焦窗口；schema 可声明 gripper/contact interaction signature，只有与方向一致视觉状态变化和机器人交互信号共同成立时才可桥接缺失 visual contact；boundary refinement 后增加 global final-consistency gate。旧的 cutlery-specific dense pass 仍默认关闭。
+V3.4.6 建立在 V3.4.5 的 selective targeted perception 之上，重点解决 validation 暴露出的两个结构问题：targeted evidence 不应无意删除已经可靠的 pass1 skill；task horizon 不能由最后一个预测 phase 自我定义。V3.4.6 因此加入 conservative pass1 anchor assimilation、schema expected initial state、dependency-supported latent prerequisite state，以及独立 task-completion frontier / gratuitous lifecycle-cycle pruning。旧的 cutlery-specific dense pass 仍默认关闭。
 
 泛化边界与未来 task-agnostic 设计见 `GENERALIZATION.md`。截至当前版本的问题演化、已解决问题、未解决问题与论文贡献候选统一记录在 `RESEARCH_RECORD.md`。
 
@@ -68,7 +69,7 @@ episode26 目前只有人工确认的 sequence-only provisional GT；episode27 �
 python evaluation/regression_matrix.py
 ```
 
-默认比较 `v3_3_1,v3_3_2,v3_3_3,v3_4_0,v3_4_1,v3_4_2,v3_4_3,v3_4_4` 在 episode26/27 上的 sequence Precision/Recall/F1、LCS/Edit Distance。
+默认比较到 `v3_4_6` 为止的版本，在 episode26/27 上检查 sequence Precision/Recall/F1、LCS/Edit Distance。
 
 
 ## 实验文件保存规范
@@ -90,7 +91,7 @@ results/<episode>/<version>/
 
 ```bash
 GT=regression/dishwasher_episode27_manual_gt.json \
-bash versions/v3_4_5/run.sh ...
+bash versions/v3_4_6/run.sh ...
 ```
 
 后续版本保持 `GT` 不变，这样同一条实验命令只需要替换版本目录即可。
@@ -160,20 +161,21 @@ V3.4.4+ 的 ambiguity / targeted-query / merged-observation 成本。
 完整说明见 `batches/README.md`。
 
 
-## V3.4.5 runtime artifact layout
+## V3.4.6 runtime artifact layout
 
-V3.4.5 默认在成功导出后收敛本地运行目录：
+V3.4.6 默认在成功导出后收敛本地运行目录：
 
 ```text
-versions/v3_4_5/
+versions/v3_4_6/
 ├── hierarchical_annotations.json
 ├── evaluation_temporal.json   # only with frame-level GT
 ├── diagnostics/
 │   ├── reasoning_trace.json
+│   ├── conservative_update.json
 │   └── final_consistency.json
 └── cache/
     └── reproducible perception/proposal artifacts
 ```
 
 完整中间 tracker / ownership / validation 文件仅在 `KEEP_DEBUG=1` 时长期保留。
-这属于工程存储优化，不作为论文贡献。详见 `versions/v3_4_5/README.md`。
+这属于工程存储优化，不作为论文贡献。详见 `versions/v3_4_6/README.md`。

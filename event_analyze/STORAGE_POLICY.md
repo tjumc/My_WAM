@@ -13,8 +13,8 @@ results**. Large or reproducible runtime caches should remain outside Git.
 - `evaluation_temporal.json` when available;
 - compact `summary.json`;
 - reproducibility `manifest.json`;
-- compact V3.4.5+ diagnostics such as `reasoning_trace.json` and
-  `final_consistency.json`.
+- compact V3.4.5+ diagnostics such as `reasoning_trace.json`,
+  `conservative_update.json` (V3.4.6+), and `final_consistency.json`.
 
 ## Local-only runtime cache
 
@@ -74,10 +74,13 @@ results/<episode>/<version>/
 ├── manifest.json
 └── diagnostics/               # V3.4.5+, when available
     ├── reasoning_trace.json
+    ├── conservative_update.json   # V3.4.6+
     └── final_consistency.json
 ```
 
 The manifest fingerprints important evidence and records closed-loop query
-statistics. V3.4.5 additionally compacts the completed local runtime directory:
-reusable perception/proposal artifacts move under `cache/`, while pure
-intermediate reasoning snapshots are removed unless `KEEP_DEBUG=1`.
+statistics. V3.4.5+ compacts the completed local runtime directory: reusable
+perception/proposal artifacts move under `cache/`, while pure intermediate
+reasoning snapshots are removed unless `KEEP_DEBUG=1`. V3.4.6 keeps only the
+compact conservative-assimilation delta instead of permanent full pass1/pass2
+copies.

@@ -77,3 +77,25 @@ as supporting evidence. Missing visual hand contact may be bridged only when:
 3. robot interaction signal is sufficiently strong.
 
 A gripper state by itself cannot create a semantic action.
+
+
+## Conservative lifecycle and task completion
+
+V3.4.6 adds two optional task-family declarations:
+
+- `expected_initial_state`: a task-onboarding prior for articulated lifecycle
+  initialization. It is not per-trajectory GT and does not insert missing
+  actions.
+- `task_completion`: a schema-level policy for identifying a terminal
+  completion frontier independently of the last predicted phase.
+
+The final decoder may also infer a latent prerequisite state from an already
+accepted downstream action. For example, if an accepted rack interaction
+requires `door=open`, the hidden door state may be updated to `open` even if
+the explicit open-door phase was missed. The missing action label is not
+fabricated.
+
+The dishwasher schema uses the outer door as its completion frontier: the first
+transition to the expected final door state after all dependent rack/basket uses
+is terminal. Later articulated cycles with no downstream task-enabling role are
+removed as gratuitous lifecycle cycles.
