@@ -1,0 +1,75 @@
+{
+  "annotation_version": "v3.4.4",
+  "episode": "dishwasher_2_fx_20260529_episode_7",
+  "task_goal": "put the dish into the dishwasher",
+  "task_family": "dishwasher_loading",
+  "phase_count": 7,
+  "skill_sequence": [
+    "navigate_to_station",
+    "open_dishwasher_door",
+    "pull_out_dish_rack",
+    "pull_out_cutlery_basket",
+    "place_utensil_in_cutlery_basket",
+    "place_plate_in_dish_rack",
+    "push_in_dish_rack"
+  ],
+  "task_end_raw_frame": 1623,
+  "phases": [
+    {
+      "skill_type": "navigate_to_station",
+      "raw_start_frame": 8,
+      "raw_end_frame": 157,
+      "provisional_start_frame": 27,
+      "provisional_end_frame": 149,
+      "confidence": 0.95
+    },
+    {
+      "skill_type": "open_dishwasher_door",
+      "raw_start_frame": 158,
+      "raw_end_frame": 180,
+      "provisional_start_frame": 158,
+      "provisional_end_frame": 180,
+      "confidence": 0.95
+    },
+    {
+      "skill_type": "pull_out_dish_rack",
+      "raw_start_frame": 333,
+      "raw_end_frame": 339,
+      "provisional_start_frame": 335,
+      "provisional_end_frame": 336,
+      "confidence": 0.426
+    },
+    {
+      "skill_type": "pull_out_cutlery_basket",
+      "raw_start_frame": 897,
+      "raw_end_frame": 936,
+      "provisional_start_frame": 916,
+      "provisional_end_frame": 917,
+      "confidence": 0.9
+    },
+    {
+      "skill_type": "place_utensil_in_cutlery_basket",
+      "raw_start_frame": 1002,
+      "raw_end_frame": 1175,
+      "provisional_start_frame": 1014,
+      "provisional_end_frame": 1176,
+      "confidence": 0.406
+    },
+    {
+      "skill_type": "place_plate_in_dish_rack",
+      "raw_start_frame": 1176,
+      "raw_end_frame": 1605,
+      "provisional_start_frame": 1176,
+      "provisional_end_frame": 1642,
+      "confidence": 0.95
+    },
+    {
+      "skill_type": "push_in_dish_rack",
+      "raw_start_frame": 1606,
+      "raw_end_frame": 1623,
+      "provisional_start_frame": 1614,
+      "provisional_end_frame": 1615,
+      "confidence": 0.9
+    }
+  ]
+}

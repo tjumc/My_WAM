@@ -1,0 +1,97 @@
+{
+  "format_version": 1,
+  "generated_utc": "2026-09-23T03:25:12.149699+00:00",
+  "episode": "dishwasher_2_fx_20260529_episode_9",
+  "version": "v3_4_4",
+  "task": "put the dish into the dishwasher",
+  "task_family": "dishwasher_loading",
+  "git_commit_at_export": "45f20f580dd76510ac6e30433d2c614879a54650",
+  "input": {
+    "hdf5_basename": "dishwasher_2_fx_20260529_episode_9.hdf5",
+    "hdf5_bytes": 373578376,
+    "schema": "ontologies/dishwasher_loading.json",
+    "schema_sha256": "a9d3b48a57d13313515787f2d4dc9be9fb2c3952a4274aff088f2ff00e80cebe"
+  },
+  "runtime_output": "output/dishwasher_2_fx_20260529_episode_9_analysis/versions/v3_4_4",
+  "evidence_fingerprints": {
+    "entity_observations_base.jsonl": {
+      "sha256": "4a084021cad40af4f45ba086e954bf837e043af5e3e64055b74e7ca919eaf06e",
+      "bytes": 52181
+    },
+    "tracked_entity_states.json": {
+      "sha256": "ed7bb06fe46f2b03d3912b27f97d1770456085041e9bdb10781f049cf5ae25f4",
+      "bytes": 82022
+    },
+    "tracked_entity_states_owned.json": {
+      "sha256": "19d46ec76b897f3436a333aa1d8d2b7d5e2abb8cdea430893c1c2455b2349a17",
+      "bytes": 85530
+    },
+    "hand_object_ownership.json": {
+      "sha256": "ad49dfec194b65bc1591ccca7a94276cc26ec4d37f28ea5e1a20e831f601c047",
+      "bytes": 12509
+    },
+    "ambiguity_requests.json": {
+      "sha256": "46e4351fe05f25fd03e2854eb168665459da86be1afabd4d9aac292a5ce66e6e",
+      "bytes": 5007
+    },
+    "targeted_observations.jsonl": {
+      "sha256": "b1b9bfcd8e5b3646c11fd84b9cf9f4a6cb3668cf1c0dba18f57854fcbc5c4a22",
+      "bytes": 13471
+    },
+    "tracked_entity_states_pass1.json": {
+      "sha256": "d1487d3f475b12c736092fad8dd989f4b7c45f3fd8a0986e757df78d0131c53d",
+      "bytes": 76276
+    },
+    "hand_object_ownership_pass1.json": {
+      "sha256": "d0e782d801734dc27408f7dc746871a102fe5730d6177abbcd7fb1fc12c1235c",
+      "bytes": 10541
+    },
+    "skill_candidates_validated_pass1.json": {
+      "sha256": "391d95b882ed90e1f702b06e84146f69f95a1b4c697a5c756571d9b02538eca0",
+      "bytes": 10633
+    },
+    "interaction_validation_report_pass1.json": {
+      "sha256": "867237f03de7de2983f03907ca3cd329602efba64f30faf3678a128c13d9ed2f",
+      "bytes": 16533
+    },
+    "skill_candidates_validated.json": {
+      "sha256": "6a77d2b1310763e5bbe4a3b9bc9032d26902c18beb6dd2872f878fb11a823c84",
+      "bytes": 12219
+    }
+  },
+  "closed_loop_perception": {
+    "num_ambiguity_requests": 8,
+    "num_targeted_queries": 8,
+    "num_merged_targeted_observations": 7,
+    "ambiguity_kinds": [
+      "receptacle_usage_without_ready_lifecycle",
+      "unfinished_lifecycle"
+    ]
+  },
+  "exported_files": {
+    "hierarchical_annotations.json": {
+      "sha256": "dfb2b8849e1eb2aa88ff6d0baed5d8fbf1c5bcbaf049ef681a65ff92e14239a9",
+      "bytes": 15756
+    },
+    "summary.json": {
+      "sha256": "45a4b2111c8b1cbd508eeb92e69890b4f0b589c2dcd464dd9c1ae1dc90d3bbb5",
+      "bytes": 2026
+    }
+  },
+  "storage_policy": {
+    "git_keeps": [
+      "final annotations",
+      "evaluation report when available",
+      "summary",
+      "manifest"
+    ],
+    "local_only": [
+      "contact sheets",
+      "dense temporal strips",
+      "overview images",
+      "raw VLM responses",
+      "proposal visualizations",
+      "other reproducible runtime caches"
+    ]
+  }
+}

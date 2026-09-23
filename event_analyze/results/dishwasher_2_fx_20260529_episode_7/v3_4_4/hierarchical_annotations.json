@@ -1,0 +1,607 @@
+{
+  "annotation_version": "v3.4.4",
+  "task_goal": "put the dish into the dishwasher",
+  "trajectory_instruction": "移动到桌面/洗碗机前；右手打开洗碗机门；右手拉出碗篮；右手拉出餐具篮；右手夹取餐具并放入餐具篮；右手夹取盘子并放入碗篮；右手推入碗篮",
+  "task_end_raw_frame": 1623,
+  "lerobot_episode_index": null,
+  "semantic_phases": [
+    {
+      "skill_id": 0,
+      "skill_type": "navigate_to_station",
+      "instruction_zh": "移动到桌面/洗碗机前",
+      "instruction_en": "Move to the table/dishwasher station",
+      "entity": "robot_base",
+      "active_arm": "none",
+      "provisional_start_frame": 27,
+      "provisional_end_frame": 149,
+      "evidence_event_ids": [],
+      "confidence": 0.95,
+      "state_transition": {
+        "base_motion": true
+      },
+      "inference_mode": "hdf5_base_motion",
+      "source": "trajectory_level_entity_state_machine",
+      "source_skill_id": 0,
+      "validation": {
+        "signal": {
+          "window": [
+            7,
+            169
+          ],
+          "motion_fraction": 0.135,
+          "force_change_support": 0.571,
+          "gripper_change_support": 0.0,
+          "score": 0.217
+        },
+        "reasons": [
+          "hdf5_base_motion"
+        ],
+        "interaction_evidence": null
+      },
+      "raw_start_frame": 8,
+      "raw_end_frame": 157,
+      "lerobot_episode_index": null,
+      "lerobot_start_frame": 8,
+      "lerobot_end_frame": 157,
+      "boundary_arbitration": [
+        {
+          "mode": "semantic_gap_valley",
+          "cut_frame": 157,
+          "duration_conflict": false,
+          "left_min_duration_frames": 30,
+          "right_min_duration_frames": 21,
+          "left_original_raw_span": [
+            8,
+            168
+          ],
+          "right_original_raw_span": [
+            158,
+            180
+          ],
+          "left_provisional_end": 149,
+          "right_provisional_start": 158,
+          "role": "left"
+        }
+      ]
+    },
+    {
+      "skill_id": 1,
+      "skill_type": "open_dishwasher_door",
+      "instruction_zh": "右手打开洗碗机门",
+      "instruction_en": "Open the dishwasher door with the right hand",
+      "entity": "door",
+      "active_arm": "right",
+      "provisional_start_frame": 158,
+      "provisional_end_frame": 180,
+      "evidence_event_ids": [
+        0,
+        1,
+        2,
+        3,
+        20000
+      ],
+      "confidence": 0.95,
+      "state_transition": {
+        "before": "closed",
+        "after": "open"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine",
+      "source_skill_id": 1,
+      "validation": {
+        "signal": {
+          "window": [
+            138,
+            200
+          ],
+          "motion_fraction": 0.587,
+          "force_change_support": 1.0,
+          "gripper_change_support": 0.0,
+          "score": 0.573
+        },
+        "reasons": [
+          "entity_contact_plus_robot_signal",
+          "direction_consistent_visual_transition"
+        ],
+        "interaction_evidence": {
+          "nearby_event_ids": [
+            0,
+            1,
+            2,
+            3,
+            20000
+          ],
+          "contact_event_ids": [
+            2,
+            20000
+          ],
+          "directed_contact_event_ids": [
+            2,
+            20000
+          ],
+          "contact_count": 2,
+          "directed_count": 2,
+          "dense_directional_contact_count": 0,
+          "nearest_contact_frame": 200
+        }
+      },
+      "raw_start_frame": 158,
+      "raw_end_frame": 180,
+      "lerobot_episode_index": null,
+      "lerobot_start_frame": 158,
+      "lerobot_end_frame": 180,
+      "boundary_arbitration": [
+        {
+          "mode": "semantic_gap_valley",
+          "cut_frame": 157,
+          "duration_conflict": false,
+          "left_min_duration_frames": 30,
+          "right_min_duration_frames": 21,
+          "left_original_raw_span": [
+            8,
+            168
+          ],
+          "right_original_raw_span": [
+            158,
+            180
+          ],
+          "left_provisional_end": 149,
+          "right_provisional_start": 158,
+          "role": "right"
+        }
+      ]
+    },
+    {
+      "skill_id": 2,
+      "skill_type": "pull_out_dish_rack",
+      "instruction_zh": "右手拉出碗篮",
+      "instruction_en": "Pull out the dish rack with the right hand",
+      "entity": "dish_rack",
+      "active_arm": "right",
+      "provisional_start_frame": 335,
+      "provisional_end_frame": 336,
+      "evidence_event_ids": [
+        3,
+        4,
+        5,
+        20004
+      ],
+      "confidence": 0.426,
+      "state_transition": {
+        "before": "in",
+        "after": "out"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine",
+      "interaction_anchor_adjusted": true,
+      "interaction_anchor_source_span": [
+        376,
+        376
+      ],
+      "source_skill_id": 2,
+      "validation": {
+        "signal": {
+          "window": [
+            315,
+            356
+          ],
+          "motion_fraction": 0.881,
+          "force_change_support": 0.857,
+          "gripper_change_support": 0.0,
+          "score": 0.699
+        },
+        "reasons": [
+          "entity_contact_plus_robot_signal",
+          "robot_signal_revalidated_after_contact_anchor"
+        ],
+        "interaction_evidence": {
+          "nearby_event_ids": [
+            4,
+            5,
+            6,
+            20001,
+            20002,
+            20003,
+            20004
+          ],
+          "contact_event_ids": [
+            4,
+            6,
+            20004
+          ],
+          "directed_contact_event_ids": [],
+          "contact_count": 3,
+          "directed_count": 0,
+          "dense_directional_contact_count": 0,
+          "nearest_contact_frame": 335
+        }
+      },
+      "raw_start_frame": 333,
+      "raw_end_frame": 339,
+      "lerobot_episode_index": null,
+      "lerobot_start_frame": 333,
+      "lerobot_end_frame": 339
+    },
+    {
+      "skill_id": 3,
+      "skill_type": "pull_out_cutlery_basket",
+      "instruction_zh": "右手拉出餐具篮",
+      "instruction_en": "Pull out the cutlery basket with the right hand",
+      "entity": "cutlery_basket",
+      "active_arm": "right",
+      "provisional_start_frame": 916,
+      "provisional_end_frame": 917,
+      "evidence_event_ids": [
+        20006,
+        20007
+      ],
+      "confidence": 0.9,
+      "state_transition": {
+        "before": "in",
+        "after": "out"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine",
+      "interaction_anchor_adjusted": true,
+      "interaction_anchor_source_span": [
+        1033,
+        1033
+      ],
+      "source_skill_id": 12,
+      "validation": {
+        "signal": {
+          "window": [
+            896,
+            937
+          ],
+          "motion_fraction": 0.548,
+          "force_change_support": 0.917,
+          "gripper_change_support": 1.0,
+          "score": 0.73
+        },
+        "reasons": [
+          "entity_contact_plus_robot_signal",
+          "robot_signal_revalidated_after_contact_anchor"
+        ],
+        "interaction_evidence": {
+          "nearby_event_ids": [
+            10,
+            11,
+            20006,
+            20007
+          ],
+          "contact_event_ids": [
+            20006
+          ],
+          "directed_contact_event_ids": [],
+          "contact_count": 1,
+          "directed_count": 0,
+          "dense_directional_contact_count": 0,
+          "nearest_contact_frame": 916
+        }
+      },
+      "raw_start_frame": 897,
+      "raw_end_frame": 936,
+      "lerobot_episode_index": null,
+      "lerobot_start_frame": 897,
+      "lerobot_end_frame": 936
+    },
+    {
+      "skill_id": 4,
+      "skill_type": "place_utensil_in_cutlery_basket",
+      "instruction_zh": "右手夹取餐具并放入餐具篮",
+      "instruction_en": "Pick up the utensil and place it in the cutlery basket with the right hand",
+      "entity": "utensil",
+      "active_arm": "right",
+      "provisional_start_frame": 1014,
+      "provisional_end_frame": 1176,
+      "evidence_event_ids": [
+        1,
+        2,
+        3,
+        5,
+        8,
+        9,
+        11
+      ],
+      "confidence": 0.406,
+      "state_transition": {
+        "before": "tabletop",
+        "held": "right_hand",
+        "after": "cutlery_basket",
+        "target_support": "interpolated",
+        "target_evidence_frame": 1176,
+        "ownership_context_end_frame": null,
+        "retry_collapsed": false,
+        "completion_rule": "target_without_regrasp_before_object_context_switch"
+      },
+      "inference_mode": "completion_aware_object_episode_with_affordance_completion",
+      "source": "trajectory_level_entity_state_machine",
+      "fine_skill_type": "place_fork_in_cutlery_basket",
+      "fine_entity": "fork",
+      "semantic_backoff": {
+        "from_skill_type": "place_fork_in_cutlery_basket",
+        "from_entity": "fork",
+        "to_skill_type": "place_utensil_in_cutlery_basket",
+        "to_entity": "utensil",
+        "reason": "schema_policy_equivalent_parent_training_label"
+      },
+      "source_skill_id": 11,
+      "validation": {
+        "signal": {
+          "window": [
+            994,
+            1196
+          ],
+          "motion_fraction": 0.3,
+          "force_change_support": 0.558,
+          "gripper_change_support": 1.0,
+          "score": 0.505
+        },
+        "reasons": [
+          "observed_held_state"
+        ],
+        "interaction_evidence": null
+      },
+      "raw_start_frame": 1002,
+      "raw_end_frame": 1175,
+      "lerobot_episode_index": null,
+      "lerobot_start_frame": 1002,
+      "lerobot_end_frame": 1175,
+      "boundary_arbitration": [
+        {
+          "mode": "touching_semantic_boundary",
+          "cut_frame": 1175,
+          "duration_conflict": false,
+          "left_min_duration_frames": 24,
+          "right_min_duration_frames": 24,
+          "left_original_raw_span": [
+            1002,
+            1184
+          ],
+          "right_original_raw_span": [
+            1158,
+            1605
+          ],
+          "left_provisional_end": 1176,
+          "right_provisional_start": 1176,
+          "role": "left"
+        }
+      ]
+    },
+    {
+      "skill_id": 5,
+      "skill_type": "place_plate_in_dish_rack",
+      "instruction_zh": "右手夹取盘子并放入碗篮",
+      "instruction_en": "Pick up the plate and place it in the dish rack with the right hand",
+      "entity": "plate",
+      "active_arm": "right",
+      "provisional_start_frame": 1176,
+      "provisional_end_frame": 1642,
+      "evidence_event_ids": [
+        8,
+        9,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        19,
+        20
+      ],
+      "confidence": 0.95,
+      "state_transition": {
+        "before": "tabletop",
+        "held": "right_hand",
+        "after": "dish_rack",
+        "target_support": "observed",
+        "target_evidence_frame": 1642,
+        "ownership_context_end_frame": null,
+        "retry_collapsed": true,
+        "completion_rule": "target_without_regrasp_before_object_context_switch"
+      },
+      "inference_mode": "completion_aware_object_episode",
+      "source": "trajectory_level_entity_state_machine",
+      "retry_collapsed": true,
+      "completion_aware_merge": true,
+      "source_skill_id": 15,
+      "validation": {
+        "signal": {
+          "window": [
+            1156,
+            1662
+          ],
+          "motion_fraction": 0.505,
+          "force_change_support": 0.673,
+          "gripper_change_support": 1.0,
+          "score": 0.646
+        },
+        "reasons": [
+          "observed_held_state"
+        ],
+        "interaction_evidence": null
+      },
+      "raw_start_frame": 1176,
+      "raw_end_frame": 1605,
+      "lerobot_episode_index": null,
+      "lerobot_start_frame": 1176,
+      "lerobot_end_frame": 1605,
+      "boundary_arbitration": [
+        {
+          "mode": "overlapping_semantic_intervals_duration_clamped",
+          "cut_frame": 1605,
+          "duration_conflict": false,
+          "left_min_duration_frames": 24,
+          "right_min_duration_frames": 18,
+          "left_original_raw_span": [
+            1158,
+            1644
+          ],
+          "right_original_raw_span": [
+            1599,
+            1623
+          ],
+          "left_provisional_end": 1642,
+          "right_provisional_start": 1614,
+          "role": "left"
+        },
+        {
+          "mode": "touching_semantic_boundary",
+          "cut_frame": 1175,
+          "duration_conflict": false,
+          "left_min_duration_frames": 24,
+          "right_min_duration_frames": 24,
+          "left_original_raw_span": [
+            1002,
+            1184
+          ],
+          "right_original_raw_span": [
+            1158,
+            1605
+          ],
+          "left_provisional_end": 1176,
+          "right_provisional_start": 1176,
+          "role": "right"
+        }
+      ]
+    },
+    {
+      "skill_id": 6,
+      "skill_type": "push_in_dish_rack",
+      "instruction_zh": "右手推入碗篮",
+      "instruction_en": "Push in the dish rack with the right hand",
+      "entity": "dish_rack",
+      "active_arm": "right",
+      "provisional_start_frame": 1614,
+      "provisional_end_frame": 1615,
+      "evidence_event_ids": [
+        15,
+        16
+      ],
+      "confidence": 0.9,
+      "state_transition": {
+        "before": "out",
+        "after": "in"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine",
+      "interaction_anchor_adjusted": true,
+      "interaction_anchor_source_span": [
+        1642,
+        1642
+      ],
+      "source_skill_id": 20,
+      "validation": {
+        "signal": {
+          "window": [
+            1594,
+            1635
+          ],
+          "motion_fraction": 0.357,
+          "force_change_support": 0.633,
+          "gripper_change_support": 1.0,
+          "score": 0.555
+        },
+        "reasons": [
+          "entity_contact_plus_robot_signal",
+          "robot_signal_revalidated_after_contact_anchor",
+          "direction_consistent_visual_transition"
+        ],
+        "interaction_evidence": {
+          "nearby_event_ids": [
+            15,
+            16,
+            17
+          ],
+          "contact_event_ids": [
+            16,
+            17
+          ],
+          "directed_contact_event_ids": [
+            17
+          ],
+          "contact_count": 2,
+          "directed_count": 1,
+          "dense_directional_contact_count": 0,
+          "nearest_contact_frame": 1614
+        }
+      },
+      "raw_start_frame": 1606,
+      "raw_end_frame": 1623,
+      "lerobot_episode_index": null,
+      "lerobot_start_frame": 1606,
+      "lerobot_end_frame": 1623,
+      "boundary_arbitration": [
+        {
+          "mode": "overlapping_semantic_intervals_duration_clamped",
+          "cut_frame": 1605,
+          "duration_conflict": false,
+          "left_min_duration_frames": 24,
+          "right_min_duration_frames": 18,
+          "left_original_raw_span": [
+            1158,
+            1644
+          ],
+          "right_original_raw_span": [
+            1599,
+            1623
+          ],
+          "left_provisional_end": 1642,
+          "right_provisional_start": 1614,
+          "role": "right"
+        }
+      ]
+    }
+  ],
+  "coarse_only_segments": [
+    {
+      "raw_start_frame": 0,
+      "raw_end_frame": 7,
+      "label_policy": "coarse_task_only",
+      "lerobot_episode_index": null,
+      "lerobot_start_frame": 0,
+      "lerobot_end_frame": 7
+    },
+    {
+      "raw_start_frame": 181,
+      "raw_end_frame": 332,
+      "label_policy": "coarse_task_only",
+      "lerobot_episode_index": null,
+      "lerobot_start_frame": 181,
+      "lerobot_end_frame": 332
+    },
+    {
+      "raw_start_frame": 340,
+      "raw_end_frame": 896,
+      "label_policy": "coarse_task_only",
+      "lerobot_episode_index": null,
+      "lerobot_start_frame": 340,
+      "lerobot_end_frame": 896
+    },
+    {
+      "raw_start_frame": 937,
+      "raw_end_frame": 1001,
+      "label_policy": "coarse_task_only",
+      "lerobot_episode_index": null,
+      "lerobot_start_frame": 937,
+      "lerobot_end_frame": 1001
+    },
+    {
+      "raw_start_frame": 1624,
+      "raw_end_frame": 2144,
+      "label_policy": "coarse_task_only",
+      "lerobot_episode_index": null,
+      "lerobot_start_frame": 1624,
+      "lerobot_end_frame": 2144
+    }
+  ],
+  "notes": [
+    "V3.4.4 phases use interaction-validated trajectory-level entity-state-machine skills, not LLM-generated phases.",
+    "Entity uncertainty produces coarse-only gaps instead of forced fine labels.",
+    "Numerical boundaries are refined with HDF5 activity signals and skill-specific duration priors.",
+    "Overlap arbitration runs right-to-left and preserves minimum phase duration whenever feasible.",
+    "Upstream provisional intervals are treated as semantic ownership priors rather than being overwritten by an unconstrained activity valley."
+  ]
+}
