@@ -1,0 +1,48 @@
+{
+  "batch_name": "dishwasher_v1",
+  "dataset_fingerprint": "84c2a1b5952e6d8e39a35172062aa2b263ec5e9b06688048308ebafa21b559b0",
+  "version": "v3_4_7_dense_ablation",
+  "split": "development",
+  "aggregate": {
+    "num_episodes": 2,
+    "num_results": 2,
+    "num_with_gt": 2,
+    "policy_sequence": {
+      "mean_precision": 1.0,
+      "mean_recall": 0.45,
+      "mean_f1": 0.6190476190476191,
+      "mean_edit_distance": 5.5,
+      "exact_rate": 0.0
+    },
+    "temporal": {
+      "semantic_miou": 0.6735778879034457,
+      "semantic_boundary_mae_sec": 1.5041666666666667,
+      "semantic_boundary_f1_1s": 0.28571428571428575,
+      "semantic_boundary_f1_2s": 0.4999999999999999,
+      "core_miou": 0.6902073043679581,
+      "core_boundary_mae_sec": 1.4416666666666667
+    },
+    "closed_loop_perception": {
+      "total_ambiguity_requests": 14,
+      "total_targeted_queries": 14,
+      "total_merged_targeted_observations": 11,
+      "mean_targeted_queries_per_episode": 7.0
+    },
+    "conservative_assimilation": {
+      "total_restored_pass1_anchors": 0,
+      "total_directly_contradicted_pass1_anchors": 0,
+      "total_pass2_additions": 1
+    },
+    "final_consistency": {
+      "total_dropped_phases": 1,
+      "total_clamped_phases": 0,
+      "total_lifecycle_violations": 0,
+      "total_latent_state_inferences": 4,
+      "total_latent_usage_state_inferences": 2,
+      "total_gratuitous_lifecycle_cycles": 0,
+      "total_expected_final_state_violations": 6,
+      "num_frontier_resolved_episodes": 0,
+      "num_unresolved_episodes": 2
+    }
+  }
+}

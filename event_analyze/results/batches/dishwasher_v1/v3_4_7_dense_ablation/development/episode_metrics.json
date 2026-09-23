@@ -1,0 +1,108 @@
+{
+  "rows": [
+    {
+      "episode_id": 26,
+      "episode": "dishwasher_2_fx_20260529_episode_26",
+      "split": "development",
+      "run_status": "success",
+      "result_available": true,
+      "phase_count": 5,
+      "skill_sequence": [
+        "navigate_to_station",
+        "pull_out_dish_rack",
+        "pull_out_cutlery_basket",
+        "place_utensil_in_cutlery_basket",
+        "place_plate_in_dish_rack"
+      ],
+      "gt_available": true,
+      "policy_sequence": {
+        "pred_n": 5,
+        "gt_n": 10,
+        "matched": 5,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "edit_distance": 5,
+        "exact": false
+      },
+      "num_ambiguity_requests": 7,
+      "num_targeted_queries": 7,
+      "num_merged_targeted_observations": 5,
+      "ambiguity_kinds": [
+        "accessibility_prerequisite_missing",
+        "receptacle_usage_without_ready_lifecycle",
+        "rejected_visual_evidence",
+        "unfinished_lifecycle"
+      ],
+      "conservative_restored_pass1_anchors": 0,
+      "conservative_contradicted_pass1_anchors": 0,
+      "conservative_pass2_additions": 1,
+      "task_frontier_resolved": false,
+      "task_frontier_end_raw_frame": 1788,
+      "consistency_num_dropped": 1,
+      "consistency_num_clamped": 0,
+      "consistency_lifecycle_violations": 0,
+      "consistency_latent_state_inferences": 1,
+      "consistency_latent_usage_state_inferences": 0,
+      "consistency_gratuitous_lifecycle_cycles": 0,
+      "consistency_expected_final_state_violations": 3,
+      "consistency_status": "unresolved",
+      "result_git_commit": "01d90237cd3b20ed1a5d5f13b3e65a6c2e7ac67c",
+      "schema_sha256": "6515a02b9908aa63c02feccb6a1948806942b302cab48193c8b762b627a7cebb"
+    },
+    {
+      "episode_id": 27,
+      "episode": "dishwasher_2_fx_20260529_episode_27",
+      "split": "development",
+      "run_status": "success",
+      "result_available": true,
+      "phase_count": 4,
+      "skill_sequence": [
+        "navigate_to_station",
+        "place_utensil_in_cutlery_basket",
+        "place_utensil_in_cutlery_basket",
+        "place_plate_in_dish_rack"
+      ],
+      "gt_available": true,
+      "policy_sequence": {
+        "pred_n": 4,
+        "gt_n": 10,
+        "matched": 4,
+        "precision": 1.0,
+        "recall": 0.4,
+        "f1": 0.5714285714285715,
+        "edit_distance": 6,
+        "exact": false
+      },
+      "semantic_miou": 0.6735778879034457,
+      "semantic_boundary_mae_sec": 1.5041666666666667,
+      "semantic_boundary_f1_1s": 0.28571428571428575,
+      "semantic_boundary_f1_2s": 0.4999999999999999,
+      "core_miou": 0.6902073043679581,
+      "core_boundary_mae_sec": 1.4416666666666667,
+      "num_ambiguity_requests": 7,
+      "num_targeted_queries": 7,
+      "num_merged_targeted_observations": 6,
+      "ambiguity_kinds": [
+        "accessibility_prerequisite_missing",
+        "receptacle_usage_without_ready_lifecycle",
+        "rejected_visual_evidence"
+      ],
+      "conservative_restored_pass1_anchors": 0,
+      "conservative_contradicted_pass1_anchors": 0,
+      "conservative_pass2_additions": 0,
+      "task_frontier_resolved": false,
+      "task_frontier_end_raw_frame": 1646,
+      "consistency_num_dropped": 0,
+      "consistency_num_clamped": 0,
+      "consistency_lifecycle_violations": 0,
+      "consistency_latent_state_inferences": 3,
+      "consistency_latent_usage_state_inferences": 2,
+      "consistency_gratuitous_lifecycle_cycles": 0,
+      "consistency_expected_final_state_violations": 3,
+      "consistency_status": "unresolved",
+      "result_git_commit": "01d90237cd3b20ed1a5d5f13b3e65a6c2e7ac67c",
+      "schema_sha256": "6515a02b9908aa63c02feccb6a1948806942b302cab48193c8b762b627a7cebb"
+    }
+  ]
+}
