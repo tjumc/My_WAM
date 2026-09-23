@@ -1,0 +1,30 @@
+{
+  "annotation_version": "v3.4.9",
+  "policy": "revalidate rejected or post-placement robot-event transitions only with a selected matching query, direct directional targeted evidence, and a placement-implied lifecycle gap",
+  "candidates": [
+    {
+      "pass1_skill_id": 9,
+      "entity": "dish_rack",
+      "skill_type": "pull_out_dish_rack",
+      "candidate_span": [
+        1682,
+        1731
+      ],
+      "robot_support": 0.1914,
+      "status": "not_rehabilitated",
+      "reason": "no_high_confidence_directional_targeted_observation"
+    },
+    {
+      "entity": "cutlery_basket",
+      "skill_type": "push_in_cutlery_basket",
+      "candidate_span": [
+        1067,
+        1143
+      ],
+      "robot_support": 1.5322,
+      "robot_event_id": 14,
+      "status": "not_rehabilitated",
+      "reason": "no_high_confidence_directional_targeted_observation"
+    }
+  ]
+}

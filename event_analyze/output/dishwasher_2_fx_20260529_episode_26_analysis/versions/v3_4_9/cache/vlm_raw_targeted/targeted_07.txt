@@ -1,0 +1,35 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "in",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "state_after": {
+    "dish_rack": "in",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "confidence_before": {
+    "dish_rack": 0.95,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "confidence_after": {
+    "dish_rack": 0.95,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "evidence_time_indices": [
+    0,
+    7
+  ],
+  "evidence": [
+    "Frame 1644 (head): The dishwasher door is fully open, revealing the interior rack (dish_rack) is in the 'in' state.",
+    "Frame 1644-1698 (head): The right arm is seen pushing the door upwards and inwards, closing it.",
+    "Frame 1715-1769 (head): The dishwasher door is fully closed, obscuring the rack, confirming it remains in the 'in' state.",
+    "Frame 1662-1751 (head): The right hand is in contact with the door, but not the rack itself."
+  ],
+  "window_quality": "good"
+}
+```

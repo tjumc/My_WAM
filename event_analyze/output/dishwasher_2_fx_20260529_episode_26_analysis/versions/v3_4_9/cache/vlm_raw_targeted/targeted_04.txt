@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "out",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "dish_rack": "out",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "Head camera view shows the dish rack is fully extended (out) and stationary throughout the entire sequence.",
+    "Right hand maintains continuous physical contact with the dish rack handle/structure in all frames.",
+    "No visible displacement or movement of the dish rack relative to the cabinet in the video window.",
+    "Left hand is not visible in the camera frames during this observation period."
+  ],
+  "window_quality": "good"
+}
+```

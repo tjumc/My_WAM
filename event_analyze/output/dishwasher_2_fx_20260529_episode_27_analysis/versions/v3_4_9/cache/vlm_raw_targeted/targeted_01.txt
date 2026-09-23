@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "out",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "dish_rack": "out",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "dish_rack": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.9
+  },
+  "confidence_after": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.9
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "在 f220 (head view)，dish rack 明显处于拉出状态，位于洗碗机外部。",
+    "在 f220 (head view)，右手位于画面外（未接触 dish rack）。",
+    "在 f310 (head view)，右手已移动并接触 dish rack，手指抓握其边缘。",
+    "在 f310 (head view)，dish rack 仍处于拉出状态，未推回或拉出更多。"
+  ],
+  "window_quality": "good"
+}
+```

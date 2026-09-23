@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "door": "opening",
+    "right_hand": "contact_door",
+    "left_hand": "uncertain"
+  },
+  "state_after": {
+    "door": "open",
+    "right_hand": "free",
+    "left_hand": "uncertain"
+  },
+  "confidence_before": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.1
+  },
+  "confidence_after": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.1
+  },
+  "evidence_time_indices": [0, 1, 2, 3, 4, 5, 6, 7],
+  "evidence": [
+    "Frames 128-194 (head view): Right arm is consistently seen holding and pushing the dishwasher door outwards, indicating the 'opening' phase.",
+    "Frame 207 (head view): The dishwasher door is fully extended outwards, indicating the 'open' state has been reached.",
+    "Frame 207 (head view): The right arm is seen retracting away from the door, indicating the hand is now 'free' from the contact.",
+    "Frames 128-194 (right view): The camera angle shows the door edge moving upwards relative to the camera frame, confirming the opening motion."
+  ],
+  "window_quality": "good"
+}
+```

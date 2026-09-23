@@ -1,0 +1,37 @@
+{
+  "batch_name": "dishwasher_v1",
+  "dataset_fingerprint": "84c2a1b5952e6d8e39a35172062aa2b263ec5e9b06688048308ebafa21b559b0",
+  "version": "v3_4_9",
+  "split": "development",
+  "manifest": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/batches/dishwasher_v1_manifest.json",
+  "started_utc": "2026-09-23T12:22:02.174212+00:00",
+  "workers": 1,
+  "episodes": {
+    "dishwasher_2_fx_20260529_episode_26": {
+      "status": "success",
+      "return_code": 0,
+      "started_utc": "2026-09-23T12:22:02.192749+00:00",
+      "finished_utc": "2026-09-23T12:22:39.934337+00:00",
+      "hdf5": "/efs/share/1919650160032350208/efs_backup/nas-backup/compressed_data/astribot/dishwasher_2_fx_20260529_compressed/dishwasher_2_fx_20260529_episode_26.hdf5",
+      "output_dir": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_26_analysis",
+      "temporal_gt": null,
+      "log": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/batch_logs/dishwasher_v1/v3_4_9/development/dishwasher_2_fx_20260529_episode_26.log",
+      "result": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/results/dishwasher_2_fx_20260529_episode_26/v3_4_9/hierarchical_annotations.json"
+    },
+    "dishwasher_2_fx_20260529_episode_27": {
+      "status": "success",
+      "return_code": 0,
+      "started_utc": "2026-09-23T12:22:39.944785+00:00",
+      "finished_utc": "2026-09-23T12:23:13.827509+00:00",
+      "hdf5": "/efs/share/1919650160032350208/efs_backup/nas-backup/compressed_data/astribot/dishwasher_2_fx_20260529_compressed/dishwasher_2_fx_20260529_episode_27.hdf5",
+      "output_dir": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_27_analysis",
+      "temporal_gt": "regression/dishwasher_episode27_manual_gt.json",
+      "log": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/batch_logs/dishwasher_v1/v3_4_9/development/dishwasher_2_fx_20260529_episode_27.log",
+      "result": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/results/dishwasher_2_fx_20260529_episode_27/v3_4_9/hierarchical_annotations.json"
+    }
+  },
+  "finished_utc": "2026-09-23T12:23:13.835792+00:00",
+  "counts": {
+    "success": 2
+  }
+}

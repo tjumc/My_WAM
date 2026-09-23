@@ -1,0 +1,114 @@
+$ bash /efs/share/1919650160032350208/users/machong14/wam/event_analyze/versions/v3_4_9/run.sh /efs/share/1919650160032350208/efs_backup/nas-backup/compressed_data/astribot/dishwasher_2_fx_20260529_compressed/dishwasher_2_fx_20260529_episode_26.hdf5 /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_26_analysis put the dish into the dishwasher   /efs/share/1919650160032350208/users/machong14/wam/event_analyze/ontologies/dishwasher_loading.json
+V3.4.9 task schema: /efs/share/1919650160032350208/users/machong14/wam/event_analyze/ontologies/dishwasher_loading.json
+Reused proposal artifacts from /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_26_analysis/versions/v3_4_8/cache/proposal.
+Reused base Qwen observations from /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_26_analysis/versions/v3_4_8/cache/entity_observations_base.jsonl.
+=== V3.4.9 reasoning pass 1 ===
+door: closed -> opening -> open -> closing -> open -> opening -> closing -> open
+dish_rack: in -> moving_out -> out -> moving_out -> moving_in -> out -> moving_in -> out -> moving_in -> out -> moving_in -> in -> out -> in -> moving_out -> in -> moving_out -> out
+cutlery_basket: in
+knife_location: tabletop -> other -> left_hand -> cutlery_basket
+fork_location: tabletop -> other -> right_hand -> cutlery_basket
+plate_location: tabletop -> dish_rack -> tabletop -> dish_rack -> right_hand -> other -> tabletop -> other -> tabletop -> other -> right_hand -> tabletop -> right_hand -> dish_rack
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_26_analysis/versions/v3_4_9/tracked_entity_states.json
+portable-object ownership:
+  knife        left_hand  [707,772] -> [707,738] target=772 status=inferred_unique
+  fork         right_hand [707,896] -> [739,896] target=896 status=direct
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_26_analysis/versions/v3_4_9/tracked_entity_states_owned.json
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_26_analysis/versions/v3_4_9/hand_object_ownership.json
+skill sequence:
+  00 navigate_to_station [32,149] conf=0.95 mode=hdf5_base_motion
+  01 open_dishwasher_door [166,182] conf=0.95 mode=tracked_endpoint_transition
+  02 pull_out_dish_rack [166,214] conf=0.85 mode=tracked_endpoint_transition
+  03 place_knife_in_cutlery_basket [707,739] conf=0.406 mode=completion_aware_object_episode_with_affordance_completion
+  04 place_fork_in_cutlery_basket [739,896] conf=0.406 mode=completion_aware_object_episode_with_affordance_completion
+  05 place_plate_in_dish_rack [896,1400] conf=0.95 mode=completion_aware_object_episode
+  06 push_in_dish_rack [1470,1511] conf=0.95 mode=tracked_endpoint_transition
+  07 pull_out_dish_rack [1526,1526] conf=0.95 mode=tracked_endpoint_transition
+  08 push_in_dish_rack [1554,1554] conf=0.95 mode=tracked_endpoint_transition
+  09 pull_out_dish_rack [1682,1731] conf=0.9 mode=tracked_endpoint_transition
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_26_analysis/versions/v3_4_9/skill_candidates.json
+validated skills: 10 -> 4
+  00 navigate_to_station [32,149] conf=0.95
+  01 open_dishwasher_door [166,182] conf=0.95
+  02 place_utensil_in_cutlery_basket [739,896] conf=0.406
+  03 place_plate_in_dish_rack [896,1400] conf=0.95
+captured robot-supported rejected candidates: 1
+captured conservative anchors: 4
+ambiguity requests: 8 (from 8 candidates)
+  Q00 value=512.0 accessibility_prerequisite_missing ['door'] [128,220]
+  Q01 value=495.0 unfinished_lifecycle ['door'] [183,317]
+  Q02 value=498.0 receptacle_usage_without_ready_lifecycle ['cutlery_basket'] [535,669]
+  Q03 value=296.0 rejected_visual_evidence ['knife'] [669,777]
+  Q04 value=498.0 receptacle_usage_without_ready_lifecycle ['dish_rack'] [724,858]
+  Q05 value=533.3 unfinished_lifecycle ['cutlery_basket'] [897,1143]
+  Q06 value=498.8 unfinished_lifecycle ['dish_rack'] [1432,1549]
+  Q07 value=289.8 rejected_visual_evidence ['dish_rack'] [1644,1769]
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_26_analysis/versions/v3_4_9/ambiguity_requests.json
+targeted reuse: request count mismatch current=8 source=6
+[targeted 00] accessibility_prerequisite_missing ['door'] states={'door': ['opening', 'open']} merge=True
+[targeted 01] unfinished_lifecycle ['door'] states={'door': ['opening', 'open']} merge=True
+[targeted 02] receptacle_usage_without_ready_lifecycle ['cutlery_basket'] states={'cutlery_basket': ['uncertain', 'uncertain']} merge=False
+[targeted 03] rejected_visual_evidence ['knife'] states={'knife': ['not_visible', 'not_visible']} merge=False
+[targeted 04] receptacle_usage_without_ready_lifecycle ['dish_rack'] states={'dish_rack': ['out', 'out']} merge=True
+[targeted 05] unfinished_lifecycle ['cutlery_basket'] states={'cutlery_basket': ['in', 'out']} merge=True
+[targeted 06] unfinished_lifecycle ['dish_rack'] states={'dish_rack': ['moving_in', 'in']} merge=True
+[targeted 07] rejected_visual_evidence ['dish_rack'] states={'dish_rack': ['in', 'in']} merge=True
+targeted observations: 8, merged: 6
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_26_analysis/versions/v3_4_9/targeted_observations.jsonl
+=== V3.4.9 reasoning pass 2 ===
+door: closed -> opening -> open -> closing -> open -> opening -> closing -> open
+dish_rack: in -> moving_out -> out -> moving_out -> moving_in -> out -> moving_in -> out -> moving_in -> out -> moving_in -> out -> moving_in -> in -> out -> in -> moving_out -> in -> moving_out -> out -> in -> out
+cutlery_basket: in -> out -> in
+knife_location: tabletop -> other -> left_hand -> cutlery_basket
+fork_location: tabletop -> other -> right_hand -> cutlery_basket
+plate_location: tabletop -> dish_rack -> tabletop -> dish_rack -> right_hand -> other -> tabletop -> other -> tabletop -> other -> right_hand -> tabletop -> right_hand -> dish_rack
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_26_analysis/versions/v3_4_9/tracked_entity_states.json
+portable-object ownership:
+  knife        left_hand  [707,772] -> [707,738] target=772 status=inferred_unique
+  fork         right_hand [707,896] -> [739,896] target=896 status=direct
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_26_analysis/versions/v3_4_9/tracked_entity_states_owned.json
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_26_analysis/versions/v3_4_9/hand_object_ownership.json
+skill sequence:
+  00 navigate_to_station [32,117] conf=0.95 mode=hdf5_base_motion
+  01 open_dishwasher_door [118,184] conf=0.95 mode=tracked_endpoint_transition
+  02 pull_out_dish_rack [166,214] conf=0.85 mode=tracked_endpoint_transition
+  03 place_knife_in_cutlery_basket [707,739] conf=0.406 mode=completion_aware_object_episode_with_affordance_completion
+  04 place_fork_in_cutlery_basket [739,896] conf=0.406 mode=completion_aware_object_episode_with_affordance_completion
+  05 place_plate_in_dish_rack [896,1400] conf=0.95 mode=completion_aware_object_episode
+  06 pull_out_cutlery_basket [943,943] conf=0.95 mode=tracked_endpoint_transition
+  07 push_in_cutlery_basket [1344,1344] conf=0.9 mode=tracked_endpoint_transition
+  08 push_in_dish_rack [1470,1511] conf=0.95 mode=tracked_endpoint_transition
+  09 pull_out_dish_rack [1526,1526] conf=0.95 mode=tracked_endpoint_transition
+  10 push_in_dish_rack [1540,1540] conf=0.95 mode=tracked_endpoint_transition
+  11 pull_out_dish_rack [1682,1731] conf=0.9 mode=tracked_endpoint_transition
+  12 push_in_dish_rack [1760,1760] conf=0.9 mode=tracked_endpoint_transition
+  13 pull_out_dish_rack [1778,1778] conf=0.72 mode=tracked_endpoint_transition
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_26_analysis/versions/v3_4_9/skill_candidates.json
+validated skills: 14 -> 5
+  00 navigate_to_station [32,117] conf=0.95
+  01 open_dishwasher_door [118,184] conf=0.95
+  02 pull_out_dish_rack [140,185] conf=0.85
+  03 place_utensil_in_cutlery_basket [739,896] conf=0.406
+  04 place_plate_in_dish_rack [896,1400] conf=0.95
+candidate rehabilitation queued: 0
+validated skills: 14 -> 5
+  00 navigate_to_station [32,117] conf=0.95
+  01 open_dishwasher_door [118,184] conf=0.95
+  02 pull_out_dish_rack [140,185] conf=0.85
+  03 place_utensil_in_cutlery_basket [739,896] conf=0.406
+  04 place_plate_in_dish_rack [896,1400] conf=0.95
+conservative assimilation: pass1=4 raw_pass2=5 final=5 restored=0 contradicted=0 additions=1
+candidate rehabilitation accepted: 0
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_26_analysis/versions/v3_4_9/hierarchical_annotations.json
+final consistency: kept=5 dropped=0 frontier_resolved=False task_end=1788 final_state_violations=3
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_26_analysis/versions/v3_4_9/diagnostics/reasoning_trace.json
+exported compact result: /efs/share/1919650160032350208/users/machong14/wam/event_analyze/results/dishwasher_2_fx_20260529_episode_26/v3_4_9
+files: hierarchical_annotations.json, manifest.json, summary.json
+runtime compacted
+  moved to cache: entity_observations_base.jsonl, entity_observations.jsonl, targeted_observations.jsonl, boundaries.png, proposal/, targeted_temporal_strips/, vlm_raw_targeted/
+  removed intermediates: tracked_entity_states.json, tracked_entity_states_owned.json, hand_object_ownership.json, skill_candidates.json, skill_candidates_validated.json, interaction_validation_report.json, ambiguity_requests.json, diagnostics/pass1_anchors.json, diagnostics/pass2_before_reconcile.json, diagnostics/rejected_candidate_pool.json
+V3.4.9 complete: /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_26_analysis/versions/v3_4_9
+Final annotation: /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_26_analysis/versions/v3_4_9/hierarchical_annotations.json
+Diagnostics: /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_26_analysis/versions/v3_4_9/diagnostics/
+Reusable cache: /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_26_analysis/versions/v3_4_9/cache/
+Compact result exported under: /efs/share/1919650160032350208/users/machong14/wam/event_analyze/results/

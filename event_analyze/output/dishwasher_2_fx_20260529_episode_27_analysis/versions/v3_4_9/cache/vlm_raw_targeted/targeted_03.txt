@@ -1,0 +1,34 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "in",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "state_after": {
+    "cutlery_basket": "in",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "evidence_time_indices": [
+    0,
+    7
+  ],
+  "evidence": [
+    "在头相机视图（row 0）中，洗碗机内的餐具篮（cutlery_basket）在整个时间窗口内始终位于内部，未见明显位移。",
+    "在右相机视图（row 2）中，视角聚焦于洗碗机内部，餐具篮一直可见且位置相对静止。",
+    "窗口内未观察到任何机械臂末端执行器与餐具篮发生接触、抓持或推拉的动作。"
+  ],
+  "window_quality": "good"
+}
+```

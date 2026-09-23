@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "out",
+    "right_hand": "approaching",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "dish_rack": "out",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "dish_rack": 0.95,
+    "right_hand": 0.90,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "在早期帧（如f843）中，dish_rack处于完全拉出的位置，位于画面右上区域。",
+    "在早期帧（如f843-f865）中，右手持叉在画面下方，与dish_rack有显著距离，处于approaching状态。",
+    "在晚期帧（如f908-f919）中，dish_rack位置未变，保持out状态。",
+    "在晚期帧（如f919）中，右手持叉已移动至dish_rack内部上方，明显处于接触或即将接触区域。"
+  ],
+  "window_quality": "good"
+}
+```

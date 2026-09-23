@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "cutlery_basket": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.1,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.1,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "在head和left视角中，cutlery_basket所在的区域被遮挡或超出视野，无法直接观察到其状态。",
+    "在head视角中，右侧机械臂正在处理盘子，但手部未与cutlery_basket发生交互。",
+    "在right视角中，机械臂正抓持着刀叉等餐具，而非cutlery_basket。",
+    "整个时间窗口内，未观察到cutlery_basket发生移动或被抓持的视觉证据。"
+  ],
+  "window_quality": "partial"
+}
+```

@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "moving_in",
+    "right_hand": "pushing_cutlery_basket",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "cutlery_basket": "in",
+    "right_hand": "free",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.9
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.9
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "At frame 932, the right hand is in contact with the cutlery basket which is partially extended from the dishwasher.",
+    "From frames 932 to 1039, the cutlery basket moves continuously deeper into the dishwasher compartment.",
+    "At frame 1039, the cutlery basket is fully seated inside the dishwasher.",
+    "At frame 1061, the right hand has released the basket and moved away, leaving the basket in the 'in' state."
+  ],
+  "window_quality": "good"
+}
+```

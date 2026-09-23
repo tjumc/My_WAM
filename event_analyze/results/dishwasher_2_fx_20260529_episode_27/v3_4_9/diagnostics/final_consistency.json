@@ -1,0 +1,82 @@
+{
+  "annotation_version": "v3.4.9",
+  "trajectory_frames": 1647,
+  "upstream_predicted_task_end_raw_frame": 1599,
+  "initial_container_state": {
+    "door": "closed",
+    "dish_rack": "in",
+    "cutlery_basket": "in"
+  },
+  "initial_state_source": {
+    "door": "schema_expected_initial_state",
+    "dish_rack": "schema_expected_initial_state",
+    "cutlery_basket": "schema_expected_initial_state"
+  },
+  "dropped_phases": [],
+  "clamped_phases": [],
+  "lifecycle_violations": [],
+  "latent_state_inferences": [
+    {
+      "supporting_skill": "pull_out_dish_rack",
+      "supporting_entity": "dish_rack",
+      "implied_entity": "door",
+      "previous_state": "closed",
+      "inferred_state": "open",
+      "raw_span": [
+        310,
+        366
+      ],
+      "reason": "accepted_dependent_use_requires_prerequisite_state"
+    }
+  ],
+  "latent_prerequisite_state_inferences": [
+    {
+      "supporting_skill": "pull_out_dish_rack",
+      "supporting_entity": "dish_rack",
+      "implied_entity": "door",
+      "previous_state": "closed",
+      "inferred_state": "open",
+      "raw_span": [
+        310,
+        366
+      ],
+      "reason": "accepted_dependent_use_requires_prerequisite_state"
+    }
+  ],
+  "latent_usage_state_inferences": [],
+  "gratuitous_lifecycle_cycles": [],
+  "expected_final_state_violations": [],
+  "task_completion_frontier": {
+    "policy": "first_expected_final_state_after_last_dependent_use",
+    "frontier_entities": [
+      "door"
+    ],
+    "entities": [
+      {
+        "entity": "door",
+        "expected_final_state": "closed",
+        "last_dependent_use_end": 1519,
+        "terminal_closure": {
+          "skill_type": "close_dishwasher_door",
+          "raw_start_frame": 1547,
+          "raw_end_frame": 1599
+        }
+      }
+    ],
+    "resolved": true,
+    "task_end_raw_frame": 1599,
+    "fallback_when_unresolved": "trajectory_end"
+  },
+  "final_phase_count": 9,
+  "final_consistency": {
+    "num_dropped": 0,
+    "num_clamped": 0,
+    "num_lifecycle_violations": 0,
+    "num_latent_state_inferences": 1,
+    "num_latent_usage_state_inferences": 0,
+    "num_gratuitous_lifecycle_cycles": 0,
+    "num_expected_final_state_violations": 0,
+    "frontier_resolved": true,
+    "status": "consistent"
+  }
+}

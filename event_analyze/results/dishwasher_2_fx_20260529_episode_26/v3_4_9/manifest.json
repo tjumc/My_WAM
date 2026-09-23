@@ -1,0 +1,136 @@
+{
+  "format_version": 1,
+  "generated_utc": "2026-09-23T12:22:39.694148+00:00",
+  "episode": "dishwasher_2_fx_20260529_episode_26",
+  "version": "v3_4_9",
+  "task": "put the dish into the dishwasher",
+  "task_family": "dishwasher_loading",
+  "git_commit_at_export": "a761c5f294192699d66778ecaa1249b8dd2e1226",
+  "input": {
+    "hdf5_basename": "dishwasher_2_fx_20260529_episode_26.hdf5",
+    "hdf5_bytes": 316948756,
+    "schema": "ontologies/dishwasher_loading.json",
+    "schema_sha256": "6515a02b9908aa63c02feccb6a1948806942b302cab48193c8b762b627a7cebb"
+  },
+  "runtime_output": "output/dishwasher_2_fx_20260529_episode_26_analysis/versions/v3_4_9",
+  "evidence_fingerprints": {
+    "entity_observations_base.jsonl": {
+      "sha256": "518837cb5f2e5267d28c05d8a9b2c4e2ab6b34713a0fcd0ab0b2ddba15d66407",
+      "bytes": 49706
+    },
+    "tracked_entity_states.json": {
+      "sha256": "233fbb16aade2911c9503e5f7fab87dbd791c721d7fcf7a81d1e6de004f7a08a",
+      "bytes": 74847
+    },
+    "tracked_entity_states_owned.json": {
+      "sha256": "b50d7f1d860325ecf459ae9fed1a1bf3d9928433b090b39e715cf1bc9b116b2a",
+      "bytes": 77132
+    },
+    "hand_object_ownership.json": {
+      "sha256": "e582ffd3311ef1bd8bb5b9557aadc5876783f280b429d9a51527693f5f2311c3",
+      "bytes": 11025
+    },
+    "ambiguity_requests.json": {
+      "sha256": "f88caf6a55d8601f19331a18270cfbf75739d1b95cc4299095b7ac8ff0949fdc",
+      "bytes": 7345
+    },
+    "targeted_observations.jsonl": {
+      "sha256": "90d12dfd83fc608c35839076c5e9dac969cb08ff25cf2504e7236452f1daa1b2",
+      "bytes": 13602
+    },
+    "skill_candidates_validated.json": {
+      "sha256": "020085cf7ab71a9e85351d65c0d49c4cbe06371a16b136f895d42aeb08eee4b0",
+      "bytes": 10631
+    }
+  },
+  "closed_loop_perception": {
+    "num_ambiguity_requests": 8,
+    "num_targeted_queries": 8,
+    "num_merged_targeted_observations": 6,
+    "ambiguity_kinds": [
+      "accessibility_prerequisite_missing",
+      "receptacle_usage_without_ready_lifecycle",
+      "rejected_visual_evidence",
+      "unfinished_lifecycle"
+    ]
+  },
+  "conservative_assimilation": {
+    "pass1_count": 4,
+    "raw_pass2_count": 5,
+    "reconciled_count": 5,
+    "num_restored_pass1_anchors": 0,
+    "num_directly_contradicted_pass1_anchors": 0,
+    "num_pass2_additions": 1
+  },
+  "task_completion_frontier": {
+    "policy": "first_expected_final_state_after_last_dependent_use",
+    "frontier_entities": [
+      "door"
+    ],
+    "entities": [
+      {
+        "entity": "door",
+        "expected_final_state": "closed",
+        "last_dependent_use_end": 1400,
+        "terminal_closure": null
+      }
+    ],
+    "resolved": false,
+    "task_end_raw_frame": 1788,
+    "fallback_when_unresolved": "trajectory_end"
+  },
+  "final_consistency": {
+    "num_dropped": 0,
+    "num_clamped": 0,
+    "num_lifecycle_violations": 0,
+    "num_latent_state_inferences": 1,
+    "num_latent_usage_state_inferences": 1,
+    "num_gratuitous_lifecycle_cycles": 0,
+    "num_expected_final_state_violations": 3,
+    "frontier_resolved": false,
+    "status": "unresolved"
+  },
+  "exported_files": {
+    "hierarchical_annotations.json": {
+      "sha256": "f92437c75bcdae9c4cbdaeefd6cdeb6ed07474723631d580d5a4dd6fc98e815c",
+      "bytes": 17032
+    },
+    "diagnostics/reasoning_trace.json": {
+      "sha256": "8bd8d6363f691aafbbd0c15568c6804e9fcd2dd4d7ddcdaf1c2e8db3763282dc",
+      "bytes": 6190
+    },
+    "diagnostics/conservative_update.json": {
+      "sha256": "d24d6e353f4699a06066d2ab880e512ea1772cc9c6dc6e7065f69dccba3ce4e5",
+      "bytes": 2199
+    },
+    "diagnostics/candidate_rehabilitation.json": {
+      "sha256": "910b458bdf2e33c0fd0550d9b2a4e3cd1c3c3d46263ba9541747ab461298a847",
+      "bytes": 881
+    },
+    "diagnostics/final_consistency.json": {
+      "sha256": "55e529f310c69309aab773463135d3d6ada940758de48bf37077cb24ee75bd5a",
+      "bytes": 2699
+    },
+    "summary.json": {
+      "sha256": "daf65bea3d29411eb624870205f0fa63266581103ba33c8bad15b5994a090917",
+      "bytes": 1508
+    }
+  },
+  "storage_policy": {
+    "git_keeps": [
+      "final annotations",
+      "evaluation report when available",
+      "summary",
+      "manifest",
+      "compact reasoning/conservative-update/candidate-rehabilitation/final-consistency diagnostics"
+    ],
+    "local_only": [
+      "contact sheets",
+      "dense temporal strips",
+      "overview images",
+      "raw VLM responses",
+      "proposal visualizations",
+      "other reproducible runtime caches"
+    ]
+  }
+}

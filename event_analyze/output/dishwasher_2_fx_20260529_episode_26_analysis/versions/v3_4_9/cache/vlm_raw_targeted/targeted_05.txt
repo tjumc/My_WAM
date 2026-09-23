@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "in",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "state_after": {
+    "cutlery_basket": "out",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "Frame 0 (t0): head camera shows the cutlery basket is fully inserted inside the dishwasher.",
+    "Frame 7 (t7): head camera shows the cutlery basket is fully pulled out and resting on the counter.",
+    "Intermediate frames (t1-t6) show the basket in transit, moving from inside to outside.",
+    "Hands are not clearly visible gripping the basket in the provided camera angles."
+  ],
+  "window_quality": "good"
+}
+```

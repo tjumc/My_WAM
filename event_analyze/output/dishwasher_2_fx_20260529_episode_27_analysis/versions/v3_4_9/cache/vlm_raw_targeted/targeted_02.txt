@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "plate_location": "uncertain",
+    "right_hand": "approaching",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "plate_location": "uncertain",
+    "right_hand": "approaching",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "plate_location": 0.3,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "plate_location": 0.3,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "Frame 220: Right hand is visible near the dishwasher door, left hand is out of view.",
+    "Frame 310: Right hand is visible near the dishwasher rack, left hand is still out of view.",
+    "No plate is clearly visible in the hand or on the table in the provided frames.",
+    "The right hand maintains an open, approaching posture throughout the sequence."
+  ],
+  "window_quality": "partial"
+}
+```

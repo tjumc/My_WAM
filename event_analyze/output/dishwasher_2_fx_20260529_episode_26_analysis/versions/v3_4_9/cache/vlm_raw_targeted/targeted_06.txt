@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "moving_in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "dish_rack": "in",
+    "right_hand": "free",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "dish_rack": 0.9,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "dish_rack": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "Frame 1432 (t0): Dish rack is partially extended from the cabinet; right arm is inserted and holding the rack.",
+    "Frame 1449 (t1): Dish rack is fully extended; right arm is still in contact.",
+    "Frame 1465 (t2): Dish rack is in motion, sliding into the cabinet; right arm is pushing it.",
+    "Frame 1482 (t3) onwards: Dish rack is fully retracted inside the cabinet; right arm has released and moved away."
+  ],
+  "window_quality": "good"
+}
+```

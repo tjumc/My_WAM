@@ -1,0 +1,120 @@
+{
+  "annotation_version": "v3.4.9",
+  "policy": "revalidate rejected or post-placement robot-event transitions only with a selected matching query, direct directional targeted evidence, and a placement-implied lifecycle gap",
+  "candidates": [
+    {
+      "pass1_skill_id": 4,
+      "entity": "cutlery_basket",
+      "skill_type": "pull_out_cutlery_basket",
+      "candidate_span": [
+        401,
+        401
+      ],
+      "robot_support": 0.1342,
+      "status": "not_rehabilitated",
+      "reason": "no_high_confidence_directional_targeted_observation"
+    },
+    {
+      "pass1_skill_id": 6,
+      "entity": "cutlery_basket",
+      "skill_type": "push_in_cutlery_basket",
+      "candidate_span": [
+        548,
+        627
+      ],
+      "robot_support": 0.3394,
+      "status": "not_rehabilitated",
+      "reason": "no_high_confidence_directional_targeted_observation"
+    },
+    {
+      "pass1_skill_id": 11,
+      "entity": "dish_rack",
+      "skill_type": "push_in_dish_rack",
+      "candidate_span": [
+        836,
+        836
+      ],
+      "robot_support": 0.2624,
+      "status": "not_rehabilitated",
+      "reason": "no_high_confidence_directional_targeted_observation"
+    },
+    {
+      "pass1_skill_id": 12,
+      "entity": "dish_rack",
+      "skill_type": "pull_out_dish_rack",
+      "candidate_span": [
+        881,
+        881
+      ],
+      "robot_support": 0.2721,
+      "status": "not_rehabilitated",
+      "reason": "no_high_confidence_directional_targeted_observation"
+    },
+    {
+      "entity": "cutlery_basket",
+      "skill_type": "push_in_cutlery_basket",
+      "candidate_span": [
+        1006,
+        1082
+      ],
+      "robot_support": 0.9219,
+      "robot_event_id": 14,
+      "status": "accepted_by_interaction_validator",
+      "queued_source": "post_placement_robot_event",
+      "reason": "robot_event_targeted_direction_and_state_implication_agree",
+      "targeted_evidence": {
+        "request_id": 7,
+        "ambiguity_kind": "unfinished_lifecycle",
+        "window": [
+          932,
+          1082
+        ],
+        "transition": [
+          "out",
+          "in"
+        ],
+        "observed_before_after": [
+          "moving_in",
+          "in"
+        ],
+        "confidence_before_after": [
+          0.95,
+          0.95
+        ],
+        "entity_contact_seen": true,
+        "targeted_observation_accepted": true
+      },
+      "state_implication": {
+        "kind": "restore_expected_final_state_after_last_accepted_use",
+        "implied_state": "out",
+        "expected_final_state": "in",
+        "supporting_use_frames": [
+          [
+            627,
+            762
+          ],
+          [
+            762,
+            931
+          ]
+        ],
+        "state_before_candidate": "out"
+      },
+      "rehabilitation_id": "robot_event:14:cutlery_basket:push_in_cutlery_basket",
+      "validator_reasons": [
+        "entity_contact_plus_robot_signal",
+        "direction_consistent_visual_transition"
+      ],
+      "validator_signal": {
+        "window": [
+          986,
+          1102
+        ],
+        "motion_fraction": 0.479,
+        "force_change_support": 1.0,
+        "gripper_change_support": 0.021,
+        "score": 0.517
+      }
+    }
+  ]
+}

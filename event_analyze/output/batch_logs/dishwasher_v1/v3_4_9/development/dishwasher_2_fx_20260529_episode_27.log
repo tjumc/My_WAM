@@ -1,0 +1,1035 @@
+$ bash /efs/share/1919650160032350208/users/machong14/wam/event_analyze/versions/v3_4_9/run.sh /efs/share/1919650160032350208/efs_backup/nas-backup/compressed_data/astribot/dishwasher_2_fx_20260529_compressed/dishwasher_2_fx_20260529_episode_27.hdf5 /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_27_analysis put the dish into the dishwasher 11 1645 /efs/share/1919650160032350208/users/machong14/wam/event_analyze/ontologies/dishwasher_loading.json
+V3.4.9 task schema: /efs/share/1919650160032350208/users/machong14/wam/event_analyze/ontologies/dishwasher_loading.json
+Reused proposal artifacts from /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_27_analysis/versions/v3_4_8/cache/proposal.
+Reused base Qwen observations from /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_27_analysis/versions/v3_4_8/cache/entity_observations_base.jsonl.
+=== V3.4.9 reasoning pass 1 ===
+door: open -> opening -> open -> closing -> closed
+dish_rack: in -> moving_in -> out -> in -> moving_out -> out -> moving_in -> out -> in -> out -> in -> out -> moving_out -> moving_in -> out -> moving_out -> out -> moving_in -> out -> moving_in -> out -> in -> out -> in -> moving_in
+cutlery_basket: in -> out -> moving_in -> in -> moving_out -> in -> moving_in -> in -> out -> moving_out -> in
+knife_location: tabletop -> cutlery_basket -> right_hand -> cutlery_basket
+fork_location: tabletop -> cutlery_basket -> tabletop -> right_hand -> cutlery_basket
+plate_location: tabletop -> dish_rack -> tabletop -> right_hand -> dish_rack -> tabletop -> other -> dish_rack -> tabletop -> other -> tabletop -> right_hand -> dish_rack -> right_hand -> dish_rack
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_27_analysis/versions/v3_4_9/tracked_entity_states.json
+portable-object ownership:
+  plate        right_hand [258,272] -> [258,272] target=272 status=inferred_unique
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_27_analysis/versions/v3_4_9/tracked_entity_states_owned.json
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_27_analysis/versions/v3_4_9/hand_object_ownership.json
+skill sequence:
+  00 navigate_to_station [28,141] conf=0.95 mode=hdf5_base_motion
+  01 place_plate_in_dish_rack [258,272] conf=0.52 mode=completion_aware_object_episode
+  02 pull_out_dish_rack [258,272] conf=0.72 mode=tracked_endpoint_transition
+  03 push_in_dish_rack [282,282] conf=0.72 mode=tracked_endpoint_transition
+  04 pull_out_cutlery_basket [401,401] conf=0.9 mode=tracked_endpoint_transition
+  05 pull_out_dish_rack [401,458] conf=0.76 mode=tracked_endpoint_transition
+  06 push_in_cutlery_basket [548,627] conf=0.426 mode=tracked_endpoint_transition
+  07 place_knife_in_cutlery_basket [627,762] conf=0.406 mode=completion_aware_object_episode_with_affordance_completion
+  08 push_in_dish_rack [762,762] conf=0.9 mode=tracked_endpoint_transition
+  09 place_fork_in_cutlery_basket [762,931] conf=0.406 mode=completion_aware_object_episode_with_affordance_completion
+  10 pull_out_dish_rack [791,791] conf=0.95 mode=tracked_endpoint_transition
+  11 push_in_dish_rack [836,836] conf=0.95 mode=tracked_endpoint_transition
+  12 pull_out_dish_rack [881,881] conf=0.95 mode=tracked_endpoint_transition
+  13 place_plate_in_dish_rack [931,1312] conf=0.9 mode=completion_aware_object_episode
+  14 pull_out_cutlery_basket [1468,1468] conf=0.85 mode=tracked_endpoint_transition
+  15 push_in_dish_rack [1468,1468] conf=0.9 mode=tracked_endpoint_transition
+  16 push_in_cutlery_basket [1490,1510] conf=0.95 mode=tracked_endpoint_transition
+  17 pull_out_dish_rack [1534,1534] conf=0.9 mode=tracked_endpoint_transition
+  18 push_in_dish_rack [1558,1558] conf=0.9 mode=tracked_endpoint_transition
+  19 close_dishwasher_door [1558,1590] conf=0.95 mode=tracked_endpoint_transition
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_27_analysis/versions/v3_4_9/skill_candidates.json
+validated skills: 20 -> 6
+  00 navigate_to_station [28,141] conf=0.95
+  01 place_utensil_in_cutlery_basket [627,762] conf=0.406
+  02 place_utensil_in_cutlery_basket [762,931] conf=0.406
+  03 place_plate_in_dish_rack [931,1312] conf=0.9
+  04 push_in_dish_rack [1502,1503] conf=0.9
+  05 close_dishwasher_door [1558,1590] conf=0.95
+captured robot-supported rejected candidates: 4
+captured conservative anchors: 6
+ambiguity requests: 8 (from 10 candidates)
+  Q00 value=499.0 accessibility_prerequisite_missing ['door'] [86,220]
+  Q01 value=508.5 receptacle_usage_without_ready_lifecycle ['dish_rack'] [220,310]
+  Q02 value=295.5 rejected_visual_evidence ['plate'] [220,310]
+  Q03 value=501.4 receptacle_usage_without_ready_lifecycle ['cutlery_basket'] [363,439]
+  Q04 value=293.5 rejected_visual_evidence ['cutlery_basket'] [510,665]
+  Q05 value=291.6 rejected_visual_evidence ['dish_rack'] [798,874]
+  Q06 value=291.8 rejected_visual_evidence ['dish_rack'] [843,919]
+  Q07 value=518.0 unfinished_lifecycle ['cutlery_basket'] [932,1082]
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_27_analysis/versions/v3_4_9/ambiguity_requests.json
+targeted reuse: request count mismatch current=8 source=7
+[targeted 00] accessibility_prerequisite_missing ['door'] states={'door': ['closing', 'open']} merge=True
+[targeted 01] receptacle_usage_without_ready_lifecycle ['dish_rack'] states={'dish_rack': ['out', 'out']} merge=True
+[targeted 02] rejected_visual_evidence ['plate'] states={'plate': ['uncertain', 'uncertain']} merge=False
+[targeted 03] receptacle_usage_without_ready_lifecycle ['cutlery_basket'] states={'cutlery_basket': ['in', 'in']} merge=True
+[targeted 04] rejected_visual_evidence ['cutlery_basket'] states={'cutlery_basket': ['in', 'in']} merge=True
+[targeted 05] rejected_visual_evidence ['dish_rack'] states={'dish_rack': ['not_visible', 'not_visible']} merge=True
+[targeted 06] rejected_visual_evidence ['dish_rack'] states={'dish_rack': ['out', 'out']} merge=True
+[targeted 07] unfinished_lifecycle ['cutlery_basket'] states={'cutlery_basket': ['moving_in', 'in']} merge=True
+targeted observations: 8, merged: 7
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_27_analysis/versions/v3_4_9/targeted_observations.jsonl
+=== V3.4.9 reasoning pass 2 ===
+door: open -> closing -> open -> opening -> open -> closing -> closed
+dish_rack: in -> out -> in -> moving_in -> out -> in -> moving_in -> out -> in -> moving_out -> out -> moving_in -> out -> in -> moving_out -> out -> in -> moving_out -> out -> moving_out -> moving_in -> out -> moving_out -> out -> moving_in -> out -> moving_in -> out -> in -> out -> in -> moving_in
+cutlery_basket: in -> out -> in -> moving_in -> in -> moving_in -> moving_out -> in -> moving_in -> in -> out -> moving_out -> in
+knife_location: tabletop -> cutlery_basket -> right_hand -> cutlery_basket
+fork_location: tabletop -> cutlery_basket -> tabletop -> right_hand -> cutlery_basket
+plate_location: tabletop -> dish_rack -> tabletop -> right_hand -> dish_rack -> tabletop -> other -> dish_rack -> tabletop -> other -> tabletop -> right_hand -> dish_rack -> right_hand -> dish_rack
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_27_analysis/versions/v3_4_9/tracked_entity_states.json
+portable-object ownership:
+  plate        right_hand [258,272] -> [258,272] target=272 status=inferred_unique
+  plate        right_hand [931,976] -> [954,976] target=976 status=direct
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_27_analysis/versions/v3_4_9/tracked_entity_states_owned.json
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_27_analysis/versions/v3_4_9/hand_object_ownership.json
+skill sequence:
+  00 navigate_to_station [28,141] conf=0.95 mode=hdf5_base_motion
+  01 pull_out_dish_rack [208,208] conf=0.9 mode=tracked_endpoint_transition
+  02 push_in_dish_rack [234,234] conf=0.9 mode=tracked_endpoint_transition
+  03 place_plate_in_dish_rack [258,272] conf=0.52 mode=completion_aware_object_episode
+  04 pull_out_dish_rack [258,272] conf=0.72 mode=tracked_endpoint_transition
+  05 push_in_dish_rack [282,282] conf=0.72 mode=tracked_endpoint_transition
+  06 pull_out_dish_rack [298,308] conf=0.76 mode=tracked_endpoint_transition
+  07 push_in_dish_rack [338,338] conf=0.426 mode=tracked_endpoint_transition
+  08 pull_out_dish_rack [401,458] conf=0.426 mode=tracked_endpoint_transition
+  09 pull_out_cutlery_basket [460,460] conf=0.95 mode=tracked_endpoint_transition
+  10 push_in_cutlery_basket [502,502] conf=0.9 mode=tracked_endpoint_transition
+  11 place_knife_in_cutlery_basket [627,762] conf=0.406 mode=completion_aware_object_episode_with_affordance_completion
+  12 push_in_dish_rack [762,762] conf=0.9 mode=tracked_endpoint_transition
+  13 place_fork_in_cutlery_basket [762,931] conf=0.406 mode=completion_aware_object_episode_with_affordance_completion
+  14 pull_out_dish_rack [781,808] conf=0.95 mode=tracked_endpoint_transition
+  15 push_in_dish_rack [848,848] conf=0.95 mode=tracked_endpoint_transition
+  16 pull_out_dish_rack [864,891] conf=0.95 mode=tracked_endpoint_transition
+  17 place_plate_in_dish_rack [954,1312] conf=0.9 mode=completion_aware_object_episode
+  18 pull_out_cutlery_basket [1468,1468] conf=0.85 mode=tracked_endpoint_transition
+  19 push_in_dish_rack [1468,1468] conf=0.9 mode=tracked_endpoint_transition
+  20 push_in_cutlery_basket [1490,1510] conf=0.95 mode=tracked_endpoint_transition
+  21 pull_out_dish_rack [1534,1534] conf=0.9 mode=tracked_endpoint_transition
+  22 push_in_dish_rack [1558,1558] conf=0.9 mode=tracked_endpoint_transition
+  23 close_dishwasher_door [1558,1590] conf=0.95 mode=tracked_endpoint_transition
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_27_analysis/versions/v3_4_9/skill_candidates.json
+validated skills: 24 -> 8
+  00 navigate_to_station [28,141] conf=0.95
+  01 pull_out_dish_rack [320,365] conf=0.426
+  02 pull_out_cutlery_basket [540,541] conf=0.95
+  03 place_utensil_in_cutlery_basket [627,762] conf=0.406
+  04 place_utensil_in_cutlery_basket [762,931] conf=0.406
+  05 place_plate_in_dish_rack [954,1312] conf=0.9
+  06 push_in_dish_rack [1502,1503] conf=0.9
+  07 close_dishwasher_door [1558,1590] conf=0.95
+candidate rehabilitation queued: 1
+validated skills: 25 -> 9
+  00 navigate_to_station [28,141] conf=0.95
+  01 pull_out_dish_rack [320,365] conf=0.426
+  02 pull_out_cutlery_basket [540,541] conf=0.95
+  03 place_utensil_in_cutlery_basket [627,762] conf=0.406
+  04 place_utensil_in_cutlery_basket [762,931] conf=0.406
+  05 place_plate_in_dish_rack [954,1312] conf=0.9
+  06 push_in_cutlery_basket [1006,1082] conf=0.95
+  07 push_in_dish_rack [1502,1503] conf=0.9
+  08 close_dishwasher_door [1558,1590] conf=0.95
+conservative assimilation: pass1=6 raw_pass2=9 final=9 restored=0 contradicted=0 additions=3
+candidate rehabilitation accepted: 1
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_27_analysis/versions/v3_4_9/hierarchical_annotations.json
+final consistency: kept=9 dropped=0 frontier_resolved=True task_end=1599 final_state_violations=0
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_27_analysis/versions/v3_4_9/diagnostics/reasoning_trace.json
+{
+  "metadata": {
+    "annotation_version": "v3.4.9",
+    "episode": "dishwasher_2_fx_20260529_episode_27",
+    "fps": 30.0,
+    "total_raw_frames": 1647,
+    "gt_status": "provisional_manual_gt",
+    "matching_policy": "monotonic same-skill alignment: maximize matches, then semantic IoU"
+  },
+  "sequence": {
+    "predicted": [
+      "navigate_to_station",
+      "pull_out_dish_rack",
+      "pull_out_cutlery_basket",
+      "place_utensil_in_cutlery_basket",
+      "place_utensil_in_cutlery_basket",
+      "place_plate_in_dish_rack",
+      "push_in_cutlery_basket",
+      "push_in_dish_rack",
+      "close_dishwasher_door"
+    ],
+    "ground_truth": [
+      "navigate_to_station",
+      "open_dishwasher_door",
+      "pull_out_dish_rack",
+      "pull_out_cutlery_basket",
+      "place_knife_in_cutlery_basket",
+      "place_fork_in_cutlery_basket",
+      "push_in_cutlery_basket",
+      "place_plate_in_dish_rack",
+      "push_in_dish_rack",
+      "close_dishwasher_door"
+    ],
+    "matched_phases": 6,
+    "precision": 0.6666666666666666,
+    "recall": 0.6,
+    "f1": 0.631578947368421,
+    "lcs": 6,
+    "edit_distance": 5,
+    "exact_sequence_match": false,
+    "unmatched_predictions": [
+      {
+        "pred_index": 3,
+        "skill_type": "place_utensil_in_cutlery_basket",
+        "semantic_pred": [
+          608,
+          761
+        ]
+      },
+      {
+        "pred_index": 4,
+        "skill_type": "place_utensil_in_cutlery_basket",
+        "semantic_pred": [
+          762,
+          931
+        ]
+      },
+      {
+        "pred_index": 5,
+        "skill_type": "place_plate_in_dish_rack",
+        "semantic_pred": [
+          935,
+          1018
+        ]
+      }
+    ],
+    "missed_gt_phases": [
+      {
+        "gt_phase_id": 1,
+        "skill_type": "open_dishwasher_door",
+        "semantic_gt": [
+          136,
+          220
+        ]
+      },
+      {
+        "gt_phase_id": 4,
+        "skill_type": "place_knife_in_cutlery_basket",
+        "semantic_gt": [
+          559,
+          749
+        ]
+      },
+      {
+        "gt_phase_id": 5,
+        "skill_type": "place_fork_in_cutlery_basket",
+        "semantic_gt": [
+          750,
+          970
+        ]
+      },
+      {
+        "gt_phase_id": 7,
+        "skill_type": "place_plate_in_dish_rack",
+        "semantic_gt": [
+          1075,
+          1370
+        ]
+      }
+    ]
+  },
+  "semantic_temporal": {
+    "matched_mean_iou": 0.3316222344793773,
+    "penalized_mean_iou": 0.19897334068762637,
+    "start_mae_frames": 82.83333333333333,
+    "end_mae_frames": 24.333333333333332,
+    "boundary_mae_frames": 53.583333333333336,
+    "start_mae_sec": 2.761111111111111,
+    "end_mae_sec": 0.8111111111111111,
+    "boundary_mae_sec": 1.7861111111111112,
+    "boundary_f1": [
+      {
+        "tolerance_sec": 0.5,
+        "tolerance_frames": 15,
+        "tp": 3,
+        "fp": 15,
+        "fn": 17,
+        "precision": 0.16666666666666666,
+        "recall": 0.15,
+        "f1": 0.15789473684210525
+      },
+      {
+        "tolerance_sec": 1.0,
+        "tolerance_frames": 30,
+        "tp": 5,
+        "fp": 13,
+        "fn": 15,
+        "precision": 0.2777777777777778,
+        "recall": 0.25,
+        "f1": 0.2631578947368421
+      },
+      {
+        "tolerance_sec": 2.0,
+        "tolerance_frames": 60,
+        "tp": 7,
+        "fp": 11,
+        "fn": 13,
+        "precision": 0.3888888888888889,
+        "recall": 0.35,
+        "f1": 0.36842105263157887
+      }
+    ],
+    "manual_tolerance_boundary_accuracy": 0.15
+  },
+  "core_temporal": {
+    "matched_mean_iou": 0.38503308576318845,
+    "penalized_mean_iou": 0.23101985145791307,
+    "start_mae_frames": 51.666666666666664,
+    "end_mae_frames": 21.0,
+    "boundary_mae_frames": 36.333333333333336,
+    "start_mae_sec": 1.722222222222222,
+    "end_mae_sec": 0.7,
+    "boundary_mae_sec": 1.2111111111111112,
+    "boundary_f1": [
+      {
+        "tolerance_sec": 0.5,
+        "tolerance_frames": 15,
+        "tp": 5,
+        "fp": 13,
+        "fn": 15,
+        "precision": 0.2777777777777778,
+        "recall": 0.25,
+        "f1": 0.2631578947368421
+      },
+      {
+        "tolerance_sec": 1.0,
+        "tolerance_frames": 30,
+        "tp": 6,
+        "fp": 12,
+        "fn": 14,
+        "precision": 0.3333333333333333,
+        "recall": 0.3,
+        "f1": 0.3157894736842105
+      },
+      {
+        "tolerance_sec": 2.0,
+        "tolerance_frames": 60,
+        "tp": 11,
+        "fp": 7,
+        "fn": 9,
+        "precision": 0.6111111111111112,
+        "recall": 0.55,
+        "f1": 0.5789473684210527
+      }
+    ],
+    "manual_tolerance_boundary_accuracy": 0.05
+  },
+  "coverage": {
+    "gt_fine_union_frames": 1572,
+    "pred_fine_union_frames": 778,
+    "gt_fine_coverage_ratio": 0.9544626593806922,
+    "pred_fine_coverage_ratio": 0.4723740133576199,
+    "pred_coarse_only_ratio": 0.5276259866423801,
+    "semantic_correct_intersection_frames": 289,
+    "semantic_correct_gt_coverage": 0.18384223918575063,
+    "semantic_false_positive_duration_frames": 489,
+    "semantic_false_positive_duration_ratio": 0.62853470437018,
+    "semantic_missed_gt_duration_frames": 1283,
+    "semantic_missed_gt_duration_ratio": 0.8161577608142494,
+    "core_correct_intersection_frames": 250,
+    "core_false_positive_duration_frames": 689,
+    "core_false_positive_duration_ratio": 0.7337593184238551,
+    "core_missed_gt_duration_frames": 909,
+    "core_missed_gt_duration_ratio": 0.7842968075927523
+  },
+  "per_phase": [
+    {
+      "pred_index": 0,
+      "gt_phase_id": 0,
+      "skill_type": "navigate_to_station",
+      "semantic_gt": [
+        34,
+        135
+      ],
+      "semantic_pred": [
+        13,
+        160
+      ],
+      "semantic_iou": 0.6891891891891891,
+      "semantic_start_error_frames": -21,
+      "semantic_end_error_frames": 25,
+      "semantic_start_error_sec": -0.7,
+      "semantic_end_error_sec": 0.8333333333333334,
+      "core_gt": [
+        34,
+        135
+      ],
+      "core_pred": [
+        28,
+        141
+      ],
+      "core_iou": 0.8947368421052632,
+      "core_start_error_frames": -6,
+      "core_end_error_frames": 6,
+      "core_start_error_sec": -0.2,
+      "core_end_error_sec": 0.2,
+      "manual_boundary_tolerance_frames": 3,
+      "semantic_start_within_manual_tolerance": false,
+      "semantic_end_within_manual_tolerance": false,
+      "core_start_within_manual_tolerance": false,
+      "core_end_within_manual_tolerance": false
+    },
+    {
+      "pred_index": 1,
+      "gt_phase_id": 2,
+      "skill_type": "pull_out_dish_rack",
+      "semantic_gt": [
+        221,
+        410
+      ],
+      "semantic_pred": [
+        310,
+        366
+      ],
+      "semantic_iou": 0.3,
+      "semantic_start_error_frames": 89,
+      "semantic_end_error_frames": -44,
+      "semantic_start_error_sec": 2.966666666666667,
+      "semantic_end_error_sec": -1.4666666666666666,
+      "core_gt": [
+        296,
+        410
+      ],
+      "core_pred": [
+        320,
+        365
+      ],
+      "core_iou": 0.4,
+      "core_start_error_frames": 24,
+      "core_end_error_frames": -45,
+      "core_start_error_sec": 0.8,
+      "core_end_error_sec": -1.5,
+      "manual_boundary_tolerance_frames": 10,
+      "semantic_start_within_manual_tolerance": false,
+      "semantic_end_within_manual_tolerance": false,
+      "core_start_within_manual_tolerance": false,
+      "core_end_within_manual_tolerance": false
+    },
+    {
+      "pred_index": 2,
+      "gt_phase_id": 3,
+      "skill_type": "pull_out_cutlery_basket",
+      "semantic_gt": [
+        411,
+        558
+      ],
+      "semantic_pred": [
+        538,
+        560
+      ],
+      "semantic_iou": 0.14,
+      "semantic_start_error_frames": 127,
+      "semantic_end_error_frames": 2,
+      "semantic_start_error_sec": 4.233333333333333,
+      "semantic_end_error_sec": 0.06666666666666667,
+      "core_gt": [
+        474,
+        555
+      ],
+      "core_pred": [
+        540,
+        541
+      ],
+      "core_iou": 0.024390243902439025,
+      "core_start_error_frames": 66,
+      "core_end_error_frames": -14,
+      "core_start_error_sec": 2.2,
+      "core_end_error_sec": -0.4666666666666667,
+      "manual_boundary_tolerance_frames": 8,
+      "semantic_start_within_manual_tolerance": false,
+      "semantic_end_within_manual_tolerance": true,
+      "core_start_within_manual_tolerance": false,
+      "core_end_within_manual_tolerance": false
+    },
+    {
+      "pred_index": 6,
+      "gt_phase_id": 6,
+      "skill_type": "push_in_cutlery_basket",
+      "semantic_gt": [
+        971,
+        1074
+      ],
+      "semantic_pred": [
+        1019,
+        1082
+      ],
+      "semantic_iou": 0.5,
+      "semantic_start_error_frames": 48,
+      "semantic_end_error_frames": 8,
+      "semantic_start_error_sec": 1.6,
+      "semantic_end_error_sec": 0.26666666666666666,
+      "core_gt": [
+        971,
+        1072
+      ],
+      "core_pred": [
+        1006,
+        1082
+      ],
+      "core_iou": 0.5982142857142857,
+      "core_start_error_frames": 35,
+      "core_end_error_frames": 10,
+      "core_start_error_sec": 1.1666666666666667,
+      "core_end_error_sec": 0.3333333333333333,
+      "manual_boundary_tolerance_frames": 8,
+      "semantic_start_within_manual_tolerance": false,
+      "semantic_end_within_manual_tolerance": true,
+      "core_start_within_manual_tolerance": false,
+      "core_end_within_manual_tolerance": false
+    },
+    {
+      "pred_index": 7,
+      "gt_phase_id": 8,
+      "skill_type": "push_in_dish_rack",
+      "semantic_gt": [
+        1371,
+        1458
+      ],
+      "semantic_pred": [
+        1495,
+        1519
+      ],
+      "semantic_iou": 0.0,
+      "semantic_start_error_frames": 124,
+      "semantic_end_error_frames": 61,
+      "semantic_start_error_sec": 4.133333333333334,
+      "semantic_end_error_sec": 2.033333333333333,
+      "core_gt": [
+        1371,
+        1455
+      ],
+      "core_pred": [
+        1502,
+        1503
+      ],
+      "core_iou": 0.0,
+      "core_start_error_frames": 131,
+      "core_end_error_frames": 48,
+      "core_start_error_sec": 4.366666666666666,
+      "core_end_error_sec": 1.6,
+      "manual_boundary_tolerance_frames": 8,
+      "semantic_start_within_manual_tolerance": false,
+      "semantic_end_within_manual_tolerance": false,
+      "core_start_within_manual_tolerance": false,
+      "core_end_within_manual_tolerance": false
+    },
+    {
+      "pred_index": 8,
+      "gt_phase_id": 9,
+      "skill_type": "close_dishwasher_door",
+      "semantic_gt": [
+        1459,
+        1605
+      ],
+      "semantic_pred": [
+        1547,
+        1599
+      ],
+      "semantic_iou": 0.36054421768707484,
+      "semantic_start_error_frames": 88,
+      "semantic_end_error_frames": -6,
+      "semantic_start_error_sec": 2.933333333333333,
+      "semantic_end_error_sec": -0.2,
+      "core_gt": [
+        1510,
+        1593
+      ],
+      "core_pred": [
+        1558,
+        1590
+      ],
+      "core_iou": 0.39285714285714285,
+      "core_start_error_frames": 48,
+      "core_end_error_frames": -3,
+      "core_start_error_sec": 1.6,
+      "core_end_error_sec": -0.1,
+      "manual_boundary_tolerance_frames": 8,
+      "semantic_start_within_manual_tolerance": false,
+      "semantic_end_within_manual_tolerance": true,
+      "core_start_within_manual_tolerance": false,
+      "core_end_within_manual_tolerance": true
+    }
+  ],
+  "policy_normalized": {
+    "metadata": {
+      "annotation_version": "v3.4.9",
+      "episode": "dishwasher_2_fx_20260529_episode_27",
+      "fps": 30.0,
+      "total_raw_frames": 1647,
+      "gt_status": "provisional_manual_gt",
+      "matching_policy": "monotonic same-skill alignment: maximize matches, then semantic IoU"
+    },
+    "sequence": {
+      "predicted": [
+        "navigate_to_station",
+        "pull_out_dish_rack",
+        "pull_out_cutlery_basket",
+        "place_utensil_in_cutlery_basket",
+        "place_utensil_in_cutlery_basket",
+        "place_plate_in_dish_rack",
+        "push_in_cutlery_basket",
+        "push_in_dish_rack",
+        "close_dishwasher_door"
+      ],
+      "ground_truth": [
+        "navigate_to_station",
+        "open_dishwasher_door",
+        "pull_out_dish_rack",
+        "pull_out_cutlery_basket",
+        "place_utensil_in_cutlery_basket",
+        "place_utensil_in_cutlery_basket",
+        "push_in_cutlery_basket",
+        "place_plate_in_dish_rack",
+        "push_in_dish_rack",
+        "close_dishwasher_door"
+      ],
+      "matched_phases": 8,
+      "precision": 0.8888888888888888,
+      "recall": 0.8,
+      "f1": 0.8421052631578948,
+      "lcs": 8,
+      "edit_distance": 3,
+      "exact_sequence_match": false,
+      "unmatched_predictions": [
+        {
+          "pred_index": 5,
+          "skill_type": "place_plate_in_dish_rack",
+          "semantic_pred": [
+            935,
+            1018
+          ]
+        }
+      ],
+      "missed_gt_phases": [
+        {
+          "gt_phase_id": 1,
+          "skill_type": "open_dishwasher_door",
+          "semantic_gt": [
+            136,
+            220
+          ]
+        },
+        {
+          "gt_phase_id": 7,
+          "skill_type": "place_plate_in_dish_rack",
+          "semantic_gt": [
+            1075,
+            1370
+          ]
+        }
+      ]
+    },
+    "semantic_temporal": {
+      "matched_mean_iou": 0.4323089456586994,
+      "penalized_mean_iou": 0.3458471565269595,
+      "start_mae_frames": 69.75,
+      "end_mae_frames": 24.625,
+      "boundary_mae_frames": 47.1875,
+      "start_mae_sec": 2.325,
+      "end_mae_sec": 0.8208333333333333,
+      "boundary_mae_sec": 1.5729166666666667,
+      "boundary_f1": [
+        {
+          "tolerance_sec": 0.5,
+          "tolerance_frames": 15,
+          "tp": 5,
+          "fp": 13,
+          "fn": 15,
+          "precision": 0.2777777777777778,
+          "recall": 0.25,
+          "f1": 0.2631578947368421
+        },
+        {
+          "tolerance_sec": 1.0,
+          "tolerance_frames": 30,
+          "tp": 7,
+          "fp": 11,
+          "fn": 13,
+          "precision": 0.3888888888888889,
+          "recall": 0.35,
+          "f1": 0.36842105263157887
+        },
+        {
+          "tolerance_sec": 2.0,
+          "tolerance_frames": 60,
+          "tp": 11,
+          "fp": 7,
+          "fn": 9,
+          "precision": 0.6111111111111112,
+          "recall": 0.55,
+          "f1": 0.5789473684210527
+        }
+      ],
+      "manual_tolerance_boundary_accuracy": 0.15
+    },
+    "core_temporal": {
+      "matched_mean_iou": 0.4649340885159397,
+      "penalized_mean_iou": 0.37194727081275175,
+      "start_mae_frames": 43.25,
+      "end_mae_frames": 23.125,
+      "boundary_mae_frames": 33.1875,
+      "start_mae_sec": 1.4416666666666667,
+      "end_mae_sec": 0.7708333333333334,
+      "boundary_mae_sec": 1.10625,
+      "boundary_f1": [
+        {
+          "tolerance_sec": 0.5,
+          "tolerance_frames": 15,
+          "tp": 6,
+          "fp": 12,
+          "fn": 14,
+          "precision": 0.3333333333333333,
+          "recall": 0.3,
+          "f1": 0.3157894736842105
+        },
+        {
+          "tolerance_sec": 1.0,
+          "tolerance_frames": 30,
+          "tp": 9,
+          "fp": 9,
+          "fn": 11,
+          "precision": 0.5,
+          "recall": 0.45,
+          "f1": 0.4736842105263158
+        },
+        {
+          "tolerance_sec": 2.0,
+          "tolerance_frames": 60,
+          "tp": 15,
+          "fp": 3,
+          "fn": 5,
+          "precision": 0.8333333333333334,
+          "recall": 0.75,
+          "f1": 0.7894736842105262
+        }
+      ],
+      "manual_tolerance_boundary_accuracy": 0.1
+    },
+    "coverage": {
+      "gt_fine_union_frames": 1572,
+      "pred_fine_union_frames": 778,
+      "gt_fine_coverage_ratio": 0.9544626593806922,
+      "pred_fine_coverage_ratio": 0.4723740133576199,
+      "pred_coarse_only_ratio": 0.5276259866423801,
+      "semantic_correct_intersection_frames": 601,
+      "semantic_correct_gt_coverage": 0.38231552162849874,
+      "semantic_false_positive_duration_frames": 177,
+      "semantic_false_positive_duration_ratio": 0.2275064267352185,
+      "semantic_missed_gt_duration_frames": 971,
+      "semantic_missed_gt_duration_ratio": 0.6176844783715013,
+      "core_correct_intersection_frames": 485,
+      "core_false_positive_duration_frames": 454,
+      "core_false_positive_duration_ratio": 0.483493077742279,
+      "core_missed_gt_duration_frames": 674,
+      "core_missed_gt_duration_ratio": 0.5815358067299397
+    },
+    "per_phase": [
+      {
+        "pred_index": 0,
+        "gt_phase_id": 0,
+        "skill_type": "navigate_to_station",
+        "semantic_gt": [
+          34,
+          135
+        ],
+        "semantic_pred": [
+          13,
+          160
+        ],
+        "semantic_iou": 0.6891891891891891,
+        "semantic_start_error_frames": -21,
+        "semantic_end_error_frames": 25,
+        "semantic_start_error_sec": -0.7,
+        "semantic_end_error_sec": 0.8333333333333334,
+        "core_gt": [
+          34,
+          135
+        ],
+        "core_pred": [
+          28,
+          141
+        ],
+        "core_iou": 0.8947368421052632,
+        "core_start_error_frames": -6,
+        "core_end_error_frames": 6,
+        "core_start_error_sec": -0.2,
+        "core_end_error_sec": 0.2,
+        "manual_boundary_tolerance_frames": 3,
+        "semantic_start_within_manual_tolerance": false,
+        "semantic_end_within_manual_tolerance": false,
+        "core_start_within_manual_tolerance": false,
+        "core_end_within_manual_tolerance": false
+      },
+      {
+        "pred_index": 1,
+        "gt_phase_id": 2,
+        "skill_type": "pull_out_dish_rack",
+        "semantic_gt": [
+          221,
+          410
+        ],
+        "semantic_pred": [
+          310,
+          366
+        ],
+        "semantic_iou": 0.3,
+        "semantic_start_error_frames": 89,
+        "semantic_end_error_frames": -44,
+        "semantic_start_error_sec": 2.966666666666667,
+        "semantic_end_error_sec": -1.4666666666666666,
+        "core_gt": [
+          296,
+          410
+        ],
+        "core_pred": [
+          320,
+          365
+        ],
+        "core_iou": 0.4,
+        "core_start_error_frames": 24,
+        "core_end_error_frames": -45,
+        "core_start_error_sec": 0.8,
+        "core_end_error_sec": -1.5,
+        "manual_boundary_tolerance_frames": 10,
+        "semantic_start_within_manual_tolerance": false,
+        "semantic_end_within_manual_tolerance": false,
+        "core_start_within_manual_tolerance": false,
+        "core_end_within_manual_tolerance": false
+      },
+      {
+        "pred_index": 2,
+        "gt_phase_id": 3,
+        "skill_type": "pull_out_cutlery_basket",
+        "semantic_gt": [
+          411,
+          558
+        ],
+        "semantic_pred": [
+          538,
+          560
+        ],
+        "semantic_iou": 0.14,
+        "semantic_start_error_frames": 127,
+        "semantic_end_error_frames": 2,
+        "semantic_start_error_sec": 4.233333333333333,
+        "semantic_end_error_sec": 0.06666666666666667,
+        "core_gt": [
+          474,
+          555
+        ],
+        "core_pred": [
+          540,
+          541
+        ],
+        "core_iou": 0.024390243902439025,
+        "core_start_error_frames": 66,
+        "core_end_error_frames": -14,
+        "core_start_error_sec": 2.2,
+        "core_end_error_sec": -0.4666666666666667,
+        "manual_boundary_tolerance_frames": 8,
+        "semantic_start_within_manual_tolerance": false,
+        "semantic_end_within_manual_tolerance": true,
+        "core_start_within_manual_tolerance": false,
+        "core_end_within_manual_tolerance": false
+      },
+      {
+        "pred_index": 3,
+        "gt_phase_id": 4,
+        "skill_type": "place_utensil_in_cutlery_basket",
+        "semantic_gt": [
+          559,
+          749
+        ],
+        "semantic_pred": [
+          608,
+          761
+        ],
+        "semantic_iou": 0.6995073891625616,
+        "semantic_start_error_frames": 49,
+        "semantic_end_error_frames": 12,
+        "semantic_start_error_sec": 1.6333333333333333,
+        "semantic_end_error_sec": 0.4,
+        "core_gt": [
+          619,
+          719
+        ],
+        "core_pred": [
+          627,
+          762
+        ],
+        "core_iou": 0.6458333333333334,
+        "core_start_error_frames": 8,
+        "core_end_error_frames": 43,
+        "core_start_error_sec": 0.26666666666666666,
+        "core_end_error_sec": 1.4333333333333333,
+        "manual_boundary_tolerance_frames": 8,
+        "semantic_start_within_manual_tolerance": false,
+        "semantic_end_within_manual_tolerance": false,
+        "core_start_within_manual_tolerance": true,
+        "core_end_within_manual_tolerance": false
+      },
+      {
+        "pred_index": 4,
+        "gt_phase_id": 5,
+        "skill_type": "place_utensil_in_cutlery_basket",
+        "semantic_gt": [
+          750,
+          970
+        ],
+        "semantic_pred": [
+          762,
+          931
+        ],
+        "semantic_iou": 0.7692307692307693,
+        "semantic_start_error_frames": 12,
+        "semantic_end_error_frames": -39,
+        "semantic_start_error_sec": 0.4,
+        "semantic_end_error_sec": -1.3,
+        "core_gt": [
+          790,
+          947
+        ],
+        "core_pred": [
+          762,
+          931
+        ],
+        "core_iou": 0.7634408602150538,
+        "core_start_error_frames": -28,
+        "core_end_error_frames": -16,
+        "core_start_error_sec": -0.9333333333333333,
+        "core_end_error_sec": -0.5333333333333333,
+        "manual_boundary_tolerance_frames": 8,
+        "semantic_start_within_manual_tolerance": false,
+        "semantic_end_within_manual_tolerance": false,
+        "core_start_within_manual_tolerance": false,
+        "core_end_within_manual_tolerance": false
+      },
+      {
+        "pred_index": 6,
+        "gt_phase_id": 6,
+        "skill_type": "push_in_cutlery_basket",
+        "semantic_gt": [
+          971,
+          1074
+        ],
+        "semantic_pred": [
+          1019,
+          1082
+        ],
+        "semantic_iou": 0.5,
+        "semantic_start_error_frames": 48,
+        "semantic_end_error_frames": 8,
+        "semantic_start_error_sec": 1.6,
+        "semantic_end_error_sec": 0.26666666666666666,
+        "core_gt": [
+          971,
+          1072
+        ],
+        "core_pred": [
+          1006,
+          1082
+        ],
+        "core_iou": 0.5982142857142857,
+        "core_start_error_frames": 35,
+        "core_end_error_frames": 10,
+        "core_start_error_sec": 1.1666666666666667,
+        "core_end_error_sec": 0.3333333333333333,
+        "manual_boundary_tolerance_frames": 8,
+        "semantic_start_within_manual_tolerance": false,
+        "semantic_end_within_manual_tolerance": true,
+        "core_start_within_manual_tolerance": false,
+        "core_end_within_manual_tolerance": false
+      },
+      {
+        "pred_index": 7,
+        "gt_phase_id": 8,
+        "skill_type": "push_in_dish_rack",
+        "semantic_gt": [
+          1371,
+          1458
+        ],
+        "semantic_pred": [
+          1495,
+          1519
+        ],
+        "semantic_iou": 0.0,
+        "semantic_start_error_frames": 124,
+        "semantic_end_error_frames": 61,
+        "semantic_start_error_sec": 4.133333333333334,
+        "semantic_end_error_sec": 2.033333333333333,
+        "core_gt": [
+          1371,
+          1455
+        ],
+        "core_pred": [
+          1502,
+          1503
+        ],
+        "core_iou": 0.0,
+        "core_start_error_frames": 131,
+        "core_end_error_frames": 48,
+        "core_start_error_sec": 4.366666666666666,
+        "core_end_error_sec": 1.6,
+        "manual_boundary_tolerance_frames": 8,
+        "semantic_start_within_manual_tolerance": false,
+        "semantic_end_within_manual_tolerance": false,
+        "core_start_within_manual_tolerance": false,
+        "core_end_within_manual_tolerance": false
+      },
+      {
+        "pred_index": 8,
+        "gt_phase_id": 9,
+        "skill_type": "close_dishwasher_door",
+        "semantic_gt": [
+          1459,
+          1605
+        ],
+        "semantic_pred": [
+          1547,
+          1599
+        ],
+        "semantic_iou": 0.36054421768707484,
+        "semantic_start_error_frames": 88,
+        "semantic_end_error_frames": -6,
+        "semantic_start_error_sec": 2.933333333333333,
+        "semantic_end_error_sec": -0.2,
+        "core_gt": [
+          1510,
+          1593
+        ],
+        "core_pred": [
+          1558,
+          1590
+        ],
+        "core_iou": 0.39285714285714285,
+        "core_start_error_frames": 48,
+        "core_end_error_frames": -3,
+        "core_start_error_sec": 1.6,
+        "core_end_error_sec": -0.1,
+        "manual_boundary_tolerance_frames": 8,
+        "semantic_start_within_manual_tolerance": false,
+        "semantic_end_within_manual_tolerance": true,
+        "core_start_within_manual_tolerance": false,
+        "core_end_within_manual_tolerance": true
+      }
+    ]
+  },
+  "policy_aliases": {
+    "place_knife_in_cutlery_basket": "place_utensil_in_cutlery_basket",
+    "place_fork_in_cutlery_basket": "place_utensil_in_cutlery_basket",
+    "place_plate_in_dish_rack": "place_plate_in_dish_rack"
+  }
+}
+exported compact result: /efs/share/1919650160032350208/users/machong14/wam/event_analyze/results/dishwasher_2_fx_20260529_episode_27/v3_4_9
+files: evaluation_temporal.json, hierarchical_annotations.json, manifest.json, summary.json
+runtime compacted
+  moved to cache: entity_observations_base.jsonl, entity_observations.jsonl, targeted_observations.jsonl, boundaries.png, proposal/, targeted_temporal_strips/, vlm_raw_targeted/
+  removed intermediates: tracked_entity_states.json, tracked_entity_states_owned.json, hand_object_ownership.json, skill_candidates.json, skill_candidates_validated.json, interaction_validation_report.json, ambiguity_requests.json, diagnostics/pass1_anchors.json, diagnostics/pass2_before_reconcile.json, diagnostics/rejected_candidate_pool.json
+V3.4.9 complete: /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_27_analysis/versions/v3_4_9
+Final annotation: /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_27_analysis/versions/v3_4_9/hierarchical_annotations.json
+Diagnostics: /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_27_analysis/versions/v3_4_9/diagnostics/
+Reusable cache: /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_27_analysis/versions/v3_4_9/cache/
+Compact result exported under: /efs/share/1919650160032350208/users/machong14/wam/event_analyze/results/

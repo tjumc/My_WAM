@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "not_visible",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "state_after": {
+    "dish_rack": "not_visible",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "uncertain"
+  },
+  "confidence_before": {
+    "dish_rack": 0.9,
+    "right_hand": 0.3,
+    "left_hand": 0.3
+  },
+  "confidence_after": {
+    "dish_rack": 0.9,
+    "right_hand": 0.95,
+    "left_hand": 0.3
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "In head view at frame 798 (t0), the dish rack is not visible in the frame.",
+    "In head view at frame 874 (t7), the right hand is clearly in contact with the dish rack.",
+    "In right view, the hand is holding a pink plate throughout the sequence.",
+    "The dish rack is only visible in the head view during the later part of the sequence."
+  ],
+  "window_quality": "partial"
+}
+```

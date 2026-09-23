@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "door": "closing",
+    "right_hand": "contact_door",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "door": "open",
+    "right_hand": "contact_door",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "door": 0.98,
+    "right_hand": 0.98,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "在窗口早期（head t0 f86），dishwasher 门处于半开状态，右臂末端可见接触门边缘，门呈现关闭趋势。",
+    "在窗口晚期（head t7 f220），dishwasher 门已完全打开，右臂依然接触并支撑着门。",
+    "从 head t4 f163 到 head t7 f220，门从半开状态连续运动至完全打开状态。",
+    "左臂在整个过程中保持在左侧抬起，未接触门。"
+  ],
+  "window_quality": "good"
+}
+```

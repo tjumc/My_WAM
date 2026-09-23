@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "door": "opening",
+    "right_hand": "contact_door",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "door": "open",
+    "right_hand": "free",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "在窗口早期（t0-t2），右臂机械手正抓持洗碗机门边缘，门处于半开状态，且右臂有明显的向外拉动姿态。",
+    "在窗口晚期（t6-t7），洗碗机门已完全打开，内部碗架清晰可见，右臂机械手已松开并移向一侧，不再接触门体。",
+    "左臂机械手在整个序列中始终处于抬起且远离洗碗机的位置，未与门发生接触。",
+    "门的状态从早期的正在开启（opening）转变为晚期的完全开启（open）。"
+  ],
+  "window_quality": "good"
+}
+```
