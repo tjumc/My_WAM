@@ -99,3 +99,30 @@ The dishwasher schema uses the outer door as its completion frontier: the first
 transition to the expected final door state after all dependent rack/basket uses
 is terminal. Later articulated cycles with no downstream task-enabling role are
 removed as gratuitous lifecycle cycles.
+
+
+## Latent state implications from accepted actions
+
+V3.4.7 generalizes schema-driven hidden-state inference.
+
+An accepted phase may imply a state that must have held for that phase to be
+physically possible:
+
+- an accepted dependent use implies every declared `requires` state;
+- an accepted placement into a receptacle implies that receptacle's declared
+  `usage_state`.
+
+For example:
+
+```text
+place_plate_in_dish_rack
+=> dish_rack = usage_state(out)
+```
+
+This latent state can make a later `push_in_dish_rack` lifecycle transition
+legal even if the explicit pull-out phase was missed. Conversely, if no later
+push-in is observed, the expected-final-state check correctly remains
+unresolved.
+
+The implication changes hidden state only. It never synthesizes a missing skill
+label.

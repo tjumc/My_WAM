@@ -219,6 +219,8 @@ def main():
             "num_dropped": len(consistency_doc.get("dropped_phases", [])),
             "num_clamped": len(consistency_doc.get("clamped_phases", [])),
             "num_lifecycle_violations": len(consistency_doc.get("lifecycle_violations", [])),
+            "num_latent_state_inferences": len(consistency_doc.get("latent_state_inferences", [])),
+            "num_latent_usage_state_inferences": len(consistency_doc.get("latent_usage_state_inferences", [])),
             "num_gratuitous_lifecycle_cycles": len(consistency_doc.get("gratuitous_lifecycle_cycles", [])),
             "num_expected_final_state_violations": len(consistency_doc.get("expected_final_state_violations", [])),
             "frontier_resolved": (consistency_doc.get("task_completion_frontier") or {}).get("resolved"),

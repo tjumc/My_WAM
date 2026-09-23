@@ -5,7 +5,7 @@
 > preserve the **scientific problem -> diagnosis -> general solution -> evidence**
 > chain, and to distinguish paper-level ideas from local engineering fixes.
 >
-> Last updated: V3.4.6 (implementation complete; controlled validation pending).
+> Last updated: V3.4.7 (implementation complete; controlled validation pending).
 
 ---
 
@@ -1151,6 +1151,92 @@ supported lifecycle that:
 **Medium-to-high as part of global task-graph decoding.**
 
 
+## P20. Accepted placement does not yet imply receptacle usage state
+
+### Observation
+
+V3.4.6 episode19 produced a valid targeted-recovered
+`push_in_dish_rack`, but the final lifecycle gate removed it.
+
+The decoder started from:
+
+```text
+dish_rack = expected_initial_state(in)
+```
+
+and the explicit `pull_out_dish_rack` action was missing. Therefore
+`push_in_dish_rack` appeared to be an illegal `in -> in` action.
+
+However, the system had already accepted:
+
+```text
+place_plate_in_dish_rack
+```
+
+and the task schema declares:
+
+```text
+dish_rack.usage_state = out
+```
+
+So the accepted placement itself is evidence that the rack had reached
+`out`, even if the pull-out action label was missed.
+
+The same issue affects cutlery-basket reasoning and can make a completely
+missing receptacle lifecycle look falsely consistent when initial and expected
+final states are equal.
+
+### Diagnosis
+
+The reasoning graph currently propagates accessibility prerequisites but not all
+action preconditions implied by an accepted downstream action.
+
+More generally:
+
+> an accepted action can imply a latent world state that must have held for the
+> action to be physically possible.
+
+### General solution
+
+Introduce schema-driven **state implication reasoning**.
+
+Two generic implication families are used:
+
+```text
+accepted dependent use
+    -> declared prerequisite state
+
+accepted placement into receptacle
+    -> receptacle usage_state
+```
+
+Examples:
+
+```text
+pull_out_dish_rack
+    -> door=open
+
+place_plate_in_dish_rack
+    -> dish_rack=out
+
+place_utensil_in_cutlery_basket
+    -> cutlery_basket=out
+```
+
+Only latent state is inferred. Missing semantic actions are never synthesized.
+
+### Status
+
+**V3.4.7 implementation complete; controlled validation pending.**
+
+### Contribution potential
+
+**Medium-to-high as part of task-graph physical reasoning.**
+
+It makes downstream accepted actions useful not only as semantic labels but also
+as logical constraints on hidden object state.
+
+
 # 4. Version evolution and what each version taught us
 
 ## V3.3.1
@@ -1644,20 +1730,105 @@ while full temporary pass1/pass2 artifacts are removed unless
 
 Status:
 
-**Implemented. Controlled validation is pending.**
+**Implemented and evaluated on the frozen six-trajectory validation split.**
 
-Primary controlled questions:
+The V3.4.5 and V3.4.6 runs have identical SHA256 fingerprints for all six
+validation trajectories for:
 
-- does episode9 preserve its correct pass1 open-door and pull-rack skills?
-- does episode23 choose the first task-relevant terminal door close and suppress
-  the later reopen cycle?
-- does mean F1 improve over V3.4.5 without sacrificing precision?
-- how many pass1 anchors are restored versus directly contradicted?
-- how often are V3.4.5 targeted observations reusable exactly?
-- does the dependency-aware completion frontier reduce unresolved final
-  consistency?
+- base entity observations;
+- ambiguity requests;
+- targeted observations.
 
-The held-out split remains unopened until these questions are answered.
+Therefore the V3.4.5 -> V3.4.6 comparison is a clean reasoning-only controlled
+comparison.
+
+Observed result:
+
+```text
+                         V3.4.5   V3.4.6   delta
+mean policy Precision      0.950     0.979   +0.029
+mean policy Recall         0.533     0.567   +0.033
+mean policy F1             0.653     0.691   +0.038
+mean Edit Distance         5.000     4.333   -0.667
+Exact Rate                 0 / 6     0 / 6
+targeted queries          41        41        0
+queries / trajectory       6.833     6.833     0
+```
+
+Mechanism evidence:
+
+- episode9 raw pass2 deleted correct `open_dishwasher_door` and
+  `pull_out_dish_rack`; conservative assimilation restored both pass1 anchors,
+  improving F1 from 0.571 to 0.750;
+- no validation pass1 anchor was directly contradicted by strong same-entity
+  targeted reverse-transition evidence;
+- episode23 resolved the task-completion frontier at frame 1621 and removed the
+  later `open -> close` pair as two gratuitous post-final lifecycle phases;
+- episode21 retained a resolved completion frontier and the final gate removed
+  an infeasible early close plus a one-frame duplicate utensil phase.
+
+Main lesson:
+
+> conservative closed-loop assimilation and dependency-aware completion improve
+> annotation quality without changing perception evidence or query cost.
+
+New failure exposed:
+
+episode19 raw pass2 recovered a valid `push_in_dish_rack`, but the V3.4.6
+final lifecycle decoder removed it because the corresponding
+`pull_out_dish_rack` phase was missing. The accepted
+`place_plate_in_dish_rack` already proves that the rack had to be in its
+schema `usage_state=out`; V3.4.6 did not yet propagate that implication.
+
+The held-out split remains unopened.
+
+---
+
+## V3.4.7
+
+Purpose:
+
+**generalize latent state inference from accepted downstream actions.**
+
+V3.4.7 is a focused reasoning-only extension of V3.4.6.
+
+It introduces one methodological change:
+
+- an accepted placement whose destination is a schema receptacle implies that
+  the receptacle was in its declared `usage_state` during that placement.
+
+This is unified with the V3.4.6 prerequisite-state inference under a common
+state-implication mechanism.
+
+The decoder now supports:
+
+```text
+accepted dependent use -> prerequisite state
+accepted placement      -> receptacle usage state
+```
+
+Important constraint:
+
+> state implication updates hidden lifecycle state only; it never invents a
+> missing action.
+
+This should:
+
+- keep episode19's targeted-recovered `push_in_dish_rack`;
+- make episode6's missing rack lifecycle explicitly unresolved instead of
+  falsely consistent;
+- expose missing `push_in_cutlery_basket` as a final-state violation whenever
+  utensil placement proves the basket was out;
+- preserve V3.4.6 conservative-anchor and task-completion improvements.
+
+V3.4.7 also removes duplicate latent-inference metadata caused by final-state
+recomputation.
+
+Status:
+
+**Implemented. Frozen validation pending.**
+
+The held-out split remains unopened.
 
 ---
 
@@ -1682,8 +1853,9 @@ The held-out split remains unopened until these questions are answered.
 | relocated boundary may use stale robot signal | solved on current regression cases | post-anchor signal revalidation |
 | targeted perception over-queries | improved but unresolved | 48 -> 41 queries; 3/6 trajectories still hit max budget |
 | base VLM perception prompt is task-specific | partially unresolved | targeted prompt is schema-driven; broad prompt still task-specific |
-| targeted evidence can delete correct pass1 skills | V3.4.6 implemented, pending eval | conservative pass1-anchor assimilation |
-| task horizon can be extended by spurious late predictions | V3.4.6 implemented, pending eval | dependency-aware independent completion frontier |
+| targeted evidence can delete correct pass1 skills | validated on V3.4.6 | conservative pass1-anchor assimilation restored episode9 true positives |
+| task horizon can be extended by spurious late predictions | validated on V3.4.6 | episode23 frontier restored to frame 1621; post-final cycle removed |
+| accepted placement does not imply receptacle usage state | V3.4.7 implemented, pending eval | schema usage-state implication without fabricating missing actions |
 | held-out / cross-task experimental evidence | unresolved | required for paper |
 
 ---
@@ -1945,16 +2117,16 @@ A concise method statement is:
 
 Priority order should be:
 
-1. **Controlled V3.4.6 validation**
-   - run the same frozen six-trajectory validation split;
-   - compare V3.4.5 vs V3.4.6 with the same GT;
-   - verify whether targeted evidence is reused exactly or freshly queried;
-   - inspect restored anchors, contradicted anchors and pass2 additions.
+1. **Controlled V3.4.7 validation**
+   - reuse the frozen six-trajectory validation split;
+   - verify identical base/ambiguity/targeted evidence where request signatures match;
+   - check episode19 push-in-rack recovery;
+   - check episode6/7/9 missing receptacle final-state diagnostics;
+   - preserve V3.4.6 episode9/21/23 gains.
 
 2. **Development regression**
-   - rerun episode26/27 after validation behavior is understood;
-   - make sure conservative assimilation does not regress the exact episode27
-     sequence or destabilize episode26.
+   - rerun episode26/27 after V3.4.7 validation;
+   - verify the long-standing cutlery-basket push-in behavior under usage-state implication.
 
 3. **Schema-driven broad perception**
    - remove the remaining dishwasher-specific broad VLM prompt;

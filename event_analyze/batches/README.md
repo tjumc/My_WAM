@@ -87,7 +87,7 @@ explicitly so the frozen manifest itself does not need to change:
 ```bash
 python evaluation/run_batch.py \
   batches/dishwasher_v1_manifest.json \
-  --version v3_4_6 \
+  --version v3_4_7 \
   --split validation
 ```
 
@@ -217,3 +217,8 @@ For V3.4.6+, the batch summary also records:
 
 These statistics make it possible to separate perception-query cost from the
 actual semantic effect of closed-loop reasoning.
+
+
+For V3.4.7+, final-consistency aggregation additionally reports the number of
+latent state implications and the subset caused by receptacle usage-state
+reasoning. These are reasoning diagnostics, not inferred missing-action counts.

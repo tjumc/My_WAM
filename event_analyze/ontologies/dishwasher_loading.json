@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.7",
+  "schema_version": "0.8",
   "task_family": "dishwasher_loading",
   "onboarding": {
     "human_schema_definition_allowed": true,
@@ -403,7 +403,8 @@
     "Task-family schema may be defined once with human assistance; per-trajectory inference remains automatic.",
     "Knife/fork distinction is retained as optional diagnostic evidence, while the preferred training label is the policy-equivalent parent class utensil.",
     "V3.4.5 adds a schema-configured gripper interaction signature for articulated/contact manipulation; it is supporting evidence only and cannot by itself create a semantic action.",
-    "V3.4.6 adds optional expected initial states and a schema-level task-completion frontier so final validity is not defined by the last predicted phase."
+    "V3.4.6 adds optional expected initial states and a schema-level task-completion frontier so final validity is not defined by the last predicted phase.",
+    "V3.4.7 treats an accepted placement into a schema receptacle as evidence that the receptacle was in its declared usage_state at that time; this updates latent lifecycle state only and never invents the missing pull/open action."
   ],
   "manipulation_policy": {
     "max_concurrent_portable_objects": 1,

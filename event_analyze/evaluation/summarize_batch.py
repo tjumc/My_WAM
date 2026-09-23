@@ -229,6 +229,8 @@ def main():
             "consistency_num_dropped": consistency.get("num_dropped"),
             "consistency_num_clamped": consistency.get("num_clamped"),
             "consistency_lifecycle_violations": consistency.get("num_lifecycle_violations"),
+            "consistency_latent_state_inferences": consistency.get("num_latent_state_inferences"),
+            "consistency_latent_usage_state_inferences": consistency.get("num_latent_usage_state_inferences"),
             "consistency_gratuitous_lifecycle_cycles": consistency.get("num_gratuitous_lifecycle_cycles"),
             "consistency_expected_final_state_violations": consistency.get("num_expected_final_state_violations"),
             "consistency_status": consistency.get("status"),
@@ -330,6 +332,12 @@ def main():
             ),
             "total_lifecycle_violations": sum(
                 int(x.get("consistency_lifecycle_violations") or 0) for x in rows
+            ),
+            "total_latent_state_inferences": sum(
+                int(x.get("consistency_latent_state_inferences") or 0) for x in rows
+            ),
+            "total_latent_usage_state_inferences": sum(
+                int(x.get("consistency_latent_usage_state_inferences") or 0) for x in rows
             ),
             "total_gratuitous_lifecycle_cycles": sum(
                 int(x.get("consistency_gratuitous_lifecycle_cycles") or 0) for x in rows
