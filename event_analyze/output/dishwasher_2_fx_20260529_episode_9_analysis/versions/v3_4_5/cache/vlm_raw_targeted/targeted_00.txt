@@ -1,0 +1,35 @@
+```json
+{
+  "state_before": {
+    "door": "not_visible",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "door": "not_visible",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [
+    0,
+    58
+  ],
+  "evidence": [
+    "Head camera frames (top row) show the dishwasher door is located below the camera's field of view and is not visible at any point.",
+    "Left and Right camera frames (middle/bottom rows) show the robot's hands are positioned high in the air, far above the dishwasher door location.",
+    "No hands are visible near the dishwasher door in any of the provided frames.",
+    "The dishwasher door remains out of sight throughout the entire sequence."
+  ],
+  "window_quality": "poor"
+}
+```

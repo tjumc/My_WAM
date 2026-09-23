@@ -1,0 +1,34 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "out",
+    "right_hand": "free",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "cutlery_basket": "out",
+    "right_hand": "free",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.9
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.9
+  },
+  "evidence_time_indices": [
+    0,
+    7
+  ],
+  "evidence": [
+    "在早期帧 (t0) 和晚期帧 (t7) 中，右侧的餐具篮 (cutlery_basket) 均清晰可见，且处于从洗碗机拉出的位置。",
+    "在 t4 (539) 时刻，右手抓取了餐具篮并将其向外拉动，随后在 t5 (558) 时刻放开了餐具篮。",
+    "在整个观察窗口内，右手和左手在大部分时间处于空闲状态，未持续抓持目标实体。"
+  ],
+  "window_quality": "good"
+}
+```

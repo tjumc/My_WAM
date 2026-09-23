@@ -1,0 +1,35 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "not_visible",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "cutlery_basket": "not_visible",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [
+    0,
+    7
+  ],
+  "evidence": [
+    "在整个采样窗口 (f537-f665) 中，所有相机视角均未观察到 cutlery_basket，dishwasher 内部虽可见但无法识别具体的篮子实体。",
+    "头部相机 (head) 显示机械臂正在操作台面上的粉色盘子，双手位于盘子附近，未接触或靠近洗碗机内部的篮子。",
+    "左侧相机 (left) 和右侧相机 (right) 的视野主要覆盖台面和前景，未包含洗碗机内部结构，无法确认篮子状态。",
+    "由于缺乏对目标实体 (cutlery_basket) 的任何视觉观测，无法判断其运动状态或手部与其的交互关系。"
+  ],
+  "window_quality": "poor"
+}
+```

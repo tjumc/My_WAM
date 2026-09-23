@@ -1,0 +1,17 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "in",
+  "relative_motion": "stationary",
+  "right_hand_relation": "holding_utensil",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 9],
+  "evidence": [
+    "在序列开始（t0）到结束（t9）期间，cutlery_basket（餐具篮）始终位于洗碗机内部，位置相对于洗碗机框架没有发生明显改变。",
+    "dish_rack（碗篮）同样保持静止，未观察到被拉出或推入的动作。",
+    "右手（right hand）在整个序列中主要执行抓取和移动盘子上的刀叉（utensil）的任务，并未接触或移动 cutlery_basket。",
+    "虽然机器人手臂有动作，但其操作对象是台面上的餐具，而非移动餐具篮。"
+  ],
+  "visibility": "good"
+}
+```

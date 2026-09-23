@@ -1,0 +1,62 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "holding_plate",
+    "left_hand": "free",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "right_hand"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "free",
+    "left_hand": "free",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.5,
+    "right_hand": 0.9,
+    "left_hand": 0.9,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.9
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.5,
+    "right_hand": 0.9,
+    "left_hand": 0.9,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.9
+  },
+  "visible_entities": [
+    "dish_rack",
+    "plate",
+    "right_hand",
+    "left_hand",
+    "door"
+  ],
+  "evidence": [
+    "Early frames (f=1772, f=1794) in right camera show a pink plate clearly held in the right hand near the dishwasher rack.",
+    "Late frames (f=1840, f=1862) in right camera show the right hand is empty and the pink plate is visible resting inside the dish rack.",
+    "Head camera shows the dishwasher door is fully open throughout the entire window sequence.",
+    "Left camera view shows the dishwasher and rack from a side angle, confirming the rack is in the open position."
+  ],
+  "window_quality": "good"
+}
+```

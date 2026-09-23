@@ -1,0 +1,62 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "out",
+    "right_hand": "holding_plate",
+    "left_hand": "contact_dish_rack",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "right_hand"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "moving_in",
+    "right_hand": "uncertain",
+    "left_hand": "contact_cutlery_basket",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.95,
+    "right_hand": 0.90,
+    "left_hand": 0.90,
+    "knife_location": 0.85,
+    "fork_location": 0.85,
+    "plate_location": 0.95
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.90,
+    "right_hand": 0.60,
+    "left_hand": 0.85,
+    "knife_location": 0.85,
+    "fork_location": 0.85,
+    "plate_location": 0.85
+  },
+  "visible_entities": [
+    "dish_rack",
+    "cutlery_basket",
+    "plate",
+    "left_hand",
+    "right_hand"
+  ],
+  "evidence": [
+    "Head view shows a pink plate located on the upper shelf above the dishwasher in early frames (f=939-984).",
+    "Right view shows the right hand holding the pink plate in early frames, while the left hand is in contact with the stationary dish rack.",
+    "Right view shows the cutlery basket moving from an extended position (f=939) to being pushed into the dishwasher (f=1006-1029).",
+    "In late frames (f=1006-1029), the pink plate is no longer visible in the right hand and appears to have been placed inside the dish rack."
+  ],
+  "window_quality": "good"
+}
+```

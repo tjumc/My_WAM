@@ -1,0 +1,59 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "contact_door",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "contact_door",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "confidence_before": {
+    "robot_location": 0.9,
+    "door": 0.9,
+    "dish_rack": 0.85,
+    "cutlery_basket": 0.6,
+    "right_hand": 0.95,
+    "left_hand": 0.85,
+    "knife_location": 0.5,
+    "fork_location": 0.5,
+    "plate_location": 0.85
+  },
+  "confidence_after": {
+    "robot_location": 0.9,
+    "door": 0.9,
+    "dish_rack": 0.85,
+    "cutlery_basket": 0.6,
+    "right_hand": 0.95,
+    "left_hand": 0.85,
+    "knife_location": 0.5,
+    "fork_location": 0.5,
+    "plate_location": 0.85
+  },
+  "visible_entities": [
+    "dish_rack",
+    "plate"
+  ],
+  "evidence": [
+    "Head camera view shows dishwasher door fully open with lower rack (dish_rack) inserted inside containing plates.",
+    "Left camera view shows the left arm positioned near the dishwasher opening, with gripper interacting with the door structure.",
+    "Right camera view is heavily obstructed by a dark foreground object (likely the robot body or gripper) throughout the window.",
+    "No significant change in door or rack position is observed between early and late frames of the window."
+  ],
+  "window_quality": "partial"
+}
+```

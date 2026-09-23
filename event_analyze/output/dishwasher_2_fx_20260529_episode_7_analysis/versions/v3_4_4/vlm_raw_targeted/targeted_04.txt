@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "moving_in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "dish_rack": "moving_in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "在时间窗早期（如t0, t1），head视角显示dish rack已部分滑出，右臂末端与rack接触，呈现拉出姿态。",
+    "在时间窗晚期（如t6, t7），head视角显示右臂持续接触dish rack，rack位置较早期更靠近机器内部，呈现推入姿态。",
+    "right视角显示rack内部金属架结构，且随着时间推移，视角随rack移动，证实rack处于运动状态。",
+    "整个过程中，左手（left视角）始终未接触dish rack，保持free状态。"
+  ],
+  "window_quality": "good"
+}
+```

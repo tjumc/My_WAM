@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "out",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "state_after": {
+    "dish_rack": "out",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "confidence_before": {
+    "dish_rack": 0.95,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "confidence_after": {
+    "dish_rack": 0.95,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "dish rack is clearly visible in an extended (out) position in the head view throughout the window.",
+    "dish rack does not show any movement (in/out) between the beginning and end of the window.",
+    "left hand is visible in the head view but does not appear to be in contact with the dish rack.",
+    "right hand is not visible in the provided camera views."
+  ],
+  "window_quality": "good"
+}
+```

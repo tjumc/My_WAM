@@ -1,0 +1,810 @@
+{
+  "annotation_version": "v3.4.4",
+  "task_goal": "put the dish into the dishwasher",
+  "task_schema": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/ontologies/dishwasher_loading.json",
+  "task_family": "dishwasher_loading",
+  "num_inferred_skills": 33,
+  "skill_sequence": [
+    {
+      "skill_id": 0,
+      "skill_type": "navigate_to_station",
+      "instruction_zh": "移动到桌面/洗碗机前",
+      "instruction_en": "Move to the table/dishwasher station",
+      "entity": "robot_base",
+      "active_arm": "none",
+      "provisional_start_frame": 43,
+      "provisional_end_frame": 143,
+      "evidence_event_ids": [],
+      "confidence": 0.95,
+      "state_transition": {
+        "base_motion": true
+      },
+      "inference_mode": "hdf5_base_motion",
+      "source": "trajectory_level_entity_state_machine"
+    },
+    {
+      "skill_id": 1,
+      "skill_type": "pull_out_dish_rack",
+      "instruction_zh": "右手拉出碗篮",
+      "instruction_en": "Pull out the dish rack with the right hand",
+      "entity": "dish_rack",
+      "active_arm": "right",
+      "provisional_start_frame": 225,
+      "provisional_end_frame": 225,
+      "evidence_event_ids": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "confidence": 0.95,
+      "state_transition": {
+        "before": "in",
+        "after": "out"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine"
+    },
+    {
+      "skill_id": 2,
+      "skill_type": "push_in_dish_rack",
+      "instruction_zh": "右手推入碗篮",
+      "instruction_en": "Push in the dish rack with the right hand",
+      "entity": "dish_rack",
+      "active_arm": "right",
+      "provisional_start_frame": 304,
+      "provisional_end_frame": 304,
+      "evidence_event_ids": [
+        2,
+        3,
+        4
+      ],
+      "confidence": 0.95,
+      "state_transition": {
+        "before": "out",
+        "after": "in"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine"
+    },
+    {
+      "skill_id": 3,
+      "skill_type": "pull_out_dish_rack",
+      "instruction_zh": "右手拉出碗篮",
+      "instruction_en": "Pull out the dish rack with the right hand",
+      "entity": "dish_rack",
+      "active_arm": "right",
+      "provisional_start_frame": 326,
+      "provisional_end_frame": 326,
+      "evidence_event_ids": [
+        3,
+        5
+      ],
+      "confidence": 0.95,
+      "state_transition": {
+        "before": "in",
+        "after": "out"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine"
+    },
+    {
+      "skill_id": 4,
+      "skill_type": "push_in_dish_rack",
+      "instruction_zh": "右手推入碗篮",
+      "instruction_en": "Push in the dish rack with the right hand",
+      "entity": "dish_rack",
+      "active_arm": "right",
+      "provisional_start_frame": 361,
+      "provisional_end_frame": 406,
+      "evidence_event_ids": [
+        4,
+        5
+      ],
+      "confidence": 0.95,
+      "state_transition": {
+        "before": "out",
+        "after": "in"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine"
+    },
+    {
+      "skill_id": 5,
+      "skill_type": "pull_out_dish_rack",
+      "instruction_zh": "右手拉出碗篮",
+      "instruction_en": "Pull out the dish rack with the right hand",
+      "entity": "dish_rack",
+      "active_arm": "right",
+      "provisional_start_frame": 432,
+      "provisional_end_frame": 432,
+      "evidence_event_ids": [
+        5,
+        6,
+        7
+      ],
+      "confidence": 0.95,
+      "state_transition": {
+        "before": "in",
+        "after": "out"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine"
+    },
+    {
+      "skill_id": 6,
+      "skill_type": "pull_out_cutlery_basket",
+      "instruction_zh": "右手拉出餐具篮",
+      "instruction_en": "Pull out the cutlery basket with the right hand",
+      "entity": "cutlery_basket",
+      "active_arm": "right",
+      "provisional_start_frame": 451,
+      "provisional_end_frame": 474,
+      "evidence_event_ids": [
+        5,
+        6,
+        7,
+        20000,
+        20002
+      ],
+      "confidence": 0.9,
+      "state_transition": {
+        "before": "in",
+        "after": "out"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine"
+    },
+    {
+      "skill_id": 7,
+      "skill_type": "push_in_dish_rack",
+      "instruction_zh": "右手推入碗篮",
+      "instruction_en": "Push in the dish rack with the right hand",
+      "entity": "dish_rack",
+      "active_arm": "right",
+      "provisional_start_frame": 474,
+      "provisional_end_frame": 474,
+      "evidence_event_ids": [
+        6,
+        7,
+        8
+      ],
+      "confidence": 0.95,
+      "state_transition": {
+        "before": "out",
+        "after": "in"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine"
+    },
+    {
+      "skill_id": 8,
+      "skill_type": "place_plate_in_dish_rack",
+      "instruction_zh": "右手夹取盘子并放入碗篮",
+      "instruction_en": "Pick up the plate and place it in the dish rack with the right hand",
+      "entity": "plate",
+      "active_arm": "right",
+      "provisional_start_frame": 474,
+      "provisional_end_frame": 504,
+      "evidence_event_ids": [
+        6,
+        7,
+        20001
+      ],
+      "confidence": 0.52,
+      "state_transition": {
+        "before": "tabletop",
+        "held": "right_hand",
+        "after": "dish_rack",
+        "target_support": "observed",
+        "target_evidence_frame": 504,
+        "ownership_context_end_frame": null,
+        "retry_collapsed": false,
+        "completion_rule": "target_without_regrasp_before_object_context_switch"
+      },
+      "inference_mode": "completion_aware_object_episode",
+      "source": "trajectory_level_entity_state_machine"
+    },
+    {
+      "skill_id": 9,
+      "skill_type": "pull_out_dish_rack",
+      "instruction_zh": "右手拉出碗篮",
+      "instruction_en": "Pull out the dish rack with the right hand",
+      "entity": "dish_rack",
+      "active_arm": "right",
+      "provisional_start_frame": 504,
+      "provisional_end_frame": 541,
+      "evidence_event_ids": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        20004
+      ],
+      "confidence": 0.95,
+      "state_transition": {
+        "before": "in",
+        "after": "out"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine"
+    },
+    {
+      "skill_id": 10,
+      "skill_type": "push_in_cutlery_basket",
+      "instruction_zh": "右手推入餐具篮",
+      "instruction_en": "Push in the cutlery basket with the right hand",
+      "entity": "cutlery_basket",
+      "active_arm": "right",
+      "provisional_start_frame": 553,
+      "provisional_end_frame": 553,
+      "evidence_event_ids": [
+        7,
+        20000,
+        20002
+      ],
+      "confidence": 0.95,
+      "state_transition": {
+        "before": "out",
+        "after": "in"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine"
+    },
+    {
+      "skill_id": 11,
+      "skill_type": "pull_out_cutlery_basket",
+      "instruction_zh": "右手拉出餐具篮",
+      "instruction_en": "Pull out the cutlery basket with the right hand",
+      "entity": "cutlery_basket",
+      "active_arm": "right",
+      "provisional_start_frame": 598,
+      "provisional_end_frame": 598,
+      "evidence_event_ids": [
+        7,
+        20002
+      ],
+      "confidence": 0.95,
+      "state_transition": {
+        "before": "in",
+        "after": "out"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine"
+    },
+    {
+      "skill_id": 12,
+      "skill_type": "place_fork_in_cutlery_basket",
+      "instruction_zh": "右手夹取叉子并放入餐具篮",
+      "instruction_en": "Pick up the fork and place it in the cutlery basket with the right hand",
+      "entity": "fork",
+      "active_arm": "right",
+      "provisional_start_frame": 656,
+      "provisional_end_frame": 894,
+      "evidence_event_ids": [
+        1,
+        2,
+        9,
+        12
+      ],
+      "confidence": 0.8,
+      "state_transition": {
+        "before": "tabletop",
+        "held": "right_hand",
+        "after": "cutlery_basket",
+        "target_support": "observed",
+        "target_evidence_frame": 894,
+        "ownership_context_end_frame": null,
+        "retry_collapsed": false,
+        "completion_rule": "target_without_regrasp_before_object_context_switch"
+      },
+      "inference_mode": "completion_aware_object_episode",
+      "source": "trajectory_level_entity_state_machine"
+    },
+    {
+      "skill_id": 13,
+      "skill_type": "push_in_cutlery_basket",
+      "instruction_zh": "右手推入餐具篮",
+      "instruction_en": "Push in the cutlery basket with the right hand",
+      "entity": "cutlery_basket",
+      "active_arm": "right",
+      "provisional_start_frame": 682,
+      "provisional_end_frame": 682,
+      "evidence_event_ids": [
+        9,
+        10,
+        20002,
+        20005
+      ],
+      "confidence": 0.9,
+      "state_transition": {
+        "before": "out",
+        "after": "in"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine"
+    },
+    {
+      "skill_id": 14,
+      "skill_type": "pull_out_cutlery_basket",
+      "instruction_zh": "右手拉出餐具篮",
+      "instruction_en": "Pull out the cutlery basket with the right hand",
+      "entity": "cutlery_basket",
+      "active_arm": "right",
+      "provisional_start_frame": 853,
+      "provisional_end_frame": 879,
+      "evidence_event_ids": [
+        9,
+        10,
+        11,
+        20005,
+        20006
+      ],
+      "confidence": 0.9,
+      "state_transition": {
+        "before": "in",
+        "after": "out"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine"
+    },
+    {
+      "skill_id": 15,
+      "skill_type": "push_in_dish_rack",
+      "instruction_zh": "右手推入碗篮",
+      "instruction_en": "Push in the dish rack with the right hand",
+      "entity": "dish_rack",
+      "active_arm": "right",
+      "provisional_start_frame": 936,
+      "provisional_end_frame": 936,
+      "evidence_event_ids": [
+        10,
+        11,
+        20004
+      ],
+      "confidence": 0.95,
+      "state_transition": {
+        "before": "out",
+        "after": "in"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine"
+    },
+    {
+      "skill_id": 16,
+      "skill_type": "place_plate_in_dish_rack",
+      "instruction_zh": "右手夹取盘子并放入碗篮",
+      "instruction_en": "Pick up the plate and place it in the dish rack with the right hand",
+      "entity": "plate",
+      "active_arm": "right",
+      "provisional_start_frame": 939,
+      "provisional_end_frame": 1291,
+      "evidence_event_ids": [
+        7,
+        9,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        20,
+        22,
+        20001
+      ],
+      "confidence": 0.95,
+      "state_transition": {
+        "before": "tabletop",
+        "held": "right_hand",
+        "after": "dish_rack",
+        "target_support": "observed",
+        "target_evidence_frame": 1291,
+        "ownership_context_end_frame": null,
+        "retry_collapsed": true,
+        "completion_rule": "target_without_regrasp_before_object_context_switch"
+      },
+      "inference_mode": "completion_aware_object_episode",
+      "source": "trajectory_level_entity_state_machine",
+      "retry_collapsed": true,
+      "completion_aware_merge": true
+    },
+    {
+      "skill_id": 17,
+      "skill_type": "push_in_cutlery_basket",
+      "instruction_zh": "右手推入餐具篮",
+      "instruction_en": "Push in the cutlery basket with the right hand",
+      "entity": "cutlery_basket",
+      "active_arm": "right",
+      "provisional_start_frame": 940,
+      "provisional_end_frame": 940,
+      "evidence_event_ids": [
+        10,
+        11,
+        12,
+        20005,
+        20006
+      ],
+      "confidence": 0.9,
+      "state_transition": {
+        "before": "out",
+        "after": "in"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine"
+    },
+    {
+      "skill_id": 18,
+      "skill_type": "pull_out_dish_rack",
+      "instruction_zh": "右手拉出碗篮",
+      "instruction_en": "Pull out the dish rack with the right hand",
+      "entity": "dish_rack",
+      "active_arm": "right",
+      "provisional_start_frame": 950,
+      "provisional_end_frame": 950,
+      "evidence_event_ids": [
+        10,
+        11,
+        12
+      ],
+      "confidence": 0.95,
+      "state_transition": {
+        "before": "in",
+        "after": "out"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine"
+    },
+    {
+      "skill_id": 19,
+      "skill_type": "pull_out_cutlery_basket",
+      "instruction_zh": "右手拉出餐具篮",
+      "instruction_en": "Pull out the cutlery basket with the right hand",
+      "entity": "cutlery_basket",
+      "active_arm": "right",
+      "provisional_start_frame": 969,
+      "provisional_end_frame": 969,
+      "evidence_event_ids": [
+        10,
+        12,
+        20006
+      ],
+      "confidence": 0.9,
+      "state_transition": {
+        "before": "in",
+        "after": "out"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine"
+    },
+    {
+      "skill_id": 20,
+      "skill_type": "push_in_dish_rack",
+      "instruction_zh": "右手推入碗篮",
+      "instruction_en": "Push in the dish rack with the right hand",
+      "entity": "dish_rack",
+      "active_arm": "right",
+      "provisional_start_frame": 994,
+      "provisional_end_frame": 994,
+      "evidence_event_ids": [
+        11,
+        12
+      ],
+      "confidence": 0.9,
+      "state_transition": {
+        "before": "out",
+        "after": "in"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine"
+    },
+    {
+      "skill_id": 21,
+      "skill_type": "push_in_cutlery_basket",
+      "instruction_zh": "右手推入餐具篮",
+      "instruction_en": "Push in the cutlery basket with the right hand",
+      "entity": "cutlery_basket",
+      "active_arm": "right",
+      "provisional_start_frame": 1004,
+      "provisional_end_frame": 1040,
+      "evidence_event_ids": [
+        11,
+        12,
+        13,
+        16,
+        19,
+        20006
+      ],
+      "confidence": 0.9,
+      "state_transition": {
+        "before": "out",
+        "after": "in"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine"
+    },
+    {
+      "skill_id": 22,
+      "skill_type": "pull_out_dish_rack",
+      "instruction_zh": "右手拉出碗篮",
+      "instruction_en": "Pull out the dish rack with the right hand",
+      "entity": "dish_rack",
+      "active_arm": "right",
+      "provisional_start_frame": 1107,
+      "provisional_end_frame": 1107,
+      "evidence_event_ids": [
+        13,
+        14,
+        15
+      ],
+      "confidence": 0.95,
+      "state_transition": {
+        "before": "in",
+        "after": "out"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine"
+    },
+    {
+      "skill_id": 23,
+      "skill_type": "push_in_dish_rack",
+      "instruction_zh": "右手推入碗篮",
+      "instruction_en": "Push in the dish rack with the right hand",
+      "entity": "dish_rack",
+      "active_arm": "right",
+      "provisional_start_frame": 1169,
+      "provisional_end_frame": 1169,
+      "evidence_event_ids": [
+        13,
+        14,
+        15
+      ],
+      "confidence": 0.95,
+      "state_transition": {
+        "before": "out",
+        "after": "in"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine"
+    },
+    {
+      "skill_id": 24,
+      "skill_type": "pull_out_dish_rack",
+      "instruction_zh": "右手拉出碗篮",
+      "instruction_en": "Pull out the dish rack with the right hand",
+      "entity": "dish_rack",
+      "active_arm": "right",
+      "provisional_start_frame": 1184,
+      "provisional_end_frame": 1184,
+      "evidence_event_ids": [
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "confidence": 0.95,
+      "state_transition": {
+        "before": "in",
+        "after": "out"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine"
+    },
+    {
+      "skill_id": 25,
+      "skill_type": "push_in_dish_rack",
+      "instruction_zh": "右手推入碗篮",
+      "instruction_en": "Push in the dish rack with the right hand",
+      "entity": "dish_rack",
+      "active_arm": "right",
+      "provisional_start_frame": 1368,
+      "provisional_end_frame": 1403,
+      "evidence_event_ids": [
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "confidence": 0.9,
+      "state_transition": {
+        "before": "out",
+        "after": "in"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine"
+    },
+    {
+      "skill_id": 26,
+      "skill_type": "pull_out_cutlery_basket",
+      "instruction_zh": "右手拉出餐具篮",
+      "instruction_en": "Pull out the cutlery basket with the right hand",
+      "entity": "cutlery_basket",
+      "active_arm": "right",
+      "provisional_start_frame": 1422,
+      "provisional_end_frame": 1422,
+      "evidence_event_ids": [
+        12,
+        13,
+        16,
+        19,
+        20
+      ],
+      "confidence": 0.85,
+      "state_transition": {
+        "before": "in",
+        "after": "out"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine"
+    },
+    {
+      "skill_id": 27,
+      "skill_type": "push_in_cutlery_basket",
+      "instruction_zh": "右手推入餐具篮",
+      "instruction_en": "Push in the cutlery basket with the right hand",
+      "entity": "cutlery_basket",
+      "active_arm": "right",
+      "provisional_start_frame": 1467,
+      "provisional_end_frame": 1526,
+      "evidence_event_ids": [
+        19,
+        20,
+        21,
+        22
+      ],
+      "confidence": 0.85,
+      "state_transition": {
+        "before": "out",
+        "after": "in"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine"
+    },
+    {
+      "skill_id": 28,
+      "skill_type": "pull_out_dish_rack",
+      "instruction_zh": "右手拉出碗篮",
+      "instruction_en": "Pull out the dish rack with the right hand",
+      "entity": "dish_rack",
+      "active_arm": "right",
+      "provisional_start_frame": 1556,
+      "provisional_end_frame": 1556,
+      "evidence_event_ids": [
+        21,
+        22
+      ],
+      "confidence": 0.76,
+      "state_transition": {
+        "before": "in",
+        "after": "out"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine"
+    },
+    {
+      "skill_id": 29,
+      "skill_type": "close_dishwasher_door",
+      "instruction_zh": "右手合上洗碗机门",
+      "instruction_en": "Close the dishwasher door with the right hand",
+      "entity": "door",
+      "active_arm": "right",
+      "provisional_start_frame": 1602,
+      "provisional_end_frame": 1602,
+      "evidence_event_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "confidence": 0.426,
+      "state_transition": {
+        "before": "open",
+        "after": "closed"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine"
+    },
+    {
+      "skill_id": 30,
+      "skill_type": "push_in_dish_rack",
+      "instruction_zh": "右手推入碗篮",
+      "instruction_en": "Push in the dish rack with the right hand",
+      "entity": "dish_rack",
+      "active_arm": "right",
+      "provisional_start_frame": 1602,
+      "provisional_end_frame": 1602,
+      "evidence_event_ids": [
+        21,
+        22,
+        24
+      ],
+      "confidence": 0.76,
+      "state_transition": {
+        "before": "out",
+        "after": "in"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine"
+    },
+    {
+      "skill_id": 31,
+      "skill_type": "open_dishwasher_door",
+      "instruction_zh": "右手打开洗碗机门",
+      "instruction_en": "Open the dishwasher door with the right hand",
+      "entity": "door",
+      "active_arm": "right",
+      "provisional_start_frame": 1650,
+      "provisional_end_frame": 1700,
+      "evidence_event_ids": [
+        22,
+        23,
+        24
+      ],
+      "confidence": 0.426,
+      "state_transition": {
+        "before": "closed",
+        "after": "open"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine"
+    },
+    {
+      "skill_id": 32,
+      "skill_type": "pull_out_dish_rack",
+      "instruction_zh": "右手拉出碗篮",
+      "instruction_en": "Pull out the dish rack with the right hand",
+      "entity": "dish_rack",
+      "active_arm": "right",
+      "provisional_start_frame": 1650,
+      "provisional_end_frame": 1700,
+      "evidence_event_ids": [
+        21,
+        22,
+        24
+      ],
+      "confidence": 0.76,
+      "state_transition": {
+        "before": "in",
+        "after": "out"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine"
+    }
+  ],
+  "notes": [
+    "No LLM action/phase generation is used in skill inference.",
+    "Skills are inferred from trajectory-level tracked entity states rather than independent windows.",
+    "Stable endpoint changes can bridge missing motion states.",
+    "Object placements can bridge short occlusions; weak affordance completions are explicitly marked and down-weighted.",
+    "Object-centric manipulation episodes close on target only when no re-grasp occurs before an object-context switch; completion does not use a fixed target dwell-time threshold.",
+    "Joint hand-object ownership can trim speculative held intervals and provide a context-switch upper bound for sparse target observations.",
+    "The manual regression fixture is not read by this script."
+  ]
+}

@@ -1,0 +1,62 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "out",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "contact_dish_rack",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "moving_in",
+    "cutlery_basket": "moving_in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "contact_dish_rack",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.85,
+    "right_hand": 0.90,
+    "left_hand": 0.90,
+    "knife_location": 0.40,
+    "fork_location": 0.40,
+    "plate_location": 0.90
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.90,
+    "right_hand": 0.90,
+    "left_hand": 0.90,
+    "knife_location": 0.40,
+    "fork_location": 0.40,
+    "plate_location": 0.90
+  },
+  "visible_entities": [
+    "robot",
+    "dishwasher",
+    "dish_rack",
+    "plate",
+    "cutlery_basket"
+  ],
+  "evidence": [
+    "Head view shows the dishwasher door is fully open and the robot is positioned directly in front of the station.",
+    "Right view confirms the cutlery basket is extended out of the dishwasher cavity in the early frames (f=1432-1477).",
+    "Right view shows the cutlery basket moving into the dishwasher cavity in the later frames (f=1500-1522).",
+    "Both hands are visible in contact with the rack structure, pushing it inwards."
+  ],
+  "window_quality": "good"
+}
+```

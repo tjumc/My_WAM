@@ -1,0 +1,64 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "uncertain",
+    "right_hand": "approaching",
+    "left_hand": "approaching",
+    "knife_location": "tabletop",
+    "fork_location": "tabletop",
+    "plate_location": "tabletop"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "uncertain",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "contact_dish_rack",
+    "knife_location": "tabletop",
+    "fork_location": "tabletop",
+    "plate_location": "tabletop"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.4,
+    "right_hand": 0.9,
+    "left_hand": 0.9,
+    "knife_location": 0.95,
+    "fork_location": 0.95,
+    "plate_location": 0.95
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.4,
+    "right_hand": 0.9,
+    "left_hand": 0.9,
+    "knife_location": 0.95,
+    "fork_location": 0.95,
+    "plate_location": 0.95
+  },
+  "visible_entities": [
+    "dish_rack",
+    "knife",
+    "fork",
+    "plate",
+    "right_hand",
+    "left_hand",
+    "door"
+  ],
+  "evidence": [
+    "Head view shows the dishwasher door is open and the main rack (dish_rack) is pulled out.",
+    "Right view clearly shows a pink plate with a knife and fork resting on the table surface.",
+    "Both robot arms are positioned over the table/plate area throughout the window.",
+    "Right hand gripper command decreases (closing) while approaching the rack, but visual contact is ambiguous due to occlusion by the rack structure."
+  ],
+  "window_quality": "good"
+}
+```

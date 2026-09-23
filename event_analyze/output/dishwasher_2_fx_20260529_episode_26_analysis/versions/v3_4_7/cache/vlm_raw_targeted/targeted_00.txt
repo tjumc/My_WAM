@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "door": "opening",
+    "right_hand": "contact_door",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "door": "open",
+    "right_hand": "free",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "在帧128（t0）至帧181（t4）期间，head视角显示洗碗机门处于开启过程中，右臂持续接触并拉动门把手。",
+    "在帧194（t5）至帧207（t6）期间，head视角显示右臂与门分离（free），门继续自动滑开至最大角度。",
+    "在帧220（t7）期间，head视角显示门处于完全打开状态，右臂已回缩至操作区域之外。",
+    "right视角显示相机视角在窗口内发生了剧烈的向下/向前倾斜运动，符合门打开导致视野变化的特征。"
+  ],
+  "window_quality": "good"
+}
+```

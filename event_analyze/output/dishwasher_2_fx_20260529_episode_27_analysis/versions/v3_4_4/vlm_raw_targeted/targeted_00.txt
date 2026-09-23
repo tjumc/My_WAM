@@ -1,0 +1,34 @@
+```json
+{
+  "state_before": {
+    "door": "open",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "door": "open",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "door": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.9
+  },
+  "confidence_after": {
+    "door": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.9
+  },
+  "evidence_time_indices": [
+    0,
+    7
+  ],
+  "evidence": [
+    "Head camera view shows the dishwasher door is fully open (vertical) at both the beginning (t0) and end (t7) of the sequence.",
+    "No hand is visible in the head camera frame interacting with the door or inside the dishwasher at any sampled point.",
+    "Left and right camera views show a static scene with no hands or moving objects entering the field of view."
+  ],
+  "window_quality": "good"
+}
+```

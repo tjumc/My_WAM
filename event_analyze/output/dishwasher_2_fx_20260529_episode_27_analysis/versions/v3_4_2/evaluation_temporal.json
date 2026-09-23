@@ -1,0 +1,989 @@
+{
+  "metadata": {
+    "annotation_version": "v3.4.2",
+    "episode": "dishwasher_2_fx_20260529_episode_27",
+    "fps": 30.0,
+    "total_raw_frames": 1647,
+    "gt_status": "provisional_manual_gt",
+    "matching_policy": "monotonic same-skill alignment: maximize matches, then semantic IoU"
+  },
+  "sequence": {
+    "predicted": [
+      "navigate_to_station",
+      "open_dishwasher_door",
+      "pull_out_dish_rack",
+      "pull_out_cutlery_basket",
+      "place_utensil_in_cutlery_basket",
+      "place_utensil_in_cutlery_basket",
+      "push_in_cutlery_basket",
+      "place_plate_in_dish_rack",
+      "push_in_dish_rack",
+      "close_dishwasher_door"
+    ],
+    "ground_truth": [
+      "navigate_to_station",
+      "open_dishwasher_door",
+      "pull_out_dish_rack",
+      "pull_out_cutlery_basket",
+      "place_knife_in_cutlery_basket",
+      "place_fork_in_cutlery_basket",
+      "push_in_cutlery_basket",
+      "place_plate_in_dish_rack",
+      "push_in_dish_rack",
+      "close_dishwasher_door"
+    ],
+    "matched_phases": 8,
+    "precision": 0.8,
+    "recall": 0.8,
+    "f1": 0.8000000000000002,
+    "lcs": 8,
+    "edit_distance": 2,
+    "exact_sequence_match": false,
+    "unmatched_predictions": [
+      {
+        "pred_index": 4,
+        "skill_type": "place_utensil_in_cutlery_basket",
+        "semantic_pred": [
+          608,
+          770
+        ]
+      },
+      {
+        "pred_index": 5,
+        "skill_type": "place_utensil_in_cutlery_basket",
+        "semantic_pred": [
+          771,
+          931
+        ]
+      }
+    ],
+    "missed_gt_phases": [
+      {
+        "gt_phase_id": 4,
+        "skill_type": "place_knife_in_cutlery_basket",
+        "semantic_gt": [
+          559,
+          749
+        ]
+      },
+      {
+        "gt_phase_id": 5,
+        "skill_type": "place_fork_in_cutlery_basket",
+        "semantic_gt": [
+          750,
+          970
+        ]
+      }
+    ]
+  },
+  "semantic_temporal": {
+    "matched_mean_iou": 0.35365928930583307,
+    "penalized_mean_iou": 0.2829274314446665,
+    "start_mae_frames": 29.625,
+    "end_mae_frames": 67.375,
+    "boundary_mae_frames": 48.5,
+    "start_mae_sec": 0.9875,
+    "end_mae_sec": 2.245833333333333,
+    "boundary_mae_sec": 1.6166666666666667,
+    "boundary_f1": [
+      {
+        "tolerance_sec": 0.5,
+        "tolerance_frames": 15,
+        "tp": 3,
+        "fp": 17,
+        "fn": 17,
+        "precision": 0.15,
+        "recall": 0.15,
+        "f1": 0.15
+      },
+      {
+        "tolerance_sec": 1.0,
+        "tolerance_frames": 30,
+        "tp": 7,
+        "fp": 13,
+        "fn": 13,
+        "precision": 0.35,
+        "recall": 0.35,
+        "f1": 0.35
+      },
+      {
+        "tolerance_sec": 2.0,
+        "tolerance_frames": 60,
+        "tp": 13,
+        "fp": 7,
+        "fn": 7,
+        "precision": 0.65,
+        "recall": 0.65,
+        "f1": 0.65
+      }
+    ],
+    "manual_tolerance_boundary_accuracy": 0.1
+  },
+  "core_temporal": {
+    "matched_mean_iou": 0.26660154738715464,
+    "penalized_mean_iou": 0.2132812379097237,
+    "start_mae_frames": 37.5,
+    "end_mae_frames": 74.75,
+    "boundary_mae_frames": 56.125,
+    "start_mae_sec": 1.25,
+    "end_mae_sec": 2.4916666666666667,
+    "boundary_mae_sec": 1.8708333333333333,
+    "boundary_f1": [
+      {
+        "tolerance_sec": 0.5,
+        "tolerance_frames": 15,
+        "tp": 3,
+        "fp": 17,
+        "fn": 17,
+        "precision": 0.15,
+        "recall": 0.15,
+        "f1": 0.15
+      },
+      {
+        "tolerance_sec": 1.0,
+        "tolerance_frames": 30,
+        "tp": 6,
+        "fp": 14,
+        "fn": 14,
+        "precision": 0.3,
+        "recall": 0.3,
+        "f1": 0.3
+      },
+      {
+        "tolerance_sec": 2.0,
+        "tolerance_frames": 60,
+        "tp": 10,
+        "fp": 10,
+        "fn": 10,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5
+      }
+    ],
+    "manual_tolerance_boundary_accuracy": 0.0
+  },
+  "coverage": {
+    "gt_fine_union_frames": 1572,
+    "pred_fine_union_frames": 960,
+    "gt_fine_coverage_ratio": 0.9544626593806922,
+    "pred_fine_coverage_ratio": 0.5828779599271403,
+    "pred_coarse_only_ratio": 0.41712204007285975,
+    "semantic_correct_intersection_frames": 510,
+    "semantic_correct_gt_coverage": 0.3244274809160305,
+    "semantic_false_positive_duration_frames": 450,
+    "semantic_false_positive_duration_ratio": 0.46875,
+    "semantic_missed_gt_duration_frames": 1062,
+    "semantic_missed_gt_duration_ratio": 0.6755725190839694,
+    "core_correct_intersection_frames": 355,
+    "core_false_positive_duration_frames": 459,
+    "core_false_positive_duration_ratio": 0.5638820638820639,
+    "core_missed_gt_duration_frames": 804,
+    "core_missed_gt_duration_ratio": 0.6937014667817084
+  },
+  "per_phase": [
+    {
+      "pred_index": 0,
+      "gt_phase_id": 0,
+      "skill_type": "navigate_to_station",
+      "semantic_gt": [
+        34,
+        135
+      ],
+      "semantic_pred": [
+        13,
+        111
+      ],
+      "semantic_iou": 0.6341463414634146,
+      "semantic_start_error_frames": -21,
+      "semantic_end_error_frames": -24,
+      "semantic_start_error_sec": -0.7,
+      "semantic_end_error_sec": -0.8,
+      "core_gt": [
+        34,
+        135
+      ],
+      "core_pred": [
+        28,
+        104
+      ],
+      "core_iou": 0.6574074074074074,
+      "core_start_error_frames": -6,
+      "core_end_error_frames": -31,
+      "core_start_error_sec": -0.2,
+      "core_end_error_sec": -1.0333333333333334,
+      "manual_boundary_tolerance_frames": 3,
+      "semantic_start_within_manual_tolerance": false,
+      "semantic_end_within_manual_tolerance": false,
+      "core_start_within_manual_tolerance": false,
+      "core_end_within_manual_tolerance": false
+    },
+    {
+      "pred_index": 1,
+      "gt_phase_id": 1,
+      "skill_type": "open_dishwasher_door",
+      "semantic_gt": [
+        136,
+        220
+      ],
+      "semantic_pred": [
+        136,
+        168
+      ],
+      "semantic_iou": 0.38823529411764707,
+      "semantic_start_error_frames": 0,
+      "semantic_end_error_frames": -52,
+      "semantic_start_error_sec": 0.0,
+      "semantic_end_error_sec": -1.7333333333333334,
+      "core_gt": [
+        150,
+        220
+      ],
+      "core_pred": [
+        136,
+        168
+      ],
+      "core_iou": 0.2235294117647059,
+      "core_start_error_frames": -14,
+      "core_end_error_frames": -52,
+      "core_start_error_sec": -0.4666666666666667,
+      "core_end_error_sec": -1.7333333333333334,
+      "manual_boundary_tolerance_frames": 5,
+      "semantic_start_within_manual_tolerance": true,
+      "semantic_end_within_manual_tolerance": false,
+      "core_start_within_manual_tolerance": false,
+      "core_end_within_manual_tolerance": false
+    },
+    {
+      "pred_index": 2,
+      "gt_phase_id": 2,
+      "skill_type": "pull_out_dish_rack",
+      "semantic_gt": [
+        221,
+        410
+      ],
+      "semantic_pred": [
+        247,
+        280
+      ],
+      "semantic_iou": 0.17894736842105263,
+      "semantic_start_error_frames": 26,
+      "semantic_end_error_frames": -130,
+      "semantic_start_error_sec": 0.8666666666666667,
+      "semantic_end_error_sec": -4.333333333333333,
+      "core_gt": [
+        296,
+        410
+      ],
+      "core_pred": [
+        261,
+        262
+      ],
+      "core_iou": 0.0,
+      "core_start_error_frames": -35,
+      "core_end_error_frames": -148,
+      "core_start_error_sec": -1.1666666666666667,
+      "core_end_error_sec": -4.933333333333334,
+      "manual_boundary_tolerance_frames": 10,
+      "semantic_start_within_manual_tolerance": false,
+      "semantic_end_within_manual_tolerance": false,
+      "core_start_within_manual_tolerance": false,
+      "core_end_within_manual_tolerance": false
+    },
+    {
+      "pred_index": 3,
+      "gt_phase_id": 3,
+      "skill_type": "pull_out_cutlery_basket",
+      "semantic_gt": [
+        411,
+        558
+      ],
+      "semantic_pred": [
+        361,
+        416
+      ],
+      "semantic_iou": 0.030303030303030304,
+      "semantic_start_error_frames": -50,
+      "semantic_end_error_frames": -142,
+      "semantic_start_error_sec": -1.6666666666666667,
+      "semantic_end_error_sec": -4.733333333333333,
+      "core_gt": [
+        474,
+        555
+      ],
+      "core_pred": [
+        361,
+        406
+      ],
+      "core_iou": 0.0,
+      "core_start_error_frames": -113,
+      "core_end_error_frames": -149,
+      "core_start_error_sec": -3.7666666666666666,
+      "core_end_error_sec": -4.966666666666667,
+      "manual_boundary_tolerance_frames": 8,
+      "semantic_start_within_manual_tolerance": false,
+      "semantic_end_within_manual_tolerance": false,
+      "core_start_within_manual_tolerance": false,
+      "core_end_within_manual_tolerance": false
+    },
+    {
+      "pred_index": 6,
+      "gt_phase_id": 6,
+      "skill_type": "push_in_cutlery_basket",
+      "semantic_gt": [
+        971,
+        1074
+      ],
+      "semantic_pred": [
+        991,
+        1018
+      ],
+      "semantic_iou": 0.2692307692307692,
+      "semantic_start_error_frames": 20,
+      "semantic_end_error_frames": -56,
+      "semantic_start_error_sec": 0.6666666666666666,
+      "semantic_end_error_sec": -1.8666666666666667,
+      "core_gt": [
+        971,
+        1072
+      ],
+      "core_pred": [
+        999,
+        1000
+      ],
+      "core_iou": 0.0196078431372549,
+      "core_start_error_frames": 28,
+      "core_end_error_frames": -72,
+      "core_start_error_sec": 0.9333333333333333,
+      "core_end_error_sec": -2.4,
+      "manual_boundary_tolerance_frames": 8,
+      "semantic_start_within_manual_tolerance": false,
+      "semantic_end_within_manual_tolerance": false,
+      "core_start_within_manual_tolerance": false,
+      "core_end_within_manual_tolerance": false
+    },
+    {
+      "pred_index": 7,
+      "gt_phase_id": 7,
+      "skill_type": "place_plate_in_dish_rack",
+      "semantic_gt": [
+        1075,
+        1370
+      ],
+      "semantic_pred": [
+        1025,
+        1312
+      ],
+      "semantic_iou": 0.6878612716763006,
+      "semantic_start_error_frames": -50,
+      "semantic_end_error_frames": -58,
+      "semantic_start_error_sec": -1.6666666666666667,
+      "semantic_end_error_sec": -1.9333333333333333,
+      "core_gt": [
+        1112,
+        1370
+      ],
+      "core_pred": [
+        1044,
+        1312
+      ],
+      "core_iou": 0.6146788990825688,
+      "core_start_error_frames": -68,
+      "core_end_error_frames": -58,
+      "core_start_error_sec": -2.2666666666666666,
+      "core_end_error_sec": -1.9333333333333333,
+      "manual_boundary_tolerance_frames": 10,
+      "semantic_start_within_manual_tolerance": false,
+      "semantic_end_within_manual_tolerance": false,
+      "core_start_within_manual_tolerance": false,
+      "core_end_within_manual_tolerance": false
+    },
+    {
+      "pred_index": 8,
+      "gt_phase_id": 8,
+      "skill_type": "push_in_dish_rack",
+      "semantic_gt": [
+        1371,
+        1458
+      ],
+      "semantic_pred": [
+        1381,
+        1386
+      ],
+      "semantic_iou": 0.06818181818181818,
+      "semantic_start_error_frames": 10,
+      "semantic_end_error_frames": -72,
+      "semantic_start_error_sec": 0.3333333333333333,
+      "semantic_end_error_sec": -2.4,
+      "core_gt": [
+        1371,
+        1455
+      ],
+      "core_pred": [
+        1383,
+        1384
+      ],
+      "core_iou": 0.023529411764705882,
+      "core_start_error_frames": 12,
+      "core_end_error_frames": -71,
+      "core_start_error_sec": 0.4,
+      "core_end_error_sec": -2.3666666666666667,
+      "manual_boundary_tolerance_frames": 8,
+      "semantic_start_within_manual_tolerance": false,
+      "semantic_end_within_manual_tolerance": false,
+      "core_start_within_manual_tolerance": false,
+      "core_end_within_manual_tolerance": false
+    },
+    {
+      "pred_index": 9,
+      "gt_phase_id": 9,
+      "skill_type": "close_dishwasher_door",
+      "semantic_gt": [
+        1459,
+        1605
+      ],
+      "semantic_pred": [
+        1519,
+        1610
+      ],
+      "semantic_iou": 0.5723684210526315,
+      "semantic_start_error_frames": 60,
+      "semantic_end_error_frames": 5,
+      "semantic_start_error_sec": 2.0,
+      "semantic_end_error_sec": 0.16666666666666666,
+      "core_gt": [
+        1510,
+        1593
+      ],
+      "core_pred": [
+        1534,
+        1610
+      ],
+      "core_iou": 0.594059405940594,
+      "core_start_error_frames": 24,
+      "core_end_error_frames": 17,
+      "core_start_error_sec": 0.8,
+      "core_end_error_sec": 0.5666666666666667,
+      "manual_boundary_tolerance_frames": 8,
+      "semantic_start_within_manual_tolerance": false,
+      "semantic_end_within_manual_tolerance": true,
+      "core_start_within_manual_tolerance": false,
+      "core_end_within_manual_tolerance": false
+    }
+  ],
+  "policy_normalized": {
+    "metadata": {
+      "annotation_version": "v3.4.2",
+      "episode": "dishwasher_2_fx_20260529_episode_27",
+      "fps": 30.0,
+      "total_raw_frames": 1647,
+      "gt_status": "provisional_manual_gt",
+      "matching_policy": "monotonic same-skill alignment: maximize matches, then semantic IoU"
+    },
+    "sequence": {
+      "predicted": [
+        "navigate_to_station",
+        "open_dishwasher_door",
+        "pull_out_dish_rack",
+        "pull_out_cutlery_basket",
+        "place_utensil_in_cutlery_basket",
+        "place_utensil_in_cutlery_basket",
+        "push_in_cutlery_basket",
+        "place_plate_in_dish_rack",
+        "push_in_dish_rack",
+        "close_dishwasher_door"
+      ],
+      "ground_truth": [
+        "navigate_to_station",
+        "open_dishwasher_door",
+        "pull_out_dish_rack",
+        "pull_out_cutlery_basket",
+        "place_utensil_in_cutlery_basket",
+        "place_utensil_in_cutlery_basket",
+        "push_in_cutlery_basket",
+        "place_plate_in_dish_rack",
+        "push_in_dish_rack",
+        "close_dishwasher_door"
+      ],
+      "matched_phases": 10,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "lcs": 10,
+      "edit_distance": 0,
+      "exact_sequence_match": true,
+      "unmatched_predictions": [],
+      "missed_gt_phases": []
+    },
+    "semantic_temporal": {
+      "matched_mean_iou": 0.4227592422531698,
+      "penalized_mean_iou": 0.4227592422531698,
+      "start_mae_frames": 30.7,
+      "end_mae_frames": 59.9,
+      "boundary_mae_frames": 45.3,
+      "start_mae_sec": 1.0233333333333332,
+      "end_mae_sec": 1.9966666666666666,
+      "boundary_mae_sec": 1.51,
+      "boundary_f1": [
+        {
+          "tolerance_sec": 0.5,
+          "tolerance_frames": 15,
+          "tp": 3,
+          "fp": 17,
+          "fn": 17,
+          "precision": 0.15,
+          "recall": 0.15,
+          "f1": 0.15
+        },
+        {
+          "tolerance_sec": 1.0,
+          "tolerance_frames": 30,
+          "tp": 9,
+          "fp": 11,
+          "fn": 11,
+          "precision": 0.45,
+          "recall": 0.45,
+          "f1": 0.45
+        },
+        {
+          "tolerance_sec": 2.0,
+          "tolerance_frames": 60,
+          "tp": 17,
+          "fp": 3,
+          "fn": 3,
+          "precision": 0.85,
+          "recall": 0.85,
+          "f1": 0.85
+        }
+      ],
+      "manual_tolerance_boundary_accuracy": 0.1
+    },
+    "core_temporal": {
+      "matched_mean_iou": 0.3542086572645624,
+      "penalized_mean_iou": 0.3542086572645624,
+      "start_mae_frames": 33.6,
+      "end_mae_frames": 65.7,
+      "boundary_mae_frames": 49.65,
+      "start_mae_sec": 1.12,
+      "end_mae_sec": 2.19,
+      "boundary_mae_sec": 1.655,
+      "boundary_f1": [
+        {
+          "tolerance_sec": 0.5,
+          "tolerance_frames": 15,
+          "tp": 4,
+          "fp": 16,
+          "fn": 16,
+          "precision": 0.2,
+          "recall": 0.2,
+          "f1": 0.20000000000000004
+        },
+        {
+          "tolerance_sec": 1.0,
+          "tolerance_frames": 30,
+          "tp": 9,
+          "fp": 11,
+          "fn": 11,
+          "precision": 0.45,
+          "recall": 0.45,
+          "f1": 0.45
+        },
+        {
+          "tolerance_sec": 2.0,
+          "tolerance_frames": 60,
+          "tp": 14,
+          "fp": 6,
+          "fn": 6,
+          "precision": 0.7,
+          "recall": 0.7,
+          "f1": 0.7
+        }
+      ],
+      "manual_tolerance_boundary_accuracy": 0.05
+    },
+    "coverage": {
+      "gt_fine_union_frames": 1572,
+      "pred_fine_union_frames": 960,
+      "gt_fine_coverage_ratio": 0.9544626593806922,
+      "pred_fine_coverage_ratio": 0.5828779599271403,
+      "pred_coarse_only_ratio": 0.41712204007285975,
+      "semantic_correct_intersection_frames": 813,
+      "semantic_correct_gt_coverage": 0.517175572519084,
+      "semantic_false_positive_duration_frames": 147,
+      "semantic_false_positive_duration_ratio": 0.153125,
+      "semantic_missed_gt_duration_frames": 759,
+      "semantic_missed_gt_duration_ratio": 0.48282442748091603,
+      "core_correct_intersection_frames": 590,
+      "core_false_positive_duration_frames": 224,
+      "core_false_positive_duration_ratio": 0.2751842751842752,
+      "core_missed_gt_duration_frames": 569,
+      "core_missed_gt_duration_ratio": 0.4909404659188956
+    },
+    "per_phase": [
+      {
+        "pred_index": 0,
+        "gt_phase_id": 0,
+        "skill_type": "navigate_to_station",
+        "semantic_gt": [
+          34,
+          135
+        ],
+        "semantic_pred": [
+          13,
+          111
+        ],
+        "semantic_iou": 0.6341463414634146,
+        "semantic_start_error_frames": -21,
+        "semantic_end_error_frames": -24,
+        "semantic_start_error_sec": -0.7,
+        "semantic_end_error_sec": -0.8,
+        "core_gt": [
+          34,
+          135
+        ],
+        "core_pred": [
+          28,
+          104
+        ],
+        "core_iou": 0.6574074074074074,
+        "core_start_error_frames": -6,
+        "core_end_error_frames": -31,
+        "core_start_error_sec": -0.2,
+        "core_end_error_sec": -1.0333333333333334,
+        "manual_boundary_tolerance_frames": 3,
+        "semantic_start_within_manual_tolerance": false,
+        "semantic_end_within_manual_tolerance": false,
+        "core_start_within_manual_tolerance": false,
+        "core_end_within_manual_tolerance": false
+      },
+      {
+        "pred_index": 1,
+        "gt_phase_id": 1,
+        "skill_type": "open_dishwasher_door",
+        "semantic_gt": [
+          136,
+          220
+        ],
+        "semantic_pred": [
+          136,
+          168
+        ],
+        "semantic_iou": 0.38823529411764707,
+        "semantic_start_error_frames": 0,
+        "semantic_end_error_frames": -52,
+        "semantic_start_error_sec": 0.0,
+        "semantic_end_error_sec": -1.7333333333333334,
+        "core_gt": [
+          150,
+          220
+        ],
+        "core_pred": [
+          136,
+          168
+        ],
+        "core_iou": 0.2235294117647059,
+        "core_start_error_frames": -14,
+        "core_end_error_frames": -52,
+        "core_start_error_sec": -0.4666666666666667,
+        "core_end_error_sec": -1.7333333333333334,
+        "manual_boundary_tolerance_frames": 5,
+        "semantic_start_within_manual_tolerance": true,
+        "semantic_end_within_manual_tolerance": false,
+        "core_start_within_manual_tolerance": false,
+        "core_end_within_manual_tolerance": false
+      },
+      {
+        "pred_index": 2,
+        "gt_phase_id": 2,
+        "skill_type": "pull_out_dish_rack",
+        "semantic_gt": [
+          221,
+          410
+        ],
+        "semantic_pred": [
+          247,
+          280
+        ],
+        "semantic_iou": 0.17894736842105263,
+        "semantic_start_error_frames": 26,
+        "semantic_end_error_frames": -130,
+        "semantic_start_error_sec": 0.8666666666666667,
+        "semantic_end_error_sec": -4.333333333333333,
+        "core_gt": [
+          296,
+          410
+        ],
+        "core_pred": [
+          261,
+          262
+        ],
+        "core_iou": 0.0,
+        "core_start_error_frames": -35,
+        "core_end_error_frames": -148,
+        "core_start_error_sec": -1.1666666666666667,
+        "core_end_error_sec": -4.933333333333334,
+        "manual_boundary_tolerance_frames": 10,
+        "semantic_start_within_manual_tolerance": false,
+        "semantic_end_within_manual_tolerance": false,
+        "core_start_within_manual_tolerance": false,
+        "core_end_within_manual_tolerance": false
+      },
+      {
+        "pred_index": 3,
+        "gt_phase_id": 3,
+        "skill_type": "pull_out_cutlery_basket",
+        "semantic_gt": [
+          411,
+          558
+        ],
+        "semantic_pred": [
+          361,
+          416
+        ],
+        "semantic_iou": 0.030303030303030304,
+        "semantic_start_error_frames": -50,
+        "semantic_end_error_frames": -142,
+        "semantic_start_error_sec": -1.6666666666666667,
+        "semantic_end_error_sec": -4.733333333333333,
+        "core_gt": [
+          474,
+          555
+        ],
+        "core_pred": [
+          361,
+          406
+        ],
+        "core_iou": 0.0,
+        "core_start_error_frames": -113,
+        "core_end_error_frames": -149,
+        "core_start_error_sec": -3.7666666666666666,
+        "core_end_error_sec": -4.966666666666667,
+        "manual_boundary_tolerance_frames": 8,
+        "semantic_start_within_manual_tolerance": false,
+        "semantic_end_within_manual_tolerance": false,
+        "core_start_within_manual_tolerance": false,
+        "core_end_within_manual_tolerance": false
+      },
+      {
+        "pred_index": 4,
+        "gt_phase_id": 4,
+        "skill_type": "place_utensil_in_cutlery_basket",
+        "semantic_gt": [
+          559,
+          749
+        ],
+        "semantic_pred": [
+          608,
+          770
+        ],
+        "semantic_iou": 0.6698113207547169,
+        "semantic_start_error_frames": 49,
+        "semantic_end_error_frames": 21,
+        "semantic_start_error_sec": 1.6333333333333333,
+        "semantic_end_error_sec": 0.7,
+        "core_gt": [
+          619,
+          719
+        ],
+        "core_pred": [
+          627,
+          762
+        ],
+        "core_iou": 0.6458333333333334,
+        "core_start_error_frames": 8,
+        "core_end_error_frames": 43,
+        "core_start_error_sec": 0.26666666666666666,
+        "core_end_error_sec": 1.4333333333333333,
+        "manual_boundary_tolerance_frames": 8,
+        "semantic_start_within_manual_tolerance": false,
+        "semantic_end_within_manual_tolerance": false,
+        "core_start_within_manual_tolerance": true,
+        "core_end_within_manual_tolerance": false
+      },
+      {
+        "pred_index": 5,
+        "gt_phase_id": 5,
+        "skill_type": "place_utensil_in_cutlery_basket",
+        "semantic_gt": [
+          750,
+          970
+        ],
+        "semantic_pred": [
+          771,
+          931
+        ],
+        "semantic_iou": 0.7285067873303167,
+        "semantic_start_error_frames": 21,
+        "semantic_end_error_frames": -39,
+        "semantic_start_error_sec": 0.7,
+        "semantic_end_error_sec": -1.3,
+        "core_gt": [
+          790,
+          947
+        ],
+        "core_pred": [
+          762,
+          931
+        ],
+        "core_iou": 0.7634408602150538,
+        "core_start_error_frames": -28,
+        "core_end_error_frames": -16,
+        "core_start_error_sec": -0.9333333333333333,
+        "core_end_error_sec": -0.5333333333333333,
+        "manual_boundary_tolerance_frames": 8,
+        "semantic_start_within_manual_tolerance": false,
+        "semantic_end_within_manual_tolerance": false,
+        "core_start_within_manual_tolerance": false,
+        "core_end_within_manual_tolerance": false
+      },
+      {
+        "pred_index": 6,
+        "gt_phase_id": 6,
+        "skill_type": "push_in_cutlery_basket",
+        "semantic_gt": [
+          971,
+          1074
+        ],
+        "semantic_pred": [
+          991,
+          1018
+        ],
+        "semantic_iou": 0.2692307692307692,
+        "semantic_start_error_frames": 20,
+        "semantic_end_error_frames": -56,
+        "semantic_start_error_sec": 0.6666666666666666,
+        "semantic_end_error_sec": -1.8666666666666667,
+        "core_gt": [
+          971,
+          1072
+        ],
+        "core_pred": [
+          999,
+          1000
+        ],
+        "core_iou": 0.0196078431372549,
+        "core_start_error_frames": 28,
+        "core_end_error_frames": -72,
+        "core_start_error_sec": 0.9333333333333333,
+        "core_end_error_sec": -2.4,
+        "manual_boundary_tolerance_frames": 8,
+        "semantic_start_within_manual_tolerance": false,
+        "semantic_end_within_manual_tolerance": false,
+        "core_start_within_manual_tolerance": false,
+        "core_end_within_manual_tolerance": false
+      },
+      {
+        "pred_index": 7,
+        "gt_phase_id": 7,
+        "skill_type": "place_plate_in_dish_rack",
+        "semantic_gt": [
+          1075,
+          1370
+        ],
+        "semantic_pred": [
+          1025,
+          1312
+        ],
+        "semantic_iou": 0.6878612716763006,
+        "semantic_start_error_frames": -50,
+        "semantic_end_error_frames": -58,
+        "semantic_start_error_sec": -1.6666666666666667,
+        "semantic_end_error_sec": -1.9333333333333333,
+        "core_gt": [
+          1112,
+          1370
+        ],
+        "core_pred": [
+          1044,
+          1312
+        ],
+        "core_iou": 0.6146788990825688,
+        "core_start_error_frames": -68,
+        "core_end_error_frames": -58,
+        "core_start_error_sec": -2.2666666666666666,
+        "core_end_error_sec": -1.9333333333333333,
+        "manual_boundary_tolerance_frames": 10,
+        "semantic_start_within_manual_tolerance": false,
+        "semantic_end_within_manual_tolerance": false,
+        "core_start_within_manual_tolerance": false,
+        "core_end_within_manual_tolerance": false
+      },
+      {
+        "pred_index": 8,
+        "gt_phase_id": 8,
+        "skill_type": "push_in_dish_rack",
+        "semantic_gt": [
+          1371,
+          1458
+        ],
+        "semantic_pred": [
+          1381,
+          1386
+        ],
+        "semantic_iou": 0.06818181818181818,
+        "semantic_start_error_frames": 10,
+        "semantic_end_error_frames": -72,
+        "semantic_start_error_sec": 0.3333333333333333,
+        "semantic_end_error_sec": -2.4,
+        "core_gt": [
+          1371,
+          1455
+        ],
+        "core_pred": [
+          1383,
+          1384
+        ],
+        "core_iou": 0.023529411764705882,
+        "core_start_error_frames": 12,
+        "core_end_error_frames": -71,
+        "core_start_error_sec": 0.4,
+        "core_end_error_sec": -2.3666666666666667,
+        "manual_boundary_tolerance_frames": 8,
+        "semantic_start_within_manual_tolerance": false,
+        "semantic_end_within_manual_tolerance": false,
+        "core_start_within_manual_tolerance": false,
+        "core_end_within_manual_tolerance": false
+      },
+      {
+        "pred_index": 9,
+        "gt_phase_id": 9,
+        "skill_type": "close_dishwasher_door",
+        "semantic_gt": [
+          1459,
+          1605
+        ],
+        "semantic_pred": [
+          1519,
+          1610
+        ],
+        "semantic_iou": 0.5723684210526315,
+        "semantic_start_error_frames": 60,
+        "semantic_end_error_frames": 5,
+        "semantic_start_error_sec": 2.0,
+        "semantic_end_error_sec": 0.16666666666666666,
+        "core_gt": [
+          1510,
+          1593
+        ],
+        "core_pred": [
+          1534,
+          1610
+        ],
+        "core_iou": 0.594059405940594,
+        "core_start_error_frames": 24,
+        "core_end_error_frames": 17,
+        "core_start_error_sec": 0.8,
+        "core_end_error_sec": 0.5666666666666667,
+        "manual_boundary_tolerance_frames": 8,
+        "semantic_start_within_manual_tolerance": false,
+        "semantic_end_within_manual_tolerance": true,
+        "core_start_within_manual_tolerance": false,
+        "core_end_within_manual_tolerance": false
+      }
+    ]
+  },
+  "policy_aliases": {
+    "place_knife_in_cutlery_basket": "place_utensil_in_cutlery_basket",
+    "place_fork_in_cutlery_basket": "place_utensil_in_cutlery_basket",
+    "place_plate_in_dish_rack": "place_plate_in_dish_rack"
+  }
+}

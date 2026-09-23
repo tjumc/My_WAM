@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "not_visible",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "state_after": {
+    "cutlery_basket": "moving_in",
+    "right_hand": "pushing_cutlery_basket",
+    "left_hand": "uncertain"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.9,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.9,
+    "right_hand": 0.9,
+    "left_hand": 0.0
+  },
+  "evidence_time_indices": [6, 7],
+  "evidence": [
+    "在早期帧（如806-897）中，head相机视野下方的洗碗机区域被遮挡或处于关闭状态，无法观察到cutlery_basket。",
+    "在晚期帧916（head t6）中，cutlery_basket已完全拉出并暴露，机器人右臂位于其上方。",
+    "在晚期帧934（head t7）中，cutlery_basket的位置明显比916帧更深入洗碗机内部，显示向内的连续位移。",
+    "在晚期帧934（right t7）中，右机械手正接触并推入cutlery_basket，刀叉篮在视野中呈现向内移动的状态。"
+  ],
+  "window_quality": "good"
+}
+```

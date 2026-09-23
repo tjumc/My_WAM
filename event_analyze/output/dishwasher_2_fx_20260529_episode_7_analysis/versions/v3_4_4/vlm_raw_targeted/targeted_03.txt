@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "plate_location": "tabletop",
+    "right_hand": "free",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "plate_location": "dish_rack",
+    "right_hand": "free",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "plate_location": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.9
+  },
+  "confidence_after": {
+    "plate_location": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.9
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "Frame 338: Plate is clearly visible on the tabletop in the upper right corner of the head camera view.",
+    "Frame 338: Robot arms are visible near the dishwasher but not holding the plate; grippers appear open.",
+    "Frame 442: The plate is no longer on the tabletop.",
+    "Frame 442: The plate is clearly visible inside the dishwasher rack (dish_rack) in the head and right camera views."
+  ],
+  "window_quality": "good"
+}
+```

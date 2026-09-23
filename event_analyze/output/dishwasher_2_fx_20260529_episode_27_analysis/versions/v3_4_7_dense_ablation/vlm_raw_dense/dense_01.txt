@@ -1,0 +1,17 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "out",
+  "relative_motion": "moving_out",
+  "right_hand_relation": "pulling_cutlery_basket",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 4, 5, 9],
+  "evidence": [
+    "t0 (354): cutlery_basket 位于洗碗机内部深处，被上层 dish_rack 遮挡，处于静止状态。",
+    "t4 (414): cutlery_basket 开始明显向外移动，已经部分滑出上层 dish_rack 的遮挡范围，进入视野中心。",
+    "t5 (428): cutlery_basket 继续向外移动，位置比 t4 更靠近洗碗机开口处。",
+    "t9 (488): cutlery_basket 已经移动到洗碗机边缘，大部分位于机器外部，完成拉出动作。"
+  ],
+  "visibility": "good"
+}
+```

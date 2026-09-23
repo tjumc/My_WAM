@@ -1,0 +1,62 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "moving_in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.4,
+    "right_hand": 0.9,
+    "left_hand": 0.95,
+    "knife_location": 0.1,
+    "fork_location": 0.1,
+    "plate_location": 0.1
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.4,
+    "right_hand": 0.9,
+    "left_hand": 0.95,
+    "knife_location": 0.1,
+    "fork_location": 0.1,
+    "plate_location": 0.1
+  },
+  "visible_entities": [
+    "robot_location",
+    "door",
+    "dish_rack",
+    "right_hand",
+    "left_hand"
+  ],
+  "evidence": [
+    "Head camera shows the dishwasher door is fully open with the rack extended in the early frames.",
+    "Right hand is visible in contact with the dish rack structure throughout the window.",
+    "Right camera view shows the rack moving slightly inward (moving_in) towards the end of the sequence.",
+    "Left hand is not visible in any of the provided camera views."
+  ],
+  "window_quality": "partial"
+}
+```

@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "uncertain",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "state_after": {
+    "cutlery_basket": "uncertain",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.0,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.0,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "evidence_time_indices": [0, 1],
+  "evidence": [
+    "cutlery_basket is not visible in any frame within the window.",
+    "The right hand is visible in head and right views but is not interacting with the cutlery basket.",
+    "The left hand is not clearly visible or interacting with the target entity.",
+    "The view is obstructed or the basket is located outside the camera's field of view."
+  ],
+  "window_quality": "poor"
+}
+```

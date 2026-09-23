@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "in",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "dish_rack": "moving_in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "Frame 220 (head): Dish rack is fully retracted inside the dishwasher; right hand is not visible.",
+    "Frame 220 (right): Close-up view shows the interior of the rack is empty and stationary.",
+    "Frame 310 (head): Right arm is extended deep into the dishwasher cavity, in contact with the rack structure.",
+    "Frame 310 (right): View from right hand shows it is positioned inside the rack, indicating active manipulation to push it in."
+  ],
+  "window_quality": "good"
+}
+```

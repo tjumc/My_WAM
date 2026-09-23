@@ -1,0 +1,35 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "out",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "cutlery_basket": "out",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.9
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.9
+  },
+  "evidence_time_indices": [
+    0,
+    7
+  ],
+  "evidence": [
+    "cutlery_basket 在整个序列中始终处于拉出状态（out），未观察到向内的移动。",
+    "在 head 视角的早期（f535）和晚期（f669），cutlery_basket 均清晰可见且位置未变。",
+    "在所有提供的视角中，均未观察到任何机械臂或手部与 cutlery_basket 发生接触。",
+    "手部在视野中不可见（not_visible），无法判断其具体动作。"
+  ],
+  "window_quality": "good"
+}
+```

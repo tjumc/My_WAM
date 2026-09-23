@@ -1,0 +1,64 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "approaching",
+    "left_hand": "uncertain",
+    "knife_location": "tabletop",
+    "fork_location": "tabletop",
+    "plate_location": "tabletop"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "uncertain",
+    "knife_location": "tabletop",
+    "fork_location": "tabletop",
+    "plate_location": "tabletop"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.3,
+    "right_hand": 0.95,
+    "left_hand": 0.6,
+    "knife_location": 0.9,
+    "fork_location": 0.9,
+    "plate_location": 0.9
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.3,
+    "right_hand": 0.9,
+    "left_hand": 0.6,
+    "knife_location": 0.9,
+    "fork_location": 0.9,
+    "plate_location": 0.9
+  },
+  "visible_entities": [
+    "robot_arm_right",
+    "dishwasher_door",
+    "dish_rack",
+    "plate",
+    "knife",
+    "fork",
+    "countertop"
+  ],
+  "evidence": [
+    "Right arm moves from above towards the open dishwasher interior in frames f=134 to f=156.",
+    "Right hand makes contact with the inner structure of the dishwasher (dish_rack) in frame f=156.",
+    "Pink plate with knife and fork remains stationary on the countertop throughout the entire window.",
+    "Dishwasher door is visibly open in all frames, revealing the interior rack."
+  ],
+  "window_quality": "good"
+}
+```

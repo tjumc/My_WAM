@@ -1,0 +1,35 @@
+```json
+{
+  "state_before": {
+    "door": "closed",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "door": "closed",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [
+    0,
+    7
+  ],
+  "evidence": [
+    "在head视角（f6至f82）中，洗碗机门始终处于水平关闭状态，未观察到任何开启、关闭或移动的迹象。",
+    "在left和right视角（f6至f82）中，未观察到任何机械臂或手部出现在洗碗机门附近或与其发生接触。",
+    "整个时间段内，洗碗机门相对于周围橱柜的位置保持固定不变。",
+    "画面中没有任何物体正在移动进入或移出洗碗机。"
+  ],
+  "window_quality": "good"
+}
+```

@@ -1,0 +1,35 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "moving_out",
+    "right_hand": "contact_cutlery_basket",
+    "left_hand": "uncertain"
+  },
+  "state_after": {
+    "cutlery_basket": "out",
+    "right_hand": "contact_cutlery_basket",
+    "left_hand": "uncertain"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.9,
+    "right_hand": 0.9,
+    "left_hand": 0.0
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.0
+  },
+  "evidence_time_indices": [
+    0,
+    7
+  ],
+  "evidence": [
+    "在帧 897 (t0) 到 993 (t5) 期间，right camera 显示 cutlery_basket 正在从洗碗机内部向外移动。",
+    "在帧 1012 (t6) 和 1031 (t7) 中，cutlery_basket 已经完全移出洗碗机，处于 'out' 状态。",
+    "在帧 916 (t1) 到 1031 (t7) 的 right camera 画面中，可以看到右机械手（Right Hand）持续接触并握住 cutlery_basket。",
+    "在帧 897 (t0) 的 head camera 中，右臂伸入洗碗机内部，接触篮子。"
+  ],
+  "window_quality": "good"
+}
+```

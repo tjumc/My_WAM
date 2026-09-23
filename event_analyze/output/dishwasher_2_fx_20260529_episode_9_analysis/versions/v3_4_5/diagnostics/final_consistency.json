@@ -1,0 +1,26 @@
+{
+  "annotation_version": "v3.4.5",
+  "trajectory_frames": 2188,
+  "original_task_end_raw_frame": 1760,
+  "effective_task_end_raw_frame": 1760,
+  "dropped_phases": [],
+  "clamped_phases": [],
+  "evidence_horizon_warnings": [],
+  "lifecycle_violations": [],
+  "expected_final_state_violations": [
+    {
+      "entity": "cutlery_basket",
+      "observed_final_state": "unknown",
+      "expected_final_state": "in",
+      "action": "reported_unresolved_no_action_invented"
+    }
+  ],
+  "final_phase_count": 4,
+  "final_consistency": {
+    "num_dropped": 0,
+    "num_clamped": 0,
+    "num_lifecycle_violations": 0,
+    "num_expected_final_state_violations": 1,
+    "status": "unresolved"
+  }
+}

@@ -1,0 +1,35 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "not_visible",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "state_after": {
+    "cutlery_basket": "not_visible",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.5,
+    "left_hand": 0.5
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.5,
+    "left_hand": 0.5
+  },
+  "evidence_time_indices": [
+    0,
+    7
+  ],
+  "evidence": [
+    "Target cutlery_basket is not visible in the dishwasher interior or on the table in any of the provided frames.",
+    "The robot's hands are visible in the head view but are positioned in the air and not interacting with a cutlery basket.",
+    "The dishwasher door is open, but the internal rack area where the basket would be is obscured or empty.",
+    "No contact or movement of a cutlery basket can be observed in the sequence."
+  ],
+  "window_quality": "good"
+}
+```

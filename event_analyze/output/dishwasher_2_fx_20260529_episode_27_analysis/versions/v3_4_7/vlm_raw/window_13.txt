@@ -1,0 +1,62 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "moving_out",
+    "right_hand": "holding_plate",
+    "left_hand": "contact_cutlery_basket",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "right_hand"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "moving_in",
+    "cutlery_basket": "in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "contact_dish_rack",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.90,
+    "right_hand": 0.90,
+    "left_hand": 0.90,
+    "knife_location": 0.50,
+    "fork_location": 0.50,
+    "plate_location": 0.85
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.50,
+    "fork_location": 0.50,
+    "plate_location": 0.90
+  },
+  "visible_entities": [
+    "dish_rack",
+    "cutlery_basket",
+    "right_hand",
+    "left_hand",
+    "plate"
+  ],
+  "evidence": [
+    "Early frames (f=954-999) show the cutlery basket being pulled out by the left hand and the plate held by the right hand.",
+    "Late frames (f=1022-1044) show the cutlery basket fully seated inside the dish_rack.",
+    "Late frames show both hands pushing the main dish_rack into the dishwasher cavity.",
+    "The plate is visible in the right hand early on, and appears to be placed into the rack in the final frames."
+  ],
+  "window_quality": "good"
+}
+```

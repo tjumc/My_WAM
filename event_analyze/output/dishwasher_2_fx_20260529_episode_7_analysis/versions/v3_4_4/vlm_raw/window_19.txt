@@ -1,0 +1,64 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "in",
+    "right_hand": "approaching",
+    "left_hand": "contact_dish_rack",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "closing",
+    "dish_rack": "moving_in",
+    "cutlery_basket": "moving_in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "contact_dish_rack",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.9,
+    "right_hand": 0.9,
+    "left_hand": 0.95,
+    "knife_location": 0.4,
+    "fork_location": 0.4,
+    "plate_location": 0.9
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.9,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.4,
+    "fork_location": 0.4,
+    "plate_location": 0.9
+  },
+  "visible_entities": [
+    "robot",
+    "dishwasher",
+    "dish_rack",
+    "plate",
+    "cutlery_basket",
+    "right_hand",
+    "left_hand"
+  ],
+  "evidence": [
+    "In early frames (f=1837-1882), the dishwasher door is open and the main dish rack is extended outwards.",
+    "The left hand is positioned on the edge of the dish rack, maintaining contact or proximity.",
+    "In late frames (f=1904-1927), both hands are pushing the dish rack, which is sliding into the dishwasher.",
+    "The door is visibly tilting downwards in the final frame (f=1927) as the rack is pushed in."
+  ],
+  "window_quality": "good"
+}
+```

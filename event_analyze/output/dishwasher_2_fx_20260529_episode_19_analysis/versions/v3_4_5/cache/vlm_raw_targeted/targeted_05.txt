@@ -1,0 +1,31 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "uncertain",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "state_after": {
+    "dish_rack": "uncertain",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "confidence_before": {
+    "dish_rack": 0.0,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "confidence_after": {
+    "dish_rack": 0.0,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "evidence_time_indices": [0, 1],
+  "evidence": [
+    "dish rack is not visible in the provided frames.",
+    "no hands are visible in the provided frames.",
+    "camera view is focused on other areas, missing the target entity."
+  ],
+  "window_quality": "poor"
+}
+```

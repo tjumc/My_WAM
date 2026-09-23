@@ -1,0 +1,102 @@
+{
+  "annotation_version": "v3.4.4",
+  "task_goal": "put the dish into the dishwasher",
+  "trajectory_instruction": "右手夹取盘子并放入碗篮",
+  "task_end_raw_frame": 1798,
+  "lerobot_episode_index": null,
+  "semantic_phases": [
+    {
+      "skill_id": 0,
+      "skill_type": "place_plate_in_dish_rack",
+      "instruction_zh": "右手夹取盘子并放入碗篮",
+      "instruction_en": "Pick up the plate and place it in the dish rack with the right hand",
+      "entity": "plate",
+      "active_arm": "right",
+      "provisional_start_frame": 230,
+      "provisional_end_frame": 1786,
+      "evidence_event_ids": [
+        0,
+        1,
+        2,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        21,
+        22,
+        20007
+      ],
+      "confidence": 0.9,
+      "state_transition": {
+        "before": "tabletop",
+        "held": "right_hand",
+        "after": "dish_rack",
+        "target_support": "observed",
+        "target_evidence_frame": 1786,
+        "ownership_context_end_frame": null,
+        "retry_collapsed": true,
+        "completion_rule": "target_without_regrasp_before_object_context_switch"
+      },
+      "inference_mode": "completion_aware_object_episode",
+      "source": "trajectory_level_entity_state_machine",
+      "retry_collapsed": true,
+      "completion_aware_merge": true,
+      "source_skill_id": 14,
+      "validation": {
+        "signal": {
+          "window": [
+            210,
+            1806
+          ],
+          "motion_fraction": 0.505,
+          "force_change_support": 1.0,
+          "gripper_change_support": 1.0,
+          "score": 0.728
+        },
+        "reasons": [
+          "observed_held_state"
+        ],
+        "interaction_evidence": null
+      },
+      "raw_start_frame": 222,
+      "raw_end_frame": 1798,
+      "lerobot_episode_index": null,
+      "lerobot_start_frame": 222,
+      "lerobot_end_frame": 1798
+    }
+  ],
+  "coarse_only_segments": [
+    {
+      "raw_start_frame": 0,
+      "raw_end_frame": 221,
+      "label_policy": "coarse_task_only",
+      "lerobot_episode_index": null,
+      "lerobot_start_frame": 0,
+      "lerobot_end_frame": 221
+    },
+    {
+      "raw_start_frame": 1799,
+      "raw_end_frame": 2197,
+      "label_policy": "coarse_task_only",
+      "lerobot_episode_index": null,
+      "lerobot_start_frame": 1799,
+      "lerobot_end_frame": 2197
+    }
+  ],
+  "notes": [
+    "V3.4.4 phases use interaction-validated trajectory-level entity-state-machine skills, not LLM-generated phases.",
+    "Entity uncertainty produces coarse-only gaps instead of forced fine labels.",
+    "Numerical boundaries are refined with HDF5 activity signals and skill-specific duration priors.",
+    "Overlap arbitration runs right-to-left and preserves minimum phase duration whenever feasible.",
+    "Upstream provisional intervals are treated as semantic ownership priors rather than being overwritten by an unconstrained activity valley."
+  ]
+}

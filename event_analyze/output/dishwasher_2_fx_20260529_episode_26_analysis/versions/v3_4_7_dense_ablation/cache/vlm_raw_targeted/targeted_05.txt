@@ -1,0 +1,33 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "cutlery_basket": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.1,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.1,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "evidence_time_indices": [
+    0,
+    7
+  ],
+  "evidence": [
+    "cutlery_basket: 目标实体在head和right相机视野中均不可见，无法判断状态。",
+    "right_hand/left_hand: 在全部采样帧中，手部均未出现在视野内，无法判断状态。"
+  ],
+  "window_quality": "poor"
+}
+```

@@ -1,0 +1,34 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "cutlery_basket": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.1,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.1,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "evidence_time_indices": [
+    0,
+    7
+  ],
+  "evidence": [
+    "Cutlery basket is not visible in any camera view (head, left, right) throughout the entire frame sequence.",
+    "Right hand is visible in the dishwasher interior (right camera) at the end of the sequence but does not interact with a cutlery basket.",
+    "Left hand is not visible in the provided views during this window."
+  ],
+  "window_quality": "poor"
+}
+```

@@ -1,0 +1,64 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "out",
+    "right_hand": "contact_cutlery_basket",
+    "left_hand": "contact_dish_rack",
+    "knife_location": "cutlery_basket",
+    "fork_location": "cutlery_basket",
+    "plate_location": "other"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "moving_in",
+    "cutlery_basket": "moving_in",
+    "right_hand": "contact_cutlery_basket",
+    "left_hand": "contact_dish_rack",
+    "knife_location": "cutlery_basket",
+    "fork_location": "cutlery_basket",
+    "plate_location": "other"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.95,
+    "right_hand": 0.90,
+    "left_hand": 0.90,
+    "knife_location": 0.90,
+    "fork_location": 0.90,
+    "plate_location": 0.85
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.95,
+    "right_hand": 0.90,
+    "left_hand": 0.90,
+    "knife_location": 0.90,
+    "fork_location": 0.90,
+    "plate_location": 0.85
+  },
+  "visible_entities": [
+    "dish_rack",
+    "cutlery_basket",
+    "knife",
+    "fork",
+    "plate",
+    "right_hand",
+    "left_hand"
+  ],
+  "evidence": [
+    "Head view at f=495 shows both the larger dish rack and smaller cutlery basket fully extended out of the dishwasher.",
+    "Right view at f=495 shows the right gripper grasping the handle of the cutlery basket.",
+    "Right view at f=585 shows the cutlery basket and dish rack significantly retracted into the dishwasher compared to f=495.",
+    "Head view at f=585 shows a pink plate with a knife and fork resting on the countertop, not in the hands or rack."
+  ],
+  "window_quality": "good"
+}
+```

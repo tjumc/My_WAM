@@ -1,0 +1,31 @@
+```json
+{
+  "state_before": {
+    "door": "opening",
+    "right_hand": "contact_door",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "door": "open",
+    "right_hand": "free",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "head t0 (f236): 右手接触洗碗机门把手，门处于半开状态。",
+    "head t7 (f370): 洗碗机门已完全打开，右手已离开门把手区域。",
+    "right t0 (f236) -> right t7 (f370): 内部视角显示门板从部分遮挡逐渐完全打开，视野从受限变为开阔。"
+  ],
+  "window_quality": "good"
+}
+```

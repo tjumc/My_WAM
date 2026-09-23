@@ -1,0 +1,60 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "uncertain",
+    "cutlery_basket": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "tabletop"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "uncertain",
+    "cutlery_basket": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "tabletop"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.2,
+    "cutlery_basket": 0.2,
+    "right_hand": 0.9,
+    "left_hand": 0.9,
+    "knife_location": 0.1,
+    "fork_location": 0.1,
+    "plate_location": 0.95
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.2,
+    "cutlery_basket": 0.2,
+    "right_hand": 0.9,
+    "left_hand": 0.9,
+    "knife_location": 0.1,
+    "fork_location": 0.1,
+    "plate_location": 0.95
+  },
+  "visible_entities": [
+    "dishwasher_door",
+    "plate",
+    "robot_arms"
+  ],
+  "evidence": [
+    "Head camera shows dishwasher door is open throughout the window.",
+    "Right and Left camera views show a pink plate resting on the countertop.",
+    "Robot arms are visible in head view but hands are out of frame in all views.",
+    "Internal rack (dish_rack/cutlery_basket) visibility is obstructed by the door structure and angle."
+  ],
+  "window_quality": "partial"
+}
+```

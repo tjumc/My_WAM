@@ -1,0 +1,35 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "out",
+    "right_hand": "contact_cutlery_basket",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "cutlery_basket": "out",
+    "right_hand": "contact_cutlery_basket",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [
+    0,
+    7
+  ],
+  "evidence": [
+    "Right hand is clearly in contact with the cutlery basket throughout the entire sequence (frames 902-978).",
+    "The cutlery basket remains in the fully extended 'out' position relative to the dishwasher interior in both early and late frames.",
+    "No continuous motion (moving_in or moving_out) is observed; the basket position is static.",
+    "Left hand is not visible in the left camera view or interacting with the basket."
+  ],
+  "window_quality": "good"
+}
+```

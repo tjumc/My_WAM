@@ -1,0 +1,62 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "not_visible",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "closing",
+    "dish_rack": "moving_in",
+    "cutlery_basket": "not_visible",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "contact_dish_rack",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.95,
+    "right_hand": 0.85,
+    "left_hand": 0.85,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.95
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.9,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.9,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.95
+  },
+  "visible_entities": [
+    "dish_rack",
+    "plate",
+    "right_hand",
+    "left_hand",
+    "door"
+  ],
+  "evidence": [
+    "Right and left hands are visible pushing the dish rack inward from frame 1455 to 1500.",
+    "A pink plate and a white plate are clearly visible inside the dish rack throughout the sequence.",
+    "The dish rack moves from a fully extended position to being partially retracted into the machine.",
+    "The dishwasher door appears to be moving downwards (closing) in the final frames."
+  ],
+  "window_quality": "good"
+}
+```

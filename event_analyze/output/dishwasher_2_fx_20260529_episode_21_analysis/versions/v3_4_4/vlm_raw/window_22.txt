@@ -1,0 +1,61 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "in",
+    "right_hand": "uncertain",
+    "left_hand": "not_visible",
+    "knife_location": "not_visible",
+    "fork_location": "not_visible",
+    "plate_location": "uncertain"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "closing",
+    "dish_rack": "moving_in",
+    "cutlery_basket": "in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible",
+    "knife_location": "not_visible",
+    "fork_location": "not_visible",
+    "plate_location": "dish_rack"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.90,
+    "right_hand": 0.80,
+    "left_hand": 0.95,
+    "knife_location": 0.95,
+    "fork_location": 0.95,
+    "plate_location": 0.70
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.90,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.90,
+    "right_hand": 0.90,
+    "left_hand": 0.95,
+    "knife_location": 0.95,
+    "fork_location": 0.95,
+    "plate_location": 0.85
+  },
+  "visible_entities": [
+    "dish_rack",
+    "right_hand",
+    "door",
+    "plate"
+  ],
+  "evidence": [
+    "Head view shows the dishwasher door is fully open at f=1534 and the main dish rack is extended (out).",
+    "Right hand is visible at f=1534 and appears to be holding or near the rack, transitioning to pushing the rack in at f=1624.",
+    "At f=1624, the dish rack is partially retracted into the machine, and the door is visibly closing (tilting down).",
+    "A plate is visible inside the dish rack (e.g., f=1534, f=1556), but specific knife/fork details are obscured or too small to distinguish."
+  ],
+  "window_quality": "partial"
+}
+```

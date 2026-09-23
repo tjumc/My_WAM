@@ -1,0 +1,35 @@
+```json
+{
+  "state_before": {
+    "door": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "door": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "door": 0.0,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "confidence_after": {
+    "door": 0.0,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "evidence_time_indices": [
+    0,
+    7
+  ],
+  "evidence": [
+    "head camera view shows the dishwasher door remains in a static, closed position throughout the entire sequence (frames 1685-1768).",
+    "left and right camera views show the robot's hands are not visible in the frame during this period.",
+    "right camera view (frame 1768) shows the camera is looking down at the counter, but the dishwasher door is outside the field of view.",
+    "no visual evidence of hand contact or interaction with the dishwasher door is present in the provided frames."
+  ],
+  "window_quality": "partial"
+}
+```

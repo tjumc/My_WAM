@@ -1,0 +1,63 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "uncertain",
+    "right_hand": "holding_plate",
+    "left_hand": "holding_plate",
+    "knife_location": "right_hand",
+    "fork_location": "left_hand",
+    "plate_location": "right_hand"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "uncertain",
+    "right_hand": "free",
+    "left_hand": "free",
+    "knife_location": "other",
+    "fork_location": "other",
+    "plate_location": "other"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.40,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.90,
+    "fork_location": 0.90,
+    "plate_location": 0.95
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.40,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.50,
+    "fork_location": 0.50,
+    "plate_location": 0.85
+  },
+  "visible_entities": [
+    "dish_rack",
+    "plate",
+    "knife",
+    "fork",
+    "right_hand",
+    "left_hand"
+  ],
+  "evidence": [
+    "Early frames (f=585-630) show both hands gripping a pink plate with knife and fork on top, positioned directly over the open dishwasher rack.",
+    "The dishwasher rack is visibly pulled out (position 'out') in the head camera view throughout the window.",
+    "Late frames (f=652-675) show the hands are empty and retracted, while the pink plate remains on the table surface to the right.",
+    "The cutlery basket is not clearly visible or distinguishable from the rack structure in the provided views."
+  ],
+  "window_quality": "good"
+}
+```

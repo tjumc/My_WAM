@@ -1,0 +1,61 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "in",
+    "right_hand": "holding_plate",
+    "left_hand": "free",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "right_hand"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "in",
+    "right_hand": "holding_plate",
+    "left_hand": "free",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "right_hand"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.5,
+    "fork_location": 0.5,
+    "plate_location": 0.95
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.5,
+    "fork_location": 0.5,
+    "plate_location": 0.95
+  },
+  "visible_entities": [
+    "dish_rack",
+    "plate",
+    "right_hand",
+    "door"
+  ],
+  "evidence": [
+    "Head view shows the dishwasher rack pulled out and the door open throughout the window.",
+    "Right view clearly shows the right hand holding a pink plate from start to end.",
+    "Left view shows the left hand is open and free, not holding any objects.",
+    "Cutlery basket is not clearly visible in the rack, so its state is inferred as 'in' or uncertain but not moving out."
+  ],
+  "window_quality": "good"
+}
+```

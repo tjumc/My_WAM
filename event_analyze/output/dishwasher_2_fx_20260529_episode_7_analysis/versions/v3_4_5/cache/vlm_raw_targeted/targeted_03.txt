@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "out",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "dish_rack": "moving_in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "dish_rack": 1.0,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "head view (f1138) shows the dish rack is fully extended (out) from the dishwasher cavity.",
+    "head view (f1138) shows the right hand is in contact with the dish rack handle.",
+    "head view sequence (f1138 to f1214) shows the dish rack moving continuously from the extended position into the dishwasher.",
+    "right view (f1138 to f1214) confirms the rack is being pushed inwards by the right hand."
+  ],
+  "window_quality": "good"
+}
+```

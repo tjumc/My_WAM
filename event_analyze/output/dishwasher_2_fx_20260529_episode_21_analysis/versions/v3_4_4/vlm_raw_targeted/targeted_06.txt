@@ -1,0 +1,35 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "in",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "state_after": {
+    "cutlery_basket": "moving_out",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.6,
+    "left_hand": 0.6
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.6,
+    "left_hand": 0.6
+  },
+  "evidence_time_indices": [
+    0,
+    7
+  ],
+  "evidence": [
+    "Frame 894 (t0): The cutlery basket is fully seated inside the dishwasher rack (in).",
+    "Frame 932 (t2) to 1028 (t7): The cutlery basket is observed progressively sliding out of the dishwasher rack towards the camera.",
+    "Frame 1028 (t7): The basket is significantly extended outwards, indicating an ongoing moving_out state.",
+    "No human hands are visible interacting with the basket in the provided frames."
+  ],
+  "window_quality": "good"
+}
+```

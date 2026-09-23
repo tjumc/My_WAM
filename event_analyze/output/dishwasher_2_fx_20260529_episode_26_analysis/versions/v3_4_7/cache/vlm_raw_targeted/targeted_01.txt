@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "door": "opening",
+    "right_hand": "contact_door",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "door": "open",
+    "right_hand": "free",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "door": 0.98,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "At t0 (f183), the dishwasher door is partially open and the right arm is extended towards it.",
+    "Between t0 and t3, the door angle increases continuously, and the right hand maintains contact with the door edge, indicating an opening motion.",
+    "By t4 (f260), the door has reached a fully open, static position.",
+    "From t3 onwards, the right hand retracts and is clearly separated from the door, remaining in a free state."
+  ],
+  "window_quality": "good"
+}
+```

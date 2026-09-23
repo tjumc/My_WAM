@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "not_visible",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "cutlery_basket": "not_visible",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "在 head 视角下，洗碗机门处于关闭状态，内部完全不可见。",
+    "在 left 和 right 视角下，前景操作台面上没有 cutlery_basket。",
+    "在 head 视角下，未检测到机械臂末端或手部进入画面。",
+    "整个时间窗口内，cutlery_basket 实体始终未出现在任何相机视野中。"
+  ],
+  "window_quality": "good"
+}
+```

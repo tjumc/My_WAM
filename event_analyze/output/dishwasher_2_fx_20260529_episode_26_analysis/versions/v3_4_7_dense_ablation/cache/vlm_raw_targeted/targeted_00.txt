@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "door": "open",
+    "right_hand": "free",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "door": "open",
+    "right_hand": "contact_door",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "In head view at frame 128, the dishwasher door is visibly open, revealing the interior racks.",
+    "In right view at frame 128, the door is open and the right hand is visible at the bottom edge, not touching the door.",
+    "In head view at frame 220, the door remains open.",
+    "In head view at frame 220, the right hand is clearly in contact with the edge of the open door, while the left hand remains away."
+  ],
+  "window_quality": "good"
+}
+```

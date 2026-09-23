@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "knife_location": "uncertain",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "state_after": {
+    "knife_location": "uncertain",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "confidence_before": {
+    "knife_location": 0.0,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "confidence_after": {
+    "knife_location": 0.0,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "evidence_time_indices": [0, 1],
+  "evidence": [
+    "Target entity 'knife' is not visible in any camera view (head, left, right) throughout the frame sequence.",
+    "A pink plate with a fork is visible on the table, but no knife is present.",
+    "Robot arms are interacting with the dishwasher, but the specific object held is obscured or unidentifiable as a knife.",
+    "No visual evidence of a knife being placed into the cutlery basket or held by hands."
+  ],
+  "window_quality": "poor"
+}
+```

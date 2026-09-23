@@ -1,0 +1,19 @@
+{
+  "annotation_version": "v3.4.5",
+  "trajectory_frames": 1769,
+  "original_task_end_raw_frame": 1768,
+  "effective_task_end_raw_frame": 1768,
+  "dropped_phases": [],
+  "clamped_phases": [],
+  "evidence_horizon_warnings": [],
+  "lifecycle_violations": [],
+  "expected_final_state_violations": [],
+  "final_phase_count": 10,
+  "final_consistency": {
+    "num_dropped": 0,
+    "num_clamped": 0,
+    "num_lifecycle_violations": 0,
+    "num_expected_final_state_violations": 0,
+    "status": "consistent"
+  }
+}

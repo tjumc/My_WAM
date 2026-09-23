@@ -1,0 +1,64 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "closed",
+    "dish_rack": "in",
+    "cutlery_basket": "in",
+    "right_hand": "free",
+    "left_hand": "free",
+    "knife_location": "tabletop",
+    "fork_location": "tabletop",
+    "plate_location": "tabletop"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "closed",
+    "dish_rack": "in",
+    "cutlery_basket": "in",
+    "right_hand": "free",
+    "left_hand": "free",
+    "knife_location": "tabletop",
+    "fork_location": "tabletop",
+    "plate_location": "tabletop"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.9,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.9,
+    "fork_location": 0.9,
+    "plate_location": 0.95
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.9,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.9,
+    "fork_location": 0.9,
+    "plate_location": 0.95
+  },
+  "visible_entities": [
+    "robot_arm",
+    "dishwasher_door",
+    "dish_rack",
+    "cutlery_basket",
+    "plate",
+    "knife",
+    "fork"
+  ],
+  "evidence": [
+    "Head camera shows dishwasher door remains closed and rack position is static across all frames.",
+    "Right camera clearly shows a pink plate with a knife and fork resting on the countertop.",
+    "Gripper tips are visible and open in all frames, with no contact with any objects.",
+    "Sensor data shows gripper commands are stable with delta 0.0, indicating no actuation."
+  ],
+  "window_quality": "good"
+}
+```

@@ -1,0 +1,61 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.90,
+    "right_hand": 0.95,
+    "left_hand": 0.0,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.90
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.90,
+    "right_hand": 0.95,
+    "left_hand": 0.0,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.90
+  },
+  "visible_entities": [
+    "robot",
+    "dish_rack",
+    "plate",
+    "dishwasher_door"
+  ],
+  "evidence": [
+    "Right view shows the dishwasher rack (dish_rack) extending outwards at the start of the window and retracting inwards by the end.",
+    "Head view clearly shows a pink plate placed inside the dish rack, which moves from outside to inside the appliance.",
+    "Right hand is consistently in contact with the dish rack throughout the sequence, guiding its movement.",
+    "Left view shows the environment but no clear interaction with the robot's left hand."
+  ],
+  "window_quality": "good"
+}
+```

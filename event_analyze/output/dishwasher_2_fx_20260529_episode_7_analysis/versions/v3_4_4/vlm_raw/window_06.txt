@@ -1,0 +1,60 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "uncertain",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "moving_in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.5,
+    "right_hand": 0.9,
+    "left_hand": 0.5,
+    "knife_location": 0.5,
+    "fork_location": 0.5,
+    "plate_location": 0.9
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.5,
+    "right_hand": 0.9,
+    "left_hand": 0.5,
+    "knife_location": 0.5,
+    "fork_location": 0.5,
+    "plate_location": 0.9
+  },
+  "visible_entities": [
+    "dish_rack",
+    "plate",
+    "right_hand"
+  ],
+  "evidence": [
+    "Head camera (f=428-518) shows the dishwasher rack is extended out and the right arm is interacting with it.",
+    "Right camera (f=428) clearly shows a white plate inside the extended dish rack.",
+    "Right camera (f=473-518) shows the view moving deeper into the rack, indicating the rack is being pushed inward.",
+    "Head camera (f=473-518) shows the right hand maintaining contact with the rack structure throughout the window."
+  ],
+  "window_quality": "good"
+}
+```

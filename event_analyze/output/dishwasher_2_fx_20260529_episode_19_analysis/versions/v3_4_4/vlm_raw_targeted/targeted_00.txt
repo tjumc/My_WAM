@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "not_visible",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "cutlery_basket": "not_visible",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "All camera views (head, left, right) throughout the sequence show the dishwasher interior, but the cutlery basket is not visible in the frame.",
+    "No robot hands are visible in any of the provided camera angles.",
+    "The pink plate is visible on the counter, but no cutlery basket is being manipulated or observed.",
+    "The view is blocked by the open dishwasher door or the camera angle is too high/wide to capture the basket specifically."
+  ],
+  "window_quality": "partial"
+}
+```

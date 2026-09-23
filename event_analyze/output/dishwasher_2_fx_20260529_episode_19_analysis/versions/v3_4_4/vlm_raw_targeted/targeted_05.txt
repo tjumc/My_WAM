@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "dish_rack": "in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "dish_rack": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "dish_rack": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "dish_rack (dish rack) is visible inside the dishwasher and remains stationary throughout the window.",
+    "right_hand maintains physical contact with the dish_rack handle in all frames.",
+    "left_hand is visible and free, not interacting with the target.",
+    "No movement of the dish_rack (in/out) is observed across the sequence."
+  ],
+  "window_quality": "good"
+}
+```

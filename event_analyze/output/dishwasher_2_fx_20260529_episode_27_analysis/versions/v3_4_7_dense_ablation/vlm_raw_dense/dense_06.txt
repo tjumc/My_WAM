@@ -1,0 +1,16 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "out",
+  "relative_motion": "moving_out",
+  "right_hand_relation": "pulling_cutlery_basket",
+  "confidence": 0.95,
+  "evidence_time_indices": [4, 9],
+  "evidence": [
+    "在 t4 (931) 到 t7 (975) 期间，右侧机械臂深入洗碗机内部，抓握住 cutlery_basket 的手柄部分。",
+    "从 t8 (990) 开始，cutlery_basket 明显被拉出洗碗机槽口，相对于 dish_rack 和洗碗机边缘向外移动。",
+    "在 t9 (1005) 时，cutlery_basket 已经完全脱离洗碗机主体，处于 'out' 状态。"
+  ],
+  "visibility": "good"
+}
+```

@@ -1,0 +1,33 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "in",
+    "right_hand": "pushing_cutlery_basket",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "cutlery_basket": "in",
+    "right_hand": "free",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [
+    0,
+    7
+  ],
+  "evidence": [
+    "Window start (f363): Right hand is in contact with and pushing the cutlery basket into the dishwasher; basket is in the process of being inserted.",
+    "Window end (f439): Cutlery basket is fully inside the dishwasher; right hand has released and moved away (free)."
+  ],
+  "window_quality": "good"
+}
+```

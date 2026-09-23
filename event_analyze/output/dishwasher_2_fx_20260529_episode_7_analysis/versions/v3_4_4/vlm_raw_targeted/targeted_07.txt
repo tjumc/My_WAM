@@ -1,0 +1,35 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "out",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "cutlery_basket": "out",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [
+    0,
+    7
+  ],
+  "evidence": [
+    "在 head 视角（t0, t7）中，洗碗机内部的 cutlery_basket 始终处于拉出（out）状态，未观察到推入（moving_in）动作。",
+    "在 head 视角中，右臂（right arm）在整个时间窗口内（t0~t7）均位于洗碗机外部的台面上方，未接触 cutlery_basket。",
+    "在 right 视角中，右机械手（right gripper）全程抓持一个粉色盘子，未出现抓持或接触 cutlery_basket 的情况。",
+    "left 视角和 right 视角均未显示左手（left hand）出现。"
+  ],
+  "window_quality": "good"
+}
+```

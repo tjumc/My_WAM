@@ -1,0 +1,17 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "out",
+  "relative_motion": "moving_out",
+  "right_hand_relation": "pulling_cutlery_basket",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 4, 7, 9],
+  "evidence": [
+    "t0 (Frame 931) 显示餐具篮 (cutlery_basket) 位于洗碗机内部深处，处于收纳状态。",
+    "t4 (Frame 981) 显示右手已抓住餐具篮，开始将其向外部拉动，篮子处于半开状态。",
+    "t7 (Frame 1019) 显示餐具篮被进一步拉出，大部分篮体已位于洗碗机开口之外。",
+    "t9 (Frame 1044) 显示餐具篮完全被拉出并放置在洗碗机外部，运动结束。"
+  ],
+  "visibility": "good"
+}
+```

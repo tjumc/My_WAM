@@ -1,0 +1,62 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "moving_out",
+    "cutlery_basket": "uncertain",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "uncertain",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "confidence_before": {
+    "robot_location": 0.9,
+    "door": 0.9,
+    "dish_rack": 0.85,
+    "cutlery_basket": 0.5,
+    "right_hand": 0.6,
+    "left_hand": 0.6,
+    "knife_location": 0.5,
+    "fork_location": 0.5,
+    "plate_location": 0.5
+  },
+  "confidence_after": {
+    "robot_location": 0.9,
+    "door": 0.9,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.5,
+    "right_hand": 0.6,
+    "left_hand": 0.6,
+    "knife_location": 0.5,
+    "fork_location": 0.5,
+    "plate_location": 0.5
+  },
+  "visible_entities": [
+    "robot_location",
+    "door",
+    "dish_rack",
+    "right_hand",
+    "left_hand"
+  ],
+  "evidence": [
+    "Head camera view shows the dishwasher rack extending outward from f=1696 to f=1741 and remaining fully extended at f=1786.",
+    "The dishwasher door remains in an open position throughout the entire window sequence.",
+    "Robot arms (left and right hands) are visible in the head view with grippers raised, but specific objects held are not clearly distinguishable.",
+    "Right force sensor shows an increase trend (delta 3.371), but visual confirmation of contact with specific items is ambiguous due to occlusion/angle."
+  ],
+  "window_quality": "partial"
+}
+```

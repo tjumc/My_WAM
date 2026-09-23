@@ -1,0 +1,61 @@
+{
+  "annotation_version": "v3.4.6",
+  "trajectory_frames": 2188,
+  "upstream_predicted_task_end_raw_frame": 1760,
+  "initial_container_state": {
+    "door": "closed",
+    "dish_rack": "in",
+    "cutlery_basket": "in"
+  },
+  "initial_state_source": {
+    "door": "schema_expected_initial_state",
+    "dish_rack": "schema_expected_initial_state",
+    "cutlery_basket": "schema_expected_initial_state"
+  },
+  "dropped_phases": [],
+  "clamped_phases": [],
+  "lifecycle_violations": [],
+  "latent_prerequisite_state_inferences": [],
+  "gratuitous_lifecycle_cycles": [],
+  "expected_final_state_violations": [
+    {
+      "entity": "door",
+      "observed_final_state": "open",
+      "expected_final_state": "closed",
+      "action": "reported_unresolved_no_action_invented"
+    },
+    {
+      "entity": "dish_rack",
+      "observed_final_state": "out",
+      "expected_final_state": "in",
+      "action": "reported_unresolved_no_action_invented"
+    }
+  ],
+  "task_completion_frontier": {
+    "policy": "first_expected_final_state_after_last_dependent_use",
+    "frontier_entities": [
+      "door"
+    ],
+    "entities": [
+      {
+        "entity": "door",
+        "expected_final_state": "closed",
+        "last_dependent_use_end": 1760,
+        "terminal_closure": null
+      }
+    ],
+    "resolved": false,
+    "task_end_raw_frame": 2187,
+    "fallback_when_unresolved": "trajectory_end"
+  },
+  "final_phase_count": 6,
+  "final_consistency": {
+    "num_dropped": 0,
+    "num_clamped": 0,
+    "num_lifecycle_violations": 0,
+    "num_gratuitous_lifecycle_cycles": 0,
+    "num_expected_final_state_violations": 2,
+    "frontier_resolved": false,
+    "status": "unresolved"
+  }
+}

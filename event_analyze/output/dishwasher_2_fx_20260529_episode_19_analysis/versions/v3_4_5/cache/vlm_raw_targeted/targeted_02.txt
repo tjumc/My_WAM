@@ -1,0 +1,36 @@
+```json
+{
+  "state_before": {
+    "fork_location": "tabletop",
+    "knife_location": "tabletop",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "fork_location": "uncertain",
+    "knife_location": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "fork_location": 0.95,
+    "knife_location": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "fork_location": 0.4,
+    "knife_location": 0.4,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "在 t0 (frame 150) 的 head 和 right 视角中，叉子和刀清晰可见放置在粉色盘子上。",
+    "在 t0 (frame 150) 的 head 视角中，两只机械臂均未出现在画面中（not_visible）。",
+    "在 t7 (frame 284) 的 head 视角中，粉色盘子依然可见，但刀叉已不可见或被遮挡。",
+    "在 t7 (frame 284) 的 right 视角中，机械臂位于洗碗机内部操作，未显示抓持刀叉。"
+  ],
+  "window_quality": "partial"
+}
+```

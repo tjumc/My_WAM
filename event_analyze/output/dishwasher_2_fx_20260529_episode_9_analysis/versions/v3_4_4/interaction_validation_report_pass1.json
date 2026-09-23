@@ -1,0 +1,671 @@
+{
+  "decisions": [
+    {
+      "original_skill_id": 0,
+      "skill_type": "navigate_to_station",
+      "signal": {
+        "window": [
+          12,
+          115
+        ],
+        "motion_fraction": 0.058,
+        "force_change_support": 0.427,
+        "gripper_change_support": 0.0,
+        "score": 0.139
+      },
+      "accepted": true,
+      "reasons": [
+        "hdf5_base_motion"
+      ]
+    },
+    {
+      "original_skill_id": 1,
+      "skill_type": "pull_out_dish_rack",
+      "signal": {
+        "window": [
+          76,
+          116
+        ],
+        "motion_fraction": 0.171,
+        "force_change_support": 0.478,
+        "gripper_change_support": 1.0,
+        "score": 0.413
+      },
+      "accepted": false,
+      "reasons": [
+        "no_entity_specific_hand_contact"
+      ],
+      "interaction_evidence": {
+        "nearby_event_ids": [
+          0,
+          1
+        ],
+        "contact_event_ids": [],
+        "directed_contact_event_ids": [],
+        "contact_count": 0,
+        "directed_count": 0,
+        "dense_directional_contact_count": 0,
+        "nearest_contact_frame": null
+      }
+    },
+    {
+      "original_skill_id": 2,
+      "skill_type": "close_dishwasher_door",
+      "signal": {
+        "window": [
+          120,
+          160
+        ],
+        "motion_fraction": 0.439,
+        "force_change_support": 0.701,
+        "gripper_change_support": 0.0,
+        "score": 0.417
+      },
+      "accepted": false,
+      "reasons": [
+        "entity_contact_plus_robot_signal",
+        "schema_lifecycle_inconsistent_or_duplicate"
+      ],
+      "interaction_evidence": {
+        "nearby_event_ids": [
+          0,
+          1,
+          2
+        ],
+        "contact_event_ids": [
+          0,
+          2
+        ],
+        "directed_contact_event_ids": [],
+        "contact_count": 2,
+        "directed_count": 0,
+        "dense_directional_contact_count": 0,
+        "nearest_contact_frame": 113
+      },
+      "post_anchor_revalidated": false
+    },
+    {
+      "original_skill_id": 3,
+      "skill_type": "open_dishwasher_door",
+      "signal": {
+        "window": [
+          157,
+          224
+        ],
+        "motion_fraction": 0.588,
+        "force_change_support": 0.747,
+        "gripper_change_support": 0.0,
+        "score": 0.51
+      },
+      "accepted": true,
+      "reasons": [
+        "entity_contact_plus_robot_signal",
+        "direction_consistent_visual_transition"
+      ],
+      "interaction_evidence": {
+        "nearby_event_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "contact_event_ids": [
+          0,
+          2
+        ],
+        "directed_contact_event_ids": [
+          2
+        ],
+        "contact_count": 2,
+        "directed_count": 1,
+        "dense_directional_contact_count": 0,
+        "nearest_contact_frame": 113
+      },
+      "post_anchor_revalidated": false
+    },
+    {
+      "original_skill_id": 4,
+      "skill_type": "push_in_dish_rack",
+      "signal": {
+        "window": [
+          200,
+          240
+        ],
+        "motion_fraction": 0.634,
+        "force_change_support": 0.726,
+        "gripper_change_support": 0.0,
+        "score": 0.53
+      },
+      "accepted": false,
+      "reasons": [
+        "receptacle_push_before_use_finished"
+      ],
+      "affordance_evidence": {
+        "reason": "receptacle_push_before_use_finished",
+        "last_placement_frame": 1760,
+        "tolerance_frames": 30
+      }
+    },
+    {
+      "original_skill_id": 5,
+      "skill_type": "pull_out_dish_rack",
+      "signal": {
+        "window": [
+          431,
+          472
+        ],
+        "motion_fraction": 0.571,
+        "force_change_support": 0.861,
+        "gripper_change_support": 0.0,
+        "score": 0.53
+      },
+      "accepted": true,
+      "reasons": [
+        "entity_contact_plus_robot_signal",
+        "robot_signal_revalidated_after_contact_anchor"
+      ],
+      "interaction_evidence": {
+        "nearby_event_ids": [
+          4,
+          5,
+          6
+        ],
+        "contact_event_ids": [
+          5,
+          6
+        ],
+        "directed_contact_event_ids": [],
+        "contact_count": 2,
+        "directed_count": 0,
+        "dense_directional_contact_count": 0,
+        "nearest_contact_frame": 451
+      },
+      "signal_before_anchor": {
+        "window": [
+          378,
+          418
+        ],
+        "motion_fraction": 0.293,
+        "force_change_support": 0.905,
+        "gripper_change_support": 0.0,
+        "score": 0.387
+      },
+      "post_anchor_revalidated": true
+    },
+    {
+      "original_skill_id": 6,
+      "skill_type": "place_knife_in_cutlery_basket",
+      "signal": {
+        "window": [
+          876,
+          993
+        ],
+        "motion_fraction": 0.551,
+        "force_change_support": 0.295,
+        "gripper_change_support": 0.34,
+        "score": 0.445
+      },
+      "accepted": true,
+      "reasons": [
+        "observed_held_state"
+      ],
+      "held_segments": [
+        {
+          "state": "right_hand",
+          "start_frame": 896,
+          "end_frame": 973,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            11
+          ],
+          "ownership_status": "direct",
+          "ownership_direct_confidence": 0.95,
+          "ownership_resolution_reasons": []
+        }
+      ],
+      "ownership_coarse_evidence": {
+        "ownership": {
+          "object": "knife",
+          "track_key": "knife_location",
+          "segment_index": 1,
+          "hand": "right_hand",
+          "start_frame": 896,
+          "end_frame": 973,
+          "target_start_frame": 973,
+          "target_segment_index": 2,
+          "direct_intervals": [
+            {
+              "hand": "right_hand",
+              "start_frame": 928,
+              "end_frame": 973,
+              "confidence": 0.95,
+              "event_id": 11,
+              "support": "direct_before_half"
+            }
+          ],
+          "first_direct_frame": 928,
+          "direct_confidence": 0.95,
+          "resolved_start_frame": 896,
+          "resolved_end_frame": 973,
+          "resolution_reasons": [],
+          "unresolved_conflict": false,
+          "assignment_status": "direct"
+        },
+        "mode": "direct_parent_ownership"
+      }
+    },
+    {
+      "original_skill_id": 7,
+      "skill_type": "push_in_dish_rack",
+      "signal": {
+        "window": [
+          1002,
+          1042
+        ],
+        "motion_fraction": 0.585,
+        "force_change_support": 0.4,
+        "gripper_change_support": 1.0,
+        "score": 0.622
+      },
+      "accepted": false,
+      "reasons": [
+        "receptacle_push_before_use_finished"
+      ],
+      "affordance_evidence": {
+        "reason": "receptacle_push_before_use_finished",
+        "last_placement_frame": 1760,
+        "tolerance_frames": 30
+      }
+    },
+    {
+      "original_skill_id": 8,
+      "skill_type": "place_fork_in_cutlery_basket",
+      "signal": {
+        "window": [
+          1002,
+          1218
+        ],
+        "motion_fraction": 0.373,
+        "force_change_support": 0.491,
+        "gripper_change_support": 1.0,
+        "score": 0.528
+      },
+      "accepted": true,
+      "reasons": [
+        "observed_held_state"
+      ],
+      "held_segments": [
+        {
+          "state": "right_hand",
+          "start_frame": 1022,
+          "end_frame": 1198,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            12
+          ],
+          "ownership_status": "direct",
+          "ownership_direct_confidence": 0.95,
+          "ownership_resolution_reasons": []
+        }
+      ],
+      "ownership_coarse_evidence": {
+        "ownership": {
+          "object": "fork",
+          "track_key": "fork_location",
+          "segment_index": 2,
+          "hand": "right_hand",
+          "start_frame": 1022,
+          "end_frame": 1198,
+          "target_start_frame": 1198,
+          "target_segment_index": 3,
+          "direct_intervals": [
+            {
+              "hand": "right_hand",
+              "start_frame": 1025,
+              "end_frame": 1115,
+              "confidence": 0.95,
+              "event_id": 12,
+              "support": "direct_window"
+            }
+          ],
+          "first_direct_frame": 1025,
+          "direct_confidence": 0.95,
+          "resolved_start_frame": 1022,
+          "resolved_end_frame": 1198,
+          "resolution_reasons": [],
+          "unresolved_conflict": false,
+          "assignment_status": "direct"
+        },
+        "mode": "direct_parent_ownership"
+      }
+    },
+    {
+      "original_skill_id": 9,
+      "skill_type": "pull_out_dish_rack",
+      "signal": {
+        "window": [
+          1050,
+          1218
+        ],
+        "motion_fraction": 0.337,
+        "force_change_support": 0.444,
+        "gripper_change_support": 1.0,
+        "score": 0.496
+      },
+      "accepted": false,
+      "reasons": [
+        "no_entity_specific_hand_contact"
+      ],
+      "interaction_evidence": {
+        "nearby_event_ids": [
+          11,
+          12
+        ],
+        "contact_event_ids": [],
+        "directed_contact_event_ids": [],
+        "contact_count": 0,
+        "directed_count": 0,
+        "dense_directional_contact_count": 0,
+        "nearest_contact_frame": null
+      }
+    },
+    {
+      "original_skill_id": 10,
+      "skill_type": "place_plate_in_dish_rack",
+      "signal": {
+        "window": [
+          1261,
+          1780
+        ],
+        "motion_fraction": 0.475,
+        "force_change_support": 1.0,
+        "gripper_change_support": 1.0,
+        "score": 0.711
+      },
+      "accepted": true,
+      "reasons": [
+        "observed_held_state"
+      ],
+      "held_segments": [
+        {
+          "state": "right_hand",
+          "start_frame": 1281,
+          "end_frame": 1293,
+          "confidence": 0.9,
+          "support": "observed",
+          "event_ids": [
+            13
+          ],
+          "ownership_status": "direct",
+          "ownership_direct_confidence": 0.9,
+          "ownership_resolution_reasons": [
+            {
+              "type": "trim_prefix_after_nonportable_interaction",
+              "first_direct_frame": 1281,
+              "blockers": [
+                {
+                  "hand": "right_hand",
+                  "start_frame": 1281,
+                  "end_frame": 1371,
+                  "token": "contact_dish_rack",
+                  "confidence": 0.9,
+                  "event_id": 13
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "state": "right_hand",
+          "start_frame": 1373,
+          "end_frame": 1624,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            14,
+            15,
+            16,
+            17
+          ],
+          "ownership_status": "direct",
+          "ownership_direct_confidence": 0.95,
+          "ownership_resolution_reasons": []
+        },
+        {
+          "state": "right_hand",
+          "start_frame": 1742,
+          "end_frame": 1760,
+          "confidence": 0.9,
+          "support": "observed",
+          "event_ids": [
+            19
+          ],
+          "ownership_status": "direct",
+          "ownership_direct_confidence": 0.9,
+          "ownership_resolution_reasons": [
+            {
+              "type": "trim_prefix_after_nonportable_interaction",
+              "first_direct_frame": 1742,
+              "blockers": [
+                {
+                  "hand": "right_hand",
+                  "start_frame": 1689,
+                  "end_frame": 1779,
+                  "token": "contact_dish_rack",
+                  "confidence": 0.9,
+                  "event_id": 18
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ownership_coarse_evidence": {}
+    },
+    {
+      "original_skill_id": 11,
+      "skill_type": "push_in_dish_rack",
+      "signal": {
+        "window": [
+          1318,
+          1393
+        ],
+        "motion_fraction": 0.697,
+        "force_change_support": 1.0,
+        "gripper_change_support": 1.0,
+        "score": 0.834
+      },
+      "accepted": false,
+      "reasons": [
+        "short_reverse_pair_visual_jitter"
+      ]
+    },
+    {
+      "original_skill_id": 12,
+      "skill_type": "pull_out_dish_rack",
+      "signal": {
+        "window": [
+          1365,
+          1405
+        ],
+        "motion_fraction": 0.488,
+        "force_change_support": 0.477,
+        "gripper_change_support": 1.0,
+        "score": 0.587
+      },
+      "accepted": false,
+      "reasons": [
+        "short_reverse_pair_visual_jitter"
+      ]
+    },
+    {
+      "original_skill_id": 13,
+      "skill_type": "push_in_dish_rack",
+      "signal": {
+        "window": [
+          1560,
+          1600
+        ],
+        "motion_fraction": 0.512,
+        "force_change_support": 0.78,
+        "gripper_change_support": 1.0,
+        "score": 0.677
+      },
+      "accepted": false,
+      "reasons": [
+        "receptacle_push_before_use_finished"
+      ],
+      "affordance_evidence": {
+        "reason": "receptacle_push_before_use_finished",
+        "last_placement_frame": 1760,
+        "tolerance_frames": 30
+      }
+    },
+    {
+      "original_skill_id": 14,
+      "skill_type": "pull_out_dish_rack",
+      "signal": {
+        "window": [
+          1604,
+          1644
+        ],
+        "motion_fraction": 0.585,
+        "force_change_support": 0.782,
+        "gripper_change_support": 0.268,
+        "score": 0.571
+      },
+      "accepted": false,
+      "reasons": [
+        "receptacle_pull_after_use_started"
+      ],
+      "affordance_evidence": {
+        "reason": "receptacle_pull_after_use_started",
+        "first_placement_frame": 1281,
+        "tolerance_frames": 30
+      }
+    },
+    {
+      "original_skill_id": 15,
+      "skill_type": "push_in_dish_rack",
+      "signal": {
+        "window": [
+          1829,
+          1914
+        ],
+        "motion_fraction": 0.0,
+        "force_change_support": 0.4,
+        "gripper_change_support": 0.0,
+        "score": 0.1
+      },
+      "accepted": false,
+      "reasons": [
+        "weak_robot_interaction_signal_at_final_anchor"
+      ],
+      "interaction_evidence": {
+        "nearby_event_ids": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "contact_event_ids": [
+          18,
+          20
+        ],
+        "directed_contact_event_ids": [
+          18,
+          20
+        ],
+        "contact_count": 2,
+        "directed_count": 2,
+        "dense_directional_contact_count": 0,
+        "nearest_contact_frame": 1849
+      },
+      "signal_before_anchor": {
+        "window": [
+          1772,
+          1883
+        ],
+        "motion_fraction": 0.25,
+        "force_change_support": 1.0,
+        "gripper_change_support": 0.0,
+        "score": 0.388
+      },
+      "post_anchor_revalidated": true
+    },
+    {
+      "original_skill_id": 16,
+      "skill_type": "close_dishwasher_door",
+      "signal": {
+        "window": [
+          1970,
+          2067
+        ],
+        "motion_fraction": 0.439,
+        "force_change_support": 1.0,
+        "gripper_change_support": 0.0,
+        "score": 0.491
+      },
+      "accepted": false,
+      "reasons": [
+        "short_reverse_pair_visual_jitter"
+      ]
+    },
+    {
+      "original_skill_id": 17,
+      "skill_type": "open_dishwasher_door",
+      "signal": {
+        "window": [
+          2046,
+          2086
+        ],
+        "motion_fraction": 0.098,
+        "force_change_support": 1.0,
+        "gripper_change_support": 0.0,
+        "score": 0.304
+      },
+      "accepted": false,
+      "reasons": [
+        "short_reverse_pair_visual_jitter"
+      ]
+    },
+    {
+      "original_skill_id": 18,
+      "skill_type": "close_dishwasher_door",
+      "signal": {
+        "window": [
+          2067,
+          2107
+        ],
+        "motion_fraction": 0.268,
+        "force_change_support": 0.577,
+        "gripper_change_support": 0.0,
+        "score": 0.292
+      },
+      "accepted": false,
+      "reasons": [
+        "short_reverse_pair_visual_jitter"
+      ]
+    },
+    {
+      "original_skill_id": 19,
+      "skill_type": "open_dishwasher_door",
+      "signal": {
+        "window": [
+          2094,
+          2180
+        ],
+        "motion_fraction": 0.057,
+        "force_change_support": 0.41,
+        "gripper_change_support": 0.0,
+        "score": 0.134
+      },
+      "accepted": false,
+      "reasons": [
+        "short_reverse_pair_visual_jitter"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "moving_in",
+    "cutlery_basket": "in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "free",
+    "knife_location": "other",
+    "fork_location": "other",
+    "plate_location": "other"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "free",
+    "knife_location": "other",
+    "fork_location": "other",
+    "plate_location": "other"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.85,
+    "cutlery_basket": 0.9,
+    "right_hand": 0.9,
+    "left_hand": 0.95,
+    "knife_location": 0.4,
+    "fork_location": 0.4,
+    "plate_location": 0.4
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.9,
+    "right_hand": 0.9,
+    "left_hand": 0.95,
+    "knife_location": 0.4,
+    "fork_location": 0.4,
+    "plate_location": 0.4
+  },
+  "visible_entities": [
+    "dish_rack",
+    "cutlery_basket",
+    "right_hand",
+    "left_hand",
+    "dishwasher_door"
+  ],
+  "evidence": [
+    "Right arm is extending into the dishwasher interior, pushing the dish rack (dish_rack) from a partially extended position to a fully inserted position.",
+    "Left arm is retracted and hovering in a free state, not in contact with any object.",
+    "The dishwasher door remains in the open position throughout the window.",
+    "Cutlery basket is visible inside the appliance but is not being manipulated."
+  ],
+  "window_quality": "partial"
+}
+```

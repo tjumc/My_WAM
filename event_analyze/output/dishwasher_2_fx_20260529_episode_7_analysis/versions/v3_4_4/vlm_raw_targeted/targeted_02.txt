@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "door": "open",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "state_after": {
+    "door": "open",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "confidence_before": {
+    "door": 0.95,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "confidence_after": {
+    "door": 0.95,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "In the early frames (e.g., head t0, right t0), the dishwasher door is fully open, revealing the interior racks.",
+    "In the late frames (e.g., head t7, right t7), the dishwasher door remains fully open.",
+    "The right arm is visible near the appliance, but its hand is not clearly interacting with or touching the door in a way that defines a specific contact state.",
+    "The door does not exhibit any significant movement (opening/closing) during the observed interval."
+  ],
+  "window_quality": "good"
+}
+```

@@ -1,0 +1,197 @@
+{
+  "annotation_version": "v3.4.4",
+  "task_family": "dishwasher_loading",
+  "num_requests": 8,
+  "policy": {
+    "enabled": true,
+    "max_requests": 8,
+    "window_sec": 4.5,
+    "stride_sec": 2.5,
+    "search_horizon_sec": 8,
+    "padding_sec": 1.25,
+    "num_samples": 8,
+    "min_confidence_to_merge": 0.65,
+    "triggers": [
+      "unresolved_hand_object_ownership",
+      "rejected_visual_interaction_evidence",
+      "receptacle_usage_without_ready_lifecycle",
+      "unfinished_expected_final_lifecycle",
+      "accepted_container_without_direction_evidence"
+    ],
+    "note": "Targeted queries are triggered by generic reasoning inconsistencies. Fine identity uncertainty that is already safely handled by semantic backoff is not itself a trigger."
+  },
+  "requests": [
+    {
+      "kind": "receptacle_usage_without_ready_lifecycle",
+      "priority": 98,
+      "target_entities": [
+        "dish_rack"
+      ],
+      "start_frame": 0,
+      "end_frame": 134,
+      "reason": "portable-object placement evidence uses receptacle while accepted lifecycle state is 'in', not usage state 'out'",
+      "source": {
+        "entity": "dish_rack",
+        "observed_state_before_use": "in",
+        "usage_state": "out",
+        "first_placement_frame": 230
+      },
+      "request_id": 0
+    },
+    {
+      "kind": "receptacle_usage_without_ready_lifecycle",
+      "priority": 98,
+      "target_entities": [
+        "cutlery_basket"
+      ],
+      "start_frame": 0,
+      "end_frame": 134,
+      "reason": "portable-object placement evidence uses receptacle while accepted lifecycle state is 'in', not usage state 'out'",
+      "source": {
+        "entity": "cutlery_basket",
+        "observed_state_before_use": "in",
+        "usage_state": "out",
+        "first_placement_frame": 230
+      },
+      "request_id": 1
+    },
+    {
+      "kind": "rejected_visual_evidence",
+      "priority": 90,
+      "target_entities": [
+        "door"
+      ],
+      "start_frame": 14,
+      "end_frame": 90,
+      "reason": "candidate rejected for insufficient or inconsistent visual interaction evidence",
+      "source": {
+        "skill_type": "open_dishwasher_door",
+        "reasons": [
+          "no_entity_specific_hand_contact"
+        ]
+      },
+      "request_id": 2
+    },
+    {
+      "kind": "receptacle_usage_without_ready_lifecycle",
+      "priority": 98,
+      "target_entities": [
+        "dish_rack"
+      ],
+      "start_frame": 75,
+      "end_frame": 209,
+      "reason": "portable-object placement evidence uses receptacle while accepted lifecycle state is 'in', not usage state 'out'",
+      "source": {
+        "entity": "dish_rack",
+        "observed_state_before_use": "in",
+        "usage_state": "out",
+        "first_placement_frame": 230
+      },
+      "request_id": 3
+    },
+    {
+      "kind": "receptacle_usage_without_ready_lifecycle",
+      "priority": 98,
+      "target_entities": [
+        "cutlery_basket"
+      ],
+      "start_frame": 75,
+      "end_frame": 209,
+      "reason": "portable-object placement evidence uses receptacle while accepted lifecycle state is 'in', not usage state 'out'",
+      "source": {
+        "entity": "cutlery_basket",
+        "observed_state_before_use": "in",
+        "usage_state": "out",
+        "first_placement_frame": 230
+      },
+      "request_id": 4
+    },
+    {
+      "kind": "receptacle_usage_without_ready_lifecycle",
+      "priority": 98,
+      "target_entities": [
+        "dish_rack"
+      ],
+      "start_frame": 150,
+      "end_frame": 268,
+      "reason": "portable-object placement evidence uses receptacle while accepted lifecycle state is 'in', not usage state 'out'",
+      "source": {
+        "entity": "dish_rack",
+        "observed_state_before_use": "in",
+        "usage_state": "out",
+        "first_placement_frame": 230
+      },
+      "request_id": 5
+    },
+    {
+      "kind": "receptacle_usage_without_ready_lifecycle",
+      "priority": 98,
+      "target_entities": [
+        "cutlery_basket"
+      ],
+      "start_frame": 150,
+      "end_frame": 268,
+      "reason": "portable-object placement evidence uses receptacle while accepted lifecycle state is 'in', not usage state 'out'",
+      "source": {
+        "entity": "cutlery_basket",
+        "observed_state_before_use": "in",
+        "usage_state": "out",
+        "first_placement_frame": 230
+      },
+      "request_id": 6
+    },
+    {
+      "kind": "ownership_conflict",
+      "priority": 100,
+      "target_entities": [
+        "fork",
+        "knife",
+        "plate"
+      ],
+      "start_frame": 192,
+      "end_frame": 310,
+      "reason": "joint ownership remains ambiguous after arbitration",
+      "source": {
+        "ownership_candidate": {
+          "object": "knife",
+          "track_key": "knife_location",
+          "segment_index": 1,
+          "hand": "right_hand",
+          "start_frame": 230,
+          "end_frame": 272,
+          "target_start_frame": 272,
+          "target_segment_index": 2,
+          "direct_intervals": [],
+          "first_direct_frame": null,
+          "direct_confidence": 0.0,
+          "resolved_start_frame": 230,
+          "resolved_end_frame": 272,
+          "resolution_reasons": [
+            {
+              "type": "unresolved_overlap_without_direct_evidence",
+              "objects": [
+                "knife",
+                "fork"
+              ]
+            },
+            {
+              "type": "unresolved_overlap_without_direct_evidence",
+              "objects": [
+                "knife",
+                "plate"
+              ]
+            }
+          ],
+          "unresolved_conflict": true,
+          "assignment_status": "ambiguous"
+        }
+      },
+      "request_id": 7
+    }
+  ],
+  "notes": [
+    "Manual ground truth is never read.",
+    "Reliable semantic backoff alone does not trigger re-observation.",
+    "Requests are generated only when additional visual evidence can change semantic or temporal reasoning."
+  ]
+}

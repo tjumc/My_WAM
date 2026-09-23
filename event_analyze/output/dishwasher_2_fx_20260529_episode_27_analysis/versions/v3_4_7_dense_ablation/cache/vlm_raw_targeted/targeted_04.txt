@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "out",
+    "right_hand": "contact_cutlery_basket",
+    "left_hand": "uncertain"
+  },
+  "state_after": {
+    "cutlery_basket": "out",
+    "right_hand": "contact_cutlery_basket",
+    "left_hand": "uncertain"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.4
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.4
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "In frames 676-752, the cutlery basket is clearly visible in the out position (pulled out from the dishwasher).",
+    "The right hand maintains contact with the cutlery basket throughout the sequence (e.g., visible holding the handle in frames 676, 709, 752).",
+    "There is no significant motion of the cutlery basket; it remains static in the 'out' state.",
+    "The left hand is not clearly interacting with the cutlery basket or is out of view in relevant frames."
+  ],
+  "window_quality": "good"
+}
+```

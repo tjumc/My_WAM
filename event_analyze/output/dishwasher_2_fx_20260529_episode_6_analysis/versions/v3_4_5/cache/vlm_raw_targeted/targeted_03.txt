@@ -1,0 +1,40 @@
+```json
+{
+  "state_before": {
+    "fork_location": "tabletop",
+    "knife_location": "tabletop",
+    "plate_location": "tabletop",
+    "right_hand": "free",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "fork_location": "uncertain",
+    "knife_location": "uncertain",
+    "plate_location": "uncertain",
+    "right_hand": "free",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "fork_location": 1.0,
+    "knife_location": 1.0,
+    "plate_location": 1.0,
+    "right_hand": 0.9,
+    "left_hand": 0.9
+  },
+  "confidence_after": {
+    "fork_location": 0.9,
+    "knife_location": 0.9,
+    "plate_location": 0.9,
+    "right_hand": 0.9,
+    "left_hand": 0.9
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "Early frames (t0-t2) clearly show a pink plate with a fork and knife resting on the tabletop.",
+    "Early frames show both robot hands are visible and open (free) near the table/dishwasher area.",
+    "Late frames (t6-t7) show the dishwasher rack is empty and the plate/cutlery are no longer visible on the table or in the hands.",
+    "The camera view at t3-t5 shifts to look inside the dishwasher, obscuring the table surface where the items were."
+  ],
+  "window_quality": "partial"
+}
+```

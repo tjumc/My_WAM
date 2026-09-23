@@ -1,0 +1,63 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "out",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.85,
+    "right_hand": 0.9,
+    "left_hand": 0.95,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.8
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.9,
+    "right_hand": 0.9,
+    "left_hand": 0.95,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.8
+  },
+  "visible_entities": [
+    "robot_base",
+    "dishwasher",
+    "dish_rack",
+    "cutlery_basket",
+    "plate",
+    "right_arm"
+  ],
+  "evidence": [
+    "Head view at frame 318 shows the cutlery_basket pulled out (extended) while the main dish_rack is inside.",
+    "Head view at frame 408 shows the cutlery_basket pushed in (flush with the rack), while the dish_rack remains stationary.",
+    "Right hand (head view) is consistently positioned inside the dishwasher cavity, appearing to stabilize the dish_rack.",
+    "Right camera view shows the dishwasher interior and bottom rack, confirming the robot is at the station."
+  ],
+  "window_quality": "good"
+}
+```

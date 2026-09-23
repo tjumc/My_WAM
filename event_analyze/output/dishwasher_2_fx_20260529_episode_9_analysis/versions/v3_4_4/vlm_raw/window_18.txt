@@ -1,0 +1,61 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "uncertain",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "moving_in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.4,
+    "right_hand": 0.9,
+    "left_hand": 0.95,
+    "knife_location": 0.3,
+    "fork_location": 0.3,
+    "plate_location": 0.95
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.4,
+    "right_hand": 0.9,
+    "left_hand": 0.95,
+    "knife_location": 0.3,
+    "fork_location": 0.3,
+    "plate_location": 0.95
+  },
+  "visible_entities": [
+    "robot_right_arm",
+    "dish_rack",
+    "plate",
+    "dishwasher_door"
+  ],
+  "evidence": [
+    "Right view clearly shows the dish rack (dish_rack) containing a pink plate (plate) moving from the extended position towards the interior.",
+    "Head view shows the right arm extended into the dishwasher, maintaining contact with the rack mechanism.",
+    "Left view is obstructed by the cabinet structure, showing no part of the robot or the left hand.",
+    "Cutlery basket is not clearly distinguishable within the rack structure, remaining uncertain."
+  ],
+  "window_quality": "good"
+}
+```

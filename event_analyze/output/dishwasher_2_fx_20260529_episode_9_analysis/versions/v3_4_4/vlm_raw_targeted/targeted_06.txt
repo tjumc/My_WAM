@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "moving_out",
+    "right_hand": "pulling_cutlery_basket",
+    "left_hand": "uncertain"
+  },
+  "state_after": {
+    "cutlery_basket": "out",
+    "right_hand": "pulling_cutlery_basket",
+    "left_hand": "uncertain"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.0
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.0
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "右视角下，cutlery_basket 在序列开始时位于洗碗机内部，随时间推移逐渐向外移动，直至完全滑出轨道。",
+    "右视角显示右手始终抓握在 cutlery_basket 边缘，并维持向外拉伸的姿态。",
+    "head 视角中，cutlery_basket 的位置随序列进行明显向右（向外）偏移。",
+    "在序列末期（t7），cutlery_basket 已完全脱离洗碗机内部空间。"
+  ],
+  "window_quality": "good"
+}
+```

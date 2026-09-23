@@ -1,0 +1,16 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "in",
+  "relative_motion": "stationary",
+  "right_hand_relation": "holding_utensil",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 9],
+  "evidence": [
+    "在 t0 (frame 594) 至 t9 (frame 699) 的整个序列中，cutlery_basket 始终位于洗碗机内部底部。",
+    "虽然洗碗机的下层 dish_rack (主碗篮) 在 t7-t8 期间被拉出，但 cutlery_basket 的位置相对于洗碗机内壁保持固定，没有跟随移动。",
+    "机器人右手一直持有餐具（刀叉），并未对 cutlery_basket 进行推拉或抓取操作。"
+  ],
+  "visibility": "good"
+}
+```

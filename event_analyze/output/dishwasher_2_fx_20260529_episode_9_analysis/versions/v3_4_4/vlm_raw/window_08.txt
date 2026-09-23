@@ -1,0 +1,59 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "confidence_before": {
+    "robot_location": 0.9,
+    "door": 0.9,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.5,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "confidence_after": {
+    "robot_location": 0.9,
+    "door": 0.9,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.5,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "visible_entities": [
+    "dish_rack",
+    "door"
+  ],
+  "evidence": [
+    "head camera shows the dishwasher door is open and the dish rack is stationary inside the machine throughout the sequence.",
+    "right camera shows the view of the rack interior, but the robot's right hand is not visible in the frame.",
+    "left camera shows the side of the dishwasher and counter, with no robot hands in view.",
+    "no knife, fork, or plate is clearly visible in the hands or being manipulated in this window."
+  ],
+  "window_quality": "partial"
+}
+```

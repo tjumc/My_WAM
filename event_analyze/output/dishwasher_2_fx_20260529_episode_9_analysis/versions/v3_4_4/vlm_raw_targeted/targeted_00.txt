@@ -1,0 +1,35 @@
+```json
+{
+  "state_before": {
+    "door": "opening",
+    "right_hand": "contact_door",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "door": "open",
+    "right_hand": "contact_door",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.98
+  },
+  "confidence_after": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.98
+  },
+  "evidence_time_indices": [
+    0,
+    7
+  ],
+  "evidence": [
+    "Head view shows the dishwasher door moving from a partially open position at t0 to a fully open position at t7.",
+    "Right view confirms the door is opening in early frames (t0-t3) and fully open by t7.",
+    "Right view shows the right hand maintaining contact with the door handle throughout the sequence.",
+    "Left view shows no hand or arm entering the frame during the observed window."
+  ],
+  "window_quality": "good"
+}
+```

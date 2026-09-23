@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "door": "closing",
+    "right_hand": "contact_door",
+    "left_hand": "uncertain"
+  },
+  "state_after": {
+    "door": "open",
+    "right_hand": "free",
+    "left_hand": "uncertain"
+  },
+  "confidence_before": {
+    "door": 0.9,
+    "right_hand": 0.95,
+    "left_hand": 0.0
+  },
+  "confidence_after": {
+    "door": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.0
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "head t0 (f109) shows the dishwasher door is partially open (approx 45 degrees) and the right arm is in contact with the door handle area.",
+    "head t1-t4 (f128-f186) shows the door angle decreasing continuously, indicating the door is closing.",
+    "head t4 (f186) shows the door is nearly closed, and the right arm is still in contact.",
+    "head t5-t7 (f205-f243) shows the door suddenly opening wide to reveal the interior racks, while the right arm retracts and moves away from the door."
+  ],
+  "window_quality": "good"
+}
+```

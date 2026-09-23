@@ -1,0 +1,35 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "out",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "dish_rack": "moving_in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "dish_rack": 1.0,
+    "right_hand": 0.95,
+    "left_hand": 0.9
+  },
+  "confidence_after": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.9
+  },
+  "evidence_time_indices": [
+    0,
+    7
+  ],
+  "evidence": [
+    "在 frame 220 (t0) 和 frame 233 (t1)，dish_rack 处于完全拉出（out）状态，且位于洗碗机外部。",
+    "在 frame 220 (t0) 到 frame 310 (t7) 期间，右手持续接触并抓握着 dish_rack 的前端。",
+    "从 frame 259 (t3) 到 frame 310 (t7)，dish_rack 的位置发生明显变化，从洗碗机外部逐渐推入内部，呈现 moving_in 状态。",
+    "左手在整个过程中保持空闲（free），未接触 dish_rack。"
+  ],
+  "window_quality": "good"
+}
+```

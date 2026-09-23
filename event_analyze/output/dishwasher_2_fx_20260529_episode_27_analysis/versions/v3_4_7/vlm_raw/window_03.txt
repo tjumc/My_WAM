@@ -1,0 +1,58 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "opening",
+    "dish_rack": "uncertain",
+    "cutlery_basket": "uncertain",
+    "right_hand": "contact_door",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "moving_in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.9,
+    "dish_rack": 0.6,
+    "cutlery_basket": 0.0,
+    "right_hand": 0.9,
+    "left_hand": 0.95,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.85,
+    "cutlery_basket": 0.0,
+    "right_hand": 0.85,
+    "left_hand": 0.95,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "visible_entities": [
+    "dish_rack"
+  ],
+  "evidence": [
+    "Head camera shows the dishwasher door opening from frame 180 to 248, revealing the interior.",
+    "Right hand is visible interacting with the dishwasher door and subsequently pushing the rack.",
+    "Dish rack is observed moving inwards into the dishwasher from frame 248 to 270.",
+    "Left hand is not visible in any of the provided frames (head, left, or right views)."
+  ],
+  "window_quality": "good"
+}
+```

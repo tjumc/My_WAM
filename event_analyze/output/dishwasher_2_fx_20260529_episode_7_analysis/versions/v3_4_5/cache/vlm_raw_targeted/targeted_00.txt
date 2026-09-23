@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "door": "opening",
+    "right_hand": "contact_door",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "door": "open",
+    "right_hand": "free",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "In early frames (e.g., f177), the right hand is holding the dishwasher door handle which is in a partially open state, indicating the door is opening.",
+    "In late frames (e.g., f311), the dishwasher door is fully open, revealing the interior racks.",
+    "The right hand is clearly in contact with the door in the early frames, but has released the handle and moved away in the later frames.",
+    "The left hand is not visible in the provided camera views throughout the sequence."
+  ],
+  "window_quality": "good"
+}
+```

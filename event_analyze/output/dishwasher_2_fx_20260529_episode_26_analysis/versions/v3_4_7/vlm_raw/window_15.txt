@@ -1,0 +1,61 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "uncertain",
+    "right_hand": "approaching",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "tabletop"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "uncertain",
+    "right_hand": "holding_plate",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "right_hand"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.3,
+    "right_hand": 0.90,
+    "left_hand": 0.3,
+    "knife_location": 0.1,
+    "fork_location": 0.1,
+    "plate_location": 0.95
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.3,
+    "right_hand": 0.95,
+    "left_hand": 0.3,
+    "knife_location": 0.1,
+    "fork_location": 0.1,
+    "plate_location": 0.95
+  },
+  "visible_entities": [
+    "robot_arm",
+    "dish_rack",
+    "plate",
+    "right_gripper"
+  ],
+  "evidence": [
+    "Head view shows dishwasher door open with rack extended.",
+    "Right view (f=1136) shows pink plate resting on the countertop.",
+    "Right view (f=1226) shows right gripper firmly grasping the pink plate.",
+    "Left view shows empty countertop, obscuring the plate and right arm's activity."
+  ],
+  "window_quality": "partial"
+}
+```

@@ -1,0 +1,31 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "moving_out",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "dish_rack": "moving_in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "In frames 912-934, the right hand holds the dish rack and its position shifts from deep inside the appliance to a more extended position (moving_out).",
+    "In frames 945-988, the right hand continues to hold the rack while pushing it back into the appliance, with the rack visibly retreating into the shadows (moving_in).",
+    "The left hand is not visible in the frame sequence."
+  ],
+  "window_quality": "good"
+}
+```

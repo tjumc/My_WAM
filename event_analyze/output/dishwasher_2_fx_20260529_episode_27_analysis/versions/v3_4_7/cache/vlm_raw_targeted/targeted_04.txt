@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "uncertain",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "state_after": {
+    "cutlery_basket": "uncertain",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.0,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.0,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "evidence_time_indices": [0, 1],
+  "evidence": [
+    "Window 510-665 focuses on the dishwasher interior and a plate on the counter.",
+    "The cutlery basket is not visible in the frame; the view is obstructed by the dishwasher door or the basket is not present in the visible area.",
+    "No hands are interacting with a cutlery basket during this period.",
+    "Visual evidence for the target entity is completely missing."
+  ],
+  "window_quality": "poor"
+}
+```

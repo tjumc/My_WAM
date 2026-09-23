@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "door": "uncertain",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "state_after": {
+    "door": "open",
+    "right_hand": "contact_door",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "door": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.9
+  },
+  "confidence_after": {
+    "door": 0.98,
+    "right_hand": 0.98,
+    "left_hand": 0.98
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "Frame 86 (head view): Dishwasher door is closed.",
+    "Frame 86 (right view): Right hand is visible in lower part of frame, not interacting with door.",
+    "Frame 220 (head view): Dishwasher door is fully open.",
+    "Frame 220 (right view): Right hand is inside the dishwasher, holding the door open."
+  ],
+  "window_quality": "good"
+}
+```

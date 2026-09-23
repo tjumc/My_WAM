@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "in",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "state_after": {
+    "cutlery_basket": "in",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.85,
+    "left_hand": 0.85
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.85,
+    "left_hand": 0.85
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "Head view shows the cutlery basket is fully inserted inside the dishwasher at the start (t0) and end (t7) of the window.",
+    "Right view shows the basket rack structure remains stationary within the machine throughout the sequence.",
+    "No hands or arms are visible in the frame interacting with the cutlery basket.",
+    "No motion of the cutlery basket is detected across the sampled frames."
+  ],
+  "window_quality": "good"
+}
+```

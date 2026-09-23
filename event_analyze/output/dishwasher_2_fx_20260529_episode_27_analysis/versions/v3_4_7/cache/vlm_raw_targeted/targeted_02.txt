@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "plate_location": "uncertain",
+    "right_hand": "approaching",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "plate_location": "dish_rack",
+    "right_hand": "approaching",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "plate_location": 0.6,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "plate_location": 0.9,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "Frame 220 (head): Right arm is visible extending towards the open dishwasher, gripper is empty.",
+    "Frame 220 (right): Camera view inside the dishwasher shows an empty bottom rack area.",
+    "Frame 310 (head): Right arm is extended deep into the dishwasher, gripper appears empty.",
+    "Frame 310 (right): Camera view inside the dishwasher shows plates are present in the rack."
+  ],
+  "window_quality": "partial"
+}
+```

@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "in",
+    "right_hand": "free",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "dish_rack": "moving_in",
+    "right_hand": "free",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "dish_rack": 0.9,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "在早期帧（t0-t3）中，dish rack 处于静止状态，位于洗碗机内部。",
+    "在早期帧中，左右机械手位于 dish rack 附近，处于空闲（free）状态，未接触。",
+    "在晚期帧（t7）中，dish rack 的位置明显比早期更靠近洗碗机内部深处。",
+    "在晚期帧中，dish rack 呈现运动趋势（moving_in），而机械手依然保持空闲，未直接接触 rack。"
+  ],
+  "window_quality": "good"
+}
+```

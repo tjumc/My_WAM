@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "door": "closed",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "door": "closing",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "door": 0.90,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "在早期帧（如t0, t1701）中，dishwasher门板完全覆盖开口，处于关闭状态。",
+    "在晚期帧（如t7, t1768）中，dishwasher门板明显处于半开位置，且位置低于早期帧的顶部边缘，显示门正在向下移动（closing）。",
+    "在head视角中，机械臂双爪在窗口内保持在上方悬停，未与门发生接触，且未出现在视野中操作。",
+    "left和right视角中，机械臂末端未出现在画面内，无法观察到手部操作。"
+  ],
+  "window_quality": "good"
+}
+```

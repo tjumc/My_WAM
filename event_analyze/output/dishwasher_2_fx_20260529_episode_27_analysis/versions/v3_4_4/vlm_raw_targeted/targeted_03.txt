@@ -1,0 +1,31 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "moving_out",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "dish_rack": "out",
+    "right_hand": "free",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "Frame 510 (head/right): Right hand is in contact with the dish rack, which is partially extended from the cabinet.",
+    "Frame 543 (head/right): The dish rack is fully extended out of the cabinet (state 'out').",
+    "Frame 543 (head): Right hand has released the rack and is hovering above the counter, indicating the action is complete."
+  ],
+  "window_quality": "good"
+}
+```

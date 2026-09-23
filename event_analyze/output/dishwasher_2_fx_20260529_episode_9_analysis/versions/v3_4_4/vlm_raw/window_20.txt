@@ -1,0 +1,60 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "moving_in",
+    "cutlery_basket": "not_visible",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "free",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "not_visible",
+    "right_hand": "free",
+    "left_hand": "free",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.95,
+    "right_hand": 0.90,
+    "left_hand": 0.95,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "visible_entities": [
+    "robot",
+    "dishwasher",
+    "dish_rack"
+  ],
+  "evidence": [
+    "Head camera shows the dishwasher door is fully open throughout the window.",
+    "Right arm is seen pushing the dish rack into the dishwasher in the early frames (f=1804-1826).",
+    "By the end of the window (f=1894), the dish rack is fully inside and the right hand has released it.",
+    "Left hand remains open and away from the dishwasher in all frames."
+  ],
+  "window_quality": "good"
+}
+```

@@ -1,0 +1,60 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "opening",
+    "dish_rack": "moving_out",
+    "cutlery_basket": "not_visible",
+    "right_hand": "contact_door",
+    "left_hand": "contact_door",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "not_visible",
+    "right_hand": "contact_door",
+    "left_hand": "contact_door",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.90,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "visible_entities": [
+    "robot_arms",
+    "dishwasher_door",
+    "dish_rack"
+  ],
+  "evidence": [
+    "Head camera shows both robot arms reaching upwards and contacting the dishwasher door throughout the sequence.",
+    "Dish_rack is visible moving from inside to outside the dishwasher cavity between frame 1663 and 1753.",
+    "Right and left grippers remain in contact with the door/upper mechanism, with no clear grasp of cutlery or plates.",
+    "Cutlery_basket is not visible in the frame, likely obscured by the rack or camera angle."
+  ],
+  "window_quality": "good"
+}
+```

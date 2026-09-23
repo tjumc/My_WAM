@@ -1,0 +1,61 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "uncertain",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "closing",
+    "dish_rack": "moving_in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.4,
+    "right_hand": 0.9,
+    "left_hand": 0.3,
+    "knife_location": 0.3,
+    "fork_location": 0.3,
+    "plate_location": 0.95
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.9,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.4,
+    "right_hand": 0.9,
+    "left_hand": 0.3,
+    "knife_location": 0.3,
+    "fork_location": 0.3,
+    "plate_location": 0.95
+  },
+  "visible_entities": [
+    "robot_right_arm",
+    "dish_rack",
+    "pink_plate",
+    "dishwasher_door"
+  ],
+  "evidence": [
+    "Right arm is physically contacting the dish rack in early frames (f=1450-1495).",
+    "Dish rack is pulled out and contains a pink plate visible in the right camera view.",
+    "Dish rack moves inward (retracts) towards the dishwasher interior from f=1495 to f=1540.",
+    "Dishwasher door is open in early frames and begins to close (move upwards) in the final frame (f=1540)."
+  ],
+  "window_quality": "good"
+}
+```

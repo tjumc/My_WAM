@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "out",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "contact_dish_rack"
+  },
+  "state_after": {
+    "dish_rack": "out",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "dish_rack": 0.95,
+    "right_hand": 0.90,
+    "left_hand": 0.90
+  },
+  "confidence_after": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 3],
+  "evidence": [
+    "Frame 1305-1326 (right view): Both hands are clearly visible grasping the pull-out dish rack at the bottom of the dishwasher.",
+    "Frame 1368 (right view): The dish rack is fully extended (out) and hands are no longer visible in the frame, suggesting they have moved away.",
+    "Frame 1305-1368 (head view): The dish rack remains in the fully extended (out) position throughout the sequence.",
+    "Frame 1389-1452: The camera view shifts to the plate on the counter, and the hands are not visible in relation to the dish rack."
+  ],
+  "window_quality": "good"
+}
+```

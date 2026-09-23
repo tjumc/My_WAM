@@ -1,0 +1,17 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "not_visible",
+  "relative_motion": "moving_out",
+  "right_hand_relation": "pulling_cutlery_basket",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 1, 2, 3],
+  "evidence": [
+    "t0 (Frame 484) 到 t1 (Frame 499)：head camera 视角显示，位于洗碗机内部下方的 cutlery_basket 明显向外部移动，位置更靠近镜头。",
+    "t1 (Frame 499) 到 t2 (Frame 514)：cutlery_basket 继续向外移动，大部分已移出洗碗机内部空间。",
+    "t3 (Frame 529) 到 t4 (Frame 544)：cutlery_basket 已完全移出视野（not_visible），结合后续画面中右手持握餐具，推断篮子已被拉出并移出画面。",
+    "整个序列中，dish_rack 保持静止，相对位置的变化仅由 cutlery_basket 的移动引起。"
+  ],
+  "visibility": "partial"
+}
+```

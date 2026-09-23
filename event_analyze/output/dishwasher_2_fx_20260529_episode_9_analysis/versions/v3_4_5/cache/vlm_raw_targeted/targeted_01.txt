@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "door": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "door": "opening",
+    "right_hand": "contact_door",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "door": 0.6,
+    "right_hand": 0.9,
+    "left_hand": 0.9
+  },
+  "confidence_after": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.9
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "在 t0 (frame 102) 的 head 视角中，洗碗机门处于关闭状态，但画面边缘被截断，无法确认全貌。",
+    "在 t0 (frame 102) 的 head 视角中，左右机械臂均位于画面左侧，未接触洗碗机。",
+    "在 t3 (frame 135) 到 t7 (frame 178) 期间，head 视角显示右侧机械臂抓住门把手并将门向外拉开，门缝逐渐变大。",
+    "在 t7 (frame 178) 的 head 视角中，洗碗机门已明显打开，右臂保持在门把手位置。"
+  ],
+  "window_quality": "good"
+}
+```

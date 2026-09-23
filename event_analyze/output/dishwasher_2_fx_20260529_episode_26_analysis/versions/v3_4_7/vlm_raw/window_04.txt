@@ -1,0 +1,62 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "moving_in",
+    "cutlery_basket": "in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.85,
+    "right_hand": 0.90,
+    "left_hand": 0.95,
+    "knife_location": 0.1,
+    "fork_location": 0.1,
+    "plate_location": 0.85
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.85,
+    "right_hand": 0.90,
+    "left_hand": 0.95,
+    "knife_location": 0.1,
+    "fork_location": 0.1,
+    "plate_location": 0.85
+  },
+  "visible_entities": [
+    "robot_base",
+    "dishwasher_door",
+    "dish_rack",
+    "plates",
+    "right_hand"
+  ],
+  "evidence": [
+    "Head view shows the dishwasher door is fully open throughout the window.",
+    "Right camera view shows the right hand gripper is in contact with the front of the dish rack.",
+    "Head view shows the dish rack moving backwards into the dishwasher from frame 307 to 352.",
+    "Left hand is not visible in any of the provided frames."
+  ],
+  "window_quality": "good"
+}
+```

@@ -1,0 +1,59 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "moving_out",
+    "cutlery_basket": "not_visible",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "contact_dish_rack",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "not_visible",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "confidence_before": {
+    "robot_location": 0.9,
+    "door": 0.9,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.9,
+    "right_hand": 0.8,
+    "left_hand": 0.8,
+    "knife_location": 0.4,
+    "fork_location": 0.4,
+    "plate_location": 0.8
+  },
+  "confidence_after": {
+    "robot_location": 0.9,
+    "door": 0.9,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.9,
+    "right_hand": 0.5,
+    "left_hand": 0.5,
+    "knife_location": 0.4,
+    "fork_location": 0.4,
+    "plate_location": 0.8
+  },
+  "visible_entities": [
+    "dish_rack",
+    "plate"
+  ],
+  "evidence": [
+    "Head camera shows dish rack extending from dishwasher in early frames and fully extended in later frames.",
+    "Right camera shows robot grippers interacting with the rack in early frames, then moving out of view to the right in later frames.",
+    "A pink plate is clearly visible inside the dish rack throughout the window.",
+    "Dishwasher door remains open and stationary in the background across all frames."
+  ],
+  "window_quality": "good"
+}
+```

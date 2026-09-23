@@ -1,0 +1,62 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "free",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "closing",
+    "dish_rack": "in",
+    "cutlery_basket": "in",
+    "right_hand": "contact_door",
+    "left_hand": "free",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.85,
+    "right_hand": 0.90,
+    "left_hand": 0.95,
+    "knife_location": 0.50,
+    "fork_location": 0.50,
+    "plate_location": 0.90
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.85,
+    "right_hand": 0.90,
+    "left_hand": 0.95,
+    "knife_location": 0.50,
+    "fork_location": 0.50,
+    "plate_location": 0.90
+  },
+  "visible_entities": [
+    "robot",
+    "dishwasher_door",
+    "dish_rack",
+    "cutlery_basket",
+    "plate"
+  ],
+  "evidence": [
+    "Window start (f=1579): Dishwasher door is fully open, revealing the interior racks.",
+    "Window start (f=1579): Right hand is in contact with the inner side of the dishwasher door.",
+    "Window end (f=1669): Right hand is pushing the door from the inside, door angle is decreasing (closing).",
+    "Interior racks (dish_rack and cutlery_basket) remain stationary inside the unit throughout the window."
+  ],
+  "window_quality": "good"
+}
+```

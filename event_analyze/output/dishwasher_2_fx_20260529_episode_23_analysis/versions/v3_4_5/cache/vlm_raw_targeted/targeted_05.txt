@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "moving_in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "dish_rack": "in",
+    "right_hand": "free",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.9
+  },
+  "confidence_after": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.9
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "Frame 956 (right camera) shows the dish rack is partially pulled out, extending significantly from the dishwasher body.",
+    "In frames 956 to 1021, the dish rack visibly slides into the dishwasher, disappearing into the cavity.",
+    "Right hand is clearly in contact with the rack structure throughout the insertion process (frames 956-1021).",
+    "By frame 1032, the rack is fully inside (state 'in') and the right hand has released it and moved away (state 'free')."
+  ],
+  "window_quality": "good"
+}
+```

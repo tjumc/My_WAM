@@ -1,0 +1,36 @@
+```json
+{
+  "state_before": {
+    "fork_location": "tabletop",
+    "knife_location": "tabletop",
+    "right_hand": "free",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "fork_location": "not_visible",
+    "knife_location": "not_visible",
+    "right_hand": "free",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "fork_location": 0.95,
+    "knife_location": 0.95,
+    "right_hand": 0.90,
+    "left_hand": 0.90
+  },
+  "confidence_after": {
+    "fork_location": 0.90,
+    "knife_location": 0.90,
+    "right_hand": 0.90,
+    "left_hand": 0.90
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "Frame 150 (head/right): Fork and knife are clearly visible on the pink plate (tabletop).",
+    "Frame 150 (right): Both robot hands are open and not holding any objects (free).",
+    "Frame 284 (head): The pink plate is visible on the table, but the fork and knife are no longer visible on it.",
+    "Frame 284 (right): Robot hands are visible near the dishwasher interior, not holding the fork or knife."
+  ],
+  "window_quality": "good"
+}
+```

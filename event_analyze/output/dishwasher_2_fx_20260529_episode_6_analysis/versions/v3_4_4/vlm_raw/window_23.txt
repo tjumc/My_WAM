@@ -1,0 +1,61 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "in",
+    "right_hand": "contact_door",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "closing",
+    "dish_rack": "in",
+    "cutlery_basket": "in",
+    "right_hand": "contact_door",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.90,
+    "right_hand": 0.90,
+    "left_hand": 0.85,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.90,
+    "right_hand": 0.90,
+    "left_hand": 0.85,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "visible_entities": [
+    "robot_base",
+    "dishwasher_door",
+    "dish_rack",
+    "right_hand"
+  ],
+  "evidence": [
+    "Head view shows dishwasher door is fully open at frame 1972 and begins to lower/move downwards by frame 2062.",
+    "Right hand maintains contact with the dishwasher door handle throughout the window sequence.",
+    "Dish rack is visible inside the dishwasher cavity and remains stationary (in position) during the sequence.",
+    "Cutlery basket is visible inside the rack but specific utensils (knife/fork) are not distinguishable due to distance/occlusion."
+  ],
+  "window_quality": "good"
+}
+```

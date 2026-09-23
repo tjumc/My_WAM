@@ -1,0 +1,420 @@
+{
+  "annotation_version": "v3.4.4",
+  "task_family": "dishwasher_loading",
+  "policy": {
+    "max_concurrent_portable_objects": 1,
+    "allow_inferred_parent_ownership": true,
+    "direct_ownership_min_confidence": 0.7,
+    "description": "This task family is annotated as sequential single-object portable manipulation. Change this for genuinely concurrent/bimanual task families."
+  },
+  "direct_ownership": {
+    "knife": [],
+    "fork": [],
+    "plate": [
+      {
+        "hand": "right_hand",
+        "start_frame": 1419,
+        "end_frame": 1509,
+        "confidence": 0.95,
+        "event_id": 14,
+        "support": "direct_window"
+      },
+      {
+        "hand": "right_hand",
+        "start_frame": 1544,
+        "end_frame": 1634,
+        "confidence": 0.95,
+        "event_id": 15,
+        "support": "direct_window"
+      },
+      {
+        "hand": "right_hand",
+        "start_frame": 1573,
+        "end_frame": 1663,
+        "confidence": 0.95,
+        "event_id": 16,
+        "support": "direct_window"
+      },
+      {
+        "hand": "right_hand",
+        "start_frame": 1739,
+        "end_frame": 1784,
+        "confidence": 0.95,
+        "event_id": 18,
+        "support": "direct_before_half"
+      },
+      {
+        "hand": "right_hand",
+        "start_frame": 1772,
+        "end_frame": 1817,
+        "confidence": 0.9,
+        "event_id": 19,
+        "support": "direct_before_half"
+      }
+    ]
+  },
+  "nonportable_hand_blockers": [
+    {
+      "hand": "right_hand",
+      "start_frame": 142,
+      "end_frame": 209,
+      "token": "contact_dish_rack",
+      "confidence": 0.95,
+      "event_id": 20003
+    },
+    {
+      "hand": "left_hand",
+      "start_frame": 142,
+      "end_frame": 209,
+      "token": "contact_dish_rack",
+      "confidence": 0.95,
+      "event_id": 20003
+    },
+    {
+      "hand": "right_hand",
+      "start_frame": 209,
+      "end_frame": 268,
+      "token": "contact_dish_rack",
+      "confidence": 0.9,
+      "event_id": 20005
+    },
+    {
+      "hand": "right_hand",
+      "start_frame": 246,
+      "end_frame": 291,
+      "token": "contact_dish_rack",
+      "confidence": 0.85,
+      "event_id": 3
+    },
+    {
+      "hand": "right_hand",
+      "start_frame": 252,
+      "end_frame": 297,
+      "token": "contact_door",
+      "confidence": 0.9,
+      "event_id": 4
+    },
+    {
+      "hand": "right_hand",
+      "start_frame": 318,
+      "end_frame": 408,
+      "token": "contact_dish_rack",
+      "confidence": 0.9,
+      "event_id": 5
+    },
+    {
+      "hand": "right_hand",
+      "start_frame": 397,
+      "end_frame": 487,
+      "token": "contact_dish_rack",
+      "confidence": 0.9,
+      "event_id": 6
+    },
+    {
+      "hand": "right_hand",
+      "start_frame": 445,
+      "end_frame": 535,
+      "token": "contact_dish_rack",
+      "confidence": 0.9,
+      "event_id": 7
+    },
+    {
+      "hand": "right_hand",
+      "start_frame": 537,
+      "end_frame": 627,
+      "token": "contact_dish_rack",
+      "confidence": 0.9,
+      "event_id": 8
+    },
+    {
+      "hand": "right_hand",
+      "start_frame": 573,
+      "end_frame": 663,
+      "token": "contact_dish_rack",
+      "confidence": 0.9,
+      "event_id": 9
+    },
+    {
+      "hand": "right_hand",
+      "start_frame": 653,
+      "end_frame": 698,
+      "token": "contact_dish_rack",
+      "confidence": 0.85,
+      "event_id": 10
+    },
+    {
+      "hand": "left_hand",
+      "start_frame": 653,
+      "end_frame": 698,
+      "token": "contact_dish_rack",
+      "confidence": 0.85,
+      "event_id": 10
+    },
+    {
+      "hand": "right_hand",
+      "start_frame": 1276,
+      "end_frame": 1366,
+      "token": "contact_dish_rack",
+      "confidence": 0.9,
+      "event_id": 11
+    },
+    {
+      "hand": "right_hand",
+      "start_frame": 1291,
+      "end_frame": 1381,
+      "token": "contact_dish_rack",
+      "confidence": 0.9,
+      "event_id": 12
+    },
+    {
+      "hand": "right_hand",
+      "start_frame": 1320,
+      "end_frame": 1410,
+      "token": "contact_dish_rack",
+      "confidence": 0.85,
+      "event_id": 13
+    },
+    {
+      "hand": "left_hand",
+      "start_frame": 1320,
+      "end_frame": 1410,
+      "token": "contact_dish_rack",
+      "confidence": 0.85,
+      "event_id": 13
+    },
+    {
+      "hand": "left_hand",
+      "start_frame": 1544,
+      "end_frame": 1634,
+      "token": "contact_dish_rack",
+      "confidence": 0.9,
+      "event_id": 15
+    },
+    {
+      "hand": "right_hand",
+      "start_frame": 1755,
+      "end_frame": 1800,
+      "token": "contact_dish_rack",
+      "confidence": 0.9,
+      "event_id": 17
+    },
+    {
+      "hand": "right_hand",
+      "start_frame": 1865,
+      "end_frame": 1955,
+      "token": "contact_dish_rack",
+      "confidence": 0.9,
+      "event_id": 21
+    },
+    {
+      "hand": "right_hand",
+      "start_frame": 1972,
+      "end_frame": 2062,
+      "token": "contact_door",
+      "confidence": 0.9,
+      "event_id": 23
+    },
+    {
+      "hand": "right_hand",
+      "start_frame": 2055,
+      "end_frame": 2100,
+      "token": "contact_door",
+      "confidence": 0.9,
+      "event_id": 24
+    },
+    {
+      "hand": "left_hand",
+      "start_frame": 2055,
+      "end_frame": 2100,
+      "token": "contact_door",
+      "confidence": 0.9,
+      "event_id": 24
+    }
+  ],
+  "candidates": [
+    {
+      "object": "knife",
+      "track_key": "knife_location",
+      "segment_index": 1,
+      "hand": "right_hand",
+      "start_frame": 230,
+      "end_frame": 272,
+      "target_start_frame": 272,
+      "target_segment_index": 2,
+      "direct_intervals": [],
+      "first_direct_frame": null,
+      "direct_confidence": 0.0,
+      "resolved_start_frame": 230,
+      "resolved_end_frame": 272,
+      "resolution_reasons": [
+        {
+          "type": "unresolved_overlap_without_direct_evidence",
+          "objects": [
+            "knife",
+            "fork"
+          ]
+        },
+        {
+          "type": "unresolved_overlap_without_direct_evidence",
+          "objects": [
+            "knife",
+            "plate"
+          ]
+        }
+      ],
+      "unresolved_conflict": true,
+      "assignment_status": "ambiguous"
+    },
+    {
+      "object": "fork",
+      "track_key": "fork_location",
+      "segment_index": 1,
+      "hand": "right_hand",
+      "start_frame": 230,
+      "end_frame": 272,
+      "target_start_frame": 272,
+      "target_segment_index": 2,
+      "direct_intervals": [],
+      "first_direct_frame": null,
+      "direct_confidence": 0.0,
+      "resolved_start_frame": 230,
+      "resolved_end_frame": 272,
+      "resolution_reasons": [
+        {
+          "type": "unresolved_overlap_without_direct_evidence",
+          "objects": [
+            "knife",
+            "fork"
+          ]
+        },
+        {
+          "type": "unresolved_overlap_without_direct_evidence",
+          "objects": [
+            "fork",
+            "plate"
+          ]
+        }
+      ],
+      "unresolved_conflict": true,
+      "assignment_status": "ambiguous"
+    },
+    {
+      "object": "plate",
+      "track_key": "plate_location",
+      "segment_index": 1,
+      "hand": "right_hand",
+      "start_frame": 230,
+      "end_frame": 272,
+      "target_start_frame": 272,
+      "target_segment_index": 2,
+      "direct_intervals": [],
+      "first_direct_frame": null,
+      "direct_confidence": 0.0,
+      "resolved_start_frame": 230,
+      "resolved_end_frame": 272,
+      "resolution_reasons": [
+        {
+          "type": "unresolved_overlap_without_direct_evidence",
+          "objects": [
+            "knife",
+            "plate"
+          ]
+        },
+        {
+          "type": "unresolved_overlap_without_direct_evidence",
+          "objects": [
+            "fork",
+            "plate"
+          ]
+        }
+      ],
+      "unresolved_conflict": true,
+      "assignment_status": "ambiguous"
+    },
+    {
+      "object": "plate",
+      "track_key": "plate_location",
+      "segment_index": 4,
+      "hand": "right_hand",
+      "start_frame": 1414,
+      "end_frame": 1686,
+      "target_start_frame": 1686,
+      "target_segment_index": 5,
+      "direct_intervals": [
+        {
+          "hand": "right_hand",
+          "start_frame": 1419,
+          "end_frame": 1509,
+          "confidence": 0.95,
+          "event_id": 14,
+          "support": "direct_window"
+        },
+        {
+          "hand": "right_hand",
+          "start_frame": 1544,
+          "end_frame": 1634,
+          "confidence": 0.95,
+          "event_id": 15,
+          "support": "direct_window"
+        },
+        {
+          "hand": "right_hand",
+          "start_frame": 1573,
+          "end_frame": 1663,
+          "confidence": 0.95,
+          "event_id": 16,
+          "support": "direct_window"
+        }
+      ],
+      "first_direct_frame": 1419,
+      "direct_confidence": 0.95,
+      "resolved_start_frame": 1414,
+      "resolved_end_frame": 1686,
+      "resolution_reasons": [],
+      "unresolved_conflict": false,
+      "assignment_status": "direct"
+    },
+    {
+      "object": "plate",
+      "track_key": "plate_location",
+      "segment_index": 6,
+      "hand": "right_hand",
+      "start_frame": 1724,
+      "end_frame": 1786,
+      "target_start_frame": 1786,
+      "target_segment_index": 7,
+      "direct_intervals": [
+        {
+          "hand": "right_hand",
+          "start_frame": 1739,
+          "end_frame": 1784,
+          "confidence": 0.95,
+          "event_id": 18,
+          "support": "direct_before_half"
+        },
+        {
+          "hand": "right_hand",
+          "start_frame": 1772,
+          "end_frame": 1817,
+          "confidence": 0.9,
+          "event_id": 19,
+          "support": "direct_before_half"
+        }
+      ],
+      "first_direct_frame": 1739,
+      "direct_confidence": 0.95,
+      "resolved_start_frame": 1724,
+      "resolved_end_frame": 1786,
+      "resolution_reasons": [],
+      "unresolved_conflict": false,
+      "assignment_status": "direct"
+    }
+  ],
+  "num_ambiguous_candidates": 3,
+  "num_suppressed_candidates": 0,
+  "notes": [
+    "Manual GT is not read.",
+    "Direct ownership evidence cannot be borrowed by a sibling object.",
+    "Ambiguous unresolved conflicts are preserved for later targeted re-observation."
+  ]
+}

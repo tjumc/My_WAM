@@ -1,0 +1,430 @@
+{
+  "annotation_version": "v3.4.4",
+  "task_goal": "put the dish into the dishwasher",
+  "task_schema": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/ontologies/dishwasher_loading.json",
+  "task_family": "dishwasher_loading",
+  "num_input_skills": 31,
+  "num_validated_skills": 7,
+  "skill_sequence": [
+    {
+      "skill_id": 0,
+      "skill_type": "navigate_to_station",
+      "instruction_zh": "移动到桌面/洗碗机前",
+      "instruction_en": "Move to the table/dishwasher station",
+      "entity": "robot_base",
+      "active_arm": "none",
+      "provisional_start_frame": 27,
+      "provisional_end_frame": 149,
+      "evidence_event_ids": [],
+      "confidence": 0.95,
+      "state_transition": {
+        "base_motion": true
+      },
+      "inference_mode": "hdf5_base_motion",
+      "source": "trajectory_level_entity_state_machine",
+      "source_skill_id": 0,
+      "validation": {
+        "signal": {
+          "window": [
+            7,
+            169
+          ],
+          "motion_fraction": 0.135,
+          "force_change_support": 0.571,
+          "gripper_change_support": 0.0,
+          "score": 0.217
+        },
+        "reasons": [
+          "hdf5_base_motion"
+        ],
+        "interaction_evidence": null
+      }
+    },
+    {
+      "skill_id": 1,
+      "skill_type": "open_dishwasher_door",
+      "instruction_zh": "右手打开洗碗机门",
+      "instruction_en": "Open the dishwasher door with the right hand",
+      "entity": "door",
+      "active_arm": "right",
+      "provisional_start_frame": 158,
+      "provisional_end_frame": 180,
+      "evidence_event_ids": [
+        0,
+        1,
+        2,
+        3,
+        20000
+      ],
+      "confidence": 0.95,
+      "state_transition": {
+        "before": "closed",
+        "after": "open"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine",
+      "source_skill_id": 1,
+      "validation": {
+        "signal": {
+          "window": [
+            138,
+            200
+          ],
+          "motion_fraction": 0.587,
+          "force_change_support": 1.0,
+          "gripper_change_support": 0.0,
+          "score": 0.573
+        },
+        "reasons": [
+          "entity_contact_plus_robot_signal",
+          "direction_consistent_visual_transition"
+        ],
+        "interaction_evidence": {
+          "nearby_event_ids": [
+            0,
+            1,
+            2,
+            3,
+            20000
+          ],
+          "contact_event_ids": [
+            2,
+            20000
+          ],
+          "directed_contact_event_ids": [
+            2,
+            20000
+          ],
+          "contact_count": 2,
+          "directed_count": 2,
+          "dense_directional_contact_count": 0,
+          "nearest_contact_frame": 200
+        }
+      }
+    },
+    {
+      "skill_id": 2,
+      "skill_type": "pull_out_dish_rack",
+      "instruction_zh": "右手拉出碗篮",
+      "instruction_en": "Pull out the dish rack with the right hand",
+      "entity": "dish_rack",
+      "active_arm": "right",
+      "provisional_start_frame": 335,
+      "provisional_end_frame": 336,
+      "evidence_event_ids": [
+        3,
+        4,
+        5,
+        20004
+      ],
+      "confidence": 0.426,
+      "state_transition": {
+        "before": "in",
+        "after": "out"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine",
+      "interaction_anchor_adjusted": true,
+      "interaction_anchor_source_span": [
+        376,
+        376
+      ],
+      "source_skill_id": 2,
+      "validation": {
+        "signal": {
+          "window": [
+            315,
+            356
+          ],
+          "motion_fraction": 0.881,
+          "force_change_support": 0.857,
+          "gripper_change_support": 0.0,
+          "score": 0.699
+        },
+        "reasons": [
+          "entity_contact_plus_robot_signal",
+          "robot_signal_revalidated_after_contact_anchor"
+        ],
+        "interaction_evidence": {
+          "nearby_event_ids": [
+            4,
+            5,
+            6,
+            20001,
+            20002,
+            20003,
+            20004
+          ],
+          "contact_event_ids": [
+            4,
+            6,
+            20004
+          ],
+          "directed_contact_event_ids": [],
+          "contact_count": 3,
+          "directed_count": 0,
+          "dense_directional_contact_count": 0,
+          "nearest_contact_frame": 335
+        }
+      }
+    },
+    {
+      "skill_id": 3,
+      "skill_type": "pull_out_cutlery_basket",
+      "instruction_zh": "右手拉出餐具篮",
+      "instruction_en": "Pull out the cutlery basket with the right hand",
+      "entity": "cutlery_basket",
+      "active_arm": "right",
+      "provisional_start_frame": 916,
+      "provisional_end_frame": 917,
+      "evidence_event_ids": [
+        20006,
+        20007
+      ],
+      "confidence": 0.9,
+      "state_transition": {
+        "before": "in",
+        "after": "out"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine",
+      "interaction_anchor_adjusted": true,
+      "interaction_anchor_source_span": [
+        1033,
+        1033
+      ],
+      "source_skill_id": 12,
+      "validation": {
+        "signal": {
+          "window": [
+            896,
+            937
+          ],
+          "motion_fraction": 0.548,
+          "force_change_support": 0.917,
+          "gripper_change_support": 1.0,
+          "score": 0.73
+        },
+        "reasons": [
+          "entity_contact_plus_robot_signal",
+          "robot_signal_revalidated_after_contact_anchor"
+        ],
+        "interaction_evidence": {
+          "nearby_event_ids": [
+            10,
+            11,
+            20006,
+            20007
+          ],
+          "contact_event_ids": [
+            20006
+          ],
+          "directed_contact_event_ids": [],
+          "contact_count": 1,
+          "directed_count": 0,
+          "dense_directional_contact_count": 0,
+          "nearest_contact_frame": 916
+        }
+      }
+    },
+    {
+      "skill_id": 4,
+      "skill_type": "place_utensil_in_cutlery_basket",
+      "instruction_zh": "右手夹取餐具并放入餐具篮",
+      "instruction_en": "Pick up the utensil and place it in the cutlery basket with the right hand",
+      "entity": "utensil",
+      "active_arm": "right",
+      "provisional_start_frame": 1014,
+      "provisional_end_frame": 1176,
+      "evidence_event_ids": [
+        1,
+        2,
+        3,
+        5,
+        8,
+        9,
+        11
+      ],
+      "confidence": 0.406,
+      "state_transition": {
+        "before": "tabletop",
+        "held": "right_hand",
+        "after": "cutlery_basket",
+        "target_support": "interpolated",
+        "target_evidence_frame": 1176,
+        "ownership_context_end_frame": null,
+        "retry_collapsed": false,
+        "completion_rule": "target_without_regrasp_before_object_context_switch"
+      },
+      "inference_mode": "completion_aware_object_episode_with_affordance_completion",
+      "source": "trajectory_level_entity_state_machine",
+      "fine_skill_type": "place_fork_in_cutlery_basket",
+      "fine_entity": "fork",
+      "semantic_backoff": {
+        "from_skill_type": "place_fork_in_cutlery_basket",
+        "from_entity": "fork",
+        "to_skill_type": "place_utensil_in_cutlery_basket",
+        "to_entity": "utensil",
+        "reason": "schema_policy_equivalent_parent_training_label"
+      },
+      "source_skill_id": 11,
+      "validation": {
+        "signal": {
+          "window": [
+            994,
+            1196
+          ],
+          "motion_fraction": 0.3,
+          "force_change_support": 0.558,
+          "gripper_change_support": 1.0,
+          "score": 0.505
+        },
+        "reasons": [
+          "observed_held_state"
+        ],
+        "interaction_evidence": null
+      }
+    },
+    {
+      "skill_id": 5,
+      "skill_type": "place_plate_in_dish_rack",
+      "instruction_zh": "右手夹取盘子并放入碗篮",
+      "instruction_en": "Pick up the plate and place it in the dish rack with the right hand",
+      "entity": "plate",
+      "active_arm": "right",
+      "provisional_start_frame": 1176,
+      "provisional_end_frame": 1642,
+      "evidence_event_ids": [
+        8,
+        9,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        19,
+        20
+      ],
+      "confidence": 0.95,
+      "state_transition": {
+        "before": "tabletop",
+        "held": "right_hand",
+        "after": "dish_rack",
+        "target_support": "observed",
+        "target_evidence_frame": 1642,
+        "ownership_context_end_frame": null,
+        "retry_collapsed": true,
+        "completion_rule": "target_without_regrasp_before_object_context_switch"
+      },
+      "inference_mode": "completion_aware_object_episode",
+      "source": "trajectory_level_entity_state_machine",
+      "retry_collapsed": true,
+      "completion_aware_merge": true,
+      "source_skill_id": 15,
+      "validation": {
+        "signal": {
+          "window": [
+            1156,
+            1662
+          ],
+          "motion_fraction": 0.505,
+          "force_change_support": 0.673,
+          "gripper_change_support": 1.0,
+          "score": 0.646
+        },
+        "reasons": [
+          "observed_held_state"
+        ],
+        "interaction_evidence": null
+      }
+    },
+    {
+      "skill_id": 6,
+      "skill_type": "push_in_dish_rack",
+      "instruction_zh": "右手推入碗篮",
+      "instruction_en": "Push in the dish rack with the right hand",
+      "entity": "dish_rack",
+      "active_arm": "right",
+      "provisional_start_frame": 1614,
+      "provisional_end_frame": 1615,
+      "evidence_event_ids": [
+        15,
+        16
+      ],
+      "confidence": 0.9,
+      "state_transition": {
+        "before": "out",
+        "after": "in"
+      },
+      "inference_mode": "tracked_endpoint_transition",
+      "source": "trajectory_level_entity_state_machine",
+      "interaction_anchor_adjusted": true,
+      "interaction_anchor_source_span": [
+        1642,
+        1642
+      ],
+      "source_skill_id": 20,
+      "validation": {
+        "signal": {
+          "window": [
+            1594,
+            1635
+          ],
+          "motion_fraction": 0.357,
+          "force_change_support": 0.633,
+          "gripper_change_support": 1.0,
+          "score": 0.555
+        },
+        "reasons": [
+          "entity_contact_plus_robot_signal",
+          "robot_signal_revalidated_after_contact_anchor",
+          "direction_consistent_visual_transition"
+        ],
+        "interaction_evidence": {
+          "nearby_event_ids": [
+            15,
+            16,
+            17
+          ],
+          "contact_event_ids": [
+            16,
+            17
+          ],
+          "directed_contact_event_ids": [
+            17
+          ],
+          "contact_count": 2,
+          "directed_count": 1,
+          "dense_directional_contact_count": 0,
+          "nearest_contact_frame": 1614
+        }
+      }
+    }
+  ],
+  "validation_policy": {
+    "short_reverse_sec": 1.0,
+    "min_signal_score": 0.12,
+    "one_container_cycle_by_default": true,
+    "object_placement_requires_reliable_fine_or_uniquely_owned_coarse_bridge": true,
+    "sibling_held_evidence_reuse": false,
+    "joint_hand_object_ownership": true,
+    "reliability_first_semantic_backoff": true,
+    "receptacle_affordance_temporal_consistency": true,
+    "affordance_tolerance_sec": 1.0,
+    "initial_container_state": {
+      "door": "closed",
+      "dish_rack": "in",
+      "cutlery_basket": "in"
+    },
+    "initial_state_source": "early_direct_generic_observations",
+    "short_reverse_before_affordance": true,
+    "dense_directional_contact_evidence": true,
+    "post_anchor_signal_revalidation": true,
+    "schema_driven_accessibility": true,
+    "schema_driven_lifecycle": true,
+    "schema_driven_contact_tokens": true,
+    "schema_driven_direction_matching": true
+  }
+}

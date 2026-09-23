@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "moving_in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "dish_rack": "in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "dish_rack": 0.95,
+    "right_hand": 0.90,
+    "left_hand": 0.85
+  },
+  "confidence_after": {
+    "dish_rack": 0.95,
+    "right_hand": 0.90,
+    "left_hand": 0.85
+  },
+  "evidence_time_indices": [0, 1, 2, 3],
+  "evidence": [
+    "在 head t0 (f1677) 和 head t1 (f1688) 中，dish rack 明显位于洗碗机外部，右臂正在接触并推入 rack。",
+    "在 head t2 (f1699) 和 head t3 (f1710) 中，rack 逐渐滑入洗碗机内部，右臂持续保持接触状态。",
+    "在 head t4 (f1720) 至 head t7 (f1753) 中，rack 已完全进入洗碗机内部，处于静止状态。",
+    "左臂在整个序列中位于左侧且未接触 dish rack，保持 free 状态。"
+  ],
+  "window_quality": "good"
+}
+```

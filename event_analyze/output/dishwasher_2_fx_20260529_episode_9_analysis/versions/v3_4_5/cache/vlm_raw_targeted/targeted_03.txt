@@ -1,0 +1,34 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "in",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "cutlery_basket": "in",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.9
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.9
+  },
+  "evidence_time_indices": [
+    0,
+    7
+  ],
+  "evidence": [
+    "在窗口开始（t0）和结束（t7）时，cutlery_basket 均清晰可见且处于完全推入（in）状态，未检测到位置移动。",
+    "在整个时间窗口内，双手均未出现在视野中，与 cutlery_basket 无接触或交互。",
+    "右侧视角（right camera）显示机械臂正在处理粉色盘子上的餐具，而非操作下方的抽屉式餐具篮。"
+  ],
+  "window_quality": "good"
+}
+```

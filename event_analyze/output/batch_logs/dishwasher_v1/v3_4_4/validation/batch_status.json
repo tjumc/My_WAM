@@ -1,0 +1,81 @@
+{
+  "batch_name": "dishwasher_v1",
+  "dataset_fingerprint": "c57777c5d824c1b49edd77105b64474641ed0505b82802b8c09ac93066cfb177",
+  "version": "v3_4_4",
+  "split": "validation",
+  "manifest": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/batches/dishwasher_v1_manifest.json",
+  "started_utc": "2026-09-23T03:11:46.714515+00:00",
+  "workers": 1,
+  "episodes": {
+    "dishwasher_2_fx_20260529_episode_6": {
+      "status": "success",
+      "return_code": 0,
+      "started_utc": "2026-09-23T03:11:46.727390+00:00",
+      "finished_utc": "2026-09-23T03:16:54.520729+00:00",
+      "hdf5": "/efs/share/1919650160032350208/efs_backup/nas-backup/compressed_data/astribot/dishwasher_2_fx_20260529_compressed/dishwasher_2_fx_20260529_episode_6.hdf5",
+      "output_dir": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_6_analysis",
+      "gt": null,
+      "log": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/batch_logs/dishwasher_v1/v3_4_4/validation/dishwasher_2_fx_20260529_episode_6.log",
+      "result": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/results/dishwasher_2_fx_20260529_episode_6/v3_4_4/hierarchical_annotations.json"
+    },
+    "dishwasher_2_fx_20260529_episode_7": {
+      "status": "success",
+      "return_code": 0,
+      "started_utc": "2026-09-23T03:16:54.531329+00:00",
+      "finished_utc": "2026-09-23T03:21:00.655559+00:00",
+      "hdf5": "/efs/share/1919650160032350208/efs_backup/nas-backup/compressed_data/astribot/dishwasher_2_fx_20260529_compressed/dishwasher_2_fx_20260529_episode_7.hdf5",
+      "output_dir": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_7_analysis",
+      "gt": null,
+      "log": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/batch_logs/dishwasher_v1/v3_4_4/validation/dishwasher_2_fx_20260529_episode_7.log",
+      "result": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/results/dishwasher_2_fx_20260529_episode_7/v3_4_4/hierarchical_annotations.json"
+    },
+    "dishwasher_2_fx_20260529_episode_9": {
+      "status": "success",
+      "return_code": 0,
+      "started_utc": "2026-09-23T03:21:00.665489+00:00",
+      "finished_utc": "2026-09-23T03:25:12.184021+00:00",
+      "hdf5": "/efs/share/1919650160032350208/efs_backup/nas-backup/compressed_data/astribot/dishwasher_2_fx_20260529_compressed/dishwasher_2_fx_20260529_episode_9.hdf5",
+      "output_dir": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_9_analysis",
+      "gt": null,
+      "log": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/batch_logs/dishwasher_v1/v3_4_4/validation/dishwasher_2_fx_20260529_episode_9.log",
+      "result": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/results/dishwasher_2_fx_20260529_episode_9/v3_4_4/hierarchical_annotations.json"
+    },
+    "dishwasher_2_fx_20260529_episode_19": {
+      "status": "success",
+      "return_code": 0,
+      "started_utc": "2026-09-23T03:25:12.193729+00:00",
+      "finished_utc": "2026-09-23T03:30:11.470688+00:00",
+      "hdf5": "/efs/share/1919650160032350208/efs_backup/nas-backup/compressed_data/astribot/dishwasher_2_fx_20260529_compressed/dishwasher_2_fx_20260529_episode_19.hdf5",
+      "output_dir": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_19_analysis",
+      "gt": null,
+      "log": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/batch_logs/dishwasher_v1/v3_4_4/validation/dishwasher_2_fx_20260529_episode_19.log",
+      "result": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/results/dishwasher_2_fx_20260529_episode_19/v3_4_4/hierarchical_annotations.json"
+    },
+    "dishwasher_2_fx_20260529_episode_21": {
+      "status": "success",
+      "return_code": 0,
+      "started_utc": "2026-09-23T03:30:11.482714+00:00",
+      "finished_utc": "2026-09-23T03:35:34.739632+00:00",
+      "hdf5": "/efs/share/1919650160032350208/efs_backup/nas-backup/compressed_data/astribot/dishwasher_2_fx_20260529_compressed/dishwasher_2_fx_20260529_episode_21.hdf5",
+      "output_dir": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_21_analysis",
+      "gt": null,
+      "log": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/batch_logs/dishwasher_v1/v3_4_4/validation/dishwasher_2_fx_20260529_episode_21.log",
+      "result": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/results/dishwasher_2_fx_20260529_episode_21/v3_4_4/hierarchical_annotations.json"
+    },
+    "dishwasher_2_fx_20260529_episode_23": {
+      "status": "success",
+      "return_code": 0,
+      "started_utc": "2026-09-23T03:35:34.748886+00:00",
+      "finished_utc": "2026-09-23T03:40:34.122157+00:00",
+      "hdf5": "/efs/share/1919650160032350208/efs_backup/nas-backup/compressed_data/astribot/dishwasher_2_fx_20260529_compressed/dishwasher_2_fx_20260529_episode_23.hdf5",
+      "output_dir": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_23_analysis",
+      "gt": null,
+      "log": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/batch_logs/dishwasher_v1/v3_4_4/validation/dishwasher_2_fx_20260529_episode_23.log",
+      "result": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/results/dishwasher_2_fx_20260529_episode_23/v3_4_4/hierarchical_annotations.json"
+    }
+  },
+  "finished_utc": "2026-09-23T03:40:34.131098+00:00",
+  "counts": {
+    "success": 6
+  }
+}

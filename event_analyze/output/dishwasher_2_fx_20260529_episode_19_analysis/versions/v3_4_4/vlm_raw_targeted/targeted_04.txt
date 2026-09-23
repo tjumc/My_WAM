@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "knife_location": "tabletop",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "knife_location": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "knife_location": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "knife_location": 0.6,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "在t0 (f150) 的head和right视角中，粉色盘子上清晰可见一把刀位于桌面上。",
+    "在t0 (f150) 中，双手位于画面外或不可见，未与刀发生接触。",
+    "在t7 (f284) 的head视角中，粉色盘子上的刀已消失，表明物体位置已改变。",
+    "在t7 (f284) 中，双手依然不可见，无法确认刀是否被手持。"
+  ],
+  "window_quality": "partial"
+}
+```

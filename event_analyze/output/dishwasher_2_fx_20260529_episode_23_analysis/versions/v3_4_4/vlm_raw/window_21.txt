@@ -1,0 +1,62 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "in",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "in",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.9,
+    "knife_location": 0.5,
+    "fork_location": 0.5,
+    "plate_location": 0.5
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.9,
+    "knife_location": 0.5,
+    "fork_location": 0.5,
+    "plate_location": 0.5
+  },
+  "visible_entities": [
+    "dishwasher",
+    "dish_rack",
+    "cutlery_basket",
+    "robot_base",
+    "left_arm"
+  ],
+  "evidence": [
+    "Head camera shows the dishwasher door is fully open, revealing the interior racks.",
+    "Left camera view clearly shows the white dishwasher unit and the open door structure.",
+    "Right camera view is obstructed by the robot's own arm and body, preventing hand observation.",
+    "No hands are visible in the field of view; only the left arm and base are partially seen in the left camera."
+  ],
+  "window_quality": "partial"
+}
+```

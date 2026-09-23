@@ -1,0 +1,61 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "uncertain",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "free",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "uncertain",
+    "right_hand": "free",
+    "left_hand": "free",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.4,
+    "right_hand": 0.9,
+    "left_hand": 0.95,
+    "knife_location": 0.4,
+    "fork_location": 0.4,
+    "plate_location": 0.85
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.4,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.4,
+    "fork_location": 0.4,
+    "plate_location": 0.85
+  },
+  "visible_entities": [
+    "dish_rack",
+    "plate",
+    "right_hand",
+    "left_hand"
+  ],
+  "evidence": [
+    "Head view shows dishwasher door open with rack extended. Right arm is positioned inside the rack area at frame 1342.",
+    "Right view (frame 1342) shows the rack interior with a pinkish object (plate) visible, and the right hand interacting with the rack structure.",
+    "At frame 1387 (center) and 1432 (end), the right arm has retracted and gripper is open, indicating release or lack of contact.",
+    "Left hand remains in a static, open position throughout the sequence, not interacting with the dishwasher."
+  ],
+  "window_quality": "partial"
+}
+```

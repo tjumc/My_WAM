@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "out",
+    "right_hand": "not_visible",
+    "left_hand": "contact_dish_rack"
+  },
+  "state_after": {
+    "dish_rack": "out",
+    "right_hand": "not_visible",
+    "left_hand": "contact_dish_rack"
+  },
+  "confidence_before": {
+    "dish_rack": 1.0,
+    "right_hand": 0.95,
+    "left_hand": 0.9
+  },
+  "confidence_after": {
+    "dish_rack": 1.0,
+    "right_hand": 0.95,
+    "left_hand": 0.9
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "dish_rack is fully extended and stationary in the open dishwasher throughout the entire sequence (frames 724-858).",
+    "left_hand is visible in the head view maintaining contact with the inner rack structure during the early phase (e.g., frame 724).",
+    "left_hand remains in contact with the rack structure in the later phase (e.g., frame 858) without moving the rack.",
+    "right_hand is not visible in the camera view at any point."
+  ],
+  "window_quality": "good"
+}
+```

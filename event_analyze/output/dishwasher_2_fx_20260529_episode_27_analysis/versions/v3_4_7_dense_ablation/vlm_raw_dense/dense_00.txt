@@ -1,0 +1,17 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "out",
+  "relative_motion": "moving_out",
+  "right_hand_relation": "pulling_cutlery_basket",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 3, 6, 9],
+  "evidence": [
+    "t0 (294) 至 t2 (324)：餐具篮位于洗碗机内部深处，被上层碗篮遮挡，处于静止状态。",
+    "t3 (339) 至 t5 (368)：餐具篮开始明显向外部移动，从上层碗篮下方逐渐显露，露出更多的底部和侧边结构。",
+    "t6 (383) 至 t9 (428)：餐具篮被完全拉出至洗碗机外部，位置显著低于洗碗机开口水平面，且相对于洗碗机门框向外位移明显。",
+    "右手始终位于餐具篮内部或边缘，伴随其运动，表现出拉动（pulling）的接触关系。"
+  ],
+  "visibility": "good"
+}
+```

@@ -1,0 +1,59 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "uncertain",
+    "dish_rack": "uncertain",
+    "cutlery_basket": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "uncertain",
+    "dish_rack": "uncertain",
+    "cutlery_basket": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "confidence_before": {
+    "robot_location": 0.9,
+    "door": 0.0,
+    "dish_rack": 0.0,
+    "cutlery_basket": 0.0,
+    "right_hand": 0.0,
+    "left_hand": 0.0,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "confidence_after": {
+    "robot_location": 0.9,
+    "door": 0.0,
+    "dish_rack": 0.0,
+    "cutlery_basket": 0.0,
+    "right_hand": 0.0,
+    "left_hand": 0.0,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "visible_entities": [
+    "robot_base",
+    "upper_arms"
+  ],
+  "evidence": [
+    "Head camera shows robot upper arms and torso positioned directly in front of the appliance (dishwasher/microwave) throughout the window.",
+    "Left and Right camera views are obstructed by the robot's own body/chassis, preventing observation of the workspace or hands.",
+    "No hands, grippers, or specific end-effectors are visible in any frame due to occlusion.",
+    "The appliance door and internal racks are not clearly visible or distinguishable in the provided views."
+  ],
+  "window_quality": "partial"
+}
+```

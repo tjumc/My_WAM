@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "door": "closed",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "door": "closing",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "door": 0.90,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 2],
+  "evidence": [
+    "在 t0 (1988) 时，head 视角显示洗碗机门处于完全关闭状态。",
+    "在 t0 (1988) 时，left 和 right 视角显示机械臂处于抬起或远离状态，未接触门体。",
+    "在 t2 (2036) 时，head 视角显示门已打开，内部可见。",
+    "在 t2 (2036) 时，right 视角显示机械臂位于门体附近，处于接触或操作区域。"
+  ],
+  "window_quality": "partial"
+}
+```

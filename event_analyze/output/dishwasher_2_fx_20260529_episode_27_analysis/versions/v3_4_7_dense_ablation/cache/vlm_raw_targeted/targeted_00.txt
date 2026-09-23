@@ -1,0 +1,35 @@
+```json
+{
+  "state_before": {
+    "door": "open",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "state_after": {
+    "door": "open",
+    "right_hand": "contact_door",
+    "left_hand": "uncertain"
+  },
+  "confidence_before": {
+    "door": 0.95,
+    "right_hand": 0.5,
+    "left_hand": 0.5
+  },
+  "confidence_after": {
+    "door": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.5
+  },
+  "evidence_time_indices": [
+    0,
+    7
+  ],
+  "evidence": [
+    "In early frames (t0-t3), the dishwasher door is visibly open, and the right hand is not clearly interacting with the door mechanism.",
+    "In late frames (t4-t7), the right arm extends towards the open door, and the gripper is visually in contact with the door or its handle area.",
+    "The door remains in an open state throughout the observed sequence.",
+    "The left hand remains free and away from the dishwasher throughout the sequence."
+  ],
+  "window_quality": "good"
+}
+```

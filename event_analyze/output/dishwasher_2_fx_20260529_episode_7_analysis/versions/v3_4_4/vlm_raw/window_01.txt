@@ -1,0 +1,63 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "closed",
+    "dish_rack": "in",
+    "cutlery_basket": "in",
+    "right_hand": "approaching",
+    "left_hand": "uncertain",
+    "knife_location": "tabletop",
+    "fork_location": "tabletop",
+    "plate_location": "tabletop"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "moving_in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "uncertain",
+    "knife_location": "tabletop",
+    "fork_location": "tabletop",
+    "plate_location": "tabletop"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.70,
+    "right_hand": 0.90,
+    "left_hand": 0.50,
+    "knife_location": 0.95,
+    "fork_location": 0.95,
+    "plate_location": 0.95
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.50,
+    "right_hand": 0.90,
+    "left_hand": 0.50,
+    "knife_location": 0.95,
+    "fork_location": 0.95,
+    "plate_location": 0.95
+  },
+  "visible_entities": [
+    "robot_arm",
+    "dishwasher_door",
+    "dish_rack",
+    "pink_plate",
+    "fork",
+    "knife"
+  ],
+  "evidence": [
+    "Early frames (f=108) show the dishwasher door is closed and the robot arm is stationary near the station.",
+    "Late frames (f=176-198) show the dishwasher door is fully open and the robot's right arm is extended inside, pushing the rack in.",
+    "The pink plate, fork, and knife remain on the tabletop throughout the entire window sequence.",
+    "The right hand is observed making contact with the dish rack in the final frames."
+  ],
+  "window_quality": "good"
+}
+```

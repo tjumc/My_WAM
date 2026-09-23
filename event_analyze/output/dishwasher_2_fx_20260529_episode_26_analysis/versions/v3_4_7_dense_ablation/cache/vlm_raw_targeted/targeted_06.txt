@@ -1,0 +1,35 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "moving_in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "dish_rack": "out",
+    "right_hand": "free",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [
+    0,
+    3
+  ],
+  "evidence": [
+    "在 t0 (1644) 到 t3 (1698) 期间，head 和 right 视角显示 dish_rack 正在被推入洗碗机内部，处于 moving_in 状态。",
+    "在 t0 (1644) 到 t3 (1698) 期间，right 视角清晰显示右手接触并推持 dish_rack，处于 contact_dish_rack 状态。",
+    "在 t3 (1698) 之后，dish_rack 完全没入洗碗机内部，head 视角显示其处于 out (相对于外部操作空间) 状态。",
+    "在 t4 (1715) 到 t7 (1769) 期间，右手与 dish_rack 分离，处于 free 状态。"
+  ],
+  "window_quality": "good"
+}
+```

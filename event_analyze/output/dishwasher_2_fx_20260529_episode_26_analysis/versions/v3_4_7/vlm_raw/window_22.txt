@@ -1,0 +1,60 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "uncertain",
+    "right_hand": "contact_door",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "closing",
+    "dish_rack": "uncertain",
+    "cutlery_basket": "uncertain",
+    "right_hand": "contact_door",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.0,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.90,
+    "dish_rack": 0.0,
+    "cutlery_basket": 0.0,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "visible_entities": [
+    "robot",
+    "dishwasher_door",
+    "dish_rack"
+  ],
+  "evidence": [
+    "Right arm is clearly pushing the dishwasher door from an open position towards a closed position.",
+    "Dish rack is visible inside the dishwasher in the early frames (f=1621), but becomes obscured by the door in later frames.",
+    "Left hand is not visible in the field of view during this window.",
+    "No specific utensils (knife/fork/plate) are clearly visible or held by the robot."
+  ],
+  "window_quality": "partial"
+}
+```

@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "in",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "dish_rack": "moving_out",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "dish_rack": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.9
+  },
+  "confidence_after": {
+    "dish_rack": 0.9,
+    "right_hand": 0.9,
+    "left_hand": 0.9
+  },
+  "evidence_time_indices": [0, 6],
+  "evidence": [
+    "Frame 0 (head t0): The dishwasher rack is fully retracted (in), visible as a dark rectangular slot under the counter.",
+    "Frame 96 (head t5): The rack begins to emerge from the dishwasher cavity.",
+    "Frame 115 (head t6): The rack is clearly extended further out compared to previous frames.",
+    "Frame 134 (head t7): The rack is in a significantly more extended position, confirming continuous outward motion."
+  ],
+  "window_quality": "good"
+}
+```

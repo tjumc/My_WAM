@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "dish_rack": "out",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "In frames 902-913 (early), the right hand is holding the dish rack which is fully retracted inside the dishwasher.",
+    "In frames 967-978 (late), the dish rack is pulled out significantly, extending out of the main cavity.",
+    "The right hand maintains continuous contact with the dish rack handle throughout the sequence.",
+    "The left hand is not visible in any of the provided camera views."
+  ],
+  "window_quality": "good"
+}
+```

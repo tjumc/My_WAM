@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "out",
+    "right_hand": "free",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "dish_rack": "moving_in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "dish_rack": 0.9,
+    "right_hand": 0.9,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "Frame 150 (head): The dishwasher rack is fully extended (out), and both hands are open and hovering freely.",
+    "Frame 251-268 (head): The right hand is inside the dishwasher cavity, gripping the rack, and the rack is partially retracted.",
+    "Frame 234 (right): The right hand is seen pushing the rack into the dishwasher.",
+    "Left hand remains visible in the background (head) and stationary throughout the sequence."
+  ],
+  "window_quality": "good"
+}
+```

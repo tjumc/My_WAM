@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "in",
+    "right_hand": "not_visible",
+    "left_hand": "contact_cutlery_basket"
+  },
+  "state_after": {
+    "cutlery_basket": "moving_out",
+    "right_hand": "not_visible",
+    "left_hand": "pulling_cutlery_basket"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "At t0 (f1305), the cutlery basket is fully inserted into the dishwasher rack.",
+    "At t0 (f1305), the left hand is clearly visible holding the handle of the cutlery basket.",
+    "At t7 (f1502), the cutlery basket is partially extended out of the dishwasher rack.",
+    "At t7 (f1502), the left hand maintains contact with the basket handle, consistent with a pulling motion."
+  ],
+  "window_quality": "good"
+}
+```

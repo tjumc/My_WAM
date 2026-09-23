@@ -1,0 +1,60 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "in",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "in",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "confidence_before": {
+    "robot_location": 0.9,
+    "door": 0.9,
+    "dish_rack": 0.85,
+    "cutlery_basket": 0.85,
+    "right_hand": 0.5,
+    "left_hand": 0.5,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "confidence_after": {
+    "robot_location": 0.9,
+    "door": 0.9,
+    "dish_rack": 0.85,
+    "cutlery_basket": 0.85,
+    "right_hand": 0.5,
+    "left_hand": 0.5,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "visible_entities": [
+    "dish_rack",
+    "cutlery_basket",
+    "dishwasher_door"
+  ],
+  "evidence": [
+    "洗碗机门在窗口全程保持开启状态，门板向下打开。",
+    "dish_rack（碗篮）位于洗碗机内部，处于静止状态，未检测到移动。",
+    "cutlery_basket（餐具篮）位于碗篮内部，位置固定。",
+    "机器人双臂及末端执行器位于视野上方或边缘，未与洗碗机内部物体发生清晰接触，具体姿态难以辨认。"
+  ],
+  "window_quality": "partial"
+}
+```

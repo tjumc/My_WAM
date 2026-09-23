@@ -1,0 +1,61 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "uncertain",
+    "right_hand": "holding_plate",
+    "left_hand": "free",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "right_hand"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "uncertain",
+    "right_hand": "holding_plate",
+    "left_hand": "free",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "right_hand"
+  },
+  "confidence_before": {
+    "robot_location": 0.9,
+    "door": 0.95,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.3,
+    "right_hand": 0.95,
+    "left_hand": 0.9,
+    "knife_location": 0.2,
+    "fork_location": 0.2,
+    "plate_location": 0.95
+  },
+  "confidence_after": {
+    "robot_location": 0.9,
+    "door": 0.95,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.3,
+    "right_hand": 0.95,
+    "left_hand": 0.9,
+    "knife_location": 0.2,
+    "fork_location": 0.2,
+    "plate_location": 0.95
+  },
+  "visible_entities": [
+    "dish_rack",
+    "right_hand",
+    "plate",
+    "door"
+  ],
+  "evidence": [
+    "Head camera shows dishwasher door is open and the dish rack is pulled out.",
+    "Right camera clearly shows the right gripper holding a pink plate throughout the sequence.",
+    "Left camera shows the left hand is empty and positioned near the cabinet/counter.",
+    "The plate is being maneuvered near the rack but remains held by the hand in both early and late frames."
+  ],
+  "window_quality": "good"
+}
+```

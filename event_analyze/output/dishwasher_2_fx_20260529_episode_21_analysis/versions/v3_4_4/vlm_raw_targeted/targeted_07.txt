@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "in",
+    "right_hand": "contact_cutlery_basket",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "cutlery_basket": "uncertain",
+    "right_hand": "uncertain",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 1.0
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.4,
+    "right_hand": 0.4,
+    "left_hand": 1.0
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "At t0 (f969), the cutlery basket is clearly visible inside the dishwasher rack, in the 'in' state.",
+    "At t0 (f969), the right hand is in direct contact with the cutlery basket, appearing to grip it.",
+    "From t1 to t4, the right hand maintains contact with the basket, but the basket remains stationary inside.",
+    "At t7 (f1059), the camera view shifts to the right, showing a pink plate on the counter; the cutlery basket and right hand are no longer visible in the frame."
+  ],
+  "window_quality": "partial"
+}
+```

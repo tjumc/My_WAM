@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "knife_location": "tabletop",
+    "right_hand": "approaching",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "knife_location": "tabletop",
+    "right_hand": "approaching",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "knife_location": 0.95,
+    "right_hand": 0.85,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "knife_location": 0.95,
+    "right_hand": 0.85,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "Frame 150-169: Knife is clearly visible on the pink plate on the tabletop; right hand is visible near the dishwasher but not holding the knife.",
+    "Frame 265-284: Knife remains on the pink plate on the tabletop; right hand is manipulating the dishwasher rack, not the knife.",
+    "Left hand is not visible in the relevant workspace or is stationary and free throughout the sequence.",
+    "No visual evidence of the knife being picked up or moved from the plate during the sampled frames."
+  ],
+  "window_quality": "good"
+}
+```

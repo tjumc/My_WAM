@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "in",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "cutlery_basket": "in",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.9
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.9
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "cutlery_basket is visible in its home position (inside dishwasher) in head camera frames 542 and 676.",
+    "No hands are visible in the head or left camera views throughout the sequence.",
+    "Right camera shows the right hand holding cutlery, but the hand itself is not visible in the frame.",
+    "The cutlery basket remains stationary and does not move during the observed window."
+  ],
+  "window_quality": "good"
+}
+```

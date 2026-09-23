@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "door": "open",
+    "right_hand": "contact_door",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "door": "closed",
+    "right_hand": "free",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "door": 1.0,
+    "right_hand": 1.0,
+    "left_hand": 1.0
+  },
+  "confidence_after": {
+    "door": 1.0,
+    "right_hand": 1.0,
+    "left_hand": 1.0
+  },
+  "evidence_time_indices": [0, 1, 2, 3, 4, 5, 6, 7],
+  "evidence": [
+    "Frame 1520 (head t0) shows the dishwasher door is fully open and the right hand is holding the door edge.",
+    "Frames 1535-1566 show the right hand pushing the door downwards, causing it to move from open to closing.",
+    "Frame 1582 (head t4) shows the door is nearly shut, with the right hand still in contact.",
+    "Frames 1597-1628 show the door is fully flush with the cabinet (closed) and the right hand has released and moved away."
+  ],
+  "window_quality": "good"
+}
+```

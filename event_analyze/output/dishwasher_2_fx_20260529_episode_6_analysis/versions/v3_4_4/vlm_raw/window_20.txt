@@ -1,0 +1,60 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "not_visible",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "not_visible",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.90,
+    "right_hand": 0.30,
+    "left_hand": 0.30,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.90,
+    "right_hand": 0.30,
+    "left_hand": 0.30,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "visible_entities": [
+    "dish_rack",
+    "door",
+    "robot_base"
+  ],
+  "evidence": [
+    "Head camera view shows the dishwasher door is fully open with the main dish rack extended.",
+    "The dish rack contains white plates/bowls, but no cutlery basket is visible in the slot.",
+    "Robot arms are visible in the frame but hands are obscured or too distant to identify specific objects held.",
+    "Sensor data indicates stable gripper commands and decreasing force, consistent with no active manipulation or contact."
+  ],
+  "window_quality": "partial"
+}
+```

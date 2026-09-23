@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "door": "open",
+    "right_hand": "contact_door",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "door": "open",
+    "right_hand": "contact_door",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "door": 0.95,
+    "right_hand": 0.90,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "door": 0.95,
+    "right_hand": 0.90,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "Head camera view shows dishwasher door is fully open at t0 and remains fully open at t7.",
+    "Right hand is visible holding the edge of the dishwasher door in both early and late frames.",
+    "Left hand is visible in the air (free) and does not touch the door throughout the sequence.",
+    "Right view camera shows the interior of the dishwasher and door structure, confirming the open state."
+  ],
+  "window_quality": "good"
+}
+```

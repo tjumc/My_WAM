@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "cutlery_basket": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.1,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.1,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "In all frames (75-209), the view is focused on the countertop and upper cabinets; the dishwasher interior where the cutlery basket is located is not visible.",
+    "The robot's hands are visible in the head camera view but appear to be holding a pink plate (portable object) rather than interacting with the cutlery basket.",
+    "The left and right cameras show the countertop and dish rack, but no hands are visible in these views.",
+    "There is no visual evidence of the cutlery basket's position (in/out) or any hand interaction with it within the provided frame range."
+  ],
+  "window_quality": "poor"
+}
+```

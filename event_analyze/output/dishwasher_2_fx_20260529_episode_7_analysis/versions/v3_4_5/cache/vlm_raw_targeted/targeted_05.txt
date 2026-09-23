@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "in",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "state_after": {
+    "cutlery_basket": "not_visible",
+    "right_hand": "free",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.85,
+    "left_hand": 0.85
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "In frame t0 (head), the dishwasher door is open and the cutlery basket is clearly visible inside.",
+    "In frame t0 (right), the right hand is in contact with the dishwasher door handle.",
+    "In frame t7 (head), the dishwasher door is fully closed, obscuring the cutlery basket.",
+    "In frame t7 (head), both hands are lifted away from the dishwasher and are in a free state."
+  ],
+  "window_quality": "good"
+}
+```

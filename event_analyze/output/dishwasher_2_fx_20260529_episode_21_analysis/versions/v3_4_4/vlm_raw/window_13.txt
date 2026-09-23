@@ -1,0 +1,61 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "out",
+    "right_hand": "uncertain",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "moving_in",
+    "cutlery_basket": "moving_in",
+    "right_hand": "uncertain",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.95,
+    "right_hand": 0.4,
+    "left_hand": 0.9,
+    "knife_location": 0.2,
+    "fork_location": 0.2,
+    "plate_location": 0.2
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.95,
+    "right_hand": 0.4,
+    "left_hand": 0.9,
+    "knife_location": 0.2,
+    "fork_location": 0.2,
+    "plate_location": 0.2
+  },
+  "visible_entities": [
+    "dish_rack",
+    "cutlery_basket",
+    "right_hand",
+    "dishwasher_door"
+  ],
+  "evidence": [
+    "Right hand is visible in head view pushing the rack structure.",
+    "Right view shows the rack sliding from a fully extended position towards the interior.",
+    "Left hand is not visible in the left camera view.",
+    "No specific utensils (knife/fork/plate) are clearly identifiable in the gripper."
+  ],
+  "window_quality": "good"
+}
+```

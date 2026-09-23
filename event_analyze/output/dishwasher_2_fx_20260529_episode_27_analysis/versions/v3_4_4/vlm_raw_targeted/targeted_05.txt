@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "out",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "state_after": {
+    "dish_rack": "out",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "uncertain"
+  },
+  "confidence_before": {
+    "dish_rack": 0.95,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "confidence_after": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.0
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "Frame 589 (head): The dish rack is clearly visible in the extended 'out' position.",
+    "Frame 752 (head): The dish rack remains in the extended 'out' position.",
+    "Frame 752 (head): The right hand is visually in contact with the dish rack handle.",
+    "Frame 729-752 (head): The rack does not show significant displacement towards 'in' during the late window."
+  ],
+  "window_quality": "good"
+}
+```

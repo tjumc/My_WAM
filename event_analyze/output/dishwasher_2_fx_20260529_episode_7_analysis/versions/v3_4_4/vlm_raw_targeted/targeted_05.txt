@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "in",
+    "right_hand": "approaching",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "cutlery_basket": "moving_out",
+    "right_hand": "pulling_cutlery_basket",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 4],
+  "evidence": [
+    "早期帧 (t0-t3) 中，cutlery_basket 位于洗碗机内部深处，处于静止状态。",
+    "早期帧 (t0-t3) 中，右手正在向洗碗机方向移动，尚未接触篮子。",
+    "晚期帧 (t4) 开始，右手接触到 cutlery_basket 边缘。",
+    "晚期帧 (t5-t7) 连续显示右手抓住篮子边缘并将其向外拉出，篮子位置明显向外移动。"
+  ],
+  "window_quality": "good"
+}
+```

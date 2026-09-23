@@ -1,0 +1,35 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "uncertain",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "state_after": {
+    "cutlery_basket": "uncertain",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.0,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.0,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "evidence_time_indices": [
+    0,
+    7
+  ],
+  "evidence": [
+    "Target entity 'cutlery_basket' is not visible in any of the provided frames (head, left, right views).",
+    "The robot is interacting with a pink plate and the dishwasher rack, not the cutlery basket.",
+    "Left and right camera views show a countertop and dish rack, but no cutlery basket is identifiable.",
+    "Head camera views show the dishwasher interior but the specific cutlery basket component is obscured or out of frame."
+  ],
+  "window_quality": "poor"
+}
+```

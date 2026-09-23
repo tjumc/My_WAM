@@ -1,0 +1,62 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "contact_door",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "closing",
+    "dish_rack": "in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "contact_door",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.85,
+    "cutlery_basket": 0.4,
+    "right_hand": 0.95,
+    "left_hand": 0.8,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.85,
+    "cutlery_basket": 0.4,
+    "right_hand": 0.95,
+    "left_hand": 0.8,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "visible_entities": [
+    "robot_location",
+    "door",
+    "dish_rack",
+    "right_hand",
+    "left_hand"
+  ],
+  "evidence": [
+    "Head camera shows the dishwasher door is open in the early frames (f=1675) and the right arm is holding the door handle.",
+    "Head camera shows the door moving downwards (closing) in the late frames (f=1765) while the right arm maintains contact.",
+    "Left camera view shows the interior of the dishwasher with the rack inside, but specific items are obscured by the rack structure.",
+    "Right camera view is obstructed by the door panel and the arm structure, preventing clear visibility of the gripper or held objects."
+  ],
+  "window_quality": "partial"
+}
+```

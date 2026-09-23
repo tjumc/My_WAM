@@ -1,0 +1,66 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "in",
+    "right_hand": "holding_knife",
+    "left_hand": "holding_fork",
+    "knife_location": "right_hand",
+    "fork_location": "left_hand",
+    "plate_location": "tabletop"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "moving_in",
+    "cutlery_basket": "moving_in",
+    "right_hand": "free",
+    "left_hand": "free",
+    "knife_location": "cutlery_basket",
+    "fork_location": "cutlery_basket",
+    "plate_location": "tabletop"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.9,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.95,
+    "fork_location": 0.95,
+    "plate_location": 0.95
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.9,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.85,
+    "fork_location": 0.85,
+    "plate_location": 0.95
+  },
+  "visible_entities": [
+    "robot",
+    "dishwasher",
+    "dish_rack",
+    "cutlery_basket",
+    "plate",
+    "knife",
+    "fork",
+    "right_hand",
+    "left_hand"
+  ],
+  "evidence": [
+    "早期 (f=572) 右手握刀、左手握叉悬停在粉色盘子上方，盘子静止在桌面上。",
+    "晚期 (f=662) 右手和左手均变为张开空握状态，不再持有任何餐具。",
+    "晚期 (f=662) 餐具篮 (cutlery_basket) 和碗篮 (dish_rack) 明显处于向洗碗机内部移动 (moving_in) 的过程中。",
+    "粉色盘子在窗口全程 (f=572~662) 始终停留在桌面上，未被移动。"
+  ],
+  "window_quality": "good"
+}
+```

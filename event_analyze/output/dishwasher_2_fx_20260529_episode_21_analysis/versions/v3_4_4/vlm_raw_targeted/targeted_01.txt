@@ -1,0 +1,35 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "not_visible",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "cutlery_basket": "not_visible",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [
+    0,
+    7
+  ],
+  "evidence": [
+    "Cutlery basket is not visible in the dishwasher rack or robot hands at the start (f146) or end (f222) of the window.",
+    "Right hand view (bottom row) is obstructed by the dishwasher door structure, obscuring the gripper and any held objects.",
+    "Head view shows the right arm reaching into the dishwasher, but the specific basket object cannot be resolved visually.",
+    "Left hand is not visible in the provided camera frames."
+  ],
+  "window_quality": "partial"
+}
+```

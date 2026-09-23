@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "uncertain",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "state_after": {
+    "cutlery_basket": "uncertain",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.0,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.0,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "evidence_time_indices": [0, 1, 2, 3, 4, 5, 6, 7],
+  "evidence": [
+    "cutlery_basket: 目标实体（刀叉篮）未在图像中可见，仅能观察到洗碗机内部及台面，无法确认其存在或状态。",
+    "right_hand: 右机械臂在head视角下可见，但处于洗碗机深处或遮挡区域，且未接触任何可见目标实体。",
+    "left_hand: 左机械臂在head视角下可见，位于洗碗机左侧外部，未接触任何可见目标实体。",
+    "场景主要关注点为台面上的粉色盘子和叉子，与本次复查的cutlery_basket无关。"
+  ],
+  "window_quality": "poor"
+}
+```

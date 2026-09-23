@@ -1,0 +1,464 @@
+{
+  "decisions": [
+    {
+      "original_skill_id": 0,
+      "skill_type": "navigate_to_station",
+      "signal": {
+        "window": [
+          12,
+          169
+        ],
+        "motion_fraction": 0.146,
+        "force_change_support": 0.346,
+        "gripper_change_support": 0.0,
+        "score": 0.166
+      },
+      "accepted": true,
+      "reasons": [
+        "hdf5_base_motion"
+      ]
+    },
+    {
+      "original_skill_id": 1,
+      "skill_type": "open_dishwasher_door",
+      "signal": {
+        "window": [
+          146,
+          202
+        ],
+        "motion_fraction": 0.561,
+        "force_change_support": 0.639,
+        "gripper_change_support": 0.0,
+        "score": 0.469
+      },
+      "accepted": true,
+      "reasons": [
+        "entity_contact_plus_robot_signal",
+        "direction_consistent_visual_transition"
+      ],
+      "interaction_evidence": {
+        "nearby_event_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "contact_event_ids": [
+          2
+        ],
+        "directed_contact_event_ids": [
+          2
+        ],
+        "direction_only_event_ids": [
+          1,
+          2,
+          3
+        ],
+        "contact_count": 1,
+        "directed_count": 1,
+        "direction_only_count": 3,
+        "dense_directional_contact_count": 0,
+        "nearest_contact_frame": 198
+      },
+      "gripper_signature": {
+        "enabled": true,
+        "expected_state": "closed",
+        "open_threshold": 50.0,
+        "matched_fraction": 0.0,
+        "required_fraction": 0.65,
+        "matched": false,
+        "window": [
+          166,
+          182
+        ]
+      },
+      "post_anchor_revalidated": false
+    },
+    {
+      "original_skill_id": 2,
+      "skill_type": "pull_out_dish_rack",
+      "signal": {
+        "window": [
+          120,
+          205
+        ],
+        "motion_fraction": 0.5,
+        "force_change_support": 0.538,
+        "gripper_change_support": 0.0,
+        "score": 0.41
+      },
+      "accepted": false,
+      "reasons": [
+        "entity_contact_plus_robot_signal",
+        "robot_signal_revalidated_after_contact_anchor",
+        "direction_consistent_visual_transition",
+        "schema_accessibility_requirement_not_met"
+      ],
+      "interaction_evidence": {
+        "nearby_event_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "contact_event_ids": [
+          1,
+          3,
+          4,
+          5
+        ],
+        "directed_contact_event_ids": [
+          1,
+          3
+        ],
+        "direction_only_event_ids": [
+          1,
+          2,
+          3
+        ],
+        "contact_count": 4,
+        "directed_count": 2,
+        "direction_only_count": 3,
+        "dense_directional_contact_count": 0,
+        "nearest_contact_frame": 140
+      },
+      "gripper_signature": {
+        "enabled": true,
+        "expected_state": "closed",
+        "open_threshold": 50.0,
+        "matched_fraction": 0.0,
+        "required_fraction": 0.65,
+        "matched": false,
+        "window": [
+          166,
+          214
+        ]
+      },
+      "signal_before_anchor": {
+        "window": [
+          146,
+          234
+        ],
+        "motion_fraction": 0.719,
+        "force_change_support": 1.0,
+        "gripper_change_support": 0.0,
+        "score": 0.646
+      },
+      "post_anchor_revalidated": true,
+      "accessibility_requirements": [
+        {
+          "entity": "door",
+          "state": "open"
+        }
+      ]
+    },
+    {
+      "original_skill_id": 3,
+      "skill_type": "place_knife_in_cutlery_basket",
+      "signal": {
+        "window": [
+          687,
+          759
+        ],
+        "motion_fraction": 0.822,
+        "force_change_support": 0.584,
+        "gripper_change_support": 1.0,
+        "score": 0.798
+      },
+      "accepted": false,
+      "reasons": [
+        "no_reliable_fine_hold_or_uniquely_owned_coarse_bridge"
+      ],
+      "held_segments": [],
+      "ownership_coarse_evidence": {
+        "reason": "inferred_ownership_without_observed_source_target_bridge",
+        "ownership": {
+          "object": "knife",
+          "track_key": "knife_location",
+          "segment_index": 2,
+          "hand": "left_hand",
+          "start_frame": 707,
+          "end_frame": 772,
+          "target_start_frame": 772,
+          "target_segment_index": 3,
+          "direct_intervals": [],
+          "first_direct_frame": null,
+          "direct_confidence": 0.0,
+          "resolved_start_frame": 707,
+          "resolved_end_frame": 738,
+          "resolution_reasons": [
+            {
+              "type": "end_at_next_object_direct_ownership",
+              "next_object": "fork",
+              "boundary_frame": 739,
+              "previous_end_frame": 772
+            }
+          ],
+          "unresolved_conflict": false,
+          "assignment_status": "inferred_unique"
+        },
+        "bridge": {
+          "sources": [
+            {
+              "state": "tabletop",
+              "start_frame": 17,
+              "end_frame": 630,
+              "confidence": 0.95,
+              "support": "observed",
+              "event_ids": [
+                1,
+                2
+              ]
+            }
+          ],
+          "targets": []
+        }
+      }
+    },
+    {
+      "original_skill_id": 4,
+      "skill_type": "place_fork_in_cutlery_basket",
+      "signal": {
+        "window": [
+          719,
+          916
+        ],
+        "motion_fraction": 0.354,
+        "force_change_support": 1.0,
+        "gripper_change_support": 1.0,
+        "score": 0.644
+      },
+      "accepted": true,
+      "reasons": [
+        "observed_held_state"
+      ],
+      "held_segments": [
+        {
+          "state": "right_hand",
+          "start_frame": 739,
+          "end_frame": 896,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            10,
+            11
+          ],
+          "ownership_status": "direct",
+          "ownership_direct_confidence": 0.95,
+          "ownership_resolution_reasons": [
+            {
+              "type": "start_at_direct_ownership_after_competitor",
+              "previous_object": "knife",
+              "boundary_frame": 739,
+              "previous_start_frame": 707
+            }
+          ]
+        }
+      ],
+      "ownership_coarse_evidence": {
+        "ownership": {
+          "object": "fork",
+          "track_key": "fork_location",
+          "segment_index": 2,
+          "hand": "right_hand",
+          "start_frame": 707,
+          "end_frame": 896,
+          "target_start_frame": 896,
+          "target_segment_index": 3,
+          "direct_intervals": [
+            {
+              "hand": "right_hand",
+              "start_frame": 739,
+              "end_frame": 829,
+              "confidence": 0.95,
+              "event_id": 10,
+              "support": "direct_window"
+            },
+            {
+              "hand": "right_hand",
+              "start_frame": 805,
+              "end_frame": 895,
+              "confidence": 0.95,
+              "event_id": 11,
+              "support": "direct_window"
+            }
+          ],
+          "first_direct_frame": 739,
+          "direct_confidence": 0.95,
+          "resolved_start_frame": 739,
+          "resolved_end_frame": 896,
+          "resolution_reasons": [
+            {
+              "type": "start_at_direct_ownership_after_competitor",
+              "previous_object": "knife",
+              "boundary_frame": 739,
+              "previous_start_frame": 707
+            }
+          ],
+          "unresolved_conflict": false,
+          "assignment_status": "direct"
+        },
+        "mode": "direct_parent_ownership"
+      },
+      "latent_state_implications": [
+        {
+          "entity": "cutlery_basket",
+          "state": "out",
+          "reason": "accepted_placement_requires_receptacle_usage_state",
+          "supporting_entity": "cutlery_basket",
+          "previous_state": "in",
+          "inferred_state": "out",
+          "supporting_skill": "place_fork_in_cutlery_basket",
+          "supporting_span": [
+            739,
+            896
+          ]
+        }
+      ]
+    },
+    {
+      "original_skill_id": 5,
+      "skill_type": "place_plate_in_dish_rack",
+      "signal": {
+        "window": [
+          876,
+          1420
+        ],
+        "motion_fraction": 0.475,
+        "force_change_support": 0.903,
+        "gripper_change_support": 1.0,
+        "score": 0.687
+      },
+      "accepted": true,
+      "reasons": [
+        "observed_held_state"
+      ],
+      "held_segments": [
+        {
+          "state": "right_hand",
+          "start_frame": 896,
+          "end_frame": 1090,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            12,
+            14
+          ],
+          "ownership_status": "direct",
+          "ownership_direct_confidence": 0.9,
+          "ownership_resolution_reasons": []
+        },
+        {
+          "state": "right_hand",
+          "start_frame": 1154,
+          "end_frame": 1400,
+          "confidence": 0.95,
+          "support": "observed",
+          "event_ids": [
+            15,
+            16,
+            17
+          ],
+          "ownership_status": "direct",
+          "ownership_direct_confidence": 0.95,
+          "ownership_resolution_reasons": []
+        }
+      ],
+      "ownership_coarse_evidence": {},
+      "latent_state_implications": [
+        {
+          "entity": "dish_rack",
+          "state": "out",
+          "reason": "accepted_placement_requires_receptacle_usage_state",
+          "supporting_entity": "dish_rack",
+          "previous_state": "in",
+          "inferred_state": "out",
+          "supporting_skill": "place_plate_in_dish_rack",
+          "supporting_span": [
+            896,
+            1400
+          ]
+        }
+      ]
+    },
+    {
+      "original_skill_id": 6,
+      "skill_type": "push_in_dish_rack",
+      "signal": {
+        "window": [
+          1450,
+          1531
+        ],
+        "motion_fraction": 0.195,
+        "force_change_support": 0.686,
+        "gripper_change_support": 0.0,
+        "score": 0.279
+      },
+      "accepted": false,
+      "reasons": [
+        "short_reverse_pair_visual_jitter"
+      ]
+    },
+    {
+      "original_skill_id": 7,
+      "skill_type": "pull_out_dish_rack",
+      "signal": {
+        "window": [
+          1506,
+          1546
+        ],
+        "motion_fraction": 0.0,
+        "force_change_support": 0.459,
+        "gripper_change_support": 0.0,
+        "score": 0.115
+      },
+      "accepted": false,
+      "reasons": [
+        "short_reverse_pair_visual_jitter"
+      ]
+    },
+    {
+      "original_skill_id": 8,
+      "skill_type": "push_in_dish_rack",
+      "signal": {
+        "window": [
+          1534,
+          1574
+        ],
+        "motion_fraction": 0.0,
+        "force_change_support": 0.666,
+        "gripper_change_support": 0.46,
+        "score": 0.259
+      },
+      "accepted": false,
+      "reasons": [
+        "short_reverse_pair_visual_jitter"
+      ]
+    },
+    {
+      "original_skill_id": 9,
+      "skill_type": "pull_out_dish_rack",
+      "signal": {
+        "window": [
+          1662,
+          1751
+        ],
+        "motion_fraction": 0.178,
+        "force_change_support": 1.0,
+        "gripper_change_support": 0.0,
+        "score": 0.348
+      },
+      "accepted": false,
+      "reasons": [
+        "receptacle_pull_after_use_started"
+      ],
+      "affordance_evidence": {
+        "reason": "receptacle_pull_after_use_started",
+        "first_placement_frame": 896,
+        "tolerance_frames": 30
+      }
+    }
+  ]
+}

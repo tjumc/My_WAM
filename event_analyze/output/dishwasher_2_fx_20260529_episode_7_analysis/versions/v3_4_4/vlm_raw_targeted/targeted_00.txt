@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "door": "opening",
+    "right_hand": "contact_door",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "door": "open",
+    "right_hand": "contact_door",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 1.0
+  },
+  "confidence_after": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 1.0
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "Right hand (head view) is in contact with the dishwasher door handle at the start (t0) and end (t7) of the sequence.",
+    "The dishwasher door angle increases from t0 to t3 (head view), indicating an opening motion, and remains fully open from t4 to t7.",
+    "The right camera view (bottom row) shows the interior of the dishwasher becoming fully visible and stationary from t3 onwards.",
+    "Left hand is not visible in the head or left camera views throughout the sequence."
+  ],
+  "window_quality": "good"
+}
+```

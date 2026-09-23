@@ -1,0 +1,59 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "not_visible",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "moving_in",
+    "cutlery_basket": "not_visible",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "confidence_before": {
+    "robot_location": 0.9,
+    "door": 0.9,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.95,
+    "knife_location": 0.1,
+    "fork_location": 0.1,
+    "plate_location": 0.1
+  },
+  "confidence_after": {
+    "robot_location": 0.9,
+    "door": 0.9,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.95,
+    "knife_location": 0.1,
+    "fork_location": 0.1,
+    "plate_location": 0.1
+  },
+  "visible_entities": [
+    "dish_rack",
+    "right_hand"
+  ],
+  "evidence": [
+    "Head view shows the dishwasher door is open and the large dish rack is extended outwards.",
+    "Right view shows the right arm gripper in direct contact with the dish rack structure.",
+    "The dish rack position shifts from fully extended (f=561) to partially retracted (f=651), indicating a moving_in state.",
+    "Left view shows the workspace wall and counter but does not show the robot's left hand or the cutlery basket."
+  ],
+  "window_quality": "good"
+}
+```

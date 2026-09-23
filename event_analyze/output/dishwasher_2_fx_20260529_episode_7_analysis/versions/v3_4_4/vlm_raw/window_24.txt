@@ -1,0 +1,61 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "closed",
+    "dish_rack": "in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "contact_door",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "contact_door",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.0,
+    "right_hand": 0.95,
+    "left_hand": 0.0,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.0,
+    "right_hand": 0.95,
+    "left_hand": 0.0,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "visible_entities": [
+    "robot_arm",
+    "dishwasher_door",
+    "dish_rack"
+  ],
+  "evidence": [
+    "Right arm is consistently positioned at the top edge of the dishwasher door throughout the window.",
+    "Head camera shows the door transitioning from a closed state (f=1998) to an open state (f=2088).",
+    "A dish rack is visible inside the dishwasher cavity, remaining stationary.",
+    "Left hand and specific cutlery items are not visible in any camera view.",
+    "Right force sensor shows a decrease, consistent with the door moving away or releasing pressure."
+  ],
+  "window_quality": "good"
+}
+```

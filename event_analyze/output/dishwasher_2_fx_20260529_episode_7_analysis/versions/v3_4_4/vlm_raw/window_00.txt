@@ -1,0 +1,60 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "closed",
+    "dish_rack": "in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "uncertain",
+    "cutlery_basket": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "confidence_before": {
+    "robot_location": 0.9,
+    "door": 0.95,
+    "dish_rack": 0.85,
+    "cutlery_basket": 0.0,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "confidence_after": {
+    "robot_location": 0.9,
+    "door": 0.95,
+    "dish_rack": 0.0,
+    "cutlery_basket": 0.0,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "visible_entities": [
+    "dishwasher",
+    "dish_rack",
+    "robot_base"
+  ],
+  "evidence": [
+    "Head view shows the dishwasher door is fully closed in early frames (f=17, f=40).",
+    "Head view shows the dishwasher door is fully open in late frames (f=84, f=107).",
+    "The dish_rack is visible inside the dishwasher cavity in early frames.",
+    "Robot arms and hands are not visible in the field of view of any camera (head, left, right) throughout the window."
+  ],
+  "window_quality": "partial"
+}
+```

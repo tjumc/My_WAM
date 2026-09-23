@@ -1,0 +1,432 @@
+{
+  "source_hdf5": "dishwasher_2_fx_20260529_episode_7.hdf5",
+  "num_raw_frames": 2145,
+  "duration_sec": 71.253,
+  "fps_nominal": 30.0,
+  "feature_names": [
+    "base_speed",
+    "base_yaw_rate",
+    "torso_joint_speed",
+    "left_ee_speed",
+    "right_ee_speed",
+    "left_ee_ang_speed",
+    "right_ee_ang_speed",
+    "left_gripper_cmd",
+    "right_gripper_cmd",
+    "left_force",
+    "right_force",
+    "left_torque",
+    "right_torque",
+    "left_pos_track_err",
+    "right_pos_track_err",
+    "left_rot_track_err",
+    "right_rot_track_err",
+    "left_force_change",
+    "right_force_change"
+  ],
+  "change_windows_frames": [
+    9,
+    30,
+    60
+  ],
+  "candidate_events": [
+    {
+      "event_id": 0,
+      "raw_frame": 62,
+      "time_sec": 2.061,
+      "score": 0.0725,
+      "signals": [
+        "base_yaw_rate",
+        "left_torque",
+        "left_force_change",
+        "left_force"
+      ],
+      "right_gripper_command": 0.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 1,
+      "raw_frame": 153,
+      "time_sec": 5.089,
+      "score": 1.2801,
+      "signals": [
+        "gripper_transition_supported",
+        "base_speed",
+        "right_gripper_cmd",
+        "base_yaw_rate",
+        "right_torque"
+      ],
+      "right_gripper_command": 84.60498596557625,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": {
+        "size": 1,
+        "start_frame": 153,
+        "end_frame": 153,
+        "context_score": 1.1329
+      }
+    },
+    {
+      "event_id": 2,
+      "raw_frame": 200,
+      "time_sec": 6.646,
+      "score": 1.2626,
+      "signals": [
+        "right_force",
+        "base_yaw_rate",
+        "left_rot_track_err",
+        "right_torque"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 3,
+      "raw_frame": 248,
+      "time_sec": 8.242,
+      "score": 1.9917,
+      "signals": [
+        "right_rot_track_err",
+        "right_pos_track_err",
+        "right_force_change",
+        "base_yaw_rate"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 4,
+      "raw_frame": 335,
+      "time_sec": 11.133,
+      "score": 1.405,
+      "signals": [
+        "right_pos_track_err",
+        "left_rot_track_err",
+        "left_pos_track_err",
+        "right_rot_track_err"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 5,
+      "raw_frame": 416,
+      "time_sec": 13.826,
+      "score": 0.6521,
+      "signals": [
+        "right_ee_ang_speed",
+        "left_pos_track_err",
+        "right_force_change",
+        "left_ee_ang_speed"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 6,
+      "raw_frame": 473,
+      "time_sec": 15.719,
+      "score": 1.3016,
+      "signals": [
+        "right_torque",
+        "right_force_change",
+        "right_ee_ang_speed",
+        "right_force"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 7,
+      "raw_frame": 630,
+      "time_sec": 20.938,
+      "score": 1.6563,
+      "signals": [
+        "right_rot_track_err",
+        "right_pos_track_err",
+        "left_ee_ang_speed",
+        "left_pos_track_err"
+      ],
+      "right_gripper_command": 92.21584807212629,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 8,
+      "raw_frame": 680,
+      "time_sec": 22.599,
+      "score": 1.2848,
+      "signals": [
+        "right_rot_track_err",
+        "right_pos_track_err",
+        "right_ee_ang_speed",
+        "right_torque"
+      ],
+      "right_gripper_command": 1.2593324481070738,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 9,
+      "raw_frame": 695,
+      "time_sec": 23.097,
+      "score": 0.4474,
+      "signals": [
+        "right_rot_track_err",
+        "right_pos_track_err",
+        "right_ee_ang_speed",
+        "base_yaw_rate"
+      ],
+      "right_gripper_command": 0.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 10,
+      "raw_frame": 920,
+      "time_sec": 30.576,
+      "score": 0.1444,
+      "signals": [
+        "left_force",
+        "base_yaw_rate",
+        "left_torque",
+        "right_force_change"
+      ],
+      "right_gripper_command": 37.99675959492464,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 11,
+      "raw_frame": 1059,
+      "time_sec": 35.196,
+      "score": -0.0009,
+      "signals": [
+        "left_force_change",
+        "right_force_change",
+        "left_rot_track_err",
+        "right_ee_speed"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 12,
+      "raw_frame": 1293,
+      "time_sec": 42.974,
+      "score": -0.012,
+      "signals": [
+        "right_force_change",
+        "right_force",
+        "left_torque",
+        "torso_joint_speed"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 13,
+      "raw_frame": 1308,
+      "time_sec": 43.478,
+      "score": 1.3123,
+      "signals": [
+        "base_yaw_rate",
+        "torso_joint_speed",
+        "right_force",
+        "left_torque"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 14,
+      "raw_frame": 1424,
+      "time_sec": 47.325,
+      "score": 0.8207,
+      "signals": [
+        "left_rot_track_err",
+        "right_force_change",
+        "base_yaw_rate",
+        "right_force"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 15,
+      "raw_frame": 1580,
+      "time_sec": 52.526,
+      "score": 1.1578,
+      "signals": [
+        "right_rot_track_err",
+        "right_pos_track_err",
+        "right_ee_ang_speed",
+        "left_rot_track_err"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 16,
+      "raw_frame": 1614,
+      "time_sec": 53.638,
+      "score": 0.8552,
+      "signals": [
+        "right_rot_track_err",
+        "right_pos_track_err",
+        "right_force_change",
+        "right_torque"
+      ],
+      "right_gripper_command": 14.671317819038569,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 17,
+      "raw_frame": 1732,
+      "time_sec": 57.563,
+      "score": 2.0218,
+      "signals": [
+        "right_torque",
+        "left_pos_track_err",
+        "right_force",
+        "torso_joint_speed"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 18,
+      "raw_frame": 1788,
+      "time_sec": 59.421,
+      "score": 1.6308,
+      "signals": [
+        "base_speed",
+        "base_yaw_rate",
+        "torso_joint_speed",
+        "right_ee_speed"
+      ],
+      "right_gripper_command": 0.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 19,
+      "raw_frame": 1882,
+      "time_sec": 62.546,
+      "score": 1.7796,
+      "signals": [
+        "base_speed",
+        "torso_joint_speed",
+        "base_yaw_rate",
+        "left_pos_track_err"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 20,
+      "raw_frame": 1923,
+      "time_sec": 63.91,
+      "score": 1.8015,
+      "signals": [
+        "right_torque",
+        "right_force_change",
+        "right_force",
+        "right_ee_ang_speed"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 21,
+      "raw_frame": 1951,
+      "time_sec": 64.839,
+      "score": 2.1389,
+      "signals": [
+        "right_force",
+        "right_torque",
+        "right_force_change",
+        "torso_joint_speed"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 22,
+      "raw_frame": 1986,
+      "time_sec": 66.002,
+      "score": 1.7309,
+      "signals": [
+        "base_speed",
+        "torso_joint_speed",
+        "left_ee_speed",
+        "base_yaw_rate"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 23,
+      "raw_frame": 2006,
+      "time_sec": 66.67,
+      "score": 1.5036,
+      "signals": [
+        "base_yaw_rate",
+        "right_force_change",
+        "base_speed",
+        "right_pos_track_err"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 24,
+      "raw_frame": 2043,
+      "time_sec": 67.895,
+      "score": 1.3163,
+      "signals": [
+        "base_speed",
+        "base_yaw_rate",
+        "right_torque",
+        "right_force_change"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 25,
+      "raw_frame": 2082,
+      "time_sec": 69.192,
+      "score": 1.1411,
+      "signals": [
+        "base_speed",
+        "base_yaw_rate",
+        "left_ee_ang_speed",
+        "left_rot_track_err"
+      ],
+      "right_gripper_command": 0.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    }
+  ],
+  "proposal_version": "v3.3.3",
+  "note": "Gripper edges are weak cues; rapid retry/re-grasp transitions are clustered and require non-gripper context. Semantic verification is still performed downstream."
+}

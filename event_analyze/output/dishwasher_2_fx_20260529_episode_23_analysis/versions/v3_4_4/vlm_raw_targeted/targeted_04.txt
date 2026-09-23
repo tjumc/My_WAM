@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "out",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "dish_rack": "out",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "dish_rack": 1.0,
+    "right_hand": 1.0,
+    "left_hand": 1.0
+  },
+  "confidence_after": {
+    "dish_rack": 1.0,
+    "right_hand": 1.0,
+    "left_hand": 1.0
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "dish rack is fully extended out of the dishwasher cavity at both frame 802 and frame 932.",
+    "right hand is clearly maintaining contact with the dish rack handle throughout the entire sequence.",
+    "no significant displacement of the dish rack relative to the cabinet frame is observed.",
+    "left hand is not visible in the scene at any point."
+  ],
+  "window_quality": "good"
+}
+```

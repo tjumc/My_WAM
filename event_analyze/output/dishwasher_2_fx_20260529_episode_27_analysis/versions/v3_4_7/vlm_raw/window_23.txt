@@ -1,0 +1,62 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "out",
+    "right_hand": "contact_door",
+    "left_hand": "free",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "closing",
+    "dish_rack": "in",
+    "cutlery_basket": "in",
+    "right_hand": "contact_door",
+    "left_hand": "free",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "visible_entities": [
+    "dishwasher_door",
+    "cutlery_basket",
+    "dish_rack",
+    "right_hand",
+    "left_hand"
+  ],
+  "evidence": [
+    "Head camera shows the dishwasher door is fully open in the first frame (f=1480) and moves downwards to close by the last frame (f=1570).",
+    "Left camera clearly shows the cutlery_basket sliding from an extended position (out) into the dishwasher cavity (in) across the window.",
+    "Right hand is consistently in contact with the dishwasher door handle throughout the sequence.",
+    "Left hand is visible and open (free) near the robot's torso, not interacting with any object."
+  ],
+  "window_quality": "good"
+}
+```

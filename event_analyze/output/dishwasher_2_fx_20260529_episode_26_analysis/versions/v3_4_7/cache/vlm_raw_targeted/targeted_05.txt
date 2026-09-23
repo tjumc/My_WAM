@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "moving_in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "dish_rack": "in",
+    "right_hand": "free",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "Window start (t0-t3): Head and right camera views show the right hand holding the open dishwasher rack, pushing it horizontally into the cabinet cavity.",
+    "Motion continuity: Between t0 and t3, the rack is visibly moving from an extended position to a retracted position.",
+    "Window end (t4-t7): The rack is fully retracted inside the cabinet and no longer visible; right hand is seen pulling away and is free.",
+    "Left hand status: Left hand remains stationary and free throughout the sequence, never contacting the rack."
+  ],
+  "window_quality": "good"
+}
+```

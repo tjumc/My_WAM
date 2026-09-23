@@ -1,0 +1,35 @@
+```json
+{
+  "state_before": {
+    "door": "closed",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "door": "open",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [
+    0,
+    7
+  ],
+  "evidence": [
+    "At t0 (f14), the dishwasher door is fully closed and flush with the cabinet.",
+    "At t7 (f90), the dishwasher door is fully open, exposing the interior rack.",
+    "The sequence shows a clear transition of the door state from closed to open.",
+    "No robot hands are visible in the left or right camera views at the sampled timestamps."
+  ],
+  "window_quality": "good"
+}
+```

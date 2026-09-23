@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "in",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "cutlery_basket": "in",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "在窗口早期（f731）和晚期（f865），head视角的洗碗机内部均清晰可见，cutlery_basket（刀叉篮）位于洗碗机内部且处于静止状态。",
+    "整个过程中，cutlery_basket没有发生位置移动，始终保持在洗碗机内的原位。",
+    "在head视角中，操作手臂正在处理台面上的粉色盘子，并未接触或拉动cutlery_basket。",
+    "在left和right视角中，未观察到与cutlery_basket相关的交互动作或手部接触。"
+  ],
+  "window_quality": "good"
+}
+```

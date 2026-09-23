@@ -1,0 +1,60 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "uncertain",
+    "right_hand": "holding_plate",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "right_hand"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "uncertain",
+    "cutlery_basket": "uncertain",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.30,
+    "right_hand": 0.95,
+    "left_hand": 0.30,
+    "knife_location": 0.20,
+    "fork_location": 0.20,
+    "plate_location": 0.95
+  },
+  "confidence_after": {
+    "robot_location": 0.90,
+    "door": 0.90,
+    "dish_rack": 0.20,
+    "cutlery_basket": 0.20,
+    "right_hand": 0.20,
+    "left_hand": 0.20,
+    "knife_location": 0.20,
+    "fork_location": 0.20,
+    "plate_location": 0.20
+  },
+  "visible_entities": [
+    "dish_rack",
+    "plate",
+    "robot_arm"
+  ],
+  "evidence": [
+    "Window start (f=1739): Dish rack is extended out of the machine; a pink plate is clearly visible in the right hand gripper.",
+    "Window center (f=1784): Right hand holding the pink plate moves rapidly into the dishwasher interior, causing significant motion blur.",
+    "Window end (f=1829): The pink plate is no longer visible in the right hand; the hand appears empty or obscured by the rack structure.",
+    "Left camera view shows the kitchen counter and background but is largely unobstructed by the robot's immediate manipulation area."
+  ],
+  "window_quality": "partial"
+}
+```

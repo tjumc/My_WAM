@@ -1,0 +1,16 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "out",
+  "relative_motion": "moving_out",
+  "right_hand_relation": "pulling_cutlery_basket",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 9],
+  "evidence": [
+    "在 t0 (frame 978) 时，cutlery_basket 位于洗碗机内部深处，与 dish_rack 主体位置基本重合。",
+    "从 t3 (frame 1023) 到 t5 (frame 1052)，右侧机械臂明显抓住 cutlery_basket 并持续向外施力，篮子位置显著向外移动。",
+    "在 t9 (frame 1112) 时，cutlery_basket 已被完全拉出至洗碗机外部，相对于 dish_rack 发生了显著的向外位移。"
+  ],
+  "visibility": "good"
+}
+```

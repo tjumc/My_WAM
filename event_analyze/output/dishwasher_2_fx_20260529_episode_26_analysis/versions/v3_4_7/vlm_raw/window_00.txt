@@ -1,0 +1,61 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "closed",
+    "dish_rack": "in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "tabletop"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "closed",
+    "dish_rack": "in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "tabletop"
+  },
+  "confidence_before": {
+    "robot_location": 0.9,
+    "door": 0.95,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.3,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.1,
+    "fork_location": 0.1,
+    "plate_location": 0.95
+  },
+  "confidence_after": {
+    "robot_location": 0.9,
+    "door": 0.95,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.3,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.1,
+    "fork_location": 0.1,
+    "plate_location": 0.95
+  },
+  "visible_entities": [
+    "dishwasher",
+    "dish_rack",
+    "plate",
+    "tabletop"
+  ],
+  "evidence": [
+    "Head camera shows robot arms raised and stationary throughout the window, positioned above the workspace.",
+    "Right and left cameras show the dishwasher door remains closed and the internal dish rack is fully retracted (in) at both start and end frames.",
+    "A pink plate is clearly visible on the tabletop in the right camera view and remains stationary throughout the sequence.",
+    "No robot hands or grippers are visible in the frame; the view is obstructed or the robot is positioned such that hands are out of frame."
+  ],
+  "window_quality": "partial"
+}
+```

@@ -1,0 +1,63 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "moving_in",
+    "right_hand": "contact_cutlery_basket",
+    "left_hand": "contact_dish_rack",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "tabletop"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "in",
+    "right_hand": "free",
+    "left_hand": "contact_dish_rack",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "tabletop"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.90,
+    "right_hand": 0.90,
+    "left_hand": 0.95,
+    "knife_location": 0.5,
+    "fork_location": 0.5,
+    "plate_location": 0.95
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.5,
+    "fork_location": 0.5,
+    "plate_location": 0.95
+  },
+  "visible_entities": [
+    "dish_rack",
+    "cutlery_basket",
+    "plate",
+    "right_hand",
+    "left_hand",
+    "door"
+  ],
+  "evidence": [
+    "Right hand pushes the white cutlery basket into the dishwasher cavity during the window.",
+    "Cutlery basket is visible moving out of view (inserted) by frame 556.",
+    "Pink plate with utensils remains stationary on the table surface throughout the sequence.",
+    "Left hand is holding the large dish rack which remains pulled out."
+  ],
+  "window_quality": "good"
+}
+```

@@ -1,0 +1,62 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "uncertain",
+    "right_hand": "holding_fork",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "right_hand",
+    "plate_location": "tabletop"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "uncertain",
+    "right_hand": "holding_fork",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "right_hand",
+    "plate_location": "tabletop"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.5,
+    "right_hand": 0.95,
+    "left_hand": 0.9,
+    "knife_location": 0.5,
+    "fork_location": 0.95,
+    "plate_location": 0.95
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.5,
+    "right_hand": 0.95,
+    "left_hand": 0.9,
+    "knife_location": 0.5,
+    "fork_location": 0.95,
+    "plate_location": 0.95
+  },
+  "visible_entities": [
+    "dish_rack",
+    "fork",
+    "plate",
+    "right_hand",
+    "robot_arm"
+  ],
+  "evidence": [
+    "Right hand clearly holds a fork throughout the window (visible in head and right views).",
+    "A pink plate is clearly visible on the tabletop (right view).",
+    "The dishwasher rack is pulled out (in dish_rack state) and visible in head view.",
+    "Left hand is not visible in the frame (left view shows empty counter)."
+  ],
+  "window_quality": "good"
+}
+```

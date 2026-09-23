@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "moving_in",
+    "right_hand": "pushing_cutlery_basket",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "cutlery_basket": "in",
+    "right_hand": "contact_cutlery_basket",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.9,
+    "right_hand": 0.95,
+    "left_hand": 1.0
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.9,
+    "right_hand": 0.9,
+    "left_hand": 1.0
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "Frame 150 (t0) shows the cutlery basket is partially extended from the dishwasher slot.",
+    "From frame 161 to 215, the right arm is visible pushing the basket deep into the dishwasher.",
+    "Frame 226 (t7) shows the basket is fully flush with the appliance, indicating it is 'in'.",
+    "The left hand is never visible in any frame within the window."
+  ],
+  "window_quality": "good"
+}
+```

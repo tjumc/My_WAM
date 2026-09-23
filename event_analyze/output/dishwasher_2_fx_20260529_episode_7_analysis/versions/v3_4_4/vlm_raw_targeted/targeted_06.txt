@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "moving_in",
+    "right_hand": "pushing_cutlery_basket",
+    "left_hand": "contact_cutlery_basket"
+  },
+  "state_after": {
+    "cutlery_basket": "in",
+    "right_hand": "free",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.9
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.9,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "在早期帧（如head t0, right t0），右臂明显接触并推入餐具篮，左臂也接触篮子边缘，篮子处于向内移动状态。",
+    "在晚期帧（如head t6, t7），餐具篮已完全推入洗碗机内部，右臂已收回并移向旁边的粉色盘子，双手均不再接触篮子。",
+    "从head t0到t6，可以看到右臂从推入姿态变为抬起并离开洗碗机区域。",
+    "right t6和t7显示视角已切换至台面，篮子位于视野外（洗碗机内），双手处于空闲或准备抓取盘子的状态。"
+  ],
+  "window_quality": "good"
+}
+```

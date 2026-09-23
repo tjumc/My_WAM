@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "in",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "cutlery_basket": "in",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.98,
+    "left_hand": 0.98
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.98,
+    "left_hand": 0.98
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "In head view (t0, t7), the cutlery basket is visible inside the dishwasher and remains in the same position relative to the dishwasher rack.",
+    "In right view (t0, t7), the basket is seen inside the dishwasher, and no hand is visible interacting with it.",
+    "In left view, the camera points to a cabinet, and neither the basket nor hands are visible.",
+    "No motion of the basket is observed across the frame sequence; it remains stationary."
+  ],
+  "window_quality": "good"
+}
+```

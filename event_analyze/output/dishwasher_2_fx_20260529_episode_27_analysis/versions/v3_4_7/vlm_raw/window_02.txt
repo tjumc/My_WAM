@@ -1,0 +1,63 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "opening",
+    "dish_rack": "in",
+    "cutlery_basket": "not_visible",
+    "right_hand": "contact_door",
+    "left_hand": "not_visible",
+    "knife_location": "tabletop",
+    "fork_location": "tabletop",
+    "plate_location": "tabletop"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "not_visible",
+    "right_hand": "free",
+    "left_hand": "not_visible",
+    "knife_location": "tabletop",
+    "fork_location": "tabletop",
+    "plate_location": "tabletop"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.9,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.95,
+    "knife_location": 0.9,
+    "fork_location": 0.9,
+    "plate_location": 0.9
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.95,
+    "right_hand": 0.85,
+    "left_hand": 0.95,
+    "knife_location": 0.9,
+    "fork_location": 0.9,
+    "plate_location": 0.9
+  },
+  "visible_entities": [
+    "dish_rack",
+    "plate",
+    "knife",
+    "fork",
+    "door",
+    "right_hand"
+  ],
+  "evidence": [
+    "Right hand is seen holding the dishwasher door handle in early frames and releasing it in later frames.",
+    "The dishwasher door moves from a partially open state to a fully open state, revealing the interior.",
+    "A pink plate, knife, and fork remain stationary on the countertop throughout the window.",
+    "The dish rack is visible inside the dishwasher and remains stationary."
+  ],
+  "window_quality": "good"
+}
+```

@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "in",
+    "right_hand": "contact_cutlery_basket",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "cutlery_basket": "in",
+    "right_hand": "contact_cutlery_basket",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.9
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.9
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "In frames 1052-1085, the right hand is clearly inside the dishwasher, grasping the handle of the cutlery basket.",
+    "The cutlery basket remains in its initial position (inside the dishwasher) throughout the early sequence.",
+    "In frames 1133-1166, the camera view shifts to the countertop, and the cutlery basket is no longer visible.",
+    "In the final frames (1150-1166), the right hand is visible near the pink plate on the counter, maintaining contact with the basket which is outside the view."
+  ],
+  "window_quality": "partial"
+}
+```

@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "out",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "dish_rack": "out",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "dish rack (silver basket) is clearly visible in an extended (out) position in head camera frames throughout the sequence.",
+    "dish rack remains static in the 'out' state with no visible movement (moving_in/moving_out) between frame 798 and 874.",
+    "left and right hands are not visible in the left or right camera views respectively during this window.",
+    "head camera shows a robotic arm interacting with a pink plate on the counter, but the hands themselves are out of frame."
+  ],
+  "window_quality": "good"
+}
+```

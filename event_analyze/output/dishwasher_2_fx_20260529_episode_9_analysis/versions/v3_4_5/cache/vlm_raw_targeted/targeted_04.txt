@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "moving_out",
+    "right_hand": "pulling_cutlery_basket",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "cutlery_basket": "out",
+    "right_hand": "contact_cutlery_basket",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.9
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.9
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "在早期帧 (t0-t3) 中，cutlery_basket 位于洗碗机内部，随着时间推移逐渐向外移动，呈现 moving_out 状态。",
+    "右手 (right_hand) 在早期帧中明显抓持着 cutlery_basket 边缘，执行 pulling 动作。",
+    "在晚期帧 (t6-t7) 中，cutlery_basket 已完全拉出至洗碗机外部，处于 out 状态。",
+    "在晚期帧中，右手仍然接触着 cutlery_basket，但拉动动作已完成。"
+  ],
+  "window_quality": "good"
+}
+```

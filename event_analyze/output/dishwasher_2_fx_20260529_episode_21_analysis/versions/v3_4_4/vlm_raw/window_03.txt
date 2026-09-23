@@ -1,0 +1,61 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "out",
+    "right_hand": "contact_cutlery_basket",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "in",
+    "right_hand": "contact_cutlery_basket",
+    "left_hand": "uncertain",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "confidence_before": {
+    "robot_location": 0.9,
+    "door": 0.9,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.9,
+    "right_hand": 0.8,
+    "left_hand": 0.1,
+    "knife_location": 0.1,
+    "fork_location": 0.1,
+    "plate_location": 0.9
+  },
+  "confidence_after": {
+    "robot_location": 0.9,
+    "door": 0.9,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.9,
+    "right_hand": 0.8,
+    "left_hand": 0.1,
+    "knife_location": 0.1,
+    "fork_location": 0.1,
+    "plate_location": 0.9
+  },
+  "visible_entities": [
+    "dish_rack",
+    "cutlery_basket",
+    "plate",
+    "right_hand"
+  ],
+  "evidence": [
+    "Head camera shows the robot arm pushing the small cutlery basket into the dishwasher during the window.",
+    "Head and right camera views confirm the large dish rack remains stationary in the back.",
+    "Right camera view clearly shows a white plate standing in the dish rack.",
+    "Left camera view is obstructed by the cabinet structure, obscuring the robot's left arm."
+  ],
+  "window_quality": "good"
+}
+```

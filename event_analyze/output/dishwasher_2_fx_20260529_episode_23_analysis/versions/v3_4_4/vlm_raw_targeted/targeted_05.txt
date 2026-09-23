@@ -1,0 +1,31 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "moving_out",
+    "right_hand": "pulling_cutlery_basket",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "cutlery_basket": "out",
+    "right_hand": "pulling_cutlery_basket",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 1, 7],
+  "evidence": [
+    "Frame 856 (head t0): Right hand is grasping the cutlery basket which is partially extended from the dishwasher.",
+    "Frame 867 (head t1): The cutlery basket has moved further out compared to frame 856, showing continuous outward motion.",
+    "Frame 932 (head t7): The cutlery basket is fully extended out of the dishwasher and resting on the floor, maintaining contact with the right hand."
+  ],
+  "window_quality": "good"
+}
+```

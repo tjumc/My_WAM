@@ -1,0 +1,35 @@
+```json
+{
+  "state_before": {
+    "door": "open",
+    "right_hand": "contact_door",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "door": "open",
+    "right_hand": "contact_door",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [
+    0,
+    7
+  ],
+  "evidence": [
+    "Head view at start (f259) and end (f349) shows dishwasher door remains fully open with racks visible.",
+    "Right hand (bottom row) is in constant contact with the door rack/handle structure throughout the entire sequence.",
+    "Left hand is not visible in the left camera view at any point.",
+    "No change in door angle or hand position relative to the door is observed."
+  ],
+  "window_quality": "good"
+}
+```

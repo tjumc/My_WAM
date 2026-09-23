@@ -1,0 +1,35 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "out",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "cutlery_basket": "out",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "cutlery_basket": 1.0,
+    "right_hand": 1.0,
+    "left_hand": 1.0
+  },
+  "confidence_after": {
+    "cutlery_basket": 1.0,
+    "right_hand": 1.0,
+    "left_hand": 1.0
+  },
+  "evidence_time_indices": [
+    0,
+    7
+  ],
+  "evidence": [
+    "在head视角的早期（f491）和晚期（f625）图像中，cutlery_basket均清晰可见且处于完全拉出（out）的静止状态。",
+    "在head视角中，右侧机械臂正在操作盘子，但未与cutlery_basket发生接触或交互。",
+    "在left视角的整个时间窗口内，cutlery_basket区域未被拍摄到，且未观察到任何手部动作。",
+    "在right视角中，手部正在抓取盘子和刀叉，未接触cutlery_basket。"
+  ],
+  "window_quality": "good"
+}
+```

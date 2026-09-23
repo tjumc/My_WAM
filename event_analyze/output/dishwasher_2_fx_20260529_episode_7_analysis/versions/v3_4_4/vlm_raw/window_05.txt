@@ -1,0 +1,62 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible",
+    "knife_location": "tabletop",
+    "fork_location": "tabletop",
+    "plate_location": "tabletop"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible",
+    "knife_location": "tabletop",
+    "fork_location": "tabletop",
+    "plate_location": "tabletop"
+  },
+  "confidence_before": {
+    "robot_location": 0.9,
+    "door": 0.95,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.2,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.9,
+    "fork_location": 0.9,
+    "plate_location": 0.9
+  },
+  "confidence_after": {
+    "robot_location": 0.9,
+    "door": 0.95,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.2,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.9,
+    "fork_location": 0.9,
+    "plate_location": 0.9
+  },
+  "visible_entities": [
+    "dish_rack",
+    "plate",
+    "knife",
+    "fork",
+    "dishwasher_door"
+  ],
+  "evidence": [
+    "head view shows dishwasher door is open and dish rack is positioned inside the cavity.",
+    "head view shows a pink plate, knife, and fork resting on the countertop to the left of the dishwasher.",
+    "right view shows the interior of the dishwasher (rack/wheels) clearly, indicating the door is open and camera is facing in.",
+    "left view shows the cabinet area and countertop but is obscured by the counter edge, failing to show the hands."
+  ],
+  "window_quality": "partial"
+}
+```

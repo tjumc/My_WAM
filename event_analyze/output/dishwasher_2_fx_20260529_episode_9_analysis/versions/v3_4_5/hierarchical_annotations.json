@@ -1,0 +1,275 @@
+{
+  "annotation_version": "v3.4.5",
+  "task_goal": "put the dish into the dishwasher",
+  "trajectory_instruction": "移动到桌面/洗碗机前；右手夹取餐具并放入餐具篮；右手夹取餐具并放入餐具篮；右手夹取盘子并放入碗篮",
+  "task_end_raw_frame": 1760,
+  "lerobot_episode_index": null,
+  "semantic_phases": [
+    {
+      "skill_id": 0,
+      "skill_type": "navigate_to_station",
+      "instruction_zh": "移动到桌面/洗碗机前",
+      "instruction_en": "Move to the table/dishwasher station",
+      "entity": "robot_base",
+      "active_arm": "none",
+      "provisional_start_frame": 32,
+      "provisional_end_frame": 95,
+      "evidence_event_ids": [],
+      "confidence": 0.95,
+      "state_transition": {
+        "base_motion": true
+      },
+      "inference_mode": "hdf5_base_motion",
+      "source": "trajectory_level_entity_state_machine",
+      "source_skill_id": 0,
+      "validation": {
+        "signal": {
+          "window": [
+            12,
+            115
+          ],
+          "motion_fraction": 0.058,
+          "force_change_support": 0.427,
+          "gripper_change_support": 0.0,
+          "score": 0.139
+        },
+        "reasons": [
+          "hdf5_base_motion"
+        ],
+        "interaction_evidence": null
+      },
+      "raw_start_frame": 16,
+      "raw_end_frame": 105,
+      "lerobot_episode_index": null,
+      "lerobot_start_frame": 16,
+      "lerobot_end_frame": 105
+    },
+    {
+      "skill_id": 1,
+      "skill_type": "place_utensil_in_cutlery_basket",
+      "instruction_zh": "右手夹取餐具并放入餐具篮",
+      "instruction_en": "Pick up the utensil and place it in the cutlery basket with the right hand",
+      "entity": "utensil",
+      "active_arm": "right",
+      "provisional_start_frame": 896,
+      "provisional_end_frame": 973,
+      "evidence_event_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        10,
+        11
+      ],
+      "confidence": 0.85,
+      "state_transition": {
+        "before": "tabletop",
+        "held": "right_hand",
+        "after": "cutlery_basket",
+        "target_support": "observed",
+        "target_evidence_frame": 973,
+        "ownership_context_end_frame": null,
+        "retry_collapsed": false,
+        "completion_rule": "target_without_regrasp_before_object_context_switch"
+      },
+      "inference_mode": "completion_aware_object_episode",
+      "source": "trajectory_level_entity_state_machine",
+      "fine_skill_type": "place_knife_in_cutlery_basket",
+      "fine_entity": "knife",
+      "semantic_backoff": {
+        "from_skill_type": "place_knife_in_cutlery_basket",
+        "from_entity": "knife",
+        "to_skill_type": "place_utensil_in_cutlery_basket",
+        "to_entity": "utensil",
+        "reason": "schema_policy_equivalent_parent_training_label"
+      },
+      "source_skill_id": 6,
+      "validation": {
+        "signal": {
+          "window": [
+            876,
+            993
+          ],
+          "motion_fraction": 0.551,
+          "force_change_support": 0.295,
+          "gripper_change_support": 0.34,
+          "score": 0.445
+        },
+        "reasons": [
+          "observed_held_state"
+        ],
+        "interaction_evidence": null
+      },
+      "raw_start_frame": 880,
+      "raw_end_frame": 992,
+      "lerobot_episode_index": null,
+      "lerobot_start_frame": 880,
+      "lerobot_end_frame": 992
+    },
+    {
+      "skill_id": 2,
+      "skill_type": "place_utensil_in_cutlery_basket",
+      "instruction_zh": "右手夹取餐具并放入餐具篮",
+      "instruction_en": "Pick up the utensil and place it in the cutlery basket with the right hand",
+      "entity": "utensil",
+      "active_arm": "right",
+      "provisional_start_frame": 1022,
+      "provisional_end_frame": 1198,
+      "evidence_event_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        10,
+        11,
+        12
+      ],
+      "confidence": 0.406,
+      "state_transition": {
+        "before": "tabletop",
+        "held": "right_hand",
+        "after": "cutlery_basket",
+        "target_support": "interpolated",
+        "target_evidence_frame": 1198,
+        "ownership_context_end_frame": null,
+        "retry_collapsed": false,
+        "completion_rule": "target_without_regrasp_before_object_context_switch"
+      },
+      "inference_mode": "completion_aware_object_episode_with_affordance_completion",
+      "source": "trajectory_level_entity_state_machine",
+      "fine_skill_type": "place_fork_in_cutlery_basket",
+      "fine_entity": "fork",
+      "semantic_backoff": {
+        "from_skill_type": "place_fork_in_cutlery_basket",
+        "from_entity": "fork",
+        "to_skill_type": "place_utensil_in_cutlery_basket",
+        "to_entity": "utensil",
+        "reason": "schema_policy_equivalent_parent_training_label"
+      },
+      "source_skill_id": 8,
+      "validation": {
+        "signal": {
+          "window": [
+            1002,
+            1218
+          ],
+          "motion_fraction": 0.373,
+          "force_change_support": 0.491,
+          "gripper_change_support": 1.0,
+          "score": 0.528
+        },
+        "reasons": [
+          "observed_held_state"
+        ],
+        "interaction_evidence": null
+      },
+      "raw_start_frame": 1003,
+      "raw_end_frame": 1207,
+      "lerobot_episode_index": null,
+      "lerobot_start_frame": 1003,
+      "lerobot_end_frame": 1207
+    },
+    {
+      "skill_id": 3,
+      "skill_type": "place_plate_in_dish_rack",
+      "instruction_zh": "右手夹取盘子并放入碗篮",
+      "instruction_en": "Pick up the plate and place it in the dish rack with the right hand",
+      "entity": "plate",
+      "active_arm": "right",
+      "provisional_start_frame": 1281,
+      "provisional_end_frame": 1760,
+      "evidence_event_ids": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        22
+      ],
+      "confidence": 0.95,
+      "state_transition": {
+        "before": "tabletop",
+        "held": "right_hand",
+        "after": "dish_rack",
+        "target_support": "observed",
+        "target_evidence_frame": 1760,
+        "ownership_context_end_frame": null,
+        "retry_collapsed": true,
+        "completion_rule": "target_without_regrasp_before_object_context_switch"
+      },
+      "inference_mode": "completion_aware_object_episode",
+      "source": "trajectory_level_entity_state_machine",
+      "retry_collapsed": true,
+      "completion_aware_merge": true,
+      "source_skill_id": 10,
+      "validation": {
+        "signal": {
+          "window": [
+            1261,
+            1780
+          ],
+          "motion_fraction": 0.475,
+          "force_change_support": 1.0,
+          "gripper_change_support": 1.0,
+          "score": 0.711
+        },
+        "reasons": [
+          "observed_held_state"
+        ],
+        "interaction_evidence": null
+      },
+      "raw_start_frame": 1269,
+      "raw_end_frame": 1760,
+      "lerobot_episode_index": null,
+      "lerobot_start_frame": 1269,
+      "lerobot_end_frame": 1760
+    }
+  ],
+  "coarse_only_segments": [
+    {
+      "raw_start_frame": 0,
+      "raw_end_frame": 15,
+      "label_policy": "coarse_task_only"
+    },
+    {
+      "raw_start_frame": 106,
+      "raw_end_frame": 879,
+      "label_policy": "coarse_task_only"
+    },
+    {
+      "raw_start_frame": 993,
+      "raw_end_frame": 1002,
+      "label_policy": "coarse_task_only"
+    },
+    {
+      "raw_start_frame": 1208,
+      "raw_end_frame": 1268,
+      "label_policy": "coarse_task_only"
+    },
+    {
+      "raw_start_frame": 1761,
+      "raw_end_frame": 2187,
+      "label_policy": "coarse_task_only"
+    }
+  ],
+  "notes": [
+    "V3.4.5 phases use interaction-validated trajectory-level entity-state-machine skills, not LLM-generated phases.",
+    "Entity uncertainty produces coarse-only gaps instead of forced fine labels.",
+    "Numerical boundaries are refined with HDF5 activity signals and skill-specific duration priors.",
+    "Overlap arbitration runs right-to-left and preserves minimum phase duration whenever feasible.",
+    "Upstream provisional intervals are treated as semantic ownership priors rather than being overwritten by an unconstrained activity valley.",
+    "V3.4.5 final consistency gate never invents missing actions; it removes invalid final phases and reports unresolved schema-final-state violations."
+  ],
+  "final_consistency": {
+    "num_dropped": 0,
+    "num_clamped": 0,
+    "num_lifecycle_violations": 0,
+    "num_expected_final_state_violations": 1,
+    "status": "unresolved"
+  }
+}

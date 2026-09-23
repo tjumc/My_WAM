@@ -1,0 +1,31 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "in",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "state_after": {
+    "dish_rack": "in",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "confidence_before": {
+    "dish_rack": 0.95,
+    "right_hand": 0.80,
+    "left_hand": 0.80
+  },
+  "confidence_after": {
+    "dish_rack": 0.95,
+    "right_hand": 0.80,
+    "left_hand": 0.80
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "dish_rack在head视角的f58和f192时刻均位于洗碗机内部，未观察到拉出或推入的连续运动。",
+    "head视角中，机械臂在f58和f192时刻均悬停在洗碗机前方，未与dish_rack发生接触。",
+    "dish_rack在整个窗口内相对于洗碗机边缘的位置保持不变。"
+  ],
+  "window_quality": "good"
+}
+```

@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "in",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "state_after": {
+    "cutlery_basket": "in",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.4,
+    "left_hand": 0.4
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.4,
+    "left_hand": 0.4
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "在窗口早期（f467）和晚期（f601），dishwasher内的cutlery_basket均清晰可见且位置未发生显著变化。",
+    "在f582和f601，机械臂（右臂）在dishwasher区域有活动，但图像未显示其接触或抓持cutlery_basket。",
+    "cutlery_basket始终位于dishwasher内部，未观察到被拉出或推入的动作。",
+    "双手在大部分帧中处于视野边缘或模糊状态，无法确认与cutlery_basket的接触关系。"
+  ],
+  "window_quality": "good"
+}
+```

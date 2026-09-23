@@ -1,0 +1,17 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "out",
+  "relative_motion": "moving_out",
+  "right_hand_relation": "pulling_cutlery_basket",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 5, 8, 9],
+  "evidence": [
+    "t0 (frame 414) 时，cutlery_basket 位于洗碗机内部深处，与上层 dish_rack 保持相对静止。",
+    "t5 (frame 488) 时，右侧机械臂已接触 cutlery_basket，篮子开始随上层 dish_rack 向外移动。",
+    "t8 (frame 533) 时，cutlery_basket 随上层拉篮移动至接近边缘位置，大部分已移出机身。",
+    "t9 (frame 548) 时，cutlery_basket 随上层 dish_rack 完全移出洗碗机，进入外部空间。"
+  ],
+  "visibility": "good"
+}
+```

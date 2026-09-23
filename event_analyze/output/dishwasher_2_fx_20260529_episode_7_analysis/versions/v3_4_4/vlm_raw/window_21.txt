@@ -1,0 +1,60 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "out",
+    "right_hand": "contact_door",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "closing",
+    "dish_rack": "moving_in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "contact_door",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.85,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.4,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "visible_entities": [
+    "dishwasher_door",
+    "dish_rack",
+    "right_hand"
+  ],
+  "evidence": [
+    "Head camera shows the dishwasher door is fully open at the beginning and moves downwards towards the closed position by the end.",
+    "Right hand is visible in contact with the dishwasher door handle throughout the sequence.",
+    "Dish rack is visible extended (out) in the left camera at the start, and appears to be retracting (moving_in) as the door closes.",
+    "Cutlery basket is located inside the dish rack and is largely occluded by the rack structure and door frame, making its specific motion hard to verify."
+  ],
+  "window_quality": "good"
+}
+```

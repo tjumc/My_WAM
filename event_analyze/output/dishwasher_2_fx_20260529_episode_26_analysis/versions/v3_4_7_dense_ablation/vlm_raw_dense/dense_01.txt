@@ -1,0 +1,17 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "in",
+  "relative_motion": "stationary",
+  "right_hand_relation": "none",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 9],
+  "evidence": [
+    "在 t0 (frame 424) 时，cutlery_basket 位于洗碗机内部右侧的标准位置。",
+    "在 t9 (frame 558) 时，cutlery_basket 依然位于洗碗机内部右侧的同一位置。",
+    "在整个序列中，cutlery_basket 相对于 dish_rack 和洗碗机内壁没有发生任何位移。",
+    "机器人手臂在洗碗机外部进行活动，未与内部的 cutlery_basket 发生接触或推拉动作。"
+  ],
+  "visibility": "good"
+}
+```

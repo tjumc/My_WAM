@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "out",
+    "right_hand": "uncertain",
+    "left_hand": "contact_dish_rack"
+  },
+  "state_after": {
+    "dish_rack": "in",
+    "right_hand": "uncertain",
+    "left_hand": "contact_dish_rack"
+  },
+  "confidence_before": {
+    "dish_rack": 1.0,
+    "right_hand": 0.0,
+    "left_hand": 0.9
+  },
+  "confidence_after": {
+    "dish_rack": 1.0,
+    "right_hand": 0.0,
+    "left_hand": 0.9
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "Frame 1198: The dish rack is visibly extended (open) from the dishwasher cavity.",
+    "Frame 1274: The dish rack is fully retracted (closed) into the dishwasher.",
+    "Left hand is consistently in contact with the dish rack handle throughout the sequence.",
+    "Right hand is not visible in the provided frames."
+  ],
+  "window_quality": "good"
+}
+```

@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "out",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "dish_rack": "moving_in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "contact_dish_rack"
+  },
+  "confidence_before": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "Window start (head t0, right t0): The dish rack is fully extended out of the dishwasher cavity. The right hand is clearly holding the rack handle.",
+    "Window start (head t0): The left hand is visible in the air, not touching the dish rack (free).",
+    "Window end (head t7, right t7): Both hands are holding the dish rack handle. The rack is positioned inside the cavity, indicating it is being pushed in.",
+    "Motion continuity: From t4 to t7, the rack position changes from partially out to fully inside, confirming the moving_in state."
+  ],
+  "window_quality": "good"
+}
+```

@@ -1,0 +1,35 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "in",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "state_after": {
+    "cutlery_basket": "uncertain",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.9
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.0,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "evidence_time_indices": [
+    0,
+    7
+  ],
+  "evidence": [
+    "Frame 150 (head view): The cutlery basket is clearly visible and fully inserted inside the dishwasher rack.",
+    "Frame 150 (head view): Both robot hands are visible and hovering in the air, not touching any object.",
+    "Frame 268 (head view): The robot arm is extended deep into the dishwasher, completely occluding the view of the cutlery basket.",
+    "Frame 268 (right view): The view is blocked by the dishwasher interior and the robot arm, making the basket state unobservable."
+  ],
+  "window_quality": "partial"
+}
+```

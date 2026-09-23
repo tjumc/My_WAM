@@ -1,0 +1,31 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "out",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "dish_rack": "moving_in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "At frame 1516 (t0), the dish rack is fully extended out of the dishwasher, and the right hand is holding the rack handle.",
+    "At frame 1592 (t7), the dish rack is partially retracted into the dishwasher interior compared to the start.",
+    "The right hand maintains contact with the rack throughout the sequence, while the left hand remains free and away from the rack."
+  ],
+  "window_quality": "good"
+}
+```

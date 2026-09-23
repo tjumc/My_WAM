@@ -1,0 +1,62 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "in",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible",
+    "knife_location": "tabletop",
+    "fork_location": "tabletop",
+    "plate_location": "tabletop"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "in",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible",
+    "knife_location": "tabletop",
+    "fork_location": "tabletop",
+    "plate_location": "tabletop"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.90,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.85,
+    "fork_location": 0.85,
+    "plate_location": 0.95
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.90,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.85,
+    "fork_location": 0.85,
+    "plate_location": 0.95
+  },
+  "visible_entities": [
+    "dish_rack",
+    "cutlery_basket",
+    "plate",
+    "knife",
+    "fork"
+  ],
+  "evidence": [
+    "Head camera view shows robot arms raised high above the dishwasher, hands are empty and grippers are open.",
+    "Left and Right camera views show the dishwasher door is open, with the internal dish rack and cutlery basket remaining stationary inside.",
+    "A pink plate, a knife, and a fork are clearly visible resting on the countertop surface in the left and right camera views.",
+    "No object manipulation or movement of the dishwasher rack is observed throughout the window sequence."
+  ],
+  "window_quality": "good"
+}
+```

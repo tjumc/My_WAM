@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "door": "closing",
+    "right_hand": "contact_door",
+    "left_hand": "contact_door"
+  },
+  "state_after": {
+    "door": "uncertain",
+    "right_hand": "contact_door",
+    "left_hand": "contact_door"
+  },
+  "confidence_before": {
+    "door": 0.9,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "door": 0.6,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "Window starts (f192) with dishwasher door nearly shut, hands holding the door edges.",
+    "Window ends (f310) with door fully open, revealing interior racks and dishes.",
+    "Right hand maintains contact with the door frame throughout the sequence.",
+    "Left hand maintains contact with the door frame throughout the sequence."
+  ],
+  "window_quality": "good"
+}
+```

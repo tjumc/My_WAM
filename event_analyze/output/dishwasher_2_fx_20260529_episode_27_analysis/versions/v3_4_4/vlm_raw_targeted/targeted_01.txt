@@ -1,0 +1,35 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "in",
+    "right_hand": "contact_cutlery_basket",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "cutlery_basket": "in",
+    "right_hand": "contact_cutlery_basket",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.90,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.90,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [
+    0,
+    7
+  ],
+  "evidence": [
+    "Head view (f387-f521) shows the cutlery basket remains stationary inside the dishwasher rack throughout the entire window.",
+    "Right view (f387-f521) confirms the basket is in the 'in' position and right hand maintains contact with the basket structure.",
+    "Left view (f387-f521) shows the counter area, but the left hand is not visible in the frame.",
+    "No continuous motion of the basket is observed across the sampled frames."
+  ],
+  "window_quality": "good"
+}
+```

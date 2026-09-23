@@ -1,0 +1,31 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "in",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "state_after": {
+    "cutlery_basket": "out",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "confidence_before": {
+    "cutlery_basket": 1.0,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "confidence_after": {
+    "cutlery_basket": 1.0,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "在窗口早期（t0），通过head和right视角清晰观察到cutlery_basket位于洗碗机内部，处于in状态。",
+    "在窗口晚期（t7），通过head和right视角清晰观察到cutlery_basket已被拉出至洗碗机外部，处于out状态。",
+    "从t4到t7，cutlery_basket相对于洗碗机边框的位置连续向外移动，直至完全脱离机身。"
+  ],
+  "window_quality": "good"
+}
+```

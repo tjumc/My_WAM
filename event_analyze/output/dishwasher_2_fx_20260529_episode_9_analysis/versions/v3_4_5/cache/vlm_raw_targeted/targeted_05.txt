@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "out",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "dish_rack": "out",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 1.0
+  },
+  "confidence_after": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 1.0
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "Dish rack is fully extended (out) and stationary in all head-view frames.",
+    "Right hand is maintaining contact with the dish rack throughout the sequence.",
+    "No visible motion or displacement of the dish rack observed between start and end frames.",
+    "Left hand is not visible in any of the provided frames."
+  ],
+  "window_quality": "good"
+}
+```

@@ -1,0 +1,61 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "opening",
+    "dish_rack": "uncertain",
+    "cutlery_basket": "uncertain",
+    "right_hand": "contact_door",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "uncertain",
+    "cutlery_basket": "uncertain",
+    "right_hand": "contact_door",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.90,
+    "dish_rack": 0.0,
+    "cutlery_basket": 0.0,
+    "right_hand": 0.90,
+    "left_hand": 0.95,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.0,
+    "cutlery_basket": 0.0,
+    "right_hand": 0.90,
+    "left_hand": 0.95,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "visible_entities": [
+    "robot_head",
+    "robot_right_arm",
+    "dishwasher_door",
+    "countertop"
+  ],
+  "evidence": [
+    "Head camera shows dishwasher door rising from a partially open state to fully open.",
+    "Right hand maintains contact with the bottom edge of the dishwasher door throughout the window.",
+    "Left hand is not visible in any frame within the window.",
+    "Dishwasher interior is visible but obscured by lighting/reflections, preventing identification of racks or specific items."
+  ],
+  "window_quality": "partial"
+}
+```

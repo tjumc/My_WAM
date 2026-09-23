@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "door": "open",
+    "right_hand": "contact_door",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "door": "open",
+    "right_hand": "contact_door",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.90
+  },
+  "confidence_after": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.90
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "在窗口早期（f205）和晚期（f339），dishwasher门均处于打开状态，内部蓝色灯光和碗架清晰可见。",
+    "右手（right_hand）在整个时间段内（f205-f339）持续接触并扶着洗碗机门的边缘或把手。",
+    "左手（left_hand）始终位于画面左侧，未接触洗碗机门，处于空闲状态。",
+    "在窗口期间，门的位置没有发生明显变化，未见关闭或进一步打开的动作。"
+  ],
+  "window_quality": "good"
+}
+```

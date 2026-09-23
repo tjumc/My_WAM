@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "out",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "dish_rack": "moving_in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "在窗口早期(t0)，dish rack 处于完全拉出的状态，且右机械臂末端接触着 rack 的前面板。",
+    "在窗口晚期(t7)，dish rack 的位置相比早期明显向柜体内部移动，处于部分推入的状态。",
+    "右机械臂在整个时间序列中持续接触 dish rack 并推动其移动。",
+    "左机械臂在视野中保持悬空，未与 dish rack 发生接触。"
+  ],
+  "window_quality": "good"
+}
+```

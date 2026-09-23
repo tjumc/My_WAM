@@ -1,0 +1,60 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "uncertain"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.5,
+    "right_hand": 0.9,
+    "left_hand": 0.9,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.5,
+    "right_hand": 0.9,
+    "left_hand": 0.9,
+    "knife_location": 0.0,
+    "fork_location": 0.0,
+    "plate_location": 0.0
+  },
+  "visible_entities": [
+    "dishwasher",
+    "dish_rack",
+    "robot_arms"
+  ],
+  "evidence": [
+    "Head camera view shows the dishwasher door is open, revealing the internal dish rack which appears stationary.",
+    "Left and Right camera views show the robot's arms raised high near the top of the dishwasher opening, but the grippers and hands are out of the field of view (occluded by the frame).",
+    "No visible motion of the dish rack or door is detected between frame 1584 and 1674.",
+    "Sensor data shows stable gripper commands and decreasing force, consistent with the arms being held in a static elevated position."
+  ],
+  "window_quality": "partial"
+}
+```

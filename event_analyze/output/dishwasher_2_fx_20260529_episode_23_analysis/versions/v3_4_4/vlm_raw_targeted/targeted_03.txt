@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "cutlery_basket": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.9
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.9
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "cutlery_basket is not visible in any of the provided camera views (head, left, right) throughout the entire frame sequence.",
+    "Hands are not visible in the left or right camera views; head view shows arms but hands are out of frame or obscured.",
+    "The robot arms are visible in the head view but are positioned near the plate or obscured by the plate, with no clear interaction with a cutlery basket visible.",
+    "No cutlery basket can be seen being pulled, pushed, or moved in the dishwasher area."
+  ],
+  "window_quality": "poor"
+}
+```

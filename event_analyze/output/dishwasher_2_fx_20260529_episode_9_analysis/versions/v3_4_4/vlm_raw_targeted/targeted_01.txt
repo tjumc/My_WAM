@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "door": "closing",
+    "right_hand": "contact_door",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "door": "open",
+    "right_hand": "free",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "Window start (f264): Right hand is in direct contact with the dishwasher door, which is nearly closed (mostly shut).",
+    "Window end (f398): The dishwasher door is fully open, revealing the interior racks and dishes.",
+    "Visual transition: Between f264 and f341, the right hand pulls the door, causing it to swing open continuously.",
+    "Left hand remains stationary and free from the door throughout the sequence."
+  ],
+  "window_quality": "good"
+}
+```

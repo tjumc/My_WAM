@@ -1,0 +1,467 @@
+{
+  "source_hdf5": "dishwasher_2_fx_20260529_episode_27.hdf5",
+  "num_raw_frames": 1647,
+  "duration_sec": 54.716,
+  "fps_nominal": 30.0,
+  "feature_names": [
+    "base_speed",
+    "base_yaw_rate",
+    "torso_joint_speed",
+    "left_ee_speed",
+    "right_ee_speed",
+    "left_ee_ang_speed",
+    "right_ee_ang_speed",
+    "left_gripper_cmd",
+    "right_gripper_cmd",
+    "left_force",
+    "right_force",
+    "left_torque",
+    "right_torque",
+    "left_pos_track_err",
+    "right_pos_track_err",
+    "left_rot_track_err",
+    "right_rot_track_err",
+    "left_force_change",
+    "right_force_change"
+  ],
+  "change_windows_frames": [
+    9,
+    30,
+    60
+  ],
+  "candidate_events": [
+    {
+      "event_id": 0,
+      "raw_frame": 71,
+      "time_sec": 2.359,
+      "score": 0.7385,
+      "signals": [
+        "base_yaw_rate",
+        "left_force_change",
+        "left_torque",
+        "left_force"
+      ],
+      "right_gripper_command": 0.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null,
+      "lerobot_episode_index": 11,
+      "lerobot_frame_index": 71
+    },
+    {
+      "event_id": 1,
+      "raw_frame": 139,
+      "time_sec": 4.62,
+      "score": 1.848,
+      "signals": [
+        "base_speed",
+        "base_yaw_rate",
+        "left_force",
+        "left_torque"
+      ],
+      "right_gripper_command": 0.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null,
+      "lerobot_episode_index": 11,
+      "lerobot_frame_index": 139
+    },
+    {
+      "event_id": 2,
+      "raw_frame": 202,
+      "time_sec": 6.712,
+      "score": 1.1971,
+      "signals": [
+        "right_rot_track_err",
+        "right_pos_track_err",
+        "right_ee_ang_speed",
+        "right_ee_speed"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null,
+      "lerobot_episode_index": 11,
+      "lerobot_frame_index": 202
+    },
+    {
+      "event_id": 3,
+      "raw_frame": 225,
+      "time_sec": 7.48,
+      "score": 0.8968,
+      "signals": [
+        "right_rot_track_err",
+        "torso_joint_speed",
+        "base_yaw_rate",
+        "left_pos_track_err"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null,
+      "lerobot_episode_index": 11,
+      "lerobot_frame_index": 225
+    },
+    {
+      "event_id": 4,
+      "raw_frame": 244,
+      "time_sec": 8.112,
+      "score": 1.1816,
+      "signals": [
+        "left_pos_track_err",
+        "right_pos_track_err",
+        "right_ee_ang_speed",
+        "right_force"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null,
+      "lerobot_episode_index": 11,
+      "lerobot_frame_index": 244
+    },
+    {
+      "event_id": 5,
+      "raw_frame": 261,
+      "time_sec": 8.678,
+      "score": 0.9163,
+      "signals": [
+        "gripper_transition_supported",
+        "torso_joint_speed",
+        "right_force_change",
+        "left_pos_track_err",
+        "right_pos_track_err"
+      ],
+      "right_gripper_command": 19.217301814806646,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": {
+        "size": 1,
+        "start_frame": 261,
+        "end_frame": 261,
+        "context_score": 0.8051
+      },
+      "lerobot_episode_index": 11,
+      "lerobot_frame_index": 261
+    },
+    {
+      "event_id": 6,
+      "raw_frame": 320,
+      "time_sec": 10.636,
+      "score": 2.3251,
+      "signals": [
+        "right_force_change",
+        "right_force",
+        "left_pos_track_err",
+        "right_torque"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null,
+      "lerobot_episode_index": 11,
+      "lerobot_frame_index": 320
+    },
+    {
+      "event_id": 7,
+      "raw_frame": 482,
+      "time_sec": 16.021,
+      "score": 1.5476,
+      "signals": [
+        "right_rot_track_err",
+        "right_pos_track_err",
+        "right_force_change",
+        "right_torque"
+      ],
+      "right_gripper_command": 95.53040135601431,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null,
+      "lerobot_episode_index": 11,
+      "lerobot_frame_index": 482
+    },
+    {
+      "event_id": 8,
+      "raw_frame": 525,
+      "time_sec": 17.451,
+      "score": 2.0334,
+      "signals": [
+        "right_rot_track_err",
+        "right_torque",
+        "right_pos_track_err",
+        "right_force"
+      ],
+      "right_gripper_command": 38.860491312605625,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null,
+      "lerobot_episode_index": 11,
+      "lerobot_frame_index": 525
+    },
+    {
+      "event_id": 9,
+      "raw_frame": 540,
+      "time_sec": 17.948,
+      "score": 0.7888,
+      "signals": [
+        "right_rot_track_err",
+        "right_ee_ang_speed",
+        "right_torque",
+        "right_force"
+      ],
+      "right_gripper_command": 0.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null,
+      "lerobot_episode_index": 11,
+      "lerobot_frame_index": 540
+    },
+    {
+      "event_id": 10,
+      "raw_frame": 714,
+      "time_sec": 23.735,
+      "score": 1.0568,
+      "signals": [
+        "right_force_change",
+        "base_yaw_rate",
+        "left_force_change",
+        "base_speed"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null,
+      "lerobot_episode_index": 11,
+      "lerobot_frame_index": 714
+    },
+    {
+      "event_id": 11,
+      "raw_frame": 809,
+      "time_sec": 26.892,
+      "score": 0.1606,
+      "signals": [
+        "left_torque",
+        "left_force_change",
+        "base_yaw_rate",
+        "left_force"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null,
+      "lerobot_episode_index": 11,
+      "lerobot_frame_index": 809
+    },
+    {
+      "event_id": 12,
+      "raw_frame": 863,
+      "time_sec": 28.69,
+      "score": 0.5374,
+      "signals": [
+        "left_rot_track_err",
+        "right_torque",
+        "right_force_change",
+        "left_force"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null,
+      "lerobot_episode_index": 11,
+      "lerobot_frame_index": 863
+    },
+    {
+      "event_id": 13,
+      "raw_frame": 999,
+      "time_sec": 33.208,
+      "score": 0.1179,
+      "signals": [
+        "right_force_change",
+        "right_force",
+        "base_yaw_rate",
+        "left_pos_track_err"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null,
+      "lerobot_episode_index": 11,
+      "lerobot_frame_index": 999
+    },
+    {
+      "event_id": 14,
+      "raw_frame": 1044,
+      "time_sec": 34.703,
+      "score": 0.9219,
+      "signals": [
+        "right_force_change",
+        "right_force",
+        "torso_joint_speed",
+        "left_pos_track_err"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null,
+      "lerobot_episode_index": 11,
+      "lerobot_frame_index": 1044
+    },
+    {
+      "event_id": 15,
+      "raw_frame": 1121,
+      "time_sec": 37.266,
+      "score": 0.5773,
+      "signals": [
+        "right_force_change",
+        "left_rot_track_err",
+        "left_ee_speed",
+        "base_yaw_rate"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null,
+      "lerobot_episode_index": 11,
+      "lerobot_frame_index": 1121
+    },
+    {
+      "event_id": 16,
+      "raw_frame": 1181,
+      "time_sec": 39.257,
+      "score": 0.4438,
+      "signals": [
+        "right_ee_ang_speed",
+        "right_rot_track_err",
+        "left_torque",
+        "left_force"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null,
+      "lerobot_episode_index": 11,
+      "lerobot_frame_index": 1181
+    },
+    {
+      "event_id": 17,
+      "raw_frame": 1220,
+      "time_sec": 40.553,
+      "score": 0.7422,
+      "signals": [
+        "right_rot_track_err",
+        "left_force",
+        "left_force_change",
+        "left_torque"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null,
+      "lerobot_episode_index": 11,
+      "lerobot_frame_index": 1220
+    },
+    {
+      "event_id": 18,
+      "raw_frame": 1241,
+      "time_sec": 41.253,
+      "score": 1.365,
+      "signals": [
+        "right_ee_ang_speed",
+        "right_rot_track_err",
+        "right_pos_track_err",
+        "right_force"
+      ],
+      "right_gripper_command": 41.740819530152336,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null,
+      "lerobot_episode_index": 11,
+      "lerobot_frame_index": 1241
+    },
+    {
+      "event_id": 19,
+      "raw_frame": 1304,
+      "time_sec": 43.346,
+      "score": 0.0302,
+      "signals": [
+        "right_torque",
+        "left_ee_ang_speed",
+        "left_torque",
+        "left_rot_track_err"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null,
+      "lerobot_episode_index": 11,
+      "lerobot_frame_index": 1304
+    },
+    {
+      "event_id": 20,
+      "raw_frame": 1383,
+      "time_sec": 45.972,
+      "score": 2.0124,
+      "signals": [
+        "base_speed",
+        "base_yaw_rate",
+        "torso_joint_speed",
+        "left_ee_ang_speed"
+      ],
+      "right_gripper_command": 0.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null,
+      "lerobot_episode_index": 11,
+      "lerobot_frame_index": 1383
+    },
+    {
+      "event_id": 21,
+      "raw_frame": 1455,
+      "time_sec": 48.366,
+      "score": 2.3317,
+      "signals": [
+        "torso_joint_speed",
+        "left_pos_track_err",
+        "base_speed",
+        "right_pos_track_err"
+      ],
+      "right_gripper_command": 96.8289778013308,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null,
+      "lerobot_episode_index": 11,
+      "lerobot_frame_index": 1455
+    },
+    {
+      "event_id": 22,
+      "raw_frame": 1502,
+      "time_sec": 49.927,
+      "score": 0.8333,
+      "signals": [
+        "base_speed",
+        "base_yaw_rate",
+        "right_rot_track_err",
+        "right_force_change"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null,
+      "lerobot_episode_index": 11,
+      "lerobot_frame_index": 1502
+    },
+    {
+      "event_id": 23,
+      "raw_frame": 1525,
+      "time_sec": 50.692,
+      "score": 2.0017,
+      "signals": [
+        "base_speed",
+        "base_yaw_rate",
+        "torso_joint_speed",
+        "left_pos_track_err"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null,
+      "lerobot_episode_index": 11,
+      "lerobot_frame_index": 1525
+    },
+    {
+      "event_id": 24,
+      "raw_frame": 1565,
+      "time_sec": 52.021,
+      "score": 2.2239,
+      "signals": [
+        "base_yaw_rate",
+        "base_speed",
+        "right_force_change",
+        "left_ee_ang_speed"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null,
+      "lerobot_episode_index": 11,
+      "lerobot_frame_index": 1565
+    }
+  ],
+  "proposal_version": "v3.3.3",
+  "note": "Gripper edges are weak cues; rapid retry/re-grasp transitions are clustered and require non-gripper context. Semantic verification is still performed downstream."
+}

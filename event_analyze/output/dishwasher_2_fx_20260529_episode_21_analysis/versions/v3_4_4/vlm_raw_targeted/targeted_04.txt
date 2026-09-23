@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "in",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "cutlery_basket": "in",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "Cutlery basket is visible inside the dishwasher in head camera view throughout the entire window.",
+    "Basket position remains static relative to the dishwasher rack in head camera.",
+    "Right hand is not visible in right camera view (pointing at dishwasher interior) or head camera.",
+    "Left hand is not visible in left camera view (pointing at empty counter)."
+  ],
+  "window_quality": "good"
+}
+```

@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "out",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "state_after": {
+    "dish_rack": "out",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "confidence_before": {
+    "dish_rack": 1.0,
+    "right_hand": 0.4,
+    "left_hand": 0.4
+  },
+  "confidence_after": {
+    "dish_rack": 1.0,
+    "right_hand": 0.4,
+    "left_hand": 0.4
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "dish_rack is clearly visible in the open (out) position in head view frames throughout the sequence.",
+    "dish_rack does not change position or state (remains static) between frame 798 and 874.",
+    "right hand and left hand are not visible in the head view or left view frames.",
+    "right view shows a plate and fork, but the hands holding them are not fully visible or identifiable as distinct entities."
+  ],
+  "window_quality": "partial"
+}
+```

@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "moving_out",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "dish_rack": "out",
+    "right_hand": "free",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.90
+  },
+  "confidence_after": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.90
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "在窗口早期（t0-t4），head视角下右手臂持续接触并推动碗碟架向外移动。",
+    "在窗口早期，right视角显示碗碟架正在从洗碗机内部滑出，且右机械臂紧贴架体。",
+    "在窗口晚期（t6-t7），碗碟架已完全滑出至外部位置，不再处于移动状态。",
+    "在窗口晚期，右手已松开碗碟架并收回，处于非接触的自由状态。"
+  ],
+  "window_quality": "good"
+}
+```

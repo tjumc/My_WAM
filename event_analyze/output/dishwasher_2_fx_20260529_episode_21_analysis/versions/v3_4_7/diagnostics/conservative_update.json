@@ -1,0 +1,191 @@
+{
+  "annotation_version": "v3.4.6",
+  "pass1_count": 10,
+  "raw_pass2_count": 10,
+  "reconciled_count": 10,
+  "restored_pass1_anchors": [],
+  "directly_contradicted_pass1_anchors": [],
+  "pass2_additions": [],
+  "represented_pass1_anchors": [
+    {
+      "pass1": {
+        "skill_type": "navigate_to_station",
+        "entity": "robot_base",
+        "fine_entity": null,
+        "start_frame": 23,
+        "end_frame": 88,
+        "confidence": 0.95
+      },
+      "pass2": {
+        "skill_type": "navigate_to_station",
+        "entity": "robot_base",
+        "fine_entity": null,
+        "start_frame": 23,
+        "end_frame": 88,
+        "confidence": 0.95
+      }
+    },
+    {
+      "pass1": {
+        "skill_type": "close_dishwasher_door",
+        "entity": "door",
+        "fine_entity": null,
+        "start_frame": 89,
+        "end_frame": 89,
+        "confidence": 0.95
+      },
+      "pass2": {
+        "skill_type": "close_dishwasher_door",
+        "entity": "door",
+        "fine_entity": null,
+        "start_frame": 89,
+        "end_frame": 89,
+        "confidence": 0.95
+      }
+    },
+    {
+      "pass1": {
+        "skill_type": "open_dishwasher_door",
+        "entity": "door",
+        "fine_entity": null,
+        "start_frame": 124,
+        "end_frame": 124,
+        "confidence": 0.95
+      },
+      "pass2": {
+        "skill_type": "open_dishwasher_door",
+        "entity": "door",
+        "fine_entity": null,
+        "start_frame": 124,
+        "end_frame": 124,
+        "confidence": 0.95
+      }
+    },
+    {
+      "pass1": {
+        "skill_type": "pull_out_dish_rack",
+        "entity": "dish_rack",
+        "fine_entity": null,
+        "start_frame": 409,
+        "end_frame": 410,
+        "confidence": 0.76
+      },
+      "pass2": {
+        "skill_type": "pull_out_dish_rack",
+        "entity": "dish_rack",
+        "fine_entity": null,
+        "start_frame": 409,
+        "end_frame": 410,
+        "confidence": 0.76
+      }
+    },
+    {
+      "pass1": {
+        "skill_type": "place_utensil_in_cutlery_basket",
+        "entity": "utensil",
+        "fine_entity": "fork",
+        "start_frame": 548,
+        "end_frame": 650,
+        "confidence": 0.85
+      },
+      "pass2": {
+        "skill_type": "place_utensil_in_cutlery_basket",
+        "entity": "utensil",
+        "fine_entity": "fork",
+        "start_frame": 548,
+        "end_frame": 650,
+        "confidence": 0.85
+      }
+    },
+    {
+      "pass1": {
+        "skill_type": "place_utensil_in_cutlery_basket",
+        "entity": "utensil",
+        "fine_entity": "knife",
+        "start_frame": 560,
+        "end_frame": 572,
+        "confidence": 0.85
+      },
+      "pass2": {
+        "skill_type": "place_utensil_in_cutlery_basket",
+        "entity": "utensil",
+        "fine_entity": "knife",
+        "start_frame": 560,
+        "end_frame": 572,
+        "confidence": 0.85
+      }
+    },
+    {
+      "pass1": {
+        "skill_type": "place_utensil_in_cutlery_basket",
+        "entity": "utensil",
+        "fine_entity": "knife",
+        "start_frame": 698,
+        "end_frame": 834,
+        "confidence": 0.85
+      },
+      "pass2": {
+        "skill_type": "place_utensil_in_cutlery_basket",
+        "entity": "utensil",
+        "fine_entity": "knife",
+        "start_frame": 698,
+        "end_frame": 834,
+        "confidence": 0.85
+      }
+    },
+    {
+      "pass1": {
+        "skill_type": "place_plate_in_dish_rack",
+        "entity": "plate",
+        "fine_entity": null,
+        "start_frame": 1042,
+        "end_frame": 1563,
+        "confidence": 0.68
+      },
+      "pass2": {
+        "skill_type": "place_plate_in_dish_rack",
+        "entity": "plate",
+        "fine_entity": null,
+        "start_frame": 1042,
+        "end_frame": 1563,
+        "confidence": 0.68
+      }
+    },
+    {
+      "pass1": {
+        "skill_type": "push_in_dish_rack",
+        "entity": "dish_rack",
+        "fine_entity": null,
+        "start_frame": 1563,
+        "end_frame": 1563,
+        "confidence": 0.76
+      },
+      "pass2": {
+        "skill_type": "push_in_dish_rack",
+        "entity": "dish_rack",
+        "fine_entity": null,
+        "start_frame": 1563,
+        "end_frame": 1563,
+        "confidence": 0.76
+      }
+    },
+    {
+      "pass1": {
+        "skill_type": "close_dishwasher_door",
+        "entity": "door",
+        "fine_entity": null,
+        "start_frame": 1691,
+        "end_frame": 1691,
+        "confidence": 0.76
+      },
+      "pass2": {
+        "skill_type": "close_dishwasher_door",
+        "entity": "door",
+        "fine_entity": null,
+        "start_frame": 1691,
+        "end_frame": 1691,
+        "confidence": 0.76
+      }
+    }
+  ]
+}

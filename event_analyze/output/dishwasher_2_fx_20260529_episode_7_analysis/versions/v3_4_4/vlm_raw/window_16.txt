@@ -1,0 +1,61 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "holding_plate",
+    "left_hand": "contact_dish_rack",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "right_hand"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "uncertain",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "contact_dish_rack",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.3,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.1,
+    "fork_location": 0.1,
+    "plate_location": 0.95
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.3,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.1,
+    "fork_location": 0.1,
+    "plate_location": 0.95
+  },
+  "visible_entities": [
+    "dish_rack",
+    "right_hand",
+    "left_hand",
+    "plate"
+  ],
+  "evidence": [
+    "Right camera view clearly shows the robot's right hand holding a pink plate at the start of the window (f=1569).",
+    "Head camera view shows the dishwasher door is open and the lower dish rack is positioned inside the appliance.",
+    "By the end of the window (f=1659), the right hand has released the pink plate, and the plate is visible standing in the dish rack.",
+    "Left hand is visible in the head camera view near the dish rack throughout the sequence, appearing to stabilize or guide the loading process."
+  ],
+  "window_quality": "good"
+}
+```

@@ -1,0 +1,35 @@
+```json
+{
+  "state_before": {
+    "fork_location": "tabletop",
+    "right_hand": "free",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "fork_location": "uncertain",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "confidence_before": {
+    "fork_location": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.9
+  },
+  "confidence_after": {
+    "fork_location": 0.6,
+    "right_hand": 0.6,
+    "left_hand": 0.6
+  },
+  "evidence_time_indices": [
+    0,
+    7
+  ],
+  "evidence": [
+    "Frame 192 (t0) 显示叉子静置在粉色盘子内，位于桌面上。",
+    "Frame 192-209 期间，双手处于空闲状态，未接触叉子。",
+    "Frame 226 开始，相机视角移动并向下倾斜，导致桌面叉子移出视野。",
+    "Frame 310 时，视野主要被洗碗机内部占据，无法确认叉子是否已被放入或仍在手中。"
+  ],
+  "window_quality": "partial"
+}
+```

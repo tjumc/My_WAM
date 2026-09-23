@@ -1,0 +1,66 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "not_visible",
+    "right_hand": "approaching",
+    "left_hand": "approaching",
+    "knife_location": "tabletop",
+    "fork_location": "tabletop",
+    "plate_location": "tabletop"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "not_visible",
+    "right_hand": "contact_door",
+    "left_hand": "contact_door",
+    "knife_location": "tabletop",
+    "fork_location": "tabletop",
+    "plate_location": "tabletop"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.9,
+    "right_hand": 0.9,
+    "left_hand": 0.9,
+    "knife_location": 0.95,
+    "fork_location": 0.95,
+    "plate_location": 0.95
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.9,
+    "cutlery_basket": 0.9,
+    "right_hand": 0.85,
+    "left_hand": 0.85,
+    "knife_location": 0.95,
+    "fork_location": 0.95,
+    "plate_location": 0.95
+  },
+  "visible_entities": [
+    "dishwasher",
+    "dish_rack",
+    "pink_plate",
+    "knife",
+    "fork",
+    "robot_arms",
+    "right_hand",
+    "left_hand"
+  ],
+  "evidence": [
+    "Head view shows the dishwasher door is fully open with the rack inside at the start (f=100) and end (f=190) of the window.",
+    "Right view (f=145) clearly shows a pink plate with a knife and fork resting on the tabletop.",
+    "Head view shows the robot's left and right arms are positioned near the dishwasher opening throughout the sequence.",
+    "Right view (f=168, f=190) shows the robot's hands interacting with the bottom edge of the dishwasher door, obscuring the view of the rack.",
+    "The cutlery basket is not visible in the dishwasher interior or on the table."
+  ],
+  "window_quality": "good"
+}
+```

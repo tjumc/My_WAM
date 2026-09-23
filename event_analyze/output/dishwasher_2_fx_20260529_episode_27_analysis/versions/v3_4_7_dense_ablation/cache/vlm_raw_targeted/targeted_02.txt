@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "plate_location": "uncertain",
+    "right_hand": "approaching",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "plate_location": "uncertain",
+    "right_hand": "approaching",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "plate_location": 0.9,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "plate_location": 0.9,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "Right hand is visible in head view at f220 and f310, positioned in front of the dishwasher without holding a plate.",
+    "Right hand maintains an open, non-contact posture (approaching) throughout the sequence.",
+    "No plate is visible in the right hand or left hand in any frame.",
+    "Left hand is not visible in the provided frames."
+  ],
+  "window_quality": "good"
+}
+```

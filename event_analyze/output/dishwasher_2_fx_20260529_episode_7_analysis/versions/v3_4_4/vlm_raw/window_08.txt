@@ -1,0 +1,63 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "moving_out",
+    "cutlery_basket": "not_visible",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "uncertain",
+    "knife_location": "tabletop",
+    "fork_location": "tabletop",
+    "plate_location": "tabletop"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "moving_in",
+    "cutlery_basket": "not_visible",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "uncertain",
+    "knife_location": "tabletop",
+    "fork_location": "tabletop",
+    "plate_location": "tabletop"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.95,
+    "right_hand": 0.85,
+    "left_hand": 0.30,
+    "knife_location": 0.95,
+    "fork_location": 0.95,
+    "plate_location": 0.95
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.90,
+    "cutlery_basket": 0.95,
+    "right_hand": 0.85,
+    "left_hand": 0.30,
+    "knife_location": 0.95,
+    "fork_location": 0.95,
+    "plate_location": 0.95
+  },
+  "visible_entities": [
+    "dish_rack",
+    "plate",
+    "knife",
+    "fork",
+    "right_hand",
+    "door"
+  ],
+  "evidence": [
+    "Right arm is clearly visible interacting with the dish rack inside the dishwasher throughout the window.",
+    "Dish rack position changes from partially extended in early frames to retracted in late frames.",
+    "Plate, knife, and fork are clearly visible on the pink tray on the countertop in head and right views.",
+    "Left hand is not visible in the provided camera views, likely occluded or out of frame."
+  ],
+  "window_quality": "good"
+}
+```

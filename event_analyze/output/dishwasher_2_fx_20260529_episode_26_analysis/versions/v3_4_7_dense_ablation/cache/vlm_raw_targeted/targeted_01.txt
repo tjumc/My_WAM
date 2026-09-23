@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "door": "open",
+    "right_hand": "contact_door",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "door": "open",
+    "right_hand": "free",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "In early frames (e.g., head t0), the dishwasher door is fully open, and the right hand is holding the inner handle/edge of the door.",
+    "In late frames (e.g., head t7), the right hand has moved away from the door and is hovering freely in front of the dishwasher.",
+    "The door remains in the open position throughout the entire sequence, with no visible closing or opening motion.",
+    "The left hand remains visible and free in the left view (left t0, left t7) without contacting the door."
+  ],
+  "window_quality": "good"
+}
+```

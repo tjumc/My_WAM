@@ -1,0 +1,61 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "not_visible",
+    "right_hand": "holding_plate",
+    "left_hand": "contact_dish_rack",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "right_hand"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "moving_in",
+    "cutlery_basket": "not_visible",
+    "right_hand": "free",
+    "left_hand": "contact_dish_rack",
+    "knife_location": "uncertain",
+    "fork_location": "uncertain",
+    "plate_location": "dish_rack"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.90,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.30,
+    "fork_location": 0.30,
+    "plate_location": 0.95
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.90,
+    "right_hand": 0.95,
+    "left_hand": 0.95,
+    "knife_location": 0.30,
+    "fork_location": 0.30,
+    "plate_location": 0.90
+  },
+  "visible_entities": [
+    "dish_rack",
+    "plate",
+    "right_hand",
+    "left_hand"
+  ],
+  "evidence": [
+    "Right hand is holding a pink plate in early frames (f=1248~1270) and is empty in later frames (f=1316~1338).",
+    "The pink plate is visible inside the dish rack in later frames (f=1316~1338).",
+    "The dish rack is pulled out and visible in early frames, and is being pushed in (partially obscured) in later frames.",
+    "Left hand remains in contact with the dish rack structure throughout the window."
+  ],
+  "window_quality": "good"
+}
+```

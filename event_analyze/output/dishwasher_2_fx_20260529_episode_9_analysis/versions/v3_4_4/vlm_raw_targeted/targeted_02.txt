@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "door": "closing",
+    "right_hand": "contact_door",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "door": "open",
+    "right_hand": "free",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "door": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "door": 0.98,
+    "right_hand": 0.98,
+    "left_hand": 0.98
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "At t0 (339), the dishwasher door is partially closed, and the right hand is clearly in contact with the door edge.",
+    "Between t0 (339) and t3 (378), the right hand maintains contact while the door opens progressively.",
+    "At t4 (390), the door is fully open, and the right hand has released it and moved back into a free state.",
+    "The left hand remains in a free/open state throughout the entire sequence."
+  ],
+  "window_quality": "good"
+}
+```

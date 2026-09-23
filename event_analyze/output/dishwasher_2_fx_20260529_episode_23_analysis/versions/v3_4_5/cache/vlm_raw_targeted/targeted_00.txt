@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "plate_location": "tabletop",
+    "right_hand": "free",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "plate_location": "tabletop",
+    "right_hand": "free",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "plate_location": 0.95,
+    "right_hand": 0.90,
+    "left_hand": 0.90
+  },
+  "confidence_after": {
+    "plate_location": 0.95,
+    "right_hand": 0.90,
+    "left_hand": 0.90
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "在头部视角（head）的早期帧（f436）和晚期帧（f542）中，粉色盘子始终位于台面上方，位置未变。",
+    "在头部视角中，右机械臂（right arm）从f436到f542始终位于洗碗机内部或边缘，未接触台面上的盘子。",
+    "在右侧视角（right）中，机械手正在操作洗碗机的碗篮，未持有盘子。",
+    "左侧视角（left）显示台面为空，未观察到盘子或手部交互。"
+  ],
+  "window_quality": "good"
+}
+```

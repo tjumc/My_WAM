@@ -1,0 +1,166 @@
+{
+  "annotation_version": "v3.4.4",
+  "task_family": "dishwasher_loading",
+  "num_requests": 8,
+  "policy": {
+    "enabled": true,
+    "max_requests": 8,
+    "window_sec": 4.5,
+    "stride_sec": 2.5,
+    "search_horizon_sec": 8,
+    "padding_sec": 1.25,
+    "num_samples": 8,
+    "min_confidence_to_merge": 0.65,
+    "triggers": [
+      "unresolved_hand_object_ownership",
+      "rejected_visual_interaction_evidence",
+      "receptacle_usage_without_ready_lifecycle",
+      "unfinished_expected_final_lifecycle",
+      "accepted_container_without_direction_evidence"
+    ],
+    "note": "Targeted queries are triggered by generic reasoning inconsistencies. Fine identity uncertainty that is already safely handled by semantic backoff is not itself a trigger."
+  },
+  "requests": [
+    {
+      "kind": "unfinished_lifecycle",
+      "priority": 95,
+      "target_entities": [
+        "door"
+      ],
+      "start_frame": 189,
+      "end_frame": 323,
+      "reason": "schema expected final state 'closed', but accepted reasoning ends at 'open'",
+      "source": {
+        "entity": "door",
+        "observed_final_state": "open",
+        "expected_final_state": "closed",
+        "last_relevant_use_end": 204
+      },
+      "request_id": 0
+    },
+    {
+      "kind": "unfinished_lifecycle",
+      "priority": 95,
+      "target_entities": [
+        "door"
+      ],
+      "start_frame": 264,
+      "end_frame": 398,
+      "reason": "schema expected final state 'closed', but accepted reasoning ends at 'open'",
+      "source": {
+        "entity": "door",
+        "observed_final_state": "open",
+        "expected_final_state": "closed",
+        "last_relevant_use_end": 204
+      },
+      "request_id": 1
+    },
+    {
+      "kind": "unfinished_lifecycle",
+      "priority": 95,
+      "target_entities": [
+        "door"
+      ],
+      "start_frame": 339,
+      "end_frame": 429,
+      "reason": "schema expected final state 'closed', but accepted reasoning ends at 'open'",
+      "source": {
+        "entity": "door",
+        "observed_final_state": "open",
+        "expected_final_state": "closed",
+        "last_relevant_use_end": 204
+      },
+      "request_id": 2
+    },
+    {
+      "kind": "receptacle_usage_without_ready_lifecycle",
+      "priority": 98,
+      "target_entities": [
+        "cutlery_basket"
+      ],
+      "start_frame": 656,
+      "end_frame": 790,
+      "reason": "portable-object placement evidence uses receptacle while accepted lifecycle state is 'unknown', not usage state 'out'",
+      "source": {
+        "entity": "cutlery_basket",
+        "observed_state_before_use": "unknown",
+        "usage_state": "out",
+        "first_placement_frame": 896
+      },
+      "request_id": 3
+    },
+    {
+      "kind": "receptacle_usage_without_ready_lifecycle",
+      "priority": 98,
+      "target_entities": [
+        "cutlery_basket"
+      ],
+      "start_frame": 731,
+      "end_frame": 865,
+      "reason": "portable-object placement evidence uses receptacle while accepted lifecycle state is 'unknown', not usage state 'out'",
+      "source": {
+        "entity": "cutlery_basket",
+        "observed_state_before_use": "unknown",
+        "usage_state": "out",
+        "first_placement_frame": 896
+      },
+      "request_id": 4
+    },
+    {
+      "kind": "receptacle_usage_without_ready_lifecycle",
+      "priority": 98,
+      "target_entities": [
+        "cutlery_basket"
+      ],
+      "start_frame": 806,
+      "end_frame": 934,
+      "reason": "portable-object placement evidence uses receptacle while accepted lifecycle state is 'unknown', not usage state 'out'",
+      "source": {
+        "entity": "cutlery_basket",
+        "observed_state_before_use": "unknown",
+        "usage_state": "out",
+        "first_placement_frame": 896
+      },
+      "request_id": 5
+    },
+    {
+      "kind": "unfinished_lifecycle",
+      "priority": 95,
+      "target_entities": [
+        "cutlery_basket"
+      ],
+      "start_frame": 1183,
+      "end_frame": 1317,
+      "reason": "schema expected final state 'in', but accepted reasoning ends at 'unknown'",
+      "source": {
+        "entity": "cutlery_basket",
+        "observed_final_state": "unknown",
+        "expected_final_state": "in",
+        "last_relevant_use_end": 1198
+      },
+      "request_id": 6
+    },
+    {
+      "kind": "unfinished_lifecycle",
+      "priority": 95,
+      "target_entities": [
+        "cutlery_basket"
+      ],
+      "start_frame": 1258,
+      "end_frame": 1392,
+      "reason": "schema expected final state 'in', but accepted reasoning ends at 'unknown'",
+      "source": {
+        "entity": "cutlery_basket",
+        "observed_final_state": "unknown",
+        "expected_final_state": "in",
+        "last_relevant_use_end": 1198
+      },
+      "request_id": 7
+    }
+  ],
+  "notes": [
+    "Manual ground truth is never read.",
+    "Reliable semantic backoff alone does not trigger re-observation.",
+    "Requests are generated only when additional visual evidence can change semantic or temporal reasoning."
+  ]
+}

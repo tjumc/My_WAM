@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "out",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "dish_rack": "in",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "dish_rack": 1.0,
+    "right_hand": 1.0,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "dish_rack": 1.0,
+    "right_hand": 1.0,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "在 t0 (1475) 时，dish_rack 明显处于拉出状态，右臂末端执行器接触并握住 rack 边缘。",
+    "在 t1-t2 (1492-1510) 期间，rack 逐渐被推入，右臂跟随移动，rack 逐渐移出视野。",
+    "在 t3-t7 (1527-1596) 期间，rack 完全位于洗碗机内部，不再可见。",
+    "左臂在整个过程中保持抬起姿势，未接触任何物体，处于 free 状态。"
+  ],
+  "window_quality": "good"
+}
+```

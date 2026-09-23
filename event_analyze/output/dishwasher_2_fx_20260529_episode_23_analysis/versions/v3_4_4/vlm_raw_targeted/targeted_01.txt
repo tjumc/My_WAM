@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "plate_location": "tabletop",
+    "right_hand": "approaching",
+    "left_hand": "approaching"
+  },
+  "state_after": {
+    "plate_location": "tabletop",
+    "right_hand": "approaching",
+    "left_hand": "approaching"
+  },
+  "confidence_before": {
+    "plate_location": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.9
+  },
+  "confidence_after": {
+    "plate_location": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.9
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "Plate is visible on the upper shelf (tabletop) in the top row throughout the entire sequence.",
+    "Right and left hands are visible in the head view approaching the dishwasher area.",
+    "No visual evidence of the plate being picked up or moved from the shelf.",
+    "Right hand view shows interior of dishwasher rack, no plate in hand."
+  ],
+  "window_quality": "good"
+}
+```

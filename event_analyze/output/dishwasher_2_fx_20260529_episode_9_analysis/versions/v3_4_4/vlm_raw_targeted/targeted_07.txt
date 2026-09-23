@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "moving_out",
+    "right_hand": "pulling_cutlery_basket",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "cutlery_basket": "out",
+    "right_hand": "free",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.90,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "In frames 1258-1354, the right hand maintains contact with the cutlery basket while it moves outward from the dishwasher rack.",
+    "By frame 1392, the cutlery basket is no longer visible in the dishwasher view, indicating it has been fully removed.",
+    "The right hand releases the basket around frame 1373-1392, returning to a free state.",
+    "The left hand remains in the background without interacting with the basket throughout the sequence."
+  ],
+  "window_quality": "good"
+}
+```

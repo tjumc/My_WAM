@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "moving_in",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "state_after": {
+    "dish_rack": "uncertain",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "confidence_before": {
+    "dish_rack": 0.95,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "confidence_after": {
+    "dish_rack": 0.0,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "evidence_time_indices": [0, 1, 2, 3],
+  "evidence": [
+    "Head view (f1586-f1597) shows the dish rack drawer sliding inwards into the dishwasher.",
+    "Right view (f1608-f1619) shows the drawer continuing its inward motion relative to the frame.",
+    "Right view (f1629) shows the drawer has fully stopped moving and is stationary.",
+    "Right view (f1640-f1662) shows the drawer is stationary and the camera angle changes, making the rack's state relative to the start ambiguous."
+  ],
+  "window_quality": "partial"
+}
+```

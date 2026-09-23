@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "knife_location": "right_hand",
+    "right_hand": "holding_knife",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "knife_location": "tabletop",
+    "right_hand": "free",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "knife_location": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.90
+  },
+  "confidence_after": {
+    "knife_location": 0.90,
+    "right_hand": 0.85,
+    "left_hand": 0.90
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "At frame 669 (t0), the right hand is clearly holding a knife, visible in the bottom row (right camera).",
+    "At frame 777 (t7), the knife is resting on the pink plate on the tabletop, no longer held by the hand.",
+    "At frame 777 (t7), the right hand is visible in the bottom row and is open (free), not holding the knife.",
+    "The left hand is not visible in any of the provided frames."
+  ],
+  "window_quality": "good"
+}
+```

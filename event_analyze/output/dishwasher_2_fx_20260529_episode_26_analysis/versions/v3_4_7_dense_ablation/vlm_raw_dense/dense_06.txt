@@ -1,0 +1,16 @@
+```json
+{
+  "start_state": "in",
+  "end_state": "in",
+  "relative_motion": "stationary",
+  "right_hand_relation": "holding_utensil",
+  "confidence": 0.95,
+  "evidence_time_indices": [0, 1, 2, 3],
+  "evidence": [
+    "t0-t2 (frames 858-888): 机器人右手抓取粉色盘子，位于洗碗机外部的台面上，此时餐具篮（cutlery_basket）位于洗碗机内部，保持静止。",
+    "t3-t4 (frames 903-918): 机器人将盘子移入洗碗机内部，右手位置改变，但餐具篮相对于洗碗机主体和下方的碗篮（dish_rack）位置未发生改变。",
+    "t5-t9 (frames 932-992): 盘子已被放置在内部，机器人手部在篮内进行操作，餐具篮在整个序列中始终固定在洗碗机内部，未发生相对于洗碗机主体的位移。"
+  ],
+  "visibility": "good"
+}
+```

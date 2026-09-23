@@ -1,0 +1,61 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "out",
+    "right_hand": "contact_cutlery_basket",
+    "left_hand": "not_visible",
+    "knife_location": "cutlery_basket",
+    "fork_location": "cutlery_basket",
+    "plate_location": "other"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "in",
+    "cutlery_basket": "moving_in",
+    "right_hand": "contact_cutlery_basket",
+    "left_hand": "not_visible",
+    "knife_location": "cutlery_basket",
+    "fork_location": "cutlery_basket",
+    "plate_location": "other"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.95,
+    "right_hand": 0.90,
+    "left_hand": 0.95,
+    "knife_location": 0.85,
+    "fork_location": 0.85,
+    "plate_location": 0.50
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.90,
+    "right_hand": 0.90,
+    "left_hand": 0.95,
+    "knife_location": 0.85,
+    "fork_location": 0.85,
+    "plate_location": 0.50
+  },
+  "visible_entities": [
+    "dish_rack",
+    "cutlery_basket",
+    "right_hand",
+    "door"
+  ],
+  "evidence": [
+    "Head view shows the dishwasher door is open and the main rack (dish_rack) is stationary in the 'in' position.",
+    "Right view shows the cutlery basket is pulled out at the start (f=844) and is being pushed back in by the right hand by the end (f=934).",
+    "Right hand is clearly in contact with the cutlery basket throughout the window, guiding it into the machine.",
+    "Knife and fork are visible inside the cutlery basket, but no plate is visible in the immediate interaction area."
+  ],
+  "window_quality": "good"
+}
+```

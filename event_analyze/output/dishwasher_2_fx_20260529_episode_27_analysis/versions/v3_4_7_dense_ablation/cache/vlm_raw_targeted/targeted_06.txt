@@ -1,0 +1,35 @@
+```json
+{
+  "state_before": {
+    "door": "open",
+    "right_hand": "contact_door",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "door": "closed",
+    "right_hand": "contact_door",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "door": 1.0,
+    "right_hand": 1.0,
+    "left_hand": 1.0
+  },
+  "confidence_after": {
+    "door": 1.0,
+    "right_hand": 1.0,
+    "left_hand": 1.0
+  },
+  "evidence_time_indices": [
+    0,
+    7
+  ],
+  "evidence": [
+    "Frame 1520 (head t0) shows the dishwasher door is fully open, exposing the interior racks.",
+    "Frame 1520 (head t0) shows the right arm extended with the gripper holding the edge of the open door.",
+    "Frame 1628 (head t7) shows the dishwasher door is fully flush with the surrounding cabinetry, indicating a closed state.",
+    "Frame 1628 (head t7) shows the right arm remains in contact with the closed door panel."
+  ],
+  "window_quality": "good"
+}
+```

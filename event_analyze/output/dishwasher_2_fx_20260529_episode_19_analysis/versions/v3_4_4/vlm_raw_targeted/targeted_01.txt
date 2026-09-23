@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "not_visible",
+    "right_hand": "approaching",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "cutlery_basket": "uncertain",
+    "right_hand": "contact_cutlery_basket",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.9,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.7,
+    "right_hand": 0.9,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "Early frames (head t0, right t0) show the dishwasher interior is empty; no cutlery basket is visible.",
+    "Right hand is clearly visible in head and right views approaching the open dishwasher cavity.",
+    "Late frames (head t7, right t7) show the right hand inserted deep into the dishwasher, obscuring the view of the basket.",
+    "Due to occlusion by the arm in late frames, the basket's state (in/moving) cannot be visually confirmed."
+  ],
+  "window_quality": "partial"
+}
+```

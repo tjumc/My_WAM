@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "moving_out",
+    "right_hand": "pulling_cutlery_basket",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "cutlery_basket": "out",
+    "right_hand": "free",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.9
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.9,
+    "left_hand": 0.9
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "Right hand is seen grasping the handle of the cutlery basket in the early frames (f842-f861).",
+    "The cutlery basket slides progressively outward from the dishwasher in frames f842 through f919.",
+    "By frame f957, the cutlery basket is fully extended outside the dishwasher.",
+    "In the final frame (f976), the right hand is no longer in contact with the basket."
+  ],
+  "window_quality": "good"
+}
+```

@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "out",
+    "right_hand": "approaching",
+    "left_hand": "contact_dish_rack"
+  },
+  "state_after": {
+    "dish_rack": "out",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "contact_dish_rack"
+  },
+  "confidence_before": {
+    "dish_rack": 0.95,
+    "right_hand": 0.90,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "dish_rack在窗口全程保持拉开状态（out），未发生移动。",
+    "left_hand在早期（f1154）已接触并握住dish_rack边缘。",
+    "right_hand在早期（f1154）位于dish_rack前方，未接触。",
+    "right_hand在晚期（f1230）移动至dish_rack边缘并接触。"
+  ],
+  "window_quality": "good"
+}
+```

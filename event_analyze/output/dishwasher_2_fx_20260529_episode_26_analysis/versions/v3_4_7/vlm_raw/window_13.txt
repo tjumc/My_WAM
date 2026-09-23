@@ -1,0 +1,62 @@
+```json
+{
+  "state_before": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "out",
+    "cutlery_basket": "not_visible",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible",
+    "knife_location": "dish_rack",
+    "fork_location": "dish_rack",
+    "plate_location": "uncertain"
+  },
+  "state_after": {
+    "robot_location": "at_station",
+    "door": "open",
+    "dish_rack": "moving_in",
+    "cutlery_basket": "not_visible",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible",
+    "knife_location": "dish_rack",
+    "fork_location": "dish_rack",
+    "plate_location": "uncertain"
+  },
+  "confidence_before": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.90,
+    "right_hand": 0.90,
+    "left_hand": 0.90,
+    "knife_location": 0.85,
+    "fork_location": 0.85,
+    "plate_location": 0.0
+  },
+  "confidence_after": {
+    "robot_location": 0.95,
+    "door": 0.95,
+    "dish_rack": 0.95,
+    "cutlery_basket": 0.90,
+    "right_hand": 0.90,
+    "left_hand": 0.90,
+    "knife_location": 0.85,
+    "fork_location": 0.85,
+    "plate_location": 0.0
+  },
+  "visible_entities": [
+    "dish_rack",
+    "right_hand",
+    "knife",
+    "fork",
+    "dishwasher_door"
+  ],
+  "evidence": [
+    "Right hand gripper is physically grasping the front edge of the dish rack throughout the window.",
+    "Head camera view shows the dish rack moving from an extended position towards the dishwasher interior between f=1029 and f=1119.",
+    "Right camera view confirms the dish rack is pulled out and contains utensils (knives/forks) in the slots.",
+    "Left hand is not visible in the frame during this sequence."
+  ],
+  "window_quality": "good"
+}
+```
