@@ -93,3 +93,62 @@ bash versions/v3_4_4/run.sh ...
 ```
 
 后续版本保持 `GT` 不变，这样同一条实验命令只需要替换版本目录即可。
+
+
+## 批量多轨迹评估
+
+批量工具只负责调度，单条轨迹仍然调用现有
+`versions/<version>/run.sh`，不会复制一套分析逻辑。
+
+首先在数据所在服务器上扫描并冻结 dataset split：
+
+```bash
+python evaluation/discover_batch.py
+```
+
+默认扫描：
+
+```text
+/efs/share/1919650160032350208/efs_backup/nas-backup/compressed_data/astribot/dishwasher_2_fx_20260529_compressed/
+```
+
+生成：
+
+```text
+batches/dishwasher_v1_manifest.json
+```
+
+默认划分：
+
+```text
+development: episode26, episode27
+validation:  6 条
+heldout:     6 条
+reserve:     其余全部
+```
+
+生成后应检查并提交该 manifest。后续版本必须复用同一 manifest，
+不要根据模型结果重新划分。
+
+先 dry-run：
+
+```bash
+python evaluation/run_batch.py \
+  batches/dishwasher_v1_manifest.json \
+  --split validation \
+  --dry-run
+```
+
+实际运行：
+
+```bash
+python evaluation/run_batch.py \
+  batches/dishwasher_v1_manifest.json \
+  --split validation
+```
+
+默认串行执行。批量运行结束后会自动汇总 compact results，包括
+policy sequence 指标、已有 frame-level GT 的 temporal 指标，以及
+V3.4.4+ 的 ambiguity / targeted-query / merged-observation 成本。
+
+完整说明见 `batches/README.md`。

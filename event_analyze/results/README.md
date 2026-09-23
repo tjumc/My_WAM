@@ -43,3 +43,18 @@ Older files already committed under `event_analyze/output/` remain in Git
 history and may still be tracked in the current tree. The new ignore rule is
 intentionally non-destructive: it prevents new untracked runtime artifacts from
 being added, but it does not rewrite history or delete old experiments.
+
+
+## Batch summaries
+
+Frozen multi-trajectory experiments use:
+
+```text
+results/batches/<batch_name>/<version>/<split>/
+├── batch_summary.json
+├── episode_metrics.json
+└── failure_cases.json
+```
+
+These files are compact Git-tracked experiment records. Heavy per-episode logs
+remain under `output/batch_logs/`.
