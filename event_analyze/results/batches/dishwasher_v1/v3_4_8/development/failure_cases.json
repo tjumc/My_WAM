@@ -1,0 +1,48 @@
+{
+  "failures": [
+    {
+      "episode_id": 26,
+      "episode": "dishwasher_2_fx_20260529_episode_26",
+      "split": "development",
+      "reasons": [
+        "run_failed",
+        "missing_result",
+        "non_exact_policy_sequence"
+      ],
+      "policy_sequence": {
+        "pred_n": 0,
+        "gt_n": 10,
+        "matched": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "edit_distance": 10,
+        "exact": false
+      },
+      "skill_sequence": [],
+      "log": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/batch_logs/dishwasher_v1/v3_4_8/development/dishwasher_2_fx_20260529_episode_26.log"
+    },
+    {
+      "episode_id": 27,
+      "episode": "dishwasher_2_fx_20260529_episode_27",
+      "split": "development",
+      "reasons": [
+        "run_failed",
+        "missing_result",
+        "non_exact_policy_sequence"
+      ],
+      "policy_sequence": {
+        "pred_n": 0,
+        "gt_n": 10,
+        "matched": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "edit_distance": 10,
+        "exact": false
+      },
+      "skill_sequence": [],
+      "log": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/batch_logs/dishwasher_v1/v3_4_8/development/dishwasher_2_fx_20260529_episode_27.log"
+    }
+  ]
+}

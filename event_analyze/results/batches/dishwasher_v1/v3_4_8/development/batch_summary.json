@@ -1,0 +1,48 @@
+{
+  "batch_name": "dishwasher_v1",
+  "dataset_fingerprint": "84c2a1b5952e6d8e39a35172062aa2b263ec5e9b06688048308ebafa21b559b0",
+  "version": "v3_4_8",
+  "split": "development",
+  "aggregate": {
+    "num_episodes": 2,
+    "num_results": 0,
+    "num_with_gt": 2,
+    "policy_sequence": {
+      "mean_precision": 0.0,
+      "mean_recall": 0.0,
+      "mean_f1": 0.0,
+      "mean_edit_distance": 10.0,
+      "exact_rate": 0.0
+    },
+    "temporal": {
+      "semantic_miou": null,
+      "semantic_boundary_mae_sec": null,
+      "semantic_boundary_f1_1s": null,
+      "semantic_boundary_f1_2s": null,
+      "core_miou": null,
+      "core_boundary_mae_sec": null
+    },
+    "closed_loop_perception": {
+      "total_ambiguity_requests": 0,
+      "total_targeted_queries": 0,
+      "total_merged_targeted_observations": 0,
+      "mean_targeted_queries_per_episode": null
+    },
+    "conservative_assimilation": {
+      "total_restored_pass1_anchors": 0,
+      "total_directly_contradicted_pass1_anchors": 0,
+      "total_pass2_additions": 0
+    },
+    "final_consistency": {
+      "total_dropped_phases": 0,
+      "total_clamped_phases": 0,
+      "total_lifecycle_violations": 0,
+      "total_latent_state_inferences": 0,
+      "total_latent_usage_state_inferences": 0,
+      "total_gratuitous_lifecycle_cycles": 0,
+      "total_expected_final_state_violations": 0,
+      "num_frontier_resolved_episodes": 0,
+      "num_unresolved_episodes": 0
+    }
+  }
+}
