@@ -1,0 +1,84 @@
+{
+  "annotation_version": "v3.4.7",
+  "episode": "dishwasher_2_fx_20260529_episode_21",
+  "task_goal": "put the dish into the dishwasher",
+  "task_family": "dishwasher_loading",
+  "phase_count": 8,
+  "skill_sequence": [
+    "navigate_to_station",
+    "open_dishwasher_door",
+    "pull_out_dish_rack",
+    "place_utensil_in_cutlery_basket",
+    "place_utensil_in_cutlery_basket",
+    "place_plate_in_dish_rack",
+    "push_in_dish_rack",
+    "close_dishwasher_door"
+  ],
+  "task_end_raw_frame": 1707,
+  "phases": [
+    {
+      "skill_type": "navigate_to_station",
+      "raw_start_frame": 23,
+      "raw_end_frame": 88,
+      "provisional_start_frame": 23,
+      "provisional_end_frame": 88,
+      "confidence": 0.95
+    },
+    {
+      "skill_type": "open_dishwasher_door",
+      "raw_start_frame": 119,
+      "raw_end_frame": 142,
+      "provisional_start_frame": 124,
+      "provisional_end_frame": 124,
+      "confidence": 0.95
+    },
+    {
+      "skill_type": "pull_out_dish_rack",
+      "raw_start_frame": 390,
+      "raw_end_frame": 423,
+      "provisional_start_frame": 409,
+      "provisional_end_frame": 410,
+      "confidence": 0.76
+    },
+    {
+      "skill_type": "place_utensil_in_cutlery_basket",
+      "raw_start_frame": 548,
+      "raw_end_frame": 580,
+      "provisional_start_frame": 548,
+      "provisional_end_frame": 650,
+      "confidence": 0.85
+    },
+    {
+      "skill_type": "place_utensil_in_cutlery_basket",
+      "raw_start_frame": 679,
+      "raw_end_frame": 834,
+      "provisional_start_frame": 698,
+      "provisional_end_frame": 834,
+      "confidence": 0.85
+    },
+    {
+      "skill_type": "place_plate_in_dish_rack",
+      "raw_start_frame": 1042,
+      "raw_end_frame": 1557,
+      "provisional_start_frame": 1042,
+      "provisional_end_frame": 1563,
+      "confidence": 0.68
+    },
+    {
+      "skill_type": "push_in_dish_rack",
+      "raw_start_frame": 1558,
+      "raw_end_frame": 1575,
+      "provisional_start_frame": 1563,
+      "provisional_end_frame": 1563,
+      "confidence": 0.76
+    },
+    {
+      "skill_type": "close_dishwasher_door",
+      "raw_start_frame": 1672,
+      "raw_end_frame": 1707,
+      "provisional_start_frame": 1691,
+      "provisional_end_frame": 1691,
+      "confidence": 0.76
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "failures": [
+    {
+      "episode_id": 6,
+      "episode": "dishwasher_2_fx_20260529_episode_6",
+      "split": "validation",
+      "reasons": [
+        "non_exact_policy_sequence",
+        "internal_consistency_unresolved"
+      ],
+      "policy_sequence": {
+        "pred_n": 2,
+        "gt_n": 10,
+        "matched": 2,
+        "precision": 1.0,
+        "recall": 0.2,
+        "f1": 0.33333333333333337,
+        "edit_distance": 8,
+        "exact": false
+      },
+      "skill_sequence": [
+        "place_plate_in_dish_rack",
+        "close_dishwasher_door"
+      ],
+      "log": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/batch_logs/dishwasher_v1/v3_4_7/validation/dishwasher_2_fx_20260529_episode_6.log"
+    },
+    {
+      "episode_id": 7,
+      "episode": "dishwasher_2_fx_20260529_episode_7",
+      "split": "validation",
+      "reasons": [
+        "non_exact_policy_sequence",
+        "internal_consistency_unresolved"
+      ],
+      "policy_sequence": {
+        "pred_n": 7,
+        "gt_n": 10,
+        "matched": 7,
+        "precision": 1.0,
+        "recall": 0.7,
+        "f1": 0.8235294117647058,
+        "edit_distance": 3,
+        "exact": false
+      },
+      "skill_sequence": [
+        "navigate_to_station",
+        "open_dishwasher_door",
+        "pull_out_dish_rack",
+        "pull_out_cutlery_basket",
+        "place_utensil_in_cutlery_basket",
+        "place_plate_in_dish_rack",
+        "push_in_dish_rack"
+      ],
+      "log": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/batch_logs/dishwasher_v1/v3_4_7/validation/dishwasher_2_fx_20260529_episode_7.log"
+    },
+    {
+      "episode_id": 9,
+      "episode": "dishwasher_2_fx_20260529_episode_9",
+      "split": "validation",
+      "reasons": [
+        "non_exact_policy_sequence",
+        "internal_consistency_unresolved"
+      ],
+      "policy_sequence": {
+        "pred_n": 6,
+        "gt_n": 10,
+        "matched": 6,
+        "precision": 1.0,
+        "recall": 0.6,
+        "f1": 0.7499999999999999,
+        "edit_distance": 4,
+        "exact": false
+      },
+      "skill_sequence": [
+        "navigate_to_station",
+        "open_dishwasher_door",
+        "pull_out_dish_rack",
+        "place_utensil_in_cutlery_basket",
+        "place_utensil_in_cutlery_basket",
+        "place_plate_in_dish_rack"
+      ],
+      "log": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/batch_logs/dishwasher_v1/v3_4_7/validation/dishwasher_2_fx_20260529_episode_9.log"
+    },
+    {
+      "episode_id": 19,
+      "episode": "dishwasher_2_fx_20260529_episode_19",
+      "split": "validation",
+      "reasons": [
+        "non_exact_policy_sequence",
+        "internal_consistency_unresolved"
+      ],
+      "policy_sequence": {
+        "pred_n": 5,
+        "gt_n": 10,
+        "matched": 5,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "edit_distance": 5,
+        "exact": false
+      },
+      "skill_sequence": [
+        "navigate_to_station",
+        "open_dishwasher_door",
+        "place_utensil_in_cutlery_basket",
+        "place_plate_in_dish_rack",
+        "push_in_dish_rack"
+      ],
+      "log": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/batch_logs/dishwasher_v1/v3_4_7/validation/dishwasher_2_fx_20260529_episode_19.log"
+    },
+    {
+      "episode_id": 21,
+      "episode": "dishwasher_2_fx_20260529_episode_21",
+      "split": "validation",
+      "reasons": [
+        "non_exact_policy_sequence",
+        "internal_consistency_unresolved"
+      ],
+      "policy_sequence": {
+        "pred_n": 8,
+        "gt_n": 10,
+        "matched": 8,
+        "precision": 1.0,
+        "recall": 0.8,
+        "f1": 0.888888888888889,
+        "edit_distance": 2,
+        "exact": false
+      },
+      "skill_sequence": [
+        "navigate_to_station",
+        "open_dishwasher_door",
+        "pull_out_dish_rack",
+        "place_utensil_in_cutlery_basket",
+        "place_utensil_in_cutlery_basket",
+        "place_plate_in_dish_rack",
+        "push_in_dish_rack",
+        "close_dishwasher_door"
+      ],
+      "log": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/batch_logs/dishwasher_v1/v3_4_7/validation/dishwasher_2_fx_20260529_episode_21.log"
+    },
+    {
+      "episode_id": 23,
+      "episode": "dishwasher_2_fx_20260529_episode_23",
+      "split": "validation",
+      "reasons": [
+        "non_exact_policy_sequence"
+      ],
+      "policy_sequence": {
+        "pred_n": 8,
+        "gt_n": 10,
+        "matched": 7,
+        "precision": 0.875,
+        "recall": 0.7,
+        "f1": 0.7777777777777777,
+        "edit_distance": 3,
+        "exact": false
+      },
+      "skill_sequence": [
+        "navigate_to_station",
+        "pull_out_dish_rack",
+        "pull_out_cutlery_basket",
+        "place_utensil_in_cutlery_basket",
+        "place_plate_in_dish_rack",
+        "push_in_cutlery_basket",
+        "push_in_dish_rack",
+        "close_dishwasher_door"
+      ],
+      "log": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/batch_logs/dishwasher_v1/v3_4_7/validation/dishwasher_2_fx_20260529_episode_23.log"
+    }
+  ]
+}
