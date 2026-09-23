@@ -1,0 +1,598 @@
+$ bash /efs/share/1919650160032350208/users/machong14/wam/event_analyze/versions/v3_4_4/run.sh /efs/share/1919650160032350208/efs_backup/nas-backup/compressed_data/astribot/dishwasher_2_fx_20260529_compressed/dishwasher_2_fx_20260529_episode_23.hdf5 /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_23_analysis put the dish into the dishwasher   /efs/share/1919650160032350208/users/machong14/wam/event_analyze/ontologies/dishwasher_loading.json
+V3.4.4 task schema: /efs/share/1919650160032350208/users/machong14/wam/event_analyze/ontologies/dishwasher_loading.json
+{
+  "source_hdf5": "dishwasher_2_fx_20260529_episode_23.hdf5",
+  "num_raw_frames": 1769,
+  "duration_sec": 58.774,
+  "fps_nominal": 30.0,
+  "feature_names": [
+    "base_speed",
+    "base_yaw_rate",
+    "torso_joint_speed",
+    "left_ee_speed",
+    "right_ee_speed",
+    "left_ee_ang_speed",
+    "right_ee_ang_speed",
+    "left_gripper_cmd",
+    "right_gripper_cmd",
+    "left_force",
+    "right_force",
+    "left_torque",
+    "right_torque",
+    "left_pos_track_err",
+    "right_pos_track_err",
+    "left_rot_track_err",
+    "right_rot_track_err",
+    "left_force_change",
+    "right_force_change"
+  ],
+  "change_windows_frames": [
+    9,
+    30,
+    60
+  ],
+  "candidate_events": [
+    {
+      "event_id": 0,
+      "raw_frame": 50,
+      "time_sec": 1.663,
+      "score": 1.3041,
+      "signals": [
+        "base_speed",
+        "base_yaw_rate",
+        "right_force_change",
+        "right_torque"
+      ],
+      "right_gripper_command": 0.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 1,
+      "raw_frame": 145,
+      "time_sec": 4.82,
+      "score": 1.2749,
+      "signals": [
+        "gripper_transition_supported",
+        "base_speed",
+        "base_yaw_rate",
+        "right_gripper_cmd",
+        "left_rot_track_err"
+      ],
+      "right_gripper_command": 65.15105739191868,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": {
+        "size": 1,
+        "start_frame": 145,
+        "end_frame": 145,
+        "context_score": 1.126
+      }
+    },
+    {
+      "event_id": 2,
+      "raw_frame": 181,
+      "time_sec": 6.017,
+      "score": 1.8136,
+      "signals": [
+        "right_rot_track_err",
+        "right_pos_track_err",
+        "right_force",
+        "right_force_change"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 3,
+      "raw_frame": 269,
+      "time_sec": 8.942,
+      "score": 1.2102,
+      "signals": [
+        "right_torque",
+        "right_rot_track_err",
+        "right_ee_ang_speed",
+        "left_pos_track_err"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 4,
+      "raw_frame": 338,
+      "time_sec": 11.236,
+      "score": 0.6836,
+      "signals": [
+        "right_ee_ang_speed",
+        "left_pos_track_err",
+        "left_torque",
+        "right_force_change"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 5,
+      "raw_frame": 384,
+      "time_sec": 12.766,
+      "score": 0.3397,
+      "signals": [
+        "right_pos_track_err",
+        "right_rot_track_err",
+        "left_pos_track_err",
+        "right_ee_ang_speed"
+      ],
+      "right_gripper_command": 98.49699753178317,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 6,
+      "raw_frame": 481,
+      "time_sec": 15.99,
+      "score": 0.8209,
+      "signals": [
+        "right_rot_track_err",
+        "right_pos_track_err",
+        "left_pos_track_err",
+        "left_torque"
+      ],
+      "right_gripper_command": 93.92361667888026,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 7,
+      "raw_frame": 511,
+      "time_sec": 17.004,
+      "score": 1.0205,
+      "signals": [
+        "right_rot_track_err",
+        "right_torque",
+        "right_pos_track_err",
+        "right_force"
+      ],
+      "right_gripper_command": 20.195029563838816,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 8,
+      "raw_frame": 526,
+      "time_sec": 17.486,
+      "score": 0.674,
+      "signals": [
+        "right_rot_track_err",
+        "right_force",
+        "right_pos_track_err",
+        "right_ee_ang_speed"
+      ],
+      "right_gripper_command": 4.190422833760802,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 9,
+      "raw_frame": 785,
+      "time_sec": 26.098,
+      "score": 0.5671,
+      "signals": [
+        "left_force_change",
+        "left_torque",
+        "right_torque",
+        "left_rot_track_err"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 10,
+      "raw_frame": 895,
+      "time_sec": 29.753,
+      "score": 0.5404,
+      "signals": [
+        "right_force_change",
+        "right_force",
+        "left_force",
+        "right_ee_ang_speed"
+      ],
+      "right_gripper_command": 36.88474437799303,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 11,
+      "raw_frame": 984,
+      "time_sec": 32.711,
+      "score": 1.2368,
+      "signals": [
+        "right_force",
+        "base_yaw_rate",
+        "right_force_change",
+        "left_rot_track_err"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 12,
+      "raw_frame": 1005,
+      "time_sec": 33.409,
+      "score": 1.9055,
+      "signals": [
+        "right_force",
+        "right_force_change",
+        "left_rot_track_err",
+        "right_torque"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 13,
+      "raw_frame": 1136,
+      "time_sec": 37.765,
+      "score": 0.0624,
+      "signals": [
+        "right_ee_ang_speed",
+        "torso_joint_speed",
+        "right_torque",
+        "right_rot_track_err"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 14,
+      "raw_frame": 1168,
+      "time_sec": 38.828,
+      "score": 0.0802,
+      "signals": [
+        "right_ee_ang_speed",
+        "left_force",
+        "right_rot_track_err",
+        "left_torque"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 15,
+      "raw_frame": 1202,
+      "time_sec": 39.959,
+      "score": 1.1491,
+      "signals": [
+        "right_rot_track_err",
+        "right_pos_track_err",
+        "left_rot_track_err",
+        "right_ee_ang_speed"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 16,
+      "raw_frame": 1233,
+      "time_sec": 40.989,
+      "score": 1.2642,
+      "signals": [
+        "gripper_transition_supported",
+        "right_rot_track_err",
+        "right_pos_track_err",
+        "right_torque",
+        "left_force"
+      ],
+      "right_gripper_command": 49.80976098030793,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": {
+        "size": 1,
+        "start_frame": 1233,
+        "end_frame": 1233,
+        "context_score": 1.2059
+      }
+    },
+    {
+      "event_id": 17,
+      "raw_frame": 1349,
+      "time_sec": 44.844,
+      "score": 2.2327,
+      "signals": [
+        "right_force",
+        "right_force_change",
+        "right_torque",
+        "torso_joint_speed"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 18,
+      "raw_frame": 1387,
+      "time_sec": 46.111,
+      "score": 1.9031,
+      "signals": [
+        "base_speed",
+        "base_yaw_rate",
+        "torso_joint_speed",
+        "left_ee_speed"
+      ],
+      "right_gripper_command": 0.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 19,
+      "raw_frame": 1457,
+      "time_sec": 48.435,
+      "score": 1.778,
+      "signals": [
+        "gripper_transition_supported",
+        "base_yaw_rate",
+        "base_speed",
+        "right_ee_ang_speed",
+        "right_ee_speed"
+      ],
+      "right_gripper_command": 70.119049179674,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": {
+        "size": 1,
+        "start_frame": 1457,
+        "end_frame": 1457,
+        "context_score": 1.6653
+      }
+    },
+    {
+      "event_id": 20,
+      "raw_frame": 1477,
+      "time_sec": 49.1,
+      "score": 1.8245,
+      "signals": [
+        "base_speed",
+        "torso_joint_speed",
+        "left_pos_track_err",
+        "left_ee_speed"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 21,
+      "raw_frame": 1574,
+      "time_sec": 52.324,
+      "score": 0.4671,
+      "signals": [
+        "left_torque",
+        "left_force",
+        "right_rot_track_err",
+        "left_force_change"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 22,
+      "raw_frame": 1629,
+      "time_sec": 54.152,
+      "score": 1.8605,
+      "signals": [
+        "base_speed",
+        "base_yaw_rate",
+        "right_rot_track_err",
+        "right_pos_track_err"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 23,
+      "raw_frame": 1682,
+      "time_sec": 55.916,
+      "score": 1.7705,
+      "signals": [
+        "base_yaw_rate",
+        "base_speed",
+        "right_force_change",
+        "right_force"
+      ],
+      "right_gripper_command": 100.0,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": null
+    },
+    {
+      "event_id": 24,
+      "raw_frame": 1708,
+      "time_sec": 56.78,
+      "score": 1.0651,
+      "signals": [
+        "gripper_transition_supported",
+        "base_speed",
+        "base_yaw_rate",
+        "left_rot_track_err",
+        "torso_joint_speed"
+      ],
+      "right_gripper_command": 16.151912241325864,
+      "left_gripper_command": 0.0,
+      "gripper_cluster": {
+        "size": 1,
+        "start_frame": 1708,
+        "end_frame": 1708,
+        "context_score": 1.0877
+      }
+    }
+  ],
+  "proposal_version": "v3.3.3",
+  "note": "Gripper edges are weak cues; rapid retry/re-grasp transitions are clustered and require non-gripper context. Semantic verification is still performed downstream."
+}
+[00] door uncertain->uncertain dish_rack uncertain->uncertain cutlery uncertain->uncertain
+[01] door open->open dish_rack in->in cutlery not_visible->not_visible
+[02] door open->open dish_rack moving_out->out cutlery in->in
+[03] door open->open dish_rack in->in cutlery in->in
+[04] door open->open dish_rack out->moving_in cutlery uncertain->uncertain
+[05] door open->open dish_rack out->in cutlery in->in
+[06] door open->open dish_rack out->moving_in cutlery in->in
+[07] door open->open dish_rack out->out cutlery moving_in->in
+[08] door open->open dish_rack in->out cutlery not_visible->not_visible
+[09] door open->open dish_rack out->out cutlery in->in
+[10] door open->open dish_rack moving_in->in cutlery in->in
+[11] door open->open dish_rack in->in cutlery out->moving_in
+[12] door open->open dish_rack out->moving_in cutlery in->in
+[13] door open->open dish_rack in->in cutlery in->in
+[14] door open->open dish_rack out->out cutlery uncertain->uncertain
+[15] door open->open dish_rack out->out cutlery not_visible->not_visible
+[16] door open->open dish_rack out->out cutlery in->in
+[17] door open->open dish_rack out->moving_in cutlery uncertain->uncertain
+[18] door open->open dish_rack out->out cutlery uncertain->uncertain
+[19] door open->open dish_rack in->in cutlery in->moving_in
+[20] door open->open dish_rack in->moving_in cutlery out->moving_in
+[21] door open->open dish_rack in->in cutlery in->in
+[22] door open->closing dish_rack out->moving_in cutlery in->in
+[23] door opening->open dish_rack uncertain->uncertain cutlery uncertain->uncertain
+[24] door opening->open dish_rack moving_out->out cutlery not_visible->not_visible
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_23_analysis/versions/v3_4_4/entity_observations.jsonl
+=== V3.4.4 reasoning pass 1 ===
+door: open -> closed -> opening -> closing -> open
+dish_rack: in -> moving_out -> in -> out -> in -> out -> moving_in -> in -> out -> in -> moving_in -> out -> moving_in -> in -> out -> in -> moving_in -> in -> out -> in -> out -> moving_in -> in -> moving_in -> in -> out -> in -> moving_out -> moving_in -> out
+cutlery_basket: in -> moving_in -> in -> out -> in -> moving_in -> in -> out -> moving_in -> in
+knife_location: tabletop -> cutlery_basket
+fork_location: tabletop -> cutlery_basket -> right_hand -> cutlery_basket
+plate_location: tabletop -> dish_rack -> tabletop -> right_hand -> dish_rack -> tabletop -> right_hand -> other -> dish_rack -> other -> right_hand -> dish_rack
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_23_analysis/versions/v3_4_4/tracked_entity_states.json
+portable-object ownership:
+  plate        right_hand [474,504] -> [474,504] target=504 status=inferred_unique
+  plate        right_hand [894,950] -> [939,950] target=994 status=direct
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_23_analysis/versions/v3_4_4/tracked_entity_states_owned.json
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_23_analysis/versions/v3_4_4/hand_object_ownership.json
+skill sequence:
+  00 navigate_to_station [43,143] conf=0.95 mode=hdf5_base_motion
+  01 pull_out_dish_rack [225,225] conf=0.95 mode=tracked_endpoint_transition
+  02 push_in_dish_rack [304,304] conf=0.95 mode=tracked_endpoint_transition
+  03 pull_out_dish_rack [326,326] conf=0.95 mode=tracked_endpoint_transition
+  04 push_in_dish_rack [361,406] conf=0.95 mode=tracked_endpoint_transition
+  05 pull_out_dish_rack [432,432] conf=0.95 mode=tracked_endpoint_transition
+  06 push_in_dish_rack [474,474] conf=0.95 mode=tracked_endpoint_transition
+  07 place_plate_in_dish_rack [474,504] conf=0.52 mode=completion_aware_object_episode
+  08 pull_out_dish_rack [504,541] conf=0.95 mode=tracked_endpoint_transition
+  09 place_fork_in_cutlery_basket [656,894] conf=0.8 mode=completion_aware_object_episode
+  10 push_in_dish_rack [840,894] conf=0.95 mode=tracked_endpoint_transition
+  11 pull_out_cutlery_basket [894,894] conf=0.95 mode=tracked_endpoint_transition
+  12 place_plate_in_dish_rack [939,1291] conf=0.95 mode=completion_aware_object_episode
+  13 push_in_cutlery_basket [940,940] conf=0.9 mode=tracked_endpoint_transition
+  14 pull_out_dish_rack [950,950] conf=0.95 mode=tracked_endpoint_transition
+  15 push_in_dish_rack [994,994] conf=0.9 mode=tracked_endpoint_transition
+  16 pull_out_dish_rack [1107,1107] conf=0.95 mode=tracked_endpoint_transition
+  17 push_in_dish_rack [1169,1169] conf=0.95 mode=tracked_endpoint_transition
+  18 pull_out_dish_rack [1184,1184] conf=0.95 mode=tracked_endpoint_transition
+  19 push_in_dish_rack [1368,1403] conf=0.9 mode=tracked_endpoint_transition
+  20 pull_out_cutlery_basket [1422,1422] conf=0.85 mode=tracked_endpoint_transition
+  21 push_in_cutlery_basket [1467,1526] conf=0.85 mode=tracked_endpoint_transition
+  22 pull_out_dish_rack [1556,1556] conf=0.76 mode=tracked_endpoint_transition
+  23 close_dishwasher_door [1602,1602] conf=0.426 mode=tracked_endpoint_transition
+  24 push_in_dish_rack [1602,1602] conf=0.76 mode=tracked_endpoint_transition
+  25 open_dishwasher_door [1650,1700] conf=0.426 mode=tracked_endpoint_transition
+  26 pull_out_dish_rack [1650,1700] conf=0.76 mode=tracked_endpoint_transition
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_23_analysis/versions/v3_4_4/skill_candidates.json
+validated skills: 27 -> 7
+  00 navigate_to_station [43,143] conf=0.95
+  01 pull_out_dish_rack [181,182] conf=0.95
+  02 place_utensil_in_cutlery_basket [656,894] conf=0.8
+  03 place_plate_in_dish_rack [939,1291] conf=0.95
+  04 push_in_dish_rack [1368,1403] conf=0.9
+  05 close_dishwasher_door [1602,1602] conf=0.426
+  06 open_dishwasher_door [1650,1700] conf=0.426
+ambiguity requests: 8
+  Q00 p=98 receptacle_usage_without_ready_lifecycle ['cutlery_basket'] [416,550]
+  Q01 p=90 rejected_visual_evidence ['plate'] [436,542]
+  Q02 p=98 receptacle_usage_without_ready_lifecycle ['cutlery_basket'] [491,625]
+  Q03 p=98 receptacle_usage_without_ready_lifecycle ['cutlery_basket'] [566,694]
+  Q04 p=90 rejected_visual_evidence ['dish_rack'] [802,932]
+  Q05 p=90 rejected_visual_evidence ['cutlery_basket'] [856,932]
+  Q06 p=90 rejected_visual_evidence ['cutlery_basket'] [902,978]
+  Q07 p=95 unfinished_lifecycle ['door'] [1685,1768]
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_23_analysis/versions/v3_4_4/ambiguity_requests.json
+[targeted 00] receptacle_usage_without_ready_lifecycle ['cutlery_basket'] states={'cutlery_basket': ['moving_out', 'out']} merge=True
+[targeted 01] rejected_visual_evidence ['plate'] states={'plate': ['tabletop', 'tabletop']} merge=True
+[targeted 02] receptacle_usage_without_ready_lifecycle ['cutlery_basket'] states={'cutlery_basket': ['out', 'out']} merge=True
+[targeted 03] receptacle_usage_without_ready_lifecycle ['cutlery_basket'] states={'cutlery_basket': ['uncertain', 'uncertain']} merge=False
+[targeted 04] rejected_visual_evidence ['dish_rack'] states={'dish_rack': ['out', 'out']} merge=True
+[targeted 05] rejected_visual_evidence ['cutlery_basket'] states={'cutlery_basket': ['moving_out', 'out']} merge=True
+[targeted 06] rejected_visual_evidence ['cutlery_basket'] states={'cutlery_basket': ['out', 'out']} merge=True
+[targeted 07] unfinished_lifecycle ['door'] states={'door': ['uncertain', 'uncertain']} merge=False
+targeted observations: 8, merged: 6
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_23_analysis/versions/v3_4_4/targeted_observations.jsonl
+=== V3.4.4 reasoning pass 2 ===
+door: open -> closed -> opening -> closing -> open
+dish_rack: in -> moving_out -> in -> out -> in -> out -> moving_in -> in -> out -> in -> moving_in -> out -> moving_in -> out -> in -> out -> in -> moving_in -> in -> out -> in -> out -> moving_in -> in -> moving_in -> in -> out -> in -> moving_out -> moving_in -> out
+cutlery_basket: in -> moving_out -> in -> moving_in -> out -> in -> out -> in -> moving_out -> out -> in -> out -> moving_in -> in -> out -> moving_in -> in
+knife_location: tabletop -> cutlery_basket
+fork_location: tabletop -> cutlery_basket -> right_hand -> cutlery_basket
+plate_location: tabletop -> dish_rack -> tabletop -> right_hand -> dish_rack -> tabletop -> right_hand -> other -> dish_rack -> other -> right_hand -> dish_rack
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_23_analysis/versions/v3_4_4/tracked_entity_states.json
+portable-object ownership:
+  plate        right_hand [474,504] -> [474,504] target=504 status=inferred_unique
+  plate        right_hand [894,950] -> [939,950] target=994 status=direct
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_23_analysis/versions/v3_4_4/tracked_entity_states_owned.json
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_23_analysis/versions/v3_4_4/hand_object_ownership.json
+skill sequence:
+  00 navigate_to_station [43,143] conf=0.95 mode=hdf5_base_motion
+  01 pull_out_dish_rack [225,225] conf=0.95 mode=tracked_endpoint_transition
+  02 push_in_dish_rack [304,304] conf=0.95 mode=tracked_endpoint_transition
+  03 pull_out_dish_rack [326,326] conf=0.95 mode=tracked_endpoint_transition
+  04 push_in_dish_rack [361,406] conf=0.95 mode=tracked_endpoint_transition
+  05 pull_out_dish_rack [432,432] conf=0.95 mode=tracked_endpoint_transition
+  06 pull_out_cutlery_basket [451,474] conf=0.9 mode=tracked_endpoint_transition
+  07 push_in_dish_rack [474,474] conf=0.95 mode=tracked_endpoint_transition
+  08 place_plate_in_dish_rack [474,504] conf=0.52 mode=completion_aware_object_episode
+  09 pull_out_dish_rack [504,541] conf=0.95 mode=tracked_endpoint_transition
+  10 push_in_cutlery_basket [553,553] conf=0.95 mode=tracked_endpoint_transition
+  11 pull_out_cutlery_basket [598,598] conf=0.95 mode=tracked_endpoint_transition
+  12 place_fork_in_cutlery_basket [656,894] conf=0.8 mode=completion_aware_object_episode
+  13 push_in_cutlery_basket [682,682] conf=0.9 mode=tracked_endpoint_transition
+  14 pull_out_cutlery_basket [853,879] conf=0.9 mode=tracked_endpoint_transition
+  15 push_in_dish_rack [936,936] conf=0.95 mode=tracked_endpoint_transition
+  16 place_plate_in_dish_rack [939,1291] conf=0.95 mode=completion_aware_object_episode
+  17 push_in_cutlery_basket [940,940] conf=0.9 mode=tracked_endpoint_transition
+  18 pull_out_dish_rack [950,950] conf=0.95 mode=tracked_endpoint_transition
+  19 pull_out_cutlery_basket [969,969] conf=0.9 mode=tracked_endpoint_transition
+  20 push_in_dish_rack [994,994] conf=0.9 mode=tracked_endpoint_transition
+  21 push_in_cutlery_basket [1004,1040] conf=0.9 mode=tracked_endpoint_transition
+  22 pull_out_dish_rack [1107,1107] conf=0.95 mode=tracked_endpoint_transition
+  23 push_in_dish_rack [1169,1169] conf=0.95 mode=tracked_endpoint_transition
+  24 pull_out_dish_rack [1184,1184] conf=0.95 mode=tracked_endpoint_transition
+  25 push_in_dish_rack [1368,1403] conf=0.9 mode=tracked_endpoint_transition
+  26 pull_out_cutlery_basket [1422,1422] conf=0.85 mode=tracked_endpoint_transition
+  27 push_in_cutlery_basket [1467,1526] conf=0.85 mode=tracked_endpoint_transition
+  28 pull_out_dish_rack [1556,1556] conf=0.76 mode=tracked_endpoint_transition
+  29 close_dishwasher_door [1602,1602] conf=0.426 mode=tracked_endpoint_transition
+  30 push_in_dish_rack [1602,1602] conf=0.76 mode=tracked_endpoint_transition
+  31 open_dishwasher_door [1650,1700] conf=0.426 mode=tracked_endpoint_transition
+  32 pull_out_dish_rack [1650,1700] conf=0.76 mode=tracked_endpoint_transition
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_23_analysis/versions/v3_4_4/skill_candidates.json
+validated skills: 33 -> 9
+  00 navigate_to_station [43,143] conf=0.95
+  01 pull_out_dish_rack [181,182] conf=0.95
+  02 pull_out_cutlery_basket [483,506] conf=0.9
+  03 place_utensil_in_cutlery_basket [656,894] conf=0.8
+  04 place_plate_in_dish_rack [939,1291] conf=0.95
+  05 push_in_cutlery_basket [1004,1040] conf=0.9
+  06 push_in_dish_rack [1368,1403] conf=0.9
+  07 close_dishwasher_door [1602,1602] conf=0.426
+  08 open_dishwasher_door [1650,1700] conf=0.426
+saved /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_23_analysis/versions/v3_4_4/hierarchical_annotations.json
+exported compact result: /efs/share/1919650160032350208/users/machong14/wam/event_analyze/results/dishwasher_2_fx_20260529_episode_23/v3_4_4
+files: hierarchical_annotations.json, manifest.json, summary.json
+V3.4.4 complete: /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_23_analysis/versions/v3_4_4
+Ambiguity requests: /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_23_analysis/versions/v3_4_4/ambiguity_requests.json
+Targeted observations: /efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_23_analysis/versions/v3_4_4/targeted_observations.jsonl
+Compact result exported under: /efs/share/1919650160032350208/users/machong14/wam/event_analyze/results/
