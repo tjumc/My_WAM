@@ -49,7 +49,7 @@ envs/
 *.zip
 
 # Logs and temporary files
-*.log
+# *.log
 *.err
 *.tmp
 *.lock
@@ -70,7 +70,8 @@ credentials/
 models--*/
 *models--t5*/
 
-
+/8GPU_train.log
+/16GPU_train.log
 # Event-analysis runtime cache
 # Keep generated/intermediate trajectory artifacts local. Compact, versioned
 # experiment results are exported to event_analyze/results/ instead.
