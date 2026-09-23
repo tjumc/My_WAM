@@ -1,0 +1,32 @@
+{
+  "batch_name": "dishwasher_v1",
+  "dataset_fingerprint": null,
+  "version": "v3_4_4",
+  "split": "validation",
+  "aggregate": {
+    "num_episodes": 0,
+    "num_results": 0,
+    "num_with_gt": 0,
+    "policy_sequence": {
+      "mean_precision": null,
+      "mean_recall": null,
+      "mean_f1": null,
+      "mean_edit_distance": null,
+      "exact_rate": null
+    },
+    "temporal": {
+      "semantic_miou": null,
+      "semantic_boundary_mae_sec": null,
+      "semantic_boundary_f1_1s": null,
+      "semantic_boundary_f1_2s": null,
+      "core_miou": null,
+      "core_boundary_mae_sec": null
+    },
+    "closed_loop_perception": {
+      "total_ambiguity_requests": 0,
+      "total_targeted_queries": 0,
+      "total_merged_targeted_observations": 0,
+      "mean_targeted_queries_per_episode": null
+    }
+  }
+}
