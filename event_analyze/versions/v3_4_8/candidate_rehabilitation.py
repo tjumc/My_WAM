@@ -30,7 +30,9 @@ def load_jsonl(path):
 
 
 def write_json(path, obj):
-    Path(path).write_text(json.dumps(obj, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(obj, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
 def span(skill):
@@ -89,6 +91,7 @@ def candidate_pool(out, schema):
 
 
 def capture(out, schema):
+    out = Path(out)
     rows = candidate_pool(out, schema)
     write_json(Path(out) / "diagnostics" / "rejected_candidate_pool.json", {
         "annotation_version": "v3.4.8",
