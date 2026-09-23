@@ -1,0 +1,46 @@
+{
+  "batch_name": "dishwasher_v1",
+  "dataset_fingerprint": "84c2a1b5952e6d8e39a35172062aa2b263ec5e9b06688048308ebafa21b559b0",
+  "version": "v3_4_6",
+  "split": "validation",
+  "aggregate": {
+    "num_episodes": 6,
+    "num_results": 6,
+    "num_with_gt": 6,
+    "policy_sequence": {
+      "mean_precision": 0.9791666666666666,
+      "mean_recall": 0.5666666666666668,
+      "mean_f1": 0.690826330532213,
+      "mean_edit_distance": 4.333333333333333,
+      "exact_rate": 0.0
+    },
+    "temporal": {
+      "semantic_miou": null,
+      "semantic_boundary_mae_sec": null,
+      "semantic_boundary_f1_1s": null,
+      "semantic_boundary_f1_2s": null,
+      "core_miou": null,
+      "core_boundary_mae_sec": null
+    },
+    "closed_loop_perception": {
+      "total_ambiguity_requests": 41,
+      "total_targeted_queries": 41,
+      "total_merged_targeted_observations": 35,
+      "mean_targeted_queries_per_episode": 6.833333333333333
+    },
+    "conservative_assimilation": {
+      "total_restored_pass1_anchors": 2,
+      "total_directly_contradicted_pass1_anchors": 0,
+      "total_pass2_additions": 8
+    },
+    "final_consistency": {
+      "total_dropped_phases": 5,
+      "total_clamped_phases": 0,
+      "total_lifecycle_violations": 1,
+      "total_gratuitous_lifecycle_cycles": 2,
+      "total_expected_final_state_violations": 5,
+      "num_frontier_resolved_episodes": 3,
+      "num_unresolved_episodes": 3
+    }
+  }
+}

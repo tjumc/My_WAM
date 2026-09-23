@@ -1,0 +1,72 @@
+{
+  "annotation_version": "v3.4.6",
+  "pass1_count": 2,
+  "raw_pass2_count": 5,
+  "reconciled_count": 5,
+  "restored_pass1_anchors": [],
+  "directly_contradicted_pass1_anchors": [],
+  "pass2_additions": [
+    {
+      "skill_type": "navigate_to_station",
+      "entity": "robot_base",
+      "fine_entity": null,
+      "start_frame": 45,
+      "end_frame": 87,
+      "confidence": 0.95
+    },
+    {
+      "skill_type": "open_dishwasher_door",
+      "entity": "door",
+      "fine_entity": null,
+      "start_frame": 88,
+      "end_frame": 88,
+      "confidence": 0.95
+    },
+    {
+      "skill_type": "push_in_dish_rack",
+      "entity": "dish_rack",
+      "fine_entity": null,
+      "start_frame": 1513,
+      "end_frame": 1558,
+      "confidence": 1.0
+    }
+  ],
+  "represented_pass1_anchors": [
+    {
+      "pass1": {
+        "skill_type": "place_utensil_in_cutlery_basket",
+        "entity": "utensil",
+        "fine_entity": "fork",
+        "start_frame": 188,
+        "end_frame": 986,
+        "confidence": 0.406
+      },
+      "pass2": {
+        "skill_type": "place_utensil_in_cutlery_basket",
+        "entity": "utensil",
+        "fine_entity": "fork",
+        "start_frame": 188,
+        "end_frame": 986,
+        "confidence": 0.406
+      }
+    },
+    {
+      "pass1": {
+        "skill_type": "place_plate_in_dish_rack",
+        "entity": "plate",
+        "fine_entity": null,
+        "start_frame": 1054,
+        "end_frame": 1513,
+        "confidence": 0.95
+      },
+      "pass2": {
+        "skill_type": "place_plate_in_dish_rack",
+        "entity": "plate",
+        "fine_entity": null,
+        "start_frame": 1054,
+        "end_frame": 1513,
+        "confidence": 0.95
+      }
+    }
+  ]
+}

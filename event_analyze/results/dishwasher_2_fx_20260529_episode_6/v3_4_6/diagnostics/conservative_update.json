@@ -1,0 +1,38 @@
+{
+  "annotation_version": "v3.4.6",
+  "pass1_count": 1,
+  "raw_pass2_count": 2,
+  "reconciled_count": 2,
+  "restored_pass1_anchors": [],
+  "directly_contradicted_pass1_anchors": [],
+  "pass2_additions": [
+    {
+      "skill_type": "close_dishwasher_door",
+      "entity": "door",
+      "fine_entity": null,
+      "start_frame": 2026,
+      "end_frame": 2118,
+      "confidence": 0.95
+    }
+  ],
+  "represented_pass1_anchors": [
+    {
+      "pass1": {
+        "skill_type": "place_plate_in_dish_rack",
+        "entity": "plate",
+        "fine_entity": null,
+        "start_frame": 230,
+        "end_frame": 1786,
+        "confidence": 0.9
+      },
+      "pass2": {
+        "skill_type": "place_plate_in_dish_rack",
+        "entity": "plate",
+        "fine_entity": null,
+        "start_frame": 230,
+        "end_frame": 1786,
+        "confidence": 0.9
+      }
+    }
+  ]
+}

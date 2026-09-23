@@ -1,0 +1,129 @@
+{
+  "format_version": 1,
+  "generated_utc": "2026-09-23T08:06:32.138130+00:00",
+  "episode": "dishwasher_2_fx_20260529_episode_7",
+  "version": "v3_4_6",
+  "task": "put the dish into the dishwasher",
+  "task_family": "dishwasher_loading",
+  "git_commit_at_export": "304c9d1bde2d372ea8d543c4a293b2f593fba46a",
+  "input": {
+    "hdf5_basename": "dishwasher_2_fx_20260529_episode_7.hdf5",
+    "hdf5_bytes": 357892254,
+    "schema": "ontologies/dishwasher_loading.json",
+    "schema_sha256": "48f5580f1ff271d6d9efc6844795c8ddd36bd8777f0b0500b46e670a20f2a321"
+  },
+  "runtime_output": "output/dishwasher_2_fx_20260529_episode_7_analysis/versions/v3_4_6",
+  "evidence_fingerprints": {
+    "entity_observations_base.jsonl": {
+      "sha256": "580bc86728d329729b20f13fbc5935ba732da53ef50b5d31aad5c2c7d867c884",
+      "bytes": 52965
+    },
+    "tracked_entity_states.json": {
+      "sha256": "3d7344d7df26ec5b2d8f5ded769397b1463c729db7acb46595bc5c7519f002cd",
+      "bytes": 79947
+    },
+    "tracked_entity_states_owned.json": {
+      "sha256": "afa372a1aed34a59efc8be8914649fdf1c6288f0b204f9d0d10157246abe07cd",
+      "bytes": 82572
+    },
+    "hand_object_ownership.json": {
+      "sha256": "eb63de41af62145f141dd4467eebc28d66a509228969fde40525cc3a311ad400",
+      "bytes": 11130
+    },
+    "ambiguity_requests.json": {
+      "sha256": "70d9982e3442db8b5c0a8c6ddb23ad58e533dadcb15cf99c59c556efb19feae5",
+      "bytes": 5303
+    },
+    "targeted_observations.jsonl": {
+      "sha256": "29a2ea7d5a46d3dfb7200bd507f5fe339a63834302fca8a2b8417fb8374cdd35",
+      "bytes": 10069
+    },
+    "skill_candidates_validated.json": {
+      "sha256": "f3fe6e27ee0da39a63284a456fd15c6488e5942aa4ed3d106ccb962b0a087398",
+      "bytes": 12998
+    }
+  },
+  "closed_loop_perception": {
+    "num_ambiguity_requests": 6,
+    "num_targeted_queries": 6,
+    "num_merged_targeted_observations": 6,
+    "ambiguity_kinds": [
+      "receptacle_usage_without_ready_lifecycle",
+      "rejected_visual_evidence",
+      "unfinished_lifecycle"
+    ]
+  },
+  "conservative_assimilation": {
+    "pass1_count": 6,
+    "raw_pass2_count": 7,
+    "reconciled_count": 7,
+    "num_restored_pass1_anchors": 0,
+    "num_directly_contradicted_pass1_anchors": 0,
+    "num_pass2_additions": 1
+  },
+  "task_completion_frontier": {
+    "policy": "first_expected_final_state_after_last_dependent_use",
+    "frontier_entities": [
+      "door"
+    ],
+    "entities": [
+      {
+        "entity": "door",
+        "expected_final_state": "closed",
+        "last_dependent_use_end": 1718,
+        "terminal_closure": null
+      }
+    ],
+    "resolved": false,
+    "task_end_raw_frame": 2144,
+    "fallback_when_unresolved": "trajectory_end"
+  },
+  "final_consistency": {
+    "num_dropped": 0,
+    "num_clamped": 0,
+    "num_lifecycle_violations": 0,
+    "num_gratuitous_lifecycle_cycles": 0,
+    "num_expected_final_state_violations": 2,
+    "frontier_resolved": false,
+    "status": "unresolved"
+  },
+  "exported_files": {
+    "hierarchical_annotations.json": {
+      "sha256": "8c89af4a45f7b8565cdbc1e98d1c380368f335576168269b11295283c5358a93",
+      "bytes": 16513
+    },
+    "diagnostics/reasoning_trace.json": {
+      "sha256": "b4ef0bece4a84174ba35d68f3c77be54c6234b6a6fc4922ec13fa885e2655a39",
+      "bytes": 4960
+    },
+    "diagnostics/conservative_update.json": {
+      "sha256": "e3bb5e006bc945247909d9a9ede83f25a83bb59ff9f537230ef40e17d9365f52",
+      "bytes": 3084
+    },
+    "diagnostics/final_consistency.json": {
+      "sha256": "3165082f4ff23af18cd0fa5cb8b77c243a24e814e0db69bfe0b55bda81ed4177",
+      "bytes": 1679
+    },
+    "summary.json": {
+      "sha256": "b283bdc4c954ebd5a40ee9e4ec594d24e86d7b382a500d755c5b45477341101d",
+      "bytes": 2000
+    }
+  },
+  "storage_policy": {
+    "git_keeps": [
+      "final annotations",
+      "evaluation report when available",
+      "summary",
+      "manifest",
+      "compact reasoning/conservative-update/final-consistency diagnostics"
+    ],
+    "local_only": [
+      "contact sheets",
+      "dense temporal strips",
+      "overview images",
+      "raw VLM responses",
+      "proposal visualizations",
+      "other reproducible runtime caches"
+    ]
+  }
+}

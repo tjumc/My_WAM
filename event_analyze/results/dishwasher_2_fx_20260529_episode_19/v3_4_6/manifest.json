@@ -1,0 +1,131 @@
+{
+  "format_version": 1,
+  "generated_utc": "2026-09-23T08:06:53.754865+00:00",
+  "episode": "dishwasher_2_fx_20260529_episode_19",
+  "version": "v3_4_6",
+  "task": "put the dish into the dishwasher",
+  "task_family": "dishwasher_loading",
+  "git_commit_at_export": "304c9d1bde2d372ea8d543c4a293b2f593fba46a",
+  "input": {
+    "hdf5_basename": "dishwasher_2_fx_20260529_episode_19.hdf5",
+    "hdf5_bytes": 328574054,
+    "schema": "ontologies/dishwasher_loading.json",
+    "schema_sha256": "48f5580f1ff271d6d9efc6844795c8ddd36bd8777f0b0500b46e670a20f2a321"
+  },
+  "runtime_output": "output/dishwasher_2_fx_20260529_episode_19_analysis/versions/v3_4_6",
+  "evidence_fingerprints": {
+    "entity_observations_base.jsonl": {
+      "sha256": "454a2efa1a1e2a2875cf9645df28e916b9341fee9a8dd6f5c3cbc2f91ce86a8b",
+      "bytes": 52361
+    },
+    "tracked_entity_states.json": {
+      "sha256": "46c472c63fece7c09994337891064345b89836acee36864ac216a8e20300b167",
+      "bytes": 75795
+    },
+    "tracked_entity_states_owned.json": {
+      "sha256": "9f03fda394600a152fa733a040dab126f8e401dd3739f273633ef95e32ca325c",
+      "bytes": 78423
+    },
+    "hand_object_ownership.json": {
+      "sha256": "af7233739890af0b385d8f44299e7bb2174e282f13ae9abaecaf4423fa58f161",
+      "bytes": 11065
+    },
+    "ambiguity_requests.json": {
+      "sha256": "210f1ff2bd17c0c73ccdada513c5faef568a11ff0fb4d9b465bce7f7d5d41e6c",
+      "bytes": 7104
+    },
+    "targeted_observations.jsonl": {
+      "sha256": "1c6becb0a41d704e81f797f4bd33bbadc82e760c40fb48f2ce9b0d27c773d33f",
+      "bytes": 13197
+    },
+    "skill_candidates_validated.json": {
+      "sha256": "33f7ca439f19ff391bd5fd34420395b22dddea02598f6ff193fba2e5a94e4fa1",
+      "bytes": 9277
+    }
+  },
+  "closed_loop_perception": {
+    "num_ambiguity_requests": 8,
+    "num_targeted_queries": 8,
+    "num_merged_targeted_observations": 5,
+    "ambiguity_kinds": [
+      "accessibility_prerequisite_missing",
+      "ownership_conflict",
+      "receptacle_usage_without_ready_lifecycle",
+      "rejected_visual_evidence",
+      "unfinished_lifecycle"
+    ]
+  },
+  "conservative_assimilation": {
+    "pass1_count": 2,
+    "raw_pass2_count": 5,
+    "reconciled_count": 5,
+    "num_restored_pass1_anchors": 0,
+    "num_directly_contradicted_pass1_anchors": 0,
+    "num_pass2_additions": 3
+  },
+  "task_completion_frontier": {
+    "policy": "first_expected_final_state_after_last_dependent_use",
+    "frontier_entities": [
+      "door"
+    ],
+    "entities": [
+      {
+        "entity": "door",
+        "expected_final_state": "closed",
+        "last_dependent_use_end": 1512,
+        "terminal_closure": null
+      }
+    ],
+    "resolved": false,
+    "task_end_raw_frame": 1880,
+    "fallback_when_unresolved": "trajectory_end"
+  },
+  "final_consistency": {
+    "num_dropped": 1,
+    "num_clamped": 0,
+    "num_lifecycle_violations": 1,
+    "num_gratuitous_lifecycle_cycles": 0,
+    "num_expected_final_state_violations": 1,
+    "frontier_resolved": false,
+    "status": "unresolved"
+  },
+  "exported_files": {
+    "hierarchical_annotations.json": {
+      "sha256": "198f90d0cb9169ad592558c7a76ec07f49a6573cd711401672971c018db7d22a",
+      "bytes": 10415
+    },
+    "diagnostics/reasoning_trace.json": {
+      "sha256": "cc47a298b070b119247e87fb750b7ebdf6465efcdd6e0dcfc81313ed0fd4744f",
+      "bytes": 6439
+    },
+    "diagnostics/conservative_update.json": {
+      "sha256": "1cffd342446b398a9e95ab8faf84bf328dce5c6ea78f33fbc429c5643cc6856a",
+      "bytes": 1704
+    },
+    "diagnostics/final_consistency.json": {
+      "sha256": "7ba354c7c5ba5c3669cbf45d64f4fbabe16095e709a2450e9a18c9b56a591610",
+      "bytes": 1898
+    },
+    "summary.json": {
+      "sha256": "8b3b50e1dd4ea1de2a9607f80a094c91e86500b9faef6ddf29128755fcbb0e1a",
+      "bytes": 1267
+    }
+  },
+  "storage_policy": {
+    "git_keeps": [
+      "final annotations",
+      "evaluation report when available",
+      "summary",
+      "manifest",
+      "compact reasoning/conservative-update/final-consistency diagnostics"
+    ],
+    "local_only": [
+      "contact sheets",
+      "dense temporal strips",
+      "overview images",
+      "raw VLM responses",
+      "proposal visualizations",
+      "other reproducible runtime caches"
+    ]
+  }
+}
