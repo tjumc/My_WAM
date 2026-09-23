@@ -109,7 +109,6 @@ def select_requests(requests, max_requests):
         if any(
             set(r["target_entities"]) == set(k["target_entities"])
             and request_iou(r, k) >= 0.60
-            and abs(int(r["semantic_impact"]) - int(k["semantic_impact"])) <= 1
             for k in kept
         ):
             continue
@@ -334,7 +333,84 @@ def main():
             robot_support=support,
         )
 
-    # 4) Expected final lifecycle not reached. Again, use one focused candidate
+    # 4) Schema accessibility prerequisite missing before an entity is used.
+    # This catches cascades such as a downstream articulated action being
+    # rejected only because its prerequisite gate transition was missed.
+    for entity, cfg in schema.get("entities", {}).items():
+        requirements = list(cfg.get("requires", []))
+        if not requirements:
+            continue
+
+        uses = [
+            x for x in candidates
+            if x.get("entity") == entity
+            or (x.get("state_transition") or {}).get("after") == entity
+        ]
+        if not uses:
+            continue
+        first_use = min(int(x.get("provisional_start_frame", 0)) for x in uses)
+
+        for req in requirements:
+            req_entity = req.get("entity")
+            req_state = req.get("state")
+            if not req_entity or req_entity not in tmap:
+                continue
+
+            state = initial.get(req_entity, "unknown")
+            for s0 in sorted(
+                [
+                    x for x in accepted_skills
+                    if x.get("entity") == req_entity
+                    and int(x.get("provisional_end_frame", 0)) <= first_use
+                ],
+                key=lambda x: x.get("provisional_start_frame", 0),
+            ):
+                nxt = tmap[req_entity].get((state, s0.get("skill_type")))
+                if nxt is not None:
+                    state = nxt
+            if state == req_state:
+                continue
+
+            skills_to_required = [
+                skill for (src, skill), dst in tmap[req_entity].items()
+                if dst == req_state
+            ]
+            lo = max(0, first_use - horizon)
+            hi = min(T - 1, first_use + pad)
+            cand, dec, support = best_transition_candidate(
+                candidates, decisions, req_entity, skills_to_required, lo, hi
+            )
+            if cand is not None:
+                s0, e0 = padded_span(cand, pad, T)
+            else:
+                s0, e0 = fallback_window(first_use - pad, True, policy, args.fps, T)
+                support = 0.0
+
+            add_request(
+                requests,
+                kind="accessibility_prerequisite_missing",
+                priority=99,
+                impact=4,
+                entities=[req_entity],
+                start=s0,
+                end=e0,
+                reason=(
+                    f"{entity!r} is used while prerequisite {req_entity!r} "
+                    f"is at {state!r}, not required state {req_state!r}"
+                ),
+                source={
+                    "used_entity": entity,
+                    "first_use_frame": first_use,
+                    "required_entity": req_entity,
+                    "observed_prerequisite_state": state,
+                    "required_state": req_state,
+                    "candidate_skill": cand.get("skill_type") if cand else None,
+                },
+                goal=f"reach_accessibility_state:{req_entity}:{req_state}",
+                robot_support=support,
+            )
+
+    # 5) Expected final lifecycle not reached. Again, use one focused candidate
     # window rather than a sequence of overlapping windows.
     current = dict(initial)
     for s in sorted(
