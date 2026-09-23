@@ -89,6 +89,7 @@ def container_rules(schema):
             "motion_endpoint": dict(cfg.get("motion_endpoint", {})),
             "contact_tokens": list(cfg.get("contact_tokens", [])),
             "requires": list(cfg.get("requires", [])),
+            "robot_interaction": dict(cfg.get("robot_interaction", {})),
         }
     return out
 

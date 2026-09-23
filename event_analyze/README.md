@@ -26,13 +26,14 @@ event_analyze/
 │   ├── v3_4_1/
 │   ├── v3_4_2/
 │   ├── v3_4_3/
-│   └── v3_4_4/      # current active: ambiguity-triggered targeted re-observation
+│   ├── v3_4_4/
+│   └── v3_4_5/      # current active: selective re-observation + global consistency
 ```
 
-当前推荐运行 V3.4.4：
+当前推荐运行 V3.4.5：
 
 ```bash
-bash versions/v3_4_4/run.sh \
+bash versions/v3_4_5/run.sh \
   /path/to/episode.hdf5 \
   output/dishwasher_2_fx_20260529_episode_27_analysis \
   "put the dish into the dishwasher" \
@@ -40,7 +41,7 @@ bash versions/v3_4_4/run.sh \
   1645
 ```
 
-V3.4.4 在稳定的 ownership / boundary reasoning 之后加入闭环主动复查：第一遍 reasoning 自动检测 ownership 冲突、receptacle lifecycle 不闭合、缺失视觉交互/方向证据等 ambiguity，再根据 task schema 生成 targeted VLM prompt，只重看相关实体和时间窗口，随后重新运行 reasoning。旧的 cutlery-specific dense pass 默认关闭，仅保留为消融选项。perception 默认继续复用 V3.4.1，以便做受控 reasoning 对比。当前 perception 暂时保持 V3.3.3-compatible，用于验证 schema-driven reasoning 的等价性。对全新的 HDF5，入口脚本会自动先生成 candidate_events.json 和 contact_sheets/。
+V3.4.5 建立在 V3.4.4 的闭环主动复查之上，针对冻结 validation 暴露出的低 recall、每条轨迹打满 targeted-query budget、以及 final annotation 内部不一致问题做统一修复：ambiguity request 按语义影响和已有机器人证据排序，同一语义问题只保留一个聚焦窗口；schema 可声明 gripper/contact interaction signature，只有与方向一致视觉状态变化和机器人交互信号共同成立时才可桥接缺失 visual contact；boundary refinement 后增加 global final-consistency gate。旧的 cutlery-specific dense pass 仍默认关闭。
 
 泛化边界与未来 task-agnostic 设计见 `GENERALIZATION.md`。截至当前版本的问题演化、已解决问题、未解决问题与论文贡献候选统一记录在 `RESEARCH_RECORD.md`。
 
@@ -89,7 +90,7 @@ results/<episode>/<version>/
 
 ```bash
 GT=regression/dishwasher_episode27_manual_gt.json \
-bash versions/v3_4_4/run.sh ...
+bash versions/v3_4_5/run.sh ...
 ```
 
 后续版本保持 `GT` 不变，这样同一条实验命令只需要替换版本目录即可。
@@ -157,3 +158,22 @@ policy sequence 指标、已有 frame-level GT 的 temporal 指标，以及
 V3.4.4+ 的 ambiguity / targeted-query / merged-observation 成本。
 
 完整说明见 `batches/README.md`。
+
+
+## V3.4.5 runtime artifact layout
+
+V3.4.5 默认在成功导出后收敛本地运行目录：
+
+```text
+versions/v3_4_5/
+├── hierarchical_annotations.json
+├── evaluation_temporal.json   # only with frame-level GT
+├── diagnostics/
+│   ├── reasoning_trace.json
+│   └── final_consistency.json
+└── cache/
+    └── reproducible perception/proposal artifacts
+```
+
+完整中间 tracker / ownership / validation 文件仅在 `KEEP_DEBUG=1` 时长期保留。
+这属于工程存储优化，不作为论文贡献。详见 `versions/v3_4_5/README.md`。

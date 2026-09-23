@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.5",
+  "schema_version": "0.6",
   "task_family": "dishwasher_loading",
   "onboarding": {
     "human_schema_definition_allowed": true,
@@ -68,7 +68,16 @@
           "semantic": "close"
         }
       ],
-      "expected_final_state": "closed"
+      "expected_final_state": "closed",
+      "robot_interaction": {
+        "gripper": "right",
+        "expected_gripper_state": "closed",
+        "open_threshold": 50,
+        "min_state_fraction": 0.65,
+        "allow_contact_bridge": true,
+        "min_signal_score": 0.12,
+        "note": "Task-family onboarding prior: articulated/contact manipulation is normally executed with the right gripper closed. This can bridge missing visual contact only together with direction-consistent visual state change and robot interaction signal."
+      }
     },
     "dish_rack": {
       "display_name": "dish rack",
@@ -137,7 +146,16 @@
         "plate"
       ],
       "expected_final_state": "in",
-      "usage_state": "out"
+      "usage_state": "out",
+      "robot_interaction": {
+        "gripper": "right",
+        "expected_gripper_state": "closed",
+        "open_threshold": 50,
+        "min_state_fraction": 0.65,
+        "allow_contact_bridge": true,
+        "min_signal_score": 0.12,
+        "note": "Task-family onboarding prior: articulated/contact manipulation is normally executed with the right gripper closed. This can bridge missing visual contact only together with direction-consistent visual state change and robot interaction signal."
+      }
     },
     "cutlery_basket": {
       "display_name": "cutlery basket",
@@ -208,7 +226,16 @@
         "utensil"
       ],
       "expected_final_state": "in",
-      "usage_state": "out"
+      "usage_state": "out",
+      "robot_interaction": {
+        "gripper": "right",
+        "expected_gripper_state": "closed",
+        "open_threshold": 50,
+        "min_state_fraction": 0.65,
+        "allow_contact_bridge": true,
+        "min_signal_score": 0.12,
+        "note": "Task-family onboarding prior: articulated/contact manipulation is normally executed with the right gripper closed. This can bridge missing visual contact only together with direction-consistent visual state change and robot interaction signal."
+      }
     },
     "knife": {
       "display_name": "knife",
@@ -371,7 +398,8 @@
   ],
   "notes": [
     "Task-family schema may be defined once with human assistance; per-trajectory inference remains automatic.",
-    "Knife/fork distinction is retained as optional diagnostic evidence, while the preferred training label is the policy-equivalent parent class utensil."
+    "Knife/fork distinction is retained as optional diagnostic evidence, while the preferred training label is the policy-equivalent parent class utensil.",
+    "V3.4.5 adds a schema-configured gripper interaction signature for articulated/contact manipulation; it is supporting evidence only and cannot by itself create a semantic action."
   ],
   "manipulation_policy": {
     "max_concurrent_portable_objects": 1,
@@ -395,6 +423,7 @@
       "unfinished_expected_final_lifecycle",
       "accepted_container_without_direction_evidence"
     ],
-    "note": "Targeted queries are triggered by generic reasoning inconsistencies. Fine identity uncertainty that is already safely handled by semantic backoff is not itself a trigger."
+    "note": "V3.4.5 focuses at most one query per semantic inconsistency and ranks requests by semantic impact plus existing robot/interaction support. Fine identity uncertainty handled by semantic backoff does not itself trigger re-observation.",
+    "min_robot_support_to_query": 0.08
   }
 }

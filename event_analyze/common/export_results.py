@@ -19,6 +19,11 @@ KEEP_FILES = [
     "evaluation_temporal.json",
 ]
 
+KEEP_DIAGNOSTICS = [
+    "reasoning_trace.json",
+    "final_consistency.json",
+]
+
 
 def sha256_file(path, chunk=1024 * 1024):
     h = hashlib.sha256()
@@ -88,6 +93,24 @@ def main():
                 "sha256": sha256_file(target),
                 "bytes": target.stat().st_size,
             }
+
+    diagnostics_copied = {}
+    diag_src = out / "diagnostics"
+    if diag_src.exists():
+        diag_dst = dst / "diagnostics"
+        for name in KEEP_DIAGNOSTICS:
+            src = diag_src / name
+            if not src.exists():
+                continue
+            diag_dst.mkdir(parents=True, exist_ok=True)
+            target = diag_dst / name
+            shutil.copy2(src, target)
+            key = f"diagnostics/{name}"
+            diagnostics_copied[key] = {
+                "sha256": sha256_file(target),
+                "bytes": target.stat().st_size,
+            }
+            copied[key] = diagnostics_copied[key]
 
     ann_path = out / "hierarchical_annotations.json"
     if not ann_path.exists():
@@ -174,6 +197,17 @@ def main():
         }
 
 
+    final_consistency = None
+    consistency_path = out / "diagnostics" / "final_consistency.json"
+    if consistency_path.exists():
+        consistency_doc = load_json(consistency_path)
+        final_consistency = consistency_doc.get("final_consistency") or {
+            "num_dropped": len(consistency_doc.get("dropped_phases", [])),
+            "num_clamped": len(consistency_doc.get("clamped_phases", [])),
+            "num_lifecycle_violations": len(consistency_doc.get("lifecycle_violations", [])),
+            "num_expected_final_state_violations": len(consistency_doc.get("expected_final_state_violations", [])),
+        }
+
     manifest = {
         "format_version": 1,
         "generated_utc": datetime.now(timezone.utc).isoformat(),
@@ -191,6 +225,7 @@ def main():
         "runtime_output": safe_rel(out, event_root),
         "evidence_fingerprints": evidence,
         "closed_loop_perception": closed_loop,
+        "final_consistency": final_consistency,
         "exported_files": copied,
         "storage_policy": {
             "git_keeps": [
@@ -198,6 +233,7 @@ def main():
                 "evaluation report when available",
                 "summary",
                 "manifest",
+                "compact reasoning/final-consistency diagnostics",
             ],
             "local_only": [
                 "contact sheets",

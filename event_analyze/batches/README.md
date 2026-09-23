@@ -81,11 +81,13 @@ python evaluation/run_batch.py \
   --split development
 ```
 
-Then run validation:
+Then run validation. For a version comparison, always pass the version
+explicitly so the frozen manifest itself does not need to change:
 
 ```bash
 python evaluation/run_batch.py \
   batches/dishwasher_v1_manifest.json \
+  --version v3_4_5 \
   --split validation
 ```
 
@@ -117,7 +119,7 @@ If API and storage capacity permit, episode-level parallelism can be enabled:
 --workers 2
 ```
 
-Do not increase concurrency merely to reduce wall-clock time; V3.4.4 performs
+Do not increase concurrency merely to reduce wall-clock time; V3.4.4+ performs
 real targeted VLM requests.
 
 ## 4. Resume behavior
@@ -189,6 +191,10 @@ For V3.4.4+, closed-loop statistics include:
 - ambiguity trigger kinds.
 
 These fields are intended for accuracy-vs-perception-cost analysis.
+
+For V3.4.5+, the batch summary also aggregates final-consistency behavior:
+dropped invalid phases, clamped spans, lifecycle violations, unresolved
+expected-final-state violations, and the number of unresolved episodes.
 
 ## Experimental discipline
 

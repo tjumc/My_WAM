@@ -12,7 +12,9 @@ results**. Large or reproducible runtime caches should remain outside Git.
 - final `hierarchical_annotations.json`;
 - `evaluation_temporal.json` when available;
 - compact `summary.json`;
-- reproducibility `manifest.json`.
+- reproducibility `manifest.json`;
+- compact V3.4.5+ diagnostics such as `reasoning_trace.json` and
+  `final_consistency.json`.
 
 ## Local-only runtime cache
 
@@ -69,8 +71,13 @@ results/<episode>/<version>/
 ├── hierarchical_annotations.json
 ├── evaluation_temporal.json   # if available
 ├── summary.json
-└── manifest.json
+├── manifest.json
+└── diagnostics/               # V3.4.5+, when available
+    ├── reasoning_trace.json
+    └── final_consistency.json
 ```
 
-The manifest fingerprints important small evidence files without copying those
-evidence files into Git.
+The manifest fingerprints important evidence and records closed-loop query
+statistics. V3.4.5 additionally compacts the completed local runtime directory:
+reusable perception/proposal artifacts move under `cache/`, while pure
+intermediate reasoning snapshots are removed unless `KEEP_DEBUG=1`.

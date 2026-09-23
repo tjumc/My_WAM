@@ -5,7 +5,7 @@
 > preserve the **scientific problem -> diagnosis -> general solution -> evidence**
 > chain, and to distinguish paper-level ideas from local engineering fixes.
 >
-> Last updated: V3.4.4.
+> Last updated: V3.4.5 (implementation complete; controlled validation pending).
 
 ---
 
@@ -1330,6 +1330,82 @@ rules.
 
 ---
 
+## V3.4.5
+
+Purpose:
+
+**respond to failure modes exposed by the frozen six-trajectory validation split,
+without using validation GT inside inference.**
+
+V3.4.4 validation established:
+
+```text
+mean policy Precision = 0.918
+mean policy Recall    = 0.500
+mean policy F1        = 0.593
+mean Edit Distance    = 5.167
+Exact Rate            = 0 / 6
+targeted queries      = 48 total = 8 / trajectory
+```
+
+The dominant problem is low recall, while targeted perception is not selective:
+all six validation trajectories saturate the configured 8-query ceiling.
+
+V3.4.5 implements three method changes:
+
+1. **schema-driven gripper/contact bridge**
+   - a missing VLM hand-contact relation may be bridged only when a
+     schema-declared gripper-state signature, a direction-consistent visual
+     entity transition, and robot interaction signal all agree;
+   - gripper state alone never creates a semantic action.
+
+2. **semantic-value-ranked targeted re-observation**
+   - one semantic inconsistency produces at most one focused query window;
+   - lifecycle queries prefer an existing robot-supported transition candidate;
+   - requests are ranked by semantic impact and existing robot/interaction
+     evidence;
+   - an already accepted transition that only lacks additional directional
+     confirmation no longer consumes query budget.
+
+3. **global final-consistency gate**
+   - final phases after the task horizon are removed;
+   - invalid raw spans are clamped to the task/trajectory horizon;
+   - unresolved duration-conflict phases below minimum duration are removed;
+   - schema-inconsistent articulated lifecycle transitions are removed;
+   - unmet expected final states are reported without inventing a missing
+     action.
+
+V3.4.5 also introduces an engineering-only runtime compaction:
+
+- pass1/pass2 full JSON duplication is replaced by a compact
+  `diagnostics/reasoning_trace.json`;
+- final consistency decisions are stored in
+  `diagnostics/final_consistency.json`;
+- reusable perception/proposal artifacts move under `cache/`;
+- `KEEP_DEBUG=1` preserves the full intermediate chain.
+
+This storage cleanup is explicitly **not** a paper contribution.
+
+Status:
+
+**Implemented. Controlled evaluation on the frozen validation split is pending.**
+
+Required comparison:
+
+- V3.4.4 vs V3.4.5 on the same six validation trajectories;
+- policy Precision / Recall / F1 / Edit / Exact;
+- targeted queries and merged observations per trajectory;
+- consistency repairs and unresolved final-state violations;
+- regression on episode26/27.
+
+Main question:
+
+> Can stronger schema-grounded robot interaction evidence recover missing skills
+> while making targeted perception sparser, without lowering the reliability-
+> first precision established by V3.4.4?
+
+---
+
 # 5. Current problem status summary
 
 | Problem | Status | Current interpretation |
@@ -1344,12 +1420,12 @@ rules.
 | knife/fork fine identity unreliable | solved at policy-label level | utensil backoff |
 | re-grasp creates duplicate plate skills | solved for current pattern | completion-aware episodes |
 | fine-vs-coarse evaluation mismatch | solved | policy-normalized metrics |
-| push-in cutlery basket missing | V3.4.4 targeted recovery pending eval | generic lifecycle-triggered re-observation |
+| push-in cutlery basket missing | active | V3.4.5 uses focused lifecycle query + schema-grounded interaction bridge |
 | overlapping utensil temporal ownership | provisionally solved in V3.4.2 | joint hand-object ownership |
 | plate starts too early in episode27 | solved on regression episode27 | ownership/context-switch reasoning |
 | final boundary can collapse a valid phase | solved on current regression cases | duration-constrained semantic boundary arbitration |
 | relocated boundary may use stale robot signal | solved on current regression cases | post-anchor signal revalidation |
-| targeted dense perception is task-specific | V3.4.4 implemented, pending eval | generic ambiguity-triggered schema-driven targeting |
+| targeted perception over-queries | V3.4.5 implemented, pending eval | one focused request per semantic issue + value ranking |
 | base VLM perception prompt is task-specific | partially unresolved | targeted prompt is schema-driven; broad prompt still task-specific |
 | held-out / cross-task experimental evidence | unresolved | required for paper |
 
@@ -1612,28 +1688,26 @@ A concise method statement is:
 
 Priority order should be:
 
-1. **Fix validation-exposed global consistency and recall failures**
-   - enforce final phase intervals inside the valid task horizon;
-   - reject or explicitly mark unresolved duration conflicts;
-   - enforce schema final-state consistency after final phase selection;
-   - diagnose why complete trajectories can collapse to only one or two phases.
+1. **Controlled V3.4.5 validation**
+   - rerun episode26/27 regression;
+   - rerun the frozen six-trajectory validation split;
+   - compare recall gain against any precision regression;
+   - verify that targeted queries no longer saturate the per-episode ceiling.
 
-2. **Make targeted perception selective**
-   - avoid saturating the per-episode query budget on every trajectory;
-   - rank ambiguity requests by expected value / evidence deficit;
-   - record pass1 -> pass2 annotation deltas rather than only query counts.
+2. **Inspect reasoning deltas**
+   - use `diagnostics/reasoning_trace.json` to identify which queries actually
+     add/remove skills;
+   - separate useful targeted observations from merged evidence that does not
+     change the final annotation.
 
 3. **Schema-driven broad perception**
    - remove the remaining dishwasher-specific base VLM prompt;
-   - derive all entity/state questions from the task schema.
+   - derive all broad entity/state questions from the task schema.
 
-4. **Container interaction robustness**
-   - verify that lifecycle recovery generalizes beyond the cutlery basket.
-
-5. **Generalization experiments**
-   - multiple unseen trajectories of the same task;
-   - at least one additional task family;
-   - downstream policy-learning benefit.
+4. **Cross-task generalization**
+   - freeze the dishwasher method before opening the held-out split;
+   - add at least one additional task family with a new schema but the same
+     generic Python reasoning engine.
 
 ---
 

@@ -61,3 +61,19 @@ and return to `in` at completion; the door returns to `closed`.
 These declarations are used only to detect reasoning inconsistencies and choose
 where to re-observe. The targeted VLM prompt is not told which transition it is
 supposed to find.
+
+
+## Robot interaction signatures
+
+V3.4.5 allows an articulated entity to declare an optional
+`robot_interaction` signature, for example an expected gripper state during
+contact manipulation.
+
+This is task-family onboarding knowledge, not per-trajectory GT. It is used only
+as supporting evidence. Missing visual hand contact may be bridged only when:
+
+1. the schema gripper signature matches;
+2. a direction-consistent visual state transition is observed; and
+3. robot interaction signal is sufficiently strong.
+
+A gripper state by itself cannot create a semantic action.

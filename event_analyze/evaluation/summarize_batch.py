@@ -202,6 +202,7 @@ def main():
 
         temporal = flatten_temporal(eval_doc)
         closed = (compact_manifest or {}).get("closed_loop_perception") or {}
+        consistency = (compact_manifest or {}).get("final_consistency") or {}
 
         row = {
             "episode_id": ep["episode_id"],
@@ -218,6 +219,11 @@ def main():
             "num_targeted_queries": closed.get("num_targeted_queries"),
             "num_merged_targeted_observations": closed.get("num_merged_targeted_observations"),
             "ambiguity_kinds": closed.get("ambiguity_kinds"),
+            "consistency_num_dropped": consistency.get("num_dropped"),
+            "consistency_num_clamped": consistency.get("num_clamped"),
+            "consistency_lifecycle_violations": consistency.get("num_lifecycle_violations"),
+            "consistency_expected_final_state_violations": consistency.get("num_expected_final_state_violations"),
+            "consistency_status": consistency.get("status"),
             "result_git_commit": (compact_manifest or {}).get("git_commit_at_export"),
             "schema_sha256": ((compact_manifest or {}).get("input") or {}).get("schema_sha256"),
         }
@@ -230,6 +236,8 @@ def main():
             reasons.append("missing_result")
         if gt_metrics is not None and not gt_metrics["exact"]:
             reasons.append("non_exact_policy_sequence")
+        if row.get("consistency_status") == "unresolved":
+            reasons.append("internal_consistency_unresolved")
         if reasons:
             failures.append({
                 "episode_id": ep["episode_id"],
@@ -293,6 +301,23 @@ def main():
             "mean_targeted_queries_per_episode": finite_mean([
                 x.get("num_targeted_queries") for x in rows
             ]),
+        },
+        "final_consistency": {
+            "total_dropped_phases": sum(
+                int(x.get("consistency_num_dropped") or 0) for x in rows
+            ),
+            "total_clamped_phases": sum(
+                int(x.get("consistency_num_clamped") or 0) for x in rows
+            ),
+            "total_lifecycle_violations": sum(
+                int(x.get("consistency_lifecycle_violations") or 0) for x in rows
+            ),
+            "total_expected_final_state_violations": sum(
+                int(x.get("consistency_expected_final_state_violations") or 0) for x in rows
+            ),
+            "num_unresolved_episodes": sum(
+                x.get("consistency_status") == "unresolved" for x in rows
+            ),
         },
     }
 
