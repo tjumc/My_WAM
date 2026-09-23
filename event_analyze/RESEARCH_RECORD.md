@@ -5,7 +5,7 @@
 > preserve the **scientific problem -> diagnosis -> general solution -> evidence**
 > chain, and to distinguish paper-level ideas from local engineering fixes.
 >
-> Last updated: V3.4.7 (implementation complete; controlled validation pending).
+> Last updated: V3.4.8 (implementation complete; development regression pending).
 
 ---
 
@@ -1306,8 +1306,13 @@ as an episode26-specific exception.
 
 ### Status
 
-**Unresolved; candidate direction for the next reasoning version after
-development regression.**
+**Implemented in V3.4.8; development regression pending.**
+
+The V3.4.7 dense-evidence development ablation was completed before this change.
+It showed that evidence-backed candidate recovery and boundary protection need
+to be addressed together: episode26 recovered a basket phase in raw pass2, then
+lost its validated open-door anchor at final boundary arbitration; episode27
+did not recover the basket return phase at all.
 
 ### Contribution potential
 
@@ -1953,6 +1958,105 @@ The held-out split remains unopened.
 
 ---
 
+## V3.4.7 dense-evidence development ablation
+
+Purpose:
+
+**test whether adding legacy cutlery-basket directional observations to an
+otherwise unchanged V3.4.7 run is sufficient to recover the missing lifecycle.**
+
+The comparison reused the generic V3.4.7 proposal and base observations, added
+the legacy dense observer, and kept V3.4.7 tracking, validation, conservative
+assimilation, and final decoding unchanged. It ran only on development episodes
+26 and 27. The output and execution record are isolated under
+`v3_4_7_dense_ablation/`.
+
+Observed result:
+
+```text
+                         V3.4.7   dense ablation
+Precision                  1.000        1.000
+Recall                     0.450        0.450
+F1                         0.619        0.619
+Edit                       5.5          5.5
+Exact                      0 / 2        0 / 2
+```
+
+Episode27 stayed at four of ten policy phases (`navigate`, two `utensil`
+placements, `plate`) with F1 0.571. The dense evidence did not restore
+`push_in_cutlery_basket`.
+
+Episode26 gained `pull_out_cutlery_basket` in raw pass2. During boundary
+arbitration, however, its validated `open_dishwasher_door` anchor was shortened
+to frames 118–127 (10 frames versus a 21-frame minimum). The final consistency
+gate then dropped the door phase. The final sequence still had five phases, so
+the local basket recovery did not change aggregate sequence metrics.
+
+Conclusion:
+
+> Legacy dense evidence has local value, but it is not sufficient to recover
+> the missing lifecycle. Evidence-backed candidate recovery and preservation of
+> already validated phases must work together.
+
+The result narrows the next implementation to two downstream changes. It does
+not establish that either change improves quality; that remains a development
+regression question. The held-out split remains unopened.
+
+---
+
+## V3.4.8
+
+Purpose:
+
+**rehabilitate an existing rejected lifecycle candidate only when logical task
+implications and direct evidence agree, while preserving validated pass1
+anchors during boundary arbitration.**
+
+V3.4.8 inherits V3.4.7 proposal, base perception, ambiguity detection,
+targeted-query selection, conservative assimilation, and final task-graph
+decoding. Legacy task-specific dense perception remains disabled.
+
+Candidate rehabilitation has three evidence gates:
+
+1. pass1 already inferred and rejected a robot-supported candidate;
+2. a selected targeted observation directly supports the same schema transition
+   direction at high confidence;
+3. an accepted downstream placement implies the lifecycle state that makes the
+   candidate relevant at that point in the trajectory.
+
+The candidate then passes through the existing interaction and robot-signal
+validator. The state implication is a reason to recheck a candidate; it is not
+an action label and cannot create a new candidate on its own. The validator now
+propagates accepted placement implications in timestamp order so a supported
+return-to-final-state transition can be checked against the inferred
+receptacle usage state.
+
+Boundary arbitration matches reconciled phases against validated pass1 anchors.
+When an inserted candidate competes for the same interval, the anchor keeps its
+minimum duration where feasible. If the shared interval cannot fit both floors,
+the new candidate carries the unresolved conflict and fails closed. Pair-level
+conflict and anchor identity remain in diagnostics.
+
+Status:
+
+**Implemented; no V3.4.8 experiment has been run.** The next comparison is only
+the frozen development split (episodes 26 and 27), using V3.4.7 and the dense
+ablation as references. Validation and held-out are not part of this run.
+
+Expected diagnostic checks:
+
+- episode27: a basket transition appears only if the existing candidate,
+  robot interaction, accepted targeted direction, and placement implication
+  all agree;
+- episode26: an inserted basket phase does not compress the validated
+  open-door anchor below its required duration;
+- no schema-only or expected-final-state-only phase is emitted.
+
+The implementation hypotheses are not yet evidence of improved F1. The
+held-out split remains unopened.
+
+---
+
 # 5. Current problem status summary
 
 | Problem | Status | Current interpretation |
@@ -1967,17 +2071,17 @@ The held-out split remains unopened.
 | knife/fork fine identity unreliable | solved at policy-label level | utensil backoff |
 | re-grasp creates duplicate plate skills | solved for current pattern | completion-aware episodes |
 | fine-vs-coarse evaluation mismatch | solved | policy-normalized metrics |
-| push-in cutlery basket missing | active | V3.4.5 uses focused lifecycle query + schema-grounded interaction bridge |
+| push-in cutlery basket missing | V3.4.8 implementation pending development regression | only evidence-backed rejected candidates can be rehabilitated |
 | overlapping utensil temporal ownership | provisionally solved in V3.4.2 | joint hand-object ownership |
 | plate starts too early in episode27 | solved on regression episode27 | ownership/context-switch reasoning |
-| final boundary can collapse a valid phase | solved on current regression cases | duration-constrained semantic boundary arbitration |
+| final boundary can collapse a valid phase | reproduced in dense-ablation episode26; V3.4.8 protection unvalidated | pass1 anchor receives duration priority over an inserted candidate |
 | relocated boundary may use stale robot signal | solved on current regression cases | post-anchor signal revalidation |
 | targeted perception over-queries | improved but unresolved | 48 -> 41 queries; 3/6 trajectories still hit max budget |
 | base VLM perception prompt is task-specific | partially unresolved | targeted prompt is schema-driven; broad prompt still task-specific |
 | targeted evidence can delete correct pass1 skills | validated on V3.4.6 | conservative pass1-anchor assimilation restored episode9 true positives |
 | task horizon can be extended by spurious late predictions | validated on V3.4.6 | episode23 frontier restored to frame 1621; post-final cycle removed |
 | accepted placement does not imply receptacle usage state | validated on V3.4.7 | episode19 push-in-rack preserved; hidden lifecycle gaps exposed |
-| final state implications cannot rehabilitate rejected skills | unresolved | implication-aware evidence-backed candidate rehabilitation |
+| final state implications cannot rehabilitate rejected skills | V3.4.8 implemented; development regression pending | state implication gates revalidation but never creates a candidate |
 | held-out / cross-task experimental evidence | unresolved | required for paper |
 
 ---
@@ -2239,27 +2343,23 @@ A concise method statement is:
 
 Priority order should be:
 
-1. **Development regression for V3.4.7**
-   - rerun episode26/27 before changing the method again;
-   - verify that episode27's exact policy sequence remains stable;
-   - check whether usage-state implication helps or harms the long-standing
-     episode26 cutlery-basket lifecycle.
+1. **Run the V3.4.8 development regression on episodes26/27 only**
+   - compare with generic V3.4.7 and the dense ablation;
+   - inspect `candidate_rehabilitation.json` for every queued, accepted, and
+     rejected candidate;
+   - verify the open-door anchor retains its duration when a basket phase is
+     inserted;
+   - do not open validation or held-out as part of this implementation step.
 
-2. **Diagnose implication-aware candidate rehabilitation**
-   - inspect why targeted/rejected cutlery-basket push-in candidates fail to
-     enter pass2 on episodes7/9/21;
-   - reuse existing candidate and targeted evidence before considering more VLM
-     queries;
-   - never infer an action from final-state expectation alone.
-
-3. **Schema-driven broad perception**
+2. **Schema-driven broad perception**
    - remove the remaining dishwasher-specific broad VLM prompt;
    - derive all broad entity/state questions from the task schema.
 
-4. **Freeze dishwasher method, then evaluate generalization**
-   - only after development regression and the recurring lifecycle issue are
+3. **Freeze the dishwasher method, then evaluate generalization**
+   - only after the development regression and recurring lifecycle issue are
      understood, freeze the method;
-   - keep held-out trajectories unopened until that point;
+   - keep held-out trajectories unopened until the user authorizes the next
+     evaluation stage;
    - add at least one additional task family with a new schema but the same
      generic reasoning engine.
 

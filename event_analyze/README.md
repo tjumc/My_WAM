@@ -29,21 +29,21 @@ event_analyze/
 │   ├── v3_4_4/
 │   ├── v3_4_5/
 │   ├── v3_4_6/
-│   └── v3_4_7/      # current active: schema-driven latent state implication
+│   ├── v3_4_7/      # validated: schema-driven latent state implication
+│   ├── v3_4_7_dense_ablation/
+│   └── v3_4_8/      # candidate rehabilitation + anchor-preserving boundaries
 ```
 
-当前推荐运行 V3.4.7：
+当前开发候选为 V3.4.8；先只运行 development 回归：
 
 ```bash
-bash versions/v3_4_7/run.sh \
-  /path/to/episode.hdf5 \
-  output/dishwasher_2_fx_20260529_episode_27_analysis \
-  "put the dish into the dishwasher" \
-  11 \
-  1645
+python evaluation/run_batch.py \
+  batches/dishwasher_v1_manifest.json \
+  --version v3_4_8 \
+  --split development
 ```
 
-V3.4.7 在 V3.4.6 conservative closed-loop reasoning 之上继续补齐 schema-driven latent state implication：已接受的 dependent action 可证明 prerequisite state，已接受的 object placement 可证明目标 receptacle 当时处于 usage_state。系统只更新隐藏生命周期状态，不会凭空补造 missing skill。这样能够避免“漏掉 pull-out 后把真实 push-in 判成非法”，也能避免“整个 receptacle lifecycle 都漏掉却错误显示 final state 一致”。
+V3.4.7 是目前已完成 validation 的版本。V3.4.8 在其上增加 evidence-gated candidate rehabilitation 和 pass1 anchor-preserving boundary arbitration；它尚未经过 development 回归。具体方法和限制见 `versions/v3_4_8/README.md`。
 
 泛化边界与未来 task-agnostic 设计见 `GENERALIZATION.md`。截至当前版本的问题演化、已解决问题、未解决问题与论文贡献候选统一记录在 `RESEARCH_RECORD.md`。
 
@@ -70,7 +70,7 @@ episode26 目前只有人工确认的 sequence-only provisional GT；episode27 �
 python evaluation/regression_matrix.py
 ```
 
-默认比较到 `v3_4_7` 为止的版本，在 episode26/27 上检查 sequence Precision/Recall/F1、LCS/Edit Distance。
+默认比较至 `v3_4_8`，并包括 `v3_4_7_dense_ablation`，在 development episodes 26/27 上检查 sequence Precision/Recall/F1、LCS/Edit Distance。
 
 
 ## 实验文件保存规范
@@ -92,7 +92,7 @@ results/<episode>/<version>/
 
 ```bash
 GT=regression/dishwasher_episode27_manual_gt.json \
-bash versions/v3_4_7/run.sh ...
+bash versions/v3_4_8/run.sh ...
 ```
 
 后续版本保持 `GT` 不变，这样同一条实验命令只需要替换版本目录即可。
@@ -162,21 +162,21 @@ V3.4.4+ 的 ambiguity / targeted-query / merged-observation 成本。
 完整说明见 `batches/README.md`。
 
 
-## V3.4.7 runtime artifact layout
+## V3.4.8 runtime artifact layout
 
-V3.4.7 默认在成功导出后收敛本地运行目录：
+V3.4.8 默认在成功导出后收敛本地运行目录：
 
 ```text
-versions/v3_4_7/
+versions/v3_4_8/
 ├── hierarchical_annotations.json
 ├── evaluation_temporal.json   # only with frame-level GT
 ├── diagnostics/
 │   ├── reasoning_trace.json
 │   ├── conservative_update.json
+│   ├── candidate_rehabilitation.json
 │   └── final_consistency.json
 └── cache/
     └── reproducible perception/proposal artifacts
 ```
 
-完整中间 tracker / ownership / validation 文件仅在 `KEEP_DEBUG=1` 时长期保留。
-这属于工程存储优化，不作为论文贡献。详见 `versions/v3_4_7/README.md`。
+完整中间 tracker / ownership / validation 文件仅在 `KEEP_DEBUG=1` 时长期保留。详见 `versions/v3_4_8/README.md`。

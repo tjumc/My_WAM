@@ -54,3 +54,28 @@ Interpretation:
   observer is cutlery-basket specific.
 
 Do not run held-out with this ablation.
+
+## Development result
+
+The completed development batch did not change aggregate sequence metrics from
+generic V3.4.7:
+
+```text
+Precision = 1.000
+Recall    = 0.450
+F1        = 0.619
+Edit      = 5.5
+Exact     = 0 / 2
+```
+
+Episode27 remained at 4/10 with the same four policy labels. Episode26's raw
+pass2 recovered `pull_out_cutlery_basket`, but final boundary arbitration
+compressed the validated `open_dishwasher_door` anchor to frames 118–127
+(10 frames, below its 21-frame minimum), so the consistency gate removed it.
+The final sequence length stayed at five phases. Dense evidence had local value
+but did not solve the recurring missed push-in candidate or improve aggregate
+sequence quality.
+
+This points to two downstream changes for V3.4.8: evidence-gated rehabilitation
+of an existing rejected candidate, and boundary arbitration that preserves a
+validated pass1 anchor when a new phase competes for the same frames.

@@ -14,7 +14,8 @@ results**. Large or reproducible runtime caches should remain outside Git.
 - compact `summary.json`;
 - reproducibility `manifest.json`;
 - compact V3.4.5+ diagnostics such as `reasoning_trace.json`,
-  `conservative_update.json` (V3.4.6+), and `final_consistency.json`.
+  `conservative_update.json` (V3.4.6+),
+  `candidate_rehabilitation.json` (V3.4.8+), and `final_consistency.json`.
 
 ## Local-only runtime cache
 
@@ -75,6 +76,7 @@ results/<episode>/<version>/
 └── diagnostics/               # V3.4.5+, when available
     ├── reasoning_trace.json
     ├── conservative_update.json   # V3.4.6+
+    ├── candidate_rehabilitation.json  # V3.4.8+
     └── final_consistency.json
 ```
 

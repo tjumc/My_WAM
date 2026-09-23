@@ -22,6 +22,7 @@ KEEP_FILES = [
 KEEP_DIAGNOSTICS = [
     "reasoning_trace.json",
     "conservative_update.json",
+    "candidate_rehabilitation.json",
     "final_consistency.json",
 ]
 
@@ -253,7 +254,7 @@ def main():
                 "evaluation report when available",
                 "summary",
                 "manifest",
-                "compact reasoning/conservative-update/final-consistency diagnostics",
+                "compact reasoning/conservative-update/candidate-rehabilitation/final-consistency diagnostics",
             ],
             "local_only": [
                 "contact sheets",
