@@ -31,19 +31,20 @@ event_analyze/
 │   ├── v3_4_6/
 │   ├── v3_4_7/      # validated: schema-driven latent state implication
 │   ├── v3_4_7_dense_ablation/
-│   └── v3_4_8/      # candidate rehabilitation + anchor-preserving boundaries
+│   ├── v3_4_8/      # candidate rehabilitation + anchor-preserving boundaries
+│   └── v3_4_9/      # post-placement lifecycle search + duration-safe boundaries
 ```
 
-当前开发候选为 V3.4.8；先只运行 development 回归：
+当前开发候选为 V3.4.9；先只运行 development 回归：
 
 ```bash
 python evaluation/run_batch.py \
   batches/dishwasher_v1_manifest.json \
-  --version v3_4_8 \
+  --version v3_4_9 \
   --split development
 ```
 
-V3.4.7 是目前已完成 validation 的版本。V3.4.8 在其上增加 evidence-gated candidate rehabilitation 和 pass1 anchor-preserving boundary arbitration；它尚未经过 development 回归。具体方法和限制见 `versions/v3_4_8/README.md`。
+V3.4.7 是目前已完成 validation 的版本。V3.4.8 development 两条轨迹平均 policy F1 为 0.759，但 episode26 的碗架被边界裁决删掉，episode27 仍缺餐具篮关闭动作。V3.4.9 针对这两处诊断更新；其运行结果尚未取得。具体方法见 `versions/v3_4_9/README.md`。
 
 泛化边界与未来 task-agnostic 设计见 `GENERALIZATION.md`。截至当前版本的问题演化、已解决问题、未解决问题与论文贡献候选统一记录在 `RESEARCH_RECORD.md`。
 
@@ -70,7 +71,7 @@ episode26 目前只有人工确认的 sequence-only provisional GT；episode27 �
 python evaluation/regression_matrix.py
 ```
 
-默认比较至 `v3_4_8`，并包括 `v3_4_7_dense_ablation`，在 development episodes 26/27 上检查 sequence Precision/Recall/F1、LCS/Edit Distance。
+默认比较至 `v3_4_9`，并包括 `v3_4_7_dense_ablation`，在 development episodes 26/27 上检查 sequence Precision/Recall/F1、LCS/Edit Distance。
 
 
 ## 实验文件保存规范
@@ -92,7 +93,7 @@ results/<episode>/<version>/
 
 ```bash
 GT=regression/dishwasher_episode27_manual_gt.json \
-bash versions/v3_4_8/run.sh ...
+bash versions/v3_4_9/run.sh ...
 ```
 
 后续版本保持 `GT` 不变，这样同一条实验命令只需要替换版本目录即可。
@@ -162,12 +163,12 @@ V3.4.4+ 的 ambiguity / targeted-query / merged-observation 成本。
 完整说明见 `batches/README.md`。
 
 
-## V3.4.8 runtime artifact layout
+## V3.4.9 runtime artifact layout
 
-V3.4.8 默认在成功导出后收敛本地运行目录：
+V3.4.9 默认在成功导出后收敛本地运行目录：
 
 ```text
-versions/v3_4_8/
+versions/v3_4_9/
 ├── hierarchical_annotations.json
 ├── evaluation_temporal.json   # only with frame-level GT
 ├── diagnostics/
@@ -179,4 +180,4 @@ versions/v3_4_8/
     └── reproducible perception/proposal artifacts
 ```
 
-完整中间 tracker / ownership / validation 文件仅在 `KEEP_DEBUG=1` 时长期保留。详见 `versions/v3_4_8/README.md`。
+完整中间 tracker / ownership / validation 文件仅在 `KEEP_DEBUG=1` 时长期保留。详见 `versions/v3_4_9/README.md`。

@@ -5,7 +5,7 @@
 > preserve the **scientific problem -> diagnosis -> general solution -> evidence**
 > chain, and to distinguish paper-level ideas from local engineering fixes.
 >
-> Last updated: V3.4.8 (implementation complete; development regression pending).
+> Last updated: V3.4.9 implementation, after V3.4.8 development review.
 
 ---
 
@@ -2343,12 +2343,10 @@ A concise method statement is:
 
 Priority order should be:
 
-1. **Run the V3.4.8 development regression on episodes26/27 only**
-   - compare with generic V3.4.7 and the dense ablation;
-   - inspect `candidate_rehabilitation.json` for every queued, accepted, and
-     rejected candidate;
-   - verify the open-door anchor retains its duration when a basket phase is
-     inserted;
+1. **Run the V3.4.9 development regression on episodes26/27 only**
+   - compare with V3.4.8 and generic V3.4.7;
+   - inspect the post-placement basket query and candidate audit in episode27;
+   - verify the door and rack both retain their minimum durations in episode26;
    - do not open validation or held-out as part of this implementation step.
 
 2. **Schema-driven broad perception**
@@ -2393,3 +2391,41 @@ stochasticity.
 Episode26/27 should remain development/regression examples. Final paper claims
 must rely on unseen trajectories that were not repeatedly inspected during
 method development.
+
+---
+
+# V3.4.8 development review and V3.4.9 hypothesis
+
+The V3.4.8 development run completed on episodes26/27. Mean policy precision
+was 1.000, recall 0.650, F1 0.759, edit distance 3.5, and exact match 0/2.
+This improved on V3.4.7's 0.450 recall and 0.619 F1, but exposed two distinct
+failure paths. These are development observations, not validation evidence.
+
+**Episode26:** policy sequence fell from 5/10 to 4/10. The accepted door
+anchor and a valid rack candidate had raw envelopes [108,184] and [140,185].
+Their 21/18 frame minimum durations permit a cut in [139,167]. The V3.4.8
+arbiter instead required the full provisional door end at frame184, declared
+the pair infeasible, collapsed the rack to [185,185], and the finalizer dropped
+it. V3.4.9 treats complete anchor preservation as a preference after checking
+whether both duration floors fit. A feasible fallback cut protects both phases.
+
+**Episode27:** policy sequence improved to 9/10, with
+`push_in_cutlery_basket` still missing. V3.4.8 rehabilitation queued zero
+rejected candidates. Its selected basket query at [510,665] was too early and
+reported `in → in`; pass2 had no basket push candidate near the post-utensil
+interval. The robot proposal has right-arm events after the accepted utensil
+placements, including one at frame1044. V3.4.9 propagates accepted placement
+usage-state implications when planning the final lifecycle query, focuses that
+query after the last placement around a right-arm proposal, and permits one new
+candidate only when targeted observation directly shows the declared
+transition. The existing validator must still confirm robot interaction and
+lifecycle consistency. No closure is inferred from the task graph alone.
+
+The episode27 targeted request signatures changed between V3.4.7 and V3.4.8,
+so its targeted VLM calls were repeated. The 9/10 gain cannot be assigned
+solely to candidate reasoning. V3.4.9 reuses targeted evidence only on exact
+request-signature matches and records each new decision for audit.
+
+V3.4.9 is implemented but has no episode run yet. Development episode26/27
+results are needed to determine whether both fixes improve the final sequence
+without harming temporal localization. Validation and held-out remain closed.

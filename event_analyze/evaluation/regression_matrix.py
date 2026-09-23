@@ -49,7 +49,7 @@ def load_pred(path):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--event-root", default=str(Path(__file__).resolve().parents[1]))
-    ap.add_argument("--versions", default="v3_3_1,v3_3_2,v3_3_3,v3_4_0,v3_4_1,v3_4_2,v3_4_3,v3_4_4,v3_4_5,v3_4_6,v3_4_7,v3_4_7_dense_ablation,v3_4_8")
+    ap.add_argument("--versions", default="v3_3_1,v3_3_2,v3_3_3,v3_4_0,v3_4_1,v3_4_2,v3_4_3,v3_4_4,v3_4_5,v3_4_6,v3_4_7,v3_4_7_dense_ablation,v3_4_8,v3_4_9")
     ap.add_argument("--output", default=None)
     ap.add_argument("--schema", default=None)
     args = ap.parse_args()
