@@ -1,0 +1,67 @@
+{
+  "annotation_version": "v3.4.5",
+  "trajectory_frames": 1711,
+  "original_task_end_raw_frame": 1707,
+  "effective_task_end_raw_frame": 1707,
+  "dropped_phases": [
+    {
+      "skill_type": "close_dishwasher_door",
+      "raw_span": [
+        89,
+        98
+      ],
+      "reason": "unresolved_duration_conflict_below_minimum",
+      "duration_frames": 10,
+      "minimum_duration_frames": 21
+    },
+    {
+      "skill_type": "place_utensil_in_cutlery_basket",
+      "raw_span": [
+        581,
+        581
+      ],
+      "reason": "unresolved_duration_conflict_below_minimum",
+      "duration_frames": 1,
+      "minimum_duration_frames": 24
+    },
+    {
+      "skill_type": "open_dishwasher_door",
+      "entity": "door",
+      "raw_span": [
+        119,
+        142
+      ],
+      "reason": "schema_lifecycle_inconsistent_final_gate"
+    }
+  ],
+  "clamped_phases": [],
+  "evidence_horizon_warnings": [],
+  "lifecycle_violations": [
+    {
+      "skill_type": "open_dishwasher_door",
+      "entity": "door",
+      "current_state": "open",
+      "raw_span": [
+        119,
+        142
+      ],
+      "action": "dropped"
+    }
+  ],
+  "expected_final_state_violations": [
+    {
+      "entity": "cutlery_basket",
+      "observed_final_state": "out",
+      "expected_final_state": "in",
+      "action": "reported_unresolved_no_action_invented"
+    }
+  ],
+  "final_phase_count": 7,
+  "final_consistency": {
+    "num_dropped": 3,
+    "num_clamped": 0,
+    "num_lifecycle_violations": 1,
+    "num_expected_final_state_violations": 1,
+    "status": "unresolved"
+  }
+}

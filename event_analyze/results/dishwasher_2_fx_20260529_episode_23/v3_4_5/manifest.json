@@ -1,0 +1,98 @@
+{
+  "format_version": 1,
+  "generated_utc": "2026-09-23T06:44:18.486245+00:00",
+  "episode": "dishwasher_2_fx_20260529_episode_23",
+  "version": "v3_4_5",
+  "task": "put the dish into the dishwasher",
+  "task_family": "dishwasher_loading",
+  "git_commit_at_export": "6f52d39e174ee3cb4e6c2891ab7a65b16053928d",
+  "input": {
+    "hdf5_basename": "dishwasher_2_fx_20260529_episode_23.hdf5",
+    "hdf5_bytes": 297908255,
+    "schema": "ontologies/dishwasher_loading.json",
+    "schema_sha256": "2796fb1a9a90120484f0e0ec62d3c5d885246c1c90220a5abc5d127291bb1c87"
+  },
+  "runtime_output": "output/dishwasher_2_fx_20260529_episode_23_analysis/versions/v3_4_5",
+  "evidence_fingerprints": {
+    "entity_observations_base.jsonl": {
+      "sha256": "1e21aa0b3b2508039ca120b38f0922ebbf465b1a575915dbb8ac81deb1d43248",
+      "bytes": 50661
+    },
+    "tracked_entity_states.json": {
+      "sha256": "499229ef9dbf7e6a8bc958ddb2556763955f14f0c3fd2a27e1880ebe6365dde5",
+      "bytes": 79623
+    },
+    "tracked_entity_states_owned.json": {
+      "sha256": "4f8466662c509e3c78ff5d8db0d83ddadaedf9710bddd0e2c9d087c472e4dada",
+      "bytes": 81775
+    },
+    "hand_object_ownership.json": {
+      "sha256": "50e1db9970239408a0e2f19bfbf82a1364cf476ca67bfdae97e8aea90179b4bd",
+      "bytes": 11278
+    },
+    "ambiguity_requests.json": {
+      "sha256": "b506dd51a1bc4221045b133b4477050ecb079f4f86cb6ee5b611d08ab422c787",
+      "bytes": 6004
+    },
+    "targeted_observations.jsonl": {
+      "sha256": "e748152dc33ae9fe91e473d7c63344d21def1392cd9908f47e504b0064e28c40",
+      "bytes": 11784
+    },
+    "skill_candidates_validated.json": {
+      "sha256": "fcaba13eb6f83e639d6fa7fb2582dfe789f680c45e81ba29119b72bbc3e14741",
+      "bytes": 17565
+    }
+  },
+  "closed_loop_perception": {
+    "num_ambiguity_requests": 7,
+    "num_targeted_queries": 7,
+    "num_merged_targeted_observations": 7,
+    "ambiguity_kinds": [
+      "receptacle_usage_without_ready_lifecycle",
+      "rejected_visual_evidence",
+      "unfinished_lifecycle"
+    ]
+  },
+  "final_consistency": {
+    "num_dropped": 0,
+    "num_clamped": 0,
+    "num_lifecycle_violations": 0,
+    "num_expected_final_state_violations": 0,
+    "status": "consistent"
+  },
+  "exported_files": {
+    "hierarchical_annotations.json": {
+      "sha256": "28ad6db255f846d2debe7ac949d0ec3453a786fd5e444e2aacab625a99567b6f",
+      "bytes": 21416
+    },
+    "diagnostics/reasoning_trace.json": {
+      "sha256": "f193092a0e43a8a95f29fbb55debcda9cb416445182048787c3c3ec953c5052c",
+      "bytes": 10459
+    },
+    "diagnostics/final_consistency.json": {
+      "sha256": "8824a152b56ffd5d826a778fb0f3b456f4dd97facc8d136d591a6b9f79a4922b",
+      "bytes": 508
+    },
+    "summary.json": {
+      "sha256": "89ff1926714042097b0c4096da88042219df384a90cffe5a4144678c14eac2ab",
+      "bytes": 2745
+    }
+  },
+  "storage_policy": {
+    "git_keeps": [
+      "final annotations",
+      "evaluation report when available",
+      "summary",
+      "manifest",
+      "compact reasoning/final-consistency diagnostics"
+    ],
+    "local_only": [
+      "contact sheets",
+      "dense temporal strips",
+      "overview images",
+      "raw VLM responses",
+      "proposal visualizations",
+      "other reproducible runtime caches"
+    ]
+  }
+}

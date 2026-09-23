@@ -1,0 +1,258 @@
+{
+  "rows": [
+    {
+      "episode_id": 6,
+      "episode": "dishwasher_2_fx_20260529_episode_6",
+      "split": "validation",
+      "run_status": "success",
+      "result_available": true,
+      "phase_count": 2,
+      "skill_sequence": [
+        "place_plate_in_dish_rack",
+        "close_dishwasher_door"
+      ],
+      "gt_available": true,
+      "policy_sequence": {
+        "pred_n": 2,
+        "gt_n": 10,
+        "matched": 2,
+        "precision": 1.0,
+        "recall": 0.2,
+        "f1": 0.33333333333333337,
+        "edit_distance": 8,
+        "exact": false
+      },
+      "num_ambiguity_requests": 8,
+      "num_targeted_queries": 8,
+      "num_merged_targeted_observations": 7,
+      "ambiguity_kinds": [
+        "accessibility_prerequisite_missing",
+        "ownership_conflict",
+        "receptacle_usage_without_ready_lifecycle",
+        "rejected_visual_evidence"
+      ],
+      "consistency_num_dropped": 0,
+      "consistency_num_clamped": 0,
+      "consistency_lifecycle_violations": 0,
+      "consistency_expected_final_state_violations": 0,
+      "consistency_status": "consistent",
+      "result_git_commit": "6f52d39e174ee3cb4e6c2891ab7a65b16053928d",
+      "schema_sha256": "2796fb1a9a90120484f0e0ec62d3c5d885246c1c90220a5abc5d127291bb1c87"
+    },
+    {
+      "episode_id": 7,
+      "episode": "dishwasher_2_fx_20260529_episode_7",
+      "split": "validation",
+      "run_status": "success",
+      "result_available": true,
+      "phase_count": 7,
+      "skill_sequence": [
+        "navigate_to_station",
+        "open_dishwasher_door",
+        "pull_out_dish_rack",
+        "pull_out_cutlery_basket",
+        "place_utensil_in_cutlery_basket",
+        "place_plate_in_dish_rack",
+        "push_in_dish_rack"
+      ],
+      "gt_available": true,
+      "policy_sequence": {
+        "pred_n": 7,
+        "gt_n": 10,
+        "matched": 7,
+        "precision": 1.0,
+        "recall": 0.7,
+        "f1": 0.8235294117647058,
+        "edit_distance": 3,
+        "exact": false
+      },
+      "num_ambiguity_requests": 6,
+      "num_targeted_queries": 6,
+      "num_merged_targeted_observations": 6,
+      "ambiguity_kinds": [
+        "receptacle_usage_without_ready_lifecycle",
+        "rejected_visual_evidence",
+        "unfinished_lifecycle"
+      ],
+      "consistency_num_dropped": 0,
+      "consistency_num_clamped": 0,
+      "consistency_lifecycle_violations": 0,
+      "consistency_expected_final_state_violations": 2,
+      "consistency_status": "unresolved",
+      "result_git_commit": "6f52d39e174ee3cb4e6c2891ab7a65b16053928d",
+      "schema_sha256": "2796fb1a9a90120484f0e0ec62d3c5d885246c1c90220a5abc5d127291bb1c87"
+    },
+    {
+      "episode_id": 9,
+      "episode": "dishwasher_2_fx_20260529_episode_9",
+      "split": "validation",
+      "run_status": "success",
+      "result_available": true,
+      "phase_count": 4,
+      "skill_sequence": [
+        "navigate_to_station",
+        "place_utensil_in_cutlery_basket",
+        "place_utensil_in_cutlery_basket",
+        "place_plate_in_dish_rack"
+      ],
+      "gt_available": true,
+      "policy_sequence": {
+        "pred_n": 4,
+        "gt_n": 10,
+        "matched": 4,
+        "precision": 1.0,
+        "recall": 0.4,
+        "f1": 0.5714285714285715,
+        "edit_distance": 6,
+        "exact": false
+      },
+      "num_ambiguity_requests": 8,
+      "num_targeted_queries": 8,
+      "num_merged_targeted_observations": 7,
+      "ambiguity_kinds": [
+        "accessibility_prerequisite_missing",
+        "receptacle_usage_without_ready_lifecycle",
+        "rejected_visual_evidence",
+        "unfinished_lifecycle"
+      ],
+      "consistency_num_dropped": 0,
+      "consistency_num_clamped": 0,
+      "consistency_lifecycle_violations": 0,
+      "consistency_expected_final_state_violations": 1,
+      "consistency_status": "unresolved",
+      "result_git_commit": "6f52d39e174ee3cb4e6c2891ab7a65b16053928d",
+      "schema_sha256": "2796fb1a9a90120484f0e0ec62d3c5d885246c1c90220a5abc5d127291bb1c87"
+    },
+    {
+      "episode_id": 19,
+      "episode": "dishwasher_2_fx_20260529_episode_19",
+      "split": "validation",
+      "run_status": "success",
+      "result_available": true,
+      "phase_count": 5,
+      "skill_sequence": [
+        "navigate_to_station",
+        "open_dishwasher_door",
+        "place_utensil_in_cutlery_basket",
+        "place_plate_in_dish_rack",
+        "push_in_dish_rack"
+      ],
+      "gt_available": true,
+      "policy_sequence": {
+        "pred_n": 5,
+        "gt_n": 10,
+        "matched": 5,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "edit_distance": 5,
+        "exact": false
+      },
+      "num_ambiguity_requests": 8,
+      "num_targeted_queries": 8,
+      "num_merged_targeted_observations": 5,
+      "ambiguity_kinds": [
+        "accessibility_prerequisite_missing",
+        "ownership_conflict",
+        "receptacle_usage_without_ready_lifecycle",
+        "rejected_visual_evidence",
+        "unfinished_lifecycle"
+      ],
+      "consistency_num_dropped": 0,
+      "consistency_num_clamped": 0,
+      "consistency_lifecycle_violations": 0,
+      "consistency_expected_final_state_violations": 1,
+      "consistency_status": "unresolved",
+      "result_git_commit": "6f52d39e174ee3cb4e6c2891ab7a65b16053928d",
+      "schema_sha256": "2796fb1a9a90120484f0e0ec62d3c5d885246c1c90220a5abc5d127291bb1c87"
+    },
+    {
+      "episode_id": 21,
+      "episode": "dishwasher_2_fx_20260529_episode_21",
+      "split": "validation",
+      "run_status": "success",
+      "result_available": true,
+      "phase_count": 7,
+      "skill_sequence": [
+        "navigate_to_station",
+        "pull_out_dish_rack",
+        "place_utensil_in_cutlery_basket",
+        "place_utensil_in_cutlery_basket",
+        "place_plate_in_dish_rack",
+        "push_in_dish_rack",
+        "close_dishwasher_door"
+      ],
+      "gt_available": true,
+      "policy_sequence": {
+        "pred_n": 7,
+        "gt_n": 10,
+        "matched": 7,
+        "precision": 1.0,
+        "recall": 0.7,
+        "f1": 0.8235294117647058,
+        "edit_distance": 3,
+        "exact": false
+      },
+      "num_ambiguity_requests": 4,
+      "num_targeted_queries": 4,
+      "num_merged_targeted_observations": 3,
+      "ambiguity_kinds": [
+        "rejected_visual_evidence",
+        "unfinished_lifecycle"
+      ],
+      "consistency_num_dropped": 3,
+      "consistency_num_clamped": 0,
+      "consistency_lifecycle_violations": 1,
+      "consistency_expected_final_state_violations": 1,
+      "consistency_status": "unresolved",
+      "result_git_commit": "6f52d39e174ee3cb4e6c2891ab7a65b16053928d",
+      "schema_sha256": "2796fb1a9a90120484f0e0ec62d3c5d885246c1c90220a5abc5d127291bb1c87"
+    },
+    {
+      "episode_id": 23,
+      "episode": "dishwasher_2_fx_20260529_episode_23",
+      "split": "validation",
+      "run_status": "success",
+      "result_available": true,
+      "phase_count": 10,
+      "skill_sequence": [
+        "navigate_to_station",
+        "pull_out_dish_rack",
+        "pull_out_cutlery_basket",
+        "place_utensil_in_cutlery_basket",
+        "place_plate_in_dish_rack",
+        "push_in_cutlery_basket",
+        "push_in_dish_rack",
+        "close_dishwasher_door",
+        "open_dishwasher_door",
+        "close_dishwasher_door"
+      ],
+      "gt_available": true,
+      "policy_sequence": {
+        "pred_n": 10,
+        "gt_n": 10,
+        "matched": 7,
+        "precision": 0.7,
+        "recall": 0.7,
+        "f1": 0.7,
+        "edit_distance": 5,
+        "exact": false
+      },
+      "num_ambiguity_requests": 7,
+      "num_targeted_queries": 7,
+      "num_merged_targeted_observations": 7,
+      "ambiguity_kinds": [
+        "receptacle_usage_without_ready_lifecycle",
+        "rejected_visual_evidence",
+        "unfinished_lifecycle"
+      ],
+      "consistency_num_dropped": 0,
+      "consistency_num_clamped": 0,
+      "consistency_lifecycle_violations": 0,
+      "consistency_expected_final_state_violations": 0,
+      "consistency_status": "consistent",
+      "result_git_commit": "6f52d39e174ee3cb4e6c2891ab7a65b16053928d",
+      "schema_sha256": "2796fb1a9a90120484f0e0ec62d3c5d885246c1c90220a5abc5d127291bb1c87"
+    }
+  ]
+}

@@ -1,0 +1,334 @@
+{
+  "annotation_version": "v3.4.5",
+  "pass1": {
+    "skill_sequence": [
+      "navigate_to_station",
+      "close_dishwasher_door",
+      "open_dishwasher_door",
+      "pull_out_dish_rack",
+      "place_utensil_in_cutlery_basket",
+      "place_utensil_in_cutlery_basket",
+      "place_utensil_in_cutlery_basket",
+      "place_plate_in_dish_rack",
+      "push_in_dish_rack",
+      "close_dishwasher_door"
+    ],
+    "phase_count": 10,
+    "rejected_candidates": [
+      {
+        "original_skill_id": 3,
+        "skill_type": "pull_out_dish_rack",
+        "reasons": [
+          "short_reverse_pair_visual_jitter"
+        ],
+        "signal_score": 0.791,
+        "contact_count": null,
+        "direction_only_count": null
+      },
+      {
+        "original_skill_id": 4,
+        "skill_type": "push_in_dish_rack",
+        "reasons": [
+          "short_reverse_pair_visual_jitter"
+        ],
+        "signal_score": 0.498,
+        "contact_count": null,
+        "direction_only_count": null
+      },
+      {
+        "original_skill_id": 5,
+        "skill_type": "push_in_cutlery_basket",
+        "reasons": [
+          "receptacle_push_before_use_finished"
+        ],
+        "signal_score": 0.572,
+        "contact_count": null,
+        "direction_only_count": null
+      },
+      {
+        "original_skill_id": 6,
+        "skill_type": "pull_out_cutlery_basket",
+        "reasons": [
+          "no_entity_specific_hand_contact"
+        ],
+        "signal_score": 0.691,
+        "contact_count": 0,
+        "direction_only_count": 0
+      },
+      {
+        "original_skill_id": 8,
+        "skill_type": "push_in_cutlery_basket",
+        "reasons": [
+          "receptacle_push_before_use_finished"
+        ],
+        "signal_score": 0.513,
+        "contact_count": null,
+        "direction_only_count": null
+      },
+      {
+        "original_skill_id": 9,
+        "skill_type": "push_in_dish_rack",
+        "reasons": [
+          "short_reverse_pair_visual_jitter"
+        ],
+        "signal_score": 0.891,
+        "contact_count": null,
+        "direction_only_count": null
+      },
+      {
+        "original_skill_id": 11,
+        "skill_type": "pull_out_dish_rack",
+        "reasons": [
+          "short_reverse_pair_visual_jitter"
+        ],
+        "signal_score": 0.865,
+        "contact_count": null,
+        "direction_only_count": null
+      },
+      {
+        "original_skill_id": 13,
+        "skill_type": "push_in_dish_rack",
+        "reasons": [
+          "receptacle_push_before_use_finished"
+        ],
+        "signal_score": 0.544,
+        "contact_count": null,
+        "direction_only_count": null
+      },
+      {
+        "original_skill_id": 14,
+        "skill_type": "pull_out_cutlery_basket",
+        "reasons": [
+          "receptacle_pull_after_use_started"
+        ],
+        "signal_score": 0.638,
+        "contact_count": null,
+        "direction_only_count": null
+      },
+      {
+        "original_skill_id": 15,
+        "skill_type": "pull_out_dish_rack",
+        "reasons": [
+          "no_entity_specific_hand_contact"
+        ],
+        "signal_score": 0.634,
+        "contact_count": 0,
+        "direction_only_count": 0
+      },
+      {
+        "original_skill_id": 17,
+        "skill_type": "push_in_dish_rack",
+        "reasons": [
+          "receptacle_push_before_use_finished"
+        ],
+        "signal_score": 0.299,
+        "contact_count": null,
+        "direction_only_count": null
+      },
+      {
+        "original_skill_id": 18,
+        "skill_type": "pull_out_dish_rack",
+        "reasons": [
+          "entity_contact_plus_robot_signal",
+          "direction_consistent_visual_transition",
+          "schema_lifecycle_inconsistent_or_duplicate"
+        ],
+        "signal_score": 0.424,
+        "contact_count": 1,
+        "direction_only_count": 1
+      },
+      {
+        "original_skill_id": 19,
+        "skill_type": "push_in_cutlery_basket",
+        "reasons": [
+          "no_entity_specific_hand_contact",
+          "direction_seen_but_contact_bridge_not_supported"
+        ],
+        "signal_score": 0.557,
+        "contact_count": 0,
+        "direction_only_count": 1
+      },
+      {
+        "original_skill_id": 21,
+        "skill_type": "push_in_dish_rack",
+        "reasons": [
+          "receptacle_push_before_use_finished"
+        ],
+        "signal_score": 0.58,
+        "contact_count": null,
+        "direction_only_count": null
+      },
+      {
+        "original_skill_id": 22,
+        "skill_type": "pull_out_dish_rack",
+        "reasons": [
+          "receptacle_pull_after_use_started"
+        ],
+        "signal_score": 0.364,
+        "contact_count": null,
+        "direction_only_count": null
+      },
+      {
+        "original_skill_id": 23,
+        "skill_type": "push_in_dish_rack",
+        "reasons": [
+          "short_reverse_pair_visual_jitter"
+        ],
+        "signal_score": 0.167,
+        "contact_count": null,
+        "direction_only_count": null
+      },
+      {
+        "original_skill_id": 24,
+        "skill_type": "pull_out_dish_rack",
+        "reasons": [
+          "short_reverse_pair_visual_jitter"
+        ],
+        "signal_score": 0.331,
+        "contact_count": null,
+        "direction_only_count": null
+      },
+      {
+        "original_skill_id": 26,
+        "skill_type": "close_dishwasher_door",
+        "reasons": [
+          "short_reverse_pair_visual_jitter"
+        ],
+        "signal_score": 0.478,
+        "contact_count": null,
+        "direction_only_count": null
+      },
+      {
+        "original_skill_id": 27,
+        "skill_type": "open_dishwasher_door",
+        "reasons": [
+          "short_reverse_pair_visual_jitter"
+        ],
+        "signal_score": 0.39,
+        "contact_count": null,
+        "direction_only_count": null
+      }
+    ],
+    "ownership_ambiguities": []
+  },
+  "targeted_perception": {
+    "num_candidate_requests": 12,
+    "num_requests": 4,
+    "requests": [
+      {
+        "request_id": 0,
+        "kind": "rejected_visual_evidence",
+        "semantic_goal": "recover_candidate:cutlery_basket:pull_out_cutlery_basket",
+        "target_entities": [
+          "cutlery_basket"
+        ],
+        "start_frame": 387,
+        "end_frame": 463,
+        "utility_score": 294.501
+      },
+      {
+        "request_id": 1,
+        "kind": "rejected_visual_evidence",
+        "semantic_goal": "recover_candidate:dish_rack:pull_out_dish_rack",
+        "target_entities": [
+          "dish_rack"
+        ],
+        "start_frame": 902,
+        "end_frame": 978,
+        "utility_score": 294.142
+      },
+      {
+        "request_id": 2,
+        "kind": "unfinished_lifecycle",
+        "semantic_goal": "reach_final_state:cutlery_basket:in",
+        "target_entities": [
+          "cutlery_basket"
+        ],
+        "start_frame": 978,
+        "end_frame": 1076,
+        "utility_score": 504.409
+      },
+      {
+        "request_id": 3,
+        "kind": "rejected_visual_evidence",
+        "semantic_goal": "recover_candidate:dish_rack:push_in_dish_rack",
+        "target_entities": [
+          "dish_rack"
+        ],
+        "start_frame": 1242,
+        "end_frame": 1318,
+        "utility_score": 292.975
+      }
+    ],
+    "num_targeted_queries": 4,
+    "num_merged_targeted_observations": 3
+  },
+  "pass2": {
+    "skill_sequence": [
+      "navigate_to_station",
+      "close_dishwasher_door",
+      "open_dishwasher_door",
+      "pull_out_dish_rack",
+      "place_utensil_in_cutlery_basket",
+      "place_utensil_in_cutlery_basket",
+      "place_utensil_in_cutlery_basket",
+      "place_plate_in_dish_rack",
+      "push_in_dish_rack",
+      "close_dishwasher_door"
+    ],
+    "phase_count": 10,
+    "changes_from_pass1": []
+  },
+  "final": {
+    "skill_sequence": [
+      "navigate_to_station",
+      "pull_out_dish_rack",
+      "place_utensil_in_cutlery_basket",
+      "place_utensil_in_cutlery_basket",
+      "place_plate_in_dish_rack",
+      "push_in_dish_rack",
+      "close_dishwasher_door"
+    ],
+    "phase_count": 7,
+    "changes_from_pass2": [
+      {
+        "op": "delete",
+        "before_index": [
+          1,
+          3
+        ],
+        "after_index": [
+          1,
+          1
+        ],
+        "before": [
+          "close_dishwasher_door",
+          "open_dishwasher_door"
+        ],
+        "after": []
+      },
+      {
+        "op": "delete",
+        "before_index": [
+          4,
+          5
+        ],
+        "after_index": [
+          2,
+          2
+        ],
+        "before": [
+          "place_utensil_in_cutlery_basket"
+        ],
+        "after": []
+      }
+    ],
+    "consistency": {
+      "num_dropped": 3,
+      "num_clamped": 0,
+      "num_lifecycle_violations": 1,
+      "num_expected_final_state_violations": 1,
+      "status": "unresolved"
+    }
+  }
+}

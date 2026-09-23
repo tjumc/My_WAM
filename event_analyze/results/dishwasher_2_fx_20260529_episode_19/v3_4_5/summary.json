@@ -1,0 +1,57 @@
+{
+  "annotation_version": "v3.4.5",
+  "episode": "dishwasher_2_fx_20260529_episode_19",
+  "task_goal": "put the dish into the dishwasher",
+  "task_family": "dishwasher_loading",
+  "phase_count": 5,
+  "skill_sequence": [
+    "navigate_to_station",
+    "open_dishwasher_door",
+    "place_utensil_in_cutlery_basket",
+    "place_plate_in_dish_rack",
+    "push_in_dish_rack"
+  ],
+  "task_end_raw_frame": 1558,
+  "phases": [
+    {
+      "skill_type": "navigate_to_station",
+      "raw_start_frame": 34,
+      "raw_end_frame": 86,
+      "provisional_start_frame": 45,
+      "provisional_end_frame": 87,
+      "confidence": 0.95
+    },
+    {
+      "skill_type": "open_dishwasher_door",
+      "raw_start_frame": 87,
+      "raw_end_frame": 107,
+      "provisional_start_frame": 88,
+      "provisional_end_frame": 88,
+      "confidence": 0.95
+    },
+    {
+      "skill_type": "place_utensil_in_cutlery_basket",
+      "raw_start_frame": 181,
+      "raw_end_frame": 996,
+      "provisional_start_frame": 188,
+      "provisional_end_frame": 986,
+      "confidence": 0.406
+    },
+    {
+      "skill_type": "place_plate_in_dish_rack",
+      "raw_start_frame": 1046,
+      "raw_end_frame": 1512,
+      "provisional_start_frame": 1054,
+      "provisional_end_frame": 1513,
+      "confidence": 0.95
+    },
+    {
+      "skill_type": "push_in_dish_rack",
+      "raw_start_frame": 1513,
+      "raw_end_frame": 1558,
+      "provisional_start_frame": 1513,
+      "provisional_end_frame": 1558,
+      "confidence": 1.0
+    }
+  ]
+}
