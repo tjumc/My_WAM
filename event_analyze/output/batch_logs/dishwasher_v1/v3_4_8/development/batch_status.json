@@ -4,34 +4,34 @@
   "version": "v3_4_8",
   "split": "development",
   "manifest": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/batches/dishwasher_v1_manifest.json",
-  "started_utc": "2026-09-23T11:14:27.729293+00:00",
+  "started_utc": "2026-09-23T11:53:52.355726+00:00",
   "workers": 1,
   "episodes": {
     "dishwasher_2_fx_20260529_episode_26": {
-      "status": "failed",
-      "return_code": 1,
-      "started_utc": "2026-09-23T11:14:27.746678+00:00",
-      "finished_utc": "2026-09-23T11:14:29.738737+00:00",
+      "status": "success",
+      "return_code": 0,
+      "started_utc": "2026-09-23T11:53:52.368540+00:00",
+      "finished_utc": "2026-09-23T11:54:03.545778+00:00",
       "hdf5": "/efs/share/1919650160032350208/efs_backup/nas-backup/compressed_data/astribot/dishwasher_2_fx_20260529_compressed/dishwasher_2_fx_20260529_episode_26.hdf5",
       "output_dir": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_26_analysis",
       "temporal_gt": null,
       "log": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/batch_logs/dishwasher_v1/v3_4_8/development/dishwasher_2_fx_20260529_episode_26.log",
-      "result": null
+      "result": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/results/dishwasher_2_fx_20260529_episode_26/v3_4_8/hierarchical_annotations.json"
     },
     "dishwasher_2_fx_20260529_episode_27": {
-      "status": "failed",
-      "return_code": 1,
-      "started_utc": "2026-09-23T11:14:29.750248+00:00",
-      "finished_utc": "2026-09-23T11:14:31.494164+00:00",
+      "status": "success",
+      "return_code": 0,
+      "started_utc": "2026-09-23T11:54:03.556651+00:00",
+      "finished_utc": "2026-09-23T11:54:37.388298+00:00",
       "hdf5": "/efs/share/1919650160032350208/efs_backup/nas-backup/compressed_data/astribot/dishwasher_2_fx_20260529_compressed/dishwasher_2_fx_20260529_episode_27.hdf5",
       "output_dir": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_27_analysis",
       "temporal_gt": "regression/dishwasher_episode27_manual_gt.json",
       "log": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/batch_logs/dishwasher_v1/v3_4_8/development/dishwasher_2_fx_20260529_episode_27.log",
-      "result": null
+      "result": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/results/dishwasher_2_fx_20260529_episode_27/v3_4_8/hierarchical_annotations.json"
     }
   },
-  "finished_utc": "2026-09-23T11:14:31.503332+00:00",
+  "finished_utc": "2026-09-23T11:54:37.398091+00:00",
   "counts": {
-    "failed": 2
+    "success": 2
   }
 }

@@ -1,0 +1,34 @@
+```json
+{
+  "state_before": {
+    "door": "closed",
+    "right_hand": "uncertain",
+    "left_hand": "uncertain"
+  },
+  "state_after": {
+    "door": "open",
+    "right_hand": "contact_door",
+    "left_hand": "uncertain"
+  },
+  "confidence_before": {
+    "door": 0.95,
+    "right_hand": 0.0,
+    "left_hand": 0.0
+  },
+  "confidence_after": {
+    "door": 0.98,
+    "right_hand": 0.95,
+    "left_hand": 0.0
+  },
+  "evidence_time_indices": [
+    0,
+    7
+  ],
+  "evidence": [
+    "在 frame 86 (t0) 的 head 视角中，洗碗机门处于关闭状态，呈现为一个完整的黑色面板。",
+    "在 frame 220 (t7) 的 head 视角中，洗碗机门已完全打开，内部架子和餐具清晰可见。",
+    "在 frame 220 (t7) 的 right 视角中，可以看到机械臂（右手）正位于洗碗机内部，表明与门或内部结构存在接触关系。"
+  ],
+  "window_quality": "good"
+}
+```

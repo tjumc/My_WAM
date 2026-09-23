@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "in",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "cutlery_basket": "in",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "head 视角显示洗碗机内部，餐具篮（cutlery_basket）位于洗碗机深处，位置未发生移动。",
+    "right 视角在早期（f510）近距离拍摄到洗碗机内部结构，确认篮子处于 'in' 状态。",
+    "在后续帧（f665）中，right 视角转向台面粉色盘子，不再可见洗碗机内部，但无移动证据。",
+    "整个时间窗口内，手部未与餐具篮发生接触或交互。"
+  ],
+  "window_quality": "good"
+}
+```

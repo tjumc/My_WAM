@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "out",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "dish_rack": "out",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "dish_rack": 1.0,
+    "right_hand": 1.0,
+    "left_hand": 1.0
+  },
+  "confidence_after": {
+    "dish_rack": 1.0,
+    "right_hand": 0.9,
+    "left_hand": 1.0
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "In head frames t0-t7 (843-919), the dishwasher rack is clearly visible in the open (out) position.",
+    "In right frames t0-t6 (843-908), the right hand is holding a pink plate and is not visible interacting with the rack.",
+    "In right frame t7 (919), the right hand is visible inside the dishwasher rack area, holding a fork, indicating contact.",
+    "In head frames t6-t7 (908-919), the right hand moves from the plate area towards and into the open rack."
+  ],
+  "window_quality": "good"
+}
+```

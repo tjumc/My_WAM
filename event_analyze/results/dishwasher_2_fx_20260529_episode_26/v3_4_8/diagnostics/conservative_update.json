@@ -1,0 +1,92 @@
+{
+  "annotation_version": "v3.4.6",
+  "pass1_count": 4,
+  "raw_pass2_count": 5,
+  "reconciled_count": 5,
+  "restored_pass1_anchors": [],
+  "directly_contradicted_pass1_anchors": [],
+  "pass2_additions": [
+    {
+      "skill_type": "pull_out_dish_rack",
+      "entity": "dish_rack",
+      "fine_entity": null,
+      "start_frame": 140,
+      "end_frame": 185,
+      "confidence": 0.85
+    }
+  ],
+  "represented_pass1_anchors": [
+    {
+      "pass1": {
+        "skill_type": "navigate_to_station",
+        "entity": "robot_base",
+        "fine_entity": null,
+        "start_frame": 32,
+        "end_frame": 149,
+        "confidence": 0.95
+      },
+      "pass2": {
+        "skill_type": "navigate_to_station",
+        "entity": "robot_base",
+        "fine_entity": null,
+        "start_frame": 32,
+        "end_frame": 117,
+        "confidence": 0.95
+      }
+    },
+    {
+      "pass1": {
+        "skill_type": "open_dishwasher_door",
+        "entity": "door",
+        "fine_entity": null,
+        "start_frame": 166,
+        "end_frame": 182,
+        "confidence": 0.95
+      },
+      "pass2": {
+        "skill_type": "open_dishwasher_door",
+        "entity": "door",
+        "fine_entity": null,
+        "start_frame": 118,
+        "end_frame": 184,
+        "confidence": 0.95
+      }
+    },
+    {
+      "pass1": {
+        "skill_type": "place_utensil_in_cutlery_basket",
+        "entity": "utensil",
+        "fine_entity": "fork",
+        "start_frame": 739,
+        "end_frame": 896,
+        "confidence": 0.406
+      },
+      "pass2": {
+        "skill_type": "place_utensil_in_cutlery_basket",
+        "entity": "utensil",
+        "fine_entity": "fork",
+        "start_frame": 707,
+        "end_frame": 896,
+        "confidence": 0.406
+      }
+    },
+    {
+      "pass1": {
+        "skill_type": "place_plate_in_dish_rack",
+        "entity": "plate",
+        "fine_entity": null,
+        "start_frame": 896,
+        "end_frame": 1400,
+        "confidence": 0.95
+      },
+      "pass2": {
+        "skill_type": "place_plate_in_dish_rack",
+        "entity": "plate",
+        "fine_entity": null,
+        "start_frame": 898,
+        "end_frame": 1400,
+        "confidence": 0.95
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "not_visible",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "dish_rack": "not_visible",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "dish_rack 在 head 视角中始终位于画面右上角之外，不可见。",
+    "right_hand 在 head 视角中持续接触位于画面边缘的粉色盘子（属于 dish_rack 的一部分）。",
+    "left_hand 在所有视角中均不可见。",
+    "在 798~874 帧期间，未见 dish_rack 发生明显的移动或状态变化。"
+  ],
+  "window_quality": "partial"
+}
+```

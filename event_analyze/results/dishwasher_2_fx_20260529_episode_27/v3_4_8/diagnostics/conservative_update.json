@@ -1,0 +1,144 @@
+{
+  "annotation_version": "v3.4.6",
+  "pass1_count": 6,
+  "raw_pass2_count": 9,
+  "reconciled_count": 9,
+  "restored_pass1_anchors": [],
+  "directly_contradicted_pass1_anchors": [],
+  "pass2_additions": [
+    {
+      "skill_type": "open_dishwasher_door",
+      "entity": "door",
+      "fine_entity": null,
+      "start_frame": 90,
+      "end_frame": 90,
+      "confidence": 0.95
+    },
+    {
+      "skill_type": "pull_out_dish_rack",
+      "entity": "dish_rack",
+      "fine_entity": null,
+      "start_frame": 320,
+      "end_frame": 365,
+      "confidence": 0.426
+    },
+    {
+      "skill_type": "pull_out_cutlery_basket",
+      "entity": "cutlery_basket",
+      "fine_entity": null,
+      "start_frame": 401,
+      "end_frame": 402,
+      "confidence": 0.426
+    }
+  ],
+  "represented_pass1_anchors": [
+    {
+      "pass1": {
+        "skill_type": "navigate_to_station",
+        "entity": "robot_base",
+        "fine_entity": null,
+        "start_frame": 28,
+        "end_frame": 141,
+        "confidence": 0.95
+      },
+      "pass2": {
+        "skill_type": "navigate_to_station",
+        "entity": "robot_base",
+        "fine_entity": null,
+        "start_frame": 28,
+        "end_frame": 55,
+        "confidence": 0.95
+      }
+    },
+    {
+      "pass1": {
+        "skill_type": "place_utensil_in_cutlery_basket",
+        "entity": "utensil",
+        "fine_entity": "knife",
+        "start_frame": 627,
+        "end_frame": 762,
+        "confidence": 0.406
+      },
+      "pass2": {
+        "skill_type": "place_utensil_in_cutlery_basket",
+        "entity": "utensil",
+        "fine_entity": "knife",
+        "start_frame": 627,
+        "end_frame": 762,
+        "confidence": 0.406
+      }
+    },
+    {
+      "pass1": {
+        "skill_type": "place_utensil_in_cutlery_basket",
+        "entity": "utensil",
+        "fine_entity": "fork",
+        "start_frame": 762,
+        "end_frame": 931,
+        "confidence": 0.406
+      },
+      "pass2": {
+        "skill_type": "place_utensil_in_cutlery_basket",
+        "entity": "utensil",
+        "fine_entity": "fork",
+        "start_frame": 762,
+        "end_frame": 931,
+        "confidence": 0.406
+      }
+    },
+    {
+      "pass1": {
+        "skill_type": "place_plate_in_dish_rack",
+        "entity": "plate",
+        "fine_entity": null,
+        "start_frame": 931,
+        "end_frame": 1312,
+        "confidence": 0.9
+      },
+      "pass2": {
+        "skill_type": "place_plate_in_dish_rack",
+        "entity": "plate",
+        "fine_entity": null,
+        "start_frame": 931,
+        "end_frame": 1312,
+        "confidence": 0.9
+      }
+    },
+    {
+      "pass1": {
+        "skill_type": "push_in_dish_rack",
+        "entity": "dish_rack",
+        "fine_entity": null,
+        "start_frame": 1502,
+        "end_frame": 1503,
+        "confidence": 0.9
+      },
+      "pass2": {
+        "skill_type": "push_in_dish_rack",
+        "entity": "dish_rack",
+        "fine_entity": null,
+        "start_frame": 1502,
+        "end_frame": 1503,
+        "confidence": 0.9
+      }
+    },
+    {
+      "pass1": {
+        "skill_type": "close_dishwasher_door",
+        "entity": "door",
+        "fine_entity": null,
+        "start_frame": 1558,
+        "end_frame": 1590,
+        "confidence": 0.95
+      },
+      "pass2": {
+        "skill_type": "close_dishwasher_door",
+        "entity": "door",
+        "fine_entity": null,
+        "start_frame": 1558,
+        "end_frame": 1590,
+        "confidence": 0.95
+      }
+    }
+  ]
+}

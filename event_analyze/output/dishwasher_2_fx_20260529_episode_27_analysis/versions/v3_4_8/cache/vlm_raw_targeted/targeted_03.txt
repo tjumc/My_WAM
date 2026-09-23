@@ -1,0 +1,31 @@
+```json
+{
+  "state_before": {
+    "cutlery_basket": "moving_in",
+    "right_hand": "pushing_cutlery_basket",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "cutlery_basket": "in",
+    "right_hand": "free",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.9
+  },
+  "confidence_after": {
+    "cutlery_basket": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.9
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "在早期帧（如t0-t3）中，右臂明显接触并向前推动餐具篮，导致其向洗碗机内部移动。",
+    "在晚期帧（t4-t7）中，右臂向后缩回，不再接触餐具篮，且餐具篮已完全位于洗碗机内部。",
+    "left camera 全程未检测到左臂参与操作。"
+  ],
+  "window_quality": "good"
+}
+```

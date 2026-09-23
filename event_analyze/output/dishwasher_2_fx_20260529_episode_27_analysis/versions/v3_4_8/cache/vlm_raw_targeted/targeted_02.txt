@@ -1,0 +1,32 @@
+```json
+{
+  "state_before": {
+    "plate_location": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "state_after": {
+    "plate_location": "uncertain",
+    "right_hand": "not_visible",
+    "left_hand": "not_visible"
+  },
+  "confidence_before": {
+    "plate_location": 0.9,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "plate_location": 0.9,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "In all frames (head view), the robot's arms are visible but hands are out of the frame or obscured by the robot body.",
+    "In all frames (left/right views), the camera fields of view are restricted to the dishwasher interior or lower cabinet, never capturing the robot's hands.",
+    "No plate is visible in any of the provided frames throughout the sequence.",
+    "The dishwasher door is open, but no interaction with a plate is visually confirmed within this specific time window."
+  ],
+  "window_quality": "partial"
+}
+```

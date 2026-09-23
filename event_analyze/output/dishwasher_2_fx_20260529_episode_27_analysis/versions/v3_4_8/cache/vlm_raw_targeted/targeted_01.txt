@@ -1,0 +1,31 @@
+```json
+{
+  "state_before": {
+    "dish_rack": "in",
+    "right_hand": "free",
+    "left_hand": "free"
+  },
+  "state_after": {
+    "dish_rack": "out",
+    "right_hand": "contact_dish_rack",
+    "left_hand": "free"
+  },
+  "confidence_before": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "confidence_after": {
+    "dish_rack": 0.95,
+    "right_hand": 0.95,
+    "left_hand": 0.95
+  },
+  "evidence_time_indices": [0, 7],
+  "evidence": [
+    "At frame 220, the dishwasher rack is fully retracted inside the machine, and the right hand is open and positioned away from it.",
+    "At frame 310, the rack is fully extended out of the dishwasher, and the right hand is clearly in contact with the rack structure.",
+    "Visual continuity from frames 271 to 297 shows the rack sliding outwards while the right hand maintains contact with it."
+  ],
+  "window_quality": "good"
+}
+```

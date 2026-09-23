@@ -1,0 +1,54 @@
+{
+  "annotation_version": "v3.4.8",
+  "policy": "rehabilitate only a pass1-rejected, robot-supported transition with a selected matching query, direct directional targeted evidence, and a placement-implied lifecycle gap",
+  "candidates": [
+    {
+      "pass1_skill_id": 4,
+      "entity": "cutlery_basket",
+      "skill_type": "pull_out_cutlery_basket",
+      "candidate_span": [
+        401,
+        401
+      ],
+      "robot_support": 0.1342,
+      "status": "not_rehabilitated",
+      "reason": "no_high_confidence_directional_targeted_observation"
+    },
+    {
+      "pass1_skill_id": 6,
+      "entity": "cutlery_basket",
+      "skill_type": "push_in_cutlery_basket",
+      "candidate_span": [
+        548,
+        627
+      ],
+      "robot_support": 0.3394,
+      "status": "not_rehabilitated",
+      "reason": "no_high_confidence_directional_targeted_observation"
+    },
+    {
+      "pass1_skill_id": 11,
+      "entity": "dish_rack",
+      "skill_type": "push_in_dish_rack",
+      "candidate_span": [
+        836,
+        836
+      ],
+      "robot_support": 0.2624,
+      "status": "not_rehabilitated",
+      "reason": "no_high_confidence_directional_targeted_observation"
+    },
+    {
+      "pass1_skill_id": 12,
+      "entity": "dish_rack",
+      "skill_type": "pull_out_dish_rack",
+      "candidate_span": [
+        881,
+        881
+      ],
+      "robot_support": 0.2721,
+      "status": "not_rehabilitated",
+      "reason": "no_high_confidence_directional_targeted_observation"
+    }
+  ]
+}
