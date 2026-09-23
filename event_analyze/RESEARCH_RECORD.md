@@ -1237,6 +1237,86 @@ It makes downstream accepted actions useful not only as semantic labels but also
 as logical constraints on hidden object state.
 
 
+## P21. Final-state implications are informative but arrive too late to recover missing skills
+
+### Observation
+
+V3.4.7 makes lifecycle inconsistencies much more visible, but the new state
+implications are applied only in the final task-graph decoder.
+
+This exposes a separation between diagnosis and recovery.
+
+Examples:
+
+- episode21 explicitly issues targeted requests for both
+  `pull_out_cutlery_basket` and the cutlery-basket return-to-final-state
+  transition, yet raw pass2 is unchanged;
+- episode7 queries a rejected `push_in_cutlery_basket` candidate; pass2
+  recovers the basket pull-out but not the push-in;
+- episode9 queries both basket usage and basket final-state completion, yet no
+  basket lifecycle phase is recovered.
+
+After reasoning is complete, V3.4.7 can infer:
+
+```text
+place_utensil_in_cutlery_basket
+    -> cutlery_basket = out
+
+expected final state
+    -> cutlery_basket should return to in
+```
+
+but this knowledge can only produce an unresolved diagnostic. It cannot
+rehabilitate a plausible rejected `out -> in` candidate.
+
+### Diagnosis
+
+Logical task-graph constraints and visual/interaction candidate validation are
+currently one-way:
+
+```text
+candidate inference
+    -> final task-graph diagnosis
+```
+
+The final task graph does not feed its state constraints back into candidate
+scoring.
+
+### General solution direction
+
+Use **implication-aware candidate rehabilitation** before final decoding:
+
+1. derive latent state constraints from already accepted downstream actions;
+2. detect a missing required transition between the implied state and the
+   configured final state;
+3. search only among existing rejected / robot-supported transition candidates
+   for that entity and time interval;
+4. re-score those candidates using visual direction, robot interaction signal,
+   and any already collected targeted observation;
+5. accept only if evidence crosses the normal reliability threshold.
+
+Crucially:
+
+> the task graph may rehabilitate an evidence-backed candidate, but must never
+> synthesize a missing action solely because the schema expects one.
+
+This should be evaluated first on the recurring cutlery-basket lifecycle
+failure, which now appears across multiple validation trajectories rather than
+as an episode26-specific exception.
+
+### Status
+
+**Unresolved; candidate direction for the next reasoning version after
+development regression.**
+
+### Contribution potential
+
+**High if the feedback formulation generalizes.**
+
+It closes the loop between physical task constraints and perception without
+turning schema expectations into fabricated labels.
+
+
 # 4. Version evolution and what each version taught us
 
 ## V3.3.1
@@ -1826,7 +1906,48 @@ recomputation.
 
 Status:
 
-**Implemented. Frozen validation pending.**
+**Implemented and evaluated on the frozen six-trajectory validation split.**
+
+The V3.4.6 and V3.4.7 runs have identical SHA256 fingerprints for all six
+validation trajectories for base observations, ambiguity requests, and targeted
+observations. V3.4.7 is therefore another clean reasoning-only comparison.
+
+Observed result:
+
+```text
+                         V3.4.6   V3.4.7   delta
+mean policy Precision      0.979     0.979    0.000
+mean policy Recall         0.567     0.583   +0.017
+mean policy F1             0.691     0.707   +0.016
+mean Edit Distance         4.333     4.167   -0.167
+Exact Rate                 0 / 6     0 / 6
+targeted queries          41        41        0
+queries / trajectory       6.833     6.833     0
+```
+
+Direct mechanism validation:
+
+- episode19 now preserves the targeted-recovered `push_in_dish_rack`;
+  its F1 returns from 0.571 to 0.667;
+- V3.4.6 had deleted that phase as an illegal `in -> in` transition;
+- V3.4.7 uses accepted `place_plate_in_dish_rack` to infer latent
+  `dish_rack=out`, making the later `push_in_dish_rack` legal;
+- episode6 changes from falsely `consistent` to correctly `unresolved`:
+  accepted plate placement implies `dish_rack=out`, but no return-to-in
+  transition is observed;
+- episode21 similarly becomes `unresolved` because accepted utensil placement
+  proves the cutlery basket was in use while no basket push-in is recovered;
+- V3.4.6 gains on episodes9, 21, and 23 are preserved.
+
+Aggregate final-state violations increase from 5 to 9 and unresolved episodes
+from 3/6 to 5/6. This is **not a regression**: V3.4.7 exposes previously hidden
+missing lifecycles instead of allowing initial-state priors to make them appear
+complete.
+
+Main lesson:
+
+> downstream accepted actions provide useful logical constraints on latent state,
+> improving both lifecycle validity and the honesty of consistency diagnostics.
 
 The held-out split remains unopened.
 
@@ -1855,7 +1976,8 @@ The held-out split remains unopened.
 | base VLM perception prompt is task-specific | partially unresolved | targeted prompt is schema-driven; broad prompt still task-specific |
 | targeted evidence can delete correct pass1 skills | validated on V3.4.6 | conservative pass1-anchor assimilation restored episode9 true positives |
 | task horizon can be extended by spurious late predictions | validated on V3.4.6 | episode23 frontier restored to frame 1621; post-final cycle removed |
-| accepted placement does not imply receptacle usage state | V3.4.7 implemented, pending eval | schema usage-state implication without fabricating missing actions |
+| accepted placement does not imply receptacle usage state | validated on V3.4.7 | episode19 push-in-rack preserved; hidden lifecycle gaps exposed |
+| final state implications cannot rehabilitate rejected skills | unresolved | implication-aware evidence-backed candidate rehabilitation |
 | held-out / cross-task experimental evidence | unresolved | required for paper |
 
 ---
@@ -2117,23 +2239,27 @@ A concise method statement is:
 
 Priority order should be:
 
-1. **Controlled V3.4.7 validation**
-   - reuse the frozen six-trajectory validation split;
-   - verify identical base/ambiguity/targeted evidence where request signatures match;
-   - check episode19 push-in-rack recovery;
-   - check episode6/7/9 missing receptacle final-state diagnostics;
-   - preserve V3.4.6 episode9/21/23 gains.
+1. **Development regression for V3.4.7**
+   - rerun episode26/27 before changing the method again;
+   - verify that episode27's exact policy sequence remains stable;
+   - check whether usage-state implication helps or harms the long-standing
+     episode26 cutlery-basket lifecycle.
 
-2. **Development regression**
-   - rerun episode26/27 after V3.4.7 validation;
-   - verify the long-standing cutlery-basket push-in behavior under usage-state implication.
+2. **Diagnose implication-aware candidate rehabilitation**
+   - inspect why targeted/rejected cutlery-basket push-in candidates fail to
+     enter pass2 on episodes7/9/21;
+   - reuse existing candidate and targeted evidence before considering more VLM
+     queries;
+   - never infer an action from final-state expectation alone.
 
 3. **Schema-driven broad perception**
    - remove the remaining dishwasher-specific broad VLM prompt;
    - derive all broad entity/state questions from the task schema.
 
-4. **Cross-task generalization**
-   - freeze the dishwasher method before opening the held-out split;
+4. **Freeze dishwasher method, then evaluate generalization**
+   - only after development regression and the recurring lifecycle issue are
+     understood, freeze the method;
+   - keep held-out trajectories unopened until that point;
    - add at least one additional task family with a new schema but the same
      generic reasoning engine.
 
