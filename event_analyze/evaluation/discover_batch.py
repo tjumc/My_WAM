@@ -103,7 +103,14 @@ def main():
     for ep in reserve:
         split_of[ep] = "reserve"
 
-    gt_map = {int(k): v for k, v in (cfg.get("ground_truth") or {}).items()}
+    legacy_gt = {int(k): v for k, v in (cfg.get("ground_truth") or {}).items()}
+    sequence_gt_map = {
+        int(k): v for k, v in (cfg.get("sequence_ground_truth") or legacy_gt).items()
+    }
+    temporal_cfg = cfg.get("temporal_ground_truth")
+    temporal_gt_map = {
+        int(k): v for k, v in ((legacy_gt if temporal_cfg is None else temporal_cfg) or {}).items()
+    }
     overrides = {int(k): v for k, v in (cfg.get("episode_overrides") or {}).items()}
 
     episodes = []
@@ -117,7 +124,8 @@ def main():
             "hdf5": str(path),
             "hdf5_bytes": path.stat().st_size,
             "output_dir": str(event_root / "output" / f"{stem}_analysis"),
-            "gt": gt_map.get(ep),
+            "sequence_gt": sequence_gt_map.get(ep),
+            "temporal_gt": temporal_gt_map.get(ep),
         }
         row.update(overrides.get(ep, {}))
         episodes.append(row)

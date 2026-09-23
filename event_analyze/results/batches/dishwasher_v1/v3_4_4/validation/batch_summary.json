@@ -1,18 +1,18 @@
 {
   "batch_name": "dishwasher_v1",
-  "dataset_fingerprint": "c57777c5d824c1b49edd77105b64474641ed0505b82802b8c09ac93066cfb177",
+  "dataset_fingerprint": "84c2a1b5952e6d8e39a35172062aa2b263ec5e9b06688048308ebafa21b559b0",
   "version": "v3_4_4",
   "split": "validation",
   "aggregate": {
     "num_episodes": 6,
     "num_results": 6,
-    "num_with_gt": 0,
+    "num_with_gt": 6,
     "policy_sequence": {
-      "mean_precision": null,
-      "mean_recall": null,
-      "mean_f1": null,
-      "mean_edit_distance": null,
-      "exact_rate": null
+      "mean_precision": 0.9183201058201059,
+      "mean_recall": 0.5,
+      "mean_f1": 0.5931971938163888,
+      "mean_edit_distance": 5.166666666666667,
+      "exact_rate": 0
     },
     "temporal": {
       "semantic_miou": null,
@@ -26,7 +26,7 @@
       "total_ambiguity_requests": 48,
       "total_targeted_queries": 48,
       "total_merged_targeted_observations": 41,
-      "mean_targeted_queries_per_episode": 8.0
+      "mean_targeted_queries_per_episode": 8
     }
   }
 }

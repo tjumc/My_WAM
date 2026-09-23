@@ -1,0 +1,66 @@
+{
+  "status": "manual_sequence_only_validation_gt",
+  "provenance": "manual_video_review_sequence_only",
+  "policy_level": true,
+  "note": "User manually reviewed validation episodes 6, 7, 9, 19, 21, and 23 and confirmed that they share the same policy-level dishwasher procedure. The only fine-grained difference may be the order of knife versus fork placement; both map to the policy-equivalent utensil label. Frame-level boundaries are intentionally not fabricated.",
+  "episodes": [
+    6,
+    7,
+    9,
+    19,
+    21,
+    23
+  ],
+  "shared_policy_sequence": [
+    "navigate_to_station",
+    "open_dishwasher_door",
+    "pull_out_dish_rack",
+    "pull_out_cutlery_basket",
+    "place_utensil_in_cutlery_basket",
+    "place_utensil_in_cutlery_basket",
+    "push_in_cutlery_basket",
+    "place_plate_in_dish_rack",
+    "push_in_dish_rack",
+    "close_dishwasher_door"
+  ],
+  "episode_notes": {
+    "6": {
+      "fine_utensil_order": [
+        "knife",
+        "fork"
+      ],
+      "coarse_non_policy_behavior": [
+        "retreat_after_push_in_dish_rack_before_close_dishwasher_door"
+      ],
+      "gripper_observation": {
+        "navigate_to_station": "open throughout",
+        "open_dishwasher_door": "closed throughout",
+        "pull_out_dish_rack": "closed throughout; gripper contacts/nudges rack frame",
+        "pull_out_cutlery_basket": "closed while grasping basket-frame edge",
+        "place_knife_in_cutlery_basket": "closed to grasp, open to release",
+        "place_fork_in_cutlery_basket": "closed to grasp, open to release",
+        "push_in_cutlery_basket": "closed while contacting basket-frame edge",
+        "place_plate_in_dish_rack": "closed to grasp, open to release",
+        "push_in_dish_rack": "closed while contacting rack-frame edge",
+        "retreat": "open",
+        "close_dishwasher_door": "closed while contacting door frame",
+        "inter_phase_transition": "gripper generally open"
+      }
+    },
+    "7": {
+      "fine_utensil_order": "may differ from episode 6; policy sequence unchanged"
+    },
+    "9": {
+      "fine_utensil_order": "may differ from episode 6; policy sequence unchanged"
+    },
+    "19": {
+      "fine_utensil_order": "may differ from episode 6; policy sequence unchanged"
+    },
+    "21": {
+      "fine_utensil_order": "may differ from episode 6; policy sequence unchanged"
+    },
+    "23": {
+      "fine_utensil_order": "may differ from episode 6; policy sequence unchanged"
+    }
+  }
+}

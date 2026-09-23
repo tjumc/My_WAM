@@ -16,14 +16,23 @@
     "heldout_count": 6,
     "seed": 20260923
   },
-  "ground_truth": {
-    "26": "regression/dishwasher_episode26_sequence_gt.json",
-    "27": "regression/dishwasher_episode27_manual_gt.json"
-  },
   "episode_overrides": {
     "27": {
       "lerobot_episode": 11,
       "lerobot_max_raw_frame": 1645
     }
+  },
+  "sequence_ground_truth": {
+    "6": "regression/dishwasher_validation_sequence_gt.json",
+    "7": "regression/dishwasher_validation_sequence_gt.json",
+    "9": "regression/dishwasher_validation_sequence_gt.json",
+    "19": "regression/dishwasher_validation_sequence_gt.json",
+    "21": "regression/dishwasher_validation_sequence_gt.json",
+    "23": "regression/dishwasher_validation_sequence_gt.json",
+    "26": "regression/dishwasher_episode26_sequence_gt.json",
+    "27": "regression/dishwasher_episode27_manual_gt.json"
+  },
+  "temporal_ground_truth": {
+    "27": "regression/dishwasher_episode27_manual_gt.json"
   }
 }

@@ -59,7 +59,7 @@ def seq_metrics(pred, gt):
     }
 
 
-def load_gt_sequence(path):
+def load_gt_sequence(path, episode_id=None):
     doc = load_json(path)
     if not doc:
         return None
@@ -67,6 +67,16 @@ def load_gt_sequence(path):
         return list(doc["sequence"])
     if isinstance(doc.get("steps"), list):
         return [x["skill_type"] for x in doc["steps"] if "skill_type" in x]
+    shared = doc.get("shared_policy_sequence")
+    covered = doc.get("episodes")
+    if isinstance(shared, list):
+        if covered is None or episode_id is None or int(episode_id) in [int(x) for x in covered]:
+            return list(shared)
+    episode_map = doc.get("episode_sequences")
+    if isinstance(episode_map, dict) and episode_id is not None:
+        seq = episode_map.get(str(episode_id))
+        if isinstance(seq, list):
+            return list(seq)
     return None
 
 
@@ -178,13 +188,13 @@ def main():
         pred = list((summary or {}).get("skill_sequence", []))
 
         gt_metrics = None
-        gt_path = ep.get("gt")
+        gt_path = ep.get("sequence_gt") or ep.get("gt")
         gt_sequence = None
         if gt_path:
             gp = Path(gt_path)
             if not gp.is_absolute():
                 gp = event_root / gp
-            gt_sequence = load_gt_sequence(gp)
+            gt_sequence = load_gt_sequence(gp, ep.get("episode_id"))
             if gt_sequence is not None:
                 pred_policy = [aliases.get(x, x) for x in pred]
                 gt_policy = [aliases.get(x, x) for x in gt_sequence]

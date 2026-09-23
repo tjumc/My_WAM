@@ -168,9 +168,13 @@ def main():
         ]
 
         env = os.environ.copy()
-        gt = ep.get("gt")
-        if gt:
-            env["GT"] = str(resolve_under_event_root(event_root, gt).resolve())
+        temporal_gt = ep.get("temporal_gt")
+        if temporal_gt is None and "sequence_gt" not in ep:
+            # Backward compatibility for older manifests where "gt" was the
+            # only field and could refer to frame-level GT.
+            temporal_gt = ep.get("gt")
+        if temporal_gt:
+            env["GT"] = str(resolve_under_event_root(event_root, temporal_gt).resolve())
         else:
             env.pop("GT", None)
 
@@ -180,7 +184,7 @@ def main():
                 "return_code": 0,
                 "hdf5": str(hdf5),
                 "output_dir": str(output_dir),
-                "gt": gt,
+                "temporal_gt": temporal_gt,
                 "log": str(log_path),
                 "command": cmd,
                 "finished_utc": now(),
@@ -207,7 +211,7 @@ def main():
             "finished_utc": now(),
             "hdf5": str(hdf5),
             "output_dir": str(output_dir),
-            "gt": gt,
+            "temporal_gt": temporal_gt,
             "log": str(log_path),
             "result": str(result_ann) if result_ann.exists() else None,
         }

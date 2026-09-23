@@ -1296,8 +1296,37 @@ Key pending checks:
 - is the exact 10-step policy-normalized sequence preserved?
 - what is the targeted-query cost relative to the old uniform dense pass?
 
-These are implementation hypotheses until V3.4.4 regression results are
-committed.
+These implementation hypotheses have now been tested on a frozen six-trajectory
+validation split (episodes 6, 7, 9, 19, 21, 23) with manually reviewed
+policy-level sequence GT. All six trajectories share the same 10-step policy
+sequence; knife/fork order may differ only at the fine semantic level.
+
+Observed V3.4.4 validation result:
+
+```text
+mean policy Precision = 0.918
+mean policy Recall    = 0.500
+mean policy F1        = 0.593
+mean Edit Distance    = 5.167
+Exact Rate            = 0 / 6
+```
+
+Closed-loop perception used 48 ambiguity requests and 48 targeted queries in
+total, exactly 8 queries for every validation trajectory (the configured
+per-episode maximum), with 41 targeted observations merged.
+
+Main lesson:
+
+> V3.4.4 is operationally stable on unseen trajectories, but its current
+> ambiguity detector is not yet selective and the dominant validation failure
+> is low recall / missing phases rather than broad over-generation.
+
+The validation set also exposed final-output consistency failures that were not
+obvious from episode26/27 alone: unresolved duration conflicts can survive into
+final annotations, provisional evidence can extend beyond the task horizon, and
+a post-task transition can be emitted after the declared task end. These should
+be handled by a global final-consistency gate rather than episode-specific
+rules.
 
 ---
 
@@ -1583,19 +1612,25 @@ A concise method statement is:
 
 Priority order should be:
 
-1. **Evaluate V3.4.4 closed-loop targeted perception**
-   - recover unresolved lifecycle errors without GT;
-   - measure query count / merge rate / annotation change;
-   - compare against the legacy fixed dense pass.
+1. **Fix validation-exposed global consistency and recall failures**
+   - enforce final phase intervals inside the valid task horizon;
+   - reject or explicitly mark unresolved duration conflicts;
+   - enforce schema final-state consistency after final phase selection;
+   - diagnose why complete trajectories can collapse to only one or two phases.
 
-2. **Schema-driven broad perception**
+2. **Make targeted perception selective**
+   - avoid saturating the per-episode query budget on every trajectory;
+   - rank ambiguity requests by expected value / evidence deficit;
+   - record pass1 -> pass2 annotation deltas rather than only query counts.
+
+3. **Schema-driven broad perception**
    - remove the remaining dishwasher-specific base VLM prompt;
    - derive all entity/state questions from the task schema.
 
-3. **Container interaction robustness**
+4. **Container interaction robustness**
    - verify that lifecycle recovery generalizes beyond the cutlery basket.
 
-4. **Generalization experiments**
+5. **Generalization experiments**
    - multiple unseen trajectories of the same task;
    - at least one additional task family;
    - downstream policy-learning benefit.

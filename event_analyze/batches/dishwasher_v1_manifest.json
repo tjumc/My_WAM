@@ -53,7 +53,8 @@
       "hdf5": "/efs/share/1919650160032350208/efs_backup/nas-backup/compressed_data/astribot/dishwasher_2_fx_20260529_compressed/dishwasher_2_fx_20260529_episode_6.hdf5",
       "hdf5_bytes": 372672323,
       "output_dir": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_6_analysis",
-      "gt": null
+      "sequence_gt": "regression/dishwasher_validation_sequence_gt.json",
+      "temporal_gt": null
     },
     {
       "episode_id": 7,
@@ -62,7 +63,8 @@
       "hdf5": "/efs/share/1919650160032350208/efs_backup/nas-backup/compressed_data/astribot/dishwasher_2_fx_20260529_compressed/dishwasher_2_fx_20260529_episode_7.hdf5",
       "hdf5_bytes": 357892254,
       "output_dir": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_7_analysis",
-      "gt": null
+      "sequence_gt": "regression/dishwasher_validation_sequence_gt.json",
+      "temporal_gt": null
     },
     {
       "episode_id": 9,
@@ -71,7 +73,8 @@
       "hdf5": "/efs/share/1919650160032350208/efs_backup/nas-backup/compressed_data/astribot/dishwasher_2_fx_20260529_compressed/dishwasher_2_fx_20260529_episode_9.hdf5",
       "hdf5_bytes": 373578376,
       "output_dir": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_9_analysis",
-      "gt": null
+      "sequence_gt": "regression/dishwasher_validation_sequence_gt.json",
+      "temporal_gt": null
     },
     {
       "episode_id": 10,
@@ -80,7 +83,8 @@
       "hdf5": "/efs/share/1919650160032350208/efs_backup/nas-backup/compressed_data/astribot/dishwasher_2_fx_20260529_compressed/dishwasher_2_fx_20260529_episode_10.hdf5",
       "hdf5_bytes": 342611014,
       "output_dir": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_10_analysis",
-      "gt": null
+      "sequence_gt": null,
+      "temporal_gt": null
     },
     {
       "episode_id": 12,
@@ -89,7 +93,8 @@
       "hdf5": "/efs/share/1919650160032350208/efs_backup/nas-backup/compressed_data/astribot/dishwasher_2_fx_20260529_compressed/dishwasher_2_fx_20260529_episode_12.hdf5",
       "hdf5_bytes": 324945107,
       "output_dir": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_12_analysis",
-      "gt": null
+      "sequence_gt": null,
+      "temporal_gt": null
     },
     {
       "episode_id": 15,
@@ -98,7 +103,8 @@
       "hdf5": "/efs/share/1919650160032350208/efs_backup/nas-backup/compressed_data/astribot/dishwasher_2_fx_20260529_compressed/dishwasher_2_fx_20260529_episode_15.hdf5",
       "hdf5_bytes": 310352906,
       "output_dir": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_15_analysis",
-      "gt": null
+      "sequence_gt": null,
+      "temporal_gt": null
     },
     {
       "episode_id": 17,
@@ -107,7 +113,8 @@
       "hdf5": "/efs/share/1919650160032350208/efs_backup/nas-backup/compressed_data/astribot/dishwasher_2_fx_20260529_compressed/dishwasher_2_fx_20260529_episode_17.hdf5",
       "hdf5_bytes": 297566051,
       "output_dir": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_17_analysis",
-      "gt": null
+      "sequence_gt": null,
+      "temporal_gt": null
     },
     {
       "episode_id": 19,
@@ -116,7 +123,8 @@
       "hdf5": "/efs/share/1919650160032350208/efs_backup/nas-backup/compressed_data/astribot/dishwasher_2_fx_20260529_compressed/dishwasher_2_fx_20260529_episode_19.hdf5",
       "hdf5_bytes": 328574054,
       "output_dir": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_19_analysis",
-      "gt": null
+      "sequence_gt": "regression/dishwasher_validation_sequence_gt.json",
+      "temporal_gt": null
     },
     {
       "episode_id": 20,
@@ -125,7 +133,8 @@
       "hdf5": "/efs/share/1919650160032350208/efs_backup/nas-backup/compressed_data/astribot/dishwasher_2_fx_20260529_compressed/dishwasher_2_fx_20260529_episode_20.hdf5",
       "hdf5_bytes": 337733408,
       "output_dir": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_20_analysis",
-      "gt": null
+      "sequence_gt": null,
+      "temporal_gt": null
     },
     {
       "episode_id": 21,
@@ -134,7 +143,8 @@
       "hdf5": "/efs/share/1919650160032350208/efs_backup/nas-backup/compressed_data/astribot/dishwasher_2_fx_20260529_compressed/dishwasher_2_fx_20260529_episode_21.hdf5",
       "hdf5_bytes": 302345150,
       "output_dir": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_21_analysis",
-      "gt": null
+      "sequence_gt": "regression/dishwasher_validation_sequence_gt.json",
+      "temporal_gt": null
     },
     {
       "episode_id": 23,
@@ -143,7 +153,8 @@
       "hdf5": "/efs/share/1919650160032350208/efs_backup/nas-backup/compressed_data/astribot/dishwasher_2_fx_20260529_compressed/dishwasher_2_fx_20260529_episode_23.hdf5",
       "hdf5_bytes": 297908255,
       "output_dir": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_23_analysis",
-      "gt": null
+      "sequence_gt": "regression/dishwasher_validation_sequence_gt.json",
+      "temporal_gt": null
     },
     {
       "episode_id": 24,
@@ -152,7 +163,8 @@
       "hdf5": "/efs/share/1919650160032350208/efs_backup/nas-backup/compressed_data/astribot/dishwasher_2_fx_20260529_compressed/dishwasher_2_fx_20260529_episode_24.hdf5",
       "hdf5_bytes": 300900023,
       "output_dir": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_24_analysis",
-      "gt": null
+      "sequence_gt": null,
+      "temporal_gt": null
     },
     {
       "episode_id": 25,
@@ -161,7 +173,8 @@
       "hdf5": "/efs/share/1919650160032350208/efs_backup/nas-backup/compressed_data/astribot/dishwasher_2_fx_20260529_compressed/dishwasher_2_fx_20260529_episode_25.hdf5",
       "hdf5_bytes": 310052453,
       "output_dir": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_25_analysis",
-      "gt": null
+      "sequence_gt": null,
+      "temporal_gt": null
     },
     {
       "episode_id": 26,
@@ -170,7 +183,8 @@
       "hdf5": "/efs/share/1919650160032350208/efs_backup/nas-backup/compressed_data/astribot/dishwasher_2_fx_20260529_compressed/dishwasher_2_fx_20260529_episode_26.hdf5",
       "hdf5_bytes": 316948756,
       "output_dir": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_26_analysis",
-      "gt": "regression/dishwasher_episode26_sequence_gt.json"
+      "sequence_gt": "regression/dishwasher_episode26_sequence_gt.json",
+      "temporal_gt": null
     },
     {
       "episode_id": 27,
@@ -179,11 +193,12 @@
       "hdf5": "/efs/share/1919650160032350208/efs_backup/nas-backup/compressed_data/astribot/dishwasher_2_fx_20260529_compressed/dishwasher_2_fx_20260529_episode_27.hdf5",
       "hdf5_bytes": 288586747,
       "output_dir": "/efs/share/1919650160032350208/users/machong14/wam/event_analyze/output/dishwasher_2_fx_20260529_episode_27_analysis",
-      "gt": "regression/dishwasher_episode27_manual_gt.json",
       "lerobot_episode": 11,
-      "lerobot_max_raw_frame": 1645
+      "lerobot_max_raw_frame": 1645,
+      "sequence_gt": "regression/dishwasher_episode27_manual_gt.json",
+      "temporal_gt": "regression/dishwasher_episode27_manual_gt.json"
     }
   ],
   "created_utc": "2026-09-23T03:06:42.454138+00:00",
-  "dataset_fingerprint": "c57777c5d824c1b49edd77105b64474641ed0505b82802b8c09ac93066cfb177"
+  "dataset_fingerprint": "84c2a1b5952e6d8e39a35172062aa2b263ec5e9b06688048308ebafa21b559b0"
 }

@@ -95,9 +95,15 @@ The runner calls exactly the existing interface:
 versions/<version>/run.sh HDF5 OUTPUT TASK ...
 ```
 
-It inherits API/environment configuration from the shell. For episodes with a
-known GT file it sets the stable `GT` variable only for that subprocess; for
-episodes without GT it explicitly removes `GT` from the child environment.
+It inherits API/environment configuration from the shell. Ground truth is split
+into two roles:
+
+- `sequence_gt`: sequence-only semantic evaluation used by the batch summarizer;
+- `temporal_gt`: frame-level GT passed to the per-episode runner through the
+  stable `GT` environment variable.
+
+Sequence-only GT is never passed to the temporal evaluator. This avoids treating
+manual skill order as fabricated frame boundaries.
 
 Default execution is serial:
 
@@ -170,6 +176,10 @@ The summary supports mixed GT granularity:
 - sequence-only GT -> policy sequence P/R/F1/Edit/Exact;
 - frame-level GT -> sequence metrics plus temporal metrics;
 - no GT -> predicted sequence and closed-loop query-cost statistics only.
+
+The six frozen validation trajectories share a manually reviewed policy-level
+10-step sequence. Knife/fork order may differ at the fine level, but both map to
+the policy-equivalent `utensil` label.
 
 For V3.4.4+, closed-loop statistics include:
 
