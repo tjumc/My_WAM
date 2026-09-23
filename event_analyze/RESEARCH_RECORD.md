@@ -1027,6 +1027,130 @@ reusing the earlier stale signal window around frame 1112.
 
 ---
 
+## P18. Targeted re-observation can destructively overwrite correct pass1 structure
+
+### Observation
+
+V3.4.5 improved the mean validation F1, but episode9 regressed from about
+0.706 to 0.571.
+
+Its pass1 sequence already contained:
+
+```text
+navigate
+open door
+pull dish rack
+...
+```
+
+After eight targeted queries (seven merged observations), the second reasoning
+pass removed the already-correct `open door` and `pull dish rack` phases.
+
+Episode21 provides the complementary case: four targeted queries and three
+merged observations produced no pass1->pass2 sequence change at all.
+
+### Diagnosis
+
+The current loop appends targeted observations to the perception stream and
+reruns the tracker/reasoner. Even though observation insertion is entity-local,
+the update is still semantically destructive:
+
+- a query intended to recover one ambiguity can perturb an already-supported
+  transition for the same entity;
+- merge acceptance measures observation confidence, not downstream annotation
+  value;
+- pass1 skills have no persistence/anchor protection during pass2.
+
+### General solution direction
+
+Use **conservative hypothesis-level assimilation**:
+
+1. keep validated pass1 skills as semantic anchors;
+2. allow targeted evidence to add or refine a skill when it resolves the
+   corresponding ambiguity request;
+3. remove/replace a pass1 anchor only when the targeted evidence directly
+   contradicts that anchor with stronger entity-specific support;
+4. prevent evidence collected for one semantic goal from silently deleting
+   unrelated accepted phases;
+5. evaluate query utility using pass1->pass2 annotation deltas, not only merge
+   rate.
+
+### Status
+
+**Unresolved; highest-priority next reasoning problem.**
+
+### Contribution potential
+
+**High if generalized cleanly.**
+
+A useful formulation is:
+
+> active perception should update uncertain hypotheses locally while preserving
+> already-grounded trajectory structure unless stronger contradictory evidence
+> is obtained.
+
+
+## P19. Task horizon is self-referential when targeted evidence creates late phases
+
+### Observation
+
+The V3.4.5 final-consistency gate correctly clamps phases to
+`task_end_raw_frame`, but that task end is itself derived by boundary
+refinement from the final predicted phase sequence.
+
+Examples:
+
+- episode9 had V3.4.4 task end 1337, but V3.4.5 task end became 1760;
+- episode23 had V3.4.4 task end 1621, but V3.4.5 task end became 1768 after a
+  late targeted `close_dishwasher_door` was added.
+
+Therefore a spurious late phase can extend the very horizon that is supposed to
+reject it.
+
+Episode23 illustrates the consequence: the final lifecycle
+`close -> open -> close` is graph-valid and ends in the expected state, so the
+current final gate marks it consistent even though the extra reopen cycle is
+not part of the reviewed task execution.
+
+### Diagnosis
+
+Trajectory validity and task-completion horizon cannot be defined from the same
+final predictions they are meant to validate.
+
+Legal lifecycle is also weaker than task-relevant lifecycle: an extra cycle may
+be physically legal while semantically unnecessary.
+
+### General solution direction
+
+Separate:
+
+```text
+perception search horizon
+!=
+semantic task-completion frontier
+```
+
+The completion frontier should be inferred from task-schema goal predicates and
+dependency structure, or from a stable pre-targeting hypothesis, rather than
+being extended automatically by any newly generated late phase.
+
+For articulated entities, final decoding should prefer the minimum-evidence-
+supported lifecycle that:
+
+- satisfies prerequisite states during dependent interactions;
+- satisfies configured final states;
+- avoids gratuitous cycles that do not enable any subsequent dependent task
+  action.
+
+### Status
+
+**Unresolved; final consistency is only partially solved.**
+
+### Contribution potential
+
+**Medium-to-high as part of global task-graph decoding.**
+
+
 # 4. Version evolution and what each version taught us
 
 ## V3.3.1
@@ -1388,21 +1512,64 @@ This storage cleanup is explicitly **not** a paper contribution.
 
 Status:
 
-**Implemented. Controlled evaluation on the frozen validation split is pending.**
+**Implemented and evaluated on the frozen six-trajectory validation split.**
 
-Required comparison:
+Controlled result:
 
-- V3.4.4 vs V3.4.5 on the same six validation trajectories;
-- policy Precision / Recall / F1 / Edit / Exact;
-- targeted queries and merged observations per trajectory;
-- consistency repairs and unresolved final-state violations;
-- regression on episode26/27.
+```text
+                         V3.4.4   V3.4.5   delta
+mean policy Precision      0.918     0.950   +0.032
+mean policy Recall         0.500     0.533   +0.033
+mean policy F1             0.593     0.653   +0.060
+mean Edit Distance         5.167     5.000   -0.167
+Exact Rate                 0 / 6     0 / 6
+targeted queries          48        41       -7
+queries / trajectory       8.000     6.833   -1.167
+```
 
-Main question:
+Per-trajectory F1:
 
-> Can stronger schema-grounded robot interaction evidence recover missing skills
-> while making targeted perception sparser, without lowering the reliability-
-> first precision established by V3.4.4?
+```text
+episode 6 : 0.182 -> 0.333
+episode 7 : 0.824 -> 0.824
+episode 9 : 0.706 -> 0.571
+episode19 : 0.333 -> 0.667
+episode21 : 0.778 -> 0.824
+episode23 : 0.737 -> 0.700
+```
+
+The result supports two conclusions:
+
+1. the schema-grounded interaction bridge and targeted recovery improve average
+   validation quality while preserving high precision;
+2. the current closed-loop update is not yet safely monotonic: targeted
+   observations can remove correct pass1 skills as well as recover missing ones.
+
+Concrete examples:
+
+- episode19 gains `navigate_to_station`, `open_dishwasher_door`, and
+  `push_in_dish_rack` after targeted re-observation;
+- episode7 gains the missing `pull_out_cutlery_basket`;
+- episode9 loses already-correct pass1 `open_dishwasher_door` and
+  `pull_out_dish_rack` after the targeted evidence is merged and the full
+  tracker is rerun;
+- episode21 receives four targeted queries and three merged observations but no
+  pass1->pass2 sequence change; its improvement comes from the final consistency
+  gate removing an infeasible one-frame utensil phase and invalid door
+  transitions;
+- episode23 recovers cutlery-basket pull/push but also ends with a legal yet
+  unnecessary `close -> open -> close` door cycle.
+
+Targeted perception is therefore **more selective but still not sufficiently
+selective**: three of six validation trajectories still consume the full
+8-query ceiling, and accepted/merged targeted evidence is not a proxy for
+downstream semantic utility.
+
+Main lesson:
+
+> Closed-loop perception should be a conservative hypothesis update, not a
+> wholesale rerun in which new local observations are allowed to erase
+> unrelated high-confidence pass1 structure.
 
 ---
 
@@ -1425,8 +1592,10 @@ Main question:
 | plate starts too early in episode27 | solved on regression episode27 | ownership/context-switch reasoning |
 | final boundary can collapse a valid phase | solved on current regression cases | duration-constrained semantic boundary arbitration |
 | relocated boundary may use stale robot signal | solved on current regression cases | post-anchor signal revalidation |
-| targeted perception over-queries | V3.4.5 implemented, pending eval | one focused request per semantic issue + value ranking |
+| targeted perception over-queries | improved but unresolved | 48 -> 41 queries; 3/6 trajectories still hit max budget |
 | base VLM perception prompt is task-specific | partially unresolved | targeted prompt is schema-driven; broad prompt still task-specific |
+| targeted evidence can delete correct pass1 skills | unresolved | conservative hypothesis-level assimilation needed |
+| task horizon can be extended by spurious late predictions | unresolved | task-completion frontier must be independent of final predictions |
 | held-out / cross-task experimental evidence | unresolved | required for paper |
 
 ---
