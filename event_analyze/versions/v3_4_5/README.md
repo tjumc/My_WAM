@@ -47,7 +47,7 @@ targeted-query budget.
 After numerical boundary refinement:
 
 - phases entirely after the task horizon are removed;
-- raw spans are clamped to the valid trajectory/task horizon;
+- raw and provisional semantic spans are clamped to the valid trajectory/task horizon, while original out-of-horizon values remain recorded in diagnostics;
 - unresolved duration-conflict phases shorter than the skill minimum are
   removed;
 - schema-inconsistent articulated lifecycle transitions are removed;

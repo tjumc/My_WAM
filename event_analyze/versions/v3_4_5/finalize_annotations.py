@@ -150,6 +150,28 @@ def main():
             })
         p["raw_start_frame"], p["raw_end_frame"] = ns, ne
 
+        # Final semantic intervals must use the same valid horizon as the raw
+        # annotation. Keep the pre-gate values in diagnostics/metadata rather
+        # than leaving internally contradictory provisional coordinates in the
+        # exported final annotation.
+        ps = int(p.get("provisional_start_frame", ns))
+        pe = int(p.get("provisional_end_frame", ne))
+        nps = max(0, min(ps, task_end, T - 1))
+        npe = max(nps, min(pe, task_end, T - 1))
+        if [nps, npe] != [ps, pe]:
+            p.setdefault("consistency_adjustments", []).append({
+                "type": "clamp_provisional_to_task_horizon",
+                "original_provisional_span": [ps, pe],
+                "new_provisional_span": [nps, npe],
+            })
+            report["clamped_phases"].append({
+                "skill_type": p.get("skill_type"),
+                "field": "provisional",
+                "original_provisional_span": [ps, pe],
+                "new_provisional_span": [nps, npe],
+            })
+        p["provisional_start_frame"], p["provisional_end_frame"] = nps, npe
+
         need = minimum_duration_frames(p.get("skill_type"), args.fps)
         duration = ne - ns + 1
         if has_duration_conflict(p) and duration < need:
