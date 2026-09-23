@@ -1,0 +1,161 @@
+{
+  "annotation_version": "v3.4.7",
+  "pass1": {
+    "skill_sequence": [
+      "navigate_to_station",
+      "place_utensil_in_cutlery_basket",
+      "place_utensil_in_cutlery_basket",
+      "place_plate_in_dish_rack"
+    ],
+    "phase_count": 4
+  },
+  "targeted_perception": {
+    "num_candidate_requests": 9,
+    "num_requests": 7,
+    "requests": [
+      {
+        "request_id": 0,
+        "kind": "accessibility_prerequisite_missing",
+        "semantic_goal": "reach_accessibility_state:door:open",
+        "target_entities": [
+          "door"
+        ],
+        "start_frame": 86,
+        "end_frame": 220,
+        "utility_score": 499.0
+      },
+      {
+        "request_id": 1,
+        "kind": "receptacle_usage_without_ready_lifecycle",
+        "semantic_goal": "reach_usage_state:dish_rack:out",
+        "target_entities": [
+          "dish_rack"
+        ],
+        "start_frame": 220,
+        "end_frame": 310,
+        "utility_score": 508.505
+      },
+      {
+        "request_id": 2,
+        "kind": "rejected_visual_evidence",
+        "semantic_goal": "recover_candidate:plate:place_plate_in_dish_rack",
+        "target_entities": [
+          "plate"
+        ],
+        "start_frame": 220,
+        "end_frame": 310,
+        "utility_score": 295.505
+      },
+      {
+        "request_id": 3,
+        "kind": "receptacle_usage_without_ready_lifecycle",
+        "semantic_goal": "reach_usage_state:cutlery_basket:out",
+        "target_entities": [
+          "cutlery_basket"
+        ],
+        "start_frame": 363,
+        "end_frame": 439,
+        "utility_score": 501.355
+      },
+      {
+        "request_id": 4,
+        "kind": "rejected_visual_evidence",
+        "semantic_goal": "recover_candidate:cutlery_basket:push_in_cutlery_basket",
+        "target_entities": [
+          "cutlery_basket"
+        ],
+        "start_frame": 510,
+        "end_frame": 665,
+        "utility_score": 293.484
+      },
+      {
+        "request_id": 5,
+        "kind": "rejected_visual_evidence",
+        "semantic_goal": "recover_candidate:dish_rack:push_in_dish_rack",
+        "target_entities": [
+          "dish_rack"
+        ],
+        "start_frame": 798,
+        "end_frame": 874,
+        "utility_score": 291.559
+      },
+      {
+        "request_id": 6,
+        "kind": "rejected_visual_evidence",
+        "semantic_goal": "recover_candidate:door:close_dishwasher_door",
+        "target_entities": [
+          "door"
+        ],
+        "start_frame": 1520,
+        "end_frame": 1628,
+        "utility_score": 299.473
+      }
+    ],
+    "num_targeted_queries": 7,
+    "num_merged_targeted_observations": 6
+  },
+  "pass2_raw": {
+    "skill_sequence": [
+      "navigate_to_station",
+      "place_utensil_in_cutlery_basket",
+      "place_utensil_in_cutlery_basket",
+      "place_plate_in_dish_rack"
+    ],
+    "phase_count": 4,
+    "changes_from_pass1": []
+  },
+  "conservative_assimilation": {
+    "restored_pass1_anchors": [],
+    "directly_contradicted_pass1_anchors": [],
+    "pass2_additions": []
+  },
+  "reconciled": {
+    "skill_sequence": [
+      "navigate_to_station",
+      "place_utensil_in_cutlery_basket",
+      "place_utensil_in_cutlery_basket",
+      "place_plate_in_dish_rack"
+    ],
+    "phase_count": 4,
+    "changes_from_raw_pass2": [],
+    "changes_from_pass1": []
+  },
+  "final": {
+    "skill_sequence": [
+      "navigate_to_station",
+      "place_utensil_in_cutlery_basket",
+      "place_utensil_in_cutlery_basket",
+      "place_plate_in_dish_rack"
+    ],
+    "phase_count": 4,
+    "changes_from_reconciled": [],
+    "consistency": {
+      "num_dropped": 0,
+      "num_clamped": 0,
+      "num_lifecycle_violations": 0,
+      "num_latent_state_inferences": 3,
+      "num_latent_usage_state_inferences": 2,
+      "num_gratuitous_lifecycle_cycles": 0,
+      "num_expected_final_state_violations": 3,
+      "frontier_resolved": false,
+      "status": "unresolved"
+    },
+    "task_completion_frontier": {
+      "policy": "first_expected_final_state_after_last_dependent_use",
+      "frontier_entities": [
+        "door"
+      ],
+      "entities": [
+        {
+          "entity": "door",
+          "expected_final_state": "closed",
+          "last_dependent_use_end": 1312,
+          "terminal_closure": null
+        }
+      ],
+      "resolved": false,
+      "task_end_raw_frame": 1646,
+      "fallback_when_unresolved": "trajectory_end"
+    }
+  }
+}

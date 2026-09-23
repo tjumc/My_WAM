@@ -1,0 +1,146 @@
+{
+  "annotation_version": "v3.4.7",
+  "trajectory_frames": 1647,
+  "upstream_predicted_task_end_raw_frame": 1312,
+  "initial_container_state": {
+    "door": "closed",
+    "dish_rack": "in",
+    "cutlery_basket": "in"
+  },
+  "initial_state_source": {
+    "door": "schema_expected_initial_state",
+    "dish_rack": "schema_expected_initial_state",
+    "cutlery_basket": "schema_expected_initial_state"
+  },
+  "dropped_phases": [],
+  "clamped_phases": [],
+  "lifecycle_violations": [],
+  "latent_state_inferences": [
+    {
+      "supporting_skill": "place_utensil_in_cutlery_basket",
+      "supporting_entity": "cutlery_basket",
+      "implied_entity": "door",
+      "previous_state": "closed",
+      "inferred_state": "open",
+      "raw_span": [
+        608,
+        761
+      ],
+      "reason": "accepted_dependent_use_requires_prerequisite_state"
+    },
+    {
+      "supporting_skill": "place_utensil_in_cutlery_basket",
+      "supporting_entity": "cutlery_basket",
+      "implied_entity": "cutlery_basket",
+      "previous_state": "in",
+      "inferred_state": "out",
+      "raw_span": [
+        608,
+        761
+      ],
+      "reason": "accepted_placement_requires_receptacle_usage_state"
+    },
+    {
+      "supporting_skill": "place_plate_in_dish_rack",
+      "supporting_entity": "dish_rack",
+      "implied_entity": "dish_rack",
+      "previous_state": "in",
+      "inferred_state": "out",
+      "raw_span": [
+        931,
+        1312
+      ],
+      "reason": "accepted_placement_requires_receptacle_usage_state"
+    }
+  ],
+  "latent_prerequisite_state_inferences": [
+    {
+      "supporting_skill": "place_utensil_in_cutlery_basket",
+      "supporting_entity": "cutlery_basket",
+      "implied_entity": "door",
+      "previous_state": "closed",
+      "inferred_state": "open",
+      "raw_span": [
+        608,
+        761
+      ],
+      "reason": "accepted_dependent_use_requires_prerequisite_state"
+    }
+  ],
+  "latent_usage_state_inferences": [
+    {
+      "supporting_skill": "place_utensil_in_cutlery_basket",
+      "supporting_entity": "cutlery_basket",
+      "implied_entity": "cutlery_basket",
+      "previous_state": "in",
+      "inferred_state": "out",
+      "raw_span": [
+        608,
+        761
+      ],
+      "reason": "accepted_placement_requires_receptacle_usage_state"
+    },
+    {
+      "supporting_skill": "place_plate_in_dish_rack",
+      "supporting_entity": "dish_rack",
+      "implied_entity": "dish_rack",
+      "previous_state": "in",
+      "inferred_state": "out",
+      "raw_span": [
+        931,
+        1312
+      ],
+      "reason": "accepted_placement_requires_receptacle_usage_state"
+    }
+  ],
+  "gratuitous_lifecycle_cycles": [],
+  "expected_final_state_violations": [
+    {
+      "entity": "door",
+      "observed_final_state": "open",
+      "expected_final_state": "closed",
+      "action": "reported_unresolved_no_action_invented"
+    },
+    {
+      "entity": "dish_rack",
+      "observed_final_state": "out",
+      "expected_final_state": "in",
+      "action": "reported_unresolved_no_action_invented"
+    },
+    {
+      "entity": "cutlery_basket",
+      "observed_final_state": "out",
+      "expected_final_state": "in",
+      "action": "reported_unresolved_no_action_invented"
+    }
+  ],
+  "task_completion_frontier": {
+    "policy": "first_expected_final_state_after_last_dependent_use",
+    "frontier_entities": [
+      "door"
+    ],
+    "entities": [
+      {
+        "entity": "door",
+        "expected_final_state": "closed",
+        "last_dependent_use_end": 1312,
+        "terminal_closure": null
+      }
+    ],
+    "resolved": false,
+    "task_end_raw_frame": 1646,
+    "fallback_when_unresolved": "trajectory_end"
+  },
+  "final_phase_count": 4,
+  "final_consistency": {
+    "num_dropped": 0,
+    "num_clamped": 0,
+    "num_lifecycle_violations": 0,
+    "num_latent_state_inferences": 3,
+    "num_latent_usage_state_inferences": 2,
+    "num_gratuitous_lifecycle_cycles": 0,
+    "num_expected_final_state_violations": 3,
+    "frontier_resolved": false,
+    "status": "unresolved"
+  }
+}
