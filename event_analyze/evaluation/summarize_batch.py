@@ -98,6 +98,21 @@ def flatten_temporal(eval_doc):
     }
 
 
+def validate_frozen_manifest(manifest, manifest_path):
+    episodes = manifest.get("episodes") if isinstance(manifest, dict) else None
+    if not isinstance(episodes, list) or not episodes:
+        if isinstance(manifest, dict) and "hdf5_root" in manifest and "split" in manifest:
+            raise SystemExit(
+                f"{manifest_path} is a batch discovery CONFIG, not a frozen manifest.\n"
+                "Run evaluation/discover_batch.py first and summarize the generated manifest."
+            )
+        raise SystemExit(f"Frozen manifest has no episodes: {manifest_path}")
+    if not manifest.get("dataset_fingerprint"):
+        raise SystemExit(
+            f"Frozen manifest is missing dataset_fingerprint: {manifest_path}"
+        )
+
+
 def selected_episodes(manifest, split):
     if split == "all":
         return list(manifest.get("episodes", []))
@@ -120,6 +135,7 @@ def main():
     event_root = Path(__file__).resolve().parents[1]
     manifest_path = Path(args.manifest).resolve()
     manifest = load_json(manifest_path)
+    validate_frozen_manifest(manifest, manifest_path)
     version = args.version or manifest.get("default_version", "v3_4_4")
 
     schema_path = Path(manifest["schema"])

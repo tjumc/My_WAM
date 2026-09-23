@@ -34,6 +34,28 @@ def atomic_json(path, obj):
     tmp.replace(path)
 
 
+def validate_frozen_manifest(manifest, manifest_path):
+    if not isinstance(manifest, dict):
+        raise ValueError(f"Invalid batch manifest: {manifest_path}")
+    episodes = manifest.get("episodes")
+    if not isinstance(episodes, list) or not episodes:
+        if "hdf5_root" in manifest and "split" in manifest:
+            raise SystemExit(
+                f"{manifest_path} is a batch discovery CONFIG, not a frozen manifest.\n"
+                "Run: python evaluation/discover_batch.py\n"
+                "Then pass batches/dishwasher_v1_manifest.json to run_batch.py."
+            )
+        raise SystemExit(
+            f"Frozen manifest has no episodes: {manifest_path}. "
+            "Run evaluation/discover_batch.py first."
+        )
+    if not manifest.get("dataset_fingerprint"):
+        raise SystemExit(
+            f"Frozen manifest is missing dataset_fingerprint: {manifest_path}. "
+            "Regenerate it with evaluation/discover_batch.py."
+        )
+
+
 def selected_episodes(manifest, split):
     if split == "all":
         return list(manifest.get("episodes", []))
@@ -69,6 +91,7 @@ def main():
     manifest = load_json(manifest_path)
     if not manifest:
         raise FileNotFoundError(manifest_path)
+    validate_frozen_manifest(manifest, manifest_path)
 
     version = args.version or manifest.get("default_version", "v3_4_4")
     version_run = event_root / "versions" / version / "run.sh"

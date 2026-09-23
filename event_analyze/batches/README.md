@@ -25,6 +25,14 @@ Generate the frozen manifest once:
 python evaluation/discover_batch.py
 ```
 
+For the current dishwasher dataset, discovery expects 42 HDF5 episodes and
+fails before freezing the split if the scan count differs.
+
+**Do not pass `batches/dishwasher_v1.json` to `run_batch.py`.** That file is
+only the discovery configuration. The runner requires the generated frozen
+manifest `batches/dishwasher_v1_manifest.json` and now rejects config files
+explicitly.
+
 This creates:
 
 ```text

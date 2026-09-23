@@ -58,6 +58,13 @@ def main():
     if not files:
         raise RuntimeError(f"No matching HDF5 files found under {root}")
 
+    expected_count = cfg.get("expected_episode_count")
+    if expected_count is not None and len(files) != int(expected_count):
+        raise RuntimeError(
+            f"Expected {int(expected_count)} HDF5 episodes but found {len(files)} under {root}. "
+            "Check the dataset directory before freezing the split."
+        )
+
     seen = {}
     for ep, path in files:
         if ep in seen:
