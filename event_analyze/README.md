@@ -127,9 +127,9 @@ heldout:     6 条
 reserve:     其余全部
 ```
 
-生成后应检查并提交该 manifest。当前 dishwasher 数据集预期扫描到 42 个 HDF5；
-数量不一致时 discovery 会直接报错。后续版本必须复用同一 manifest，
-不要根据模型结果重新划分。
+生成后应检查并提交该 manifest。discovery 以配置目录下实际存在的 HDF5 为准，
+并把实际扫描数量写入 frozen manifest；不再把外部数据集元信息中的 episode 总数
+作为本地目录强制校验。后续版本必须复用同一 manifest，不要根据模型结果重新划分。
 
 注意：`batches/dishwasher_v1.json` 只是扫描配置，不能直接传给
 `run_batch.py`；批量运行必须使用生成后的

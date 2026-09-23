@@ -25,8 +25,10 @@ Generate the frozen manifest once:
 python evaluation/discover_batch.py
 ```
 
-For the current dishwasher dataset, discovery expects 42 HDF5 episodes and
-fails before freezing the split if the scan count differs.
+Discovery uses the HDF5 files actually present under the configured directory.
+The scanned file count is recorded in the frozen manifest; it is not hard-coded
+because the local compressed-data directory may contain only a subset of the
+larger dataset metadata.
 
 **Do not pass `batches/dishwasher_v1.json` to `run_batch.py`.** That file is
 only the discovery configuration. The runner requires the generated frozen

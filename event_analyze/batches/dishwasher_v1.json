@@ -25,6 +25,5 @@
       "lerobot_episode": 11,
       "lerobot_max_raw_frame": 1645
     }
-  },
-  "expected_episode_count": 42
+  }
 }
