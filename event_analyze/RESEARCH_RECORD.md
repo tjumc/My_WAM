@@ -1,5 +1,12 @@
 # Research Record: Problems, Solutions, and Contribution Candidates
 
+> **Final status (2026-09-28):** The current annotation pipeline has been
+> archived and will not be used for WAM training. Read
+> [FINAL_RESEARCH_SUMMARY.md](FINAL_RESEARCH_SUMMARY.md) for the completed V3.4.9
+> results, Qwen observation audit, evidence limits, and stop decision. The
+> priorities and pending-run statements below describe the historical state
+> at the time they were written.
+
 > This document records the methodological evolution of `event_analyze`.
 > It is intentionally different from a software changelog: the goal is to
 > preserve the **scientific problem -> diagnosis -> general solution -> evidence**
