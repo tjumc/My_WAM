@@ -1,5 +1,23 @@
 # Qwen observation audit
 
+## Interface and image-delivery probe
+
+From `event_analyze/`, make two small calls on an existing development image:
+
+```bash
+IMAGE=output/dishwasher_2_fx_20260529_episode_27_analysis/versions/v3_4_9/cache/proposal/contact_sheets/event_00_f0071.jpg
+python evaluation/probe_qwen_interface.py "$IMAGE"
+python evaluation/probe_qwen_interface.py "$IMAGE" --without-image
+```
+
+The output contains the requested endpoint/model, response model/IDs when the
+service returns them, and a short answer. It never prints the API key. The
+plate in this image is pink; the no-image control should say `NO_IMAGE`.
+This comparison checks whether the endpoint appears to use image content. It
+cannot establish the actual backend model: a gateway may echo the requested
+model alias. Give the response IDs to the service owner and ask for the actual
+deployment/model and image-decoding result in the server log.
+
 ## Question
 
 How often does the current Qwen observation step correctly report visible entity
