@@ -1,0 +1,20 @@
+(fastwam) root@aimp-notebook-zhujian41-abnq-0:/efs/share/1919650160032350208/users/machong14/wam/event_analyze# python evaluation/probe_qwen_interface.py "$IMAGE"
+{
+  "image_supplied": true,
+  "requested_base_url": "https://aimpapi.midea.com/t-aigc/aimp-qwen3-5-122b/v1",
+  "requested_model": "/model/qwen3.5-122b-a10b",
+  "response_model": "/model/qwen3.5-122b-a10b",
+  "response_id": "91d88273bd964cf8a225f511e0ed9512",
+  "http_request_id": null,
+  "answer": "pink"
+}
+(fastwam) root@aimp-notebook-zhujian41-abnq-0:/efs/share/1919650160032350208/users/machong14/wam/event_analyze# python evaluation/probe_qwen_interface.py "$IMAGE" --without-image
+{
+  "image_supplied": false,
+  "requested_base_url": "https://aimpapi.midea.com/t-aigc/aimp-qwen3-5-122b/v1",
+  "requested_model": "/model/qwen3.5-122b-a10b",
+  "response_model": "/model/qwen3.5-122b-a10b",
+  "response_id": "c9b0d08e402b465b9b948a968fbb1f34",
+  "http_request_id": null,
+  "answer": "NO_IMAGE"
+}

@@ -1,0 +1,376 @@
+{
+  "pooled": {
+    "base": {
+      "cutlery_basket": {
+        "evaluable": 20,
+        "concrete_claims": 13,
+        "concrete_evaluable": 19,
+        "concrete_covered": 13,
+        "concrete_correct": 10,
+        "emitted": 13,
+        "correct": 10,
+        "high_confidence_errors": 2,
+        "human_transitions": 2,
+        "exact_accuracy": 0.5,
+        "concrete_recall": 0.5263157894736842,
+        "concrete_precision": 0.7692307692307693,
+        "concrete_coverage": 0.6842105263157895
+      },
+      "dish_rack": {
+        "evaluable": 20,
+        "concrete_claims": 20,
+        "concrete_evaluable": 19,
+        "concrete_covered": 19,
+        "concrete_correct": 13,
+        "emitted": 20,
+        "correct": 13,
+        "high_confidence_errors": 7,
+        "human_transitions": 1,
+        "model_claim_when_not_visible": 1,
+        "exact_accuracy": 0.65,
+        "concrete_recall": 0.6842105263157895,
+        "concrete_precision": 0.65,
+        "concrete_coverage": 1.0
+      },
+      "door": {
+        "evaluable": 20,
+        "concrete_claims": 20,
+        "concrete_evaluable": 20,
+        "concrete_covered": 20,
+        "emitted": 20,
+        "high_confidence_errors": 5,
+        "concrete_correct": 15,
+        "correct": 15,
+        "human_transitions": 4,
+        "correct_transitions": 1,
+        "exact_accuracy": 0.75,
+        "concrete_recall": 0.75,
+        "concrete_precision": 0.75,
+        "concrete_coverage": 1.0
+      },
+      "fork_location": {
+        "unreviewed": 20,
+        "evaluable": 0,
+        "concrete_evaluable": 0,
+        "concrete_claims": 0,
+        "exact_accuracy": null,
+        "concrete_recall": null,
+        "concrete_precision": null,
+        "concrete_coverage": null
+      },
+      "knife_location": {
+        "unreviewed": 20,
+        "evaluable": 0,
+        "concrete_evaluable": 0,
+        "concrete_claims": 0,
+        "exact_accuracy": null,
+        "concrete_recall": null,
+        "concrete_precision": null,
+        "concrete_coverage": null
+      },
+      "left_hand": {
+        "unreviewed": 20,
+        "evaluable": 0,
+        "concrete_evaluable": 0,
+        "concrete_claims": 0,
+        "exact_accuracy": null,
+        "concrete_recall": null,
+        "concrete_precision": null,
+        "concrete_coverage": null
+      },
+      "plate_location": {
+        "unreviewed": 20,
+        "evaluable": 0,
+        "concrete_evaluable": 0,
+        "concrete_claims": 0,
+        "exact_accuracy": null,
+        "concrete_recall": null,
+        "concrete_precision": null,
+        "concrete_coverage": null
+      },
+      "right_hand": {
+        "unreviewed": 20,
+        "evaluable": 0,
+        "concrete_evaluable": 0,
+        "concrete_claims": 0,
+        "exact_accuracy": null,
+        "concrete_recall": null,
+        "concrete_precision": null,
+        "concrete_coverage": null
+      },
+      "robot_location": {
+        "unreviewed": 20,
+        "evaluable": 0,
+        "concrete_evaluable": 0,
+        "concrete_claims": 0,
+        "exact_accuracy": null,
+        "concrete_recall": null,
+        "concrete_precision": null,
+        "concrete_coverage": null
+      }
+    },
+    "targeted": {
+      "cutlery_basket": {
+        "evaluable": 6,
+        "concrete_claims": 6,
+        "concrete_evaluable": 6,
+        "concrete_covered": 6,
+        "concrete_correct": 3,
+        "emitted": 6,
+        "correct": 3,
+        "high_confidence_errors": 3,
+        "human_transitions": 2,
+        "exact_accuracy": 0.5,
+        "concrete_recall": 0.5,
+        "concrete_precision": 0.5,
+        "concrete_coverage": 1.0
+      },
+      "dish_rack": {
+        "evaluable": 6,
+        "concrete_claims": 4,
+        "concrete_evaluable": 6,
+        "concrete_covered": 4,
+        "emitted": 6,
+        "high_confidence_errors": 4,
+        "human_transitions": 1,
+        "concrete_correct": 2,
+        "correct": 2,
+        "exact_accuracy": 0.3333333333333333,
+        "concrete_recall": 0.3333333333333333,
+        "concrete_precision": 0.5,
+        "concrete_coverage": 0.6666666666666666
+      },
+      "door": {
+        "evaluable": 2,
+        "concrete_claims": 2,
+        "concrete_evaluable": 2,
+        "concrete_covered": 2,
+        "emitted": 2,
+        "high_confidence_errors": 2,
+        "human_transitions": 1,
+        "exact_accuracy": 0.0,
+        "concrete_recall": 0.0,
+        "concrete_precision": 0.0,
+        "concrete_coverage": 1.0
+      },
+      "left_hand": {
+        "unreviewed": 16,
+        "evaluable": 0,
+        "concrete_evaluable": 0,
+        "concrete_claims": 0,
+        "exact_accuracy": null,
+        "concrete_recall": null,
+        "concrete_precision": null,
+        "concrete_coverage": null
+      },
+      "plate_location": {
+        "unreviewed": 2,
+        "evaluable": 0,
+        "concrete_evaluable": 0,
+        "concrete_claims": 0,
+        "exact_accuracy": null,
+        "concrete_recall": null,
+        "concrete_precision": null,
+        "concrete_coverage": null
+      },
+      "right_hand": {
+        "unreviewed": 16,
+        "evaluable": 0,
+        "concrete_evaluable": 0,
+        "concrete_claims": 0,
+        "exact_accuracy": null,
+        "concrete_recall": null,
+        "concrete_precision": null,
+        "concrete_coverage": null
+      }
+    }
+  },
+  "by_episode": {
+    "dishwasher_2_fx_20260529_episode_27": {
+      "base": {
+        "cutlery_basket": {
+          "evaluable": 20,
+          "concrete_claims": 13,
+          "concrete_evaluable": 19,
+          "concrete_covered": 13,
+          "concrete_correct": 10,
+          "emitted": 13,
+          "correct": 10,
+          "high_confidence_errors": 2,
+          "human_transitions": 2,
+          "exact_accuracy": 0.5,
+          "concrete_recall": 0.5263157894736842,
+          "concrete_precision": 0.7692307692307693,
+          "concrete_coverage": 0.6842105263157895
+        },
+        "dish_rack": {
+          "evaluable": 20,
+          "concrete_claims": 20,
+          "concrete_evaluable": 19,
+          "concrete_covered": 19,
+          "concrete_correct": 13,
+          "emitted": 20,
+          "correct": 13,
+          "high_confidence_errors": 7,
+          "human_transitions": 1,
+          "model_claim_when_not_visible": 1,
+          "exact_accuracy": 0.65,
+          "concrete_recall": 0.6842105263157895,
+          "concrete_precision": 0.65,
+          "concrete_coverage": 1.0
+        },
+        "door": {
+          "evaluable": 20,
+          "concrete_claims": 20,
+          "concrete_evaluable": 20,
+          "concrete_covered": 20,
+          "emitted": 20,
+          "high_confidence_errors": 5,
+          "concrete_correct": 15,
+          "correct": 15,
+          "human_transitions": 4,
+          "correct_transitions": 1,
+          "exact_accuracy": 0.75,
+          "concrete_recall": 0.75,
+          "concrete_precision": 0.75,
+          "concrete_coverage": 1.0
+        },
+        "fork_location": {
+          "unreviewed": 20,
+          "evaluable": 0,
+          "concrete_evaluable": 0,
+          "concrete_claims": 0,
+          "exact_accuracy": null,
+          "concrete_recall": null,
+          "concrete_precision": null,
+          "concrete_coverage": null
+        },
+        "knife_location": {
+          "unreviewed": 20,
+          "evaluable": 0,
+          "concrete_evaluable": 0,
+          "concrete_claims": 0,
+          "exact_accuracy": null,
+          "concrete_recall": null,
+          "concrete_precision": null,
+          "concrete_coverage": null
+        },
+        "left_hand": {
+          "unreviewed": 20,
+          "evaluable": 0,
+          "concrete_evaluable": 0,
+          "concrete_claims": 0,
+          "exact_accuracy": null,
+          "concrete_recall": null,
+          "concrete_precision": null,
+          "concrete_coverage": null
+        },
+        "plate_location": {
+          "unreviewed": 20,
+          "evaluable": 0,
+          "concrete_evaluable": 0,
+          "concrete_claims": 0,
+          "exact_accuracy": null,
+          "concrete_recall": null,
+          "concrete_precision": null,
+          "concrete_coverage": null
+        },
+        "right_hand": {
+          "unreviewed": 20,
+          "evaluable": 0,
+          "concrete_evaluable": 0,
+          "concrete_claims": 0,
+          "exact_accuracy": null,
+          "concrete_recall": null,
+          "concrete_precision": null,
+          "concrete_coverage": null
+        },
+        "robot_location": {
+          "unreviewed": 20,
+          "evaluable": 0,
+          "concrete_evaluable": 0,
+          "concrete_claims": 0,
+          "exact_accuracy": null,
+          "concrete_recall": null,
+          "concrete_precision": null,
+          "concrete_coverage": null
+        }
+      },
+      "targeted": {
+        "cutlery_basket": {
+          "evaluable": 6,
+          "concrete_claims": 6,
+          "concrete_evaluable": 6,
+          "concrete_covered": 6,
+          "concrete_correct": 3,
+          "emitted": 6,
+          "correct": 3,
+          "high_confidence_errors": 3,
+          "human_transitions": 2,
+          "exact_accuracy": 0.5,
+          "concrete_recall": 0.5,
+          "concrete_precision": 0.5,
+          "concrete_coverage": 1.0
+        },
+        "dish_rack": {
+          "evaluable": 6,
+          "concrete_claims": 4,
+          "concrete_evaluable": 6,
+          "concrete_covered": 4,
+          "emitted": 6,
+          "high_confidence_errors": 4,
+          "human_transitions": 1,
+          "concrete_correct": 2,
+          "correct": 2,
+          "exact_accuracy": 0.3333333333333333,
+          "concrete_recall": 0.3333333333333333,
+          "concrete_precision": 0.5,
+          "concrete_coverage": 0.6666666666666666
+        },
+        "door": {
+          "evaluable": 2,
+          "concrete_claims": 2,
+          "concrete_evaluable": 2,
+          "concrete_covered": 2,
+          "emitted": 2,
+          "high_confidence_errors": 2,
+          "human_transitions": 1,
+          "exact_accuracy": 0.0,
+          "concrete_recall": 0.0,
+          "concrete_precision": 0.0,
+          "concrete_coverage": 1.0
+        },
+        "left_hand": {
+          "unreviewed": 16,
+          "evaluable": 0,
+          "concrete_evaluable": 0,
+          "concrete_claims": 0,
+          "exact_accuracy": null,
+          "concrete_recall": null,
+          "concrete_precision": null,
+          "concrete_coverage": null
+        },
+        "plate_location": {
+          "unreviewed": 2,
+          "evaluable": 0,
+          "concrete_evaluable": 0,
+          "concrete_claims": 0,
+          "exact_accuracy": null,
+          "concrete_recall": null,
+          "concrete_precision": null,
+          "concrete_coverage": null
+        },
+        "right_hand": {
+          "unreviewed": 16,
+          "evaluable": 0,
+          "concrete_evaluable": 0,
+          "concrete_claims": 0,
+          "exact_accuracy": null,
+          "concrete_recall": null,
+          "concrete_precision": null,
+          "concrete_coverage": null
+        }
+      }
+    }
+  }
+}
