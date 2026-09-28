@@ -76,3 +76,4 @@ models--*/
 # Keep generated/intermediate trajectory artifacts local. Compact, versioned
 # experiment results are exported to event_analyze/results/ instead.
 # event_analyze/output/
+/event_analyze/output/qwen_audit_*/
