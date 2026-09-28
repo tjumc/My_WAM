@@ -72,8 +72,5 @@ models--*/
 
 /8GPU_train.log
 /16GPU_train.log
-# Event-analysis runtime cache
-# Keep generated/intermediate trajectory artifacts local. Compact, versioned
-# experiment results are exported to event_analyze/results/ instead.
-# event_analyze/output/
-/event_analyze/output/qwen_audit_*/
+# Frozen research project: see branch archive/event-analyze-2026-09-28.
+/event_analyze/
