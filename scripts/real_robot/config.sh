@@ -13,7 +13,7 @@ DATASET_STATS="/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_
 TEXT_CACHE_DIR="posttrain/text_embeds_cache_astribot_dishwasher_posttrain32"
 
 # Wan2.2 model assets root. This path must exist on the server machine.
-DIFFSYNTH_MODEL_BASE_PATH="/path/to/wan_model_assets"
+DIFFSYNTH_MODEL_BASE_PATH="/efs/share/1919650160032350208/projects/foundation_model/FastWAM/checkpoints"
 
 # -------------------- Server --------------------
 SERVER_HOST="127.0.0.1"
