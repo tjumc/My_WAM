@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 """Offline diagnostic for Fast-WAM world-prediction reliability.
 
-The diagnostic compares the model's imagined future latent with the latent
-encoding of the real future observation window from RobotVideoDataset.
-It deliberately excludes the first latent time step because Fast-WAM clamps
-that step to the observed first frame during sampling.
+This tool compares Fast-WAM's imagined future latent with the latent encoding
+of the real future observation window from RobotVideoDataset. The observed
+first latent step is excluded because Fast-WAM clamps it to the real first
+frame during sampling.
 
-This first version is intended for the current Astribot Fast-WAM setup where
-the video branch is not action-conditioned. Therefore the resulting metric is
-an expectation-vs-reality divergence, not an action-consequence score.
+The current Astribot main configuration uses a non-action-conditioned video
+branch, so these metrics measure expectation-vs-reality divergence rather than
+the consequence of a proposed action.
 """
 
 from __future__ import annotations
@@ -46,6 +46,16 @@ from experiments.astribot.fastwam_portal_server import (
 from fastwam.utils.config_resolvers import register_default_resolvers
 
 
+METRIC_KEYS = (
+    "cosine_divergence",
+    "mse",
+    "rmse",
+    "mae",
+    "final_cosine_divergence",
+    "final_mse",
+)
+
+
 def _has_padding(sample: dict[str, Any]) -> bool:
     for key in ("image_is_pad", "action_is_pad", "proprio_is_pad"):
         mask = sample.get(key)
@@ -65,6 +75,82 @@ def _source_description(dataset, sample_index: int) -> str:
     return f"dataset_index={sample_index}"
 
 
+def _episode_random_indices(
+    dataset,
+    *,
+    expected_raw_obs: int,
+    max_samples: int,
+    samples_per_episode: int,
+    start_fraction: float,
+    end_fraction: float,
+    seed: int,
+) -> list[int]:
+    """Sample valid window starts from the middle/later part of many episodes."""
+    if not (0.0 <= start_fraction < end_fraction <= 1.0):
+        raise ValueError(
+            "Episode fractions must satisfy 0 <= start < end <= 1, got "
+            f"{start_fraction} and {end_fraction}."
+        )
+    if samples_per_episode <= 0:
+        raise ValueError("--samples_per_episode must be positive.")
+
+    raw = getattr(dataset, "lerobot_dataset", None)
+    episode_data_index = getattr(raw, "episode_data_index", None)
+    if episode_data_index is None:
+        raise RuntimeError("RobotVideoDataset has no episode_data_index.")
+
+    ep_from = torch.as_tensor(episode_data_index["from"]).cpu().numpy().astype(np.int64)
+    ep_to = torch.as_tensor(episode_data_index["to"]).cpu().numpy().astype(np.int64)
+    if ep_from.shape != ep_to.shape:
+        raise RuntimeError(
+            f"episode_data_index shape mismatch: from={ep_from.shape}, to={ep_to.shape}"
+        )
+
+    rng = np.random.default_rng(seed)
+    episode_ids = np.arange(ep_from.shape[0], dtype=np.int64)
+    rng.shuffle(episode_ids)
+
+    selected: list[int] = []
+    for episode_id in episode_ids:
+        episode_start = int(ep_from[episode_id])
+        episode_end = int(ep_to[episode_id])  # exclusive
+
+        # Need observations t..t+(expected_raw_obs-1), so the final valid start is:
+        valid_last = episode_end - expected_raw_obs
+        if valid_last < episode_start:
+            continue
+
+        num_valid = valid_last - episode_start + 1
+        lo = episode_start + int(math.floor(start_fraction * (num_valid - 1)))
+        hi = episode_start + int(math.floor(end_fraction * (num_valid - 1)))
+        hi = max(lo, min(hi, valid_last))
+        candidates = np.arange(lo, hi + 1, dtype=np.int64)
+        if candidates.size == 0:
+            continue
+
+        take = min(samples_per_episode, int(candidates.size))
+        picks = rng.choice(candidates, size=take, replace=False)
+        selected.extend(int(v) for v in np.atleast_1d(picks))
+        if len(selected) >= max_samples:
+            break
+
+    return selected[:max_samples]
+
+
+def _sequential_indices(
+    total: int,
+    *,
+    start_index: int,
+    sample_stride: int,
+    max_samples: int,
+) -> list[int]:
+    if start_index < 0 or start_index >= total:
+        raise IndexError(f"--start_index={start_index} outside dataset length {total}")
+    if sample_stride <= 0:
+        raise ValueError("--sample_stride must be positive.")
+    return list(range(start_index, total, sample_stride))[:max_samples]
+
+
 @torch.no_grad()
 def _encode_real_video_latents(
     model,
@@ -73,9 +159,9 @@ def _encode_real_video_latents(
     tiled: bool,
     vae_device_mode: str,
 ) -> torch.Tensor:
-    """Encode a preprocessed [1,C,T,H,W] real video into the WAM VAE space."""
+    """Encode a preprocessed [1,C,T,H,W] video into the WAM VAE space."""
     if video.ndim != 5:
-        raise ValueError(f"Expected real video [B,C,T,H,W], got {tuple(video.shape)}")
+        raise ValueError(f"Expected video [B,C,T,H,W], got {tuple(video.shape)}")
 
     if vae_device_mode == "gpu":
         real = video.to(device=model.device, dtype=model.torch_dtype, non_blocking=True)
@@ -94,7 +180,7 @@ def _encode_real_video_latents(
 
     if isinstance(latents, list):
         if len(latents) != 1:
-            raise RuntimeError(f"Expected one real-video latent tensor, got {len(latents)}")
+            raise RuntimeError(f"Expected one latent tensor, got {len(latents)}")
         latents = latents[0]
         if latents.ndim == 4:
             latents = latents.unsqueeze(0)
@@ -132,10 +218,7 @@ def _future_metrics(pred_latents: torch.Tensor, real_latents: torch.Tensor) -> d
     final_cosine_similarity = F.cosine_similarity(
         pred_final, real_final, dim=1, eps=1e-8
     ).mean()
-    final_mse = F.mse_loss(
-        pred_future[:, :, -1:],
-        real_future[:, :, -1:],
-    )
+    final_mse = F.mse_loss(pred_future[:, :, -1:], real_future[:, :, -1:])
 
     per_latent_mse = (
         (pred_future - real_future)
@@ -168,6 +251,20 @@ def _stats(values: list[float]) -> dict[str, float | None]:
         "min": float(arr.min()),
         "max": float(arr.max()),
     }
+
+
+def _aggregate_seed_metrics(seed_metrics: list[dict[str, Any]]) -> tuple[dict[str, float], np.ndarray]:
+    if not seed_metrics:
+        raise ValueError("seed_metrics is empty.")
+
+    out: dict[str, float] = {}
+    for key in METRIC_KEYS:
+        values = np.asarray([float(m[key]) for m in seed_metrics], dtype=np.float64)
+        out[key] = float(values.mean())
+        out[f"seed_std_{key}"] = float(values.std())
+
+    per_latent = np.stack([m["per_latent_mse"] for m in seed_metrics], axis=0)
+    return out, per_latent.mean(axis=0).astype(np.float32)
 
 
 def parse_args() -> argparse.Namespace:
@@ -203,12 +300,47 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--sigma_shift", type=float, default=None)
     parser.add_argument("--text_cfg_scale", type=float, default=1.0)
     parser.add_argument("--seed", type=int, default=42)
-    parser.add_argument("--start_index", type=int, default=0)
+    parser.add_argument(
+        "--num_seeds",
+        type=int,
+        default=1,
+        help="Number of world-generation seeds per observation. Use >1 for seed-stability diagnostics.",
+    )
+    parser.add_argument(
+        "--vary_seed_by_sample",
+        action="store_true",
+        help="Offset the seed set by sample index. By default all observations use the same seed set.",
+    )
+    parser.add_argument(
+        "--sampling_mode",
+        choices=["episode_random", "sequential"],
+        default="episode_random",
+        help="episode_random samples middle/later windows across different episodes.",
+    )
+    parser.add_argument("--start_index", type=int, default=0, help="Used only by sequential sampling.")
     parser.add_argument(
         "--sample_stride",
         type=int,
         default=32,
-        help="Stride over RobotVideoDataset sample indices; 32 reduces heavy window overlap.",
+        help="Used only by sequential sampling.",
+    )
+    parser.add_argument(
+        "--episode_start_fraction",
+        type=float,
+        default=0.25,
+        help="Earliest valid relative position sampled inside each episode.",
+    )
+    parser.add_argument(
+        "--episode_end_fraction",
+        type=float,
+        default=0.85,
+        help="Latest valid relative position sampled inside each episode.",
+    )
+    parser.add_argument(
+        "--samples_per_episode",
+        type=int,
+        default=1,
+        help="How many windows to draw from each selected episode.",
     )
     parser.add_argument("--max_samples", type=int, default=100)
     parser.add_argument("--tiled", action="store_true")
@@ -225,10 +357,10 @@ def parse_args() -> argparse.Namespace:
 def main() -> None:
     _setup_logging()
     args = parse_args()
-    if args.sample_stride <= 0:
-        raise ValueError("--sample_stride must be positive.")
     if args.max_samples <= 0:
         raise ValueError("--max_samples must be positive.")
+    if args.num_seeds <= 0:
+        raise ValueError("--num_seeds must be positive.")
 
     config_path = _resolve_path(args.config)
     checkpoint_path = _resolve_path(args.checkpoint)
@@ -280,23 +412,48 @@ def main() -> None:
 
     dataset = instantiate(cfg.data.train)
     total = len(dataset)
-    if args.start_index < 0 or args.start_index >= total:
-        raise IndexError(f"--start_index={args.start_index} outside dataset length {total}")
+    expected_raw_obs = int(cfg.data.train.num_frames)
+    ratio = int(cfg.data.train.action_video_freq_ratio)
+    expected_video_frames = (expected_raw_obs - 1) // ratio + 1
+
+    if args.sampling_mode == "episode_random":
+        sample_indices = _episode_random_indices(
+            dataset,
+            expected_raw_obs=expected_raw_obs,
+            max_samples=int(args.max_samples),
+            samples_per_episode=int(args.samples_per_episode),
+            start_fraction=float(args.episode_start_fraction),
+            end_fraction=float(args.episode_end_fraction),
+            seed=int(args.seed),
+        )
+    else:
+        sample_indices = _sequential_indices(
+            total,
+            start_index=int(args.start_index),
+            sample_stride=int(args.sample_stride),
+            max_samples=int(args.max_samples),
+        )
+
+    if not sample_indices:
+        raise RuntimeError("Sampling produced no valid dataset indices.")
 
     rows: list[dict[str, Any]] = []
     per_latent_rows: list[np.ndarray] = []
     skipped_padding = 0
     skipped_error = 0
 
-    index = int(args.start_index)
-    while index < total and len(rows) < int(args.max_samples):
+    print(
+        f"[world-reliability] sampling_mode={args.sampling_mode} "
+        f"requested={args.max_samples} candidate_indices={len(sample_indices)}"
+    )
+
+    for index in sample_indices:
         try:
-            # Use _get instead of __getitem__: __getitem__ silently substitutes a random
-            # sample on error, which is undesirable for a deterministic diagnostic.
+            # Use _get instead of __getitem__: RobotVideoDataset.__getitem__ may
+            # substitute a random sample after an exception, which is undesirable here.
             sample = dataset._get(index)
             if _has_padding(sample):
                 skipped_padding += 1
-                index += int(args.sample_stride)
                 continue
 
             video = sample["video"]
@@ -314,9 +471,6 @@ def main() -> None:
 
             num_video_frames = int(video.shape[1])
             action_horizon = int(action.shape[0])
-            expected_raw_obs = int(cfg.data.train.num_frames)
-            ratio = int(cfg.data.train.action_video_freq_ratio)
-            expected_video_frames = (expected_raw_obs - 1) // ratio + 1
             if num_video_frames != expected_video_frames:
                 raise RuntimeError(
                     f"Temporal alignment mismatch: dataset returned {num_video_frames} video "
@@ -346,28 +500,7 @@ def main() -> None:
                 dtype=model.torch_dtype,
             )
 
-            sample_seed = int(args.seed) + int(index)
             with torch.inference_mode():
-                pred = model.infer_joint(
-                    prompt=None,
-                    input_image=input_image,
-                    num_video_frames=num_video_frames,
-                    action_horizon=action_horizon,
-                    action=None,
-                    proprio=proprio_b,
-                    context=context_b,
-                    context_mask=context_mask_b,
-                    negative_prompt=None,
-                    text_cfg_scale=float(args.text_cfg_scale),
-                    num_inference_steps=int(args.num_inference_steps),
-                    sigma_shift=args.sigma_shift,
-                    seed=sample_seed,
-                    rand_device="cpu",
-                    tiled=bool(args.tiled),
-                    test_action_with_infer_action=False,
-                    return_video_latents=True,
-                    decode_video=False,
-                )
                 real_latents = _encode_real_video_latents(
                     model,
                     video.unsqueeze(0),
@@ -375,46 +508,108 @@ def main() -> None:
                     vae_device_mode=args.vae_device_mode,
                 )
 
-            pred_latents = pred["video_latents"]
-            metrics = _future_metrics(pred_latents, real_latents)
-            per_latent_rows.append(metrics.pop("per_latent_mse"))
+                persistence_video = video[:, :1].repeat(1, num_video_frames, 1, 1)
+                persistence_latents = _encode_real_video_latents(
+                    model,
+                    persistence_video.unsqueeze(0),
+                    tiled=bool(args.tiled),
+                    vae_device_mode=args.vae_device_mode,
+                )
+                persistence_metrics = _future_metrics(persistence_latents, real_latents)
+
+                seed_metrics: list[dict[str, Any]] = []
+                seed_values: list[int] = []
+                sample_seed_base = (
+                    int(args.seed) + int(index)
+                    if args.vary_seed_by_sample
+                    else int(args.seed)
+                )
+                for seed_offset in range(int(args.num_seeds)):
+                    sample_seed = sample_seed_base + seed_offset
+                    pred = model.infer_joint(
+                        prompt=None,
+                        input_image=input_image,
+                        num_video_frames=num_video_frames,
+                        action_horizon=action_horizon,
+                        action=None,
+                        proprio=proprio_b,
+                        context=context_b,
+                        context_mask=context_mask_b,
+                        negative_prompt=None,
+                        text_cfg_scale=float(args.text_cfg_scale),
+                        num_inference_steps=int(args.num_inference_steps),
+                        sigma_shift=args.sigma_shift,
+                        seed=sample_seed,
+                        rand_device="cpu",
+                        tiled=bool(args.tiled),
+                        test_action_with_infer_action=False,
+                        return_video_latents=True,
+                        decode_video=False,
+                    )
+                    seed_values.append(sample_seed)
+                    seed_metrics.append(_future_metrics(pred["video_latents"], real_latents))
+
+            metrics, per_latent_mse = _aggregate_seed_metrics(seed_metrics)
+            per_latent_rows.append(per_latent_mse)
+
+            persistence_cos = float(persistence_metrics["cosine_divergence"])
+            persistence_mse = float(persistence_metrics["mse"])
+            prediction_gain_cos = persistence_cos - float(metrics["cosine_divergence"])
+            prediction_gain_mse = persistence_mse - float(metrics["mse"])
+
             rows.append(
                 {
                     "sample_index": int(index),
                     "source": _source_description(dataset, index),
-                    "seed": sample_seed,
+                    "seed_values": seed_values,
                     "num_video_frames": num_video_frames,
                     "action_horizon": action_horizon,
-                    "latent_shape": list(pred_latents.shape),
+                    "latent_shape": list(real_latents.shape),
                     **metrics,
+                    "persistence_cosine_divergence": persistence_cos,
+                    "persistence_mse": persistence_mse,
+                    "persistence_final_cosine_divergence": float(
+                        persistence_metrics["final_cosine_divergence"]
+                    ),
+                    "persistence_final_mse": float(persistence_metrics["final_mse"]),
+                    "prediction_gain_cosine": prediction_gain_cos,
+                    "prediction_gain_mse": prediction_gain_mse,
                 }
             )
             print(
                 f"[world-reliability] idx={index} "
                 f"cos_div={metrics['cosine_divergence']:.6f} "
-                f"mse={metrics['mse']:.6f} "
-                f"final_cos_div={metrics['final_cosine_divergence']:.6f}"
+                f"seed_std={metrics['seed_std_cosine_divergence']:.6f} "
+                f"persist_cos={persistence_cos:.6f} "
+                f"gain_cos={prediction_gain_cos:+.6f}"
             )
         except Exception as exc:
             skipped_error += 1
             print(f"[world-reliability] warning: idx={index} failed: {exc}")
 
-        index += int(args.sample_stride)
-
     if not rows:
         raise RuntimeError(
             "No valid reliability samples were evaluated. Check dataset paths, padding, "
-            "start index, stride, and text embedding cache."
+            "sampling settings, and text embedding cache."
         )
 
-    keys = (
-        "cosine_divergence",
-        "mse",
-        "rmse",
-        "mae",
-        "final_cosine_divergence",
-        "final_mse",
+    summary_metric_keys = list(METRIC_KEYS) + [
+        f"seed_std_{key}" for key in METRIC_KEYS
+    ] + [
+        "persistence_cosine_divergence",
+        "persistence_mse",
+        "persistence_final_cosine_divergence",
+        "persistence_final_mse",
+        "prediction_gain_cosine",
+        "prediction_gain_mse",
+    ]
+    positive_gain_cos = float(
+        np.mean([row["prediction_gain_cosine"] > 0.0 for row in rows])
     )
+    positive_gain_mse = float(
+        np.mean([row["prediction_gain_mse"] > 0.0 for row in rows])
+    )
+
     summary = {
         "config": str(config_path),
         "checkpoint": str(checkpoint_path),
@@ -423,17 +618,30 @@ def main() -> None:
         "evaluated_samples": len(rows),
         "skipped_padding": int(skipped_padding),
         "skipped_error": int(skipped_error),
+        "sampling_mode": str(args.sampling_mode),
         "start_index": int(args.start_index),
         "sample_stride": int(args.sample_stride),
+        "episode_start_fraction": float(args.episode_start_fraction),
+        "episode_end_fraction": float(args.episode_end_fraction),
+        "samples_per_episode": int(args.samples_per_episode),
         "max_samples": int(args.max_samples),
         "seed": int(args.seed),
+        "num_seeds": int(args.num_seeds),
+        "vary_seed_by_sample": bool(args.vary_seed_by_sample),
         "num_inference_steps": int(args.num_inference_steps),
         "action_conditioned": action_conditioned,
         "interpretation": (
             "expectation-vs-reality divergence; current main Fast-WAM video branch "
             "is not action-conditioned"
         ),
-        "metrics": {key: _stats([float(row[key]) for row in rows]) for key in keys},
+        "positive_prediction_gain_fraction": {
+            "cosine": positive_gain_cos,
+            "mse": positive_gain_mse,
+        },
+        "metrics": {
+            key: _stats([float(row[key]) for row in rows])
+            for key in summary_metric_keys
+        },
     }
 
     if args.output_npz:
@@ -441,7 +649,6 @@ def main() -> None:
     else:
         output_npz = (
             PROJECT_ROOT
-            / "runs"
             / "world_reliability_eval"
             / f"{checkpoint_path.stem}_world_reliability.npz"
         )
@@ -452,17 +659,29 @@ def main() -> None:
         output_npz,
         sample_index=np.asarray([row["sample_index"] for row in rows], dtype=np.int64),
         source=np.asarray([row["source"] for row in rows], dtype=str),
-        seed=np.asarray([row["seed"] for row in rows], dtype=np.int64),
+        seed_values=np.asarray([row["seed_values"] for row in rows], dtype=np.int64),
         cosine_divergence=np.asarray(
             [row["cosine_divergence"] for row in rows], dtype=np.float32
         ),
-        mse=np.asarray([row["mse"] for row in rows], dtype=np.float32),
-        rmse=np.asarray([row["rmse"] for row in rows], dtype=np.float32),
-        mae=np.asarray([row["mae"] for row in rows], dtype=np.float32),
-        final_cosine_divergence=np.asarray(
-            [row["final_cosine_divergence"] for row in rows], dtype=np.float32
+        seed_std_cosine_divergence=np.asarray(
+            [row["seed_std_cosine_divergence"] for row in rows], dtype=np.float32
         ),
-        final_mse=np.asarray([row["final_mse"] for row in rows], dtype=np.float32),
+        mse=np.asarray([row["mse"] for row in rows], dtype=np.float32),
+        seed_std_mse=np.asarray(
+            [row["seed_std_mse"] for row in rows], dtype=np.float32
+        ),
+        persistence_cosine_divergence=np.asarray(
+            [row["persistence_cosine_divergence"] for row in rows], dtype=np.float32
+        ),
+        persistence_mse=np.asarray(
+            [row["persistence_mse"] for row in rows], dtype=np.float32
+        ),
+        prediction_gain_cosine=np.asarray(
+            [row["prediction_gain_cosine"] for row in rows], dtype=np.float32
+        ),
+        prediction_gain_mse=np.asarray(
+            [row["prediction_gain_mse"] for row in rows], dtype=np.float32
+        ),
         per_latent_mse=per_latent_mse,
         summary_json=np.asarray(json.dumps(summary, ensure_ascii=False)),
     )
