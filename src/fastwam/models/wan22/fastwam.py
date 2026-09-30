@@ -741,6 +741,8 @@ class FastWAM(torch.nn.Module):
         rand_device: str = "cpu",
         tiled: bool = False,
         test_action_with_infer_action: bool = True,
+        return_video_latents: bool = False,
+        decode_video: bool = True,
     ) -> dict[str, Any]:
         self.eval()
         if test_action_with_infer_action:
@@ -897,10 +899,14 @@ class FastWAM(torch.nn.Module):
                     f"Action from infer_joint and infer_action differ with max abs diff {max_abs_diff:.6f}. "
                 )
 
-        return {
-            "video": self._decode_latents(latents_video, tiled=tiled),
+        output: dict[str, Any] = {
             "action": action_out,
         }
+        if return_video_latents:
+            output["video_latents"] = latents_video.detach().to(device="cpu", dtype=torch.float32)
+        if decode_video:
+            output["video"] = self._decode_latents(latents_video, tiled=tiled)
+        return output
 
     @torch.no_grad()
     def infer_action(

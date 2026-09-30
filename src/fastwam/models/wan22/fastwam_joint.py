@@ -67,6 +67,8 @@ class FastWAMJoint(FastWAM):
         rand_device: str = "cpu",
         tiled: bool = False,
         test_action_with_infer_action: bool = True,
+        return_video_latents: bool = False,
+        decode_video: bool = True,
     ) -> dict[str, Any]:
         if test_action_with_infer_action:
             logger.warning(
@@ -90,6 +92,8 @@ class FastWAMJoint(FastWAM):
             rand_device=rand_device,
             tiled=tiled,
             test_action_with_infer_action=False,
+            return_video_latents=return_video_latents,
+            decode_video=decode_video,
         )
 
     @torch.no_grad()
