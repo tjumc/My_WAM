@@ -1,30 +1,17 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Real-robot client launcher for WAM inference.
-# It calls the existing pi0_astribot/evaluate/infer_client_vel.py without
-# adding new files to pi0_astribot.
-
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 WAM_ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
 cd "${WAM_ROOT}"
 
-source scripts/load_wam_local_paths.sh
-
-if [[ -z "${PI0_ROOT:-}" ]]; then
-  for candidate in "${WAM_ROOT}/../pi0_astribot" "${WAM_ROOT}/../../git/pi0_astribot"; do
-    if [[ -d "${candidate}" ]]; then
-      PI0_ROOT="${candidate}"
-      break
-    fi
-  done
-fi
-if [[ ! -d "${PI0_ROOT:-}" ]]; then
-  echo "ERROR: PI0_ROOT not found. Pass PI0_ROOT=/path/to/pi0_astribot when launching." >&2
-  exit 1
+if [[ -f "${WAM_ROOT}/wam_local_paths.sh" ]]; then
+  # shellcheck source=/dev/null
+  source "${WAM_ROOT}/wam_local_paths.sh"
 fi
 
 if [[ -n "${ASTRIBOT_SDK_ENV:-}" ]]; then
+  # shellcheck source=/dev/null
   source "${ASTRIBOT_SDK_ENV}"
 fi
 
@@ -40,32 +27,28 @@ has_arg() {
   return 1
 }
 
-CLIENT_ARGS=(
-  --server_host "${SERVER_HOST}"
-  --server_port "${SERVER_PORT}"
-)
+CLIENT_ARGS=(--server_host "${SERVER_HOST}" --server_port "${SERVER_PORT}")
 
-# Conservative first-run defaults. Override via env vars or explicit CLI args.
 if ! has_arg "--execute_steps" "$@"; then
-  EXECUTE_STEPS="${EXECUTE_STEPS:-1}"
-  if [[ -n "${EXECUTE_STEPS}" ]]; then
-    CLIENT_ARGS+=(--execute_steps "${EXECUTE_STEPS}")
-  fi
+  CLIENT_ARGS+=(--execute_steps "${EXECUTE_STEPS:-1}")
 fi
-if ! has_arg "--lock_chassis_yaw" "$@"; then
-  LOCK_CHASSIS_YAW="${LOCK_CHASSIS_YAW:-current}"
-  if [[ -n "${LOCK_CHASSIS_YAW}" ]]; then
-    CLIENT_ARGS+=(--lock_chassis_yaw "${LOCK_CHASSIS_YAW}")
-  fi
+if ! has_arg "--control_hz" "$@"; then
+  CLIENT_ARGS+=(--control_hz "${CONTROL_HZ:-50}")
+fi
+if ! has_arg "--action_dt" "$@"; then
+  CLIENT_ARGS+=(--action_dt "${ACTION_DT:-0.03333333333333333}")
+fi
+if ! has_arg "--boundary_blend_steps" "$@"; then
+  CLIENT_ARGS+=(--boundary_blend_steps "${BOUNDARY_BLEND_STEPS:-0}")
 fi
 
 echo "------------------------------------------------"
-echo "Starting Astribot WAM client"
-echo "PI0_ROOT       : ${PI0_ROOT}"
+echo "Starting Astribot Fast-WAM client"
 echo "WAM server     : ${SERVER_HOST}:${SERVER_PORT}"
-echo "Extra defaults : execute_steps=${EXECUTE_STEPS:-<not set>} lock_chassis_yaw=${LOCK_CHASSIS_YAW:-<not set>}"
+echo "Execute steps  : ${EXECUTE_STEPS:-1}"
+echo "Control Hz     : ${CONTROL_HZ:-50}"
+echo "Action dt      : ${ACTION_DT:-0.03333333333333333}"
 echo "User args      : $*"
 echo "------------------------------------------------"
 
-cd "${PI0_ROOT}"
-exec python evaluate/infer_client_vel.py "${CLIENT_ARGS[@]}" "$@"
+exec python experiments/astribot/real_robot_client.py "${CLIENT_ARGS[@]}" "$@"

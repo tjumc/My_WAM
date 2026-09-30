@@ -356,6 +356,8 @@ class AstribotFastWAMPolicy:
 
         # RobotVideoDataset applies a final resize/crop after camera concatenation.
         mosaic = _center_crop_resize(mosaic, width=int(self.video_size[1]), height=int(self.video_size[0]))
+        # Astribot SDK/OpenCV camera callbacks provide BGR; training videos are decoded as RGB.
+        mosaic = mosaic[..., ::-1]
 
         x = torch.from_numpy(mosaic.copy()).permute(2, 0, 1).unsqueeze(0).contiguous()
         x = x.to(device=self.model.device, dtype=self.model.torch_dtype)
