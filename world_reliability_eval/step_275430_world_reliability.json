@@ -1,0 +1,264 @@
+{
+  "summary": {
+    "config": "/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_dishwasher_posttrain32/train/config.yaml",
+    "checkpoint": "/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_dishwasher_posttrain32/train/checkpoints/weights/step_275430.pt",
+    "dataset_stats": "/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_dishwasher_posttrain32/stats.json",
+    "dataset_length": 2644060,
+    "evaluated_samples": 10,
+    "skipped_padding": 0,
+    "skipped_error": 0,
+    "start_index": 0,
+    "sample_stride": 32,
+    "max_samples": 10,
+    "seed": 42,
+    "num_inference_steps": 10,
+    "action_conditioned": false,
+    "interpretation": "expectation-vs-reality divergence; current main Fast-WAM video branch is not action-conditioned",
+    "metrics": {
+      "cosine_divergence": {
+        "mean": 0.0541748583316803,
+        "std": 0.01584563202846004,
+        "median": 0.0510367751121521,
+        "min": 0.03499037027359009,
+        "max": 0.08808845281600952
+      },
+      "mse": {
+        "mean": 0.08641463033854961,
+        "std": 0.021345470465660644,
+        "median": 0.08921901136636734,
+        "min": 0.05295154079794884,
+        "max": 0.11685802787542343
+      },
+      "rmse": {
+        "mean": 0.29162046719123247,
+        "std": 0.037042319766949855,
+        "median": 0.298640883990086,
+        "min": 0.23011201793463296,
+        "max": 0.3418450348848487
+      },
+      "mae": {
+        "mean": 0.2045804277062416,
+        "std": 0.0244280154515738,
+        "median": 0.20819991827011108,
+        "min": 0.1656557321548462,
+        "max": 0.24639949202537537
+      },
+      "final_cosine_divergence": {
+        "mean": 0.061097359657287596,
+        "std": 0.02153864792222009,
+        "median": 0.05840924382209778,
+        "min": 0.027954936027526855,
+        "max": 0.10265952348709106
+      },
+      "final_mse": {
+        "mean": 0.1063817422837019,
+        "std": 0.032035236504830054,
+        "median": 0.1081949956715107,
+        "min": 0.05634896084666252,
+        "max": 0.15134529769420624
+      }
+    }
+  },
+  "samples": [
+    {
+      "sample_index": 0,
+      "source": "dataset_idx=0, dataset_root=/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed, global_idx=0, local_idx=0, episode_index=0, frame_index=0, absolute_index=0, timestamp=0.000000, data_path=/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/data/chunk-000/file-000.parquet, video_paths=['/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/videos/observation.images.head/chunk-000/file-000.mp4', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/videos/observation.images.left/chunk-000/file-000.mp4', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/videos/observation.images.right/chunk-000/file-000.mp4']",
+      "seed": 42,
+      "num_video_frames": 9,
+      "action_horizon": 32,
+      "latent_shape": [
+        1,
+        48,
+        3,
+        24,
+        20
+      ],
+      "cosine_divergence": 0.08808845281600952,
+      "mse": 0.1144910603761673,
+      "rmse": 0.33836527655208254,
+      "mae": 0.2256654053926468,
+      "final_cosine_divergence": 0.10265952348709106,
+      "final_mse": 0.15134529769420624
+    },
+    {
+      "sample_index": 32,
+      "source": "dataset_idx=0, dataset_root=/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed, global_idx=32, local_idx=32, episode_index=0, frame_index=32, absolute_index=32, timestamp=1.066667, data_path=/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/data/chunk-000/file-000.parquet, video_paths=['/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/videos/observation.images.head/chunk-000/file-000.mp4', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/videos/observation.images.left/chunk-000/file-000.mp4', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/videos/observation.images.right/chunk-000/file-000.mp4']",
+      "seed": 74,
+      "num_video_frames": 9,
+      "action_horizon": 32,
+      "latent_shape": [
+        1,
+        48,
+        3,
+        24,
+        20
+      ],
+      "cosine_divergence": 0.06967473030090332,
+      "mse": 0.09263104200363159,
+      "rmse": 0.30435348199689055,
+      "mae": 0.21388308703899384,
+      "final_cosine_divergence": 0.089610755443573,
+      "final_mse": 0.1337745487689972
+    },
+    {
+      "sample_index": 64,
+      "source": "dataset_idx=0, dataset_root=/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed, global_idx=64, local_idx=64, episode_index=0, frame_index=64, absolute_index=64, timestamp=2.133333, data_path=/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/data/chunk-000/file-000.parquet, video_paths=['/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/videos/observation.images.head/chunk-000/file-000.mp4', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/videos/observation.images.left/chunk-000/file-000.mp4', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/videos/observation.images.right/chunk-000/file-000.mp4']",
+      "seed": 106,
+      "num_video_frames": 9,
+      "action_horizon": 32,
+      "latent_shape": [
+        1,
+        48,
+        3,
+        24,
+        20
+      ],
+      "cosine_divergence": 0.036829471588134766,
+      "mse": 0.05295154079794884,
+      "rmse": 0.23011201793463296,
+      "mae": 0.1656557321548462,
+      "final_cosine_divergence": 0.041272521018981934,
+      "final_mse": 0.06476333737373352
+    },
+    {
+      "sample_index": 96,
+      "source": "dataset_idx=0, dataset_root=/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed, global_idx=96, local_idx=96, episode_index=0, frame_index=96, absolute_index=96, timestamp=3.200000, data_path=/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/data/chunk-000/file-000.parquet, video_paths=['/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/videos/observation.images.head/chunk-000/file-000.mp4', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/videos/observation.images.left/chunk-000/file-000.mp4', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/videos/observation.images.right/chunk-000/file-000.mp4']",
+      "seed": 138,
+      "num_video_frames": 9,
+      "action_horizon": 32,
+      "latent_shape": [
+        1,
+        48,
+        3,
+        24,
+        20
+      ],
+      "cosine_divergence": 0.04175746440887451,
+      "mse": 0.06315918266773224,
+      "rmse": 0.2513149073726671,
+      "mae": 0.1712791472673416,
+      "final_cosine_divergence": 0.04959756135940552,
+      "final_mse": 0.08294612914323807
+    },
+    {
+      "sample_index": 128,
+      "source": "dataset_idx=0, dataset_root=/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed, global_idx=128, local_idx=128, episode_index=0, frame_index=128, absolute_index=128, timestamp=4.266667, data_path=/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/data/chunk-000/file-000.parquet, video_paths=['/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/videos/observation.images.head/chunk-000/file-000.mp4', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/videos/observation.images.left/chunk-000/file-000.mp4', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/videos/observation.images.right/chunk-000/file-000.mp4']",
+      "seed": 170,
+      "num_video_frames": 9,
+      "action_horizon": 32,
+      "latent_shape": [
+        1,
+        48,
+        3,
+        24,
+        20
+      ],
+      "cosine_divergence": 0.059204041957855225,
+      "mse": 0.1035533919930458,
+      "rmse": 0.3217971286277207,
+      "mae": 0.21849381923675537,
+      "final_cosine_divergence": 0.07583391666412354,
+      "final_mse": 0.1487674117088318
+    },
+    {
+      "sample_index": 160,
+      "source": "dataset_idx=0, dataset_root=/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed, global_idx=160, local_idx=160, episode_index=0, frame_index=160, absolute_index=160, timestamp=5.333333, data_path=/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/data/chunk-000/file-000.parquet, video_paths=['/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/videos/observation.images.head/chunk-000/file-000.mp4', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/videos/observation.images.left/chunk-000/file-000.mp4', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/videos/observation.images.right/chunk-000/file-000.mp4']",
+      "seed": 202,
+      "num_video_frames": 9,
+      "action_horizon": 32,
+      "latent_shape": [
+        1,
+        48,
+        3,
+        24,
+        20
+      ],
+      "cosine_divergence": 0.03499037027359009,
+      "mse": 0.06278835237026215,
+      "rmse": 0.2505760410938407,
+      "mae": 0.1857212483882904,
+      "final_cosine_divergence": 0.027954936027526855,
+      "final_mse": 0.05634896084666252
+    },
+    {
+      "sample_index": 192,
+      "source": "dataset_idx=0, dataset_root=/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed, global_idx=192, local_idx=192, episode_index=0, frame_index=192, absolute_index=192, timestamp=6.400000, data_path=/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/data/chunk-000/file-000.parquet, video_paths=['/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/videos/observation.images.head/chunk-000/file-000.mp4', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/videos/observation.images.left/chunk-000/file-000.mp4', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/videos/observation.images.right/chunk-000/file-000.mp4']",
+      "seed": 234,
+      "num_video_frames": 9,
+      "action_horizon": 32,
+      "latent_shape": [
+        1,
+        48,
+        3,
+        24,
+        20
+      ],
+      "cosine_divergence": 0.06456947326660156,
+      "mse": 0.11685802787542343,
+      "rmse": 0.3418450348848487,
+      "mae": 0.24639949202537537,
+      "final_cosine_divergence": 0.06168866157531738,
+      "final_mse": 0.12368686497211456
+    },
+    {
+      "sample_index": 224,
+      "source": "dataset_idx=0, dataset_root=/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed, global_idx=224, local_idx=224, episode_index=0, frame_index=224, absolute_index=224, timestamp=7.466667, data_path=/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/data/chunk-000/file-000.parquet, video_paths=['/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/videos/observation.images.head/chunk-000/file-000.mp4', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/videos/observation.images.left/chunk-000/file-000.mp4', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/videos/observation.images.right/chunk-000/file-000.mp4']",
+      "seed": 266,
+      "num_video_frames": 9,
+      "action_horizon": 32,
+      "latent_shape": [
+        1,
+        48,
+        3,
+        24,
+        20
+      ],
+      "cosine_divergence": 0.05613100528717041,
+      "mse": 0.09797903895378113,
+      "rmse": 0.3130160362565808,
+      "mae": 0.22366738319396973,
+      "final_cosine_divergence": 0.05772686004638672,
+      "final_mse": 0.09872211515903473
+    },
+    {
+      "sample_index": 256,
+      "source": "dataset_idx=0, dataset_root=/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed, global_idx=256, local_idx=256, episode_index=0, frame_index=256, absolute_index=256, timestamp=8.533334, data_path=/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/data/chunk-000/file-000.parquet, video_paths=['/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/videos/observation.images.head/chunk-000/file-000.mp4', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/videos/observation.images.left/chunk-000/file-000.mp4', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/videos/observation.images.right/chunk-000/file-000.mp4']",
+      "seed": 298,
+      "num_video_frames": 9,
+      "action_horizon": 32,
+      "latent_shape": [
+        1,
+        48,
+        3,
+        24,
+        20
+      ],
+      "cosine_divergence": 0.044561028480529785,
+      "mse": 0.07392768561840057,
+      "rmse": 0.2718964612097785,
+      "mae": 0.19252221286296844,
+      "final_cosine_divergence": 0.04553723335266113,
+      "final_mse": 0.08579488098621368
+    },
+    {
+      "sample_index": 288,
+      "source": "dataset_idx=0, dataset_root=/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed, global_idx=288, local_idx=288, episode_index=0, frame_index=288, absolute_index=288, timestamp=9.600000, data_path=/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/data/chunk-000/file-000.parquet, video_paths=['/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/videos/observation.images.head/chunk-000/file-000.mp4', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/videos/observation.images.left/chunk-000/file-000.mp4', '/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260407_compressed/videos/observation.images.right/chunk-000/file-000.mp4']",
+      "seed": 330,
+      "num_video_frames": 9,
+      "action_horizon": 32,
+      "latent_shape": [
+        1,
+        48,
+        3,
+        24,
+        20
+      ],
+      "cosine_divergence": 0.04594254493713379,
+      "mse": 0.08580698072910309,
+      "rmse": 0.2929282859832814,
+      "mae": 0.20251674950122833,
+      "final_cosine_divergence": 0.05909162759780884,
+      "final_mse": 0.11766787618398666
+    }
+  ]
+}
