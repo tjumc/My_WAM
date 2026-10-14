@@ -20,14 +20,14 @@ STATS="/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_dishwash
 CONFIG="configs/train/astribot_posttrain32.yaml"
 
 # 相对路径均以仓库根目录为基准；每次运行会创建独立子目录。
-OUTPUT_ROOT="outputs/history_ambiguity"
+OUTPUT_ROOT="ambiguity_outputs/history_ambiguity"
 
 # 默认使用当前激活环境的 python；也可填写解释器的绝对路径。
 PYTHON_BIN="python"
 VIDEO_BACKEND="pyav"
 
 # -------------------- 采样参数：首次保持小规模 --------------------
-MAX_SAMPLES=256                 # 最多读取的窗口起点数
+MAX_SAMPLES=1024                 # 最多读取的窗口起点数
 SAMPLES_PER_EPISODE=64          # 每条轨迹最多采样多少个起点
 SAMPLE_STRIDE=4                 # 起点候选间隔；不会改变窗口内部动作采样率
 MIN_FRAME_GAP=150              # 同轨迹两起点最小帧距；30 Hz 时为 5 秒

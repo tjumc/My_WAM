@@ -1,0 +1,80 @@
+Python: /efs/share/1919650160032350208/users/suty11/miniconda3/envs/fastwam/bin/python
+Config: /efs/share/1919650160032350208/users/machong14/wam/configs/train/astribot_posttrain32.yaml
+Stats: /efs/share/1919650160032350208/users/machong14/wam/runs/astribot_dishwasher_posttrain32/stats.json
+Dataset: /efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260605_compressed
+FPS: 30 Episodes: 88
+  observation.state shape = [25]
+  action shape = [25]
+  observation.images.head shape = [3, 480, 640]
+  observation.images.left shape = [3, 480, 640]
+  observation.images.right shape = [3, 480, 640]
+最小帧距：150 帧 / 5.00 秒
+去重邻域：30 帧 / 1.00 秒（两端点同时接近）
+筛选阈值：proprio <= 0.5，GT action >= 0.0
+预检通过；底层随机换样本重试已禁用。开始离线筛选。
+INFO:fastwam.datasets.lerobot.base_lerobot_dataset:Using pretrained_norm_stats for normalization: dataset=/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260605_compressed
+[mine] episodes=88 selected_starts=1024 raw_window=33 sampled_episodes=16
+[mine] proprio_max=0.5 action_min=0.0 frame_gap=150 dedup_radius=30
+/efs/share/1919650160032350208/users/suty11/miniconda3/envs/fastwam/lib/python3.10/site-packages/torchvision/io/_video_deprecation_warning.py:5: UserWarning: The video decoding and encoding capabilities of torchvision are deprecated from version 0.22 and will be removed in version 0.24. We recommend that you migrate to TorchCodec, where we'll consolidate the future decoding/encoding capabilities of PyTorch: https://github.com/pytorch/torchcodec
+  warnings.warn(
+[mine] loaded 50/1024 windows; valid=50 padding=0 errors=0
+[mine] loaded 100/1024 windows; valid=100 padding=0 errors=0
+[mine] loaded 150/1024 windows; valid=150 padding=0 errors=0
+[mine] loaded 200/1024 windows; valid=200 padding=0 errors=0
+[mine] loaded 250/1024 windows; valid=250 padding=0 errors=0
+[mine] loaded 300/1024 windows; valid=300 padding=0 errors=0
+[mine] loaded 350/1024 windows; valid=350 padding=0 errors=0
+[mine] loaded 400/1024 windows; valid=400 padding=0 errors=0
+[mine] loaded 450/1024 windows; valid=450 padding=0 errors=0
+[mine] loaded 500/1024 windows; valid=500 padding=0 errors=0
+[mine] loaded 550/1024 windows; valid=550 padding=0 errors=0
+[mine] loaded 600/1024 windows; valid=600 padding=0 errors=0
+[mine] loaded 650/1024 windows; valid=650 padding=0 errors=0
+[mine] loaded 700/1024 windows; valid=700 padding=0 errors=0
+[mine] loaded 750/1024 windows; valid=750 padding=0 errors=0
+[mine] loaded 800/1024 windows; valid=800 padding=0 errors=0
+[mine] loaded 850/1024 windows; valid=850 padding=0 errors=0
+[mine] loaded 900/1024 windows; valid=900 padding=0 errors=0
+[mine] loaded 950/1024 windows; valid=950 padding=0 errors=0
+[mine] loaded 1000/1024 windows; valid=1000 padding=0 errors=0
+[mine] loaded 1024/1024 windows; valid=1024 padding=0 errors=0
+[mine] usable_records=1024 skipped_padding=0 skipped_error=0
+[mine] ep=2 pairs=2016 gap=1626 proprio=0 action=0 unique=0 near_duplicates_removed=0 retained=0
+[mine] ep=4 pairs=2016 gap=1612 proprio=65 action=65 unique=11 near_duplicates_removed=54 retained=11
+[mine] ep=18 pairs=2016 gap=1625 proprio=11 action=11 unique=3 near_duplicates_removed=8 retained=3
+[mine] ep=24 pairs=2016 gap=1585 proprio=8 action=8 unique=3 near_duplicates_removed=5 retained=3
+[mine] ep=26 pairs=2016 gap=1628 proprio=19 action=19 unique=11 near_duplicates_removed=8 retained=11
+[mine] ep=27 pairs=2016 gap=1640 proprio=29 action=29 unique=10 near_duplicates_removed=19 retained=10
+[mine] ep=28 pairs=2016 gap=1584 proprio=16 action=16 unique=6 near_duplicates_removed=10 retained=6
+[mine] ep=29 pairs=2016 gap=1615 proprio=3 action=3 unique=3 near_duplicates_removed=0 retained=3
+[mine] ep=38 pairs=2016 gap=1570 proprio=21 action=21 unique=5 near_duplicates_removed=16 retained=5
+[mine] ep=39 pairs=2016 gap=1583 proprio=41 action=41 unique=10 near_duplicates_removed=31 retained=10
+[mine] ep=40 pairs=2016 gap=1671 proprio=6 action=6 unique=5 near_duplicates_removed=1 retained=5
+[mine] ep=51 pairs=2016 gap=1646 proprio=6 action=6 unique=5 near_duplicates_removed=1 retained=5
+[mine] ep=57 pairs=2016 gap=1562 proprio=5 action=5 unique=3 near_duplicates_removed=2 retained=3
+[mine] ep=68 pairs=2016 gap=1516 proprio=15 action=15 unique=9 near_duplicates_removed=6 retained=9
+[mine] ep=69 pairs=2016 gap=1687 proprio=17 action=17 unique=7 near_duplicates_removed=10 retained=7
+[mine] ep=82 pairs=2016 gap=1556 proprio=23 action=23 unique=7 near_duplicates_removed=16 retained=7
+[mine] filter_counts: {"all_pairs": 32256, "after_frame_gap": 25706, "after_proprio": 285, "after_action": 285, "after_temporal_dedup": 98, "after_episode_limit": 98, "removed_temporal_duplicates": 187}
+[mine] proprio RMSE quantiles (all gap-valid pairs): {"min": 0.17106759548187256, "p10": 0.7636853158473969, "p25": 0.9216744601726532, "p50": 1.0918533205986023, "p75": 1.2908383905887604, "p90": 1.4823054075241089, "max": 2.1806421279907227}
+[mine] wrote /efs/share/1919650160032350208/users/machong14/wam/ambiguity_outputs/history_ambiguity/20261014_191521_89946/pairs.csv
+[mine] wrote /efs/share/1919650160032350208/users/machong14/wam/ambiguity_outputs/history_ambiguity/20261014_191521_89946/pairs.json
+[mine] wrote pair previews to /efs/share/1919650160032350208/users/machong14/wam/ambiguity_outputs/history_ambiguity/20261014_191521_89946/pair_images
+
+Top pairs:
+  #01 ep=28 frames=(668,892) visual_rmse=0.10250 prop_rmse=0.44924 action_rmse=0.52559
+  #02 ep=4 frames=(4,1316) visual_rmse=0.12055 prop_rmse=0.42265 action_rmse=0.89479
+  #03 ep=26 frames=(20,1376) visual_rmse=0.12699 prop_rmse=0.35963 action_rmse=0.53310
+  #04 ep=69 frames=(264,784) visual_rmse=0.13013 prop_rmse=0.48047 action_rmse=0.61652
+  #05 ep=38 frames=(492,748) visual_rmse=0.13144 prop_rmse=0.49206 action_rmse=0.44414
+  #06 ep=18 frames=(604,864) visual_rmse=0.14444 prop_rmse=0.49658 action_rmse=0.54050
+  #07 ep=39 frames=(204,904) visual_rmse=0.14852 prop_rmse=0.42098 action_rmse=0.65488
+  #08 ep=39 frames=(180,608) visual_rmse=0.14934 prop_rmse=0.36597 action_rmse=0.59321
+  #09 ep=27 frames=(768,1132) visual_rmse=0.15128 prop_rmse=0.48410 action_rmse=1.00028
+  #10 ep=4 frames=(136,1028) visual_rmse=0.15343 prop_rmse=0.38200 action_rmse=0.42892
+有效样本数： 1024
+读取错误数： 0
+保存候选数： 50
+逐级筛选计数： {'all_pairs': 32256, 'after_frame_gap': 25706, 'after_proprio': 285, 'after_action': 285, 'after_temporal_dedup': 98, 'after_episode_limit': 98, 'removed_temporal_duplicates': 187}
+proprio 分位数（帧距过滤后、proprio过滤前）： {'min': 0.17106759548187256, 'p10': 0.7636853158473969, 'p25': 0.9216744601726532, 'p50': 1.0918533205986023, 'p75': 1.2908383905887604, 'p90': 1.4823054075241089, 'max': 2.1806421279907227}
+注意：这里只筛选候选，未做 WAM 推理，也不自动判定历史歧义。
