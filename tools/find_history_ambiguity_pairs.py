@@ -19,7 +19,7 @@ Example:
         --config configs/train/astribot_posttrain32.yaml \
         --dataset_stats /path/to/stats.json \
         --dataset_dir /path/to/dataset \
-        --output_dir outputs/history_ambiguity \
+        --output_dir ambiguity_outputs/history_ambiguity \
         --max_samples 256 \
         --samples_per_episode 64 \
         --min_frame_gap 150 \
