@@ -34,10 +34,14 @@ MIN_FRAME_GAP=150              # 同轨迹两起点最小帧距；30 Hz 时为 5
 SEED=42
 
 # -------------------- 筛选与输出 --------------------
-# 首次不按 proprio/action 过滤，先观察实际数值和图片。
-# RMSE 位于数据集归一化空间，不是米、角度或成功概率。
-MAX_PROPRIO_RMSE="inf"          # 越小越严格；inf 表示暂不过滤
-MIN_ACTION_RMSE="0.0"           # 越大越严格；0.0 表示暂不过滤
+# 本轮只收紧 proprio 并加入近重复去重，其他采样设置保持不变。
+# 0.5 是探索阈值，不是“相同状态”的已验证标准；不会自动放宽以凑满 TOP_K。
+# RMSE 沿用原脚本的归一化模型维度（含补齐维），不是米、角度或成功概率。
+MAX_PROPRIO_RMSE="0.5"          # 当前状态 RMSE 上限；inf 可关闭过滤
+MIN_ACTION_RMSE="0.0"           # 暂不过滤 GT 动作，保留相似动作作对照
+DEDUP_FRAME_GAP=30              # 两对候选的两个端点均相差 <=30 帧时只留视觉更相似的一对
+                                # 仅同轨迹去重；30 Hz 时为 1 秒，0 表示关闭去重
+LOG_EVERY=50                   # 每处理多少个窗口打印进度，末尾也打印
 CANDIDATE_K_PER_EPISODE=200
 TOP_K=50                       # 最终保存多少组候选
 SAVE_PAIR_IMAGES=20            # 保存前多少组对比图，0 表示不保存
@@ -85,6 +89,8 @@ ARGS=(
     --seed "$SEED"
     --max_proprio_rmse "$MAX_PROPRIO_RMSE"
     --min_action_rmse "$MIN_ACTION_RMSE"
+    --dedup_frame_gap "$DEDUP_FRAME_GAP"
+    --log_every "$LOG_EVERY"
     --candidate_k_per_episode "$CANDIDATE_K_PER_EPISODE"
     --top_k "$TOP_K"
     --save_pair_images "$SAVE_PAIR_IMAGES"
@@ -106,16 +112,19 @@ parser = argparse.ArgumentParser(add_help=False)
 for name in ("config", "dataset_stats", "dataset_dir", "output_dir"):
     parser.add_argument(f"--{name}", required=True)
 for name in ("max_samples", "samples_per_episode", "sample_stride", "min_frame_gap",
-             "candidate_k_per_episode", "top_k", "save_pair_images", "feature_h", "feature_w"):
+             "candidate_k_per_episode", "top_k", "save_pair_images", "feature_h", "feature_w",
+             "dedup_frame_gap", "log_every"):
     parser.add_argument(f"--{name}", type=int, required=True)
 parser.add_argument("--max_proprio_rmse", type=float, required=True)
 parser.add_argument("--min_action_rmse", type=float, required=True)
 args, _ = parser.parse_known_args()
 
 for name in ("max_samples", "sample_stride", "min_frame_gap", "candidate_k_per_episode",
-             "top_k", "feature_h", "feature_w"):
+             "top_k", "feature_h", "feature_w", "log_every"):
     if getattr(args, name) <= 0:
         raise ValueError(f"{name} 必须大于 0。")
+if args.dedup_frame_gap < 0:
+    raise ValueError("DEDUP_FRAME_GAP 必须非负，0 表示关闭。")
 if args.samples_per_episode < 2 or args.max_samples < 2:
     raise ValueError("MAX_SAMPLES 和 SAMPLES_PER_EPISODE 必须至少为 2。")
 if not 0 <= args.save_pair_images <= args.top_k:
@@ -168,6 +177,8 @@ fps = float(info.get("fps", 0))
 if not math.isfinite(fps) or fps <= 0:
     raise ValueError("meta/info.json 中的 fps 必须为正数。")
 print(f"最小帧距：{args.min_frame_gap} 帧 / {args.min_frame_gap / fps:.2f} 秒")
+print(f"去重邻域：{args.dedup_frame_gap} 帧 / {args.dedup_frame_gap / fps:.2f} 秒（两端点同时接近）")
+print(f"筛选阈值：proprio <= {args.max_proprio_rmse}，GT action >= {args.min_action_rmse}")
 if args.min_frame_gap < int(train.num_frames):
     print("注意：最小帧距小于训练窗口长度，部分候选窗口可能重叠。")
 
@@ -188,6 +199,9 @@ if int(summary.get("usable_samples", 0)) == 0:
 print("有效样本数：", summary.get("usable_samples"))
 print("读取错误数：", summary.get("skipped_error", 0))
 print("保存候选数：", len(payload.get("pairs", [])))
+print("逐级筛选计数：", summary.get("pair_filter_counts", {}))
+print("proprio 分位数（帧距过滤后、proprio过滤前）：",
+      summary.get("proprio_rmse_after_frame_gap_quantiles", {}))
 if not payload.get("pairs"):
     print("没有候选通过筛选；不能据此断言任务不需要历史。请检查采样范围和阈值。")
 print("注意：这里只筛选候选，未做 WAM 推理，也不自动判定历史歧义。")
@@ -195,7 +209,7 @@ PY
 
 printf '\n完成。结果目录：%s\n' "$OUT"
 printf '  pairs.csv       相似度 / proprio差异 / GT动作差异\n'
-printf '  pairs.json      统计信息与候选来源\n'
+printf '  pairs.json      逐级过滤/去重计数、proprio分布与候选来源\n'
 printf '  pair_images/    左右对比图片\n'
 printf '  run.log         完整运行日志\n'
 printf '  launcher.sh     本次启动脚本副本（记录路径和参数）\n'
