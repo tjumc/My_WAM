@@ -12,7 +12,7 @@
 # -------------------- 路径：优先检查这里 --------------------
 # 以下数据路径来自之前记录；服务器挂载位置不同时请修改。
 # DATASET 必须是一个含 meta/info.json 的 LeRobot 数据集目录。
-DATASET="/data/share/1919650160032350208/foundation_model/datasets/astribot_lerobotv3/dishwasher_fx_20260312_compressed"
+DATASET="/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260605_compressed"
 
 # 使用该 WAM 实验对应的 Fast-WAM 归一化文件。
 # 不要直接替换成 LeRobot 的 meta/stats.json。

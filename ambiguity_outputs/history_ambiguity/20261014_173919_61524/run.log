@@ -1,0 +1,37 @@
+Python: /efs/share/1919650160032350208/users/suty11/miniconda3/envs/fastwam/bin/python
+Config: /efs/share/1919650160032350208/users/machong14/wam/configs/train/astribot_posttrain32.yaml
+Stats: /efs/share/1919650160032350208/users/machong14/wam/runs/astribot_dishwasher_posttrain32/stats.json
+Dataset: /efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260605_compressed
+FPS: 30 Episodes: 88
+  observation.state shape = [25]
+  action shape = [25]
+  observation.images.head shape = [3, 480, 640]
+  observation.images.left shape = [3, 480, 640]
+  observation.images.right shape = [3, 480, 640]
+最小帧距：150 帧 / 5.00 秒
+预检通过；底层随机换样本重试已禁用。开始离线筛选。
+INFO:fastwam.datasets.lerobot.base_lerobot_dataset:Using pretrained_norm_stats for normalization: dataset=/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260605_compressed
+[mine] episodes=88 selected_starts=256 raw_window=33
+/efs/share/1919650160032350208/users/suty11/miniconda3/envs/fastwam/lib/python3.10/site-packages/torchvision/io/_video_deprecation_warning.py:5: UserWarning: The video decoding and encoding capabilities of torchvision are deprecated from version 0.22 and will be removed in version 0.24. We recommend that you migrate to TorchCodec, where we'll consolidate the future decoding/encoding capabilities of PyTorch: https://github.com/pytorch/torchcodec
+  warnings.warn(
+[mine] loaded 250/256 candidates; valid=250 padding=0 errors=0
+[mine] usable_records=256 skipped_padding=0 skipped_error=0
+[mine] wrote /efs/share/1919650160032350208/users/machong14/wam/outputs/history_ambiguity/20261014_173919_61524/pairs.csv
+[mine] wrote /efs/share/1919650160032350208/users/machong14/wam/outputs/history_ambiguity/20261014_173919_61524/pairs.json
+[mine] wrote pair previews to /efs/share/1919650160032350208/users/machong14/wam/outputs/history_ambiguity/20261014_173919_61524/pair_images
+
+Top pairs:
+  #01 ep=69 frames=(264,820) visual_rmse=0.11548 prop_rmse=0.57213 action_rmse=0.61426
+  #02 ep=51 frames=(52,1504) visual_rmse=0.11769 prop_rmse=1.04373 action_rmse=0.85333
+  #03 ep=69 frames=(264,824) visual_rmse=0.12302 prop_rmse=0.56631 action_rmse=0.65170
+  #04 ep=69 frames=(264,816) visual_rmse=0.12308 prop_rmse=0.54986 action_rmse=0.58748
+  #05 ep=69 frames=(812,1220) visual_rmse=0.12359 prop_rmse=0.93516 action_rmse=1.04678
+  #06 ep=69 frames=(804,1220) visual_rmse=0.12393 prop_rmse=0.91392 action_rmse=1.04893
+  #07 ep=29 frames=(24,1372) visual_rmse=0.12460 prop_rmse=1.08190 action_rmse=1.03599
+  #08 ep=69 frames=(260,816) visual_rmse=0.12557 prop_rmse=0.58392 action_rmse=0.57764
+  #09 ep=69 frames=(352,1040) visual_rmse=0.12614 prop_rmse=1.30507 action_rmse=1.11861
+  #10 ep=69 frames=(260,820) visual_rmse=0.12798 prop_rmse=0.61103 action_rmse=0.60849
+有效样本数： 256
+读取错误数： 0
+保存候选数： 50
+注意：这里只筛选候选，未做 WAM 推理，也不自动判定历史歧义。
