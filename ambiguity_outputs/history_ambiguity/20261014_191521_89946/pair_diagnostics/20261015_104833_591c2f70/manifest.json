@@ -1,0 +1,32 @@
+{
+  "status": "started",
+  "arguments": {
+    "pairs_json": "ambiguity_outputs/history_ambiguity/20261014_191521_89946/pairs.json",
+    "ranks": [
+      2
+    ],
+    "config": null,
+    "dataset_stats": null,
+    "dataset_dir": null,
+    "output_dir": "/efs/share/1919650160032350208/users/machong14/wam/ambiguity_outputs/history_ambiguity/20261014_191521_89946/pair_diagnostics/20261015_104833_591c2f70",
+    "after_seconds": 3.0,
+    "tail_seconds": 2.0,
+    "tolerance_s": 0.002,
+    "base_mode": "velocity"
+  },
+  "settings": {
+    "horizon": 32,
+    "state_model_dim": 32,
+    "action_model_dim": 32,
+    "normalization": "float32 x*scale+offset; scale=1/(std+1e-8); clamp [-5,5]",
+    "transforms": null,
+    "padding": "ConcatLeftAlign"
+  },
+  "pairs_json": "/efs/share/1919650160032350208/users/machong14/wam/ambiguity_outputs/history_ambiguity/20261014_191521_89946/pairs.json",
+  "pairs_json_sha256": "68b6271d82ad9e4b2149bd8bc21a85f6f8258d7f7a9049db6c887493c013c315",
+  "config": "/efs/share/1919650160032350208/users/machong14/wam/configs/train/astribot_posttrain32.yaml",
+  "config_sha256": "2c2972fab50dede95fdf954e59affd9093a82fb460fd4f089fdd7cbb0c1fd884",
+  "dataset_stats": "/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_dishwasher_posttrain32/stats.json",
+  "stats_sha256": "42fd8a0f141b89b4644f9de3541a3d7420744c51f0008b11120f6d560933ca29",
+  "raw_units": "Retained from dataset; no universal hold threshold or automatic stop/success label"
+}
