@@ -1,0 +1,10 @@
+# Keep only compact text results in Git; NEVER force-add _raw.
+*
+!.gitignore
+!report.md
+!pair_summary.csv
+!group_summary.csv
+!manifest.json
+!STARTED.json
+!COMPLETE.json
+!FAILED.json
