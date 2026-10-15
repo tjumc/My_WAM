@@ -1,0 +1,3 @@
+﻿rank,episode,frame_a,frame_b,video,status,current_input_distinguishable,next_behavior_a,next_behavior_b,relevant_history_fact,swapped_action_still_valid,notes
+1,28,668,892,pair_0001.mp4,unreviewed,,,,,,
+9,27,768,1132,pair_0009.mp4,unreviewed,,,,,,

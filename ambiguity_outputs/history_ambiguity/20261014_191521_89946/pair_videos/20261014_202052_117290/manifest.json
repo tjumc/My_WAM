@@ -1,0 +1,43 @@
+{
+  "pairs_json": "/efs/share/1919650160032350208/users/machong14/wam/ambiguity_outputs/history_ambiguity/20261014_191521_89946/pairs.json",
+  "pairs_json_sha256": "68b6271d82ad9e4b2149bd8bc21a85f6f8258d7f7a9049db6c887493c013c315",
+  "arguments": {
+    "pairs_json": "ambiguity_outputs/history_ambiguity/20261014_191521_89946/pairs.json",
+    "ranks": [
+      1,
+      9
+    ],
+    "dataset_dir": null,
+    "output_dir": "/efs/share/1919650160032350208/users/machong14/wam/ambiguity_outputs/history_ambiguity/20261014_191521_89946/pair_videos/20261014_202052_117290",
+    "before_seconds": 3.0,
+    "after_seconds": 3.0,
+    "fps": 10,
+    "pause_seconds": 1.0,
+    "tolerance_s": 0.002,
+    "video_backend": "pyav",
+    "cameras": [
+      "head",
+      "left",
+      "right"
+    ]
+  },
+  "exported": [
+    {
+      "rank": 1,
+      "episode": 28,
+      "frame_a": 668,
+      "frame_b": 892,
+      "video": "pair_0001.mp4",
+      "status": "unreviewed"
+    },
+    {
+      "rank": 9,
+      "episode": 27,
+      "frame_a": 768,
+      "frame_b": 1132,
+      "video": "pair_0009.mp4",
+      "status": "unreviewed"
+    }
+  ],
+  "display_only": "Clips include future GT for human review, never feed them to the policy as history."
+}

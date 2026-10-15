@@ -1,0 +1,21 @@
+[replay] input=/efs/share/1919650160032350208/users/machong14/wam/ambiguity_outputs/history_ambiguity/20261014_191521_89946/pairs.json
+[replay] output=/efs/share/1919650160032350208/users/machong14/wam/ambiguity_outputs/history_ambiguity/20261014_191521_89946/pair_videos/20261014_202052_117290
+[replay] ranks=[1, 9]; CURRENT aligned at 3.0s
+[replay] ep=28 observation.images.head: 61 frames, video_offset=325.500000s
+/efs/share/1919650160032350208/users/suty11/miniconda3/envs/fastwam/lib/python3.10/site-packages/torchvision/io/_video_deprecation_warning.py:5: UserWarning: The video decoding and encoding capabilities of torchvision are deprecated from version 0.22 and will be removed in version 0.24. We recommend that you migrate to TorchCodec, where we'll consolidate the future decoding/encoding capabilities of PyTorch: https://github.com/pytorch/torchcodec
+  warnings.warn(
+[replay] ep=28 observation.images.left: 61 frames, video_offset=235.300000s
+[replay] ep=28 observation.images.right: 61 frames, video_offset=614.033333s
+[replay] ep=28 observation.images.head: 61 frames, video_offset=325.500000s
+[replay] ep=28 observation.images.left: 61 frames, video_offset=235.300000s
+[replay] ep=28 observation.images.right: 61 frames, video_offset=614.033333s
+[replay] saved pair_0001.mp4; missing A/B context = 0/0
+[replay] ep=27 observation.images.head: 61 frames, video_offset=276.400000s
+[replay] ep=27 observation.images.left: 61 frames, video_offset=186.200000s
+[replay] ep=27 observation.images.right: 61 frames, video_offset=564.933333s
+[replay] ep=27 observation.images.head: 61 frames, video_offset=276.400000s
+[replay] ep=27 observation.images.left: 61 frames, video_offset=186.200000s
+[replay] ep=27 observation.images.right: 61 frames, video_offset=564.933333s
+[replay] saved pair_0009.mp4; missing A/B context = 0/0
+[replay] complete: /efs/share/1919650160032350208/users/machong14/wam/ambiguity_outputs/history_ambiguity/20261014_191521_89946/pair_videos/20261014_202052_117290
+[replay] no mining files, configuration, or output paths were changed.
