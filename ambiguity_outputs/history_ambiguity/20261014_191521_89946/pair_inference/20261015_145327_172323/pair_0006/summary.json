@@ -1,0 +1,84 @@
+{
+  "active_dimensions": 25,
+  "num_seeds": 10,
+  "gt_pair_rmse_active25": 0.6115112019658794,
+  "same_seed_prediction_separation": {
+    "mean": 0.5967938270585706,
+    "std_across_seeds": 0.00128031696961029,
+    "min": 0.5953417824113871,
+    "max": 0.5989608978155252
+  },
+  "sides": {
+    "A": {
+      "own_gt_rmse_active25": {
+        "mean": 0.03664728153025469,
+        "std_across_seeds": 0.0018964485415572394,
+        "min": 0.03373060013261324,
+        "max": 0.03977747179443099
+      },
+      "other_gt_rmse_active25": {
+        "mean": 0.6076548056710298,
+        "std_across_seeds": 0.0016879024914246731,
+        "min": 0.6035555636705905,
+        "max": 0.6095265743561938
+      },
+      "other_gt_closer_seed_count": 0,
+      "tie_seed_count": 0
+    },
+    "B": {
+      "own_gt_rmse_active25": {
+        "mean": 0.06368019342235039,
+        "std_across_seeds": 0.005354504302429821,
+        "min": 0.05524569846477237,
+        "max": 0.07220532485708094
+      },
+      "other_gt_rmse_active25": {
+        "mean": 0.6004815113601157,
+        "std_across_seeds": 0.0023131953903775637,
+        "min": 0.5975581547923977,
+        "max": 0.605160160185713
+      },
+      "other_gt_closer_seed_count": 0,
+      "tie_seed_count": 0
+    }
+  },
+  "interpretation": "Distances to recorded demonstrations, not valid-action labels or robot success rates. Shared seeds control sampling noise, not history; current proprio may distinguish sides. No held-out split is created, no memory intervention is tested, and no termination label is inferred.",
+  "rank": 6,
+  "reference_reproduction": {
+    "proprio_rmse": 0.49658341498138037,
+    "action_rmse": 0.5405046471020122,
+    "action_first_step_rmse": 0.5257978025012715,
+    "action_endpoint_rmse": 0.4958363886688024,
+    "visual_rmse": 0.14443978667259216
+  },
+  "sources": [
+    {
+      "clipped_gt_elements": 0,
+      "clipped_current_dims": [],
+      "remaining_seconds": 30.866666793823242,
+      "episode_length": 1531,
+      "fps": 30.0,
+      "source": {
+        "root": "/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260605_compressed",
+        "episode": 18,
+        "frame": 604,
+        "timestamp": 20.133333
+      }
+    },
+    {
+      "clipped_gt_elements": 0,
+      "clipped_current_dims": [],
+      "remaining_seconds": 22.200000762939453,
+      "episode_length": 1531,
+      "fps": 30.0,
+      "source": {
+        "root": "/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260605_compressed",
+        "episode": 18,
+        "frame": 864,
+        "timestamp": 28.799999
+      }
+    }
+  ],
+  "base_mode": "velocity",
+  "array_axes": "predictions: [seed,A_or_B,action_step,dimension]; actual_state: [A_or_B,H+1,25]"
+}
