@@ -1,0 +1,38 @@
+[infer-pair] ranks=[2], seeds=[42, 43, 44, 45, 46, 47, 48, 49, 50, 51], horizon=32; output=/efs/share/1919650160032350208/users/machong14/wam/ambiguity_outputs/history_ambiguity/20261014_191521_89946/pair_inference/20261015_133602_120317
+INFO:fastwam.datasets.lerobot.base_lerobot_dataset:Using pretrained_norm_stats for normalization: dataset=/efs/share/1919650160032350208/projects/foundation_model/foundation_model_/datasets/astribot_lerobotv3/dishwasher_2_fx_20260605_compressed
+/efs/share/1919650160032350208/users/suty11/miniconda3/envs/fastwam/lib/python3.10/site-packages/torchvision/io/_video_deprecation_warning.py:5: UserWarning: The video decoding and encoding capabilities of torchvision are deprecated from version 0.22 and will be removed in version 0.24. We recommend that you migrate to TorchCodec, where we'll consolidate the future decoding/encoding capabilities of PyTorch: https://github.com/pytorch/torchcodec
+  warnings.warn(
+[input] rank=2 ep=4 frame=4 verified; current-only model input
+[input] rank=2 ep=4 frame=1316 verified; current-only model input
+[model] loading checkpoint=/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_dishwasher_posttrain32/train/checkpoints/weights/step_275430.pt; device=cuda; dtype=torch.bfloat16
+INFO:fastwam.models.wan22.helpers.loader:Loading Wan2.2-TI2V-5B components...
+INFO:fastwam.models.wan22.helpers.loader:Skipping pretrained video DiT load (`skip_dit_load_from_pretrain=True`); initializing video expert randomly and expecting checkpoint override.
+INFO:fastwam.models.wan22.helpers.loader:Skipping pretrained text encoder/tokenizer load (`load_text_encoder=False`); training must provide cached `context/context_mask`.
+INFO:fastwam.models.wan22.helpers.loader:Finished loading Wan2.2-TI2V-5B components in 38.14 seconds.
+INFO:fastwam.models.wan22.action_dit:Skipping ActionDiT pretrained load (`skip_dit_load_from_pretrain=True`); initializing action expert randomly and expecting checkpoint override.
+INFO:fastwam.models.wan22.mot:Initialized MoT with experts: ['video', 'action'], num_layers=30
+INFO:fastwam.models.wan22.mot:  Expert 'video': num_params=5.00 B
+INFO:fastwam.models.wan22.mot:  Expert 'action': num_params=1.02 B
+[infer-pair] seed=42 side=A shape=(32, 32) seconds=7.982
+[infer-pair] seed=42 side=B shape=(32, 32) seconds=0.939
+[infer-pair] seed=43 side=A shape=(32, 32) seconds=0.971
+[infer-pair] seed=43 side=B shape=(32, 32) seconds=0.908
+[infer-pair] seed=44 side=A shape=(32, 32) seconds=1.005
+[infer-pair] seed=44 side=B shape=(32, 32) seconds=1.002
+[infer-pair] seed=45 side=A shape=(32, 32) seconds=0.965
+[infer-pair] seed=45 side=B shape=(32, 32) seconds=1.012
+[infer-pair] seed=46 side=A shape=(32, 32) seconds=0.933
+[infer-pair] seed=46 side=B shape=(32, 32) seconds=0.951
+[infer-pair] seed=47 side=A shape=(32, 32) seconds=0.986
+[infer-pair] seed=47 side=B shape=(32, 32) seconds=0.965
+[infer-pair] seed=48 side=A shape=(32, 32) seconds=0.974
+[infer-pair] seed=48 side=B shape=(32, 32) seconds=0.901
+[infer-pair] seed=49 side=A shape=(32, 32) seconds=0.893
+[infer-pair] seed=49 side=B shape=(32, 32) seconds=0.903
+[infer-pair] seed=50 side=A shape=(32, 32) seconds=0.912
+[infer-pair] seed=50 side=B shape=(32, 32) seconds=0.970
+[infer-pair] seed=51 side=A shape=(32, 32) seconds=0.914
+[infer-pair] seed=51 side=B shape=(32, 32) seconds=1.001
+[infer-pair] saved /efs/share/1919650160032350208/users/machong14/wam/ambiguity_outputs/history_ambiguity/20261014_191521_89946/pair_inference/20261015_133602_120317/pair_0002; report.md
+[infer-pair] COMPLETE: /efs/share/1919650160032350208/users/machong14/wam/ambiguity_outputs/history_ambiguity/20261014_191521_89946/pair_inference/20261015_133602_120317
+Read pair_*/report.md. These are offline GT distances, not robot failure rates.
