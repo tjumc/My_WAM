@@ -74,3 +74,13 @@ models--*/
 /16GPU_train.log
 # Frozen research project: see branch archive/event-analyze-2026-09-28.
 /event_analyze/
+
+# Research runs: keep generated diagnostics and media out of the stable branch.
+/ambiguity_outputs/
+/world_reliability_eval/
+/research_outputs/
+/experiment_outputs/
+/dataset_audit_outputs/
+**/_raw/
+**/_local/
+*.log
