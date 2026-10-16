@@ -1,0 +1,12 @@
+*
+!/.gitignore
+!/report.md
+!/directories.csv
+!/tasks.csv
+!/numeric_summary.csv
+!/duplicate_candidates.csv
+!/issues.csv
+!/review.csv
+!/manifest.json
+!/COMPLETE.json
+!/FAILED.json

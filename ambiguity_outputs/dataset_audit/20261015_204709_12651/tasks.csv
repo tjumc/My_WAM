@@ -1,0 +1,9 @@
+﻿task,catalog_directories,unique_directories_scanned,directories_with_metadata,directories_needing_review,episodes_from_read_metadata,numeric_valid_episodes,observed_state_dims,observed_action_dims
+fridge,27,27,27,0,3560,3560,[25],[25]
+dishwasher,25,25,25,0,1624,1624,[25],[25]
+oven_put,4,4,4,0,897,897,[25],[25]
+oven_takeout,7,7,7,0,993,993,[25],[25]
+collect_clothes,25,25,25,0,936,936,[25],[25]
+dry_clothes,22,22,22,0,1287,1287,[25],[25]
+wash_clothes,17,17,17,0,925,925,[25],[25]
+sort_blocks,1,1,1,0,100,100,[25],[25]
