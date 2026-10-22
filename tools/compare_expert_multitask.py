@@ -227,6 +227,12 @@ def try_git_head():
         return None
 
 
+def comparison_code():
+    # The file hash also identifies a locally applied, uncommitted repair.
+    return {"git_head": try_git_head(), "tool_sha256": digest(__file__),
+            "gt_reader": "episode-range-mapped-v1"}
+
+
 def validate_files(rows, samples):
     task_set = set(r["task"] for r in samples)
     experts = {r["task"]: r for r in rows if r["kind"] == "expert"}
@@ -409,21 +415,59 @@ def get_raw_dataset(root, model):
     return data
 
 
+def episode_source(data, ep_idx):
+    """Return the unfiltered, single-directory source and its logical bounds."""
+    datasets = data.multi_dataset._datasets
+    if len(datasets) != 1 or datasets[0].episodes is not None:
+        die("Comparison requires one unfiltered dataset directory")
+    dataset = datasets[0]
+    bounds = dataset.episode_data_index
+    if ep_idx < 0 or ep_idx >= len(bounds["from"]):
+        die(f"Episode index out of bounds: ep={ep_idx}")
+    start, end = int(bounds["from"][ep_idx]), int(bounds["to"][ep_idx])
+    if start < 0 or end <= start:
+        die(f"Invalid episode bounds: ep={ep_idx} from={start} to={end}")
+    return dataset, start, end
+
+
+def episode_frame_index(data, ep_idx, frame):
+    """BaseLerobotDataset.__getitem__ takes a physical HF row index."""
+    dataset, start, end = episode_source(data, ep_idx)
+    if frame < 0 or frame >= end - start:
+        die(f"Frame index out of bounds: ep={ep_idx} frame={frame}")
+    return int(dataset._map_query_indices([start + frame])[0])
+
+
 def episode_actions(data, ep_idx):
     import numpy as np
+    dataset, start, end = episode_source(data, ep_idx)
     key = data.action_meta[0]["lerobot_key"]
-    source = data.multi_dataset.get_episode_data(ep_idx, columns=[key])[key]
-    raw = source.detach().cpu().numpy() if hasattr(source, "detach") else np.asarray(source)
-    raw = np.asarray(raw, dtype=np.float32)
-    if raw.ndim != 2 or raw.shape[1] != 25:
-        die(f"Unexpected episode GT actions: ep={ep_idx} shape={raw.shape}")
+    indices = list(range(start, end))
+    # This query maps logical indices once and preserves use_obs_as_action.
+    # The multi-dataset get_episode_data() reads the whole shared v3 parquet.
+    episode = dataset._query_hf_dataset_for_training(
+        {name: indices for name in (key, "episode_index", "frame_index")})
+
+    def as_numpy(value):
+        return value.detach().cpu().numpy() if hasattr(value, "detach") else np.asarray(value)
+
+    length = end - start
+    episode_ids = as_numpy(episode["episode_index"])
+    frames = as_numpy(episode["frame_index"])
+    if not np.array_equal(episode_ids, np.full(length, ep_idx)):
+        die(f"Episode GT identity mismatch: ep={ep_idx} expected {length} rows of that episode")
+    if not np.array_equal(frames, np.arange(length)):
+        die(f"Episode GT frame order mismatch: ep={ep_idx} expected frames 0..{length - 1}")
+    raw = np.asarray(as_numpy(episode[key]), dtype=np.float32)
+    if raw.shape != (length, 25):
+        die(f"Unexpected episode GT actions: ep={ep_idx} shape={raw.shape} expected=({length}, 25)")
     return raw
 
 
 def raw_observation(data, sample, frame, ep, gt):
     import numpy as np
     index = int(sample.get("idx", -1))
-    expected = int(data.episode_data_index["from"][ep]) + frame
+    expected = episode_frame_index(data, ep, frame)
     if index != expected:
         die(f"Dataset silently replaced requested index {expected} with {index}")
     actual_ep = int(sample["episode_index"])
@@ -467,6 +511,7 @@ def run_model_task(row, task, samples, seeds, scales, args, all_directories):
     if len(previous) == len(wanted):
         print(f"[skip] {key}/{task}: {len(wanted)} scores already stored")
         return
+    code = comparison_code()
     initial_prompt = stored_prompt(samples[0]["dataset_dir"]) if is_shared else row["prompt"]
     policy = load_policy(row, initial_prompt, args, all_directories)
     groups = defaultdict(list)
@@ -482,16 +527,16 @@ def run_model_task(row, task, samples, seeds, scales, args, all_directories):
                 for item in groups[root]:
                     by_episode[int(item["episode_index"])].append(item)
                 for ep in sorted(by_episode):
-                    start = int(directory.episode_data_index["from"][ep])
                     gt = episode_actions(directory, ep)
                     if gt.shape[0] != int(by_episode[ep][0]["episode_length"]):
-                        die(f"GT length mismatch {root} ep={ep}")
+                        die(f"GT length mismatch {root} ep={ep}: got={gt.shape[0]} "
+                            f"expected={by_episode[ep][0]['episode_length']}")
                     for item in by_episode[ep]:
                         frame = int(item["start_frame"])
                         missing = [s for s in seeds if (item["sample_id"], s) not in previous]
                         if not missing:
                             continue
-                        sample = directory[start + frame]
+                        sample = directory[episode_frame_index(directory, ep, frame)]
                         imgs, state, task_prompt = raw_observation(directory, sample, frame, ep, gt)
                         if is_shared:
                             set_task_context(policy, task_prompt, row["text_cache"])
@@ -513,6 +558,7 @@ def run_model_task(row, task, samples, seeds, scales, args, all_directories):
                                 "task": task, "model": key,
                                 "dataset_dir": root, "episode_index": ep,
                                 "start_frame": frame, "task_prompt": policy.task_prompt,
+                                "comparison_code": code,
                                 **metrics,
                             }
                             stream.write(json.dumps(line, ensure_ascii=False, allow_nan=False) + "\n")
@@ -594,6 +640,7 @@ def run_shared_tasks(row, by_task, seeds, scales, args, directories):
     if not pending:
         print("[skip] shared model: all task scores already stored")
         return
+    code = comparison_code()
     first = next(iter(pending.values()))[0][0]
     bootstrap = stored_prompt(first["dataset_dir"])
     policy = load_policy(row, bootstrap, args, directories)
@@ -611,16 +658,16 @@ def run_shared_tasks(row, by_task, seeds, scales, args, directories):
                     for item in groups[root]:
                         by_episode[int(item["episode_index"])].append(item)
                     for ep, windows in sorted(by_episode.items()):
-                        start = int(dataset.episode_data_index["from"][ep])
                         gt = episode_actions(dataset, ep)
                         if gt.shape[0] != int(windows[0]["episode_length"]):
-                            die(f"Shared GT length mismatch {root} ep={ep}")
+                            die(f"Shared GT length mismatch {root} ep={ep}: got={gt.shape[0]} "
+                                f"expected={windows[0]['episode_length']}")
                         for item in windows:
                             frame = int(item["start_frame"])
                             missing = [s for s in seeds if (item["sample_id"], s) not in done]
                             if not missing:
                                 continue
-                            sample = dataset[start + frame]
+                            sample = dataset[episode_frame_index(dataset, ep, frame)]
                             imgs, state, task_prompt = raw_observation(dataset, sample, frame, ep, gt)
                             set_task_context(policy, task_prompt, row["text_cache"])
                             target = gt[frame:frame + HORIZON]
@@ -637,6 +684,7 @@ def run_shared_tasks(row, by_task, seeds, scales, args, directories):
                                     "model": "shared", "dataset_dir": root,
                                     "episode_index": ep, "start_frame": frame,
                                     "task_prompt": policy.task_prompt, **metrics,
+                                    "comparison_code": code,
                                 }
                                 stream.write(json.dumps(record, ensure_ascii=False, allow_nan=False) + "\n")
                                 stream.flush()
@@ -680,9 +728,18 @@ def summarize(args):
     for sample in samples:
         by_task[sample["task"]].append(sample)
     task_rows, group_rows, chunk_rows, coverage_rows, note_rows = [], [], [], [], []
+    code_versions, legacy_scores = set(), 0
     for task, windows in by_task.items():
         expert = read_scored(args.output / "_raw" / f"expert_{task}.jsonl")
         shared = read_scored(args.output / "_raw" / f"shared_{task}.jsonl")
+        for records in (expert, shared):
+            for record in records.values():
+                code = record.get("comparison_code")
+                if code is None:
+                    legacy_scores += 1
+                else:
+                    code_versions.add(tuple(str(code.get(k) or "unknown") for k in
+                                            ("git_head", "tool_sha256", "gt_reader")))
         sample_lookup = {s["sample_id"]: s for s in windows}
         expected = {(sid, seed) for sid in sample_lookup for seed in seeds}
         if (set(expert) | set(shared)) - expected:
@@ -785,6 +842,13 @@ def summarize(args):
     for row in coverage_rows:
         lines.append(f"- {row['task']}: {row['paired_calls']}/{row['expected_calls_each_model']} "
                      f"paired calls ({row['coverage_percent']}%), {row['paired_episodes']} paired episodes.")
+    lines += ["", "## Code provenance", "",
+              f"Sample preparation git HEAD: `{manifest.get('git_head') or 'unknown'}`."]
+    for head, tool_hash, reader in sorted(code_versions):
+        lines.append(f"- Scored with git HEAD `{head}`, tool SHA-256 `{tool_hash}`, GT reader `{reader}`.")
+    if legacy_scores:
+        lines.append(f"- {legacy_scores} stored scores have no code revision (legacy); "
+                     "their repair version is unknown.")
     lines += ["", "## Prompt conditions (not forced identical)", ""]
     for task, e, s in note_rows:
         lines.append(f"- {task}: expert={json.dumps(e, ensure_ascii=False)}, "
