@@ -1,0 +1,8 @@
+task,expected_windows,expected_episodes,expected_calls_each_model,expert_calls,shared_calls,paired_calls,paired_episodes,coverage_percent
+oven_put,9,3,9,9,9,9,3,100.0
+fridge,9,3,9,9,9,9,3,100.0
+dishwasher,9,3,9,9,9,9,3,100.0
+oven_takeout,9,3,9,9,9,9,3,100.0
+collect_clothes,9,3,9,9,9,9,3,100.0
+dry_clothes,9,3,9,9,9,9,3,100.0
+wash_clothes,9,3,9,9,9,9,3,100.0

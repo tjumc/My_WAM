@@ -1,0 +1,8 @@
+task,episodes,paired_calls,expert_rmse,shared_rmse,delta_shared_minus_expert,relative_delta_percent,fraction_episodes_shared_better,expert_prompt_variants,shared_prompt_variants
+oven_put,3,9,0.072186,0.159727,0.087541,121.271,0.0,1,1
+fridge,3,9,0.061354,0.09579,0.034436,56.127,0.3333,1,1
+dishwasher,3,9,0.062653,19.49464,19.431986,31015.158,0.0,1,1
+oven_takeout,3,9,0.041252,0.087648,0.046396,112.468,0.0,1,1
+collect_clothes,3,9,0.027861,0.057248,0.029386,105.473,0.0,1,1
+dry_clothes,3,9,0.044906,0.869311,0.824405,1835.832,0.0,1,1
+wash_clothes,3,9,0.042633,0.077936,0.035303,82.808,0.3333,1,1

@@ -1,0 +1,42 @@
+{
+  "purpose": "train-seen expert vs shared model diagnostic, not test-set generalization",
+  "catalog_sha256": "b9798fa03e6504c1cd603483b18b1b0949230be26612e42beb2f4a65445cbbaa",
+  "samples_sha256": "f62cc65c114f7cb027bb0a28ed6f89c357006cfde3793286e5654f3e4f4994c5",
+  "tasks": [
+    "oven_put",
+    "fridge",
+    "dishwasher",
+    "oven_takeout",
+    "collect_clothes",
+    "dry_clothes",
+    "wash_clothes"
+  ],
+  "episodes_per_task": 3,
+  "windows_per_episode": 3,
+  "seed": 42,
+  "horizon": 32,
+  "fps_by_task": {
+    "oven_put": [
+      30.0
+    ],
+    "fridge": [
+      30.0
+    ],
+    "dishwasher": [
+      30.0
+    ],
+    "oven_takeout": [
+      30.0
+    ],
+    "collect_clothes": [
+      30.0
+    ],
+    "dry_clothes": [
+      30.0
+    ],
+    "wash_clothes": [
+      30.0
+    ]
+  },
+  "git_head": "65b678f791c844ae7f765156365de3b6d3fac02d"
+}

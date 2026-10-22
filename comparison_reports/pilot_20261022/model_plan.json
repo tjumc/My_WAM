@@ -1,0 +1,118 @@
+{
+  "samples_sha256": "f62cc65c114f7cb027bb0a28ed6f89c357006cfde3793286e5654f3e4f4994c5",
+  "models": [
+    {
+      "kind": "expert",
+      "task": "oven_put",
+      "checkpoint": "/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_oven_put_posttrain32/train/checkpoints/weights/step_066250.pt",
+      "config": "/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_oven_put_posttrain32/train/config.yaml",
+      "stats": "/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_oven_put_posttrain32/stats.json",
+      "text_cache": "/efs/share/1919650160032350208/users/machong14/wam/posttrain/text_embeds_cache_astribot_oven_put_posttrain32",
+      "prompt": "put the plate into the oven",
+      "checkpoint_size": 12042034617,
+      "checkpoint_mtime_ns": 1789546294103374396,
+      "config_sha256": "49515fa0cf7a321200d9fcf5d1aecf951f39e5f996d740b5d0c26ba246dbd0a1",
+      "stats_sha256": "f68a4fd9209107eee829661425c5c688a75cf39beb712ba0d3300071bc8d938c"
+    },
+    {
+      "kind": "expert",
+      "task": "fridge",
+      "checkpoint": "/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_fridge_posttrain32/train/checkpoints/weights/step_143940.pt",
+      "config": "/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_fridge_posttrain32/train/config.yaml",
+      "stats": "/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_fridge_posttrain32/stats.json",
+      "text_cache": "/efs/share/1919650160032350208/users/machong14/wam/posttrain/text_embeds_cache_astribot_fridge_posttrain32",
+      "prompt": "Move to the fridge, take out the plate with food inside from the opened drawer, then move to the desk and put the plate on the desk",
+      "checkpoint_size": 12042034617,
+      "checkpoint_mtime_ns": 1789743363780479838,
+      "config_sha256": "a04927a1c67bbfeba99aea765632444cefdf0c0a1229128924259a21803451d5",
+      "stats_sha256": "332b1ceda450e087a48d91726b139ff4bd4cdc767dd5809e7920516a5fedd374"
+    },
+    {
+      "kind": "expert",
+      "task": "dishwasher",
+      "checkpoint": "/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_dishwasher_posttrain32/train/checkpoints/weights/step_275430.pt",
+      "config": "/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_dishwasher_posttrain32/train/config.yaml",
+      "stats": "/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_dishwasher_posttrain32/stats.json",
+      "text_cache": "/efs/share/1919650160032350208/users/machong14/wam/posttrain/text_embeds_cache_astribot_dishwasher_posttrain32",
+      "prompt": "put the dish into the dishwasher",
+      "checkpoint_size": 12042034617,
+      "checkpoint_mtime_ns": 1790193648053017915,
+      "config_sha256": "6b160021ac0258a7978aecf03a86edee38cccdfd890a28013378bd9a31bf7878",
+      "stats_sha256": "42fd8a0f141b89b4644f9de3541a3d7420744c51f0008b11120f6d560933ca29"
+    },
+    {
+      "kind": "expert",
+      "task": "oven_takeout",
+      "checkpoint": "/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_oven_takeout_posttrain32/train/checkpoints/weights/step_081210.pt",
+      "config": "/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_oven_takeout_posttrain32/train/config.yaml",
+      "stats": "/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_oven_takeout_posttrain32/stats.json",
+      "text_cache": "/efs/share/1919650160032350208/users/machong14/wam/posttrain/text_embeds_cache_astribot_oven_takeout_posttrain32",
+      "prompt": "take the plate out of the oven",
+      "checkpoint_size": 12042034617,
+      "checkpoint_mtime_ns": 1790385440554031596,
+      "config_sha256": "fce4138287d1f9b522119bafce8c91d3384922391bcd6af2b425c5d2fde79e6e",
+      "stats_sha256": "2adf09973098ca5be2e3e3e4b2dc258d2fe2b0d283b298fa1a313a8548ade8e7"
+    },
+    {
+      "kind": "expert",
+      "task": "collect_clothes",
+      "checkpoint": "/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_collect_clothes_posttrain32/train/checkpoints/weights/step_082310.pt",
+      "config": "/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_collect_clothes_posttrain32/train/config.yaml",
+      "stats": "/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_collect_clothes_posttrain32/stats.json",
+      "text_cache": "/efs/share/1919650160032350208/users/machong14/wam/posttrain/text_embeds_cache_astribot_collect_clothes_posttrain32",
+      "prompt": "Gather the clothes into the laundry basket",
+      "checkpoint_size": 12042034617,
+      "checkpoint_mtime_ns": 1789942141371823890,
+      "config_sha256": "3104d2b1902b1bbb0d3a4cbe7c6fb140b6567345b6a2b6c33a0a84df89c517e4",
+      "stats_sha256": "61ba85e87568bf15d474d3bc77758764214625b483353f15c7ac730e5986800e"
+    },
+    {
+      "kind": "expert",
+      "task": "dry_clothes",
+      "checkpoint": "/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_dry_clothes_posttrain32/train/checkpoints/weights/step_125360.pt",
+      "config": "/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_dry_clothes_posttrain32/train/config.yaml",
+      "stats": "/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_dry_clothes_posttrain32/stats.json",
+      "text_cache": "/efs/share/1919650160032350208/users/machong14/wam/posttrain/text_embeds_cache_astribot_dry_clothes_posttrain32",
+      "prompt": "transfer the clothes to the dryer",
+      "checkpoint_size": 12042034617,
+      "checkpoint_mtime_ns": 1790242676300021608,
+      "config_sha256": "7243630911c33ba5cc3fe4a12b6ce9e1ac2dfa298e17578d665aca174c5e0ccc",
+      "stats_sha256": "31f32f06299fdb7ed05f542c543b69c0f5208c880a1ab0ac8ad42f5836384a00"
+    },
+    {
+      "kind": "expert",
+      "task": "wash_clothes",
+      "checkpoint": "/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_wash_clothes_posttrain32/train/checkpoints/weights/step_071730.pt",
+      "config": "/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_wash_clothes_posttrain32/train/config.yaml",
+      "stats": "/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_wash_clothes_posttrain32/stats.json",
+      "text_cache": "/efs/share/1919650160032350208/users/machong14/wam/posttrain/text_embeds_cache_astribot_wash_clothes_posttrain32",
+      "prompt": "put the clothes into the washing machine",
+      "checkpoint_size": 12042034617,
+      "checkpoint_mtime_ns": 1790415517207572761,
+      "config_sha256": "2276259a2e532924282dbc009c454615e7fac221b56ea23945546effd44efb1c",
+      "stats_sha256": "4d47ea39cb79c7b79300aeb5f9b90af622bda1a0b51aff2123aab906ebd7a8aa"
+    },
+    {
+      "kind": "shared",
+      "task": "__all__",
+      "checkpoint": "/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_multitask_posttrain32/train/checkpoints/weights/step_158700.pt",
+      "config": "/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_multitask_posttrain32/train/config.yaml",
+      "stats": "/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_multitask_posttrain32/stats.json",
+      "text_cache": "/efs/share/1919650160032350208/users/machong14/wam/posttrain/text_embeds_cache_astribot_multitask_posttrain32",
+      "prompt": "",
+      "checkpoint_size": 12042034681,
+      "checkpoint_mtime_ns": 1790391031894592525,
+      "config_sha256": "1a2200c9cf84142613b274ca8d5961b2f9f1e323092d8dc5a46bcde2d1574520",
+      "stats_sha256": "5f274b9d1acd38cda35e338ce5a8bb096ace727048647bb06e9cb772103c7f9e"
+    }
+  ],
+  "seeds": [
+    42
+  ],
+  "num_inference_steps": 10,
+  "vae_device_mode": "cpu",
+  "device": "cuda",
+  "mixed_precision": null,
+  "preprocessing": "policy._prepare_image_tensor + BaseLerobotDataset raw image",
+  "scoring": "per-task expert action.global_std, floor=max(1e-4, 0.01*median(positive_std))"
+}
