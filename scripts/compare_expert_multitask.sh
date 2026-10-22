@@ -23,15 +23,15 @@ MIXED_PRECISION="${MIXED_PRECISION:-}"  # empty: use each checkpoint config
 
 # Use the exact already-trained weights; do not automatically pick newest/best.
 # Paths below are relative to the repository root unless absolute.
-MULTITASK_CHECKPOINT="${MULTITASK_CHECKPOINT:-}"
+MULTITASK_CHECKPOINT="${MULTITASK_CHECKPOINT:-/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_multitask_posttrain32/train/checkpoints/weights/step_158700.pt}"
 declare -A EXPERT_CHECKPOINTS=(
-  [oven_put]="${EXPERT_OVEN_PUT_CHECKPOINT:-}"
-  [fridge]="${EXPERT_FRIDGE_CHECKPOINT:-}"
-  [dishwasher]="${EXPERT_DISHWASHER_CHECKPOINT:-}"
-  [oven_takeout]="${EXPERT_OVEN_TAKEOUT_CHECKPOINT:-}"
-  [collect_clothes]="${EXPERT_COLLECT_CLOTHES_CHECKPOINT:-}"
-  [dry_clothes]="${EXPERT_DRY_CLOTHES_CHECKPOINT:-}"
-  [wash_clothes]="${EXPERT_WASH_CLOTHES_CHECKPOINT:-}"
+  [oven_put]="${EXPERT_OVEN_PUT_CHECKPOINT:-/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_oven_put_posttrain32/train/checkpoints/weights/step_066250.pt}"
+  [fridge]="${EXPERT_FRIDGE_CHECKPOINT:-/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_fridge_posttrain32/train/checkpoints/weights/step_143940.pt}"
+  [dishwasher]="${EXPERT_DISHWASHER_CHECKPOINT:-/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_dishwasher_posttrain32/train/checkpoints/weights/step_275430.pt}"
+  [oven_takeout]="${EXPERT_OVEN_TAKEOUT_CHECKPOINT:-/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_oven_takeout_posttrain32/train/checkpoints/weights/step_081210.pt}"
+  [collect_clothes]="${EXPERT_COLLECT_CLOTHES_CHECKPOINT:-/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_collect_clothes_posttrain32/train/checkpoints/weights/step_082310.pt}"
+  [dry_clothes]="${EXPERT_DRY_CLOTHES_CHECKPOINT:-/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_dry_clothes_posttrain32/train/checkpoints/weights/step_125360.pt}"
+  [wash_clothes]="${EXPERT_WASH_CLOTHES_CHECKPOINT:-/efs/share/1919650160032350208/users/machong14/wam/runs/astribot_wash_clothes_posttrain32/train/checkpoints/weights/step_071730.pt}"
 )
 
 # Expert prompt overrides taken from single-task training scripts.
