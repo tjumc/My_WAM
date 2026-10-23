@@ -42,6 +42,7 @@ if str(SRC_ROOT) not in sys.path:
 from fastwam.datasets.lerobot.robot_video_dataset import DEFAULT_PROMPT
 from fastwam.datasets.lerobot.utils.normalizer import load_dataset_stats_from_json
 from fastwam.utils.config_resolvers import register_default_resolvers
+from experiments.astribot.wam_diagnostics import TraceSession, sha256_file
 
 LOGGER = logging.getLogger("astribot_fastwam_server")
 
@@ -241,6 +242,8 @@ class AstribotFastWAMPolicy:
         tiled: bool,
         vae_device_mode: str,
         seed: int | None,
+        trace_dir: str | None = None,
+        capture_every: int = 10,
     ):
         register_default_resolvers()
         self.config_path = _resolve_path(config_path)
@@ -255,6 +258,10 @@ class AstribotFastWAMPolicy:
         self.rand_device = str(rand_device)
         self.tiled = bool(tiled)
         self.seed = seed
+        if capture_every < 0:
+            raise ValueError("capture_every must be >= 0")
+        self.capture_every = capture_every
+        self._capture_index = 0
 
         if not self.config_path.exists():
             raise FileNotFoundError(f"Config not found: {self.config_path}")
@@ -330,6 +337,17 @@ class AstribotFastWAMPolicy:
             self.n_action_steps,
             self.action_mode,
         )
+
+        self.trace = TraceSession(trace_dir, {
+            "model": self.get_model_info(), "config": str(self.config_path),
+            "config_sha256": sha256_file(self.config_path),
+            "stats_sha256": sha256_file(self.dataset_stats_path),
+            "source_sha256": sha256_file(__file__), "seed": self.seed,
+            "capture_every": capture_every,
+            "image_convention": "raw client arrays before server preprocessing",
+        }, kind="server")
+        import atexit
+        atexit.register(self.trace.close)
 
     def _prepare_image_tensor(self, img0: np.ndarray, img1: np.ndarray, img2: np.ndarray) -> torch.Tensor:
         # Keep this layout identical to RobotVideoDataset concat_multi_camera='robotwin'.
@@ -409,6 +427,13 @@ class AstribotFastWAMPolicy:
         delay: float = 0,
     ) -> np.ndarray | None:
         start = time.time()
+        start_ns = time.monotonic_ns()
+        request_id = float(np.asarray(curtime).reshape(-1)[0])
+        self._capture_index += 1
+        capture = (self.trace.enabled and self.capture_every > 0
+                   and (self._capture_index - 1) % self.capture_every == 0)
+        self.trace.emit("infer_start", request_id=request_id, seed=self.seed,
+                        task_prompt=self.task_prompt)
         try:
             image = self._prepare_image_tensor(img0, img1, img2)
             proprio = self._prepare_proprio_tensor(state)
@@ -430,6 +455,18 @@ class AstribotFastWAMPolicy:
                     tiled=self.tiled,
                 )
             actions = self._denormalize_action(pred["action"])
+            infer_end_ns = time.monotonic_ns()
+            arrays = None
+            if capture:
+                arrays = {"img0": img0, "img1": img1, "img2": img2,
+                          "state": state, "actions": actions}
+                if his_effort is not None:
+                    arrays["his_effort"] = his_effort
+            self.trace.emit("infer_result", request_id=request_id,
+                            infer_start_ns=start_ns, infer_end_ns=infer_end_ns,
+                            inference_ms=(infer_end_ns-start_ns)/1e6,
+                            finite=bool(np.isfinite(actions).all()),
+                            action_shape=list(actions.shape), arrays=arrays)
             latency_ms = (time.time() - start) * 1000.0
             transport_ms = (start - float(np.asarray(curtime).reshape(-1)[0])) * 1000.0
             LOGGER.info(
@@ -441,6 +478,8 @@ class AstribotFastWAMPolicy:
             )
             return actions
         except Exception as exc:
+            self.trace.emit("infer_error", request_id=request_id,
+                            error_type=type(exc).__name__, error=str(exc))
             LOGGER.error("WAM inference failed: %s", exc)
             LOGGER.error(traceback.format_exc())
             return None
@@ -488,6 +527,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--tiled", action="store_true")
     parser.add_argument("--vae_device_mode", choices=["gpu", "cpu"], default="gpu")
     parser.add_argument("--seed", type=int, default=None)
+    parser.add_argument("--trace-dir", default=os.environ.get("WAM_TRACE_DIR"),
+                        help="Optional diagnostic directory; disabled by default")
+    parser.add_argument("--capture-every", type=int,
+                        default=int(os.environ.get("WAM_CAPTURE_EVERY", "10")),
+                        help="Record raw observations every N requests; 0 disables NPZ capture")
     parser.add_argument(
         "--model_base_path",
         default=None,
@@ -532,6 +576,8 @@ def main() -> None:
         tiled=args.tiled,
         vae_device_mode=args.vae_device_mode,
         seed=args.seed,
+        trace_dir=args.trace_dir,
+        capture_every=args.capture_every,
     )
 
     server = portal.Server(args.port)
